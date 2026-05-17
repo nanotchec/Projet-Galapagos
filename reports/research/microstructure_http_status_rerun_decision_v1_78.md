@@ -1,0 +1,8 @@
+# Microstructure Http Status Rerun Decision
+
+```json
+{
+  "final_verdict": "MICROSTRUCTURE_HTTP_STATUS_CAPTURE_HARDENED_AND_RERUN_APPROVED",
+  "next_allowed_phase": "bounded_http_status_rerun_reports_only"
+}
+```

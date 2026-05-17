@@ -1,0 +1,53 @@
+{
+  "version": "V1.15.2",
+  "results": [
+    {
+      "window": "train_2022_2023",
+      "target": "target_up_after_cost_12bar",
+      "model": "random_forest",
+      "feature_set": "alpha_scores",
+      "permutation": {
+        "status": "computed",
+        "n_permutations": 200,
+        "real_score": 0.5191780821917809,
+        "permutation_mean": 0.5060068493150685,
+        "permutation_std": 0.007147409325154107,
+        "p_value_approx": 0.04,
+        "percentile": 96.0,
+        "verdict": "ML_PASSES_PERMUTATION_TEST"
+      }
+    },
+    {
+      "window": "train_2022_2024",
+      "target": "target_up_after_cost_12bar",
+      "model": "random_forest",
+      "feature_set": "alpha_scores",
+      "permutation": {
+        "status": "computed",
+        "n_permutations": 200,
+        "real_score": 0.5247252747252747,
+        "permutation_mean": 0.5447000915750916,
+        "permutation_std": 0.010848888914776929,
+        "p_value_approx": 0.95,
+        "percentile": 6.0,
+        "verdict": "ML_FAILS_PERMUTATION_TEST"
+      }
+    },
+    {
+      "window": "train_2022_2025",
+      "target": "target_up_after_cost_12bar",
+      "model": "random_forest",
+      "feature_set": "alpha_scores",
+      "permutation": {
+        "status": "computed",
+        "n_permutations": 200,
+        "real_score": 0.504950495049505,
+        "permutation_mean": 0.534002828854314,
+        "permutation_std": 0.01221236426069631,
+        "p_value_approx": 0.99,
+        "percentile": 1.0,
+        "verdict": "ML_FAILS_PERMUTATION_TEST"
+      }
+    }
+  ]
+}

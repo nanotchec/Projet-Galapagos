@@ -1,0 +1,9 @@
+# Microstructure Http Status Rerun Decision
+
+```json
+{
+  "final_verdict": "MICROSTRUCTURE_BOUNDED_HTTP_STATUS_RERUN_PASSED",
+  "next_allowed_phase": "bounded_http_status_rerun_review_before_any_data_write_proposal",
+  "bounded_http_status_rerun_executed": true
+}
+```

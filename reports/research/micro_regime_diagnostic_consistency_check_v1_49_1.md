@@ -1,0 +1,35 @@
+# Micro Regime Diagnostic Consistency Check V1.49.1
+
+- **version**: V1.49.1
+- **previous_base**: V1.49
+- **microstructure_regime_label_base_version**: V1.48.1
+- **microstructure_feature_base_version**: V1.47
+- **regime_data_quality_base_version**: V1.46.3
+- **feature_ablation_base_version**: V1.45.1
+- **canonical_base_version**: V1.37.2
+- **no_new_filter**: True
+- **no_strategy_validated**: True
+- **no_preregistration_yet**: True
+- **no_paper_live**: True
+- **no_real_trading**: True
+- **holdout_executed**: False
+- **codex_cli_called**: False
+- **real_orders_possible**: False
+- **consistency_check_status**: MICRO_REGIME_DIAGNOSTIC_REPORTS_CONSISTENT_RESEARCH_ONLY
+- **issues**: []
+- **project_state_aligned**: True
+- **latest_metrics_aligned**: True
+- **latest_summary_aligned**: True
+- **all_json_values_finite**: True
+- **required_reports_present**: True
+- **required_markdown_reports_present**: True
+- **safety_flags_aligned**: True
+- **recommendation_aligned**: True
+- **release_reports_present**: True
+- **status_field_policy**: REMOVED
+- **status_field_present**: False
+- **final_verdict_aligned**: True
+- **recommended_next_step_aligned**: True
+- **final_verdict**: MICRO_REGIME_DIAGNOSTIC_ACTIONABLE_BUT_UNVALIDATED
+- **recommended_next_step**: improve microstructure data coverage before further regime diagnostics
+- **evidence_classification**: RESEARCH_ONLY

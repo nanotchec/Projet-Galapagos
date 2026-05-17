@@ -1,0 +1,49 @@
+{
+  "overall_quality_score": 50,
+  "grade": "C",
+  "impact_metrics": {
+    "total_rows": 9486,
+    "usable_rows": 8766,
+    "blocked_rows": 720,
+    "usable_ratio": 0.9240986717267552,
+    "blocked_ratio": 0.07590132827324478,
+    "usable_ratio_2024": 1.0,
+    "blocked_ratio_2024": 0.0,
+    "usable_ratio_2025": 1.0,
+    "blocked_ratio_2025": 0.0,
+    "usable_ratio_2026": 0.0,
+    "blocked_ratio_2026": 1.0
+  },
+  "retention_summary": {
+    "feature_retention": {
+      "amihud_illiquidity": {
+        "status": "MISSING_IN_DATASET",
+        "valid_ratio": 0.0
+      },
+      "realized_vol_proxy": {
+        "status": "MISSING_IN_DATASET",
+        "valid_ratio": 0.0
+      },
+      "volume_vol_ratio": {
+        "status": "MISSING_IN_DATASET",
+        "valid_ratio": 0.0
+      },
+      "intraday_range": {
+        "status": "MISSING_IN_DATASET",
+        "valid_ratio": 0.0
+      }
+    },
+    "retained_features": [],
+    "reworked_features": [],
+    "blocked_features": [
+      "amihud_illiquidity",
+      "realized_vol_proxy",
+      "volume_vol_ratio",
+      "intraday_range"
+    ]
+  },
+  "version": "V1.51.1",
+  "previous_base": "V1.51",
+  "migrated_from": "V1.51",
+  "migration_reason": "missing required reports fix"
+}

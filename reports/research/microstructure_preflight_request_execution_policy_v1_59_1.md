@@ -1,0 +1,16 @@
+# Request Execution Policy (V1.59.1)
+
+- Prohibits real API calls.
+
+```json
+{
+  "version": "V1.59.1",
+  "current_version": "V1.59.1",
+  "requests_executed_count": 0,
+  "external_api_called": false,
+  "real_collection_executed": false,
+  "mock_requests_required_for_preflight": true,
+  "request_isolation_level": "TOTAL_SIMULATION",
+  "policy_status": "NO_EXECUTION_ALLOWED"
+}
+```

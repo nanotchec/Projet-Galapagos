@@ -1,0 +1,6 @@
+# Human Review Items (V1.58.1)
+
+- **version**: V1.58.1
+- **current_version**: V1.58.1
+- **items**: [{'id': 'HR_001', 'topic': 'Bybit number_of_trades proxy', 'description': 'Validation du déclassement de number_of_trades en optionnel pour Bybit, avec utilisation du turnover comme proxy.', 'evidence': 'microstructure_optional_field_policy_v1_57_2.json', 'status': 'PENDING_HUMAN_REVIEW'}, {'id': 'HR_002', 'topic': 'Binance vs Bybit field asymmetry', 'description': "Validation de l'asymétrie des champs disponibles entre les deux exchanges et impact sur l'homogénéité des données.", 'evidence': 'microstructure_adapter_field_gap_analysis_v1_57_2.json', 'status': 'PENDING_HUMAN_REVIEW'}, {'id': 'HR_003', 'topic': 'Timestamp availability policy', 'description': 'Revue de la politique de causalité des timestamps (ingest_ts vs closing_time).', 'evidence': 'microstructure_data_contract_v1_52.json', 'status': 'PENDING_HUMAN_REVIEW'}, {'id': 'HR_004', 'topic': 'Fixture representativeness', 'description': 'Validation que les tests sur fixtures sont suffisants pour autoriser un passage en preflight (sans collecte réelle).', 'evidence': 'microstructure_adapter_fixture_summary_v1_55_3.json', 'status': 'PENDING_HUMAN_REVIEW'}]
+- **human_review_items_count**: 4

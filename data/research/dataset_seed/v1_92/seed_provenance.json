@@ -1,0 +1,32 @@
+{
+  "version": "V1.92.1",
+  "source_versions": [
+    "V1.84",
+    "V1.87.2",
+    "V1.90.1"
+  ],
+  "event_ts": "source_artifact_static",
+  "available_ts": "source_artifact_static",
+  "decision_ts": "v1_92_seed_build_time",
+  "anti_leakage_note": "available_ts must be less than or equal to decision_ts",
+  "artifact": "seed_provenance",
+  "references_v1_84": true,
+  "references_v1_87": true,
+  "references_v1_90": true,
+  "source_hashes": {
+    "v1_84": {
+      "manifest.json": "524c43853d97904aadcbd476e955dd5571adecaae5644505a9384e209825aa47",
+      "schema_snapshot.json": "2ef9706d2be0363b08b61e90585d64c2adb322f16b6317e941d834cffd967638",
+      "preview_records.json": "2ec5fa4e2911fbb28d6869bd795b1264b9eeb9bc0b5cb531d53e88103f82b01c"
+    },
+    "v1_87": {
+      "extension_manifest.json": "525276f53e29bcef84e176dc9d698d37c8a06e2880b7e08965da54aa00e347e4",
+      "extension_quality_summary.json": "ddc107e6e862c9b2c3090387279840c587c99a826c96cdebb79c5c7175a2217d"
+    },
+    "v1_90": {
+      "consolidated_manifest.json": "ba35f8db2bec770512c3ece4acf7145e6d445c8fa0cef2b5b729707e025d3393",
+      "consolidated_schema_snapshot.json": "da6addf2379ad1262b58b81ac55b502bedd141c3f90ab70e7fec920c599d9131",
+      "consolidated_quality_summary.json": "c24090ac58415c40a2f2bd144172636ae95237cfac75278451229f42cc2ea884"
+    }
+  }
+}

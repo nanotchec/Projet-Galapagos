@@ -1,0 +1,34 @@
+# Summary - V1.33
+
+```json
+{
+  "selected_filter": "filter_ev_gt_cost_buffer",
+  "selected_count_total": null,
+  "selected_count_2026": null,
+  "recent_2026_pnl": null,
+  "period_comparison_status": "PERFORMANCE_VOLATILE_NO_CLEAR_REVERSAL",
+  "calibration_reversal_status": "NO_TRADES",
+  "ev_proxy_reversal_status": "NO_TRADES",
+  "payoff_reversal_status": "NO_TRADES",
+  "cost_drag_status": "NO_TRADES",
+  "score_distribution_shift_status": "SCORE_SHIFT_INCONCLUSIVE",
+  "feature_distribution_shift_status": "FEATURE_SHIFT_INCONCLUSIVE",
+  "regime_reversal_status": "NO_TRADES",
+  "trade_concentration_status": "NO_TRADES",
+  "primary_reversal_driver": "REVERSAL_UNEXPLAINED",
+  "secondary_reversal_drivers": [
+    "score_shift_driver",
+    "feature_shift_driver"
+  ],
+  "final_verdict": "RECENT_REVERSAL_DIAGNOSTIC_INCONCLUSIVE",
+  "recommended_next_step": "deeper data/model audit",
+  "evidence_classification": "DIAGNOSTIC_ONLY",
+  "no_new_filter": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_money_deployment": true,
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}
+```

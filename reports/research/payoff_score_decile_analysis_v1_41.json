@@ -1,0 +1,71 @@
+{
+  "score_decile_status": "SCORE_DECILES_NON_MONOTONIC_2026",
+  "candidate_name": "asymmetric_loss_weighted_classifier",
+  "split_name": "2026_H1",
+  "selection_count": 24360,
+  "decile_means": [
+    -0.004862050432539813,
+    -0.015522254051876497,
+    -0.0029809487850936647,
+    0.010882488372311008,
+    -0.004450448216873321,
+    -0.0008364179575019657,
+    -0.0003614314327627324,
+    -0.013340505992640637,
+    -0.0022547985212213323,
+    0.00086896322152236
+  ],
+  "buckets": [
+    {
+      "bucket": "top_1pct",
+      "count": 244,
+      "mean_return": 0.019937345133359822,
+      "median_return": 0.061169350387085264,
+      "downside_rate": 0.29508196721311475,
+      "payoff_ratio": 0.7427544613597723,
+      "gross_mean_return": 0.020937345133359826,
+      "net_mean_return": 0.019937345133359822
+    },
+    {
+      "bucket": "top_5pct",
+      "count": 1218,
+      "mean_return": 0.005042653198877075,
+      "median_return": 0.006609264952469497,
+      "downside_rate": 0.3957307060755337,
+      "payoff_ratio": 0.8528561335191565,
+      "gross_mean_return": 0.006042653198877075,
+      "net_mean_return": 0.005042653198877075
+    },
+    {
+      "bucket": "top_10pct",
+      "count": 2436,
+      "mean_return": -0.004862050432539813,
+      "median_return": -0.005379281140579283,
+      "downside_rate": 0.5381773399014779,
+      "payoff_ratio": 0.8843741938923592,
+      "gross_mean_return": -0.0038620504325398135,
+      "net_mean_return": -0.004862050432539813
+    },
+    {
+      "bucket": "top_20pct",
+      "count": 4872,
+      "mean_return": -0.010192152242208156,
+      "median_return": -0.009085762760053795,
+      "downside_rate": 0.6026272577996716,
+      "payoff_ratio": 0.8426326361574255,
+      "gross_mean_return": -0.009192152242208155,
+      "net_mean_return": -0.010192152242208156
+    }
+  ],
+  "top_10_mean_return": -0.004862050432539813,
+  "top_10_downside_rate": 0.5381773399014779,
+  "top_10_payoff_ratio": 0.8843741938923592,
+  "spearman_2026": -0.015802822899487867,
+  "monotonic": false,
+  "selected_count_2026": 24360,
+  "top_score_return_mean": -0.004862050432539813,
+  "top_score_gross_return_mean": -0.0038620504325398135,
+  "top_score_cost_proxy_mean": 0.0010000000000000002,
+  "top_score_downside_rate": 0.5381773399014779,
+  "recent_window_status": "RECENT_WINDOW_WEAK"
+}

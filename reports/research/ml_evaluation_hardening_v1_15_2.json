@@ -1,0 +1,51 @@
+{
+  "version": "V1.15.2",
+  "final_verdict": "ML_REGIME_DEPENDENT_WEAK_EDGE",
+  "leakage_audit": "ML_LEAKAGE_AUDIT_PASSED",
+  "llm_reviewer_ready": false,
+  "number_of_windows_tested": 3,
+  "windows_passing_permutation": 1,
+  "windows_positive_after_cost": 2,
+  "windows_beating_alpha_score": 2,
+  "windows_data": {
+    "train_2022_2023": {
+      "permutation_passed": true,
+      "permutation_p_value": 0.04,
+      "baseline_percentiles": {
+        "5": 0.0023097284441354394,
+        "50": 0.004836805852475822,
+        "95": 0.006917343642121859
+      },
+      "baseline_target_count": 500,
+      "top_bucket_mean_return": 0.013794410524818997,
+      "top_bucket_cost_adjusted": 0.010794410524818995,
+      "beats_alpha": true
+    },
+    "train_2022_2024": {
+      "permutation_passed": false,
+      "permutation_p_value": 0.95,
+      "baseline_percentiles": {
+        "5": -0.0016748080631557648,
+        "50": 1.875806240711586e-05,
+        "95": 0.0018383340225143065
+      },
+      "baseline_target_count": 500,
+      "top_bucket_mean_return": 0.0054756174635983024,
+      "top_bucket_cost_adjusted": 0.002475617463598301,
+      "beats_alpha": true
+    },
+    "train_2022_2025": {
+      "permutation_passed": false,
+      "permutation_p_value": 0.99,
+      "baseline_percentiles": {
+        "5": -0.003276621398959908,
+        "50": -0.001962495933447602,
+        "95": -0.00048458280650952404
+      },
+      "baseline_target_count": 500,
+      "top_bucket_mean_return": -0.02125813822352222,
+      "top_bucket_cost_adjusted": -0.024258138223522227,
+      "beats_alpha": false
+    }
+  }
+}

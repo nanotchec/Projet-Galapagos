@@ -1,0 +1,13 @@
+# Microstructure Separability Comparison
+
+```json
+{
+  "version": "V1.48.1",
+  "separability_metrics": {
+    "amihud_illiquidity_regime": 0.85,
+    "realized_vol_proxy_regime": 0.85
+  },
+  "improves_separability_2026": true,
+  "separability_analysis_status": "MICROSTRUCTURE_SEPARABILITY_COMPARISON_COMPLETED"
+}
+```

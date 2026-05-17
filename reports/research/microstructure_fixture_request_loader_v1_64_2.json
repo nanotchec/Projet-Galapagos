@@ -1,0 +1,12 @@
+{
+  "version": "V1.64.2",
+  "fixtures_dir": "tests/fixtures/microstructure",
+  "fixture_requests_loaded_count": 0,
+  "status": "MICROSTRUCTURE_FIXTURE_REQUEST_LOADER_PASSED",
+  "microstructure_wrapper_plan_base_version": "V1.63.2",
+  "microstructure_hardened_preflight_review_base_version": "V1.62.1",
+  "microstructure_preflight_hardening_base_version": "V1.61",
+  "canonical_base_version": "V1.37.2",
+  "migrated_from": "V1.64.1",
+  "migration_reason": "wrapper fixture reporting completeness fix"
+}

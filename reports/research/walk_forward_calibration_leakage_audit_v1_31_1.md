@@ -1,0 +1,50 @@
+# Walk Forward Calibration Leakage Audit - v1.31.1
+
+```json
+[
+  {
+    "train_end": "2024-06-30T20:00:00",
+    "test_start": "2024-07-01T00:00:00",
+    "temporal_overlap": false,
+    "input_columns": [
+      "predicted_probability"
+    ],
+    "forbidden_columns_in_input": [],
+    "leakage_status": "WALK_FORWARD_CALIBRATION_NO_LEAKAGE_DETECTED",
+    "split_id": "2024_H2"
+  },
+  {
+    "train_end": "2024-12-31T00:00:00",
+    "test_start": "2025-01-01T04:00:00",
+    "temporal_overlap": false,
+    "input_columns": [
+      "predicted_probability"
+    ],
+    "forbidden_columns_in_input": [],
+    "leakage_status": "WALK_FORWARD_CALIBRATION_NO_LEAKAGE_DETECTED",
+    "split_id": "2025_H1"
+  },
+  {
+    "train_end": "2025-06-30T20:00:00",
+    "test_start": "2025-07-01T00:00:00",
+    "temporal_overlap": false,
+    "input_columns": [
+      "predicted_probability"
+    ],
+    "forbidden_columns_in_input": [],
+    "leakage_status": "WALK_FORWARD_CALIBRATION_NO_LEAKAGE_DETECTED",
+    "split_id": "2025_H2"
+  },
+  {
+    "train_end": "2025-12-31T00:00:00",
+    "test_start": "2026-01-01T04:00:00",
+    "temporal_overlap": false,
+    "input_columns": [
+      "predicted_probability"
+    ],
+    "forbidden_columns_in_input": [],
+    "leakage_status": "WALK_FORWARD_CALIBRATION_NO_LEAKAGE_DETECTED",
+    "split_id": "2026_H1"
+  }
+]
+```

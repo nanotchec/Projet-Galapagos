@@ -1,0 +1,42 @@
+# Cost Drag Diagnostic V1 29 6
+
+```json
+{
+  "cost_breakdown_by_semester": {
+    "2024 H1": {
+      "gross_mean_pnl": 0.012387374685259698,
+      "net_mean_pnl": 0.012387374685259698,
+      "estimated_cost_drag": 0.0,
+      "killed_by_costs": false
+    },
+    "2024 H2": {
+      "gross_mean_pnl": 0.016679107536754244,
+      "net_mean_pnl": 0.016679107536754244,
+      "estimated_cost_drag": 0.0,
+      "killed_by_costs": false
+    },
+    "2025 H1": {
+      "gross_mean_pnl": 0.01058929768799816,
+      "net_mean_pnl": 0.01058929768799816,
+      "estimated_cost_drag": 0.0,
+      "killed_by_costs": false
+    },
+    "2025 H2": {
+      "gross_mean_pnl": 0.004628595277239297,
+      "net_mean_pnl": 0.004628595277239297,
+      "estimated_cost_drag": 0.0,
+      "killed_by_costs": false
+    },
+    "2026 H1": {
+      "gross_mean_pnl": -0.0070749818588342695,
+      "net_mean_pnl": -0.0070749818588342695,
+      "estimated_cost_drag": 0.0,
+      "killed_by_costs": false
+    }
+  },
+  "cost_drag_status": "COST_DRAG_NOT_ISOLATED_IN_CURRENT_OUTCOME_PROXY",
+  "cost_drag_measurable": false,
+  "cost_columns_available": [],
+  "outcome_may_already_be_net": true
+}
+```

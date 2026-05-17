@@ -1,0 +1,15 @@
+{
+  "version": "V1.64.2",
+  "safety_audit_passed": true,
+  "issues": [],
+  "no_real_trading": true,
+  "no_paper_live": true,
+  "holdout_executed": false,
+  "status": "MICROSTRUCTURE_WRAPPER_SAFETY_AUDIT_PASSED",
+  "microstructure_wrapper_plan_base_version": "V1.63.2",
+  "microstructure_hardened_preflight_review_base_version": "V1.62.1",
+  "microstructure_preflight_hardening_base_version": "V1.61",
+  "canonical_base_version": "V1.37.2",
+  "migrated_from": "V1.64.1",
+  "migration_reason": "wrapper fixture reporting completeness fix"
+}

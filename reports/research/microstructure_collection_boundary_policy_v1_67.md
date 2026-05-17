@@ -1,0 +1,17 @@
+# Report: Microstructure Collection Boundary Policy
+
+```json
+{
+  "collection_boundary_policy_defined": true,
+  "limits": [
+    "Network disabled by default",
+    "Separate explicit approval required",
+    "Tiny sample only",
+    "No secrets in repo",
+    "No strategy use",
+    "No paper/live trading",
+    "Reports-only output",
+    "No data/ directory writes"
+  ]
+}
+```

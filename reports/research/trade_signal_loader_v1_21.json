@@ -1,0 +1,14 @@
+{
+  "version": "v1.21",
+  "audit": {
+    "raw_signal_rows": 23426,
+    "unique_signal_timestamps": 4275,
+    "duplicate_signal_rows": 19151,
+    "duplicates_per_timestamp_max": 20,
+    "selected_signal_policy": "max_predicted_probability",
+    "models_count": 3,
+    "feature_sets_count": 3,
+    "targets_count": 3
+  },
+  "status": "COMPLETE"
+}

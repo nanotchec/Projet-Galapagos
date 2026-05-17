@@ -1,0 +1,9 @@
+# Report: Microstructure Manifest Preview Runtime Audit
+
+```json
+{
+  "manifest_preview_generated": true,
+  "manifest_data_file_created": false,
+  "preview_location": "reports/research/"
+}
+```

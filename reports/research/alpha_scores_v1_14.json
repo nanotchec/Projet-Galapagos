@@ -1,0 +1,93 @@
+{
+  "version": "V1.14",
+  "rows": 9486,
+  "score_columns": [
+    "ohlcv_momentum_score",
+    "ohlcv_breakout_score",
+    "volatility_quality_score",
+    "macro_regime_score",
+    "derivatives_regime_score",
+    "cost_penalty_score",
+    "crowded_trade_penalty",
+    "missing_data_penalty",
+    "combined_alpha_score",
+    "combined_alpha_score_no_derivatives",
+    "combined_alpha_score_no_macro",
+    "ohlcv_only_alpha_score",
+    "macro_derivatives_score"
+  ],
+  "score_ranges": {
+    "ohlcv_momentum_score": {
+      "min": -1.0,
+      "max": 1.0,
+      "missing_rate": 0.0
+    },
+    "ohlcv_breakout_score": {
+      "min": -1.0,
+      "max": 1.0,
+      "missing_rate": 0.0
+    },
+    "volatility_quality_score": {
+      "min": -1.0,
+      "max": 0.6235828140749424,
+      "missing_rate": 0.0
+    },
+    "macro_regime_score": {
+      "min": -0.5,
+      "max": 0.5,
+      "missing_rate": 0.0
+    },
+    "derivatives_regime_score": {
+      "min": -0.7216797012497173,
+      "max": 0.6897072651833506,
+      "missing_rate": 0.0
+    },
+    "cost_penalty_score": {
+      "min": 0.10449389394342386,
+      "max": 1.0,
+      "missing_rate": 0.0
+    },
+    "crowded_trade_penalty": {
+      "min": 0.0,
+      "max": 1.0,
+      "missing_rate": 0.0
+    },
+    "missing_data_penalty": {
+      "min": 0.0,
+      "max": 1.0,
+      "missing_rate": 0.0
+    },
+    "combined_alpha_score": {
+      "min": -0.8285210246209718,
+      "max": 0.500045173517627,
+      "missing_rate": 0.0
+    },
+    "combined_alpha_score_no_derivatives": {
+      "min": -0.8829023536404067,
+      "max": 0.6086527076447517,
+      "missing_rate": 0.0
+    },
+    "combined_alpha_score_no_macro": {
+      "min": -0.9534135763108827,
+      "max": 0.5218682672559251,
+      "missing_rate": 0.0
+    },
+    "ohlcv_only_alpha_score": {
+      "min": -0.9214287515247522,
+      "max": 0.6916239681052317,
+      "missing_rate": 0.0
+    },
+    "macro_derivatives_score": {
+      "min": -0.5545,
+      "max": 0.5103682693325078,
+      "missing_rate": 0.0
+    }
+  },
+  "formula": "0.30 momentum + 0.15 breakout + 0.15 volatility + 0.15 macro + 0.20 derivatives - 0.15 costs - 0.10 crowding - 0.10 missing",
+  "research_only": true,
+  "dataset": "data/gold/research_dataset/BTC/4h/research_dataset.parquet",
+  "output_path": "data/gold/research_dataset/BTC/4h/research_dataset_with_alpha_scores.parquet",
+  "output_csv": "data/gold/research_dataset/BTC/4h/research_dataset_with_alpha_scores.csv",
+  "codex_cli_called": false,
+  "holdout_executed": false
+}

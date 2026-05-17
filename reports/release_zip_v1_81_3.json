@@ -1,0 +1,21 @@
+{
+  "version": "V1.81.3",
+  "final_zip_created": true,
+  "final_zip_path": "projet-galapagos-v1.81.3-clean.zip",
+  "final_zip_contains_audit_reports": true,
+  "final_zip_contains_smoke_reports": true,
+  "recommendation_artifact_required": true,
+  "recommendation_json_included": true,
+  "recommendation_md_included": true,
+  "recommendation_json_path": "reports/research/v1_81_3_recommendation.json",
+  "recommendation_md_path": "reports/research/v1_81_3_recommendation.md",
+  "final_audit_passed": true,
+  "final_smoke_passed": true,
+  "final_consistency_passed": true,
+  "consistency_status": "MICROSTRUCTURE_DATA_CONTRACT_APPROVAL_INTAKE_METADATA_AND_COVERAGE_HARDENING_CONSISTENT",
+  "final_missing_required_files": [],
+  "final_forbidden_count": 0,
+  "final_secret_hits": [],
+  "release_ready_for_external_review": true,
+  "blocking_reason": null
+}

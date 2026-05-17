@@ -1,0 +1,8 @@
+{
+  "version": "V1.54",
+  "adapter_contract_status": "DEFINED_STUB",
+  "supported_sources": [
+    "binance",
+    "bybit"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "random_same_count_placebo": {
+    "placebo_type": "random_unconditional_pick",
+    "re_applies_filter": false,
+    "preserves_filter_logic": false,
+    "observed": 0.007856600971404403,
+    "p95": 0.0020235137349601294,
+    "verdict": "PLACEBO_PARTIAL_PASS",
+    "limitation": "Does not re-apply filter logic on shuffled data; only tests if count-based performance is outlier."
+  },
+  "random_weekly_pick_placebo": {
+    "placebo_type": "random_stratified_weekly_pick",
+    "re_applies_filter": false,
+    "preserves_filter_logic": false,
+    "observed": 0.007856600971404403,
+    "mean": -0.0012098803140742063,
+    "p95": 0.002963320363355899,
+    "verdict": "PLACEBO_PARTIAL_PASS",
+    "limitation": "Does not account for filter selection criteria beyond temporal density."
+  },
+  "placebo_status": "PLACEBO_PARTIAL"
+}

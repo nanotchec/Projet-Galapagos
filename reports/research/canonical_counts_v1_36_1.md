@@ -1,0 +1,20 @@
+# Canonical Universe Counts - V1.36.1
+
+```json
+{
+  "count_semantics_version": "v1.36.1_explicit",
+  "raw_prediction_rows": 171648,
+  "raw_prediction_rows_2026": 24360,
+  "canonical_opportunity_rows": 171648,
+  "canonical_opportunity_rows_2026": 24360,
+  "canonical_opportunity_equals_raw_prediction_universe": true,
+  "ev_ready_rows": 168048,
+  "ev_ready_rows_2026": 24360,
+  "outcome_available_rows": 171648,
+  "outcome_available_rows_2026": 24360,
+  "ev_filter_reference_selected_rows": 0,
+  "ev_filter_reference_selected_rows_2026": 0,
+  "count_notes": "canonical_opportunity_rows represents the full research universe without filter.",
+  "counts_status": "CANONICAL_UNIVERSE_COUNTS_COMPLETE_EXPLICIT"
+}
+```

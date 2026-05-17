@@ -1,0 +1,101 @@
+# V1.45.1 Ablation Plan
+
+- Experiments planned: 5
+
+## Data Preview
+
+```json
+{
+  "plan": [
+    {
+      "experiment_name": "all_allowed_features",
+      "included_families": [
+        "microstructure",
+        "price_return",
+        "regime_proxy",
+        "trend_momentum",
+        "volatility",
+        "volume_liquidity",
+        "alpha_score_family",
+        "other_remaining"
+      ],
+      "excluded_families": [],
+      "hypothesis": "Full feature set baseline.",
+      "allowed_by_contract": true,
+      "no_trading_rule": true
+    },
+    {
+      "experiment_name": "raw_only",
+      "included_families": [
+        "microstructure",
+        "price_return",
+        "volatility",
+        "volume_liquidity"
+      ],
+      "excluded_families": [
+        "regime_proxy",
+        "trend_momentum",
+        "alpha_score_family",
+        "other_remaining"
+      ],
+      "hypothesis": "Test performance without derived alpha or regime features.",
+      "allowed_by_contract": true,
+      "no_trading_rule": true
+    },
+    {
+      "experiment_name": "alpha_only",
+      "included_families": [
+        "alpha_score_family"
+      ],
+      "excluded_families": [
+        "microstructure",
+        "price_return",
+        "regime_proxy",
+        "trend_momentum",
+        "volatility",
+        "volume_liquidity",
+        "other_remaining"
+      ],
+      "hypothesis": "Measure pure alpha score signal.",
+      "allowed_by_contract": true,
+      "no_trading_rule": true
+    },
+    {
+      "experiment_name": "raw_without_microstructure",
+      "included_families": [
+        "price_return",
+        "regime_proxy",
+        "trend_momentum",
+        "volatility",
+        "volume_liquidity",
+        "other_remaining"
+      ],
+      "excluded_families": [
+        "microstructure",
+        "alpha_score_family"
+      ],
+      "hypothesis": "Measure sensitivity to microstructure noise.",
+      "allowed_by_contract": true,
+      "no_trading_rule": true
+    },
+    {
+      "experiment_name": "raw_plus_regime_interactions",
+      "included_families": [
+        "microstructure",
+        "price_return",
+        "volatility",
+        "volume_liquidity"
+      ],
+      "excluded_families": [
+        "regime_proxy",
+        "trend_momentum",
+        "alpha_score_family",
+        "other_remaining"
+      ],
+      "hypothesis": "Test if regime interactions add value to raw features.",
+      "allowed_by_contract": true,
+      "no_trading_rule": true
+    }
+  ]
+}
+```

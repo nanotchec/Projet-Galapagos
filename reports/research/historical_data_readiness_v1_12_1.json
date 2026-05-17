@@ -1,0 +1,31 @@
+{
+  "version": "V1.12.1",
+  "profile": "4h",
+  "timeframe": "4h",
+  "dry_run": false,
+  "download_started": false,
+  "local_path": "data/silver/ohlcv/binance/BTCUSDT/4h/BTCUSDT_4h_combined.csv",
+  "available": true,
+  "bars": 9486,
+  "start_timestamp": "2022-01-01 00:00:00+00:00",
+  "end_timestamp": "2026-04-30 20:00:00+00:00",
+  "missing": [],
+  "ohlcv_download": {
+    "command": [
+      "<USER_ROOT>/miniconda3/bin/python",
+      "scripts/download_binance_public_ohlcv.py",
+      "--symbol",
+      "BTCUSDT",
+      "--market",
+      "futures_um",
+      "--interval",
+      "4h",
+      "--years",
+      "5"
+    ],
+    "exit_code": 0,
+    "stdout_preview": "{\n  \"version\": \"V1.12\",\n  \"generated_at_utc\": \"2026-05-04T17:22:22.322455+00:00\",\n  \"dry_run\": false,\n  \"download_started\": true,\n  \"status\": \"available\",\n  \"planned_files\": 53,\n  \"downloaded_files\": 52,\n  \"unavailable_files\": 1,\n  \"combined_rows\": 9486,\n  \"combined_path\": \"data/silver/ohlcv/binance/BTCUSDT/4h/BTCUSDT_4h_combined.csv\",\n  \"unavailable_preview\": [\n    {\n      \"url\": \"https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/4h/BTCUSDT-4h-2026-05.zip\",\n      \"raw_path\": \"data/raw/binance_public/futures_um/BTCUSDT/4h/BTCUSDT-4h-2026-05.zip\",\n      \"silver_path\": \"data/silver/ohlcv/binance/BTCUSDT/4h/BTCUSDT_4h_2026_05.csv\",\n      \"exists\": false,\n      \"error\": \"HTTP 404\"\n    }\n  ]\n}\n",
+    "stderr_preview": ""
+  },
+  "note": "Readiness locale; telechargements longs seulement via flags controles."
+}

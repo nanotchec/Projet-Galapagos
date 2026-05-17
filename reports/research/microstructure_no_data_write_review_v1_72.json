@@ -1,0 +1,10 @@
+{
+  "previous_no_data_directory_writes": true,
+  "previous_dataset_created": true,
+  "previous_parquet_created": true,
+  "previous_csv_created": true,
+  "previous_sqlite_created": true,
+  "previous_jsonl_created": true,
+  "previous_db_created": true,
+  "no_data_write_review_passed": true
+}

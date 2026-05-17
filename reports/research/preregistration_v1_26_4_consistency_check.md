@@ -1,0 +1,15 @@
+# Preregistration V1 26 4 Consistency Check
+
+```json
+{
+  "version": "v1.26.4",
+  "status": "PREREGISTRATION_REPORTS_CONSISTENT_COMPLETE_WITH_TIE_BREAK_WARNING",
+  "issues": [],
+  "required_files_checked": [
+    "preregistered_signal_validation_protocol_v1_26_4",
+    "frozen_filter_definition_v1_26_4",
+    "preregistered_protocol_completeness_audit_v1_26_4",
+    "v1_26_4_recommendation"
+  ]
+}
+```

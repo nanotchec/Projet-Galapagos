@@ -1,0 +1,8 @@
+{
+  "version": "V1.96",
+  "safety_check_passed": true,
+  "safety_issues": [],
+  "reports_only": true,
+  "no_real_trading": true,
+  "real_orders_possible": false
+}

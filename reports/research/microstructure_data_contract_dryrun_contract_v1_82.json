@@ -1,0 +1,44 @@
+{
+  "version": "V1.82",
+  "theoretical_paths": [
+    {
+      "symbol": "BTCUSDT",
+      "date": "2026-05-15",
+      "theoretical_path": "data/microstructure/symbol=BTCUSDT/date=2026-05-15/data.parquet",
+      "status": "SIMULATED_NOT_CREATED"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "date": "2026-05-15",
+      "theoretical_path": "data/microstructure/symbol=ETHUSDT/date=2026-05-15/data.parquet",
+      "status": "SIMULATED_NOT_CREATED"
+    }
+  ],
+  "schema": {
+    "timestamp": "datetime64[ns]",
+    "symbol": "string",
+    "bid_price": "float64",
+    "ask_price": "float64",
+    "bid_size": "float64",
+    "ask_size": "float64",
+    "trade_price": "float64",
+    "trade_size": "float64",
+    "regime_label": "int32"
+  },
+  "mandatory_fields": [
+    "timestamp",
+    "symbol",
+    "bid_price",
+    "ask_price"
+  ],
+  "partition_keys": [
+    "symbol",
+    "date"
+  ],
+  "manifest_template": {
+    "version": "V1.82",
+    "type": "MICROSTRUCTURE_TINY_CONTRACT",
+    "materialization_status": "DRY_RUN_REPORTS_ONLY",
+    "future_approval_required": true
+  }
+}

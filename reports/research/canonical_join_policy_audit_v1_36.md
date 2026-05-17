@@ -1,0 +1,15 @@
+# Canonical Universe Join Policy Audit - V1.36
+
+```json
+{
+  "join_keys": [
+    "timestamp"
+  ],
+  "join_type": "inner",
+  "rows_before_join": 171648,
+  "rows_after_join": 171648,
+  "dropped_rows": 0,
+  "dropped_rows_pct": 0.0,
+  "join_policy_status": "JOIN_POLICY_EXPLICIT_AND_REPRODUCIBLE"
+}
+```

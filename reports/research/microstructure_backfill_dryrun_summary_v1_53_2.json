@@ -1,0 +1,69 @@
+{
+  "version": "V1.53.2",
+  "previous_base": "V1.53.1",
+  "microstructure_data_enrichment_base_version": "V1.52",
+  "microstructure_quality_mask_base_version": "V1.51.1",
+  "canonical_base_version": "V1.37.2",
+  "input_guard_status": "INPUT_VALID_FOR_DRY_RUN",
+  "source_adapter_contract_status": "SOURCE_ADAPTER_CONTRACT_DEFINED_NO_NETWORK",
+  "backfill_request_plan_status": "BACKFILL_REQUEST_PLAN_BUILT_DRY_RUN",
+  "dry_run_schedule_status": "DRY_RUN_SCHEDULE_CREATED",
+  "manifest_schema_status": "MANIFEST_SCHEMA_DEFINED",
+  "expected_file_layout_status": "EXPECTED_FILE_LAYOUT_DEFINED",
+  "causal_timestamp_policy_status": "CAUSAL_TIMESTAMP_POLICY_DEFINED",
+  "collection_safety_guard_status": "COLLECTION_SAFETY_GUARD_ACTIVE",
+  "post_collection_qc_plan_status": "POST_COLLECTION_QC_PLAN_DEFINED",
+  "data_contract_alignment_status": "DATA_CONTRACT_ALIGNED_DRY_RUN",
+  "dry_run_audit_status": "DRY_RUN_AUDIT_PASSED",
+  "recommendation_status": "RECOMMENDATION_GENERATED",
+  "priority_backfill_periods": [
+    "2026-01-01 to 2026-12-31"
+  ],
+  "priority_symbols": [
+    "BTCUSDT"
+  ],
+  "priority_timeframes": [
+    "1m"
+  ],
+  "source_candidates": [
+    "binance_public_data_archives",
+    "bybit_v5_api"
+  ],
+  "required_fields_covered_by_plan": [],
+  "missing_fields_after_plan": [],
+  "qc_checks_planned": [
+    "missingness_check",
+    "gap_detection",
+    "duplicate_timestamp_check",
+    "monotonicity_check",
+    "timezone_utc_check",
+    "row_count_reconciliation_check",
+    "schema_validation_check"
+  ],
+  "data_contract_aligned": true,
+  "status": "RECOMMENDATION_GENERATED",
+  "recommended_next_step": "implement microstructure collector with network disabled tests first",
+  "final_verdict": "MICROSTRUCTURE_BACKFILL_DRYRUN_PLAN_READY",
+  "evidence_classification": "INFRASTRUCTURE_ONLY",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false,
+  "dry_run_only": true,
+  "real_collection_executed": false,
+  "external_data_downloaded": false,
+  "external_api_called": false,
+  "new_data_files_created": false,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "migrated_from": "V1.53.1",
+  "migration_reason": "project state alignment fix",
+  "all_json_files_parseable": true,
+  "invalid_json_files": [],
+  "legacy_invalid_json_removed": true
+}

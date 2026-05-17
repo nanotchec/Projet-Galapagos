@@ -1,0 +1,25 @@
+{
+  "dataset_id": "binance_public_BTCUSDT_4h_v1_12_1",
+  "source": "binance_public_archive",
+  "symbol": "BTCUSDT",
+  "timeframe": "4h",
+  "start_timestamp": "2022-01-01 00:00:00+00:00",
+  "end_timestamp": "2026-04-30 20:00:00+00:00",
+  "rows": 9486,
+  "file_path": "data/silver/ohlcv/binance/BTCUSDT/4h/BTCUSDT_4h_combined.csv",
+  "data_hash": "6c92cbb7ba22978352e9c7343bcbf4f6a39688b44008dd294f78e47538bb8495",
+  "downloaded_at_utc": "2026-05-04T17:22:22.319510+00:00",
+  "created_at_utc": "2026-05-04T17:22:22.319510+00:00",
+  "source_url_or_endpoint": "https://data.binance.vision",
+  "request_params_redacted": {
+    "symbol": "BTCUSDT",
+    "market": "futures_um",
+    "interval": "4h",
+    "years": 5
+  },
+  "schema_version": "v1",
+  "data_mode": "research",
+  "causal_note": "Features must be joined only after available_timestamp.",
+  "known_limitations": [],
+  "quality_status": "available"
+}

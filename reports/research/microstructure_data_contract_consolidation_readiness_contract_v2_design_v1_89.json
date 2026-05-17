@@ -1,0 +1,44 @@
+{
+  "version": "V1.89",
+  "data_contract_v2_designed": true,
+  "consolidation_plan_created": true,
+  "consolidation_plan_reports_only": true,
+  "consolidation_plan_theoretical_paths_only": true,
+  "future_consolidation_requires_v1_89_approval": true,
+  "future_consolidation_allowed_root": "data/research/microstructure_contract_materialization/v1_90/",
+  "future_consolidation_expected_files": [
+    "data/research/microstructure_contract_materialization/v1_90/consolidated_manifest.json",
+    "data/research/microstructure_contract_materialization/v1_90/consolidated_schema_snapshot.json",
+    "data/research/microstructure_contract_materialization/v1_90/consolidated_quality_summary.json"
+  ],
+  "future_consolidation_max_files": 3,
+  "future_consolidation_max_bytes": 25000,
+  "future_consolidation_allowed_extensions": [
+    ".json"
+  ],
+  "future_consolidation_forbidden_extensions": [
+    ".parquet",
+    ".csv",
+    ".sqlite",
+    ".jsonl",
+    ".db"
+  ],
+  "future_consolidation_no_network": true,
+  "future_consolidation_no_ml": true,
+  "future_consolidation_no_trading": true,
+  "future_consolidation_no_full_dataset": true,
+  "risk_report": {
+    "version": "V1.89",
+    "risk_status": "RISKS_DOCUMENTED_NO_EXECUTION",
+    "primary_risks": [
+      "future write path drift",
+      "future file count expansion",
+      "future accidental dataset materialization"
+    ],
+    "mitigations": [
+      "V1.90 must remain under the approved root",
+      "V1.90 must write at most three JSON files",
+      "V1.90 must rerun physical hash checks before any write"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": "V1.94",
+  "available_ts_policy_defined": true,
+  "decision_ts_policy_defined": true,
+  "event_ts_policy_defined": true,
+  "feature_available_ts_lte_decision_ts_rule_defined": true,
+  "no_lookahead_policy_defined": true,
+  "future_information_fields_forbidden": true,
+  "target_like_fields_forbidden": true,
+  "label_like_fields_forbidden": true,
+  "prediction_like_fields_forbidden": true,
+  "leakage_detected": false,
+  "lookahead_detected": false,
+  "forbidden_feature_terms_detected": false,
+  "forbidden_feature_terms_count": 0,
+  "forbidden_feature_term_occurrences": []
+}

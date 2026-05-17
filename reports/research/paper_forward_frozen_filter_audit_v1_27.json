@@ -1,0 +1,5 @@
+{
+  "status": "FROZEN_FILTER_AUDIT_PASSED",
+  "filter_name": "low_frequency_strict_score",
+  "policy": "horizon_only"
+}

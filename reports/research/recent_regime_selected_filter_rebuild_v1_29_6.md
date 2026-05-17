@@ -1,0 +1,38 @@
+# Recent Regime Selected Filter Rebuild V1 29 6
+
+```json
+{
+  "raw_prediction_rows": 171648,
+  "dedup_policy_used": "first_stable_per_timestamp",
+  "deduped_rows": 5087,
+  "selected_count_final": 225,
+  "expected_v1_29_3_selected_count": 225,
+  "selected_count_matches_v1_29_3": true,
+  "selection_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name",
+    "predicted_probability",
+    "predicted_label"
+  ],
+  "outcome_columns": [
+    "actual_target",
+    "forward_return_6bar",
+    "forward_return_12bar",
+    "cost_adjusted_forward_return"
+  ],
+  "forbidden_columns_in_selection": [
+    "forward_return",
+    "net_pnl",
+    "gross_pnl",
+    "exit_reason",
+    "future",
+    "actual_target"
+  ],
+  "forbidden_columns_found": [],
+  "filters_received_outcomes": false,
+  "rebuild_status": "REBUILD_COMPLETE_NO_SELECTION_LEAKAGE"
+}
+```

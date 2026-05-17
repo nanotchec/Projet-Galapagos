@@ -1,0 +1,9 @@
+{
+  "status": "MICROSTRUCTURE_REGIME_DIAGNOSTIC_INPUT_GUARD_PASSED",
+  "issues": [],
+  "selected_labels": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ],
+  "row_count": 171648
+}

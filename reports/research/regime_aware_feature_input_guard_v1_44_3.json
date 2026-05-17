@@ -1,0 +1,19 @@
+{
+  "version": "V1.44.3",
+  "previous_base": "V1.44.2",
+  "regime_feature_base_version": "V1.43.4",
+  "payoff_target_base_version": "V1.42.3",
+  "payoff_failure_base_version": "V1.41",
+  "ev_degradation_base_version": "V1.39",
+  "canonical_base_version": "V1.37.2",
+  "input_guard_status": "REGIME_AWARE_FEATURE_INPUT_GUARD_PASSED",
+  "passed": true,
+  "issues": [],
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "no_preregistration_yet": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "evidence_classification": "RESEARCH_ONLY"
+}

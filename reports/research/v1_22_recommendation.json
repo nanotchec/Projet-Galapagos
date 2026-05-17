@@ -1,0 +1,8 @@
+{
+  "version": "v1.22",
+  "verdict": "ALL_POLICIES_NEGATIVE_AFTER_COSTS_CONTINUOUS",
+  "ready_for_reviewer": false,
+  "holdout": "not executed",
+  "primary_recommendation": "Continue expansion",
+  "gap_aware_required": false
+}

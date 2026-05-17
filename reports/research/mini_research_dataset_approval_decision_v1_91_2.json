@@ -1,0 +1,11 @@
+{
+  "version": "V1.91.2",
+  "approval_phrase_expected_exact": "J'approuve V1.92 mini research dataset seed ultra-borné, sans réseau, sans dataset complet, sans ML, sans trading.",
+  "approval_phrase_provided": "J'approuve V1.92 mini research dataset seed ultra-borné, sans réseau, sans dataset complet, sans ML, sans trading.",
+  "approval_phrase_match": true,
+  "human_approval_granted": true,
+  "v1_92_authorized": true,
+  "authorized_future_version": "V1.92",
+  "authorized_future_scope": "mini_research_dataset_seed_ultra_bounded_no_network_no_full_dataset_no_ml_no_trading",
+  "v1_92_execution_attempted": false
+}

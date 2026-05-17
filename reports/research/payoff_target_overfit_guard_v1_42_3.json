@@ -1,0 +1,13 @@
+{
+  "status": "PAYOFF_TARGET_OVERFIT_RISK_MODERATE",
+  "horizons_tested_count": 3,
+  "target_definitions_count": 6,
+  "combinations_tested_count": 18,
+  "metric_count": 10,
+  "multiple_testing_risk": "MODERATE",
+  "evidence_classification": "EXPLORATORY_ONLY",
+  "preregistration_allowed": false,
+  "paper_live_allowed": false,
+  "no_strategy_validated": true,
+  "version": "V1.42.3"
+}

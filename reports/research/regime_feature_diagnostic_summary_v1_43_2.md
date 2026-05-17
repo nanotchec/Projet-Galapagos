@@ -1,0 +1,52 @@
+# Regime Feature Diagnostic Summary V1.43.2
+
+Verdict: **REGIME_FEATURE_FAILURE_DRIVER_IDENTIFIED**
+
+### Summary
+```json
+{
+  "final_verdict": "REGIME_FEATURE_FAILURE_DRIVER_IDENTIFIED",
+  "primary_feature_failure_driver": "PREDICTIVE_POWER_DECAY_WITH_SIGN_FLIPS",
+  "secondary_feature_failure_drivers": [
+    "REGIME_DISTRIBUTION_SHIFT"
+  ],
+  "recommended_next_step": "research regime-aware feature set with stability constraints",
+  "evidence_classification": "DIAGNOSTIC_ONLY",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "version": "V1.43.2",
+  "payoff_target_base_version": "V1.42.3",
+  "payoff_failure_base_version": "V1.41",
+  "ev_degradation_base_version": "V1.39",
+  "canonical_base_version": "V1.37.2",
+  "purpose": "Regime-aware feature failure diagnostic",
+  "consistency_check_status": "REGIME_FEATURE_DIAGNOSTIC_REPORTS_CONSISTENT_DIAGNOSTIC_ONLY",
+  "input_guard_status": "REGIME_FEATURE_INPUT_GUARD_PASSED",
+  "feature_inventory_status": "REGIME_FEATURE_INVENTORY_COMPLETE_WITH_SOURCE_SEMANTICS",
+  "feature_shift_status": "REGIME_FEATURE_SHIFT_DETECTED_2026",
+  "predictive_power_status": "FEATURE_PREDICTIVE_POWER_DECAY_2026",
+  "regime_definition_status": "REGIME_DEFINITION_AVAILABLE",
+  "regime_coverage_status": "REGIME_COVERAGE_SHIFT_2026",
+  "regime_feature_interaction_status": "REGIME_FEATURE_INTERACTION_DRIFT_DETECTED",
+  "failure_slice_status": "FAILURE_SLICE_2026_FEATURE_REGIME_PATTERN_FOUND",
+  "feature_stability_scorecard_status": "FEATURE_STABILITY_SCORECARD_COMPLETE",
+  "recommended_raw_feature_families_for_v1_44": [
+    "alpha_score_or_model_output"
+  ],
+  "recommended_alpha_feature_families_for_v1_44": [
+    "alpha_score_or_model_output"
+  ],
+  "diagnostic_only_model_output_features": [
+    "predicted_probability",
+    "calibrated_probability_rebuilt",
+    "calibrated_probability",
+    "predicted_probability_calibrated"
+  ],
+  "avoid_feature_families_for_v1_44": [],
+  "no_new_filter": true,
+  "no_preregistration_yet": true,
+  "holdout_executed": false,
+  "codex_cli_called": false
+}
+```

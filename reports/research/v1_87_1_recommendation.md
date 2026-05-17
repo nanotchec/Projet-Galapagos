@@ -1,0 +1,9 @@
+# Recommendation v1_87_1
+
+```json
+{
+  "version": "V1.87.1",
+  "verdict": "V1_87_1_PORTABLE_STRICT_EXTENSION_VALIDATION_PASSED",
+  "next_step": "external_review"
+}
+```

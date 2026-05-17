@@ -1,0 +1,7 @@
+{
+  "protocol_path": "reports/research/preregistered_signal_validation_protocol_v1_26_6.json",
+  "protocol_hash_before": "51f058f6bc5edfddebd0d8281a51d1dd350e354ac4da18d17e20416a43570127",
+  "protocol_hash_after": "51f058f6bc5edfddebd0d8281a51d1dd350e354ac4da18d17e20416a43570127",
+  "protocol_mutated_during_run": false,
+  "status": "PROTOCOL_IMMUTABILITY_PASSED"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "dry_run",
+  "source": "binance",
+  "symbol": "BTCUSDT",
+  "timeframe": "5m",
+  "requested_days": 10,
+  "output_path": "data/silver/intrabar/binance/BTCUSDT/5m/history_5m_v1_20.parquet",
+  "manifest_path": "data/manifests/intrabar/binance_BTCUSDT_5m_history_manifest.json"
+}

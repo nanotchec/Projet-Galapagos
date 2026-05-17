@@ -1,0 +1,8 @@
+{
+  "ranking_quality_status": "RANKING_IMPROVES_RELATIVE_BASELINES_BUT_EDGE_NEGATIVE",
+  "spearman_2026": -0.015802822899487867,
+  "beats_probability_baseline": true,
+  "beats_ev_proxy_baseline": true,
+  "best_candidate_2026_metric": -0.004918998589848299,
+  "cost_vs_gross_status": "PAYOFF_OBJECTIVE_EDGE_NEGATIVE_BEFORE_COSTS"
+}

@@ -1,0 +1,26 @@
+{
+  "version": "V1.84",
+  "source": "reports_only_v1_82_4_and_v1_83",
+  "network_executed": false,
+  "ml_signal_validation_executed": false,
+  "trading_allowed": false,
+  "artifact": "preview_records",
+  "preview_records_count": 3,
+  "preview_records": [
+    {
+      "record_id": "v1_84_preview_001",
+      "source": "dryrun_report",
+      "materialized": false
+    },
+    {
+      "record_id": "v1_84_preview_002",
+      "source": "approval_report",
+      "materialized": false
+    },
+    {
+      "record_id": "v1_84_preview_003",
+      "source": "contract_snapshot",
+      "materialized": false
+    }
+  ]
+}

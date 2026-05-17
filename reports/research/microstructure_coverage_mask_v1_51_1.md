@@ -1,0 +1,8 @@
+# Microstructure Coverage Mask
+
+```json
+{
+  "mask_count": 8766,
+  "blocked_count": 720
+}
+```

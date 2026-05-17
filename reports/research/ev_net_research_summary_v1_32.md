@@ -1,0 +1,28 @@
+# Ev Net Research Summary - v1.32
+
+```json
+{
+  "ev_proxy_status": "EV_PROXY_BUILD_COMPLETED",
+  "cost_proxy_status": "COST_PROXY_APPLIED_10BPS",
+  "causal_safety_status": "EV_FILTER_CAUSAL_SAFETY_PASSED",
+  "filters_tested_count": 4,
+  "eligible_filters_count": 4,
+  "best_filter_observed": "filter_prob_65_ev_pos",
+  "best_filter_net_mean_pnl": 0.013909152272994588,
+  "best_filter_selected_count": 946,
+  "beats_monthly_random_p95": true,
+  "recent_2026_pnl": 0,
+  "temporal_status": "EVALUATED_ALL_WINDOWS",
+  "regime_status": "REGIME_ANALYSIS_COMPLETED",
+  "overfit_risk": "LOW",
+  "final_verdict": "EV_NET_RESEARCH_RECENT_WINDOW_WEAK",
+  "recommended_next_step": "improve alpha features / model retraining research",
+  "evidence_classification": "EXPLORATORY_ONLY",
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_money_deployment": true,
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}
+```

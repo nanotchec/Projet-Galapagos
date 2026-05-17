@@ -1,0 +1,16 @@
+{
+  "version": "V1.12.2",
+  "profile": "4h",
+  "dataset_path": "data/gold/research_dataset/BTC/4h/research_dataset.parquet",
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "signal_count": 3112,
+  "random_count": 3112,
+  "permutation_test": {
+    "observed_delta": 0.00048077463663295767,
+    "p_value": 0.4930139720558882,
+    "permutations": 500
+  },
+  "verdict": "NO_EDGE_DETECTED",
+  "warning": "Baseline aleatoire approximative; ce n'est pas une preuve statistique finale."
+}

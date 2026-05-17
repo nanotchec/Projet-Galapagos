@@ -1,0 +1,14 @@
+{
+  "version": "V1.92.1",
+  "safety_check_passed": true,
+  "safety_issues": [],
+  "network_executed": false,
+  "dataset_created": false,
+  "trading_allowed": false,
+  "real_orders_possible": false,
+  "no_real_trading": true,
+  "no_paper_live": true,
+  "labels_created": false,
+  "targets_created": false,
+  "predictions_created": false
+}

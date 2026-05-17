@@ -1,0 +1,10 @@
+# Microstructure Bounded Request Guard
+
+```json
+{
+  "max_request_count": 10,
+  "requests_executed_count": 10,
+  "bounded_request_limit_enforced": true,
+  "limit_reached": true
+}
+```

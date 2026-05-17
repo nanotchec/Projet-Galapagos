@@ -1,0 +1,8 @@
+{
+  "version": "V1.64",
+  "write_gate_enabled": true,
+  "data_writes_blocked": false,
+  "blocked_paths": [],
+  "no_data_directory_writes": true,
+  "status": "MICROSTRUCTURE_WRITE_GATE_ACTIVE"
+}

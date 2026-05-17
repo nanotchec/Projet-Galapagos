@@ -1,0 +1,7 @@
+{
+  "status": "PASSED",
+  "write_block_status": "WRITE_BLOCK_PASSED",
+  "forbidden_files_detected": [],
+  "data_directory_writes": false,
+  "allowed_reporting_only": true
+}

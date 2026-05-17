@@ -1,0 +1,7 @@
+{
+  "strategy_link_allowed": false,
+  "trading_allowed": false,
+  "no_strategy_validated": true,
+  "no_real_trading": true,
+  "no_strategy_linkage_review_passed": true
+}

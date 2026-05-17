@@ -1,0 +1,38 @@
+# Summary Report v1_87
+
+```json
+{
+  "version": "V1.87",
+  "version_suffix": "v1_87",
+  "previous_validated_version": "V1.86",
+  "approval_source_version": "V1.86",
+  "human_approval_granted": true,
+  "approval_phrase_match": true,
+  "approval_source_verified": true,
+  "v1_87_authorized": true,
+  "extension_materialization_executed": true,
+  "tiny_extension_only": true,
+  "full_dataset_created": false,
+  "network_executed": false,
+  "data_directory_writes_allowed": true,
+  "data_write_approved": true,
+  "unapproved_data_write_detected": false,
+  "total_new_data_files_created": 2,
+  "total_data_bytes_written": 430,
+  "created_file_paths": [
+    "data/research/microstructure_contract_materialization/v1_87/extension_manifest.json",
+    "data/research/microstructure_contract_materialization/v1_87/extension_quality_summary.json"
+  ],
+  "existing_v1_84_files_modified": false,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "jsonl_created": false,
+  "db_created": false,
+  "dataset_created": false,
+  "trading_allowed": false,
+  "real_orders_possible": false,
+  "ml_signal_validation_executed": false,
+  "final_verdict": "V1_87_TINY_MATERIALIZATION_EXTENSION_ULTRA_BOUNDED_PASSED"
+}
+```

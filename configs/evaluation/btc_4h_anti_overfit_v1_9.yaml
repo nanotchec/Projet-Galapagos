@@ -1,0 +1,28 @@
+evaluation_name: btc_4h_anti_overfit_v1_9
+profile: galapagos_4h
+asset: BTC/USD
+timeframe: 4h
+source_policies:
+  - state_aware_breakout
+  - state_aware_momentum
+min_bars_per_window: 80
+warmup_bars: 50
+min_spacing_bars: 3
+
+windows:
+  calibration:
+    label: calibration
+    max_candidates: 20
+    purpose: "debug seulement, autorisé pour inspection"
+  validation_1:
+    label: validation_1
+    max_candidates: 20
+    purpose: "évaluation intermédiaire"
+  validation_2:
+    label: validation_2
+    max_candidates: 20
+    purpose: "évaluation intermédiaire"
+  holdout:
+    label: holdout
+    max_candidates: 20
+    purpose: "test final intouchable, ne pas utiliser pour modifier le prompt"

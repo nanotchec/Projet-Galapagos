@@ -1,0 +1,15 @@
+# Microstructure Tiny Network Endpoint Policy
+
+Version: v1.71
+
+```json
+{
+  "source": "Binance Public API",
+  "symbol": "BTCUSDT",
+  "timeframe": "1m",
+  "endpoint_url": "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=10",
+  "authentication_required": false,
+  "endpoint_allowed": true,
+  "policy_classification": "PUBLIC_UNAUTHENTICATED_TECH_PREFLIGHT"
+}
+```

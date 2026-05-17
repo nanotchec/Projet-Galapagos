@@ -1,0 +1,45 @@
+version: V1.10.4
+evaluation_name: btc_4h_long_only_stability_v1_10_4
+profile: galapagos_4h
+asset: BTC/USD
+timeframe: 4h
+source_policies:
+  - state_aware_breakout
+  - state_aware_momentum
+min_bars_per_window: 80
+warmup_bars: 50
+min_spacing_bars: 3
+
+trade_constraints:
+  allow_long: true
+  allow_short: false
+  short_policy: "fallback_no_trade"
+  allow_hold: true
+  allow_close: true
+
+evaluation:
+  force_close_at_end: true
+  stability_repetitions: 3
+  windows:
+    - calibration
+    - validation_1
+    - validation_2
+  holdout_enabled: false
+
+windows:
+  calibration:
+    label: calibration
+    max_candidates: 20
+    purpose: "stability calibration"
+  validation_1:
+    label: validation_1
+    max_candidates: 20
+    purpose: "stability validation"
+  validation_2:
+    label: validation_2
+    max_candidates: 20
+    purpose: "stability validation"
+  holdout:
+    label: holdout
+    max_candidates: 20
+    purpose: "locked holdout, not executed"

@@ -1,0 +1,17 @@
+# Completeness Audit V1.26.4
+
+```json
+{
+  "version": "v1.26.4",
+  "protocol_locked": true,
+  "filter_definition_complete": true,
+  "has_score_column": true,
+  "has_selection_logic": true,
+  "has_rank_direction": true,
+  "has_temporal_frequency_rule": true,
+  "has_tie_break_rule": true,
+  "tie_break_explicit": false,
+  "causal_only": true,
+  "status": "PREREGISTRATION_PROTOCOL_COMPLETE_WITH_TIE_BREAK_WARNING"
+}
+```

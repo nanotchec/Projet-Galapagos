@@ -1,0 +1,38 @@
+{
+  "canonical_base_version": "V1.37.2",
+  "guard_status": "EV_NET_CANONICAL_INPUT_GUARD_PASSED",
+  "input_path_guard_status": "CANONICAL_INPUT_PATH_GUARD_PASSED",
+  "count_sanity_guard_status": "CANONICAL_COUNT_SANITY_GUARD_PASSED",
+  "selection_dataset_status": "CANONICAL_SELECTION_DATASET_CLEAN",
+  "outcome_dataset_status": "CANONICAL_OUTCOME_DATASET_SEPARATED",
+  "opportunity_index_status": "CANONICAL_OPPORTUNITY_INDEX_DEFINED",
+  "consistency_check_status": "CANONICAL_UNIVERSE_REPORTS_CONSISTENT_REAL_DATA_FORMAL_SPLIT",
+  "raw_prediction_rows": 171648,
+  "raw_prediction_rows_2026": 24360,
+  "selection_dataset_rows": 171648,
+  "selection_dataset_rows_2026": 24360,
+  "outcome_dataset_rows": 171648,
+  "outcome_dataset_rows_2026": 24360,
+  "opportunity_index_rows": 171648,
+  "opportunity_index_rows_2026": 24360,
+  "real_data_enforced": true,
+  "mock_data_detected": false,
+  "path_checks": {
+    "predictions_path": {
+      "path": "data/gold/ml_predictions/BTC/4h/ml_predictions_v1_16_3.parquet",
+      "exists": true,
+      "real_data_enforced": true
+    },
+    "dataset_path": {
+      "path": "data/gold/research_dataset/BTC/4h/research_dataset_with_alpha_scores.parquet",
+      "exists": true,
+      "real_data_enforced": true
+    },
+    "intrabar_path": {
+      "path": "data/silver/intrabar/binance/BTCUSDT/5m/history_5m_v1_22.parquet",
+      "exists": true,
+      "real_data_enforced": true
+    }
+  },
+  "issues": []
+}

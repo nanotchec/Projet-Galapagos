@@ -1,0 +1,12 @@
+{
+  "version": "V1.12",
+  "dry_run": false,
+  "profile": "4h",
+  "rows": 180,
+  "start_timestamp": "2026-03-25 20:00:00+00:00",
+  "end_timestamp": "2026-04-24 16:00:00+00:00",
+  "derivatives_included": false,
+  "macro_included": false,
+  "output_path": "data/gold/research_dataset/BTC/4h/research_dataset.csv",
+  "status": "built"
+}

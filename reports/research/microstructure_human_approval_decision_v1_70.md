@@ -1,0 +1,10 @@
+# Microstructure Human Approval Decision
+
+Version: v1.70
+
+```json
+{
+  "final_verdict": "MICROSTRUCTURE_HUMAN_APPROVAL_INTAKE_PENDING",
+  "next_allowed_phase": "provide_explicit_human_approval_phrase_for_one_request_preflight"
+}
+```

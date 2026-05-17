@@ -1,0 +1,16 @@
+{
+  "version": "V1.64.1",
+  "wrapper_fixture_run_executed": true,
+  "records_processed": 0,
+  "manifest_preview": {
+    "manifest_entries": []
+  },
+  "wrapper_real_execution": false,
+  "status": "MICROSTRUCTURE_NETWORK_DISABLED_WRAPPER_EXECUTED",
+  "microstructure_wrapper_plan_base_version": "V1.63.2",
+  "microstructure_hardened_preflight_review_base_version": "V1.62.1",
+  "microstructure_preflight_hardening_base_version": "V1.61",
+  "canonical_base_version": "V1.37.2",
+  "migrated_from": "V1.64",
+  "migration_reason": "wrapper fixture reporting completeness fix"
+}

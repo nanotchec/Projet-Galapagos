@@ -1,0 +1,18 @@
+{
+  "version": "V1.92.1",
+  "source_versions": [
+    "V1.84",
+    "V1.87.2",
+    "V1.90.1"
+  ],
+  "event_ts": "source_artifact_static",
+  "available_ts": "source_artifact_static",
+  "decision_ts": "v1_92_seed_build_time",
+  "anti_leakage_note": "available_ts must be less than or equal to decision_ts",
+  "artifact": "seed_quality_audit",
+  "source_hashes_verified": true,
+  "json_only": true,
+  "preview_records_count": 3,
+  "bounded_seed_only": true,
+  "prohibited_result_fields_present": false
+}

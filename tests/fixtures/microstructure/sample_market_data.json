@@ -1,0 +1,30 @@
+[
+  {
+    "id": "fix_001",
+    "symbol": "BTCUSDT",
+    "timeframe": "1m",
+    "event_ts": 1715637600000,
+    "available_ts": 1715637601000,
+    "ingest_ts": 1715637602000,
+    "open": 62000.5,
+    "high": 62050.0,
+    "low": 61990.0,
+    "close": 62020.0,
+    "volume": 1.5,
+    "source": "binance"
+  },
+  {
+    "id": "fix_002",
+    "symbol": "ETHUSDT",
+    "timeframe": "1m",
+    "event_ts": 1715637600000,
+    "available_ts": 1715637601000,
+    "ingest_ts": 1715637602000,
+    "open": 2950.2,
+    "high": 2955.0,
+    "low": 2948.0,
+    "close": 2952.5,
+    "volume": 15.0,
+    "source": "binance"
+  }
+]

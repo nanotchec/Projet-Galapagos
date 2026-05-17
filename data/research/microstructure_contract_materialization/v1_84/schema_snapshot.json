@@ -1,0 +1,18 @@
+{
+  "version": "V1.84",
+  "source": "reports_only_v1_82_4_and_v1_83",
+  "network_executed": false,
+  "ml_signal_validation_executed": false,
+  "trading_allowed": false,
+  "artifact": "schema_snapshot",
+  "schema_source": "microstructure_data_contract_dryrun_contract_v1_82_4",
+  "contract_fields": [],
+  "field_count_snapshot": 0,
+  "forbidden_file_types": [
+    "parquet",
+    "csv",
+    "sqlite",
+    "jsonl",
+    "db"
+  ]
+}

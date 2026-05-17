@@ -1,0 +1,74 @@
+{
+  "version": "V1.15.1",
+  "comparisons": [
+    {
+      "window": "train_2022_2023",
+      "test_rows": 2190,
+      "alpha_score_top_10": {
+        "count": 219,
+        "mean_return": 0.007654304749202183,
+        "median_return": 0.0033824697465261178,
+        "hit_rate": 0.5753424657534246,
+        "cost_adjusted_return": 0.004654304749202181,
+        "mfe": 0.1463229844656917,
+        "mae": -0.09425836812305466
+      },
+      "ml_top_10": {
+        "count": 219,
+        "mean_return": 0.013794410524818997,
+        "median_return": 0.013345161243879744,
+        "hit_rate": 0.634703196347032,
+        "cost_adjusted_return": 0.010794410524818995,
+        "mfe": 0.13584335882324283,
+        "mae": -0.1123658387125166
+      }
+    },
+    {
+      "window": "train_2022_2024",
+      "test_rows": 2184,
+      "alpha_score_top_10": {
+        "count": 218,
+        "mean_return": -0.0027783403979794955,
+        "median_return": -0.003258679679950527,
+        "hit_rate": 0.45871559633027525,
+        "cost_adjusted_return": -0.0057783403979794964,
+        "mfe": 0.056874044475952124,
+        "mae": -0.08335423854369883
+      },
+      "ml_top_10": {
+        "count": 218,
+        "mean_return": 0.0054756174635983024,
+        "median_return": -0.0018675237393908084,
+        "hit_rate": 0.47706422018348627,
+        "cost_adjusted_return": 0.002475617463598301,
+        "mfe": 0.11771348855747821,
+        "mae": -0.07462784684381973
+      }
+    },
+    {
+      "window": "train_2022_2025",
+      "test_rows": 707,
+      "alpha_score_top_10": {
+        "count": 70,
+        "mean_return": -0.007715780520384668,
+        "median_return": -0.003523161705804967,
+        "hit_rate": 0.4142857142857143,
+        "cost_adjusted_return": -0.010715780520384669,
+        "mfe": 0.03975764215327349,
+        "mae": -0.0744656850620139
+      },
+      "ml_top_10": {
+        "count": 70,
+        "mean_return": -0.02125813822352222,
+        "median_return": -0.018341312585509695,
+        "hit_rate": 0.34285714285714286,
+        "cost_adjusted_return": -0.024258138223522227,
+        "mfe": 0.10157933832897759,
+        "mae": -0.16986520960645635
+      }
+    }
+  ],
+  "ml_beats_alpha_score_and_costs": true,
+  "holdout_executed": false,
+  "codex_cli_called": false
+}

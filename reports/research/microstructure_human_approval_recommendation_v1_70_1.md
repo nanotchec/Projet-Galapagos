@@ -1,0 +1,9 @@
+# Microstructure Human Approval Recommendation
+
+Version: v1.70.1
+
+```json
+{
+  "recommended_next_step": "provide exact approval phrase in approval_phrase_input if you want to authorize V1.71 one-request network preflight"
+}
+```

@@ -1,0 +1,17 @@
+{
+  "score_shifts": {
+    "predicted_probability_calibrated": {
+      "history_mean": 0.30335953555658624,
+      "recent_mean": 0.3081567131679,
+      "shift_sigma": 0.02277715588815524,
+      "ks_approx": 0.015813505260390725
+    },
+    "ev_calibrated_proxy": {
+      "history_mean": -0.0022334667078441547,
+      "recent_mean": -0.0036249837479711234,
+      "shift_sigma": -0.15194255128079037,
+      "ks_approx": -0.6230301240846009
+    }
+  },
+  "status": "SCORE_DISTRIBUTION_STABLE_OUTCOME_DEGRADED"
+}

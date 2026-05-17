@@ -1,0 +1,20 @@
+{
+  "label_noise_status": "PAYOFF_LABEL_NOISE_DIAGNOSTIC_LIMITED",
+  "pre_2026": {
+    "count": 147288,
+    "mean_abs_return": 0.025742072250612816,
+    "std_return": 0.03444186195357956,
+    "near_zero_rate": 0.0339742545217533,
+    "sign_flip_rate": 0.014339253707022975,
+    "signal_to_noise_proxy": 0.7474065002031904
+  },
+  "2026": {
+    "count": 24360,
+    "mean_abs_return": 0.02702960593911582,
+    "std_return": 0.03577022882456242,
+    "near_zero_rate": 0.030541871921182268,
+    "sign_flip_rate": 0.011822660098522168,
+    "signal_to_noise_proxy": 0.7556452969881492
+  },
+  "threshold": 0.001
+}

@@ -1,0 +1,39 @@
+# Summary - V1.34.1
+
+```json
+{
+  "source_version": "V1.32.4",
+  "rebuild_version": "v1.34.1",
+  "selected_filter": "filter_ev_gt_cost_buffer",
+  "source_recent_2026_selected_count": 12691,
+  "rebuild_recent_2026_selected_count": 8939,
+  "count_delta": -3752,
+  "source_count_match": false,
+  "source_count_replay_status": "SOURCE_COUNT_REPLAY_FAILED",
+  "any_path_matches_source": false,
+  "any_path_matches_rebuild": true,
+  "timestamp_alignment_status": "TIMESTAMP_ALIGNMENT_OK",
+  "duplicate_policy_status": "DUPLICATE_POLICY_PLAUSIBLE_BUT_NOT_PROVEN",
+  "duplicate_policy_explains_exact_delta": false,
+  "join_path_status": "JOIN_PATH_MISMATCH_LOCALIZED",
+  "warmup_policy_status": "WARMUP_NOT_EXPLANATORY",
+  "outcome_availability_status": "OUTCOME_FILTERING_PARTIAL_EXPLANATION",
+  "filter_logic_status": "FILTER_LOGIC_MATCHES_REBUILD_ONLY",
+  "count_reconciliation_status": "COUNT_RECONCILIATION_SOURCE_NOT_REPLAYED",
+  "primary_mismatch_driver": "TRADE_UNIT_MISMATCH",
+  "secondary_mismatch_drivers": [],
+  "confidence_level": "LOW",
+  "can_reconcile_source_count": false,
+  "can_reconcile_rebuild_count": true,
+  "final_verdict": "UNIVERSE_MISMATCH_SOURCE_NOT_REPLAYED",
+  "recommended_next_step": "formalize trade unit policy and rerun V1.32/V1.33",
+  "evidence_classification": "DIAGNOSTIC_ONLY",
+  "no_new_filter": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_money_deployment": true,
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}
+```

@@ -1,0 +1,14 @@
+# Microstructure Two Request Response Comparison
+
+Version: v1.74
+
+```json
+{
+  "response_comparison_created": true,
+  "response_schema_consistent": true,
+  "timestamp_preview_available": true,
+  "request_1_monotonic": true,
+  "request_2_monotonic": true,
+  "overlap_detected": true
+}
+```

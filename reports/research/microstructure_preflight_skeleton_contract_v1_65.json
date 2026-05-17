@@ -1,0 +1,19 @@
+{
+  "interface": "ICollectorPreflight",
+  "capabilities": [
+    "load_fixtures",
+    "preview_manifest",
+    "validate_schema",
+    "detect_lookahead",
+    "check_timestamp_causality"
+  ],
+  "security_gates": [
+    "NETWORK_GATE_MANDATORY",
+    "WRITE_GATE_MANDATORY",
+    "FIXTURE_ONLY_MANDATORY"
+  ],
+  "outputs": [
+    "manifest_preview.json",
+    "safety_audit.json"
+  ]
+}

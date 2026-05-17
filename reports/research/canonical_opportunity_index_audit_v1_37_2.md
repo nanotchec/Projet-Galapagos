@@ -1,0 +1,18 @@
+# Canonical Universe Opportunity Index Audit - V1.37.2
+
+```json
+{
+  "opportunity_index_rows": 171648,
+  "opportunity_index_rows_2026": 24360,
+  "index_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name"
+  ],
+  "duplicate_index_count": 0,
+  "opportunity_index_fingerprint": "9b3d00ca3549faabde9c85ad4f6f8a880dbc0e9b0c00b72b7ac1884f12cb5e44",
+  "opportunity_index_status": "CANONICAL_OPPORTUNITY_INDEX_DEFINED"
+}
+```

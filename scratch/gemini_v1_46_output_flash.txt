@@ -1,0 +1,17 @@
+Warning: Basic terminal detected (TERM=dumb). Visual rendering will be limited. For the best experience, use a terminal emulator with truecolor support.
+Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+Ripgrep is not available. Falling back to GrepTool.
+Error when talking to Gemini API Full report available at: /var/folders/_g/pc2mq34j73z2j6pt_967psd40000gn/T/gemini-client-error-Turn.run-sendMessageStream-2026-05-11T13-06-59-739Z.json ModelNotFoundError: Requested entity was not found.
+    at classifyGoogleError (file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:269893:12)
+    at retryWithBackoff (file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:270562:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293199:28)
+    at async GeminiChat.streamWithRetries (file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293037:29)
+    at async Turn.run (file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293564:24)
+    at async GeminiClient.processTurn (file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:306115:22)
+    at async GeminiClient.sendMessageStream (file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:306227:14)
+    at async file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/gemini-U6FSFXFH.js:10811:26
+    at async main (file:///opt/homebrew/lib/node_modules/@google/gemini-cli/bundle/gemini-U6FSFXFH.js:15885:5) {
+  code: 404
+}
+An unexpected critical error occurred:[object Object]

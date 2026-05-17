@@ -1,0 +1,14 @@
+{
+  "tiny_network_preflight_command_prepared": true,
+  "tiny_network_preflight_command_executed": false,
+  "command_parameters": {
+    "max_request_count": 1,
+    "max_records_preview": 10,
+    "output_scope": "reports_only",
+    "data_directory_writes_allowed": false,
+    "trading_allowed": false,
+    "strategy_link_allowed": false,
+    "symbol": "BTCUSDT",
+    "timeframe": "1m"
+  }
+}

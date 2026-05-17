@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETED",
+  "final_verdict": "MICROSTRUCTURE_FIELD_COVERAGE_READY_FOR_OFFLINE_REVIEW",
+  "recommended_next_step": "perform human offline review of collector contract before any real collection",
+  "real_collection_approved": false,
+  "human_review_required_before_collection": true,
+  "version": "V1.57.1",
+  "previous_base": "V1.57"
+}

@@ -1,0 +1,9 @@
+# Report
+
+```json
+{
+  "high_priority_enrichment_gaps": [
+    "microstructure"
+  ]
+}
+```

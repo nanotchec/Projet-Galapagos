@@ -1,0 +1,39 @@
+{
+  "version": "V1.14",
+  "generated_at_utc": "2026-05-05T15:16:21.053020+00:00",
+  "dataset_rows": 9486,
+  "dataset_period": {
+    "start": "2022-01-01 00:00:00+00:00",
+    "end": "2026-04-30 20:00:00+00:00"
+  },
+  "derivatives_included": true,
+  "macro_included": true,
+  "derivatives_feature_rows": 2401,
+  "derivatives_feature_columns": 60,
+  "coverage_verdicts": [
+    "PUBLIC_DATA_PARTIAL_BUT_USABLE",
+    "PUBLIC_DATA_TOO_SPARSE",
+    "PAID_PROVIDER_NEEDED_FOR_LIQUIDATIONS",
+    "PAID_PROVIDER_NOT_JUSTIFIED_YET"
+  ],
+  "coverage_base_verdict": "DERIVATIVES_DATA_PARTIAL",
+  "alpha_score_quality_verdict": "ALPHA_SCORE_NO_EDGE",
+  "derivatives_contribution_verdict": "DERIVATIVES_CONTRIBUTION_WEAK",
+  "derivatives_signal_quality_verdicts": [
+    "DERIVATIVES_NO_EDGE"
+  ],
+  "with_without_derivatives_verdict": "DERIVATIVES_IMPROVE_DISCRIMINATION",
+  "derivatives_filter_hypotheses_verdict": "DERIVATIVES_REGIME_FILTER_CANDIDATE",
+  "data_quality_verdict": "DERIVATIVES_DATA_PARTIAL",
+  "provider_matrix_verdicts": [
+    "DO_NOT_BUY_PROVIDER_YET",
+    "COINGLASS_WATCHLIST",
+    "NEED_MANUAL_PRICE_CHECK",
+    "PUBLIC_DATA_ENOUGH_FOR_NOW"
+  ],
+  "coinglass_recommendation": "Ne pas acheter maintenant; watchlist seulement.",
+  "codex_cli_called": false,
+  "holdout_executed": false,
+  "real_orders_possible": false,
+  "leverage_implemented": false
+}

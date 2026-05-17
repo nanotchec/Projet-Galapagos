@@ -1,0 +1,22 @@
+# Canonical Universe Selection Dataset Audit - V1.37.2
+
+```json
+{
+  "selection_dataset_rows": 171648,
+  "selection_dataset_rows_2026": 24360,
+  "selection_dataset_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name",
+    "predicted_probability",
+    "predicted_label",
+    "ev_proxy_ready",
+    "warmup_ready"
+  ],
+  "forbidden_columns_found": [],
+  "selection_dataset_fingerprint": "025c7f531fbe3de5c44fbd03ecec0a16b69b5f6d75080c77602016578b4b5dbb",
+  "selection_dataset_status": "CANONICAL_SELECTION_DATASET_CLEAN"
+}
+```

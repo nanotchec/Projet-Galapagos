@@ -1,0 +1,38 @@
+{
+  "version": "V1.24",
+  "best_filter_observed": "low_frequency_strict_score",
+  "best_policy_observed": "horizon_only",
+  "selected_count": 122,
+  "net_mean_pnl_pct": 0.007856600971404403,
+  "random_same_count_mean": -0.0016352776728926492,
+  "beats_random_p95": true,
+  "best_filter_verdict": [
+    "PROMISING_BUT_UNVALIDATED",
+    "BEATS_RANDOM_MEAN_ONLY"
+  ],
+  "cost_aware_verdict": [
+    "COST_AWARE_SIGNAL_SELECTION_COMPLETED",
+    "PROMISING_BUT_UNVALIDATED"
+  ],
+  "confidence_verdicts": [
+    "CONFIDENCE_NOT_MONOTONIC",
+    "TOP_BUCKET_PROMISING_BUT_UNVALIDATED"
+  ],
+  "regime_verdicts": [
+    "NO_REGIME_SELECTION_EDGE"
+  ],
+  "frequency_verdicts": [
+    "LOW_FREQUENCY_FILTER_CANDIDATE",
+    "FREQUENCY_REDUCTION_HELPFUL"
+  ],
+  "recommendations": [
+    "Continue with stricter signal selection research.",
+    "Build cost-aware candidate gate offline only.",
+    "Do not activate LLM reviewer.",
+    "Do not execute holdout.",
+    "Do not trade live."
+  ],
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}

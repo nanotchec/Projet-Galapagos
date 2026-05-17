@@ -1,0 +1,13 @@
+# Microstructure Endpoint Review
+
+Version: v1.72
+
+```json
+{
+  "previous_endpoint_allowed": true,
+  "previous_endpoint_authentication_required": true,
+  "previous_secrets_used": true,
+  "authenticated_request_allowed_check": true,
+  "endpoint_review_passed": true
+}
+```

@@ -1,0 +1,29 @@
+{
+  "version": "v1.21",
+  "current_state": {
+    "intrabar_min": "2025-11-07T19:40:00+00:00",
+    "intrabar_max": "2025-12-19T11:35:00+00:00",
+    "rows": 12000,
+    "days": 41,
+    "covered_candidates": 250,
+    "evaluated_ratio": 0.049144879103597404
+  },
+  "plan": {
+    "signal_range_min": "2024-01-01T04:00:00",
+    "signal_range_max": "2026-04-29T20:00:00",
+    "total_candidates": 5087,
+    "targets": {
+      "20%": 1017,
+      "50%": 2543,
+      "80%": 4069
+    },
+    "recommended_range": {
+      "start": "2025-10-31T20:00:00",
+      "end": "2026-04-29T20:00:00"
+    },
+    "estimate_disk_mb": 3433.7249999999995,
+    "target_ratio": 0.2,
+    "target_evaluated_count": 1017
+  },
+  "status": "INTRABAR_EXTENSION_FEASIBLE"
+}

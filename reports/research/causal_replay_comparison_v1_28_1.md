@@ -1,0 +1,22 @@
+# Causal Replay Comparison V1 28 1
+
+```json
+{
+  "rule_comparison": [
+    {
+      "rule_name": "historical_weekly_top_score",
+      "causal": false,
+      "selected_count": 122
+    },
+    {
+      "rule_name": "causal_first_signal_per_week",
+      "causal": true,
+      "selected_count": 122
+    }
+  ],
+  "overlap_with_historical_selection": 0,
+  "replay_status": "CAUSAL_ALTERNATIVES_AVAILABLE_FOR_RESEARCH",
+  "performance_metrics_available": false,
+  "pnl_metrics_evaluated": false
+}
+```

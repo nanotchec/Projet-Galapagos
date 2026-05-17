@@ -1,0 +1,29 @@
+# Microstructure Quality Mask Consistency Check
+
+```json
+{
+  "version": "V1.51",
+  "previous_base": "V1.50.1",
+  "consistency_check_status": "MICROSTRUCTURE_QUALITY_MASK_REPORTS_CONSISTENT_RESEARCH_ONLY",
+  "issues": [],
+  "project_state_aligned": true,
+  "latest_metrics_aligned": true,
+  "latest_summary_aligned": true,
+  "all_json_values_finite": true,
+  "required_reports_present": true,
+  "required_markdown_reports_present": true,
+  "safety_flags_aligned": true,
+  "recommendation_aligned": true,
+  "release_reports_present": true,
+  "status_field_policy": "REMOVED",
+  "status_field_present": false,
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false
+}
+```

@@ -1,0 +1,147 @@
+{
+  "predictive_power_status": "FEATURE_PREDICTIVE_POWER_DECAY_2026",
+  "total_audited": 53,
+  "sign_flip_count": 14,
+  "top_decayed_features": [
+    {
+      "feature": "volatility_quality_score",
+      "corr_pre_2026": -0.09733132850662739,
+      "corr_2026": 0.12949278792268942,
+      "abs_delta": 0.22682411642931682,
+      "sign_flip": true
+    },
+    {
+      "feature": "derivatives_score",
+      "corr_pre_2026": -0.02492543226953668,
+      "corr_2026": 0.09852789869966021,
+      "abs_delta": 0.12345333096919689,
+      "sign_flip": true
+    },
+    {
+      "feature": "combined_alpha_score_no_macro",
+      "corr_pre_2026": 0.002120761318395845,
+      "corr_2026": 0.08840198726930763,
+      "abs_delta": 0.08628122595091178,
+      "sign_flip": false
+    },
+    {
+      "feature": "derivatives_regime_score",
+      "corr_pre_2026": -0.024925432269536647,
+      "corr_2026": 0.060327149455690045,
+      "abs_delta": 0.08525258172522669,
+      "sign_flip": true
+    },
+    {
+      "feature": "funding_zscore_90d",
+      "corr_pre_2026": -0.009509400617622402,
+      "corr_2026": -0.0907736458000869,
+      "abs_delta": 0.0812642451824645,
+      "sign_flip": false
+    },
+    {
+      "feature": "funding_rate_zscore_90d",
+      "corr_pre_2026": -0.009509400617622402,
+      "corr_2026": -0.0907736458000869,
+      "abs_delta": 0.0812642451824645,
+      "sign_flip": false
+    },
+    {
+      "feature": "combined_alpha_score",
+      "corr_pre_2026": -0.0020877658998667554,
+      "corr_2026": 0.07827285448440167,
+      "abs_delta": 0.08036062038426843,
+      "sign_flip": true
+    },
+    {
+      "feature": "combined_alpha_score_no_derivatives",
+      "corr_pre_2026": -0.009010802060385677,
+      "corr_2026": 0.06877102874825859,
+      "abs_delta": 0.07778183080864427,
+      "sign_flip": true
+    },
+    {
+      "feature": "ohlcv_only_alpha_score",
+      "corr_pre_2026": -0.013367955947607799,
+      "corr_2026": 0.0636583473142324,
+      "abs_delta": 0.07702630326184019,
+      "sign_flip": true
+    },
+    {
+      "feature": "funding_zscore_30d",
+      "corr_pre_2026": 0.00817372206599941,
+      "corr_2026": -0.04773562901708829,
+      "abs_delta": 0.0559093510830877,
+      "sign_flip": true
+    },
+    {
+      "feature": "funding_rate_zscore_30d",
+      "corr_pre_2026": 0.00817372206599941,
+      "corr_2026": -0.04773562901708829,
+      "abs_delta": 0.0559093510830877,
+      "sign_flip": true
+    },
+    {
+      "feature": "max_adverse_excursion_12bar",
+      "corr_pre_2026": 0.7071811055195448,
+      "corr_2026": 0.7596871542050596,
+      "abs_delta": 0.05250604868551478,
+      "sign_flip": false
+    },
+    {
+      "feature": "ohlcv_momentum_score",
+      "corr_pre_2026": -0.006173837149815457,
+      "corr_2026": 0.04553751284714605,
+      "abs_delta": 0.0517113499969615,
+      "sign_flip": true
+    },
+    {
+      "feature": "macro_regime_score",
+      "corr_pre_2026": -0.0071205569491770366,
+      "corr_2026": -0.05177386523065303,
+      "abs_delta": 0.04465330828147599,
+      "sign_flip": false
+    },
+    {
+      "feature": "volume",
+      "corr_pre_2026": 0.0886375498000456,
+      "corr_2026": 0.053487580408761934,
+      "abs_delta": 0.03514996939128366,
+      "sign_flip": false
+    },
+    {
+      "feature": "max_adverse_excursion_6bar",
+      "corr_pre_2026": 0.4756765787851279,
+      "corr_2026": 0.5094588869731816,
+      "abs_delta": 0.03378230818805372,
+      "sign_flip": false
+    },
+    {
+      "feature": "equity_market_trend",
+      "corr_pre_2026": -0.010599134713051213,
+      "corr_2026": 0.02310471957724639,
+      "abs_delta": 0.033703854290297604,
+      "sign_flip": true
+    },
+    {
+      "feature": "funding_trend_3",
+      "corr_pre_2026": -0.01232534063260827,
+      "corr_2026": -0.03548303023317457,
+      "abs_delta": 0.0231576896005663,
+      "sign_flip": false
+    },
+    {
+      "feature": "funding_rate_change_3",
+      "corr_pre_2026": -0.01232534063260827,
+      "corr_2026": -0.03548303023317457,
+      "abs_delta": 0.0231576896005663,
+      "sign_flip": false
+    },
+    {
+      "feature": "predicted_probability",
+      "corr_pre_2026": 0.010232463200574157,
+      "corr_2026": -0.01225603188744774,
+      "abs_delta": 0.0224884950880219,
+      "sign_flip": true
+    }
+  ]
+}

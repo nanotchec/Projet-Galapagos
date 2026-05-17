@@ -1,0 +1,96 @@
+{
+  "version": "V1.14",
+  "rows": 9486,
+  "variants": {
+    "ohlcv_only": {
+      "column": "ohlcv_only_alpha_score",
+      "correlations": {
+        "forward_return_1bar": 0.006507041505357254,
+        "forward_return_3bar": 0.008802184676123943,
+        "forward_return_6bar": 0.006721597797220812,
+        "forward_return_12bar": 0.013839966296521322
+      },
+      "top_bucket": {
+        "top_count": 1897,
+        "top_mean_forward_return_6bar": 0.00126015470683479,
+        "all_mean_forward_return_6bar": 0.0006607455653752948,
+        "beats_all_proxy": true,
+        "warning": "random proxy only; not a proof of edge"
+      },
+      "missing_rate": 0.0
+    },
+    "combined_without_derivatives": {
+      "column": "combined_alpha_score_no_derivatives",
+      "correlations": {
+        "forward_return_1bar": 0.0067405159139432924,
+        "forward_return_3bar": 0.008913857745759299,
+        "forward_return_6bar": 0.008299286716593373,
+        "forward_return_12bar": 0.01721937431587163
+      },
+      "top_bucket": {
+        "top_count": 1897,
+        "top_mean_forward_return_6bar": 0.0009029497141564791,
+        "all_mean_forward_return_6bar": 0.0006607455653752948,
+        "beats_all_proxy": true,
+        "warning": "random proxy only; not a proof of edge"
+      },
+      "missing_rate": 0.0
+    },
+    "combined_with_derivatives": {
+      "column": "combined_alpha_score",
+      "correlations": {
+        "forward_return_1bar": 0.0070935655354766565,
+        "forward_return_3bar": 0.009508965412542954,
+        "forward_return_6bar": 0.009412939040949635,
+        "forward_return_12bar": 0.019176770172394077
+      },
+      "top_bucket": {
+        "top_count": 1897,
+        "top_mean_forward_return_6bar": 0.0009752761801064588,
+        "all_mean_forward_return_6bar": 0.0006607455653752948,
+        "beats_all_proxy": true,
+        "warning": "random proxy only; not a proof of edge"
+      },
+      "missing_rate": 0.0
+    },
+    "derivatives_only": {
+      "column": "derivatives_regime_score",
+      "correlations": {
+        "forward_return_1bar": 0.001389970690972965,
+        "forward_return_3bar": 0.00200800594835875,
+        "forward_return_6bar": 0.0016444442004240273,
+        "forward_return_12bar": 0.008875956204572641
+      },
+      "top_bucket": {
+        "top_count": 1897,
+        "top_mean_forward_return_6bar": 0.0027625718231069764,
+        "all_mean_forward_return_6bar": 0.0006607455653752948,
+        "beats_all_proxy": true,
+        "warning": "random proxy only; not a proof of edge"
+      },
+      "missing_rate": 0.0
+    },
+    "macro_plus_derivatives": {
+      "column": "macro_derivatives_score",
+      "correlations": {
+        "forward_return_1bar": 0.006370023963184724,
+        "forward_return_3bar": 0.008358181689772893,
+        "forward_return_6bar": 0.01461360802204488,
+        "forward_return_12bar": 0.028060031993688252
+      },
+      "top_bucket": {
+        "top_count": 1897,
+        "top_mean_forward_return_6bar": 0.002851116734555861,
+        "all_mean_forward_return_6bar": 0.0006607455653752948,
+        "beats_all_proxy": true,
+        "warning": "random proxy only; not a proof of edge"
+      },
+      "missing_rate": 0.0
+    }
+  },
+  "derivatives_missing_rate": 0.0,
+  "verdict": "DERIVATIVES_CONTRIBUTION_WEAK",
+  "dataset": "data/gold/research_dataset/BTC/4h/research_dataset_with_alpha_scores.parquet",
+  "codex_cli_called": false,
+  "holdout_executed": false
+}

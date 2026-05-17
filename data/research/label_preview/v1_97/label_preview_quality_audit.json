@@ -1,0 +1,14 @@
+{
+  "version": "V1.97",
+  "labels_separated_from_features": true,
+  "feature_label_join_created": false,
+  "combined_dataset_created": false,
+  "labels_available_at_decision_ts": false,
+  "label_available_after_horizon": true,
+  "label_not_available_at_decision_ts_policy_applied": true,
+  "supervised_learning_ready": false,
+  "label_preview_for_research_only": true,
+  "no_ml": true,
+  "no_network": true,
+  "no_trading": true
+}

@@ -1,0 +1,10 @@
+{
+  "endpoint_allowed": true,
+  "endpoint_authentication_required": false,
+  "authenticated_request_allowed": false,
+  "secrets_required": false,
+  "url_template": "https://api.binance.com/api/v3/trades?symbol={symbol}&limit={limit}",
+  "symbol": "BTCUSDT",
+  "provider": "Binance",
+  "access_type": "public_unauthenticated"
+}

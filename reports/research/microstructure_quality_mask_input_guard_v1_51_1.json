@@ -1,0 +1,16 @@
+{
+  "version": "V1.51.1",
+  "previous_base": "V1.51",
+  "input_guard_status": "MICROSTRUCTURE_QUALITY_MASK_INPUT_GUARD_PASSED",
+  "canonical_base_version": "V1.37.2",
+  "microstructure_coverage_base_version": "V1.50.1",
+  "required_inputs_present": true,
+  "forbidden_inputs_used": false,
+  "outcome_used_for_mask_construction": false,
+  "future_used_for_mask_construction": false,
+  "model_output_used_for_mask_construction": false,
+  "ev_proxy_used_for_mask_construction": false,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "no_real_trading": true
+}

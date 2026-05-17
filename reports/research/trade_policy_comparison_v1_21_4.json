@@ -1,0 +1,15 @@
+{
+  "version": "v1.21.4",
+  "comparison": {
+    "best_policy": "horizon_only",
+    "best_mean_pnl_after_cost_pct": -0.002461630625669611,
+    "verdict": "ALL_POLICIES_NEGATIVE_AFTER_COSTS",
+    "policy_comparison_valid": true,
+    "warnings": [
+      "MEDIAN_PNL_NEGATIVE_ALL_POLICIES"
+    ],
+    "comparison_count": 3,
+    "all_negative": true,
+    "all_median_negative": true
+  }
+}

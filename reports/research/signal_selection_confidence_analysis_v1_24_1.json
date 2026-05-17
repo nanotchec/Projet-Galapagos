@@ -1,0 +1,159 @@
+{
+  "version": "V1.24.1",
+  "buckets": [
+    {
+      "policy": "atr_proxy",
+      "bucket": "bottom_20",
+      "count": 855,
+      "prob_min": 0.500256705380078,
+      "prob_max": 0.5577562769130527,
+      "net_mean_pnl_pct": -0.0008438804417949769,
+      "gross_mean_pnl_pct": 0.002156119558205023,
+      "cost_viability_rate": 0.03625730994152047
+    },
+    {
+      "policy": "atr_proxy",
+      "bucket": "20_40",
+      "count": 855,
+      "prob_min": 0.5578054789239688,
+      "prob_max": 0.6209584797583897,
+      "net_mean_pnl_pct": -0.0027302884884373526,
+      "gross_mean_pnl_pct": 0.0002697115115626474,
+      "cost_viability_rate": 0.7157894736842105
+    },
+    {
+      "policy": "atr_proxy",
+      "bucket": "40_60",
+      "count": 855,
+      "prob_min": 0.6210197034492114,
+      "prob_max": 0.6980765470787756,
+      "net_mean_pnl_pct": -0.001993554145725315,
+      "gross_mean_pnl_pct": 0.0010064458542746852,
+      "cost_viability_rate": 0.9976608187134502
+    },
+    {
+      "policy": "atr_proxy",
+      "bucket": "60_80",
+      "count": 855,
+      "prob_min": 0.6981452982096159,
+      "prob_max": 0.7953204059181259,
+      "net_mean_pnl_pct": -0.0035246536539654963,
+      "gross_mean_pnl_pct": -0.0005246536539654963,
+      "cost_viability_rate": 1.0
+    },
+    {
+      "policy": "atr_proxy",
+      "bucket": "top_20",
+      "count": 855,
+      "prob_min": 0.7954239073486139,
+      "prob_max": 0.9973768926252781,
+      "net_mean_pnl_pct": -0.0015012245646846725,
+      "gross_mean_pnl_pct": 0.0014987754353153284,
+      "cost_viability_rate": 1.0
+    },
+    {
+      "policy": "fixed_percent",
+      "bucket": "bottom_20",
+      "count": 855,
+      "prob_min": 0.500256705380078,
+      "prob_max": 0.5577562769130527,
+      "net_mean_pnl_pct": -0.0007467915298117786,
+      "gross_mean_pnl_pct": 0.0022532084701882217,
+      "cost_viability_rate": 0.03625730994152047
+    },
+    {
+      "policy": "fixed_percent",
+      "bucket": "20_40",
+      "count": 855,
+      "prob_min": 0.5578054789239688,
+      "prob_max": 0.6209584797583897,
+      "net_mean_pnl_pct": -0.0028559450120220773,
+      "gross_mean_pnl_pct": 0.00014405498797792315,
+      "cost_viability_rate": 0.7157894736842105
+    },
+    {
+      "policy": "fixed_percent",
+      "bucket": "40_60",
+      "count": 855,
+      "prob_min": 0.6210197034492114,
+      "prob_max": 0.6980765470787756,
+      "net_mean_pnl_pct": -0.0019469292280154113,
+      "gross_mean_pnl_pct": 0.0010530707719845888,
+      "cost_viability_rate": 0.9976608187134502
+    },
+    {
+      "policy": "fixed_percent",
+      "bucket": "60_80",
+      "count": 855,
+      "prob_min": 0.6981452982096159,
+      "prob_max": 0.7953204059181259,
+      "net_mean_pnl_pct": -0.0028913826164254685,
+      "gross_mean_pnl_pct": 0.00010861738357453179,
+      "cost_viability_rate": 1.0
+    },
+    {
+      "policy": "fixed_percent",
+      "bucket": "top_20",
+      "count": 855,
+      "prob_min": 0.7954239073486139,
+      "prob_max": 0.9973768926252781,
+      "net_mean_pnl_pct": -0.0021952105034535128,
+      "gross_mean_pnl_pct": 0.0008047894965464873,
+      "cost_viability_rate": 1.0
+    },
+    {
+      "policy": "horizon_only",
+      "bucket": "bottom_20",
+      "count": 855,
+      "prob_min": 0.500256705380078,
+      "prob_max": 0.5577562769130527,
+      "net_mean_pnl_pct": 5.802363934766607e-05,
+      "gross_mean_pnl_pct": 0.0030580236393476664,
+      "cost_viability_rate": 0.03625730994152047
+    },
+    {
+      "policy": "horizon_only",
+      "bucket": "20_40",
+      "count": 855,
+      "prob_min": 0.5578054789239688,
+      "prob_max": 0.6209584797583897,
+      "net_mean_pnl_pct": -0.001842825598933483,
+      "gross_mean_pnl_pct": 0.0011571744010665172,
+      "cost_viability_rate": 0.7157894736842105
+    },
+    {
+      "policy": "horizon_only",
+      "bucket": "40_60",
+      "count": 855,
+      "prob_min": 0.6210197034492114,
+      "prob_max": 0.6980765470787756,
+      "net_mean_pnl_pct": -0.0022900998046953523,
+      "gross_mean_pnl_pct": 0.0007099001953046474,
+      "cost_viability_rate": 0.9976608187134502
+    },
+    {
+      "policy": "horizon_only",
+      "bucket": "60_80",
+      "count": 855,
+      "prob_min": 0.6981452982096159,
+      "prob_max": 0.7953204059181259,
+      "net_mean_pnl_pct": -0.00423687808780876,
+      "gross_mean_pnl_pct": -0.0012368780878087592,
+      "cost_viability_rate": 1.0
+    },
+    {
+      "policy": "horizon_only",
+      "bucket": "top_20",
+      "count": 855,
+      "prob_min": 0.7954239073486139,
+      "prob_max": 0.9973768926252781,
+      "net_mean_pnl_pct": 1.5743387409608454e-06,
+      "gross_mean_pnl_pct": 0.003001574338740961,
+      "cost_viability_rate": 1.0
+    }
+  ],
+  "verdicts": [
+    "CONFIDENCE_NOT_MONOTONIC",
+    "TOP_BUCKET_PROMISING_BUT_UNVALIDATED"
+  ]
+}

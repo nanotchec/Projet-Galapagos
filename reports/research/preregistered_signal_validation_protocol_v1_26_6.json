@@ -1,0 +1,101 @@
+{
+  "protocol_version": "v1.26.6",
+  "protocol_created_from": "v1.26.5",
+  "candidate_filter": "low_frequency_strict_score",
+  "candidate_policy": "horizon_only",
+  "protocol_locked": true,
+  "filter_parameters_locked": true,
+  "policy_parameters_locked": true,
+  "selection_rules_locked": true,
+  "metrics_locked": true,
+  "data_sources_locked": true,
+  "cost_model_locked": true,
+  "baselines_locked": true,
+  "no_hyperparameter_tuning": true,
+  "no_reviewer_llm": true,
+  "no_holdout": true,
+  "no_real_trading": true,
+  "success_criteria_complete": true,
+  "main_metric": "mean_net_pnl_after_cost_pct",
+  "locked_data_sources": {
+    "predictions": "data/gold/ml_predictions/BTC/4h/ml_predictions_v1_16_3.parquet",
+    "research_dataset": "data/gold/research_dataset/BTC/4h/research_dataset_with_alpha_scores.parquet",
+    "intrabar": "data/silver/intrabar/binance/BTCUSDT/5m/history_5m_v1_22.parquet",
+    "trade_ledger_report": "reports/research/trade_ledger_intrabar_eval_v1_22_1.json"
+  },
+  "locked_filter_definition": {
+    "filter_name": "low_frequency_strict_score",
+    "policy": "horizon_only",
+    "score_column": "predicted_probability",
+    "selection_logic": "highest_score_per_period",
+    "threshold": null,
+    "threshold_type": "none",
+    "rank_direction": "descending",
+    "temporal_frequency_rule": "7D",
+    "max_trades_per_period": 1,
+    "period_flooring": "timestamp.dt.floor('7D')",
+    "tie_break_rule": "pandas_current_order_after_score_sort",
+    "tie_break_explicit": false,
+    "tie_break_warning": "Warning: Historical implementation has no explicit secondary sort key for equal scores.",
+    "required_input_columns": [
+      "timestamp",
+      "predicted_probability"
+    ],
+    "allowed_selection_columns": [
+      "timestamp",
+      "predicted_probability"
+    ],
+    "forbidden_selection_columns": [
+      "forward_return_*",
+      "gross_pnl_pct",
+      "net_pnl_pct",
+      "mfe_pct",
+      "mae_pct",
+      "exit_reason",
+      "simulation_status",
+      "any realized future outcome"
+    ],
+    "causal_only": true,
+    "uses_future_returns": false,
+    "uses_realized_pnl": false,
+    "uses_mfe_mae": false,
+    "uses_exit_reason": false,
+    "exact_filter_reconstructable": true
+  },
+  "forbidden_selection_columns": [
+    "forward_return_*",
+    "gross_pnl_pct",
+    "net_pnl_pct",
+    "mfe_pct",
+    "mae_pct",
+    "exit_reason",
+    "simulation_status",
+    "any realized future outcome"
+  ],
+  "input_reports_loaded": [
+    "summary",
+    "temporal",
+    "sf_random",
+    "cost",
+    "placebo",
+    "overfit",
+    "stability"
+  ],
+  "input_report_consistency_status": "INPUT_REPORTS_CONSISTENT",
+  "protocol_upgrade_reason": "archive_integrity_reference_protocol",
+  "frozen_filter_definition_complete": true,
+  "frozen_filter_definition_status": "FILTER_DEFINITION_COMPLETE_WITH_TIE_BREAK_WARNING",
+  "frozen_filter_definition_hash": "de6b57ea813f5d4c79221ebc366647a61b08d286dc00934fedff20cc7fc654cd",
+  "reference_protocol": true,
+  "supersedes": [
+    "v1.26.2",
+    "v1.26.3",
+    "v1.26.4",
+    "v1.26.5"
+  ],
+  "do_not_use_for_forward_validation": [
+    "v1.26.2",
+    "v1.26.3",
+    "v1.26.4"
+  ]
+}

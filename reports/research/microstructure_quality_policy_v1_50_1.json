@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETED",
+  "policy": {
+    "min_intrabar_coverage": 0.9,
+    "max_missingness_ratio": 0.1,
+    "required_features": [
+      "amihud_illiquidity",
+      "realized_vol_proxy"
+    ],
+    "action_on_weak_coverage": "FILTER_WINDOW",
+    "action_on_missing_feature": "BACKFILL_WITH_PROXY",
+    "policy_status": "DEFINED"
+  },
+  "quality_policy_status": "MICROSTRUCTURE_QUALITY_POLICY_COMPLETED",
+  "version": "V1.50.1",
+  "previous_base": "V1.50",
+  "migrated_from": "V1.50",
+  "migration_reason": "release alignment fix"
+}

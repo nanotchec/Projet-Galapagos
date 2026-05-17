@@ -1,0 +1,107 @@
+{
+  "version": "V1.15.2",
+  "results": [
+    {
+      "window": "train_2022_2023",
+      "target_count": 100,
+      "baseline": {
+        "status": "computed",
+        "entry_count": 100,
+        "n_trials": 200,
+        "mean_forward_return": 0.004744515401413582,
+        "mean_hit_rate": 0.5426000000000001,
+        "std_forward_return": 0.0034523574888802445,
+        "distribution_percentiles": {
+          "5": -0.0009893702171013775,
+          "50": 0.004472775533537624,
+          "95": 0.009940437611537444
+        }
+      }
+    },
+    {
+      "window": "train_2022_2023",
+      "target_count": 500,
+      "baseline": {
+        "status": "computed",
+        "entry_count": 500,
+        "n_trials": 200,
+        "mean_forward_return": 0.004773097031993609,
+        "mean_hit_rate": 0.54226,
+        "std_forward_return": 0.001429870844444252,
+        "distribution_percentiles": {
+          "5": 0.0023097284441354394,
+          "50": 0.004836805852475822,
+          "95": 0.006917343642121859
+        }
+      }
+    },
+    {
+      "window": "train_2022_2024",
+      "target_count": 100,
+      "baseline": {
+        "status": "computed",
+        "entry_count": 100,
+        "n_trials": 200,
+        "mean_forward_return": -0.00010515303710111022,
+        "mean_hit_rate": 0.51125,
+        "std_forward_return": 0.0026776548364911357,
+        "distribution_percentiles": {
+          "5": -0.004568984821045698,
+          "50": -0.00019473389648097473,
+          "95": 0.004276475966041796
+        }
+      }
+    },
+    {
+      "window": "train_2022_2024",
+      "target_count": 500,
+      "baseline": {
+        "status": "computed",
+        "entry_count": 500,
+        "n_trials": 200,
+        "mean_forward_return": 4.612158049271934e-05,
+        "mean_hit_rate": 0.5107,
+        "std_forward_return": 0.001120939204608029,
+        "distribution_percentiles": {
+          "5": -0.0016748080631557648,
+          "50": 1.875806240711586e-05,
+          "95": 0.0018383340225143065
+        }
+      }
+    },
+    {
+      "window": "train_2022_2025",
+      "target_count": 100,
+      "baseline": {
+        "status": "computed",
+        "entry_count": 100,
+        "n_trials": 200,
+        "mean_forward_return": -0.0022104809786269923,
+        "mean_hit_rate": 0.4915,
+        "std_forward_return": 0.0032477404545918913,
+        "distribution_percentiles": {
+          "5": -0.007447949152220915,
+          "50": -0.002339453874248697,
+          "95": 0.0028539716986546652
+        }
+      }
+    },
+    {
+      "window": "train_2022_2025",
+      "target_count": 500,
+      "baseline": {
+        "status": "computed",
+        "entry_count": 500,
+        "n_trials": 200,
+        "mean_forward_return": -0.0019816239400481227,
+        "mean_hit_rate": 0.49319,
+        "std_forward_return": 0.0008443395439668781,
+        "distribution_percentiles": {
+          "5": -0.003276621398959908,
+          "50": -0.001962495933447602,
+          "95": -0.00048458280650952404
+        }
+      }
+    }
+  ]
+}

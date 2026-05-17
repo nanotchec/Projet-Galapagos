@@ -1,0 +1,13 @@
+{
+  "status": "PAYOFF_TARGET_BASELINE_COMPARISON_LIMITED",
+  "best_target_observed": null,
+  "best_target_2026_metric": null,
+  "best_target_downside_metric": null,
+  "v1_40_1_baseline_metric": -0.004918998589848299,
+  "beats_v1_40_1_target": false,
+  "beats_probability_baseline": false,
+  "beats_ev_proxy_baseline": false,
+  "beats_random_baseline": false,
+  "compared_targets": [],
+  "comparison_status": "INCONCLUSIVE_NO_TARGET_SCORES"
+}

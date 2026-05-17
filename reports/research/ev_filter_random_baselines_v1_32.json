@@ -1,0 +1,34 @@
+[
+  {
+    "filter_name": "filter_ev_gt_0",
+    "observed_net_mean_pnl": 0.0006847081503828225,
+    "random_p50": 0.0006193994653939951,
+    "random_p95": 0.0006768974319167575,
+    "beats_random_p95": true,
+    "baseline_status": "BASELINE_GENERATED"
+  },
+  {
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "observed_net_mean_pnl": 0.0009363308018465602,
+    "random_p50": 0.0006216189463358823,
+    "random_p95": 0.00070368250820143,
+    "beats_random_p95": true,
+    "baseline_status": "BASELINE_GENERATED"
+  },
+  {
+    "filter_name": "filter_prob_65_ev_pos",
+    "observed_net_mean_pnl": 0.013909152272994588,
+    "random_p50": 0.0006392965877993252,
+    "random_p95": 0.002670279812866278,
+    "beats_random_p95": true,
+    "baseline_status": "BASELINE_GENERATED"
+  },
+  {
+    "filter_name": "filter_ev_top_quantile",
+    "observed_net_mean_pnl": 0.00657455074286753,
+    "random_p50": 0.0006312500802965197,
+    "random_p95": 0.0010602572819777682,
+    "beats_random_p95": true,
+    "baseline_status": "BASELINE_GENERATED"
+  }
+]

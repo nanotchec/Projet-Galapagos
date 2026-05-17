@@ -1,0 +1,9 @@
+# V1 70 Recommendation
+
+Version: v1.70
+
+```json
+{
+  "recommended_next_step": "provide exact approval phrase in approval_phrase_input if you want to authorize V1.71 one-request network preflight"
+}
+```

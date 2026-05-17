@@ -1,0 +1,13 @@
+{
+  "version": "V1.37",
+  "recommended_next_step": "rerun EV-net research on canonical opportunity universe with explicit EV/cost feature rebuild and reference-count checks",
+  "evidence_classification": "INFRASTRUCTURE_ONLY",
+  "no_strategy_validated": true,
+  "no_new_filter": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_money_deployment": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false
+}

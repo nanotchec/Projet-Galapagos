@@ -1,0 +1,21 @@
+{
+  "version": "V1_16",
+  "prediction_count": 171648,
+  "models": [
+    "logistic_regression",
+    "random_forest",
+    "hist_gradient_boosting",
+    "dummy_most_frequent"
+  ],
+  "targets": [
+    "target_up_after_cost_6bar",
+    "target_up_after_cost_12bar",
+    "target_tp_before_sl_conservative"
+  ],
+  "splits": [
+    "train_2022_2023",
+    "train_2022_2024",
+    "train_2022_2025"
+  ],
+  "output_path": "data/gold/ml_predictions/BTC/4h/ml_predictions_v1_16.parquet"
+}

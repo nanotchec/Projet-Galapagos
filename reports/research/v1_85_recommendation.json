@@ -1,0 +1,7 @@
+{
+  "version": "V1.85",
+  "recommended_next_step": "Keep V1.84 artifacts read-only and design any future expansion as a separately approved bounded step.",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true
+}

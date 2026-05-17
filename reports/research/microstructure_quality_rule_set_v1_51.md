@@ -1,0 +1,24 @@
+# Microstructure Quality Rule Set
+
+```json
+{
+  "status": "QUALITY_RULE_SET_DEFINED",
+  "rules": {
+    "min_intrabar_coverage": 0.95,
+    "max_missingness_ratio": 0.05,
+    "max_gap_duration_seconds": 3600,
+    "min_timestamp_alignment": 0.99,
+    "required_features": [
+      "amihud_illiquidity",
+      "realized_vol_proxy",
+      "volume_vol_ratio",
+      "intraday_range"
+    ],
+    "risk_periods": [
+      "2026"
+    ],
+    "v1_50_1_baseline": "MICROSTRUCTURE_COVERAGE_INCONCLUSIVE"
+  },
+  "policy_alignment": "ALIGNED_WITH_V1_50_1_QUALITY_POLICY"
+}
+```

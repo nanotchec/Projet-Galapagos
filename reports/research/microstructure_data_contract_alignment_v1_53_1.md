@@ -1,0 +1,12 @@
+# Microstructure Data Contract Alignment
+
+```json
+{
+  "status": "DATA_CONTRACT_ALIGNED_DRY_RUN",
+  "data_contract_aligned": true,
+  "required_fields_covered_by_plan": [],
+  "missing_fields_after_plan": [],
+  "migrated_from": "V1.53",
+  "migration_reason": "release JSON hygiene fix"
+}
+```

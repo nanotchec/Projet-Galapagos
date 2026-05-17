@@ -1,0 +1,14 @@
+# Microstructure Http Status Reporting Audit
+
+```json
+{
+  "response_status_reporting_audit_performed": true,
+  "previous_status_reporting_incomplete": true,
+  "response_status_reporting_fixed": false,
+  "response_status_codes_available": false,
+  "response_status_codes": [],
+  "response_status_codes_all_present": false,
+  "response_status_codes_none_present": false,
+  "response_status_codes_missing_count": 10
+}
+```

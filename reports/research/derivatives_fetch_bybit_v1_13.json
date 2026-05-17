@@ -1,0 +1,71 @@
+{
+  "version": "V1.13",
+  "generated_at_utc": "2026-05-05T14:23:23.070682+00:00",
+  "source": "bybit",
+  "symbol": "BTCUSDT",
+  "days": 365,
+  "dry_run": false,
+  "network_called": true,
+  "status": "available",
+  "rows": 401,
+  "metrics": {
+    "funding_rate": {
+      "status": "available",
+      "rows": 200,
+      "start_timestamp": "2026-02-28T00:00:00+00:00",
+      "end_timestamp": "2026-05-05T08:00:00+00:00",
+      "known_limitations": null
+    },
+    "open_interest": {
+      "status": "available",
+      "rows": 200,
+      "start_timestamp": "2026-04-02T08:00:00+00:00",
+      "end_timestamp": "2026-05-05T12:00:00+00:00",
+      "known_limitations": null
+    },
+    "premium": {
+      "status": "available",
+      "rows": 1,
+      "start_timestamp": "2026-05-05T14:23:22.843000+00:00",
+      "end_timestamp": "2026-05-05T14:23:22.843000+00:00",
+      "known_limitations": {
+        "limitation": "current_snapshot"
+      }
+    },
+    "taker_buy_sell": {
+      "status": "not_supported",
+      "rows": 0,
+      "start_timestamp": null,
+      "end_timestamp": null,
+      "known_limitations": {
+        "limitation": "not exposed in V5 public market endpoint used here"
+      }
+    },
+    "long_short_ratio": {
+      "status": "not_supported",
+      "rows": 0,
+      "start_timestamp": null,
+      "end_timestamp": null,
+      "known_limitations": {
+        "limitation": "not available as long public history in V5 here"
+      }
+    },
+    "liquidations": {
+      "status": "requires_api_key",
+      "rows": 0,
+      "start_timestamp": null,
+      "end_timestamp": null,
+      "known_limitations": {
+        "limitation": "historical liquidation feed requires dedicated provider"
+      }
+    }
+  },
+  "plan": {
+    "symbol": "BTCUSDT",
+    "days": 365,
+    "funding_rate": "https://api.bybit.com/v5/market/funding/history?category=linear&symbol=BTCUSDT",
+    "open_interest": "https://api.bybit.com/v5/market/open-interest?category=linear&symbol=BTCUSDT",
+    "premium_index": "https://api.bybit.com/v5/market/tickers?category=linear&symbol=BTCUSDT",
+    "long_short_ratio": "not_supported_or_history_limited_public_endpoint"
+  }
+}

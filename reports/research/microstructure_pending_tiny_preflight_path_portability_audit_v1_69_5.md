@@ -1,0 +1,18 @@
+# Report: Microstructure Pending Tiny Preflight Path Portability Audit
+
+```json
+{
+  "version": "V1.69.5",
+  "path_portability_audit_status": "MACHINE_SPECIFIC_PATHS_REMOVED",
+  "machine_specific_paths_scan_command_label": "MACHINE_SPECIFIC_PATH_SCAN_REDACTED",
+  "scanned_for_machine_specific_paths": true,
+  "scanned_patterns_redacted": true,
+  "machine_specific_paths_scan_passed": true,
+  "machine_specific_paths_found": [],
+  "reports_grep_results_removed": true,
+  "report_index_paths_are_relative": true,
+  "smoke_reports_paths_are_portable": true,
+  "release_reports_paths_are_portable": true,
+  "audit_reports_paths_are_portable": true
+}
+```

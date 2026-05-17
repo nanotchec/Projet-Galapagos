@@ -1,0 +1,29 @@
+{
+  "regime_breakdown_status": "PAYOFF_OBJECTIVE_REGIME_BREAKDOWN_COMPLETE",
+  "regime_column": "macro_regime",
+  "rows": [
+    {
+      "regime": "neutral",
+      "count": 28056,
+      "mean_net_return": -0.00031600562524046856,
+      "mean_ev_proxy": 0.002151671524225334
+    },
+    {
+      "regime": "risk_off",
+      "count": 17652,
+      "mean_net_return": 0.0019929815655773766,
+      "mean_ev_proxy": 0.002335046352503374
+    },
+    {
+      "regime": "risk_on",
+      "count": 88728,
+      "mean_net_return": -0.000527222218747992,
+      "mean_ev_proxy": 0.002680105587434773
+    }
+  ],
+  "split_integrity_status": "PAYOFF_OBJECTIVE_SPLIT_INTEGRITY_PASSED",
+  "invalid_split_count": 0,
+  "evaluated_split_count": 3,
+  "skipped_split_count": 2,
+  "status_uses_valid_splits_only": true
+}

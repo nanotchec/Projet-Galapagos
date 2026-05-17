@@ -1,0 +1,9 @@
+{
+  "status": "CANONICAL_UNIVERSE_REPORTS_CONSISTENT_INFRASTRUCTURE_ONLY_EXPLICIT_REFERENCE",
+  "version": "v1.36.7",
+  "recommendation_json_exists": true,
+  "recommendation_md_exists": true,
+  "recommendation_artifact_present": true,
+  "required_recommendation_files_checked": true,
+  "issues_found": []
+}

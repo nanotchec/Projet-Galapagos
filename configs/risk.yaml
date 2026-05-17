@@ -1,0 +1,19 @@
+simulated_initial_capital: 10000.0
+max_risk_per_trade: 0.005
+max_daily_loss: 0.02
+max_weekly_loss: 0.05
+max_trades_per_day: 6
+stop_loss_required: true
+take_profit_or_time_exit_required: true
+leverage_allowed: false
+max_leverage: 1
+kill_switch_enabled: true
+fallback_decision: NO_TRADE
+max_open_positions_global: 2
+max_open_positions_per_profile: 1
+allow_multiple_positions_same_asset: false
+max_total_exposure_fraction: 1.0
+execution_mode: paper_perp
+required_critical_data:
+  - price
+  - volatility

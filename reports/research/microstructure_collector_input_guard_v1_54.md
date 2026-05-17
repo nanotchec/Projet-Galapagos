@@ -1,0 +1,15 @@
+# Microstructure Collector Input Guard V1 54
+
+```json
+{
+  "version": "V1.54",
+  "inputs": {
+    "source": "binance",
+    "symbol": "BTCUSDT",
+    "timeframe": "1m",
+    "start_ts": 1704067200000,
+    "end_ts": 1704153600000
+  },
+  "input_guard_status": "VALID"
+}
+```

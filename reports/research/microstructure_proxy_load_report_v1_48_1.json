@@ -1,0 +1,10 @@
+{
+  "microstructure_feature_base_version": "V1.47",
+  "best_microstructure_candidates": [
+    "amihud_illiquidity",
+    "realized_vol_proxy"
+  ],
+  "proxy_load_status": "MICROSTRUCTURE_PROXY_LOAD_COMPLETED",
+  "version": "V1.48.1",
+  "previous_base": "V1.48"
+}

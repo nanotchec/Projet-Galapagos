@@ -1,0 +1,497 @@
+{
+  "version": "v1.44",
+  "timestamp": "2026-05-10T23:49:20.045742",
+  "input_guard": {
+    "status": "REGIME_AWARE_FEATURE_INPUT_GUARD_PASSED",
+    "passed": true,
+    "base_version": "V1.43.4",
+    "canonical_base_version": "V1.37.2",
+    "issues": [],
+    "v1_43_4_final_verdict": "REGIME_FEATURE_FAILURE_DRIVER_IDENTIFIED",
+    "evidence_classification": "RESEARCH_ONLY"
+  },
+  "feature_set_audit": {
+    "status": "FEATURE_SET_AUDIT_COMPLETE",
+    "all_passed": true,
+    "results": {
+      "v1_38_core_baseline": {
+        "set_name": "v1_38_core_baseline",
+        "passed": true,
+        "feature_count": 19,
+        "forbidden_cols": [],
+        "unknown_cols": [],
+        "audit_verdict": "PASSED"
+      },
+      "v1_44_regime_aware_raw": {
+        "set_name": "v1_44_regime_aware_raw",
+        "passed": true,
+        "feature_count": 22,
+        "forbidden_cols": [],
+        "unknown_cols": [],
+        "audit_verdict": "PASSED"
+      },
+      "v1_44_alpha_only": {
+        "set_name": "v1_44_alpha_only",
+        "passed": true,
+        "feature_count": 22,
+        "forbidden_cols": [],
+        "unknown_cols": [],
+        "audit_verdict": "PASSED"
+      },
+      "v1_44_combined_regime_alpha": {
+        "set_name": "v1_44_combined_regime_alpha",
+        "passed": true,
+        "feature_count": 44,
+        "forbidden_cols": [],
+        "unknown_cols": [],
+        "audit_verdict": "PASSED"
+      },
+      "v1_44_derivatives_heavy": {
+        "set_name": "v1_44_derivatives_heavy",
+        "passed": true,
+        "feature_count": 6,
+        "forbidden_cols": [],
+        "unknown_cols": [],
+        "audit_verdict": "PASSED"
+      },
+      "v1_44_macro_heavy": {
+        "set_name": "v1_44_macro_heavy",
+        "passed": true,
+        "feature_count": 7,
+        "forbidden_cols": [],
+        "unknown_cols": [],
+        "audit_verdict": "PASSED"
+      }
+    }
+  },
+  "evaluation_results": {
+    "v1_38_core_baseline": {
+      "feature_count": 19,
+      "window_count": 17,
+      "median_stability_score": 0.0,
+      "feature_stability_scores": {
+        "funding_rate_spread_binance_bybit": 0.0,
+        "taker_imbalance": 0.0,
+        "taker_imbalance_zscore": 0.0,
+        "funding_rate_change_1": 0.6074876545645534,
+        "funding_rate_change_3": 0.17037794467212267,
+        "open_interest_change_1": 0.0,
+        "open_interest_change_3": 0.0,
+        "oi_change_1": 0.0,
+        "oi_change_3": 0.0,
+        "funding_trend_3": 0.17037794467212267,
+        "equity_market_trend": 0.046847126186397164,
+        "ohlcv_momentum_score": 0.779913326142475,
+        "volatility_quality_score": 0.09876500378184319,
+        "volume": 0.419797286447642,
+        "taker_buy_volume_binance": 0.0,
+        "taker_sell_volume_binance": 0.0,
+        "taker_buy_volume": 0.0,
+        "taker_sell_volume": 0.0,
+        "volume_quality_score": 0.2616355086751778
+      },
+      "top_features": [
+        [
+          "ohlcv_momentum_score",
+          0.779913326142475
+        ],
+        [
+          "funding_rate_change_1",
+          0.6074876545645534
+        ],
+        [
+          "volume",
+          0.419797286447642
+        ],
+        [
+          "volume_quality_score",
+          0.2616355086751778
+        ],
+        [
+          "funding_rate_change_3",
+          0.17037794467212267
+        ],
+        [
+          "funding_trend_3",
+          0.17037794467212267
+        ],
+        [
+          "volatility_quality_score",
+          0.09876500378184319
+        ],
+        [
+          "equity_market_trend",
+          0.046847126186397164
+        ],
+        [
+          "funding_rate_spread_binance_bybit",
+          0.0
+        ],
+        [
+          "taker_imbalance",
+          0.0
+        ]
+      ]
+    },
+    "v1_44_regime_aware_raw": {
+      "feature_count": 20,
+      "window_count": 17,
+      "median_stability_score": 0.0,
+      "feature_stability_scores": {
+        "funding_rate_spread_binance_bybit": 0.0,
+        "taker_imbalance": 0.0,
+        "taker_imbalance_zscore": 0.0,
+        "funding_rate_change_1": 0.6074876545645534,
+        "funding_rate_change_3": 0.17037794467212267,
+        "open_interest_change_1": 0.0,
+        "open_interest_change_3": 0.0,
+        "oi_change_1": 0.0,
+        "oi_change_3": 0.0,
+        "funding_trend_3": 0.17037794467212267,
+        "equity_market_trend": 0.046847126186397164,
+        "ohlcv_momentum_score": 0.779913326142475,
+        "volatility_quality_score": 0.09876500378184319,
+        "volume": 0.419797286447642,
+        "taker_buy_volume_binance": 0.0,
+        "taker_sell_volume_binance": 0.0,
+        "taker_buy_volume": 0.0,
+        "taker_sell_volume": 0.0,
+        "volume_quality_score": 0.2616355086751778,
+        "vol_regime_vix": 0.0
+      },
+      "top_features": [
+        [
+          "ohlcv_momentum_score",
+          0.779913326142475
+        ],
+        [
+          "funding_rate_change_1",
+          0.6074876545645534
+        ],
+        [
+          "volume",
+          0.419797286447642
+        ],
+        [
+          "volume_quality_score",
+          0.2616355086751778
+        ],
+        [
+          "funding_rate_change_3",
+          0.17037794467212267
+        ],
+        [
+          "funding_trend_3",
+          0.17037794467212267
+        ],
+        [
+          "volatility_quality_score",
+          0.09876500378184319
+        ],
+        [
+          "equity_market_trend",
+          0.046847126186397164
+        ],
+        [
+          "funding_rate_spread_binance_bybit",
+          0.0
+        ],
+        [
+          "taker_imbalance",
+          0.0
+        ]
+      ]
+    },
+    "v1_44_alpha_only": {
+      "feature_count": 22,
+      "window_count": 17,
+      "median_stability_score": 0.16218929935039614,
+      "feature_stability_scores": {
+        "funding_rate_zscore_30d": 0.07052117768610143,
+        "funding_rate_zscore_90d": 0.2969311270877729,
+        "funding_zscore_30d": 0.07052117768610143,
+        "funding_zscore_90d": 0.2969311270877729,
+        "open_interest_zscore_30d": 0.0,
+        "open_interest_zscore_90d": 0.0,
+        "oi_zscore_30d": 0.0,
+        "oi_zscore_90d": 0.0,
+        "premium_zscore_30d": 0.0,
+        "long_short_ratio_zscore": 0.0,
+        "derivatives_crowding_score": 0.0,
+        "derivatives_leverage_score": 0.0,
+        "derivatives_regime_score": 0.27004988516385625,
+        "derivatives_score": 0.2756242976680533,
+        "ohlcv_breakout_score": 0.32582411319020016,
+        "macro_regime_score": 0.25385742101469083,
+        "cost_penalty_score": 0.05847331610432091,
+        "combined_alpha_score": 0.5201454591548988,
+        "combined_alpha_score_no_derivatives": 0.5880205153450465,
+        "combined_alpha_score_no_macro": 0.5609373032078468,
+        "ohlcv_only_alpha_score": 0.6340456234457011,
+        "macro_derivatives_score": 0.3735543797727343
+      },
+      "top_features": [
+        [
+          "ohlcv_only_alpha_score",
+          0.6340456234457011
+        ],
+        [
+          "combined_alpha_score_no_derivatives",
+          0.5880205153450465
+        ],
+        [
+          "combined_alpha_score_no_macro",
+          0.5609373032078468
+        ],
+        [
+          "combined_alpha_score",
+          0.5201454591548988
+        ],
+        [
+          "macro_derivatives_score",
+          0.3735543797727343
+        ],
+        [
+          "ohlcv_breakout_score",
+          0.32582411319020016
+        ],
+        [
+          "funding_rate_zscore_90d",
+          0.2969311270877729
+        ],
+        [
+          "funding_zscore_90d",
+          0.2969311270877729
+        ],
+        [
+          "derivatives_score",
+          0.2756242976680533
+        ],
+        [
+          "derivatives_regime_score",
+          0.27004988516385625
+        ]
+      ]
+    },
+    "v1_44_combined_regime_alpha": {
+      "feature_count": 42,
+      "window_count": 17,
+      "median_stability_score": 0.05266022114535904,
+      "feature_stability_scores": {
+        "funding_rate_spread_binance_bybit": 0.0,
+        "taker_imbalance": 0.0,
+        "taker_imbalance_zscore": 0.0,
+        "funding_rate_change_1": 0.6074876545645534,
+        "funding_rate_change_3": 0.17037794467212267,
+        "open_interest_change_1": 0.0,
+        "open_interest_change_3": 0.0,
+        "oi_change_1": 0.0,
+        "oi_change_3": 0.0,
+        "funding_trend_3": 0.17037794467212267,
+        "equity_market_trend": 0.046847126186397164,
+        "ohlcv_momentum_score": 0.779913326142475,
+        "volatility_quality_score": 0.09876500378184319,
+        "volume": 0.419797286447642,
+        "taker_buy_volume_binance": 0.0,
+        "taker_sell_volume_binance": 0.0,
+        "taker_buy_volume": 0.0,
+        "taker_sell_volume": 0.0,
+        "volume_quality_score": 0.2616355086751778,
+        "vol_regime_vix": 0.0,
+        "funding_rate_zscore_30d": 0.07052117768610143,
+        "funding_rate_zscore_90d": 0.2969311270877729,
+        "funding_zscore_30d": 0.07052117768610143,
+        "funding_zscore_90d": 0.2969311270877729,
+        "open_interest_zscore_30d": 0.0,
+        "open_interest_zscore_90d": 0.0,
+        "oi_zscore_30d": 0.0,
+        "oi_zscore_90d": 0.0,
+        "premium_zscore_30d": 0.0,
+        "long_short_ratio_zscore": 0.0,
+        "derivatives_crowding_score": 0.0,
+        "derivatives_leverage_score": 0.0,
+        "derivatives_regime_score": 0.27004988516385625,
+        "derivatives_score": 0.2756242976680533,
+        "ohlcv_breakout_score": 0.32582411319020016,
+        "macro_regime_score": 0.25385742101469083,
+        "cost_penalty_score": 0.05847331610432091,
+        "combined_alpha_score": 0.5201454591548988,
+        "combined_alpha_score_no_derivatives": 0.5880205153450465,
+        "combined_alpha_score_no_macro": 0.5609373032078468,
+        "ohlcv_only_alpha_score": 0.6340456234457011,
+        "macro_derivatives_score": 0.3735543797727343
+      },
+      "top_features": [
+        [
+          "ohlcv_momentum_score",
+          0.779913326142475
+        ],
+        [
+          "ohlcv_only_alpha_score",
+          0.6340456234457011
+        ],
+        [
+          "funding_rate_change_1",
+          0.6074876545645534
+        ],
+        [
+          "combined_alpha_score_no_derivatives",
+          0.5880205153450465
+        ],
+        [
+          "combined_alpha_score_no_macro",
+          0.5609373032078468
+        ],
+        [
+          "combined_alpha_score",
+          0.5201454591548988
+        ],
+        [
+          "volume",
+          0.419797286447642
+        ],
+        [
+          "macro_derivatives_score",
+          0.3735543797727343
+        ],
+        [
+          "ohlcv_breakout_score",
+          0.32582411319020016
+        ],
+        [
+          "funding_rate_zscore_90d",
+          0.2969311270877729
+        ]
+      ]
+    },
+    "v1_44_derivatives_heavy": {
+      "feature_count": 6,
+      "window_count": 17,
+      "median_stability_score": 0.0,
+      "feature_stability_scores": {
+        "funding_rate_change_1": 0.6074876545645534,
+        "funding_rate_change_3": 0.17037794467212267,
+        "open_interest_change_1": 0.0,
+        "open_interest_change_3": 0.0,
+        "oi_change_1": 0.0,
+        "oi_change_3": 0.0
+      },
+      "top_features": [
+        [
+          "funding_rate_change_1",
+          0.6074876545645534
+        ],
+        [
+          "funding_rate_change_3",
+          0.17037794467212267
+        ],
+        [
+          "open_interest_change_1",
+          0.0
+        ],
+        [
+          "open_interest_change_3",
+          0.0
+        ],
+        [
+          "oi_change_1",
+          0.0
+        ],
+        [
+          "oi_change_3",
+          0.0
+        ]
+      ]
+    },
+    "v1_44_macro_heavy": {
+      "feature_count": 6,
+      "window_count": 17,
+      "median_stability_score": 0.0,
+      "feature_stability_scores": {
+        "funding_rate_change_1": 0.6074876545645534,
+        "funding_rate_change_3": 0.17037794467212267,
+        "open_interest_change_1": 0.0,
+        "open_interest_change_3": 0.0,
+        "oi_change_1": 0.0,
+        "oi_change_3": 0.0
+      },
+      "top_features": [
+        [
+          "funding_rate_change_1",
+          0.6074876545645534
+        ],
+        [
+          "funding_rate_change_3",
+          0.17037794467212267
+        ],
+        [
+          "open_interest_change_1",
+          0.0
+        ],
+        [
+          "open_interest_change_3",
+          0.0
+        ],
+        [
+          "oi_change_1",
+          0.0
+        ],
+        [
+          "oi_change_3",
+          0.0
+        ]
+      ]
+    }
+  },
+  "baseline_comparison": {
+    "status": "BASELINE_COMPARISON_COMPLETE",
+    "primary_baseline": "v1_38_core_baseline",
+    "comparisons": {
+      "v1_44_regime_aware_raw": {
+        "baseline_stability": 0.0,
+        "set_stability": 0.0,
+        "improvement_pct": -100.0,
+        "beats_baseline": false
+      },
+      "v1_44_alpha_only": {
+        "baseline_stability": 0.0,
+        "set_stability": 0.16218929935039614,
+        "improvement_pct": 16218929835.039612,
+        "beats_baseline": true
+      },
+      "v1_44_combined_regime_alpha": {
+        "baseline_stability": 0.0,
+        "set_stability": 0.05266022114535904,
+        "improvement_pct": 5266022014.535903,
+        "beats_baseline": true
+      },
+      "v1_44_derivatives_heavy": {
+        "baseline_stability": 0.0,
+        "set_stability": 0.0,
+        "improvement_pct": -100.0,
+        "beats_baseline": false
+      },
+      "v1_44_macro_heavy": {
+        "baseline_stability": 0.0,
+        "set_stability": 0.0,
+        "improvement_pct": -100.0,
+        "beats_baseline": false
+      }
+    },
+    "max_improvement_pct": 16218929835.039612,
+    "overall_improvement_detected": true
+  },
+  "overfit_guard": {
+    "status": "OVERFIT_GUARD_COMPLETE",
+    "tested_set_count": 6,
+    "max_sets_limit": 10,
+    "overfit_risk_level": "MODERATE",
+    "multiple_testing_penalty_applied": true
+  },
+  "final_verdict": "REGIME_AWARE_FEATURE_RESEARCH_STABILITY_IMPROVED",
+  "recommended_next_step": "proceed to model-based validation in V1.45",
+  "evidence_classification": "RESEARCH_ONLY",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true
+}

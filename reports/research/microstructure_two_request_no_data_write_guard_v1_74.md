@@ -1,0 +1,18 @@
+# Microstructure Two Request No Data Write Guard
+
+Version: v1.74
+
+```json
+{
+  "no_data_directory_writes": true,
+  "data_directory_writes_allowed": false,
+  "new_data_files_created": false,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "jsonl_created": false,
+  "db_created": false,
+  "dataset_created": false,
+  "forbidden_files_found": []
+}
+```

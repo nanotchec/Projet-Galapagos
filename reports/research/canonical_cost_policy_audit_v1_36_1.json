@@ -1,0 +1,14 @@
+{
+  "cost_policy_name": "BTC_4h_dynamic_cost_v1_32",
+  "cost_proxy_type": "HISTORICAL_CAUSAL_ESTIMATE",
+  "fixed_cost_bps_if_used": null,
+  "spread_modeled": false,
+  "slippage_modeled": false,
+  "funding_modeled": false,
+  "limitations": [
+    "does not include execution-time spread/slippage",
+    "infrastructure-only proxy"
+  ],
+  "cost_column": null,
+  "cost_policy_status": "COST_POLICY_INCONCLUSIVE"
+}

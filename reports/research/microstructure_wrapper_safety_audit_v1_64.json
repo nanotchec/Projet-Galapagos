@@ -1,0 +1,9 @@
+{
+  "version": "V1.64",
+  "safety_audit_passed": true,
+  "issues": [],
+  "no_real_trading": true,
+  "no_paper_live": true,
+  "holdout_executed": false,
+  "status": "MICROSTRUCTURE_WRAPPER_SAFETY_AUDIT_PASSED"
+}

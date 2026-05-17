@@ -1,0 +1,15 @@
+{
+  "version": "V1.12.2",
+  "profile": "4h",
+  "timeframe": "4h",
+  "dry_run": true,
+  "download_started": false,
+  "local_path": "data/silver/ohlcv/binance/BTCUSDT/4h/BTCUSDT_4h_combined.csv",
+  "available": true,
+  "bars": 9486,
+  "start_timestamp": "2022-01-01 00:00:00+00:00",
+  "end_timestamp": "2026-04-30 20:00:00+00:00",
+  "missing": [],
+  "ohlcv_download": null,
+  "note": "Readiness locale; telechargements longs seulement via flags controles."
+}

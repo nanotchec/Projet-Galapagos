@@ -1,0 +1,22 @@
+# Cost Model Foundation - Galapagos v1.30.2
+
+## Status
+- **COST_MODEL_FOUNDATION_READY_FOR_EV_PROXY**
+
+## Details
+```json
+{
+  "gross_return_columns": [
+    "forward_return_6bar",
+    "forward_return_12bar"
+  ],
+  "net_return_columns": [
+    "cost_adjusted_forward_return"
+  ],
+  "explicit_cost_columns": [],
+  "cost_adjusted_return_available": true,
+  "costs_isolated_from_gross": true,
+  "cost_model_status": "COST_MODEL_FOUNDATION_READY_FOR_EV_PROXY",
+  "cost_model_warning": null
+}
+```

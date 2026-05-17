@@ -1,0 +1,10 @@
+{
+  "status": "INTRABAR_REPORTS_CONSISTENT",
+  "version": "v1.21",
+  "issues": [],
+  "metrics": {
+    "evaluated_ratio": 0.6018713450292398,
+    "target_reached": true,
+    "rows": 151852
+  }
+}

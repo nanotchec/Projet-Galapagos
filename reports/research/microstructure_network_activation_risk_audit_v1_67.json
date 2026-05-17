@@ -1,0 +1,13 @@
+{
+  "network_activation_risk_audit_completed": true,
+  "network_activation_risks": [
+    "Accidental recursive requests (rate limit / cost)",
+    "Sensitive information leakage in headers",
+    "Unintended write of real market data to research data/ dir",
+    "Insecure certificate validation on some systems",
+    "Network timeout handling during synchronization"
+  ],
+  "network_activation_risk_count": 5,
+  "network_enabled": false,
+  "network_activation_protection": "MAXIMUM_GATES_ACTIVE"
+}

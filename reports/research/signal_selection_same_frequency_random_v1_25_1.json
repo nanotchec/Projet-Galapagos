@@ -1,0 +1,13 @@
+{
+  "baseline_type": "monthly_count_preserving_random",
+  "frequency_granularity": "month",
+  "preserves_exact_timestamps": false,
+  "preserves_monthly_counts": true,
+  "preserves_weekly_counts": false,
+  "observed_mean": 0.007856600971404403,
+  "random_mean": -0.0016309590519005617,
+  "p95": 0.0020884839833784567,
+  "p_value_estimate": 0.0,
+  "verdict": "BEATS_MONTHLY_COUNT_RANDOM",
+  "methodology_note": "This baseline only preserves density at monthly scale. It does not account for intraday or weekly seasonality."
+}

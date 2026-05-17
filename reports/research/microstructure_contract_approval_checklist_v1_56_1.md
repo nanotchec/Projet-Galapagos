@@ -1,0 +1,22 @@
+# Microstructure Contract Approval Checklist
+
+## Results
+```json
+{
+  "checklist_status": "FAILED",
+  "criteria_results": {
+    "required_fields_coverage": false,
+    "adapter_completeness": true,
+    "timestamp_causality": true,
+    "manifest_completeness": true,
+    "fixture_coverage": true,
+    "network_blocked": true,
+    "no_data_writes": true,
+    "no_trading": true
+  },
+  "all_criteria_met": false,
+  "version": "V1.56.1",
+  "previous_base": "V1.55.3"
+}
+```
+

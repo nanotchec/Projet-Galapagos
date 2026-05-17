@@ -1,0 +1,11 @@
+# Microstructure Bounded Network Client
+
+```json
+{
+  "total_requests": 10,
+  "successful_requests": 10,
+  "failed_requests": 0,
+  "total_duration_ms": 4571,
+  "total_size_bytes": 14735
+}
+```

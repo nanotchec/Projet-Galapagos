@@ -1,0 +1,20 @@
+{
+  "expected_raw_prediction_rows_from_v1_36_8": 171648,
+  "observed_raw_prediction_rows": 1,
+  "expected_canonical_opportunity_rows_from_v1_36_8": 171648,
+  "observed_canonical_opportunity_rows": 1,
+  "selection_dataset_rows": 1,
+  "outcome_dataset_rows": 1,
+  "opportunity_index_rows": 1,
+  "count_match_v1_36_8": false,
+  "suspicious_mock_count_detected": false,
+  "count_sanity_guard_status": "CANONICAL_COUNT_SANITY_GUARD_FAILED",
+  "issues": [
+    "Suspiciously low count: raw_prediction_rows = 1 (min 100000)",
+    "Suspiciously low count: canonical_opportunity_rows = 1 (min 100000)",
+    "Suspiciously low count: selection_dataset_rows = 1 (min 100000)",
+    "Suspiciously low count: outcome_dataset_rows = 1 (min 100000)",
+    "Suspiciously low count: opportunity_index_rows = 1 (min 100000)",
+    "Count mismatch with V1.36.8 reference (Expected Raw/Canonical: 171648)"
+  ]
+}

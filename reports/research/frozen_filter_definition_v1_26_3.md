@@ -1,0 +1,26 @@
+# Frozen Filter Definition
+
+```json
+{
+  "version": "v1.26.3",
+  "filter_definition": {
+    "filter_name": "low_frequency_strict_score",
+    "policy": "horizon_only",
+    "score_column": "predicted_probability",
+    "selection_logic": "highest_per_period",
+    "threshold": null,
+    "threshold_type": "none",
+    "rank_direction": "descending",
+    "temporal_frequency_rule": "7D",
+    "tie_break_rule": "first_arrival_stable",
+    "required_input_columns": [
+      "timestamp",
+      "predicted_probability"
+    ],
+    "causal_only": true
+  },
+  "extraction_status": "FILTER_DEFINITION_COMPLETE",
+  "definition_hash": "501be2c3c8dd1ef8ad7206bc48eaeb18c5a2ca6ca11abf46d3022009c30ba586",
+  "exact_filter_reconstructable": true
+}
+```

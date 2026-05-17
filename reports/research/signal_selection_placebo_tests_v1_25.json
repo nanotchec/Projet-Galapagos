@@ -1,0 +1,12 @@
+{
+  "shuffle_timestamps": {
+    "observed": 0.007856600971404403,
+    "p95": 0.0020235137349601294,
+    "verdict": "PASSES_PLACEBO_TEST"
+  },
+  "random_weekly_picks": {
+    "observed": 0.007856600971404403,
+    "mean": -0.0012098803140742063,
+    "p95": 0.002963320363355899
+  }
+}

@@ -1,0 +1,21 @@
+# Regime Feature State Alignment V1.43.3
+
+Status: REGIME_FEATURE_STATE_ALIGNMENT_PASSED
+
+### Summary
+```json
+{
+  "version": "V1.43.3",
+  "previous_base": "V1.43.2",
+  "state_alignment_status": "REGIME_FEATURE_STATE_ALIGNMENT_PASSED",
+  "project_state_json_aligned": true,
+  "project_state_md_aligned": true,
+  "latest_metrics_aligned": true,
+  "latest_summary_aligned": true,
+  "strict_source_semantics_aligned": true,
+  "model_outputs_separated_from_raw_features": true,
+  "ev_proxies_separated_from_raw_features": true,
+  "metadata_separated_from_raw_features": true,
+  "v1_44_recommendation_corrected": true
+}
+```

@@ -1,0 +1,23 @@
+# Recent Regime Diagnostic Summary V1 29 6
+
+```json
+{
+  "version": "v1.29.6",
+  "selection_leakage_status": "CLEAN",
+  "forbidden_columns_found": [],
+  "selected_count_final": 225,
+  "selected_count_matches_v1_29_3": true,
+  "rebuild_status": "REBUILD_COMPLETE_NO_SELECTION_LEAKAGE",
+  "recent_degradation_confirmed": true,
+  "recent_window_net_mean_pnl": -0.0070749818588342695,
+  "regime_dependency_status": "APPARENT_BULL_DEPENDENCY_WITH_COARSE_REGIME_DEFINITION",
+  "regime_definition_status": "REGIME_DEFINITION_TOO_COARSE",
+  "cost_drag_status": "COST_DRAG_NOT_ISOLATED_IN_CURRENT_OUTCOME_PROXY",
+  "score_distribution_status": "SCORE_DISTRIBUTION_STABLE",
+  "final_diagnostic_verdict": "RECENT_DEGRADATION_CONFIRMED_ON_CLEAN_SELECTION_FRAME",
+  "do_not_progress_to_v1_30": true,
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}
+```

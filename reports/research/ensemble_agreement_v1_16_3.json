@@ -1,0 +1,48 @@
+{
+  "6bar": [
+    {
+      "agreement_bucket": "<0.5",
+      "count": 318,
+      "mean_return": 0.0017556002805896116,
+      "hit_rate": 0.5660377358490566,
+      "cost_adjusted_return": -0.0012443997194103897
+    },
+    {
+      "agreement_bucket": "0.7-0.8",
+      "count": 1537,
+      "mean_return": 0.0014645772484381502,
+      "hit_rate": 0.5361093038386467,
+      "cost_adjusted_return": -0.0015354227515618514
+    },
+    {
+      "agreement_bucket": ">0.8",
+      "count": 3232,
+      "mean_return": 0.0006475473318424244,
+      "hit_rate": 0.5095915841584159,
+      "cost_adjusted_return": -0.0023524526681575767
+    }
+  ],
+  "12bar": [
+    {
+      "agreement_bucket": "<0.5",
+      "count": 645,
+      "mean_return": 0.000510223721071309,
+      "hit_rate": 0.49612403100775193,
+      "cost_adjusted_return": -0.002489776278928693
+    },
+    {
+      "agreement_bucket": "0.7-0.8",
+      "count": 1730,
+      "mean_return": 0.0010856634552703756,
+      "hit_rate": 0.5109826589595375,
+      "cost_adjusted_return": -0.0019143365447296262
+    },
+    {
+      "agreement_bucket": ">0.8",
+      "count": 2712,
+      "mean_return": 0.002571741343325035,
+      "hit_rate": 0.5357669616519174,
+      "cost_adjusted_return": -0.00042825865667496684
+    }
+  ]
+}

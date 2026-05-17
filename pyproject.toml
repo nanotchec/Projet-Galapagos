@@ -1,0 +1,43 @@
+[project]
+name = "projet-galapagos"
+version = "0.1.0"
+description = "Projet Galapagos V1: autonomous paper trading research agent for BTC."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "ccxt>=4.4.0",
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "plotly>=5.24",
+  "pydantic>=2.8",
+  "python-dotenv>=1.0",
+  "pyyaml>=6.0",
+  "streamlit>=1.37",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*.py" = ["E402", "E501", "F401", "F821", "F841", "I001", "SIM108", "SIM115"]
+"src/galapagos/research/ensemble/*.py" = ["E501"]
+"src/galapagos/research/failure_analysis/*.py" = ["E501"]
+"src/galapagos/research/intrabar/*.py" = ["E501", "E701", "SIM108"]
+"src/galapagos/research/loss_attribution/*.py" = ["B905", "E501", "E701", "F821", "SIM108"]
+"src/galapagos/research/ml/top_bucket_analysis.py" = ["E501"]
+"tests/*.py" = ["E501", "I001"]

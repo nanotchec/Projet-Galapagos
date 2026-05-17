@@ -1,0 +1,22 @@
+# Causal Signal Dedup Policy Comparison V1 29 2
+
+```json
+{
+  "raw_prediction_rows": 171648,
+  "unique_timestamps": 5087,
+  "available_models": [
+    "logistic_regression",
+    "random_forest",
+    "hist_gradient_boosting",
+    "dummy_most_frequent"
+  ],
+  "dedup_policies_tested": [
+    "first_stable_per_timestamp",
+    "explicit_model_policy"
+  ],
+  "default_policy": "first_stable_per_timestamp",
+  "model_specific_policy_used": false,
+  "model_selection_preregistered": false,
+  "dedup_policy_status": "DEDUP_POLICY_NEUTRAL_PASSED"
+}
+```

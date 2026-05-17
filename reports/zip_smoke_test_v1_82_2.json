@@ -1,0 +1,71 @@
+{
+  "version": "V1.82.2",
+  "zip_path": "<PROJECT_ROOT>/projet-galapagos-v1.82.2-clean.zip",
+  "extracted_to": "<TEMP_DIR>/extracted",
+  "commands": [
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python",
+        "scripts/validate_microstructure_data_contract_dryrun_v1_82_2_reports.py",
+        "--version",
+        "v1_82_2"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "PA***redacted***.\n",
+      "stderr_preview": "",
+      "passed": true,
+      "timeout_detected": false,
+      "smoke_runs_full_pytest_suite": false,
+      "smoke_calls_smoke_script": false,
+      "smoke_runs_audit_clean_zip_full_scan": false
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python",
+        "-c",
+        "import sys; sys.path.insert(0, 'src'); import galapagos"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "passed": true,
+      "timeout_detected": false,
+      "smoke_runs_full_pytest_suite": false,
+      "smoke_calls_smoke_script": false,
+      "smoke_runs_audit_clean_zip_full_scan": false
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python",
+        "-c",
+        "import sys; from pathlib import Path; bad = [str(p) for p in Path('reports').rglob('*') if p.is_file() and p.suffix in ('.json', '.md', '.jsonl') and '<USER_HOME>/' in p.read_text(errors='ignore')]; print(f'FAIL: Absolute paths found in: {bad}') if bad else print('PASS: No absolute paths found in reports.'); sys.exit(1 if bad else 0)"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "PA***redacted***.\n",
+      "stderr_preview": "",
+      "passed": true,
+      "timeout_detected": false,
+      "smoke_runs_full_pytest_suite": false,
+      "smoke_calls_smoke_script": false,
+      "smoke_runs_audit_clean_zip_full_scan": false
+    }
+  ],
+  "passed_count": 3,
+  "failed_count": 0,
+  "smoke_test_passed": true,
+  "smoke_timeout_detected": false,
+  "smoke_timeout_seconds_per_command": 30,
+  "smoke_total_timeout_seconds": 90,
+  "smoke_runs_full_v1_81_12_pytest_suite": false,
+  "smoke_calls_smoke_script": false,
+  "smoke_runs_audit_clean_zip_full_scan": false,
+  "failures": [],
+  "codex_cli_called": false,
+  "holdout_executed": false,
+  "real_orders_possible": false,
+  "smoke_uses_manual_pythonpath": false,
+  "smoke_commands_count": 3,
+  "smoke_passed_count": 3,
+  "smoke_failed_count": 0,
+  "smoke_commands_not_empty": true
+}

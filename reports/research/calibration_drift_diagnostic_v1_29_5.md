@@ -1,0 +1,40 @@
+# Calibration Drift Diagnostic V1 29 5
+
+```json
+{
+  "calibration_by_semester": {
+    "2024 H1": {
+      "avg_predicted_probability": 0.7599132624114554,
+      "realized_win_rate": 0.575,
+      "calibration_gap": -0.18491326241145545,
+      "selected_count": 40
+    },
+    "2024 H2": {
+      "avg_predicted_probability": 0.7292553507333508,
+      "realized_win_rate": 0.6470588235294118,
+      "calibration_gap": -0.082196527203939,
+      "selected_count": 34
+    },
+    "2025 H1": {
+      "avg_predicted_probability": 0.7412942297760282,
+      "realized_win_rate": 0.5526315789473685,
+      "calibration_gap": -0.18866265082865974,
+      "selected_count": 38
+    },
+    "2025 H2": {
+      "avg_predicted_probability": 0.7461665437544157,
+      "realized_win_rate": 0.5813953488372093,
+      "calibration_gap": -0.16477119491720638,
+      "selected_count": 86
+    },
+    "2026 H1": {
+      "avg_predicted_probability": 0.7731579022217026,
+      "realized_win_rate": 0.4074074074074074,
+      "calibration_gap": -0.36575049481429517,
+      "selected_count": 27
+    }
+  },
+  "calibration_status": "CALIBRATION_DEGRADED_RECENTLY",
+  "calibration_proxy_only": true
+}
+```

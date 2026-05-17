@@ -1,0 +1,8 @@
+{
+  "version": "V1_16_1",
+  "verdict": "ENSEMBLE_REGIME_DEPENDENT",
+  "ready_for_reviewer": false,
+  "pos_windows": 2,
+  "random_beaten_windows": 2,
+  "single_beaten_windows": 0
+}

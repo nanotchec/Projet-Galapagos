@@ -1,0 +1,12 @@
+{
+  "metrics": {
+    "source_version": "V1.32.4",
+    "target_filter": "filter_ev_gt_cost_buffer",
+    "source_2026_count": 12691,
+    "source_total_count": 128824,
+    "source_2026_pnl": -0.0038218690068997268,
+    "source_win_rate": 0.4248664845059927,
+    "reports_available": true
+  },
+  "artifact_reconstructability_status": "SOURCE_ARTIFACTS_FULLY_RECONSTRUCTABLE"
+}

@@ -1,0 +1,42 @@
+{
+  "status": "PAYOFF_TARGET_HORIZONS_PARTIAL",
+  "candidates": {
+    "forward_return_3bar": {
+      "availability": "AVAILABLE",
+      "row_count": 171648,
+      "row_count_2026": 24360,
+      "mean_return": 0.00034161839916115435,
+      "std_return": 0.018271536357430052,
+      "downside_rate": 0.49524608501118567,
+      "near_zero_rate": 0.006991051454138702,
+      "signal_to_noise_proxy": 0.018696752833389212,
+      "label_noise_proxy": 0.9813032471666108
+    },
+    "forward_return_6bar": {
+      "availability": "AVAILABLE",
+      "row_count": 171648,
+      "row_count_2026": 24360,
+      "mean_return": 0.0007724416380202086,
+      "std_return": 0.02564473040974858,
+      "downside_rate": 0.4924496644295302,
+      "near_zero_rate": 0.004054809843400447,
+      "signal_to_noise_proxy": 0.030120871839096147,
+      "label_noise_proxy": 0.9698791281609038
+    },
+    "forward_return_12bar": {
+      "availability": "AVAILABLE",
+      "row_count": 171528,
+      "row_count_2026": 24240,
+      "mean_return": 0.0016203218315617714,
+      "std_return": 0.03468190227428917,
+      "downside_rate": 0.4829998600811529,
+      "near_zero_rate": 0.0031481740590457536,
+      "signal_to_noise_proxy": 0.046719520133212795,
+      "label_noise_proxy": 0.9532804798667872
+    }
+  },
+  "missing_horizons": [
+    "cost_adjusted_forward_return"
+  ],
+  "version": "V1.42.3"
+}

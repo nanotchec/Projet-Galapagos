@@ -1,0 +1,18 @@
+{
+  "version": "V1.95",
+  "anti_leakage_feature_guard_applied": true,
+  "available_ts_policy_applied": true,
+  "decision_ts_policy_applied": true,
+  "event_ts_policy_applied": true,
+  "feature_available_ts_lte_decision_ts_rule_applied": true,
+  "no_lookahead_policy_applied": true,
+  "leakage_detected": false,
+  "lookahead_detected": false,
+  "forbidden_feature_terms_detected": false,
+  "forbidden_feature_terms_count": 0,
+  "forbidden_feature_term_occurrences": [],
+  "future_information_fields_detected": false,
+  "target_like_fields_detected": false,
+  "label_like_fields_detected": false,
+  "prediction_like_fields_detected": false
+}

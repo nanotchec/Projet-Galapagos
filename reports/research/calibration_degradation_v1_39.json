@@ -1,0 +1,11 @@
+{
+  "pre_2026": {
+    "brier": 0.24288060067308545,
+    "ece": 0.025911097794097074
+  },
+  "2026": {
+    "brier": 0.2390493434064965,
+    "ece": 0.04364655373370705
+  },
+  "calibration_degradation_status": "CALIBRATION_STABLE_BUT_PAYOFF_DEGRADED"
+}

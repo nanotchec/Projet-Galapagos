@@ -1,0 +1,7 @@
+{
+  "consistency_check_status": "PAYOFF_TARGET_RESEARCH_REPORTS_CONSISTENT_EXPLORATORY_ONLY",
+  "version": "v1.42.1",
+  "status_field_policy": "REMOVED",
+  "status_field_present": false,
+  "issues": []
+}

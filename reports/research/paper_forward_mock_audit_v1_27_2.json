@@ -1,0 +1,52 @@
+{
+  "status": "PAPER_FORWARD_MOCKS_DETECTED",
+  "mock_components_present": true,
+  "hits_count": 9,
+  "hits": [
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "string",
+      "hit": "Placeholder"
+    },
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "string",
+      "hit": "Mock"
+    },
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "string",
+      "hit": "Dummy"
+    },
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "string",
+      "hit": "TODO"
+    },
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "string",
+      "hit": "FIXME"
+    },
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "value",
+      "hit": "profit_factor = 1.0"
+    },
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "value",
+      "hit": "top_10_trades_contribution = 0.0"
+    },
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "value",
+      "hit": "mean_net_pnl_after_cost_pct = 0.005"
+    },
+    {
+      "file": "src/galapagos/research/paper_forward/mock_audit.py",
+      "type": "value",
+      "hit": "threshold = 0.5"
+    }
+  ]
+}

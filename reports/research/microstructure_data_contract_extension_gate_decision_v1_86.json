@@ -1,0 +1,13 @@
+{
+  "version": "V1.86",
+  "final_verdict": "V1_86_APPROVAL_GRANTED_FOR_FUTURE_V1_87_ONLY",
+  "approval_phrase_expected_exact": "J'approuve V1.87 tiny materialization extension ultra-bornée, sans réseau, sans dataset complet, sans ML, sans trading.",
+  "approval_phrase_provided": "J'approuve V1.87 tiny materialization extension ultra-bornée, sans réseau, sans dataset complet, sans ML, sans trading.",
+  "approval_phrase_match": true,
+  "human_approval_granted": true,
+  "v1_87_authorized": true,
+  "authorized_future_version": "V1.87",
+  "authorized_future_scope": "tiny_materialization_extension_ultra_bounded_no_network_no_full_dataset_no_ml_no_trading",
+  "v1_87_execution_attempted": false,
+  "materialization_executed": false
+}

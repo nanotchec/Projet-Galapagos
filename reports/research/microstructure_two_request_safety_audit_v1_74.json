@@ -1,0 +1,10 @@
+{
+  "safety_audit_passed": true,
+  "no_strategy_linkage": true,
+  "no_trading_linkage": true,
+  "no_paper_live": true,
+  "no_real_orders_possible": true,
+  "no_secrets_used": true,
+  "two_requests_max": true,
+  "infrastructure_only_status": "CONFIRMED"
+}

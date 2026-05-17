@@ -1,0 +1,21 @@
+{
+  "status": "REGIME_AWARE_FEATURE_SOURCE_CONTRACT_PASSED",
+  "passed": true,
+  "allowed_source_types": [
+    "raw_market_feature",
+    "regime_proxy_feature",
+    "alpha_score_feature"
+  ],
+  "forbidden_source_types": [
+    "model_output_feature",
+    "ev_proxy_feature",
+    "outcome_forbidden_feature",
+    "metadata_feature"
+  ],
+  "forbidden_columns_detected": [],
+  "columns_not_in_inventory": [],
+  "model_outputs_excluded": true,
+  "ev_proxies_excluded": true,
+  "outcomes_excluded": true,
+  "metadata_excluded": true
+}

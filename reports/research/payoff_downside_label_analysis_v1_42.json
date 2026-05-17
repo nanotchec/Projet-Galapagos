@@ -1,0 +1,43 @@
+{
+  "status": "DOWNSIDE_LABEL_CAPTURES_SEVERE_LOSSES",
+  "results": [
+    {
+      "target_name": "net_return_regression",
+      "severe_loss_threshold": -0.01,
+      "severe_loss_correlation": -0.6831532257809158,
+      "downside_focus": "NONE"
+    },
+    {
+      "target_name": "downside_weighted_return",
+      "severe_loss_threshold": -0.01,
+      "severe_loss_correlation": -0.7580568495173504,
+      "downside_focus": "MODERATE"
+    },
+    {
+      "target_name": "severe_loss_classifier",
+      "severe_loss_threshold": -0.01,
+      "severe_loss_correlation": 1.0,
+      "downside_focus": "HIGH"
+    },
+    {
+      "target_name": "positive_payoff_classifier",
+      "severe_loss_threshold": -0.01,
+      "severe_loss_correlation": -0.5411770005346236,
+      "downside_focus": "NONE"
+    },
+    {
+      "target_name": "payoff_ratio_target",
+      "severe_loss_threshold": -0.01,
+      "severe_loss_correlation": -0.6030837401180434,
+      "downside_focus": "ASYMMETRIC"
+    },
+    {
+      "target_name": "ev_gap_target",
+      "severe_loss_threshold": -0.01,
+      "severe_loss_correlation": -0.6799394218599986,
+      "downside_focus": "RESIDUAL"
+    }
+  ],
+  "severe_loss_count": 42264,
+  "severe_loss_rate": 0.2462248322147651
+}

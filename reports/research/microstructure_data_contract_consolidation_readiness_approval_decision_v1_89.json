@@ -1,0 +1,11 @@
+{
+  "version": "V1.89",
+  "approval_phrase_expected_exact": "J'approuve V1.90 tiny data contract consolidation ultra-bornée, sans réseau, sans dataset complet, sans ML, sans trading.",
+  "approval_phrase_provided": "J'approuve V1.90 tiny data contract consolidation ultra-bornée, sans réseau, sans dataset complet, sans ML, sans trading.",
+  "approval_phrase_match": true,
+  "human_approval_granted": true,
+  "v1_90_authorized": true,
+  "authorized_future_version": "V1.90",
+  "authorized_future_scope": "tiny_data_contract_consolidation_ultra_bounded_no_network_no_full_dataset_no_ml_no_trading",
+  "v1_90_execution_attempted": false
+}

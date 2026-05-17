@@ -1,0 +1,21 @@
+# Walk Forward Calibration Summary - v1.31
+
+```json
+{
+  "raw_brier": 0.2889913457879318,
+  "calibrated_best_brier": 0.24189328432693588,
+  "raw_ece": 0.15134236676612386,
+  "calibrated_best_ece": 0.02923227490249583,
+  "best_calibration_method": "platt_scaling",
+  "calibration_improves_ece": true,
+  "calibration_stable_2026": true,
+  "final_verdict": "WALK_FORWARD_CALIBRATION_PROMISING_RESEARCH_ONLY",
+  "recommended_next_step": "V1.32 EV-net filter research using calibrated probabilities",
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_money_deployment": true,
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}
+```

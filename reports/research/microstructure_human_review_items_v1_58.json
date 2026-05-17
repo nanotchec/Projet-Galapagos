@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "id": "HR_001",
+      "topic": "Bybit number_of_trades proxy",
+      "description": "Validation du d\u00e9classement de number_of_trades en optionnel pour Bybit, avec utilisation du turnover comme proxy.",
+      "evidence": "microstructure_optional_field_policy_v1_57_2.json",
+      "status": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "id": "HR_002",
+      "topic": "Binance vs Bybit field asymmetry",
+      "description": "Validation de l'asym\u00e9trie des champs disponibles entre les deux exchanges et impact sur l'homog\u00e9n\u00e9it\u00e9 des donn\u00e9es.",
+      "evidence": "microstructure_adapter_field_gap_analysis_v1_57_2.json",
+      "status": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "id": "HR_003",
+      "topic": "Timestamp availability policy",
+      "description": "Revue de la politique de causalit\u00e9 des timestamps (ingest_ts vs closing_time).",
+      "evidence": "microstructure_data_contract_v1_52.json",
+      "status": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "id": "HR_004",
+      "topic": "Fixture representativeness",
+      "description": "Validation que les tests sur fixtures sont suffisants pour autoriser un passage en preflight (sans collecte r\u00e9elle).",
+      "evidence": "microstructure_adapter_fixture_summary_v1_55_3.json",
+      "status": "PENDING_HUMAN_REVIEW"
+    }
+  ],
+  "human_review_items_count": 4
+}

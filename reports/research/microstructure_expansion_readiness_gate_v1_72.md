@@ -1,0 +1,14 @@
+# Microstructure Expansion Readiness Gate
+
+Version: v1.72
+
+```json
+{
+  "expansion_readiness_gate_created": true,
+  "one_request_preflight_review_passed": true,
+  "collection_expansion_approved": false,
+  "future_expansion_requires_new_human_approval": true,
+  "max_future_request_count_without_new_approval": 0,
+  "gate_status": "LOCKED_PENDING_NEW_HUMAN_APPROVAL"
+}
+```

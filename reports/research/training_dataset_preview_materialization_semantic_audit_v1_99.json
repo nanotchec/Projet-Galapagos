@@ -1,0 +1,11 @@
+{
+  "version": "V1.99",
+  "forbidden_training_preview_terms_detected": false,
+  "forbidden_training_preview_terms_count": 0,
+  "forbidden_training_preview_term_occurrences": [],
+  "prediction_like_fields_detected": false,
+  "model_training_terms_detected": false,
+  "backtest_terms_detected": false,
+  "trading_signal_terms_detected": false,
+  "order_execution_terms_detected": false
+}

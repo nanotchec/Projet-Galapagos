@@ -1,0 +1,133 @@
+{
+  "version": "V1.12",
+  "holdout_executed": false,
+  "benchmarks": {
+    "calibration": {
+      "cash": {
+        "name": "cash",
+        "return": 0.0,
+        "max_drawdown": 0.0,
+        "volatility": 0.0,
+        "exposure_time": 0.0
+      },
+      "buy_and_hold": {
+        "name": "buy_and_hold",
+        "return": -0.06160040162895297,
+        "max_drawdown": -0.07515537879892709,
+        "volatility": 0.4148140234158075,
+        "sharpe_approx": -7.250465061129229,
+        "sortino_approx": -9.863844483105341,
+        "calmar_approx": -0.8196406247084523,
+        "exposure_time": 1.0,
+        "return_per_exposure": -0.06160040162895297
+      },
+      "trend_filter": {
+        "name": "trend_filter",
+        "return": -0.028264951958089535,
+        "max_drawdown": -0.03560356329314962,
+        "volatility": 0.25718584117522886,
+        "sharpe_approx": -5.297278773672609,
+        "sortino_approx": -3.706129108046436,
+        "calmar_approx": -0.7938798632418883,
+        "exposure_time": 0.3333333333333333,
+        "return_per_exposure": -0.0847948558742686
+      },
+      "volatility_target": {
+        "name": "volatility_target",
+        "return": 0.0047851240156184804,
+        "max_drawdown": -0.013258531682689978,
+        "volatility": 0.12482792692507141,
+        "sharpe_approx": 1.9222653641781307,
+        "sortino_approx": 1.7771990121520396,
+        "calmar_approx": 0.3609090455970946,
+        "exposure_time": 0.17927253309547894,
+        "return_per_exposure": 0.02669189715230925
+      }
+    },
+    "validation_1": {
+      "cash": {
+        "name": "cash",
+        "return": 0.0,
+        "max_drawdown": 0.0,
+        "volatility": 0.0,
+        "exposure_time": 0.0
+      },
+      "buy_and_hold": {
+        "name": "buy_and_hold",
+        "return": 0.0891437165714839,
+        "max_drawdown": -0.025945034371382292,
+        "volatility": 0.4012892116262647,
+        "sharpe_approx": 10.558705408964075,
+        "sortino_approx": 30.056369393083727,
+        "calmar_approx": 3.4358681239524804,
+        "exposure_time": 1.0,
+        "return_per_exposure": 0.0891437165714839
+      },
+      "trend_filter": {
+        "name": "trend_filter",
+        "return": 0.04556293733157335,
+        "max_drawdown": -0.025945034371382403,
+        "volatility": 0.3531575868570689,
+        "sharpe_approx": 6.312365578048201,
+        "sortino_approx": 13.120189436514966,
+        "calmar_approx": 1.7561332422758191,
+        "exposure_time": 0.5111111111111111,
+        "return_per_exposure": 0.08914487738786091
+      },
+      "volatility_target": {
+        "name": "volatility_target",
+        "return": 0.01987688524204656,
+        "max_drawdown": -0.01377774367508,
+        "volatility": 0.16206486090111577,
+        "sharpe_approx": 5.990115701275619,
+        "sortino_approx": 11.31162775614549,
+        "calmar_approx": 1.4426807255819516,
+        "exposure_time": 0.18495902503489003,
+        "return_per_exposure": 0.10746642527066226
+      }
+    },
+    "validation_2": {
+      "cash": {
+        "name": "cash",
+        "return": 0.0,
+        "max_drawdown": 0.0,
+        "volatility": 0.0,
+        "exposure_time": 0.0
+      },
+      "buy_and_hold": {
+        "name": "buy_and_hold",
+        "return": 0.045408649996171224,
+        "max_drawdown": -0.039911581998333556,
+        "volatility": 0.3675834487453005,
+        "sharpe_approx": 6.061736849714024,
+        "sortino_approx": 10.06411909750453,
+        "calmar_approx": 1.1377311477672618,
+        "exposure_time": 1.0,
+        "return_per_exposure": 0.045408649996171224
+      },
+      "trend_filter": {
+        "name": "trend_filter",
+        "return": 0.023342303801679787,
+        "max_drawdown": -0.021071502978461165,
+        "volatility": 0.24025438604831434,
+        "sharpe_approx": 4.792251267829378,
+        "sortino_approx": 5.970889827094378,
+        "calmar_approx": 1.107766438186198,
+        "exposure_time": 0.4666666666666667,
+        "return_per_exposure": 0.05001922243217097
+      },
+      "volatility_target": {
+        "name": "volatility_target",
+        "return": 0.008898532906385759,
+        "max_drawdown": -0.007613569155060729,
+        "volatility": 0.08838947865717559,
+        "sharpe_approx": 4.9214462054869434,
+        "sortino_approx": 6.180812695331487,
+        "calmar_approx": 1.168772848207587,
+        "exposure_time": 0.17075797108087368,
+        "return_per_exposure": 0.05211196203643854
+      }
+    }
+  },
+  "warning": "Un PnL positif sur BTC ne vaut rien si buy-and-hold fait beaucoup mieux."
+}

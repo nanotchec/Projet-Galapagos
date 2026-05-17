@@ -1,0 +1,10 @@
+{
+  "previous_version": "v1.19.2",
+  "current_version": "v1.20",
+  "previous_evaluated_ratio": 0.017309941520467838,
+  "current_evaluated_ratio": 0.05824561403508772,
+  "previous_evaluated_count": 74,
+  "current_evaluated_count": 249,
+  "improvement_factor": 3.3648648648648645,
+  "status": "COVERAGE_IMPROVED"
+}

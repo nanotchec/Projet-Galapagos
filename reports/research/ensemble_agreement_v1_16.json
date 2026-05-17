@@ -1,0 +1,32 @@
+{
+  "agreement_stats": [
+    {
+      "agreement_bucket": "<0.5",
+      "count": 58,
+      "mean_return": 0.5344827586206896,
+      "hit_rate": 0.5344827586206896,
+      "cost_adjusted_return": 0.5314827586206896
+    },
+    {
+      "agreement_bucket": "0.6-0.7",
+      "count": 172,
+      "mean_return": 0.5290697674418605,
+      "hit_rate": 0.5290697674418605,
+      "cost_adjusted_return": 0.5260697674418604
+    },
+    {
+      "agreement_bucket": "0.7-0.8",
+      "count": 229,
+      "mean_return": 0.5676855895196506,
+      "hit_rate": 0.5676855895196506,
+      "cost_adjusted_return": 0.5646855895196506
+    },
+    {
+      "agreement_bucket": ">0.8",
+      "count": 1731,
+      "mean_return": 0.48700173310225303,
+      "hit_rate": 0.48700173310225303,
+      "cost_adjusted_return": 0.48400173310225303
+    }
+  ]
+}

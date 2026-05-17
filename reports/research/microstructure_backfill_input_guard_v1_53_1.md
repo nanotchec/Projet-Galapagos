@@ -1,0 +1,19 @@
+# Microstructure Backfill Input Guard
+
+```json
+{
+  "version": "V1.53.1",
+  "previous_base": "V1.53",
+  "input_guard_status": "INPUT_VALID_FOR_DRY_RUN",
+  "evidence_classification_aligned": true,
+  "final_verdict_aligned": true,
+  "data_contract_ready": true,
+  "validation_acceptance_criteria_present": true,
+  "no_real_trading": true,
+  "no_paper_live": true,
+  "external_data_downloaded": false,
+  "real_orders_possible": false,
+  "migrated_from": "V1.53",
+  "migration_reason": "release JSON hygiene fix"
+}
+```

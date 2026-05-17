@@ -1,0 +1,30 @@
+# Join Path Audit - V1.34.1
+
+```json
+[
+  {
+    "path": "A. predictions only",
+    "total_rows": 171648,
+    "rows_2026": 24360,
+    "description": "Raw predictions without dataset join"
+  },
+  {
+    "path": "B. predictions + dataset inner join",
+    "total_rows": 171648,
+    "rows_2026": 24360,
+    "description": "Standard rebuild join"
+  },
+  {
+    "path": "C. predictions + dataset left join",
+    "total_rows": 171648,
+    "rows_2026": 24360,
+    "description": "Keep all predictions even if dataset missing"
+  },
+  {
+    "path": "D. predictions dedup timestamp first",
+    "total_rows": 5087,
+    "rows_2026": 713,
+    "description": "One trade per timestamp policy"
+  }
+]
+```

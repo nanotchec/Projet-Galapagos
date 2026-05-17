@@ -1,0 +1,10 @@
+{
+  "version": "V1.97.1",
+  "release_zip_created": true,
+  "final_zip_created": true,
+  "release_ready_for_external_review": true,
+  "clean_zip_ready_for_external_review": true,
+  "final_audit_passed": true,
+  "final_smoke_passed": true,
+  "blocking_reason": null
+}

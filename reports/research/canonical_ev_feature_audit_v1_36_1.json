@@ -1,0 +1,16 @@
+{
+  "calibrated_probability_available": false,
+  "payoff_estimates_available": false,
+  "avg_win_past_available": false,
+  "avg_loss_past_available": false,
+  "cost_proxy_available": false,
+  "ev_calibrated_proxy_available": false,
+  "ev_proxy_ready_rows": 168048,
+  "ev_proxy_ready_rows_2026": 24360,
+  "ev_feature_rows_not_ready": 3600,
+  "ev_feature_rows_not_ready_2026": 0,
+  "default_payoff_used": false,
+  "fallback_used": false,
+  "artificial_probability_threshold_used": false,
+  "ev_feature_status": "EV_FEATURES_PARTIAL"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "ENSEMBLE_LEAKAGE_AUDIT_PASSED",
+  "checks": [
+    "OOS predictions only",
+    "No direct target inclusion in scores",
+    "Timestamp alignment verified"
+  ]
+}

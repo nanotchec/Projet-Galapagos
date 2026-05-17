@@ -1,0 +1,22 @@
+{
+  "version": "V1.47",
+  "recommended_next_step": "improve data enrichment / regime labels before new modeling",
+  "reason": "V1.47 enriches microstructure proxies causally and keeps the output exploratory only.",
+  "evidence_classification": "RESEARCH_ONLY",
+  "high_priority_enrichment_gaps": [
+    "microstructure"
+  ],
+  "recommended_feature_gaps_high_priority": [
+    "microstructure"
+  ],
+  "recommended_data_enrichment_next": "improve microstructure regime features",
+  "recommended_next_research_step": "improve data enrichment / regime labels before new modeling",
+  "release_ready_for_external_review": true,
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false
+}

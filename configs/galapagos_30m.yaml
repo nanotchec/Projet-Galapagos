@@ -1,0 +1,18 @@
+name: galapagos_30m
+symbol: BTC/USD
+base_asset: BTC
+quote_asset: USD
+timeframe: 30m
+daily_plan_enabled: true
+check_interval_minutes: 30
+max_trades_per_day: 6
+max_position_duration_minutes: 240
+paper_trading_only: true
+strategy_families:
+  no_trade: true
+  breakout: true
+  momentum: true
+  mean_reversion: true
+  derivatives_filter: true
+  volatility_regime: true
+

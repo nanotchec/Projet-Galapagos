@@ -1,0 +1,87 @@
+# Microstructure Quality Mask Summary
+
+```json
+{
+  "version": "V1.51",
+  "previous_base": "V1.50.1",
+  "final_verdict": "MICROSTRUCTURE_QUALITY_MASK_PARTIAL_BUT_USABLE",
+  "recommended_next_step": "improve intrabar data before applying quality mask",
+  "evidence_classification": "RESEARCH_ONLY",
+  "impact": {
+    "total_rows": 9486,
+    "usable_rows": 8766,
+    "blocked_rows": 720,
+    "usable_ratio": 0.9240986717267552,
+    "blocked_ratio": 0.07590132827324478,
+    "usable_ratio_2024": 1.0,
+    "blocked_ratio_2024": 0.0,
+    "usable_ratio_2025": 1.0,
+    "blocked_ratio_2025": 0.0,
+    "usable_ratio_2026": 0.0,
+    "blocked_ratio_2026": 1.0
+  },
+  "score": {
+    "overall_quality_score": 50,
+    "grade": "C",
+    "impact_metrics": {
+      "total_rows": 9486,
+      "usable_rows": 8766,
+      "blocked_rows": 720,
+      "usable_ratio": 0.9240986717267552,
+      "blocked_ratio": 0.07590132827324478,
+      "usable_ratio_2024": 1.0,
+      "blocked_ratio_2024": 0.0,
+      "usable_ratio_2025": 1.0,
+      "blocked_ratio_2025": 0.0,
+      "usable_ratio_2026": 0.0,
+      "blocked_ratio_2026": 1.0
+    },
+    "retention_summary": {
+      "feature_retention": {
+        "amihud_illiquidity": {
+          "status": "MISSING_IN_DATASET",
+          "valid_ratio": 0.0
+        },
+        "realized_vol_proxy": {
+          "status": "MISSING_IN_DATASET",
+          "valid_ratio": 0.0
+        },
+        "volume_vol_ratio": {
+          "status": "MISSING_IN_DATASET",
+          "valid_ratio": 0.0
+        },
+        "intraday_range": {
+          "status": "MISSING_IN_DATASET",
+          "valid_ratio": 0.0
+        }
+      },
+      "retained_features": [],
+      "reworked_features": [],
+      "blocked_features": [
+        "amihud_illiquidity",
+        "realized_vol_proxy",
+        "volume_vol_ratio",
+        "intraday_range"
+      ]
+    }
+  },
+  "plan": {
+    "status": "DATA_ACTION_PLAN_DEFINED",
+    "actions": [
+      "URGENT: Re-collect intrabar data for 2026 to reduce blocked windows"
+    ],
+    "minimum_conditions": [
+      "Intrabar coverage > 98% for 2026",
+      "Feature missingness < 2% across all usable windows"
+    ]
+  },
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false
+}
+```

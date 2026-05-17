@@ -1,0 +1,52 @@
+version: V1.15.1
+evaluation_name: ml_baselines_hardening_v1_15_1
+
+targets:
+  classification:
+    - target_up_after_cost_6bar
+    - target_up_after_cost_12bar
+    - target_tp_before_sl_conservative
+
+feature_sets:
+  - ohlcv_basic
+  - ohlcv_macro_derivatives
+  - alpha_scores
+
+models:
+  classification:
+    - logistic_regression
+    - random_forest
+    - hist_gradient_boosting
+    - dummy_most_frequent
+  regression: []
+
+walk_forward:
+  method: date_based
+  embargo_bars: 6
+  min_train_rows: 200
+  min_test_rows: 50
+  date_windows:
+    - name: train_2022_2023
+      train_start: "2022-01-01"
+      train_end: "2023-12-31"
+      test_start: "2024-01-01"
+      test_end: "2024-12-31"
+    - name: train_2022_2024
+      train_start: "2022-01-01"
+      train_end: "2024-12-31"
+      test_start: "2025-01-01"
+      test_end: "2025-12-31"
+    - name: train_2022_2025
+      train_start: "2022-01-01"
+      train_end: "2025-12-31"
+      test_start: "2026-01-01"
+      test_end: "2026-04-30"
+
+permutation:
+  n_permutations: 200
+
+random_baselines:
+  n_trials: 200
+
+cost_threshold: 0.003
+random_seed: 42

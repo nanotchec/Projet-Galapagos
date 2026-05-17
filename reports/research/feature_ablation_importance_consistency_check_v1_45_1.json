@@ -1,0 +1,10 @@
+{
+  "status": "FEATURE_ABLATION_IMPORTANCE_REPORTS_CONSISTENT_RESEARCH_ONLY",
+  "issues": [],
+  "status_field_policy": "REMOVED",
+  "status_field_present": false,
+  "project_state_aligned": true,
+  "latest_metrics_aligned": true,
+  "latest_summary_aligned": true,
+  "all_json_values_finite": true
+}

@@ -1,0 +1,14 @@
+# Microstructure Bounded No Data Write Guard
+
+```json
+{
+  "no_data_directory_writes": true,
+  "new_data_files_created": false,
+  "files_found": [],
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "jsonl_created": false,
+  "db_created": false
+}
+```

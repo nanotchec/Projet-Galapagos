@@ -1,0 +1,16 @@
+# Failure Diagnosis
+
+Identifies root causes of previous phase failure.
+
+```json
+{
+  "status": "PASSED",
+  "failure_causes": [
+    "General diagnostic failure detected in previous phase summary"
+  ],
+  "failure_causes_count": 1,
+  "failure_cause_evidence": "CLEAR",
+  "baseline_version": "V1.60.2",
+  "baseline_verdict": "MICROSTRUCTURE_PREFLIGHT_DRYRUN_FAILED"
+}
+```

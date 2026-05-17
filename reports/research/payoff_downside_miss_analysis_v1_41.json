@@ -1,0 +1,16 @@
+{
+  "downside_miss_status": "DOWNSIDE_RISK_NOT_FILTERED_2026",
+  "loss_count": 12576,
+  "worst_1pct_count": 126,
+  "worst_5pct_count": 629,
+  "worst_10pct_count": 1258,
+  "negative_mass": {
+    "top_1pct": 0.054346820818415846,
+    "top_5pct": 0.18228264881171782,
+    "top_10pct": 0.3002038045889605
+  },
+  "top_10_mean_return": -0.004862050432539813,
+  "worst_loss_score_mean": 0.004209983156813481,
+  "worst_loss_return_mean": -0.08811409256151702,
+  "gross_mean_return_2026": -0.0022906664880420423
+}

@@ -1,0 +1,13 @@
+{
+  "version": "V1.81.14",
+  "all_required_reports_present": true,
+  "report_index_references_v1_81_14": true,
+  "docs_code_review_present": true,
+  "release_zip_report_present": true,
+  "zip_audit_report_present": true,
+  "zip_smoke_report_present": true,
+  "no_stub_reports": true,
+  "no_duplicate_main_blocks": true,
+  "safety_invariants_passed": true,
+  "final_consistency_passed": true
+}

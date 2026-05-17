@@ -1,0 +1,11 @@
+{
+  "version": "V1.98.1",
+  "approval_phrase_expected_exact": "J'approuve V1.99 training dataset preview materialization ultra-bornée, sans réseau, sans ML, sans backtest, sans trading.",
+  "approval_phrase_provided": "J'approuve V1.99 training dataset preview materialization ultra-bornée, sans réseau, sans ML, sans backtest, sans trading.",
+  "approval_phrase_match": true,
+  "human_approval_granted": true,
+  "v1_99_authorized": true,
+  "authorized_future_version": "V1.99",
+  "authorized_future_scope": "training_dataset_preview_materialization_ultra_bounded_no_network_no_ml_no_backtest_no_trading",
+  "v1_99_execution_attempted": false
+}

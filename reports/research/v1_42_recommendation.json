@@ -1,0 +1,11 @@
+{
+  "recommended_next_step": "harden best payoff target with ablations and diagnostics, still exploratory only",
+  "evidence_classification": "EXPLORATORY_ONLY",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false
+}

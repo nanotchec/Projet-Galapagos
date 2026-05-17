@@ -1,0 +1,1696 @@
+{
+  "results": [
+    {
+      "status": "computed",
+      "brier_score": 0.24610536888852136,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 118,
+          "mean_predicted": 0.39076365269939073,
+          "observed_rate": 0.4322033898305085
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 2226,
+          "mean_predicted": 0.46343594290595597,
+          "observed_rate": 0.4335130278526505
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 17,
+          "mean_predicted": 0.6209520925933376,
+          "observed_rate": 0.5882352941176471
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.04143973713111776,
+      "well_calibrated": true,
+      "warning": null,
+      "target": "target_up_after_cost_6bar",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.24806680347075674,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 700,
+          "mean_predicted": 0.3800051078920021,
+          "observed_rate": 0.44285714285714284
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 1588,
+          "mean_predicted": 0.4515626415211912,
+          "observed_rate": 0.4275818639798489
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 66,
+          "mean_predicted": 0.6658577410444273,
+          "observed_rate": 0.5
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 7,
+          "mean_predicted": 0.8280200769982461,
+          "observed_rate": 0.5714285714285714
+        }
+      ],
+      "max_calibration_gap": 0.2565915055696747,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.26862012504830673,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 70,
+          "mean_predicted": 0.16571279350863216,
+          "observed_rate": 0.3142857142857143
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 848,
+          "mean_predicted": 0.32318728418929504,
+          "observed_rate": 0.45990566037735847
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 1057,
+          "mean_predicted": 0.485348208578194,
+          "observed_rate": 0.4219489120151372
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 334,
+          "mean_predicted": 0.6722882237611626,
+          "observed_rate": 0.40718562874251496
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 52,
+          "mean_predicted": 0.8700442502411898,
+          "observed_rate": 0.6153846153846154
+        }
+      ],
+      "max_calibration_gap": 0.26510259501864764,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.43456162642947904,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 2361,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.43456162642947904
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.43456162642947904,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "dummy_most_frequent"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2459070456611412,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 154,
+          "mean_predicted": 0.38982239864089996,
+          "observed_rate": 0.42857142857142855
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 2191,
+          "mean_predicted": 0.4629242771039118,
+          "observed_rate": 0.433591967138293
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 16,
+          "mean_predicted": 0.6209810666514658,
+          "observed_rate": 0.625
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.03874902993052859,
+      "well_calibrated": true,
+      "warning": null,
+      "target": "target_up_after_cost_6bar",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.24952067321636237,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 555,
+          "mean_predicted": 0.35493564754890244,
+          "observed_rate": 0.43783783783783786
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 1750,
+          "mean_predicted": 0.4510787744117689,
+          "observed_rate": 0.43028571428571427
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 56,
+          "mean_predicted": 0.666425977025734,
+          "observed_rate": 0.5357142857142857
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.13071169131144833,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2694419153849838,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 226,
+          "mean_predicted": 0.13077277570288184,
+          "observed_rate": 0.4336283185840708
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 760,
+          "mean_predicted": 0.3169154482052763,
+          "observed_rate": 0.425
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 975,
+          "mean_predicted": 0.4883848610981241,
+          "observed_rate": 0.4153846153846154
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 323,
+          "mean_predicted": 0.677376784606149,
+          "observed_rate": 0.5015479876160991
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 77,
+          "mean_predicted": 0.8593565503442332,
+          "observed_rate": 0.4935064935064935
+        }
+      ],
+      "max_calibration_gap": 0.3658500568377397,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.43456162642947904,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 2361,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.43456162642947904
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.43456162642947904,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "dummy_most_frequent"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.24917852005034574,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 416,
+          "mean_predicted": 0.37154908562581035,
+          "observed_rate": 0.46153846153846156
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 1889,
+          "mean_predicted": 0.45141705199844717,
+          "observed_rate": 0.432503970354685
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 56,
+          "mean_predicted": 0.6264734211812072,
+          "observed_rate": 0.30357142857142855
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.32290199260977864,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.25030912518457077,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 946,
+          "mean_predicted": 0.37915163995807616,
+          "observed_rate": 0.41014799154334036
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 1320,
+          "mean_predicted": 0.4446197850297667,
+          "observed_rate": 0.45454545454545453
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 73,
+          "mean_predicted": 0.6730910982491611,
+          "observed_rate": 0.3287671232876712
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 22,
+          "mean_predicted": 0.8622287520417653,
+          "observed_rate": 0.6363636363636364
+        }
+      ],
+      "max_calibration_gap": 0.3443239749614899,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.27132466480910783,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 154,
+          "mean_predicted": 0.1488629361607678,
+          "observed_rate": 0.4805194805194805
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 994,
+          "mean_predicted": 0.3170462737686435,
+          "observed_rate": 0.42857142857142855
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 865,
+          "mean_predicted": 0.4812262682403329,
+          "observed_rate": 0.42196531791907516
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 279,
+          "mean_predicted": 0.6745516717581925,
+          "observed_rate": 0.46236559139784944
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 69,
+          "mean_predicted": 0.8701910925249831,
+          "observed_rate": 0.463768115942029
+        }
+      ],
+      "max_calibration_gap": 0.40642297658295407,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.43456162642947904,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 2361,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.43456162642947904
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.43456162642947904,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_6bar",
+      "model": "dummy_most_frequent"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2506194061465516,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 5,
+          "mean_predicted": 0.39519866773823836,
+          "observed_rate": 1.0
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 2350,
+          "mean_predicted": 0.4759655615556855,
+          "observed_rate": 0.4574468085106383
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.6048013322617616,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2501692709030671,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 80,
+          "mean_predicted": 0.3817523480365053,
+          "observed_rate": 0.3125
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 2232,
+          "mean_predicted": 0.4687855568645144,
+          "observed_rate": 0.4632616487455197
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 43,
+          "mean_predicted": 0.6680230278800163,
+          "observed_rate": 0.4883720930232558
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.17965093485676054,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2809557979964139,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 108,
+          "mean_predicted": 0.12948203703706265,
+          "observed_rate": 0.37037037037037035
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 722,
+          "mean_predicted": 0.31434673116149364,
+          "observed_rate": 0.5110803324099723
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 1067,
+          "mean_predicted": 0.4993027272273197,
+          "observed_rate": 0.4451733833177132
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 381,
+          "mean_predicted": 0.664975296439001,
+          "observed_rate": 0.4225721784776903
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 77,
+          "mean_predicted": 0.8707031409440736,
+          "observed_rate": 0.45454545454545453
+        }
+      ],
+      "max_calibration_gap": 0.4161576863986191,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.4585987261146497,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 2355,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.4585987261146497
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.4585987261146497,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "dummy_most_frequent"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.25048543560485553,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 6,
+          "mean_predicted": 0.39536907613265154,
+          "observed_rate": 1.0
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 2349,
+          "mean_predicted": 0.4753291322234094,
+          "observed_rate": 0.45721583652618136
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.6046309238673484,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2530327972330899,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 5,
+          "mean_predicted": 0.19737908414569078,
+          "observed_rate": 0.8
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 207,
+          "mean_predicted": 0.27524573971714367,
+          "observed_rate": 0.47342995169082125
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 2098,
+          "mean_predicted": 0.46923764101294346,
+          "observed_rate": 0.451858913250715
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 45,
+          "mean_predicted": 0.6395943866356661,
+          "observed_rate": 0.6666666666666666
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.6026209158543092,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2831243904820611,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 290,
+          "mean_predicted": 0.08966361642558177,
+          "observed_rate": 0.46551724137931033
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 640,
+          "mean_predicted": 0.3279961930879225,
+          "observed_rate": 0.471875
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 1061,
+          "mean_predicted": 0.49043850037063796,
+          "observed_rate": 0.4410933081998115
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 311,
+          "mean_predicted": 0.6667176163349735,
+          "observed_rate": 0.4758842443729904
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 53,
+          "mean_predicted": 0.8694486588706277,
+          "observed_rate": 0.5094339622641509
+        }
+      ],
+      "max_calibration_gap": 0.37585362495372854,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.4585987261146497,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 2355,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.4585987261146497
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.4585987261146497,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "dummy_most_frequent"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.25446675344752157,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 88,
+          "mean_predicted": 0.38599232316307747,
+          "observed_rate": 0.5454545454545454
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 2213,
+          "mean_predicted": 0.48805435536796266,
+          "observed_rate": 0.45639403524627203
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 54,
+          "mean_predicted": 0.6152439198684646,
+          "observed_rate": 0.4074074074074074
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.20783651246105722,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2535574589906941,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 129,
+          "mean_predicted": 0.37088035808972086,
+          "observed_rate": 0.4418604651162791
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 2157,
+          "mean_predicted": 0.4560679991318703,
+          "observed_rate": 0.45943439962911453
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 42,
+          "mean_predicted": 0.6775017559017694,
+          "observed_rate": 0.35714285714285715
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 27,
+          "mean_predicted": 0.9125987266250449,
+          "observed_rate": 0.6296296296296297
+        }
+      ],
+      "max_calibration_gap": 0.32035889875891227,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2859184308733733,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 138,
+          "mean_predicted": 0.15920088581406258,
+          "observed_rate": 0.39855072463768115
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 735,
+          "mean_predicted": 0.3150917485767457,
+          "observed_rate": 0.46938775510204084
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 981,
+          "mean_predicted": 0.4899761395476432,
+          "observed_rate": 0.47706422018348627
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 399,
+          "mean_predicted": 0.6831784029087467,
+          "observed_rate": 0.44611528822055135
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 102,
+          "mean_predicted": 0.8956827370043854,
+          "observed_rate": 0.3333333333333333
+        }
+      ],
+      "max_calibration_gap": 0.5623494036710521,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.4585987261146497,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 2355,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.4585987261146497
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.4585987261146497,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_up_after_cost_12bar",
+      "model": "dummy_most_frequent"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2065972135498331,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 1795,
+          "mean_predicted": 0.29537394301439596,
+          "observed_rate": 0.29303621169916433
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.002337731315231628,
+      "well_calibrated": true,
+      "warning": null,
+      "target": "target_tp_before_sl_conservative",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.20870622555561402,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 13,
+          "mean_predicted": 0.17051322907609925,
+          "observed_rate": 0.23076923076923078
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 1640,
+          "mean_predicted": 0.29925267221553553,
+          "observed_rate": 0.29573170731707316
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 141,
+          "mean_predicted": 0.4493748888218499,
+          "observed_rate": 0.2695035460992908
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 1,
+          "mean_predicted": 0.6061544003806669,
+          "observed_rate": 0.0
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.6061544003806669,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.22399559367631006,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 329,
+          "mean_predicted": 0.1514328064846046,
+          "observed_rate": 0.2553191489361702
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 1046,
+          "mean_predicted": 0.29277156485393047,
+          "observed_rate": 0.31166347992351817
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 361,
+          "mean_predicted": 0.48020467339769535,
+          "observed_rate": 0.2742382271468144
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 56,
+          "mean_predicted": 0.6844106966475777,
+          "observed_rate": 0.30357142857142855
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 3,
+          "mean_predicted": 0.8438152956178312,
+          "observed_rate": 0.0
+        }
+      ],
+      "max_calibration_gap": 0.8438152956178312,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.29303621169916433,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 1795,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.29303621169916433
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.29303621169916433,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "dummy_most_frequent"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.20668493401865437,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 1795,
+          "mean_predicted": 0.29742746379269774,
+          "observed_rate": 0.29303621169916433
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.004391252093533415,
+      "well_calibrated": true,
+      "warning": null,
+      "target": "target_tp_before_sl_conservative",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.20851596758196653,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 7,
+          "mean_predicted": 0.18015736394722928,
+          "observed_rate": 0.42857142857142855
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 1697,
+          "mean_predicted": 0.30402586600371034,
+          "observed_rate": 0.29699469652327637
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 91,
+          "mean_predicted": 0.4236923675085407,
+          "observed_rate": 0.2087912087912088
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.24841406462419927,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.2292444833277796,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 482,
+          "mean_predicted": 0.12765578707699696,
+          "observed_rate": 0.29045643153526973
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 919,
+          "mean_predicted": 0.2886309044626927,
+          "observed_rate": 0.29488574537540807
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 318,
+          "mean_predicted": 0.47398516319537315,
+          "observed_rate": 0.3018867924528302
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 70,
+          "mean_predicted": 0.674426008951947,
+          "observed_rate": 0.2714285714285714
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 6,
+          "mean_predicted": 0.8391596669486332,
+          "observed_rate": 0.0
+        }
+      ],
+      "max_calibration_gap": 0.8391596669486332,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.29303621169916433,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 1795,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.29303621169916433
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.29303621169916433,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "dummy_most_frequent"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.20824317265480138,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 1795,
+          "mean_predicted": 0.3113462769572234,
+          "observed_rate": 0.29303621169916433
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.01831006525805906,
+      "well_calibrated": true,
+      "warning": null,
+      "target": "target_tp_before_sl_conservative",
+      "model": "logistic_regression"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.21193181275350975,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 2,
+          "mean_predicted": 0.19903151377844663,
+          "observed_rate": 0.5
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 1647,
+          "mean_predicted": 0.30747058752008694,
+          "observed_rate": 0.2920461445051609
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 145,
+          "mean_predicted": 0.4603059145159975,
+          "observed_rate": 0.30344827586206896
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 1,
+          "mean_predicted": 0.6220741263661893,
+          "observed_rate": 0.0
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.6220741263661893,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "random_forest"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.23318912041233536,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 345,
+          "mean_predicted": 0.14075743679323027,
+          "observed_rate": 0.2898550724637681
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 935,
+          "mean_predicted": 0.30039829787215033,
+          "observed_rate": 0.2737967914438503
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 378,
+          "mean_predicted": 0.47675488093912954,
+          "observed_rate": 0.35185185185185186
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 111,
+          "mean_predicted": 0.6857230339233306,
+          "observed_rate": 0.2972972972972973
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 26,
+          "mean_predicted": 0.8425645938567524,
+          "observed_rate": 0.15384615384615385
+        }
+      ],
+      "max_calibration_gap": 0.6887184400105986,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "hist_gradient_boosting"
+    },
+    {
+      "status": "computed",
+      "brier_score": 0.29303621169916433,
+      "n_bins": 5,
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.2,
+          "count": 1795,
+          "mean_predicted": 0.0,
+          "observed_rate": 0.29303621169916433
+        },
+        {
+          "bin_low": 0.2,
+          "bin_high": 0.4,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.4,
+          "bin_high": 0.6000000000000001,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.6000000000000001,
+          "bin_high": 0.8,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        },
+        {
+          "bin_low": 0.8,
+          "bin_high": 1.0,
+          "count": 0,
+          "mean_predicted": null,
+          "observed_rate": null
+        }
+      ],
+      "max_calibration_gap": 0.29303621169916433,
+      "well_calibrated": false,
+      "warning": "probabilities_not_calibrated",
+      "target": "target_tp_before_sl_conservative",
+      "model": "dummy_most_frequent"
+    }
+  ]
+}

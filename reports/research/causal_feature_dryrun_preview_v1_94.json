@@ -1,0 +1,59 @@
+{
+  "version": "V1.94",
+  "feature_dry_run_executed": true,
+  "feature_dry_run_reports_only": true,
+  "feature_dry_run_preview_created": true,
+  "feature_dry_run_preview_in_reports_only": true,
+  "feature_dry_run_allowed_output_root": "reports/research/causal_feature_dryrun_v1_94/",
+  "feature_dry_run_data_write_allowed": false,
+  "feature_dry_run_max_preview_rows": 10,
+  "feature_dry_run_max_theoretical_features": 20,
+  "preview_rows_count": 3,
+  "theoretical_features_count": 13,
+  "preview_rows": [
+    {
+      "event_ts": "2026-01-01T00:00:00Z",
+      "available_ts": "2026-01-01T00:00:01Z",
+      "decision_ts": "2026-01-01T00:00:01Z",
+      "spread_bps": null,
+      "mid_price": null,
+      "bid_ask_imbalance": null,
+      "top_of_book_depth": null,
+      "quote_age_ms": null,
+      "recent_trade_count": null,
+      "recent_trade_volume": null,
+      "realized_volatility_past_window": null
+    },
+    {
+      "event_ts": "2026-01-01T01:00:00Z",
+      "available_ts": "2026-01-01T01:00:01Z",
+      "decision_ts": "2026-01-01T01:00:01Z",
+      "spread_bps": null,
+      "mid_price": null,
+      "bid_ask_imbalance": null,
+      "top_of_book_depth": null,
+      "quote_age_ms": null,
+      "recent_trade_count": null,
+      "recent_trade_volume": null,
+      "realized_volatility_past_window": null
+    },
+    {
+      "event_ts": "2026-01-01T02:00:00Z",
+      "available_ts": "2026-01-01T02:00:01Z",
+      "decision_ts": "2026-01-01T02:00:01Z",
+      "spread_bps": null,
+      "mid_price": null,
+      "bid_ask_imbalance": null,
+      "top_of_book_depth": null,
+      "quote_age_ms": null,
+      "recent_trade_count": null,
+      "recent_trade_volume": null,
+      "realized_volatility_past_window": null
+    }
+  ],
+  "feature_dry_run_no_labels": true,
+  "feature_dry_run_no_targets": true,
+  "feature_dry_run_no_predictions": true,
+  "feature_dry_run_no_ml": true,
+  "feature_dry_run_no_trading": true
+}

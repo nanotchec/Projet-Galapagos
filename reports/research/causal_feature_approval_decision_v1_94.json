@@ -1,0 +1,11 @@
+{
+  "version": "V1.94",
+  "approval_phrase_expected_exact": "J'approuve V1.95 feature preview materialization ultra-bornée, sans réseau, sans labels, sans targets, sans ML, sans trading.",
+  "approval_phrase_provided": "J'approuve V1.95 feature preview materialization ultra-bornée, sans réseau, sans labels, sans targets, sans ML, sans trading.",
+  "approval_phrase_match": true,
+  "human_approval_granted": true,
+  "v1_95_authorized": true,
+  "authorized_future_version": "V1.95",
+  "authorized_future_scope": "feature_preview_materialization_ultra_bounded_no_network_no_labels_no_targets_no_ml_no_trading",
+  "v1_95_execution_attempted": false
+}

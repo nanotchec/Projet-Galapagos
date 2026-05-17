@@ -1,0 +1,10 @@
+{
+  "version": "V1.97.2",
+  "physical_label_timestamp_audit_executed": true,
+  "label_available_after_horizon": true,
+  "labels_available_at_decision_ts": false,
+  "label_timestamp_order_valid": true,
+  "label_timestamp_violations_detected": false,
+  "label_timestamp_violations_count": 0,
+  "label_timestamp_violations": []
+}

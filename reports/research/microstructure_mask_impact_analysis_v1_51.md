@@ -1,0 +1,17 @@
+# Microstructure Mask Impact Analysis
+
+```json
+{
+  "total_rows": 9486,
+  "usable_rows": 8766,
+  "blocked_rows": 720,
+  "usable_ratio": 0.9240986717267552,
+  "blocked_ratio": 0.07590132827324478,
+  "usable_ratio_2024": 1.0,
+  "blocked_ratio_2024": 0.0,
+  "usable_ratio_2025": 1.0,
+  "blocked_ratio_2025": 0.0,
+  "usable_ratio_2026": 0.0,
+  "blocked_ratio_2026": 1.0
+}
+```

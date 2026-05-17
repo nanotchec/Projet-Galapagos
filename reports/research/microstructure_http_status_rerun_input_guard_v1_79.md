@@ -1,0 +1,12 @@
+# Microstructure Http Status Rerun Input Guard
+
+```json
+{
+  "v1_78_state_validated": true,
+  "issues": [],
+  "previous_human_approval_granted": true,
+  "previous_v1_79_http_status_rerun_authorized": true,
+  "previous_http_status_capture_hardened": true,
+  "previous_bounded_validator_hardened": true
+}
+```

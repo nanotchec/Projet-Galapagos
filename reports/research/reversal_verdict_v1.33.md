@@ -1,0 +1,9 @@
+# Verdict - V1.33
+
+```json
+{
+  "final_verdict": "RECENT_REVERSAL_DIAGNOSTIC_INCONCLUSIVE",
+  "recommended_next_step": "deeper data/model audit",
+  "evidence_classification": "DIAGNOSTIC_ONLY"
+}
+```

@@ -1,0 +1,13 @@
+{
+  "status": "PASSED",
+  "boundary_enforced": true,
+  "network_disabled_confirmed": true,
+  "real_collection_not_approved_confirmed": true,
+  "future_network_activation_requires_separate_approval": true,
+  "version": "V1.62.1",
+  "current_version": "V1.62.1",
+  "previous_version": "V1.62",
+  "previous_base": "V1.62",
+  "migrated_from": "V1.62",
+  "migration_reason": "hardened preflight review state alignment fix"
+}

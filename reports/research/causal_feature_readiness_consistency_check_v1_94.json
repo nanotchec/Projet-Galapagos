@@ -1,0 +1,9 @@
+{
+  "version": "V1.94",
+  "consistency_check_status": "V1_94_CAUSAL_FEATURE_READINESS_REPORTS_CONSISTENT",
+  "issues": [],
+  "project_state_aligned": true,
+  "latest_metrics_aligned": true,
+  "feature_schema_aligned": true,
+  "feature_dryrun_aligned": true
+}

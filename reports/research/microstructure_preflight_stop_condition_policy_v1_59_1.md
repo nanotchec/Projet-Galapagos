@@ -1,0 +1,21 @@
+# Stop Condition Policy (V1.59.1)
+
+- Defines safety triggers.
+
+```json
+{
+  "version": "V1.59.1",
+  "current_version": "V1.59.1",
+  "stop_conditions_defined": true,
+  "critical_stop_triggers": [
+    "Unauthorized network connection detected",
+    "Unauthorized write to data/ directory",
+    "Real credential detected in requests",
+    "Binary data file detected (parquet, csv, etc.)",
+    "Request count > 0",
+    "Lookahead in timestamps detected"
+  ],
+  "system_state_on_stop": "IMMEDIATE_TERMINATION_AND_ROLLBACK",
+  "policy_status": "READY"
+}
+```

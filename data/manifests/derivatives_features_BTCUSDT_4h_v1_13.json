@@ -1,0 +1,23 @@
+{
+  "dataset_id": "derivatives_features_BTCUSDT_4h_v1_13",
+  "source": "public_derivatives_silver",
+  "symbol": "BTCUSDT",
+  "timeframe": "4h",
+  "start_timestamp": null,
+  "end_timestamp": null,
+  "rows": 1255,
+  "file_path": "data/gold/derivatives_features/BTCUSDT/4h/derivatives_features.csv",
+  "data_hash": "62ca5c8d1af6fc5af8ef07bfc455d476df1dbc1d7f6e7e6481143be93d983909",
+  "downloaded_at_utc": "2026-05-05T14:23:28.422176+00:00",
+  "created_at_utc": "2026-05-05T14:23:28.422176+00:00",
+  "source_url_or_endpoint": null,
+  "request_params_redacted": {
+    "symbol": "BTCUSDT",
+    "timeframe": "4h"
+  },
+  "schema_version": "v1",
+  "data_mode": "research",
+  "causal_note": "Features must be joined only after available_timestamp.",
+  "known_limitations": [],
+  "quality_status": "research_only"
+}

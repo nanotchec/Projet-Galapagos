@@ -1,0 +1,13 @@
+{
+  "version": "V1.90",
+  "source": "v1_84_v1_87_reports_and_v1_89_approval",
+  "network_executed": false,
+  "ml_signal_validation_executed": false,
+  "trading_allowed": false,
+  "artifact": "consolidated_quality_summary",
+  "v1_84_hashes_verified": true,
+  "v1_87_hashes_verified": true,
+  "v1_84_files_count": 3,
+  "v1_87_files_count": 2,
+  "full_dataset_created": false
+}

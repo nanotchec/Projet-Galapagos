@@ -1,0 +1,16 @@
+{
+  "version": "V1.44.1",
+  "timestamp": "2026-05-11T00:00:32.222006",
+  "final_verdict": "REGIME_AWARE_FEATURE_RESEARCH_PROMISING_BUT_UNVALIDATED",
+  "recommended_next_step": "run stricter ablation and causal feature importance before any preregistration",
+  "evidence_classification": "RESEARCH_ONLY",
+  "input_guard_passed": true,
+  "source_contract_passed": false,
+  "audit_passed": true,
+  "max_improvement_pct": 16218929835.039612,
+  "overfit_risk_level": "MODERATE",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "no_preregistration_yet": true
+}

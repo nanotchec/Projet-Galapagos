@@ -1,0 +1,8 @@
+{
+  "rules_tested_count": 78,
+  "multiple_testing_warning": true,
+  "best_filter_beats_p95": true,
+  "top_filter_rank": 1,
+  "verdict": "MULTIPLE_TESTING_RISK_HIGH",
+  "audit_note": "FILTER_NEEDS_OUT_OF_SAMPLE_CONFIRMATION"
+}

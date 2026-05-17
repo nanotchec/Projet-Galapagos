@@ -1,0 +1,10 @@
+{
+  "version": "V1.95.1",
+  "physical_timestamp_order_scan_executed": true,
+  "feature_rows_timestamp_order_valid": true,
+  "available_ts_lte_decision_ts_checked": true,
+  "event_ts_lte_available_ts_checked": true,
+  "timestamp_order_violations_detected": false,
+  "timestamp_order_violations_count": 0,
+  "timestamp_order_violations": []
+}

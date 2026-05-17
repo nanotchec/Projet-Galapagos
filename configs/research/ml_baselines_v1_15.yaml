@@ -1,0 +1,29 @@
+version: V1.15
+evaluation_name: ml_baselines_v1_15
+
+targets:
+  classification:
+    - target_up_after_cost_6bar
+    - target_up_after_cost_12bar
+    - target_tp_before_sl_conservative
+
+feature_sets:
+  - ohlcv_basic
+  - ohlcv_macro_derivatives
+  - alpha_scores
+
+models:
+  classification:
+    - logistic_regression
+    - random_forest
+    - hist_gradient_boosting
+    - dummy_most_frequent
+  regression: []
+
+walk_forward:
+  embargo_bars: 6
+  min_train_rows: 200
+  min_test_rows: 50
+
+cost_threshold: 0.003
+random_seed: 42

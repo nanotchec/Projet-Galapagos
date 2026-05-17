@@ -1,0 +1,50 @@
+{
+  "version": "V1.49.1",
+  "previous_base": "V1.49",
+  "microstructure_regime_label_base_version": "V1.48.1",
+  "microstructure_feature_base_version": "V1.47",
+  "regime_data_quality_base_version": "V1.46.3",
+  "feature_ablation_base_version": "V1.45.1",
+  "canonical_base_version": "V1.37.2",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false,
+  "regime_counts": {
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:low": 23004,
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:high": 22560,
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:high": 19752,
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:mid": 19344,
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:mid": 19128,
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:mid": 18732,
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:low": 18312,
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:low": 15924,
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:high": 14892
+  },
+  "regime_percentages": {
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:low": 13.401845637583893,
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:high": 13.143176733780763,
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:high": 11.507270693512304,
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:mid": 11.269574944071588,
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:mid": 11.143736017897092,
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:mid": 10.913031319910514,
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:low": 10.66834451901566,
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:low": 9.277125279642059,
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:high": 8.67589485458613
+  },
+  "unique_regimes": [
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:low",
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:high",
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:high",
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:mid",
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:mid",
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:mid",
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:low",
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:low",
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:high"
+  ]
+}

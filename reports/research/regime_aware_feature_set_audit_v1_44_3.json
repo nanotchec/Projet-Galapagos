@@ -1,0 +1,54 @@
+{
+  "status": "FEATURE_SET_AUDIT_COMPLETE",
+  "all_passed": true,
+  "results": {
+    "v1_38_core_baseline": {
+      "set_name": "v1_38_core_baseline",
+      "passed": true,
+      "feature_count": 19,
+      "forbidden_cols": [],
+      "unknown_cols": [],
+      "audit_verdict": "PASSED"
+    },
+    "v1_44_regime_aware_raw": {
+      "set_name": "v1_44_regime_aware_raw",
+      "passed": true,
+      "feature_count": 22,
+      "forbidden_cols": [],
+      "unknown_cols": [],
+      "audit_verdict": "PASSED"
+    },
+    "v1_44_alpha_only": {
+      "set_name": "v1_44_alpha_only",
+      "passed": true,
+      "feature_count": 22,
+      "forbidden_cols": [],
+      "unknown_cols": [],
+      "audit_verdict": "PASSED"
+    },
+    "v1_44_combined_regime_alpha": {
+      "set_name": "v1_44_combined_regime_alpha",
+      "passed": true,
+      "feature_count": 44,
+      "forbidden_cols": [],
+      "unknown_cols": [],
+      "audit_verdict": "PASSED"
+    },
+    "v1_44_derivatives_heavy": {
+      "set_name": "v1_44_derivatives_heavy",
+      "passed": true,
+      "feature_count": 6,
+      "forbidden_cols": [],
+      "unknown_cols": [],
+      "audit_verdict": "PASSED"
+    },
+    "v1_44_macro_heavy": {
+      "set_name": "v1_44_macro_heavy",
+      "passed": true,
+      "feature_count": 7,
+      "forbidden_cols": [],
+      "unknown_cols": [],
+      "audit_verdict": "PASSED"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "universe_fingerprint": "32b012c6cbcffe2ac7b76363bcdb2c5de5f375df2c1f567b8c133b9894517690",
+  "definition_fingerprint": "c88f94f7b68b1410550d995743c63329471ba1ce79b544faa0832b820d1140eb",
+  "canonical_key_hash": "80530d0b0ed81bd59dbf96d2a00d10ec098edc47204f7746b20e2c6826dcc792",
+  "rows_count": 100,
+  "min_timestamp": "2026-01-01 00:00:00",
+  "max_timestamp": "2026-01-17 12:00:00",
+  "fingerprint_status": "CANONICAL_UNIVERSE_FINGERPRINT_CREATED"
+}

@@ -1,0 +1,45 @@
+{
+  "version": "V1.92.1",
+  "source_versions": [
+    "V1.84",
+    "V1.87.2",
+    "V1.90.1"
+  ],
+  "event_ts": "source_artifact_static",
+  "available_ts": "source_artifact_static",
+  "decision_ts": "v1_92_seed_build_time",
+  "anti_leakage_note": "available_ts must be less than or equal to decision_ts",
+  "artifact": "seed_schema",
+  "fields": [
+    {
+      "name": "source_version",
+      "type": "string"
+    },
+    {
+      "name": "artifact_name",
+      "type": "string"
+    },
+    {
+      "name": "artifact_kind",
+      "type": "string"
+    },
+    {
+      "name": "event_ts",
+      "type": "string"
+    },
+    {
+      "name": "available_ts",
+      "type": "string"
+    },
+    {
+      "name": "decision_ts",
+      "type": "string"
+    },
+    {
+      "name": "source_checksum_sha256",
+      "type": "string"
+    }
+  ],
+  "available_ts_policy": "feature_available_ts_lte_decision_ts",
+  "no_lookahead_policy": "source artifact metadata only; no prohibited result fields"
+}

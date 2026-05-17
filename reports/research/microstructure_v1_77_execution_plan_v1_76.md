@@ -1,0 +1,17 @@
+# Microstructure V1 77 Execution Plan
+
+Version: v1.76
+
+```json
+{
+  "v1_77_execution_plan_ready": false,
+  "operation_type": "BOUNDED_MINI_COLLECTION",
+  "constraints": {
+    "max_requests": 10,
+    "reports_only": true,
+    "no_data_writes": true,
+    "no_trading": true
+  },
+  "status": "AWAITING_APPROVAL"
+}
+```

@@ -1,0 +1,16 @@
+{
+  "version": "V1.92.1",
+  "anti_leakage_plan_applied": true,
+  "available_ts_policy_applied": true,
+  "event_ts_policy_applied": true,
+  "decision_ts_policy_applied": true,
+  "feature_available_ts_lte_decision_ts_rule_applied": true,
+  "no_lookahead_policy_applied": true,
+  "provenance_policy_applied": true,
+  "manifest_checksum_policy_applied": true,
+  "schema_validation_policy_applied": true,
+  "leakage_detected": false,
+  "lookahead_detected": false,
+  "future_information_fields_detected": false,
+  "forbidden_target_like_fields_detected": false
+}

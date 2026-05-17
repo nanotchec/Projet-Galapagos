@@ -1,0 +1,92 @@
+{
+  "version": "V1.11",
+  "holdout_executed": false,
+  "regimes": {
+    "calibration": {
+      "window": {
+        "regime_label": "high_volatility",
+        "return_pct": -0.5121411699532972,
+        "max_drawdown": -0.6721240323018175,
+        "realized_volatility": 0.012871190494332586
+      },
+      "signal_quality": {
+        "downtrend": {
+          "count": 155,
+          "mean_forward_return_6bar": -0.004371140583754042
+        },
+        "range": {
+          "count": 209,
+          "mean_forward_return_6bar": 0.0012252727911060866
+        },
+        "uptrend": {
+          "count": 180,
+          "mean_forward_return_6bar": -0.0005920633008718516
+        },
+        "low_volatility": {
+          "count": 159,
+          "mean_forward_return_6bar": -0.0027285783652881254
+        },
+        "high_volatility": {
+          "count": 62,
+          "mean_forward_return_6bar": 0.0006330983213684914
+        }
+      }
+    },
+    "validation_1": {
+      "window": {
+        "regime_label": "high_volatility",
+        "return_pct": 1.6770551687805049,
+        "max_drawdown": -0.21284007301655627,
+        "realized_volatility": 0.009145930186463664
+      },
+      "signal_quality": {
+        "low_volatility": {
+          "count": 412,
+          "mean_forward_return_6bar": 0.0021176375235164523
+        },
+        "downtrend": {
+          "count": 91,
+          "mean_forward_return_6bar": 0.003762845483752491
+        },
+        "uptrend": {
+          "count": 187,
+          "mean_forward_return_6bar": 0.0035839695624594087
+        },
+        "range": {
+          "count": 72,
+          "mean_forward_return_6bar": 0.0054258674698074065
+        }
+      }
+    },
+    "validation_2": {
+      "window": {
+        "regime_label": "high_volatility",
+        "return_pct": 0.32689410393087437,
+        "max_drawdown": -0.30086008291564426,
+        "realized_volatility": 0.011419670648393011
+      },
+      "signal_quality": {
+        "uptrend": {
+          "count": 192,
+          "mean_forward_return_6bar": -0.0004733709678059021
+        },
+        "range": {
+          "count": 199,
+          "mean_forward_return_6bar": -0.0009149429044843934
+        },
+        "downtrend": {
+          "count": 136,
+          "mean_forward_return_6bar": 0.004821079476860538
+        },
+        "low_volatility": {
+          "count": 229,
+          "mean_forward_return_6bar": -0.00011885058696824188
+        },
+        "high_volatility": {
+          "count": 12,
+          "mean_forward_return_6bar": 0.019428657101311864
+        }
+      }
+    }
+  }
+}

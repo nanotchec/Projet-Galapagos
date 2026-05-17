@@ -1,0 +1,10 @@
+{
+  "cost_vs_gross_status": "PAYOFF_OBJECTIVE_EDGE_NEGATIVE_BEFORE_COSTS",
+  "gross_mean_return_top_decile": -0.0038620504325398135,
+  "cost_proxy_mean_top_decile": 0.0010000000000000002,
+  "net_mean_return_top_decile": -0.004862050432539813,
+  "edge_before_costs": -0.0038620504325398135,
+  "edge_after_costs": -0.004862050432539813,
+  "selected_count_2026": 2436,
+  "recent_window_status": null
+}

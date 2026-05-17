@@ -1,0 +1,9 @@
+{
+  "status": "PAPER_FORWARD_HARNESS_READY_NO_NEW_DATA",
+  "protocol_check_passed": true,
+  "data_availability_read_ok": true,
+  "exact_filter_reconstructable": true,
+  "mock_components_present": false,
+  "real_metrics_available": false,
+  "reports_generated": true
+}

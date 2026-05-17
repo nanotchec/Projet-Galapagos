@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "next_phase_max_capabilities": {
+    "network_enabled": false,
+    "real_requests": false,
+    "real_data_writes": false,
+    "planning_only": true
+  },
+  "policy_enforced": true,
+  "version": "V1.62.1",
+  "current_version": "V1.62.1",
+  "previous_version": "V1.62",
+  "previous_base": "V1.62",
+  "migrated_from": "V1.62",
+  "migration_reason": "hardened preflight review state alignment fix"
+}

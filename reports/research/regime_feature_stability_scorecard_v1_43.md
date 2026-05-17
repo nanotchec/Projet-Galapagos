@@ -1,0 +1,99 @@
+# Regime Feature Stability Scorecard V1.43
+
+Status: COMPLETE
+
+### Summary
+```json
+{
+  "feature_stability_scorecard_status": "FEATURE_STABILITY_SCORECARD_COMPLETE",
+  "family_summary": {
+    "alpha_score_or_model_output": {
+      "REGIME_DEPENDENT": 1.0,
+      "STABLE_CANDIDATE": 25.0
+    },
+    "microstructure": {
+      "REGIME_DEPENDENT": 0.0,
+      "STABLE_CANDIDATE": 3.0
+    },
+    "price_return": {
+      "REGIME_DEPENDENT": 0.0,
+      "STABLE_CANDIDATE": 6.0
+    },
+    "regime_proxy": {
+      "REGIME_DEPENDENT": 0.0,
+      "STABLE_CANDIDATE": 3.0
+    },
+    "trend_momentum": {
+      "REGIME_DEPENDENT": 0.0,
+      "STABLE_CANDIDATE": 11.0
+    },
+    "volatility": {
+      "REGIME_DEPENDENT": 0.0,
+      "STABLE_CANDIDATE": 1.0
+    },
+    "volume_liquidity": {
+      "REGIME_DEPENDENT": 0.0,
+      "STABLE_CANDIDATE": 6.0
+    }
+  },
+  "stable_candidate_count": 55,
+  "stable_candidate_features": [
+    "predicted_probability",
+    "calibrated_probability_rebuilt",
+    "calibrated_probability",
+    "predicted_probability_calibrated",
+    "volume",
+    "max_favorable_excursion_1bar",
+    "max_adverse_excursion_1bar",
+    "max_favorable_excursion_3bar",
+    "max_adverse_excursion_3bar",
+    "max_favorable_excursion_6bar",
+    "max_adverse_excursion_6bar",
+    "max_favorable_excursion_12bar",
+    "max_adverse_excursion_12bar",
+    "taker_buy_volume_binance",
+    "taker_sell_volume_binance",
+    "taker_buy_volume",
+    "taker_sell_volume",
+    "funding_rate_spread_binance_bybit",
+    "funding_rate_zscore_30d",
+    "funding_rate_zscore_90d",
+    "funding_rate_change_1",
+    "funding_rate_change_3",
+    "funding_zscore_30d",
+    "funding_zscore_90d",
+    "funding_trend_3",
+    "open_interest_change_1",
+    "open_interest_change_3",
+    "open_interest_zscore_30d",
+    "open_interest_zscore_90d",
+    "oi_change_1",
+    "oi_change_3",
+    "oi_zscore_30d",
+    "oi_zscore_90d",
+    "premium_zscore_30d",
+    "long_short_ratio_zscore",
+    "taker_imbalance",
+    "taker_imbalance_zscore",
+    "derivatives_risk_regime",
+    "derivatives_crowding_score",
+    "derivatives_leverage_score",
+    "derivatives_regime_score",
+    "vol_regime_vix",
+    "equity_market_trend",
+    "macro_regime",
+    "ohlcv_momentum_score",
+    "ohlcv_breakout_score",
+    "volatility_quality_score",
+    "macro_regime_score",
+    "cost_penalty_score",
+    "volume_quality_score"
+  ],
+  "unstable_feature_count": 1,
+  "recommended_feature_families_for_v1_44": [
+    "alpha_score_or_model_output",
+    "trend_momentum"
+  ],
+  "avoid_feature_families_for_v1_44": []
+}
+```

@@ -1,0 +1,77 @@
+{
+  "version": "V1.11",
+  "generated_at_utc": "2026-05-05T14:03:21.256113+00:00",
+  "symbol": "BTCUSDT",
+  "dry_run": true,
+  "checks": [
+    {
+      "source": "binance_futures",
+      "dataset": "funding_rate",
+      "status": "available",
+      "public_no_key": true,
+      "history_note": "Historique public pagine possible, limites de taux a respecter.",
+      "requires_env": null,
+      "detail": null
+    },
+    {
+      "source": "binance_futures",
+      "dataset": "open_interest",
+      "status": "available",
+      "public_no_key": true,
+      "history_note": "Snapshot public; historique via endpoint separe selon disponibilite.",
+      "requires_env": null,
+      "detail": null
+    },
+    {
+      "source": "binance_futures",
+      "dataset": "long_short_ratio",
+      "status": "history_limited",
+      "public_no_key": true,
+      "history_note": "Historique souvent limite, typiquement court selon endpoint.",
+      "requires_env": null,
+      "detail": null
+    },
+    {
+      "source": "bybit_v5",
+      "dataset": "funding_rate",
+      "status": "available",
+      "public_no_key": true,
+      "history_note": "Endpoint public V5, pagination future necessaire.",
+      "requires_env": null,
+      "detail": null
+    },
+    {
+      "source": "bybit_v5",
+      "dataset": "open_interest",
+      "status": "available",
+      "public_no_key": true,
+      "history_note": "Endpoint public V5, couverture a verifier par symbole.",
+      "requires_env": null,
+      "detail": null
+    },
+    {
+      "source": "coinglass",
+      "dataset": "liquidations_funding_oi_etf_flows",
+      "status": "requires_api_key",
+      "public_no_key": false,
+      "history_note": "Provider optionnel; ne pas appeler sans cle API.",
+      "requires_env": "COINGLASS_API_KEY",
+      "detail": null
+    },
+    {
+      "source": "fred",
+      "dataset": "macro_rates_liquidity_proxies",
+      "status": "requires_api_key",
+      "public_no_key": false,
+      "history_note": "Macro future optionnelle, pas de contexte live en V1.11.",
+      "requires_env": "FRED_API_KEY",
+      "detail": null
+    }
+  ],
+  "secrets_logged": false,
+  "notes": [
+    "Les endpoints publics peuvent fonctionner sans cle pour certains jeux.",
+    "CoinGlass et FRED restent optionnels tant que les cles ne sont pas fournies.",
+    "Aucune cle API ne doit etre logguee."
+  ]
+}

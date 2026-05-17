@@ -1,0 +1,7 @@
+{
+  "consistency_check_status": "REGIME_FEATURE_DIAGNOSTIC_REPORTS_CONSISTENT_DIAGNOSTIC_ONLY",
+  "version": "v1.43.1",
+  "status_field_policy": "REMOVED",
+  "status_field_present": false,
+  "issues": []
+}

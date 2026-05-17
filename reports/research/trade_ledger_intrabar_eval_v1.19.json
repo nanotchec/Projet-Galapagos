@@ -1,0 +1,76 @@
+{
+  "version": "v1.19",
+  "policy_metrics": {
+    "fixed_percent": {
+      "candidates_count": 4275,
+      "evaluated_count": 74,
+      "win_rate": 0.4594594594594595,
+      "mean_pnl_pct": 0.002034282708208508,
+      "mean_pnl_after_cost_pct": -0.0009657172917914922,
+      "median_pnl_after_cost_pct": -0.005014431579056964,
+      "mean_mfe_pct": 0.02326894441564867,
+      "mean_mae_pct": 0.012994146213612246,
+      "exit_reasons": {
+        "timeout": 32,
+        "stop_loss": 28,
+        "take_profit": 14
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 74,
+        "win_rate": 0.4594594594594595,
+        "mean_pnl_after_cost_pct": -0.0009657172917914922
+      }
+    },
+    "atr_proxy": {
+      "candidates_count": 4275,
+      "evaluated_count": 74,
+      "win_rate": 0.5405405405405406,
+      "mean_pnl_pct": 0.004274670441021866,
+      "mean_pnl_after_cost_pct": 0.0012746704410218671,
+      "median_pnl_after_cost_pct": -0.0017658023688288068,
+      "mean_mfe_pct": 0.02326894441564867,
+      "mean_mae_pct": 0.012994146213612246,
+      "exit_reasons": {
+        "timeout": 38,
+        "stop_loss": 21,
+        "take_profit": 15
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 74,
+        "win_rate": 0.5405405405405406,
+        "mean_pnl_after_cost_pct": 0.0012746704410218671
+      }
+    },
+    "horizon_only": {
+      "candidates_count": 4275,
+      "evaluated_count": 74,
+      "win_rate": 0.5540540540540541,
+      "mean_pnl_pct": 0.006758959089147392,
+      "mean_pnl_after_cost_pct": 0.0037589590891473922,
+      "median_pnl_after_cost_pct": -0.00044424624998058,
+      "mean_mfe_pct": 0.02326894441564867,
+      "mean_mae_pct": 0.012994146213612246,
+      "exit_reasons": {
+        "horizon_timeout": 74
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 74,
+        "win_rate": 0.5540540540540541,
+        "mean_pnl_after_cost_pct": 0.0037589590891473922
+      }
+    }
+  },
+  "comparison": {
+    "best_policy": "horizon_only",
+    "best_mean_pnl_after_cost_pct": 0.0037589590891473922,
+    "verdict": "HORIZON_ONLY_BETTER_THAN_TPSL",
+    "comparison_count": 3,
+    "all_negative": false
+  },
+  "simulation_input_type": "real_signal_candidates_with_deterministic_research_policies",
+  "is_real_trade_simulation": false,
+  "ready_for_reviewer": false
+}

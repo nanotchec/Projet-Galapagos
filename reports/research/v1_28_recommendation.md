@@ -1,0 +1,13 @@
+# V1 28 Recommendation
+
+```json
+{
+  "final_verdict": "CURRENT_FILTER_NON_CAUSAL_RETROSPECTIVE_ONLY",
+  "do_not_use_for_live_forward_validation": true,
+  "existing_evidence_reclassified_as": "RETROSPECTIVE_DISCOVERY_ONLY",
+  "recommended_next_step": "V1.29 causal cost-aware threshold research",
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}
+```

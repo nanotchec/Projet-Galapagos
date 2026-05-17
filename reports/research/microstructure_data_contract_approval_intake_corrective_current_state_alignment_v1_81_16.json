@@ -1,0 +1,9 @@
+{
+  "version": "V1.81.16",
+  "current_state_consistent": true,
+  "summary_matches_latest_metrics": true,
+  "summary_matches_project_state": true,
+  "latest_metrics_matches_project_state": true,
+  "release_fields_aligned": true,
+  "mismatches": []
+}

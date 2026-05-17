@@ -1,0 +1,11 @@
+# Safety check Report v1_87_1
+
+```json
+{
+  "version": "V1.87.1",
+  "network_executed": false,
+  "trading_allowed": false,
+  "ml_allowed": false,
+  "ultra_bounded": true
+}
+```

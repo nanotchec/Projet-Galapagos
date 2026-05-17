@@ -1,0 +1,18 @@
+# Regime Dependency Diagnostic V1 29 5
+
+```json
+{
+  "regime_metrics": {
+    "bull_strength": {
+      "selected_count": 225,
+      "share": 1.0,
+      "net_mean_pnl": 0.007431167286480073,
+      "win_rate": 0.5644444444444444
+    }
+  },
+  "dominant_regime": "bull_strength",
+  "dominant_regime_share": 1.0,
+  "regime_dependency_status": "APPARENT_BULL_DEPENDENCY_WITH_COARSE_REGIME_DEFINITION",
+  "regime_diversity_insufficient": true
+}
+```

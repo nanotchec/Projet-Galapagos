@@ -1,0 +1,15 @@
+{
+  "history_calibration": {
+    "realized_win_rate": 0.5259182712034406,
+    "avg_calibrated_prob": 0.48434554587862283,
+    "calibration_gap": -0.04157272532481776,
+    "brier_score": 0.2602519483110121
+  },
+  "recent_calibration": {
+    "realized_win_rate": 0.48741469963083117,
+    "avg_calibrated_prob": 0.5002873181014795,
+    "calibration_gap": 0.012872618470648356,
+    "brier_score": 0.2609678194743603
+  },
+  "status": "CALIBRATION_STABLE_BUT_PAYOFF_DEGRADED"
+}

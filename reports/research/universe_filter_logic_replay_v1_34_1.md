@@ -1,0 +1,26 @@
+# Filter Logic Replay - V1.34.1
+
+```json
+{
+  "source_selected_count_2026": 12691,
+  "replay_paths": [
+    {
+      "path_name": "rebuild_standard",
+      "count_2026": 8939,
+      "description": "Joined + Warmup"
+    },
+    {
+      "path_name": "raw_no_warmup",
+      "count_2026": 8939,
+      "description": "Joined, no warmup restriction"
+    },
+    {
+      "path_name": "dedup_timestamp",
+      "count_2026": 245,
+      "description": "One model per timestamp"
+    }
+  ],
+  "any_path_matches_source": false,
+  "filter_logic_status": "FILTER_LOGIC_MATCHES_REBUILD_ONLY"
+}
+```

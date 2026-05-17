@@ -1,0 +1,26 @@
+{
+  "dataset_join_keys": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target"
+  ],
+  "dataset_join_type": "inner",
+  "dataset_join_rows_before": 100,
+  "dataset_join_rows_after": 100,
+  "dataset_join_dropped_rows": 0,
+  "outcome_alignment_keys": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target"
+  ],
+  "canonical_key_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name"
+  ],
+  "join_policy_status": "JOIN_POLICY_EXPLICIT_AND_REPRODUCIBLE"
+}

@@ -1,0 +1,19 @@
+# Ev Proxy Diagnostic - V1.33.2
+
+```json
+{
+  "history_ev_proxy": {
+    "avg_ev_proxy": 0.005856755770795698,
+    "actual_mean_outcome": 0.0028093548810881083,
+    "ev_actual_gap": 0.0030474008897075897,
+    "correlation_ev_outcome": 0.06387756522227177
+  },
+  "recent_ev_proxy": {
+    "avg_ev_proxy": 0.004110341426898269,
+    "actual_mean_outcome": -0.003020376393830889,
+    "ev_actual_gap": 0.007130717820729158,
+    "correlation_ev_outcome": -0.06365956673513794
+  },
+  "status": "EV_PROXY_OVERESTIMATES_2026"
+}
+```

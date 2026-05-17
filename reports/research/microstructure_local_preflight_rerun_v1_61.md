@@ -1,0 +1,14 @@
+# Local Preflight Rerun
+
+Re-runs simulation on local fixtures.
+
+```json
+{
+  "status": "PASSED",
+  "preflight_rerun_executed": true,
+  "simulated_requests_count": 2,
+  "requests_executed_count": 0,
+  "network_enabled": false,
+  "no_data_writes": true
+}
+```

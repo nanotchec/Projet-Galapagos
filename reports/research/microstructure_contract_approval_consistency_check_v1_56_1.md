@@ -1,0 +1,51 @@
+# Microstructure Contract Approval Consistency Check
+
+## Consistency
+```json
+{
+  "version": "V1.56.1",
+  "previous_base": "V1.55.3",
+  "consistency_check_status": "MICROSTRUCTURE_CONTRACT_APPROVAL_REPORTS_CONSISTENT_INFRASTRUCTURE_ONLY",
+  "issues": [],
+  "project_state_aligned": true,
+  "latest_metrics_aligned": true,
+  "latest_summary_aligned": true,
+  "all_json_values_finite": true,
+  "all_json_files_parseable": true,
+  "invalid_json_files": [],
+  "required_reports_present": true,
+  "required_markdown_reports_present": true,
+  "safety_flags_aligned": true,
+  "recommendation_aligned": true,
+  "release_reports_present": true,
+  "contract_ready_for_offline_review": false,
+  "real_collection_approved": false,
+  "human_review_required_before_collection": true,
+  "network_disabled": true,
+  "dry_run_only": true,
+  "local_fixture_only": true,
+  "fixture_only": true,
+  "synthetic_or_minimal_sample": true,
+  "not_for_research_results": true,
+  "real_collection_executed": false,
+  "external_data_downloaded": false,
+  "external_api_called": false,
+  "new_data_files_created": false,
+  "no_data_directory_writes": true,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "requests_executed_count": 0,
+  "status_field_policy": "REMOVED",
+  "status_field_present": false,
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false
+}
+```
+

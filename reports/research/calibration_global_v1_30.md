@@ -1,0 +1,16 @@
+# Calibration Global - Galapagos V1.30
+
+## Status
+- **CALIBRATION_DEGRADED**
+
+## Details
+```json
+{
+  "brier_score": 0.2905462060067878,
+  "log_loss": 4.263502106356116,
+  "ece": 0.14842422544538986,
+  "mce": 0.4107199161830797,
+  "sample_count": 171648,
+  "status": "CALIBRATION_DEGRADED"
+}
+```

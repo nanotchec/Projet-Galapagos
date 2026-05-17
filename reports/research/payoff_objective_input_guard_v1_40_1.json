@@ -1,0 +1,18 @@
+{
+  "version": "V1.40.1",
+  "diagnostic_base": "V1.39",
+  "canonical_base_version": "V1.37.2",
+  "research_base_version": "V1.38.4",
+  "input_paths_status": "REAL_DATA_ONLY",
+  "mock_data_detected": false,
+  "raw_prediction_rows": 171648,
+  "selection_dataset_rows": 171648,
+  "outcome_dataset_rows": 171648,
+  "opportunity_index_rows": 171648,
+  "selected_count_total_v1_39": 129527,
+  "selected_count_2026_v1_39": 19497,
+  "v1_39_final_verdict": "EV_DEGRADATION_MULTI_FACTOR",
+  "v1_39_primary_degradation_driver": "EV_PROXY_OVERESTIMATES_2026",
+  "input_guard_status": "PAYOFF_OBJECTIVE_INPUT_GUARD_PASSED",
+  "issues": []
+}

@@ -1,0 +1,24 @@
+{
+  "version": "V1.99",
+  "created_files": [
+    "data/research/training_dataset_preview/v1_99/training_dataset_preview_manifest.json",
+    "data/research/training_dataset_preview/v1_99/training_dataset_preview_schema.json",
+    "data/research/training_dataset_preview/v1_99/training_dataset_preview_rows.json",
+    "data/research/training_dataset_preview/v1_99/training_dataset_preview_split_policy.json",
+    "data/research/training_dataset_preview/v1_99/training_dataset_preview_quality_audit.json"
+  ],
+  "training_dataset_preview_file_checksums": {
+    "training_dataset_preview_schema.json": "ddc847df8ec9643e3b24563294880dd303775b87bbe8ce9f4ecbfb3266fecc0a",
+    "training_dataset_preview_rows.json": "33e4331bc0848c51cd372d94c0298b97fc7425df5f3ae67a245553fdb713fb64",
+    "training_dataset_preview_split_policy.json": "3009b769f2571a49b6cc4081cf885cb023e5339b4258d895bf5746f3148e4521",
+    "training_dataset_preview_quality_audit.json": "920d52e4041d15161677b5aa252afda72f67a494337b28b27d1828344f28df23"
+  },
+  "allowed_data_write_root": "data/research/training_dataset_preview/v1_99/",
+  "total_new_data_files_created": 5,
+  "json_only": true,
+  "source_versions": [
+    "V1.95.1",
+    "V1.97.2",
+    "V1.98.2"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "V1.96",
+  "label_horizon_policy_defined": true,
+  "label_available_after_horizon_policy_defined": true,
+  "label_not_available_at_decision_ts_policy_defined": true,
+  "labels_for_training_forbidden_in_v1_96": true,
+  "labels_joined_to_features_forbidden_in_v1_96": true,
+  "predictions_forbidden": true,
+  "model_training_forbidden": true,
+  "trading_forbidden": true,
+  "leakage_detected": false,
+  "lookahead_detected": false,
+  "label_forbidden_terms_detected": true,
+  "label_forbidden_terms_count": 2
+}

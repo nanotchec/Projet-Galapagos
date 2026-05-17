@@ -1,0 +1,85 @@
+{
+  "feature_shifts": [
+    {
+      "feature": "derivatives_confidence_score",
+      "pre_2026_mean": 0.19999999999999998,
+      "2026_mean": 0.3028571428571428,
+      "pre_2026_missing_rate": 0.0,
+      "2026_missing_rate": 0.0,
+      "standardized_mean_difference": 3705802288910050.5
+    },
+    {
+      "feature": "funding_rate",
+      "pre_2026_mean": 5.6317225553254123e-05,
+      "2026_mean": 9.43953385127636e-06,
+      "pre_2026_missing_rate": 0.0,
+      "2026_missing_rate": 0.1123152709359606,
+      "standardized_mean_difference": 0.8089254327878902
+    },
+    {
+      "feature": "funding_rate_binance",
+      "pre_2026_mean": 5.6317225553254123e-05,
+      "2026_mean": 1.0670276497695853e-05,
+      "pre_2026_missing_rate": 0.0,
+      "2026_missing_rate": 0.2517241379310345,
+      "standardized_mean_difference": 0.7876876330635622
+    },
+    {
+      "feature": "funding_rate_bybit",
+      "pre_2026_mean": null,
+      "2026_mean": -2.8917331288343534e-06,
+      "pre_2026_missing_rate": 1.0,
+      "2026_missing_rate": 0.6788177339901478,
+      "standardized_mean_difference": null
+    },
+    {
+      "feature": "open_interest",
+      "pre_2026_mean": null,
+      "2026_mean": 51541.206432967025,
+      "pre_2026_missing_rate": 1.0,
+      "2026_missing_rate": 0.7758620689655172,
+      "standardized_mean_difference": null
+    },
+    {
+      "feature": "open_interest_bybit",
+      "pre_2026_mean": null,
+      "2026_mean": 51541.206432967025,
+      "pre_2026_missing_rate": 1.0,
+      "2026_missing_rate": 0.7758620689655172,
+      "standardized_mean_difference": null
+    },
+    {
+      "feature": "taker_imbalance",
+      "pre_2026_mean": null,
+      "2026_mean": 0.011606329233632147,
+      "pre_2026_missing_rate": 1.0,
+      "2026_missing_rate": 0.7980295566502463,
+      "standardized_mean_difference": null
+    },
+    {
+      "feature": "taker_buy_sell_ratio",
+      "pre_2026_mean": null,
+      "2026_mean": 1.0317296340056283,
+      "pre_2026_missing_rate": 1.0,
+      "2026_missing_rate": 0.7980295566502463,
+      "standardized_mean_difference": null
+    },
+    {
+      "feature": "long_short_crowding",
+      "pre_2026_mean": null,
+      "2026_mean": 0.6599545666356005,
+      "pre_2026_missing_rate": 1.0,
+      "2026_missing_rate": 0.8847290640394089,
+      "standardized_mean_difference": null
+    },
+    {
+      "feature": "derivatives_crowding_score",
+      "pre_2026_mean": null,
+      "2026_mean": 0.21998485554520014,
+      "pre_2026_missing_rate": 1.0,
+      "2026_missing_rate": 0.8847290640394089,
+      "standardized_mean_difference": null
+    }
+  ],
+  "feature_distribution_shift_status": "FEATURE_DISTRIBUTION_SHIFT_DETECTED"
+}

@@ -1,0 +1,217 @@
+{
+  "regimes": [
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 998,
+          "net_mean_pnl": 0.0038451299650675785,
+          "win_rate": 0.5426278836509528
+        },
+        "neutral": {
+          "selected_count": 343,
+          "net_mean_pnl": 0.0031719318128693697,
+          "win_rate": 0.5454545454545454
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.55"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 998,
+          "net_mean_pnl": 0.0038451299650675785,
+          "win_rate": 0.5426278836509528
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.6"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 720,
+          "net_mean_pnl": 0.006404459818221361,
+          "win_rate": 0.5708333333333333
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.65"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 506,
+          "net_mean_pnl": 0.00886580000963864,
+          "win_rate": 0.5790513833992095
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.7"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 75,
+          "net_mean_pnl": -0.0013036261281694106,
+          "win_rate": 0.4666666666666667
+        },
+        "neutral": {
+          "selected_count": 43,
+          "net_mean_pnl": -0.0056547115915570444,
+          "win_rate": 0.3953488372093023
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "first_ge_0.55_per_7D"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 314,
+          "net_mean_pnl": 0.0029516638055429065,
+          "win_rate": 0.5254777070063694
+        },
+        "neutral": {
+          "selected_count": 164,
+          "net_mean_pnl": -0.0006189058792787268,
+          "win_rate": 0.48466257668711654
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "first_ge_0.55_per_1D"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 112,
+          "net_mean_pnl": 0.0006860089007649203,
+          "win_rate": 0.4864864864864865
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "first_ge_0.6_per_7D"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 382,
+          "net_mean_pnl": 0.0021100152307915194,
+          "win_rate": 0.5170603674540682
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "first_ge_0.6_per_1D"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 104,
+          "net_mean_pnl": 0.0008100953782264576,
+          "win_rate": 0.4807692307692308
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "first_ge_0.65_per_7D"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 305,
+          "net_mean_pnl": 0.0030031532810153713,
+          "win_rate": 0.5278688524590164
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "first_ge_0.65_per_1D"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 92,
+          "net_mean_pnl": 0.003532880067601092,
+          "win_rate": 0.4673913043478261
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "first_ge_0.7_per_7D"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 223,
+          "net_mean_pnl": 0.005477882020706756,
+          "win_rate": 0.5336322869955157
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "first_ge_0.7_per_1D"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 318,
+          "net_mean_pnl": 0.002078609554108718,
+          "win_rate": 0.5173501577287066
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.6_cooldown_1 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 165,
+          "net_mean_pnl": 0.00016863232047091323,
+          "win_rate": 0.49390243902439024
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.6_cooldown_3 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 92,
+          "net_mean_pnl": 0.00041975355701498126,
+          "win_rate": 0.45054945054945056
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.6_cooldown_7 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 249,
+          "net_mean_pnl": 0.0032538395545888468,
+          "win_rate": 0.5301204819277109
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.65_cooldown_1 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 139,
+          "net_mean_pnl": 0.000664601137447567,
+          "win_rate": 0.4748201438848921
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.65_cooldown_3 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "bull_strength": {
+          "selected_count": 80,
+          "net_mean_pnl": -0.005121508505140318,
+          "win_rate": 0.4125
+        }
+      },
+      "status": "REGIME_BREAKDOWN_COMPLETE",
+      "filter_name": "prob_ge_0.65_cooldown_7 days 00:00:00"
+    }
+  ]
+}

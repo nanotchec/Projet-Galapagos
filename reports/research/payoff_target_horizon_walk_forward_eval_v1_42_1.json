@@ -1,0 +1,210 @@
+{
+  "status": "PAYOFF_TARGET_WALK_FORWARD_EVAL_PARTIAL_LABEL_ONLY",
+  "eval_results": [
+    {
+      "period": "2024_H1",
+      "split_status": "EVALUATED",
+      "net_return_regression": {
+        "spearman_corr": 0.0,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "downside_weighted_return": {
+        "spearman_corr": 0.0,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": 0.0,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": 0.0,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": 0.0,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "ev_gap_target": {
+        "spearman_corr": 0.0,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      }
+    },
+    {
+      "period": "2024_H2",
+      "split_status": "EVALUATED",
+      "net_return_regression": {
+        "spearman_corr": 0.006059284874015395,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "downside_weighted_return": {
+        "spearman_corr": 0.006059284874015395,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": -0.007928371049267378,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": 0.0070172476667733985,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": -0.002465327837562246,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "ev_gap_target": {
+        "spearman_corr": -0.031129225366764754,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      }
+    },
+    {
+      "period": "2025_H1",
+      "split_status": "EVALUATED",
+      "net_return_regression": {
+        "spearman_corr": 0.0016122071238573814,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "downside_weighted_return": {
+        "spearman_corr": 0.0016122071238573814,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": 0.007149313419962956,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": -0.006199387707207163,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": -8.568353628589805e-06,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "ev_gap_target": {
+        "spearman_corr": -0.04043887292409491,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      }
+    },
+    {
+      "period": "2025_H2",
+      "split_status": "EVALUATED",
+      "net_return_regression": {
+        "spearman_corr": 0.06362202273298055,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "downside_weighted_return": {
+        "spearman_corr": 0.06362202273298055,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": -0.04477567635500437,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": 0.04939957347792785,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": 0.055511222475132994,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "ev_gap_target": {
+        "spearman_corr": 0.017328560665472798,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      }
+    },
+    {
+      "period": "2026_H1",
+      "split_status": "EVALUATED",
+      "net_return_regression": {
+        "spearman_corr": -0.0316775067591962,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "downside_weighted_return": {
+        "spearman_corr": -0.0316775067591962,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": 0.022620039247754683,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": -0.03549811546322548,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": -0.033384335072378424,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      },
+      "ev_gap_target": {
+        "spearman_corr": -0.05714451472126424,
+        "evaluation_policy": "DIAGNOSTIC_LABEL_ONLY_NO_TARGET_SCORE",
+        "top_decile_mean_net_return": null,
+        "top_decile_downside_rate": null
+      }
+    }
+  ],
+  "reference_feature_used": "ev_calibrated_proxy",
+  "nan_metric_count": 6,
+  "split_integrity_status": "PAYOFF_TARGET_SPLIT_INTEGRITY_PASSED",
+  "invalid_split_count": 0,
+  "all_json_values_finite": true
+}

@@ -1,0 +1,18 @@
+# Microstructure Regime Label Recommendation
+
+```json
+{
+  "version": "V1.48",
+  "best_microstructure_regime_labels": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ],
+  "weak_microstructure_regime_labels": [],
+  "improves_over_v1_46_labels": true,
+  "improves_stability_2026": true,
+  "improves_separability_2026": true,
+  "final_verdict": "MICROSTRUCTURE_REGIME_LABELS_ACTIONABLE_BUT_UNVALIDATED",
+  "recommended_next_step": "rerun regime diagnostics with selected microstructure labels",
+  "recommendation_status": "MICROSTRUCTURE_REGIME_LABEL_RECOMMENDATION_COMPLETED"
+}
+```

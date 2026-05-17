@@ -1,0 +1,7 @@
+{
+  "status": "OVERFIT_GUARD_COMPLETE",
+  "tested_set_count": 6,
+  "max_sets_limit": 10,
+  "overfit_risk_level": "MODERATE",
+  "multiple_testing_penalty_applied": true
+}

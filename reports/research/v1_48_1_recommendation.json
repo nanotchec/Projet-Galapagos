@@ -1,0 +1,28 @@
+{
+  "version": "V1.48.1",
+  "best_microstructure_regime_labels": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ],
+  "weak_microstructure_regime_labels": [],
+  "improves_over_v1_46_labels": true,
+  "improves_stability_2026": true,
+  "improves_separability_2026": true,
+  "final_verdict": "MICROSTRUCTURE_REGIME_LABELS_ACTIONABLE_BUT_UNVALIDATED",
+  "recommended_next_step": "rerun regime diagnostics with selected microstructure labels",
+  "recommendation_status": "MICROSTRUCTURE_REGIME_LABEL_RECOMMENDATION_COMPLETED",
+  "previous_base": "V1.48",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false,
+  "evidence_classification": "RESEARCH_ONLY",
+  "built_microstructure_regime_labels": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ]
+}

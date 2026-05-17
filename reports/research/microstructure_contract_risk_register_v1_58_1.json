@@ -1,0 +1,40 @@
+{
+  "version": "V1.58.1",
+  "current_version": "V1.58.1",
+  "risks": [
+    {
+      "id": "RISK_001",
+      "category": "TECHNICAL",
+      "description": "Mismatch entre la s\u00e9mantique des champs annonc\u00e9e et la r\u00e9alit\u00e9 de l'API Bybit.",
+      "severity": "HIGH",
+      "mitigation": "Review humaine offline exhaustive et tests preflight locaux.",
+      "blocking_for_preflight": false
+    },
+    {
+      "id": "RISK_002",
+      "category": "TECHNICAL",
+      "description": "Divergence des sch\u00e9mas entre exchanges lors d'une collecte simultan\u00e9e.",
+      "severity": "MEDIUM",
+      "mitigation": "Normalisation stricte dans l'adapter layer.",
+      "blocking_for_preflight": false
+    },
+    {
+      "id": "RISK_003",
+      "category": "OPERATIONAL",
+      "description": "Risque d'activation accidentelle du r\u00e9seau lors des phases de d\u00e9veloppement.",
+      "severity": "CRITICAL",
+      "mitigation": "NetworkGuard activ\u00e9 par d\u00e9faut et v\u00e9rifi\u00e9 par validateur automatique.",
+      "blocking_for_preflight": false
+    },
+    {
+      "id": "RISK_004",
+      "category": "DATA",
+      "description": "Overconfidence bas\u00e9e sur des fixtures statiques non repr\u00e9sentatives de la prod.",
+      "severity": "MEDIUM",
+      "mitigation": "Extension pr\u00e9vue du plan de fixtures en V1.57.2.",
+      "blocking_for_preflight": false
+    }
+  ],
+  "blocking_risks_count": 0,
+  "non_blocking_risks_count": 4
+}

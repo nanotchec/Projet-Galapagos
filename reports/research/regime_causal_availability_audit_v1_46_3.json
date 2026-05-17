@@ -1,0 +1,9 @@
+{
+  "version": "V1.46.3",
+  "status": "REGIME_CAUSAL_AVAILABILITY_PASSED",
+  "checks": [
+    "no_future_bias",
+    "timestamp_alignment",
+    "data_isolation"
+  ]
+}

@@ -1,0 +1,10 @@
+# Microstructure Fixture Loader Audit V1 55
+
+```json
+{
+  "version": "v1.55",
+  "allowed_dir": "tests/fixtures/microstructure",
+  "data_path_rejected": true,
+  "fixture_loader_audit_status": "PASSED"
+}
+```

@@ -1,0 +1,11 @@
+{
+  "candidates_tested_count": 6,
+  "targets_tested_count": 4,
+  "metric_count": 108,
+  "multiple_testing_risk": "MODERATE",
+  "overfit_guard_status": "PAYOFF_OBJECTIVE_OVERFIT_RISK_MODERATE",
+  "evidence_classification": "EXPLORATORY_ONLY",
+  "preregistration_allowed": false,
+  "paper_live_allowed": false,
+  "no_strategy_validated": true
+}

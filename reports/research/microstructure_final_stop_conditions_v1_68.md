@@ -1,0 +1,18 @@
+# Report: Microstructure Final Stop Conditions
+
+```json
+{
+  "final_stop_conditions_defined": true,
+  "stop_triggers": [
+    "Unauthorized endpoint accessed",
+    "More than 1 request detected",
+    "Response size > 100KB",
+    "Inconsistent timestamp order in response",
+    "Write attempt to forbidden path (data/)",
+    "Trading function call detected",
+    "Network exception or timeout",
+    "Invalid JSON schema received",
+    "Secret leakage detected in output logs"
+  ]
+}
+```

@@ -1,0 +1,59 @@
+{
+  "status": "PAYOFF_TARGET_NOISE_ACCEPTABLE",
+  "results": [
+    {
+      "target_name": "net_return_regression",
+      "near_zero_rate": 0.0006291946308724832,
+      "return_std": 0.018271536357430052,
+      "signal_to_noise_proxy": 0.710285839852223,
+      "noise_2026_vs_pre": 0.9968198795445011,
+      "label_balance": 0.47273489932885904,
+      "target_stability_score": 0.9968205898303409
+    },
+    {
+      "target_name": "downside_weighted_return",
+      "near_zero_rate": 0.00020973154362416107,
+      "return_std": 0.028288409764121336,
+      "signal_to_noise_proxy": 0.6997816865810892,
+      "noise_2026_vs_pre": 0.9786691301411183,
+      "label_balance": 0.47273489932885904,
+      "target_stability_score": 0.9786698299228048
+    },
+    {
+      "target_name": "severe_loss_classifier",
+      "near_zero_rate": 0.7537751677852349,
+      "return_std": 0.43081230889310157,
+      "signal_to_noise_proxy": 0.5715381998251883,
+      "noise_2026_vs_pre": 0.9458191931091967,
+      "label_balance": 0.2462248322147651,
+      "target_stability_score": 0.9458197646473965
+    },
+    {
+      "target_name": "positive_payoff_classifier",
+      "near_zero_rate": 0.527265100671141,
+      "return_std": 0.4992575151482774,
+      "signal_to_noise_proxy": 0.9468769870508902,
+      "noise_2026_vs_pre": 1.05573148406818,
+      "label_balance": 0.47273489932885904,
+      "target_stability_score": 0.9442675690548332
+    },
+    {
+      "target_name": "payoff_ratio_target",
+      "near_zero_rate": 0.0,
+      "return_std": 1.423673269921312,
+      "signal_to_noise_proxy": 0.7812612983647892,
+      "noise_2026_vs_pre": 0.9985572045311134,
+      "label_balance": 0.47273489932885904,
+      "target_stability_score": 0.9985579857924117
+    },
+    {
+      "target_name": "ev_gap_target",
+      "near_zero_rate": 0.0006117170022371365,
+      "return_std": 0.018330017328441722,
+      "signal_to_noise_proxy": 0.7252185170187623,
+      "noise_2026_vs_pre": 1.008305089501854,
+      "label_balance": 0.41169136838180465,
+      "target_stability_score": 0.991694185279629
+    }
+  ]
+}

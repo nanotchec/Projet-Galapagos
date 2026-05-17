@@ -1,0 +1,17 @@
+# Microstructure Session Quality Profile - V1.50.1
+
+```json
+{
+  "status": "COMPLETED",
+  "session_quality_scores": {
+    "2024": 0.0,
+    "2025": 0.0,
+    "2026": 0.0
+  },
+  "session_quality_status": "MICROSTRUCTURE_SESSION_QUALITY_PROFILE_COMPLETED",
+  "version": "V1.50.1",
+  "previous_base": "V1.50",
+  "migrated_from": "V1.50",
+  "migration_reason": "release alignment fix"
+}
+```

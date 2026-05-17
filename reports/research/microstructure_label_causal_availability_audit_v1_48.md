@@ -1,0 +1,13 @@
+# Microstructure Label Causal Availability Audit
+
+```json
+{
+  "version": "V1.48",
+  "causal_availability": {
+    "amihud_illiquidity_regime": true,
+    "realized_vol_proxy_regime": true
+  },
+  "global_lookahead_rejection": true,
+  "causal_audit_status": "MICROSTRUCTURE_LABEL_CAUSAL_AVAILABILITY_AUDIT_COMPLETED"
+}
+```

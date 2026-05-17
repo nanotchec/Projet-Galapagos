@@ -1,0 +1,32 @@
+{
+  "regime_analysis": {
+    "macro_regime_score": {
+      "positive": {
+        "count": 169,
+        "mean_return": 0.6449704142011834,
+        "hit_rate": 0.6449704142011834,
+        "cost_adjusted_return": 0.6419704142011834,
+        "positive_after_costs": true
+      },
+      "negative": {
+        "count": 49,
+        "mean_return": 0.5510204081632653,
+        "hit_rate": 0.5510204081632653,
+        "cost_adjusted_return": 0.5480204081632654,
+        "positive_after_costs": true
+      }
+    },
+    "derivatives_regime_score": {
+      "positive": {
+        "status": "insufficient_data"
+      },
+      "negative": {
+        "count": 219,
+        "mean_return": 0.593607305936073,
+        "hit_rate": 0.593607305936073,
+        "cost_adjusted_return": 0.5906073059360731,
+        "positive_after_costs": true
+      }
+    }
+  }
+}

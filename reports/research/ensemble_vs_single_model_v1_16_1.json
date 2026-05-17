@@ -1,0 +1,17 @@
+{
+  "2024": {
+    "best_single_model_return": 0.0119472014519615,
+    "ensemble_return": 0.008463785425756334,
+    "ensemble_beats_single": false
+  },
+  "2025": {
+    "best_single_model_return": 0.008354116153670803,
+    "ensemble_return": 0.00682417474152277,
+    "ensemble_beats_single": false
+  },
+  "2026": {
+    "best_single_model_return": -0.006710527025672919,
+    "ensemble_return": -0.016770096922601167,
+    "ensemble_beats_single": false
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "issues": [],
+  "baseline_version": "V1.61",
+  "preflight_dryrun_passed": true,
+  "network_enabled": false,
+  "real_collection_approved": false
+}

@@ -1,0 +1,13 @@
+# Microstructure Data Contract Approval Intake Corrective Current State Alignment
+
+```json
+{
+  "cross_file_alignment_checked": true,
+  "cross_file_alignment_passed": true,
+  "cross_file_mismatch_count": 0,
+  "cross_file_mismatches": [],
+  "latest_metrics_matches_summary": true,
+  "project_state_matches_summary": true,
+  "project_state_matches_latest_metrics": true
+}
+```

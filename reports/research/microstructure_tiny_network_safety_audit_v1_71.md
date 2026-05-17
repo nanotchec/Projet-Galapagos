@@ -1,0 +1,20 @@
+# Microstructure Tiny Network Safety Audit
+
+Version: v1.71
+
+```json
+{
+  "strategy_link_allowed": false,
+  "no_strategy_validated": true,
+  "trading_allowed": false,
+  "no_real_trading": true,
+  "real_orders_possible": false,
+  "secrets_used": false,
+  "authenticated_request_allowed": false,
+  "request_limit_audit_passed": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "no_paper_live": true,
+  "safety_audit_passed": true
+}
+```

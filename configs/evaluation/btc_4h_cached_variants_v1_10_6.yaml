@@ -1,0 +1,115 @@
+version: V1.10.6
+evaluation_name: btc_4h_cached_variants_v1_10_6
+base_cache_config: configs/evaluation/btc_4h_long_only_force_close_v1_10_1.yaml
+profile: galapagos_4h
+asset: BTC/USD
+timeframe: 4h
+source_policies:
+  - state_aware_breakout
+  - state_aware_momentum
+min_bars_per_window: 80
+warmup_bars: 50
+min_spacing_bars: 3
+holdout_enabled: false
+
+windows:
+  calibration:
+    label: calibration
+    max_candidates: 20
+  validation_1:
+    label: validation_1
+    max_candidates: 20
+  validation_2:
+    label: validation_2
+    max_candidates: 20
+
+variants:
+  long_only_force_close:
+    trade_constraints:
+      allow_long: true
+      allow_short: false
+      short_policy: fallback_no_trade
+      allow_hold: true
+      allow_close: true
+    evaluation:
+      force_close_at_end: true
+
+  long_only_cost_filter_2x:
+    trade_constraints:
+      allow_long: true
+      allow_short: false
+      short_policy: fallback_no_trade
+      allow_hold: true
+      allow_close: true
+    cost_filter:
+      enabled: true
+      min_expected_move_to_cost_ratio: 2.0
+    evaluation:
+      force_close_at_end: true
+
+  long_only_cost_filter_3x:
+    trade_constraints:
+      allow_long: true
+      allow_short: false
+      short_policy: fallback_no_trade
+      allow_hold: true
+      allow_close: true
+    cost_filter:
+      enabled: true
+      min_expected_move_to_cost_ratio: 3.0
+    evaluation:
+      force_close_at_end: true
+
+  long_only_holding_3bars:
+    trade_constraints:
+      allow_long: true
+      allow_short: false
+      short_policy: fallback_no_trade
+      allow_hold: true
+      allow_close: true
+    exit_policy:
+      holding_aware:
+        enabled: true
+        min_holding_bars_before_agent_close: 3
+        agent_close_before_min_policy: convert_to_hold
+        stop_loss_priority: true
+        take_profit_priority: true
+        max_duration_priority: true
+    evaluation:
+      force_close_at_end: true
+
+  long_only_regime_filter:
+    trade_constraints:
+      allow_long: true
+      allow_short: false
+      short_policy: fallback_no_trade
+      allow_hold: true
+      allow_close: true
+    regime_filter:
+      enabled: true
+      block_long_trends:
+        - downtrend
+      block_extreme_volatility: true
+    evaluation:
+      force_close_at_end: true
+
+  long_only_cost2x_holding3:
+    trade_constraints:
+      allow_long: true
+      allow_short: false
+      short_policy: fallback_no_trade
+      allow_hold: true
+      allow_close: true
+    cost_filter:
+      enabled: true
+      min_expected_move_to_cost_ratio: 2.0
+    exit_policy:
+      holding_aware:
+        enabled: true
+        min_holding_bars_before_agent_close: 3
+        agent_close_before_min_policy: convert_to_hold
+        stop_loss_priority: true
+        take_profit_priority: true
+        max_duration_priority: true
+    evaluation:
+      force_close_at_end: true

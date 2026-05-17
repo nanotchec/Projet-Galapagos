@@ -1,0 +1,25 @@
+# Microstructure Regime Feature Consistency Check V1.47
+
+- Version: V1.47
+- Previous base: V1.46.3
+- Consistency status: MICROSTRUCTURE_REGIME_FEATURE_REPORTS_CONSISTENT_RESEARCH_ONLY
+- Issues: none
+- Project state aligned: true
+- Latest metrics aligned: true
+- Latest summary aligned: true
+- All JSON values finite: true
+- Required reports present: true
+- Required markdown reports present: true
+- Safety flags aligned: true
+- Recommendation aligned: true
+- Release reports present: true
+- Status field policy: REMOVED
+- Status field present: false
+- Canonical recommendation: microstructure-only enrichment, with microstructure regime features as the next data enrichment step
+- No new filter: true
+- No strategy validated: true
+- No preregistration yet: true
+- No paper live: true
+- No real trading: true
+- Holdout executed: false
+- Codex CLI called: false

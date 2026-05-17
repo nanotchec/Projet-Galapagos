@@ -1,0 +1,19 @@
+{
+  "status": "PASSED",
+  "adapters": {
+    "binance": {
+      "adapter_present": true,
+      "execute_request_blocked": true,
+      "requests_executed_count": 0
+    },
+    "bybit": {
+      "adapter_present": true,
+      "execute_request_blocked": true,
+      "requests_executed_count": 0
+    }
+  },
+  "requests_executed_total": 0,
+  "adapter_contracts_complete": true,
+  "version": "V1.56.1",
+  "previous_base": "V1.56"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETED",
+  "checklist_passed": true,
+  "details": {
+    "v1_57_2_final_verdict_ok": true,
+    "v1_57_2_packaging_ok": true,
+    "v1_57_2_semantics_consistent": true,
+    "real_collection_not_approved": true,
+    "human_review_required": true,
+    "infrastructure_only": true,
+    "network_disabled": true
+  }
+}

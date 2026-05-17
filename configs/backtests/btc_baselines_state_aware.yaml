@@ -1,0 +1,20 @@
+suite_name: btc_baselines_state_aware_v1_6
+profiles:
+  - 30m
+  - 4h
+policies:
+  - always_no_trade
+  - simple_momentum
+  - state_aware_momentum
+  - state_aware_breakout
+  - state_aware_mean_reversion
+symbol: BTC/USD
+requested_days: 30
+initial_capital_per_profile: 10000.0
+force_close_at_end: true
+fee_model:
+  fee_rate: 0.001
+slippage_model:
+  slippage_bps: 5.0
+llm_provider: mock
+output_reports_dir: reports/backtests

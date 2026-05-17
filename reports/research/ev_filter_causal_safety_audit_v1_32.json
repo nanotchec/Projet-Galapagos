@@ -1,0 +1,9 @@
+{
+  "causal_safety_status": "EV_FILTER_CAUSAL_SAFETY_PASSED",
+  "verified_logic": [
+    "payoff_estimator_uses_past_only",
+    "calibration_uses_walk_forward_past",
+    "selection_excludes_future_outcome_columns"
+  ],
+  "violations": []
+}

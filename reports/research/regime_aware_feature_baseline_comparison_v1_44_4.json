@@ -1,0 +1,50 @@
+{
+  "status": "BASELINE_COMPARISON_COMPLETE",
+  "primary_baseline": "v1_38_core_baseline",
+  "baseline_near_zero": true,
+  "comparisons": {
+    "v1_44_regime_aware_raw": {
+      "baseline_stability": 0.0,
+      "set_stability": 0.0,
+      "improvement_pct": null,
+      "improvement_pct_valid": false,
+      "improvement_interpretation": "NOT_INTERPRETABLE_BASELINE_NEAR_ZERO",
+      "beats_baseline": false
+    },
+    "v1_44_alpha_only": {
+      "baseline_stability": 0.0,
+      "set_stability": 0.16218929935039614,
+      "improvement_pct": null,
+      "improvement_pct_valid": false,
+      "improvement_interpretation": "NOT_INTERPRETABLE_BASELINE_NEAR_ZERO",
+      "beats_baseline": true
+    },
+    "v1_44_combined_regime_alpha": {
+      "baseline_stability": 0.0,
+      "set_stability": 0.05266022114535904,
+      "improvement_pct": null,
+      "improvement_pct_valid": false,
+      "improvement_interpretation": "NOT_INTERPRETABLE_BASELINE_NEAR_ZERO",
+      "beats_baseline": true
+    },
+    "v1_44_derivatives_heavy": {
+      "baseline_stability": 0.0,
+      "set_stability": 0.0,
+      "improvement_pct": null,
+      "improvement_pct_valid": false,
+      "improvement_interpretation": "NOT_INTERPRETABLE_BASELINE_NEAR_ZERO",
+      "beats_baseline": false
+    },
+    "v1_44_macro_heavy": {
+      "baseline_stability": 0.0,
+      "set_stability": 0.0,
+      "improvement_pct": null,
+      "improvement_pct_valid": false,
+      "improvement_interpretation": "NOT_INTERPRETABLE_BASELINE_NEAR_ZERO",
+      "beats_baseline": false
+    }
+  },
+  "max_improvement_pct": null,
+  "max_improvement_pct_valid": false,
+  "overall_improvement_detected": false
+}

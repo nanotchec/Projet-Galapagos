@@ -1,0 +1,12 @@
+{
+  "version": "v1.26",
+  "required_new_candidates": ">= 3000",
+  "required_duration_estimate": "3 months",
+  "minimum_selected_trades": 60,
+  "forbidden": [
+    "CHANGE_FILTER",
+    "CHANGE_POLICY",
+    "OPT_THRESHOLDS"
+  ],
+  "validation_batch_id": "VAL_2026_Q2_Q3"
+}

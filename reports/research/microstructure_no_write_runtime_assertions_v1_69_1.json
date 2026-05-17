@@ -1,0 +1,13 @@
+{
+  "no_network_runtime_assertions_passed": true,
+  "no_write_runtime_assertions_passed": true,
+  "network_enabled": false,
+  "external_api_called": false,
+  "requests_executed_count": 0,
+  "no_data_directory_writes": true,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "jsonl_created": false,
+  "db_created": false
+}

@@ -1,0 +1,19 @@
+{
+  "version": "V1.44.4",
+  "global_json_finiteness_passed": true,
+  "json_files_scanned": [
+    "regime_aware_feature_json_finiteness_audit_v1_44_4.json",
+    "regime_aware_feature_overfit_guard_v1_44_4.json",
+    "regime_aware_feature_baseline_comparison_v1_44_4.json",
+    "regime_aware_feature_input_guard_v1_44_4.json",
+    "regime_aware_feature_walk_forward_eval_v1_44_4.json",
+    "regime_aware_feature_set_audit_v1_44_4.json",
+    "regime_aware_feature_source_contract_v1_44_4.json",
+    "regime_aware_feature_regime_robustness_v1_44_4.json",
+    "regime_aware_feature_temporal_robustness_v1_44_4.json"
+  ],
+  "json_files_with_nan": [],
+  "json_files_with_infinity": [],
+  "old_invalid_reports_excluded": true,
+  "status": "GLOBAL_ZIP_FINITENESS_AUDIT_PASSED"
+}

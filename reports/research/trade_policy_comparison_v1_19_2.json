@@ -1,0 +1,15 @@
+{
+  "version": "v1.19.2",
+  "comparison": {
+    "best_policy": "observed_only_horizon_only",
+    "best_mean_pnl_after_cost_pct": 0.0037589590891473922,
+    "verdict": "TRADE_LEDGER_INTRABAR_SAMPLE_TOO_SHORT",
+    "policy_comparison_valid": false,
+    "warnings": [
+      "MEDIAN_PNL_NEGATIVE_ALL_POLICIES"
+    ],
+    "comparison_count": 3,
+    "all_negative": false,
+    "all_median_negative": true
+  }
+}

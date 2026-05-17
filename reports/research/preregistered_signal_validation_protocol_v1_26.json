@@ -1,0 +1,32 @@
+{
+  "protocol_version": "v1.26",
+  "protocol_created_from": "V1.25.1",
+  "candidate_filter": "low_frequency_strict_score",
+  "candidate_policy": "horizon_only",
+  "filter_parameters_locked": true,
+  "policy_parameters_locked": true,
+  "metrics_locked": true,
+  "no_hyperparameter_tuning": true,
+  "no_reviewer_llm": true,
+  "no_holdout": true,
+  "no_real_trading": true,
+  "main_metric": "mean_net_pnl_after_cost_pct",
+  "secondary_metrics": [
+    "median_net_pnl_after_cost_pct",
+    "total_net_pnl_pct",
+    "win_rate",
+    "profit_factor",
+    "selected_count"
+  ],
+  "baselines": [
+    "no_trade",
+    "all_candidates",
+    "monthly_count_preserving_random"
+  ],
+  "cost_scenarios": [
+    0.001,
+    0.002,
+    0.003,
+    0.005
+  ]
+}

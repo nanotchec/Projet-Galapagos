@@ -1,0 +1,7 @@
+{
+  "version": "V1.84",
+  "recommended_next_step": "Audit the V1.84 tiny materialization artifacts before any larger data work.",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true
+}

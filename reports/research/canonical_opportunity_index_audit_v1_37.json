@@ -1,0 +1,14 @@
+{
+  "opportunity_index_rows": 100,
+  "opportunity_index_rows_2026": 100,
+  "index_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name"
+  ],
+  "duplicate_index_count": 0,
+  "opportunity_index_fingerprint": "e82312e8f716544367350f2a378c3fa011a03cb20d3909bca586bc9a3745d07b",
+  "opportunity_index_status": "CANONICAL_OPPORTUNITY_INDEX_DEFINED"
+}

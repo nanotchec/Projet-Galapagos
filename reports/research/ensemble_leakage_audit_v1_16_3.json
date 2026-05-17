@@ -1,0 +1,8 @@
+{
+  "status": "ENSEMBLE_LEAKAGE_AUDIT_LIMITED",
+  "checks": [
+    "split_name contains 'train' - potential contamination or weak OOS proof"
+  ],
+  "rows_audited": 171648,
+  "target_col": "target_up_after_cost_12bar"
+}

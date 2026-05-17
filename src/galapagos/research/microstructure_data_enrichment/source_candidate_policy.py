@@ -1,0 +1,15 @@
+"""Source candidate policy for Microstructure Data Enrichment Spec (V1.52)."""
+
+class SourceCandidatePolicy:
+    def analyze(self):
+        return {
+            "status": "COMPLETED",
+            "accepted_source_candidates": ["Binance Public Data (Historical)", "Kraken REST API (Historical)"],
+            "rejected_source_candidates": ["Aggregators with non-transparent volume", "OTC desks"],
+            "selection_criteria": [
+                "Transparency of trade history",
+                "Accuracy of timestamps",
+                "Granularity (1m/5m support)",
+                "Causal alignment with existing gold dataset"
+            ]
+        }

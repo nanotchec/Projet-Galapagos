@@ -1,0 +1,19 @@
+{
+  "status": "INTRABAR_DATA_QUALITY_OK",
+  "rows": 246727,
+  "is_monotonic": true,
+  "duplicates": 0,
+  "ohlc_valid": true,
+  "gaps_count": 0,
+  "largest_gap_duration": "0 days 00:00:00",
+  "largest_gap_seconds": 0.0,
+  "largest_gap_start": null,
+  "largest_gap_end": null,
+  "notable_gaps": [],
+  "coverage_pct": 1.000004053079124,
+  "usable_for_continuous_backtest": true,
+  "usable_for_gap_aware_signal_eval": true,
+  "gap_aware_required": false,
+  "start_time": "2024-01-01T04:05:00+00:00",
+  "end_time": "2026-05-06T20:35:00+00:00"
+}

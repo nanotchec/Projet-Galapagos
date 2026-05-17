@@ -1,0 +1,228 @@
+# Causal Filter Evaluation V1 29
+
+```json
+{
+  "evaluations": [
+    {
+      "selected_count": 12940,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0027280705340867956,
+      "net_median_pnl": 0.0017128448443071154,
+      "win_rate": 0.5284841926258019,
+      "total_net_pnl": 35.293048499480875,
+      "profit_factor": 1.208417903988177,
+      "filter_name": "prob_ge_0.55"
+    },
+    {
+      "selected_count": 8112,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.004245880226100437,
+      "net_median_pnl": 0.0029978683761489044,
+      "win_rate": 0.54124029096289,
+      "total_net_pnl": 34.43833451390064,
+      "profit_factor": 1.336773264089187,
+      "filter_name": "prob_ge_0.6"
+    },
+    {
+      "selected_count": 5594,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0056511295928647785,
+      "net_median_pnl": 0.004519958684713443,
+      "win_rate": 0.558276725062567,
+      "total_net_pnl": 31.61241894248557,
+      "profit_factor": 1.4693542863509481,
+      "filter_name": "prob_ge_0.65"
+    },
+    {
+      "selected_count": 3858,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.005945736296143569,
+      "net_median_pnl": 0.004465760261599283,
+      "win_rate": 0.5583203732503889,
+      "total_net_pnl": 22.938650630521888,
+      "profit_factor": 1.4808441249736337,
+      "filter_name": "prob_ge_0.7"
+    },
+    {
+      "selected_count": 122,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": -0.002387956971551444,
+      "net_median_pnl": -0.0009888993317041517,
+      "win_rate": 0.48360655737704916,
+      "total_net_pnl": -0.29133075052927615,
+      "profit_factor": 0.8226180808018576,
+      "filter_name": "first_ge_0.55_per_7D"
+    },
+    {
+      "selected_count": 800,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0019393395474469604,
+      "net_median_pnl": 0.0008313936541257672,
+      "win_rate": 0.5131414267834794,
+      "total_net_pnl": 1.5495322984101214,
+      "profit_factor": 1.1652447799129257,
+      "filter_name": "first_ge_0.55_per_1D"
+    },
+    {
+      "selected_count": 122,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": -0.0005852139673835719,
+      "net_median_pnl": 0.0007861066289490681,
+      "win_rate": 0.5081967213114754,
+      "total_net_pnl": -0.07139610402079577,
+      "profit_factor": 0.954971059166756,
+      "filter_name": "first_ge_0.6_per_7D"
+    },
+    {
+      "selected_count": 736,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0017584664287619662,
+      "net_median_pnl": 0.0005001683156644621,
+      "win_rate": 0.5102040816326531,
+      "total_net_pnl": 1.2924728251400452,
+      "profit_factor": 1.1439294123577257,
+      "filter_name": "first_ge_0.6_per_1D"
+    },
+    {
+      "selected_count": 122,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0018350232448016291,
+      "net_median_pnl": 0.0026620976427621512,
+      "win_rate": 0.5409836065573771,
+      "total_net_pnl": 0.22387283586579876,
+      "profit_factor": 1.1510584037393374,
+      "filter_name": "first_ge_0.65_per_7D"
+    },
+    {
+      "selected_count": 646,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.001309715418939384,
+      "net_median_pnl": -0.00010003853779011473,
+      "win_rate": 0.5,
+      "total_net_pnl": 0.846076160634842,
+      "profit_factor": 1.1040688581568179,
+      "filter_name": "first_ge_0.65_per_1D"
+    },
+    {
+      "selected_count": 120,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": -0.0003642464207958357,
+      "net_median_pnl": -0.00098349537305914,
+      "win_rate": 0.49166666666666664,
+      "total_net_pnl": -0.04370957049550028,
+      "profit_factor": 0.9732354317058843,
+      "filter_name": "first_ge_0.7_per_7D"
+    },
+    {
+      "selected_count": 526,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0003869668400717762,
+      "net_median_pnl": 6.475232024916178e-05,
+      "win_rate": 0.5019011406844106,
+      "total_net_pnl": 0.20354455787775427,
+      "profit_factor": 1.0290610777524067,
+      "filter_name": "first_ge_0.7_per_1D"
+    },
+    {
+      "selected_count": 122,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": -0.002387956971551444,
+      "net_median_pnl": -0.0009888993317041517,
+      "win_rate": 0.48360655737704916,
+      "total_net_pnl": -0.29133075052927615,
+      "profit_factor": 0.8226180808018574,
+      "filter_name": "running_top_ge_0.55_per_7D"
+    },
+    {
+      "selected_count": 122,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": -0.0005852139673835719,
+      "net_median_pnl": 0.0007861066289490681,
+      "win_rate": 0.5081967213114754,
+      "total_net_pnl": -0.07139610402079577,
+      "profit_factor": 0.954971059166756,
+      "filter_name": "running_top_ge_0.6_per_7D"
+    },
+    {
+      "selected_count": 122,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0018350232448016291,
+      "net_median_pnl": 0.0026620976427621512,
+      "win_rate": 0.5409836065573771,
+      "total_net_pnl": 0.22387283586579876,
+      "profit_factor": 1.1510584037393374,
+      "filter_name": "running_top_ge_0.65_per_7D"
+    },
+    {
+      "selected_count": 120,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": -0.0003642464207958357,
+      "net_median_pnl": -0.00098349537305914,
+      "win_rate": 0.49166666666666664,
+      "total_net_pnl": -0.04370957049550028,
+      "profit_factor": 0.9732354317058842,
+      "filter_name": "running_top_ge_0.7_per_7D"
+    },
+    {
+      "selected_count": 656,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0021108492171890846,
+      "net_median_pnl": 0.0006959045174050882,
+      "win_rate": 0.5030487804878049,
+      "total_net_pnl": 1.3847170864760394,
+      "profit_factor": 1.1729835371502222,
+      "filter_name": "prob_ge_0.6_cooldown_1 days 00:00:00"
+    },
+    {
+      "selected_count": 249,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0016189181073870285,
+      "net_median_pnl": 0.0021180933841380423,
+      "win_rate": 0.5341365461847389,
+      "total_net_pnl": 0.4031106087393701,
+      "profit_factor": 1.1293808850411373,
+      "filter_name": "prob_ge_0.6_cooldown_3 days 00:00:00"
+    },
+    {
+      "selected_count": 117,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.0027838263354878104,
+      "net_median_pnl": -0.00037927786499214466,
+      "win_rate": 0.47863247863247865,
+      "total_net_pnl": 0.32570768125207383,
+      "profit_factor": 1.2402118975784393,
+      "filter_name": "prob_ge_0.6_cooldown_7 days 00:00:00"
+    },
+    {
+      "selected_count": 568,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.002363858580892515,
+      "net_median_pnl": 0.0008844943499825009,
+      "win_rate": 0.5123239436619719,
+      "total_net_pnl": 1.3426716739469486,
+      "profit_factor": 1.19433865718669,
+      "filter_name": "prob_ge_0.65_cooldown_1 days 00:00:00"
+    },
+    {
+      "selected_count": 234,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.00024898628381308884,
+      "net_median_pnl": -7.540412782675032e-05,
+      "win_rate": 0.5,
+      "total_net_pnl": 0.05826279041226279,
+      "profit_factor": 1.0181406414355225,
+      "filter_name": "prob_ge_0.65_cooldown_3 days 00:00:00"
+    },
+    {
+      "selected_count": 113,
+      "status": "EXPLORATORY_ONLY",
+      "net_mean_pnl": 0.000673362872371352,
+      "net_median_pnl": -0.00037927786499214466,
+      "win_rate": 0.49557522123893805,
+      "total_net_pnl": 0.07609000457796278,
+      "profit_factor": 1.0493612122285645,
+      "filter_name": "prob_ge_0.65_cooldown_7 days 00:00:00"
+    }
+  ]
+}
+```

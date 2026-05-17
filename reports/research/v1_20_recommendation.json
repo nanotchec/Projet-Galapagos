@@ -1,0 +1,14 @@
+{
+  "version": "v1.20",
+  "primary_recommendation": "Continue extending 5m history to reach 20% coverage threshold",
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true,
+  "verdict": "TRADE_LEDGER_INTRABAR_SAMPLE_TOO_SHORT",
+  "do_not_do_next": [
+    "Do not activate reviewer",
+    "Do not execute holdout",
+    "Do not trade live"
+  ],
+  "caveat": "Coverage improved to 5.8% but remains below the 20% validity threshold."
+}

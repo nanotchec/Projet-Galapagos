@@ -1,0 +1,12 @@
+{
+  "version": "V1.90.1",
+  "consistency_check_status": "V1_90_1_STRICT_RELEASE_SMOKE_AUDIT_REPORTS_CONSISTENT",
+  "issues": [],
+  "summary_latest_project_state_aligned": true,
+  "release_strict_checks_passed": true,
+  "zip_smoke_strict_checks_passed": true,
+  "zip_audit_strict_checks_passed": true,
+  "physical_v1_90_files_checked": true,
+  "v1_84_hashes_checked": true,
+  "v1_87_hashes_checked": true
+}

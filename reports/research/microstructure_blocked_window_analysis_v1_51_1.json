@@ -1,0 +1,14 @@
+{
+  "status": "BLOCKED_WINDOWS_IDENTIFIED",
+  "count": 720,
+  "summary": {
+    "2026-01": 186,
+    "2026-02": 168,
+    "2026-03": 186,
+    "2026-04": 180
+  },
+  "version": "V1.51.1",
+  "previous_base": "V1.51",
+  "migrated_from": "V1.51",
+  "migration_reason": "missing required reports fix"
+}

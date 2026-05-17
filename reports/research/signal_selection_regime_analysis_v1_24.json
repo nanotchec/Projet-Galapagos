@@ -1,0 +1,428 @@
+{
+  "version": "V1.24",
+  "rows": [
+    {
+      "policy": "atr_proxy",
+      "regime_field": "volatility_regime",
+      "regime": "low",
+      "count": 3875,
+      "net_mean_pnl_pct": -0.0024325302537248055,
+      "gross_mean_pnl_pct": 0.0005674697462751946,
+      "win_rate": 0.4224516129032258,
+      "cost_viability_rate": 0.679483870967742
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "volatility_regime",
+      "regime": "normal",
+      "count": 400,
+      "net_mean_pnl_pct": 0.0009213140657348517,
+      "gross_mean_pnl_pct": 0.003921314065734853,
+      "win_rate": 0.505,
+      "cost_viability_rate": 0.865
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "trend_regime",
+      "regime": "bear",
+      "count": 1028,
+      "net_mean_pnl_pct": -0.002734468909102519,
+      "gross_mean_pnl_pct": 0.00026553109089748106,
+      "win_rate": 0.438715953307393,
+      "cost_viability_rate": 0.7811284046692607
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "trend_regime",
+      "regime": "bull",
+      "count": 1103,
+      "net_mean_pnl_pct": -0.0015170937669674652,
+      "gross_mean_pnl_pct": 0.0014829062330325349,
+      "win_rate": 0.44152311876699907,
+      "cost_viability_rate": 0.6990027198549411
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "trend_regime",
+      "regime": "range",
+      "count": 2144,
+      "net_mean_pnl_pct": -0.0021329947030630484,
+      "gross_mean_pnl_pct": 0.0008670052969369513,
+      "win_rate": 0.42024253731343286,
+      "cost_viability_rate": 0.6553171641791045
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "macro_regime",
+      "regime": "neutral",
+      "count": 818,
+      "net_mean_pnl_pct": -0.0034337499575277765,
+      "gross_mean_pnl_pct": -0.0004337499575277765,
+      "win_rate": 0.4242053789731051,
+      "cost_viability_rate": 0.7286063569682152
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "macro_regime",
+      "regime": "risk_off",
+      "count": 494,
+      "net_mean_pnl_pct": -0.0014474304743391452,
+      "gross_mean_pnl_pct": 0.0015525695256608555,
+      "win_rate": 0.4676113360323887,
+      "cost_viability_rate": 0.7489878542510121
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "macro_regime",
+      "regime": "risk_on",
+      "count": 2963,
+      "net_mean_pnl_pct": -0.0018675973632495517,
+      "gross_mean_pnl_pct": 0.0011324026367504484,
+      "win_rate": 0.42558218022274724,
+      "cost_viability_rate": 0.679379007762403
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "leverage_contracting",
+      "count": 5,
+      "net_mean_pnl_pct": 0.010039271305764815,
+      "gross_mean_pnl_pct": 0.013039271305764813,
+      "win_rate": 0.6,
+      "cost_viability_rate": 0.4
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "leverage_expanding",
+      "count": 4,
+      "net_mean_pnl_pct": -0.012493749056698953,
+      "gross_mean_pnl_pct": -0.009493749056698954,
+      "win_rate": 0.25,
+      "cost_viability_rate": 1.0
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "negative_funding_extreme",
+      "count": 201,
+      "net_mean_pnl_pct": -0.0033770559207359388,
+      "gross_mean_pnl_pct": -0.00037705592073593894,
+      "win_rate": 0.40298507462686567,
+      "cost_viability_rate": 0.8656716417910447
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "neutral",
+      "count": 3489,
+      "net_mean_pnl_pct": -0.0023978129136084402,
+      "gross_mean_pnl_pct": 0.0006021870863915595,
+      "win_rate": 0.42218400687876184,
+      "cost_viability_rate": 0.6789911149326454
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "positive_funding_extreme",
+      "count": 28,
+      "net_mean_pnl_pct": 0.0070909764215273405,
+      "gross_mean_pnl_pct": 0.01009097642152734,
+      "win_rate": 0.6071428571428571,
+      "cost_viability_rate": 0.7857142857142857
+    },
+    {
+      "policy": "atr_proxy",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "nan",
+      "count": 548,
+      "net_mean_pnl_pct": -0.00038602246596113407,
+      "gross_mean_pnl_pct": 0.002613977534038866,
+      "win_rate": 0.48175182481751827,
+      "cost_viability_rate": 0.7445255474452555
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "volatility_regime",
+      "regime": "low",
+      "count": 3875,
+      "net_mean_pnl_pct": -0.0022077862250288274,
+      "gross_mean_pnl_pct": 0.0007922137749711729,
+      "win_rate": 0.3961290322580645,
+      "cost_viability_rate": 0.679483870967742
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "volatility_regime",
+      "regime": "normal",
+      "count": 400,
+      "net_mean_pnl_pct": -0.001347074321827367,
+      "gross_mean_pnl_pct": 0.0016529256781726326,
+      "win_rate": 0.4075,
+      "cost_viability_rate": 0.865
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "trend_regime",
+      "regime": "bear",
+      "count": 1028,
+      "net_mean_pnl_pct": -0.0031002224346264977,
+      "gross_mean_pnl_pct": -0.00010022243462649779,
+      "win_rate": 0.36770428015564205,
+      "cost_viability_rate": 0.7811284046692607
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "trend_regime",
+      "regime": "bull",
+      "count": 1103,
+      "net_mean_pnl_pct": -0.0014890761587099143,
+      "gross_mean_pnl_pct": 0.001510923841290085,
+      "win_rate": 0.40253853127833183,
+      "cost_viability_rate": 0.6990027198549411
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "trend_regime",
+      "regime": "range",
+      "count": 2144,
+      "net_mean_pnl_pct": -0.0019890492933137016,
+      "gross_mean_pnl_pct": 0.0010109507066862985,
+      "win_rate": 0.4085820895522388,
+      "cost_viability_rate": 0.6553171641791045
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "macro_regime",
+      "regime": "neutral",
+      "count": 818,
+      "net_mean_pnl_pct": -0.003314559713621595,
+      "gross_mean_pnl_pct": -0.00031455971362159444,
+      "win_rate": 0.37286063569682154,
+      "cost_viability_rate": 0.7286063569682152
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "macro_regime",
+      "regime": "risk_off",
+      "count": 494,
+      "net_mean_pnl_pct": -0.0011983866402996597,
+      "gross_mean_pnl_pct": 0.0018016133597003401,
+      "win_rate": 0.41700404858299595,
+      "cost_viability_rate": 0.7489878542510121
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "macro_regime",
+      "regime": "risk_on",
+      "count": 2963,
+      "net_mean_pnl_pct": -0.0019543329411634003,
+      "gross_mean_pnl_pct": 0.0010456670588365998,
+      "win_rate": 0.4006074924063449,
+      "cost_viability_rate": 0.679379007762403
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "leverage_contracting",
+      "count": 5,
+      "net_mean_pnl_pct": 0.006372419691140123,
+      "gross_mean_pnl_pct": 0.009372419691140122,
+      "win_rate": 0.6,
+      "cost_viability_rate": 0.4
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "leverage_expanding",
+      "count": 4,
+      "net_mean_pnl_pct": -0.010808593800382942,
+      "gross_mean_pnl_pct": -0.007808593800382943,
+      "win_rate": 0.25,
+      "cost_viability_rate": 1.0
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "negative_funding_extreme",
+      "count": 201,
+      "net_mean_pnl_pct": -0.004268194759999986,
+      "gross_mean_pnl_pct": -0.0012681947599999857,
+      "win_rate": 0.3283582089552239,
+      "cost_viability_rate": 0.8656716417910447
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "neutral",
+      "count": 3489,
+      "net_mean_pnl_pct": -0.0022440730425228243,
+      "gross_mean_pnl_pct": 0.0007559269574771758,
+      "win_rate": 0.39667526511894524,
+      "cost_viability_rate": 0.6789911149326454
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "positive_funding_extreme",
+      "count": 28,
+      "net_mean_pnl_pct": 0.0011582639211056493,
+      "gross_mean_pnl_pct": 0.004158263921105648,
+      "win_rate": 0.4642857142857143,
+      "cost_viability_rate": 0.7857142857142857
+    },
+    {
+      "policy": "fixed_percent",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "nan",
+      "count": 548,
+      "net_mean_pnl_pct": -0.0007802599847457058,
+      "gross_mean_pnl_pct": 0.002219740015254294,
+      "win_rate": 0.4215328467153285,
+      "cost_viability_rate": 0.7445255474452555
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "volatility_regime",
+      "regime": "low",
+      "count": 3875,
+      "net_mean_pnl_pct": -0.002026298962376636,
+      "gross_mean_pnl_pct": 0.0009737010376233645,
+      "win_rate": 0.45703225806451614,
+      "cost_viability_rate": 0.679483870967742
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "volatility_regime",
+      "regime": "normal",
+      "count": 400,
+      "net_mean_pnl_pct": 0.0018667069132402398,
+      "gross_mean_pnl_pct": 0.0048667069132402405,
+      "win_rate": 0.525,
+      "cost_viability_rate": 0.865
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "trend_regime",
+      "regime": "bear",
+      "count": 1028,
+      "net_mean_pnl_pct": -0.0012115860194780157,
+      "gross_mean_pnl_pct": 0.0017884139805219843,
+      "win_rate": 0.5019455252918288,
+      "cost_viability_rate": 0.7811284046692607
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "trend_regime",
+      "regime": "bull",
+      "count": 1103,
+      "net_mean_pnl_pct": -0.00036494272876752575,
+      "gross_mean_pnl_pct": 0.002635057271232474,
+      "win_rate": 0.4614687216681777,
+      "cost_viability_rate": 0.6990027198549411
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "trend_regime",
+      "regime": "range",
+      "count": 2144,
+      "net_mean_pnl_pct": -0.002545328104505311,
+      "gross_mean_pnl_pct": 0.00045467189549468966,
+      "win_rate": 0.4458955223880597,
+      "cost_viability_rate": 0.6553171641791045
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "macro_regime",
+      "regime": "neutral",
+      "count": 818,
+      "net_mean_pnl_pct": -0.0031791272351721846,
+      "gross_mean_pnl_pct": -0.00017912723517218441,
+      "win_rate": 0.4669926650366748,
+      "cost_viability_rate": 0.7286063569682152
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "macro_regime",
+      "regime": "risk_off",
+      "count": 494,
+      "net_mean_pnl_pct": 3.658930248717391e-05,
+      "gross_mean_pnl_pct": 0.0030365893024871748,
+      "win_rate": 0.5182186234817814,
+      "cost_viability_rate": 0.7489878542510121
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "macro_regime",
+      "regime": "risk_on",
+      "count": 2963,
+      "net_mean_pnl_pct": -0.0015264173982352967,
+      "gross_mean_pnl_pct": 0.0014735826017647034,
+      "win_rate": 0.45325683428957136,
+      "cost_viability_rate": 0.679379007762403
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "leverage_contracting",
+      "count": 5,
+      "net_mean_pnl_pct": 0.012492217723294565,
+      "gross_mean_pnl_pct": 0.015492217723294566,
+      "win_rate": 0.6,
+      "cost_viability_rate": 0.4
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "leverage_expanding",
+      "count": 4,
+      "net_mean_pnl_pct": -0.013915945124891228,
+      "gross_mean_pnl_pct": -0.010915945124891229,
+      "win_rate": 0.25,
+      "cost_viability_rate": 1.0
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "negative_funding_extreme",
+      "count": 201,
+      "net_mean_pnl_pct": -0.003306983705965847,
+      "gross_mean_pnl_pct": -0.00030698370596584637,
+      "win_rate": 0.43283582089552236,
+      "cost_viability_rate": 0.8656716417910447
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "neutral",
+      "count": 3489,
+      "net_mean_pnl_pct": -0.0023206797207545177,
+      "gross_mean_pnl_pct": 0.0006793202792454825,
+      "win_rate": 0.4514187446259673,
+      "cost_viability_rate": 0.6789911149326454
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "positive_funding_extreme",
+      "count": 28,
+      "net_mean_pnl_pct": 0.014443700527089121,
+      "gross_mean_pnl_pct": 0.017443700527089122,
+      "win_rate": 0.6428571428571429,
+      "cost_viability_rate": 0.7857142857142857
+    },
+    {
+      "policy": "horizon_only",
+      "regime_field": "derivatives_risk_regime",
+      "regime": "nan",
+      "count": 548,
+      "net_mean_pnl_pct": 0.002272096047122037,
+      "gross_mean_pnl_pct": 0.0052720960471220385,
+      "win_rate": 0.541970802919708,
+      "cost_viability_rate": 0.7445255474452555
+    }
+  ],
+  "verdicts": [
+    "NO_REGIME_SELECTION_EDGE"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "V1.12",
+  "profile": "4h",
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "signal_count": 42,
+  "random_count": 42,
+  "permutation_test": {
+    "observed_delta": 0.003189483053685504,
+    "p_value": 0.5249500998003992,
+    "permutations": 500
+  },
+  "verdict": "NEED_MORE_DATA",
+  "warning": "Baseline aleatoire approximative; ce n'est pas une preuve statistique finale."
+}

@@ -1,0 +1,72 @@
+{
+  "status": "TEMPORAL_ROBUSTNESS_COMPLETE",
+  "results": {
+    "v1_38_core_baseline": {
+      "yearly_stability": {
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": 0.06721105862465032
+      },
+      "temporal_consistency": "LOW"
+    },
+    "v1_44_regime_aware_raw": {
+      "yearly_stability": {
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "temporal_consistency": "LOW"
+    },
+    "v1_44_alpha_only": {
+      "yearly_stability": {
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "temporal_consistency": "LOW"
+    },
+    "v1_44_combined_regime_alpha": {
+      "yearly_stability": {
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "temporal_consistency": "LOW"
+    },
+    "v1_44_derivatives_heavy": {
+      "yearly_stability": {
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": 0.09718575821704405
+      },
+      "temporal_consistency": "LOW"
+    },
+    "v1_44_macro_heavy": {
+      "yearly_stability": {
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": 0.09718575821704405
+      },
+      "temporal_consistency": "LOW"
+    }
+  },
+  "years_evaluated": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ]
+}

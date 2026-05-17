@@ -1,0 +1,25 @@
+{
+  "version": "V1.51.1",
+  "previous_base": "V1.51",
+  "final_verdict": "MICROSTRUCTURE_QUALITY_MASK_PARTIAL_BUT_USABLE",
+  "recommended_next_step": "improve intrabar data before applying quality mask",
+  "evidence_classification": "RESEARCH_ONLY",
+  "usable_window_ratio": 0.924,
+  "blocked_window_ratio": 0.076,
+  "usable_window_ratio_2026": 0.0,
+  "blocked_window_ratio_2026": 1.0,
+  "data_actions_required": [
+    "Improve intrabar data coverage before applying the quality mask"
+  ],
+  "minimum_conditions_for_next_diagnostic": [
+    "Improve 2026 intrabar coverage before reusing microstructure labels"
+  ],
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false
+}

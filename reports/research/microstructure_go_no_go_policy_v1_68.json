@@ -1,0 +1,17 @@
+{
+  "go_no_go_policy_defined": true,
+  "go_conditions": [
+    "Exact explicit human approval phrase provided",
+    "Full infrastructure audit (make/audit/smoke) is green",
+    "Network preflight version is strictly INFRASTRUCTURE_ONLY",
+    "Zero data directory writes planned"
+  ],
+  "no_go_conditions": [
+    "Approval phrase missing or incorrect",
+    "Network not explicitly authorized for tiny preflight",
+    "Planned data/ writes detected",
+    "Any strategy or trading link found",
+    "Secrets detected during pre-execution audit",
+    "Request count > 1"
+  ]
+}

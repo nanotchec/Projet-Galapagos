@@ -1,0 +1,9 @@
+{
+  "version": "V1.94",
+  "safety_check_passed": true,
+  "safety_issues": [],
+  "no_data_write": true,
+  "no_network": true,
+  "no_trading": true,
+  "no_ml": true
+}

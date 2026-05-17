@@ -1,0 +1,92 @@
+[
+  {
+    "filter_name": "filter_ev_gt_0",
+    "baseline_type": "GLOBAL_SAME_COUNT",
+    "observed_net_mean_pnl": 0.0006817662008065368,
+    "random_p50": 0.0006277603174921745,
+    "random_p95": 0.0006744203288255459,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_ev_gt_0",
+    "baseline_type": "MONTHLY_COUNT_PRESERVING",
+    "observed_net_mean_pnl": 0.0006817662008065368,
+    "random_p50": 0.0003974227417467555,
+    "random_p95": 0.00045208637405022453,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "baseline_type": "GLOBAL_SAME_COUNT",
+    "observed_net_mean_pnl": 0.0009343105494356532,
+    "random_p50": 0.0006305030914468102,
+    "random_p95": 0.000698895986667236,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "baseline_type": "MONTHLY_COUNT_PRESERVING",
+    "observed_net_mean_pnl": 0.0009343105494356532,
+    "random_p50": 0.0006782902960260683,
+    "random_p95": 0.0007552976913699137,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_prob_65_ev_pos",
+    "baseline_type": "GLOBAL_SAME_COUNT",
+    "observed_net_mean_pnl": 0.013953023347913584,
+    "random_p50": 0.0007403073952297811,
+    "random_p95": 0.002557362150532378,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_prob_65_ev_pos",
+    "baseline_type": "MONTHLY_COUNT_PRESERVING",
+    "observed_net_mean_pnl": 0.013953023347913584,
+    "random_p50": 0.004271824250143108,
+    "random_p95": 0.00646083877638381,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_ev_top_quantile_non_causal",
+    "baseline_type": "GLOBAL_SAME_COUNT",
+    "observed_net_mean_pnl": 0.006575463433617478,
+    "random_p50": 0.0006258818999839987,
+    "random_p95": 0.0009834313353565994,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_ev_top_quantile_non_causal",
+    "baseline_type": "MONTHLY_COUNT_PRESERVING",
+    "observed_net_mean_pnl": 0.006575463433617478,
+    "random_p50": 0.0026330282416169907,
+    "random_p95": 0.0029495974431674255,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_ev_top_quantile_causal",
+    "baseline_type": "GLOBAL_SAME_COUNT",
+    "observed_net_mean_pnl": 0.017196737640190002,
+    "random_p50": 0.0005864082524319426,
+    "random_p95": 0.001353835291121996,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  },
+  {
+    "filter_name": "filter_ev_top_quantile_causal",
+    "baseline_type": "MONTHLY_COUNT_PRESERVING",
+    "observed_net_mean_pnl": 0.017196737640190002,
+    "random_p50": 0.007671814699140224,
+    "random_p95": 0.00845230128705189,
+    "beats_random_p95": true,
+    "baseline_status": "COMPLETED"
+  }
+]

@@ -1,0 +1,11 @@
+# Payoff Target Definitions V1.42
+
+- **status**: PAYOFF_TARGET_DEFINITIONS_COMPLETE
+- **targets**:
+  - {'target_name': 'net_return_regression', 'horizon': 'forward_return_3bar', 'label_column_used': 'target_net_return', 'downside_focus_level': 'NONE', 'uses_future_outcome_as_label_only': True, 'used_as_selection_feature': False, 'leakage_policy': 'LABEL_ONLY_NOT_DECISION_FEATURE', 'availability': 171648}
+  - {'target_name': 'downside_weighted_return', 'horizon': 'forward_return_3bar', 'label_column_used': 'target_downside_weighted', 'downside_focus_level': 'MODERATE', 'uses_future_outcome_as_label_only': True, 'used_as_selection_feature': False, 'leakage_policy': 'LABEL_ONLY_NOT_DECISION_FEATURE', 'availability': 171648}
+  - {'target_name': 'severe_loss_classifier', 'horizon': 'forward_return_3bar', 'label_column_used': 'target_severe_loss', 'downside_focus_level': 'HIGH', 'threshold': -0.01, 'uses_future_outcome_as_label_only': True, 'used_as_selection_feature': False, 'leakage_policy': 'LABEL_ONLY_NOT_DECISION_FEATURE', 'availability': 171648}
+  - {'target_name': 'positive_payoff_classifier', 'horizon': 'forward_return_3bar', 'label_column_used': 'target_positive_payoff', 'downside_focus_level': 'NONE', 'uses_future_outcome_as_label_only': True, 'used_as_selection_feature': False, 'leakage_policy': 'LABEL_ONLY_NOT_DECISION_FEATURE', 'availability': 171648}
+  - {'target_name': 'payoff_ratio_target', 'horizon': 'forward_return_3bar', 'label_column_used': 'target_payoff_ratio', 'downside_focus_level': 'ASYMMETRIC', 'uses_future_outcome_as_label_only': True, 'used_as_selection_feature': False, 'leakage_policy': 'LABEL_ONLY_NOT_DECISION_FEATURE', 'availability': 171648}
+  - {'target_name': 'ev_gap_target', 'horizon': 'forward_return_3bar', 'label_column_used': 'target_ev_gap', 'downside_focus_level': 'RESIDUAL', 'uses_future_outcome_as_label_only': True, 'used_as_selection_feature': False, 'leakage_policy': 'LABEL_ONLY_NOT_DECISION_FEATURE', 'availability': 171648}
+- **horizon_used**: forward_return_3bar

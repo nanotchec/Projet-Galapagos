@@ -1,0 +1,16 @@
+{
+  "version": "V1.11",
+  "profile": "4h",
+  "dataset_path": null,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "signal_count": 3112,
+  "random_count": 3112,
+  "permutation_test": {
+    "observed_delta": 0.0004895666243628422,
+    "p_value": 0.49101796407185627,
+    "permutations": 500
+  },
+  "verdict": "NO_EDGE_DETECTED",
+  "warning": "Baseline aleatoire approximative; ce n'est pas une preuve statistique finale."
+}

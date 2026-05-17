@@ -1,0 +1,17 @@
+# Microstructure Manifest Validation V1 54
+
+```json
+{
+  "version": "V1.54",
+  "theoretical_manifest": {
+    "event_ts": 1704067200000,
+    "available_ts": 1704067260000,
+    "ingest_ts": 1704067320000,
+    "source": "binance",
+    "symbol": "BTCUSDT",
+    "timeframe": "1m",
+    "row_count": 1000
+  },
+  "manifest_validation_status": "PASSED"
+}
+```

@@ -1,0 +1,12 @@
+# Canonical Universe Recommendation - V1.36
+
+```json
+{
+  "version": "V1.36",
+  "recommended_next_step": "rerun EV-net research and reversal diagnostics on canonical reproducible universe",
+  "no_strategy_validated": true,
+  "no_new_filter": true,
+  "no_paper_live": true,
+  "no_real_trading": true
+}
+```

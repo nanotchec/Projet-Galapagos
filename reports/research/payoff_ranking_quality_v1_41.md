@@ -1,0 +1,4 @@
+# Qualité du ranking payoff objective V1.41
+
+Statut ranking: RANKING_IMPROVES_RELATIVE_BASELINES_BUT_EDGE_NEGATIVE.
+Spearman 2026: -0.015802822899487867.

@@ -1,0 +1,31 @@
+{
+  "version": "V1.12.2",
+  "fred_api_key": "configured",
+  "status": "available",
+  "series_requested": [
+    "DFF",
+    "DGS2",
+    "DGS10",
+    "T10Y2Y",
+    "VIXCLS",
+    "SP500",
+    "NASDAQCOM"
+  ],
+  "available_series": [
+    "DFF",
+    "DGS2",
+    "DGS10",
+    "T10Y2Y",
+    "VIXCLS",
+    "SP500",
+    "NASDAQCOM"
+  ],
+  "unavailable_series": [],
+  "rows": 14166,
+  "start_timestamp": "2019-01-01 00:00:00+00:00",
+  "end_timestamp": "2026-05-04 00:00:00+00:00",
+  "macro_features_built": true,
+  "macro_feature_rows": 2679,
+  "macro_included_in_dataset": true,
+  "secret_logged": false
+}

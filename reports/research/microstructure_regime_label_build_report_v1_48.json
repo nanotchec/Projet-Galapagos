@@ -1,0 +1,10 @@
+{
+  "version": "V1.48",
+  "built_microstructure_regime_labels": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ],
+  "unavailable_microstructure_regime_labels": [],
+  "label_build_status": "MICROSTRUCTURE_REGIME_LABEL_BUILD_COMPLETED",
+  "causality_preserved": true
+}

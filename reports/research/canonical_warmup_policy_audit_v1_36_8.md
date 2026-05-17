@@ -1,0 +1,12 @@
+# Canonical Universe Warmup Policy Audit - V1.36.8
+
+```json
+{
+  "warmup_min_periods": 100,
+  "total_rows": 171648,
+  "warmup_ready_rows": 168048,
+  "warmup_blocked_rows": 3600,
+  "warmup_blocked_2026": 0,
+  "warmup_policy_status": "WARMUP_POLICY_EXPLICIT_NON_DROPPING"
+}
+```

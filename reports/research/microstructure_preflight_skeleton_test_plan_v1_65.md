@@ -1,0 +1,12 @@
+# Report: Microstructure Preflight Skeleton Test Plan
+
+```json
+{
+  "tests": [
+    "skeleton_fixture_execution",
+    "network_blocking_verification",
+    "write_blocking_verification",
+    "manifest_preview_validation"
+  ]
+}
+```

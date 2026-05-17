@@ -1,0 +1,154 @@
+# Regime Feature Predictive Power V1.43.4
+
+Status: FEATURE_PREDICTIVE_POWER_DECAY_2026
+
+### Summary
+```json
+{
+  "predictive_power_status": "FEATURE_PREDICTIVE_POWER_DECAY_2026",
+  "total_audited": 79,
+  "sign_flip_count": 12,
+  "top_decayed_features": [
+    {
+      "feature": "volatility_quality_score",
+      "corr_pre_2026": -0.09733132850662739,
+      "corr_2026": 0.12949278792268942,
+      "abs_delta": 0.22682411642931682,
+      "sign_flip": true
+    },
+    {
+      "feature": "yield_curve_slope",
+      "corr_pre_2026": -0.04604673500475571,
+      "corr_2026": -0.19780906784822339,
+      "abs_delta": 0.15176233284346768,
+      "sign_flip": false
+    },
+    {
+      "feature": "T10Y2Y",
+      "corr_pre_2026": -0.04604673500475574,
+      "corr_2026": -0.19780906784822258,
+      "abs_delta": 0.15176233284346685,
+      "sign_flip": false
+    },
+    {
+      "feature": "funding_rate_mean",
+      "corr_pre_2026": -0.010194480103437688,
+      "corr_2026": -0.13456372363313984,
+      "abs_delta": 0.12436924352970216,
+      "sign_flip": false
+    },
+    {
+      "feature": "funding_rate",
+      "corr_pre_2026": -0.010194480103437688,
+      "corr_2026": -0.13456372363313984,
+      "abs_delta": 0.12436924352970216,
+      "sign_flip": false
+    },
+    {
+      "feature": "derivatives_score",
+      "corr_pre_2026": -0.02492543226953668,
+      "corr_2026": 0.09852789869966021,
+      "abs_delta": 0.12345333096919689,
+      "sign_flip": true
+    },
+    {
+      "feature": "funding_rate_binance",
+      "corr_pre_2026": -0.010194480103437688,
+      "corr_2026": -0.12684382446924963,
+      "abs_delta": 0.11664934436581195,
+      "sign_flip": false
+    },
+    {
+      "feature": "VIXCLS",
+      "corr_pre_2026": 0.03511602996124561,
+      "corr_2026": 0.1510083580630181,
+      "abs_delta": 0.1158923281017725,
+      "sign_flip": false
+    },
+    {
+      "feature": "missing_data_penalty",
+      "corr_pre_2026": -0.05688324702948528,
+      "corr_2026": -0.16718688564227768,
+      "abs_delta": 0.11030363861279241,
+      "sign_flip": false
+    },
+    {
+      "feature": "combined_alpha_score_no_macro",
+      "corr_pre_2026": 0.002120761318395845,
+      "corr_2026": 0.08840198726930763,
+      "abs_delta": 0.08628122595091178,
+      "sign_flip": false
+    },
+    {
+      "feature": "derivatives_regime_score",
+      "corr_pre_2026": -0.024925432269536647,
+      "corr_2026": 0.060327149455690045,
+      "abs_delta": 0.08525258172522669,
+      "sign_flip": true
+    },
+    {
+      "feature": "open",
+      "corr_pre_2026": -0.1198273649436717,
+      "corr_2026": -0.2032178315867757,
+      "abs_delta": 0.083390466643104,
+      "sign_flip": false
+    },
+    {
+      "feature": "high",
+      "corr_pre_2026": -0.11929482898792387,
+      "corr_2026": -0.20178656438145343,
+      "abs_delta": 0.08249173539352955,
+      "sign_flip": false
+    },
+    {
+      "feature": "close",
+      "corr_pre_2026": -0.12054478148518674,
+      "corr_2026": -0.20198650317063518,
+      "abs_delta": 0.08144172168544844,
+      "sign_flip": false
+    },
+    {
+      "feature": "funding_zscore_90d",
+      "corr_pre_2026": -0.009509400617622402,
+      "corr_2026": -0.0907736458000869,
+      "abs_delta": 0.0812642451824645,
+      "sign_flip": false
+    },
+    {
+      "feature": "funding_rate_zscore_90d",
+      "corr_pre_2026": -0.009509400617622402,
+      "corr_2026": -0.0907736458000869,
+      "abs_delta": 0.0812642451824645,
+      "sign_flip": false
+    },
+    {
+      "feature": "combined_alpha_score",
+      "corr_pre_2026": -0.0020877658998667554,
+      "corr_2026": 0.07827285448440167,
+      "abs_delta": 0.08036062038426843,
+      "sign_flip": true
+    },
+    {
+      "feature": "low",
+      "corr_pre_2026": -0.12091643713732295,
+      "corr_2026": -0.20072022232679645,
+      "abs_delta": 0.07980378518947351,
+      "sign_flip": false
+    },
+    {
+      "feature": "combined_alpha_score_no_derivatives",
+      "corr_pre_2026": -0.009010802060385677,
+      "corr_2026": 0.06877102874825859,
+      "abs_delta": 0.07778183080864427,
+      "sign_flip": true
+    },
+    {
+      "feature": "ohlcv_only_alpha_score",
+      "corr_pre_2026": -0.013367955947607799,
+      "corr_2026": 0.0636583473142324,
+      "abs_delta": 0.07702630326184019,
+      "sign_flip": true
+    }
+  ]
+}
+```

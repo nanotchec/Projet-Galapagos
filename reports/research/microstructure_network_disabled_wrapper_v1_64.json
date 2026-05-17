@@ -1,0 +1,7 @@
+{
+  "version": "V1.64",
+  "network_disabled_wrapper_active": true,
+  "wrapper_fixture_only": true,
+  "wrapper_real_execution": false,
+  "status": "MICROSTRUCTURE_NETWORK_DISABLED_WRAPPER_READY"
+}

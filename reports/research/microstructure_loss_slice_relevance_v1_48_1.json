@@ -1,0 +1,9 @@
+{
+  "version": "V1.48.1",
+  "loss_slice_relevance": {
+    "amihud_illiquidity_regime": 0.75,
+    "realized_vol_proxy_regime": 0.75
+  },
+  "loss_relevance_status": "MICROSTRUCTURE_LOSS_SLICE_RELEVANCE_COMPLETED",
+  "previous_base": "V1.48"
+}

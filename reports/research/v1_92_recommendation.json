@@ -1,0 +1,8 @@
+{
+  "version": "V1.92",
+  "recommendation": "review mini seed physically before any larger dataset step",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "real_orders_possible": false
+}

@@ -1,0 +1,15 @@
+# Microstructure Causal Audit V1 47
+
+```json
+{
+  "status": "MICROSTRUCTURE_CAUSAL_AVAILABILITY_PASSED",
+  "forbidden_columns_found": [],
+  "checked_columns": [
+    "amihud_illiquidity",
+    "realized_vol_proxy",
+    "volume_vol_ratio",
+    "intraday_range"
+  ],
+  "causal_availability_score": 1.0
+}
+```

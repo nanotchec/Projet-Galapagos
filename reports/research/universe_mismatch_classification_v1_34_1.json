@@ -1,0 +1,9 @@
+{
+  "primary_mismatch_driver": "TRADE_UNIT_MISMATCH",
+  "secondary_mismatch_drivers": [],
+  "confidence_level": "LOW",
+  "can_reconcile_source_count": false,
+  "can_reconcile_rebuild_count": true,
+  "final_verdict": "UNIVERSE_MISMATCH_SOURCE_NOT_REPLAYED",
+  "recommended_fix": "formalize trade unit policy and rerun V1.32/V1.33"
+}

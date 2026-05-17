@@ -1,0 +1,82 @@
+# Ev Net Regime Robustness - v1.38.1
+
+```json
+{
+  "status": "REGIME_ANALYSIS_COMPLETED",
+  "regime_status": "REGIME_ANALYSIS_COMPLETED",
+  "results": [
+    {
+      "regime": "risk_on",
+      "filter_name": "filter_ev_gt_0",
+      "selected_count": 87119,
+      "net_mean_pnl": -0.0003491515685921272
+    },
+    {
+      "regime": "risk_on",
+      "filter_name": "filter_ev_gt_cost_buffer",
+      "selected_count": 77138,
+      "net_mean_pnl": -4.82097127017969e-05
+    },
+    {
+      "regime": "risk_on",
+      "filter_name": "filter_prob_65_ev_pos",
+      "selected_count": 0,
+      "net_mean_pnl": 0
+    },
+    {
+      "regime": "risk_on",
+      "filter_name": "filter_ev_top_quantile_causal",
+      "selected_count": 7962,
+      "net_mean_pnl": 0.006153676801741529
+    },
+    {
+      "regime": "neutral",
+      "filter_name": "filter_ev_gt_0",
+      "selected_count": 25746,
+      "net_mean_pnl": -0.0005137103819968536
+    },
+    {
+      "regime": "neutral",
+      "filter_name": "filter_ev_gt_cost_buffer",
+      "selected_count": 21184,
+      "net_mean_pnl": -0.0010621232935022005
+    },
+    {
+      "regime": "neutral",
+      "filter_name": "filter_prob_65_ev_pos",
+      "selected_count": 0,
+      "net_mean_pnl": 0
+    },
+    {
+      "regime": "neutral",
+      "filter_name": "filter_ev_top_quantile_causal",
+      "selected_count": 1945,
+      "net_mean_pnl": 0.006152576591244648
+    },
+    {
+      "regime": "risk_off",
+      "filter_name": "filter_ev_gt_0",
+      "selected_count": 16662,
+      "net_mean_pnl": 0.002408873273682683
+    },
+    {
+      "regime": "risk_off",
+      "filter_name": "filter_ev_gt_cost_buffer",
+      "selected_count": 14483,
+      "net_mean_pnl": 0.0035165057418388357
+    },
+    {
+      "regime": "risk_off",
+      "filter_name": "filter_prob_65_ev_pos",
+      "selected_count": 0,
+      "net_mean_pnl": 0
+    },
+    {
+      "regime": "risk_off",
+      "filter_name": "filter_ev_top_quantile_causal",
+      "selected_count": 867,
+      "net_mean_pnl": 0.013887565703957858
+    }
+  ]
+}
+```

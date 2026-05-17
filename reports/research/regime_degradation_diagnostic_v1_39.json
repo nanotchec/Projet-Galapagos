@@ -1,0 +1,61 @@
+{
+  "regime_available": true,
+  "regime_column": "derivatives_risk_regime",
+  "pre_2026_counts": {
+    "neutral": 103073,
+    "negative_funding_extreme": 5841,
+    "positive_funding_extreme": 1116
+  },
+  "2026_counts": {
+    "neutral": 17883,
+    "negative_funding_extreme": 1002,
+    "leverage_expanding": 342,
+    "leverage_contracting": 225,
+    "positive_funding_extreme": 45
+  },
+  "pre_2026_performance": {
+    "negative_funding_extreme": {
+      "count": 5841,
+      "mean": 0.0003886397024465878,
+      "median": -0.0005333382304012471
+    },
+    "neutral": {
+      "count": 103073,
+      "mean": 0.0003006807157851309,
+      "median": 0.0002362927653979394
+    },
+    "positive_funding_extreme": {
+      "count": 1116,
+      "mean": 0.023053716929566554,
+      "median": 0.019351166381504803
+    }
+  },
+  "2026_performance": {
+    "leverage_contracting": {
+      "count": 225,
+      "mean": 0.021134403130353113,
+      "median": 0.0147386614708368
+    },
+    "leverage_expanding": {
+      "count": 342,
+      "mean": -0.00821164379497219,
+      "median": -0.008128977896171397
+    },
+    "negative_funding_extreme": {
+      "count": 1002,
+      "mean": -0.0107615157908677,
+      "median": -0.0015302489965507418
+    },
+    "neutral": {
+      "count": 17793,
+      "mean": -0.0030146239204565843,
+      "median": -0.0018152004442767425
+    },
+    "positive_funding_extreme": {
+      "count": 45,
+      "mean": 0.0002149961640570247,
+      "median": 0.007106977866841669
+    }
+  },
+  "regime_degradation_status": "REGIME_EXPLAINS_DEGRADATION"
+}

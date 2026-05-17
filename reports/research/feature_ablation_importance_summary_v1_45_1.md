@@ -1,0 +1,67 @@
+# V1.45.1 Research Summary
+
+- Verdict: FEATURE_ABLATION_IMPORTANCE_RESEARCH_INCONCLUSIVE
+
+## Data Preview
+
+```json
+{
+  "version": "V1.45.1",
+  "final_verdict": "FEATURE_ABLATION_IMPORTANCE_RESEARCH_INCONCLUSIVE",
+  "recommended_next_step": "improve data enrichment / regime labels before new modeling",
+  "improves_over_v1_44_4": false,
+  "best_family_observed": "regime_proxy",
+  "worst_family_observed": "alpha_score_family",
+  "evidence_classification": "RESEARCH_ONLY",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "previous_base": "V1.45",
+  "regime_aware_feature_base_version": "V1.44.4",
+  "regime_feature_base_version": "V1.43.4",
+  "payoff_target_base_version": "V1.42.3",
+  "payoff_failure_base_version": "V1.41",
+  "ev_degradation_base_version": "V1.39",
+  "canonical_base_version": "V1.37.2",
+  "input_guard_status": "FEATURE_ABLATION_INPUT_GUARD_PASSED",
+  "source_contract_status": "FEATURE_ABLATION_SOURCE_CONTRACT_PASSED",
+  "family_registry_status": "FEATURE_ABLATION_FAMILY_REGISTRY_COMPLETE",
+  "ablation_plan_status": "FEATURE_ABLATION_PLAN_READY",
+  "ablation_results_status": "FEATURE_ABLATION_RESULTS_COMPLETE",
+  "permutation_importance_status": "FEATURE_PERMUTATION_IMPORTANCE_COMPLETE",
+  "temporal_importance_status": "FEATURE_TEMPORAL_IMPORTANCE_COMPLETE",
+  "regime_importance_status": "FEATURE_REGIME_IMPORTANCE_COMPLETE",
+  "stability_audit_status": "FEATURE_ABLATION_STABILITY_AUDIT_COMPLETE",
+  "leakage_safety_status": "FEATURE_ABLATION_NO_LEAKAGE_DETECTED",
+  "baseline_comparison_status": "FEATURE_ABLATION_BASELINE_COMPARISON_COMPLETE",
+  "importance_scorecard_status": "FEATURE_IMPORTANCE_SCORECARD_COMPLETE",
+  "stable_families": [
+    "microstructure",
+    "price_return",
+    "regime_proxy",
+    "trend_momentum",
+    "volatility",
+    "volume_liquidity",
+    "other_remaining"
+  ],
+  "unstable_families": [
+    "alpha_score_family"
+  ],
+  "recommended_keep_for_next_research": [
+    "microstructure",
+    "price_return",
+    "regime_proxy",
+    "trend_momentum",
+    "volatility",
+    "volume_liquidity",
+    "other_remaining"
+  ],
+  "recommended_drop_or_rework": [
+    "alpha_score_family"
+  ]
+}
+```

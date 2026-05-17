@@ -1,0 +1,25 @@
+# Causal Filter Data Separation Audit V1 29 1
+
+```json
+{
+  "selection_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name",
+    "predicted_probability",
+    "predicted_label",
+    "actual_target"
+  ],
+  "forbidden_columns_in_selection": [],
+  "outcome_columns": [
+    "timestamp",
+    "forward_return_6bar",
+    "forward_return_12bar",
+    "cost_adjusted_forward_return"
+  ],
+  "filters_received_outcomes": false,
+  "status": "DATA_SEPARATION_PASSED"
+}
+```

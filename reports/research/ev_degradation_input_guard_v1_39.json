@@ -1,0 +1,15 @@
+{
+  "version": "V1.39",
+  "diagnostic_base": "V1.38.4",
+  "canonical_base_version": "V1.37.2",
+  "research_base_version": "V1.38.4",
+  "input_paths_status": "REAL_DATA_ONLY",
+  "mock_data_detected": false,
+  "raw_prediction_rows": 171648,
+  "selection_dataset_rows": 171648,
+  "outcome_dataset_rows": 171648,
+  "opportunity_index_rows": 171648,
+  "ev_net_final_verdict": "EV_NET_CANONICAL_RESEARCH_RECENT_WINDOW_NEGATIVE",
+  "input_guard_status": "EV_DEGRADATION_INPUT_GUARD_PASSED",
+  "issues": []
+}

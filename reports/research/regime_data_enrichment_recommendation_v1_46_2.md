@@ -1,0 +1,21 @@
+# Report
+
+```json
+{
+  "status": "RECOMMENDATION_READY",
+  "recommended_regime_labels_to_keep": [
+    "volatility_regime"
+  ],
+  "recommended_regime_labels_to_rework": [
+    "trend_regime"
+  ],
+  "recommended_regime_labels_to_drop": [
+    "unknown_regime"
+  ],
+  "recommended_feature_gaps_high_priority": [
+    "liquidity_gap"
+  ],
+  "recommended_data_enrichment_next": "add_onchain_metrics",
+  "recommended_next_research_step": "enrich data and rebuild features"
+}
+```

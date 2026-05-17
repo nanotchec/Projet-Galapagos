@@ -1,0 +1,8 @@
+{
+  "version": "V1.15.1",
+  "final_verdict": "ML_READY_FOR_ENSEMBLE_SIGNALS",
+  "leakage_audit": "ML_LEAKAGE_AUDIT_PASSED",
+  "permutation_passed": true,
+  "beats_alpha_and_costs": true,
+  "llm_reviewer_ready": true
+}

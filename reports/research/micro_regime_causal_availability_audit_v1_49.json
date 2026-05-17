@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "labels_audited": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ],
+  "lookahead_detected": false
+}

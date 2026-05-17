@@ -1,0 +1,20 @@
+# Report: Microstructure Data Write Policy
+
+```json
+{
+  "data_write_policy_defined": true,
+  "no_data_directory_writes": true,
+  "allowed_writes": [
+    "reports/*.json",
+    "reports/*.md"
+  ],
+  "forbidden_writes": [
+    "data/",
+    "parquet",
+    "csv",
+    "sqlite",
+    "db",
+    "jsonl"
+  ]
+}
+```

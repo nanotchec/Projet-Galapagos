@@ -1,0 +1,11 @@
+{
+  "version": "V1.82.1",
+  "data_directory_write_attempted": false,
+  "new_data_files": [],
+  "no_data_directory_writes": true,
+  "dry_run_only": true,
+  "reports_only": true,
+  "network_executed": false,
+  "trading_allowed": false,
+  "materialization_executed": false
+}

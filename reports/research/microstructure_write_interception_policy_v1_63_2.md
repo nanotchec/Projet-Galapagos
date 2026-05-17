@@ -1,0 +1,69 @@
+# Microstructure Write Interception Policy V1.63.2
+
+- **status**: MICROSTRUCTURE_WRITE_INTERCEPTION_POLICY_DEFINED
+- **write_interception_defined**: True
+- **no_data_directory_writes**: True
+- **allowed_writes**:
+  - reports/*.json
+  - reports/*.md
+- **forbidden_writes**:
+  - data/
+  - parquet
+  - csv
+  - sqlite
+  - db
+  - jsonl
+  - real manifest data
+- **parquet_created**: False
+- **csv_created**: False
+- **sqlite_created**: False
+- **new_data_files_created**: False
+- **manifest_data_file_created**: False
+- **version**: V1.63.2
+- **wrapper_plan_only**: True
+- **wrapper_executed**: False
+- **network_enabled**: False
+- **network_disabled**: True
+- **network_disabled_by_default**: True
+- **future_network_activation_requires_separate_approval**: True
+- **real_collection_approved**: False
+- **real_collection_approval_status**: NOT_APPROVED
+- **real_collection_executed**: False
+- **controlled_local_preflight_executed**: False
+- **real_preflight_executed**: False
+- **human_review_required_before_collection**: True
+- **dry_run_only**: True
+- **local_fixture_only**: True
+- **fixture_only**: True
+- **synthetic_or_minimal_sample**: True
+- **not_for_research_results**: True
+- **simulated_requests_allowed**: True
+- **requests_executed_count**: 0
+- **external_api_called**: False
+- **external_data_downloaded**: False
+- **no_new_filter**: True
+- **no_strategy_validated**: True
+- **no_preregistration_yet**: True
+- **no_paper_live**: True
+- **no_real_trading**: True
+- **holdout_executed**: False
+- **codex_cli_called**: False
+- **real_orders_possible**: False
+- **previous_hardened_preflight_review_passed**: True
+- **previous_final_verdict**: MICROSTRUCTURE_HARDENED_PREFLIGHT_REVIEW_PASSED
+- **manifest_preview_policy_defined**: True
+- **network_interception_defined**: True
+- **request_mocking_defined**: True
+- **wrapper_tests_defined**: True
+- **current_version**: V1.63.2
+- **previous_version**: V1.63
+- **previous_base**: V1.63
+- **migrated_from**: V1.63
+- **migration_reason**: wrapper plan version and state alignment fix
+- **state_alignment_status**: WRAPPER_PLAN_STATE_ALIGNED
+- **version_normalization_status**: VERSION_NORMALIZED
+- **stale_hardened_preflight_review_status_removed**: True
+- **verdict_alignment_status**: WRAPPER_PLAN_VERDICT_ALIGNED
+- **project_state_verdict_aligned**: True
+- **latest_metrics_verdict_aligned**: True
+- **recommendation_verdict_aligned**: True

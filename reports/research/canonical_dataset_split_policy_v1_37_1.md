@@ -1,0 +1,53 @@
+# Canonical Universe Dataset Split Policy - V1.37.1
+
+```json
+{
+  "version": "V1.37",
+  "index_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name"
+  ],
+  "selection_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name",
+    "predicted_probability",
+    "predicted_label",
+    "calibrated_probability",
+    "avg_win_past",
+    "avg_loss_past",
+    "cost_proxy",
+    "ev_calibrated_proxy",
+    "ev_proxy_ready",
+    "warmup_ready"
+  ],
+  "outcome_columns": [
+    "timestamp",
+    "actual_target",
+    "forward_return_4h",
+    "pnl",
+    "exit_reason",
+    "realized_pnl"
+  ],
+  "forbidden_selection_columns": [
+    "actual_target",
+    "forward_return_1h",
+    "forward_return_4h",
+    "forward_return_1d",
+    "cost_adjusted_forward_return",
+    "future_return",
+    "pnl",
+    "realized_pnl",
+    "exit_reason",
+    "mae_realized",
+    "mfe_realized",
+    "outcome"
+  ],
+  "split_policy_status": "CANONICAL_DATASET_SPLIT_POLICY_DEFINED"
+}
+```

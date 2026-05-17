@@ -1,0 +1,20 @@
+# Hypothesis Diversity - V1.35.3
+
+```json
+{
+  "hypotheses_tested_count": 6,
+  "unique_2026_counts": [
+    245,
+    8909,
+    8939
+  ],
+  "repeated_count_groups": {
+    "245": 1,
+    "8909": 1,
+    "8939": 4
+  },
+  "dominant_replay_count_2026": 8939,
+  "dominant_replay_count_frequency": 4,
+  "hypothesis_diversity_status": "HYPOTHESES_COLLAPSE_TO_REBUILD_COUNT"
+}
+```

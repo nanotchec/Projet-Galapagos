@@ -1,0 +1,60 @@
+{
+  "status": "PAYOFF_TARGET_NOISE_ACCEPTABLE",
+  "results": [
+    {
+      "target_name": "net_return_regression",
+      "near_zero_rate": 0.00020987827060305023,
+      "return_std": 0.03468190227428917,
+      "signal_to_noise_proxy": 0.748053383174634,
+      "noise_2026_vs_pre": 0.9874548485526723,
+      "label_balance": 0.503008255211977,
+      "target_stability_score": 0.9874555966060554
+    },
+    {
+      "target_name": "downside_weighted_return",
+      "near_zero_rate": 0.00020987827060305023,
+      "return_std": 0.052936377722009716,
+      "signal_to_noise_proxy": 0.7292756550340747,
+      "noise_2026_vs_pre": 1.0088038135150195,
+      "label_balance": 0.503008255211977,
+      "target_stability_score": 0.9911954572093256
+    },
+    {
+      "target_name": "severe_loss_classifier",
+      "near_zero_rate": 0.6500279642058165,
+      "return_std": 0.47696219483512353,
+      "signal_to_noise_proxy": 0.733753707924691,
+      "noise_2026_vs_pre": 0.958588911166475,
+      "label_balance": 0.34997203579418346,
+      "target_stability_score": 0.958589644920183
+    },
+    {
+      "target_name": "positive_payoff_classifier",
+      "near_zero_rate": 0.4973434004474273,
+      "return_std": 0.49999439888386654,
+      "signal_to_noise_proxy": 1.0053254503253886,
+      "noise_2026_vs_pre": 1.048876573761624,
+      "label_balance": 0.5026565995525727,
+      "target_stability_score": 0.9511224209129256
+    },
+    {
+      "target_name": "payoff_ratio_target",
+      "near_zero_rate": 0.0,
+      "return_std": 1.3042282619030385,
+      "signal_to_noise_proxy": 0.8310185150035202,
+      "noise_2026_vs_pre": 0.9983339638669233,
+      "label_balance": 0.503008255211977,
+      "target_stability_score": 0.9983347948854383
+    },
+    {
+      "target_name": "ev_gap_target",
+      "near_zero_rate": 0.0003381372137493587,
+      "return_std": 0.03471668852362042,
+      "signal_to_noise_proxy": 0.7494763278286279,
+      "noise_2026_vs_pre": 0.9876622728264246,
+      "label_balance": 0.4710834382724686,
+      "target_stability_score": 0.9876630223027524
+    }
+  ],
+  "version": "V1.42.3"
+}

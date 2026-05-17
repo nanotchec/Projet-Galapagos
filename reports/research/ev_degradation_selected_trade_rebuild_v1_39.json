@@ -1,0 +1,10 @@
+{
+  "selected_filter": "filter_ev_gt_0",
+  "selected_count_total": 129527,
+  "selected_count_2026": 19497,
+  "source_v1_38_4_selected_count": 129527,
+  "source_v1_38_4_selected_count_2026": 19497,
+  "count_match_v1_38_4": true,
+  "rebuild_status": "EV_DEGRADATION_SELECTED_TRADES_REBUILT",
+  "selected_trades": "                 timestamp  ... filter_ev_top_quantile_causal\n37212  2024-07-01 00:00:00  ...                         False\n37213  2024-07-01 00:00:00  ...                         False\n37214  2024-07-01 00:00:00  ...                         False\n37215  2024-07-01 00:00:00  ...                         False\n37216  2024-07-01 00:00:00  ...                         False\n...                    ...  ...                           ...\n171641 2026-04-29 20:00:00  ...                         False\n171642 2026-04-29 20:00:00  ...                         False\n171643 2026-04-29 20:00:00  ...                         False\n171645 2026-04-29 20:00:00  ...                         False\n171646 2026-04-29 20:00:00  ...                         False\n\n[129527 rows x 139 columns]"
+}

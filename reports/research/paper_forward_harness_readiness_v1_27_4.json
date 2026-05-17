@@ -1,0 +1,13 @@
+{
+  "status": "PAPER_FORWARD_HARNESS_READY_NO_NEW_DATA",
+  "protocol_check_status": "PROTOCOL_CHECK_PASSED_REFERENCE_V1_26_6",
+  "protocol_immutability_passed": true,
+  "data_availability_status": "NO_NEW_OUT_OF_SAMPLE_DATA",
+  "frozen_filter_audit_status": "FROZEN_FILTER_AUDIT_PASSED_WITH_TIE_BREAK_WARNING",
+  "exact_filter_reconstructable": true,
+  "mock_audit_status": "PAPER_FORWARD_SELF_REFERENCE_ONLY",
+  "mock_components_present": false,
+  "validation_status": "NOT_EVALUATED_NO_OOS_DATA",
+  "harness_readiness_status": "PAPER_FORWARD_HARNESS_READY_NO_NEW_DATA",
+  "reports_generated": true
+}

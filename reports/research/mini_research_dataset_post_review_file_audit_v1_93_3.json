@@ -1,0 +1,20 @@
+{
+  "version": "V1.93.3",
+  "reviewed_seed_root": "data/research/dataset_seed/v1_92/",
+  "reviewed_files_count": 5,
+  "expected_files_count": 5,
+  "unexpected_files_count": 0,
+  "missing_expected_files_count": 0,
+  "total_data_bytes_observed": 5563,
+  "preview_records_count": 3,
+  "seed_manifest_json_valid": true,
+  "seed_schema_json_valid": true,
+  "seed_preview_records_json_valid": true,
+  "seed_provenance_json_valid": true,
+  "seed_quality_audit_json_valid": true,
+  "manifest_matches_physical_files": true,
+  "seed_checksums_verified": true,
+  "schema_validation_passed": true,
+  "provenance_validation_passed": true,
+  "quality_audit_validation_passed": true
+}

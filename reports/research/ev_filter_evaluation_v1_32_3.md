@@ -1,0 +1,46 @@
+# Ev Filter Evaluation - v1.32.3
+
+```json
+[
+  {
+    "filter_name": "filter_ev_gt_0",
+    "selected_count": 146748,
+    "net_mean_pnl": 0.0006817662008065368,
+    "net_median_pnl": 0.0002948859737997864,
+    "win_rate": 0.4189903780630741,
+    "profit_factor": 1.1394849420220903,
+    "avg_ev_proxy": 0.0030485655513541546,
+    "status": "EVALUATED"
+  },
+  {
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "selected_count": 128824,
+    "net_mean_pnl": 0.0009343105494356532,
+    "net_median_pnl": 0.00040683142990005725,
+    "win_rate": 0.4248664845059927,
+    "profit_factor": 1.1627621729310285,
+    "avg_ev_proxy": 0.0033982330929174585,
+    "status": "EVALUATED"
+  },
+  {
+    "filter_name": "filter_prob_65_ev_pos",
+    "selected_count": 942,
+    "net_mean_pnl": 0.013953023347913584,
+    "net_median_pnl": 0.007418255626547522,
+    "win_rate": 0.5095541401273885,
+    "profit_factor": 2.4491155959796997,
+    "avg_ev_proxy": 0.01791783487155062,
+    "status": "EVALUATED"
+  },
+  {
+    "filter_name": "filter_ev_top_quantile_causal",
+    "selected_count": 6586,
+    "net_mean_pnl": 0.017196737640190002,
+    "net_median_pnl": 0.011101418935255847,
+    "win_rate": 0.590191314910416,
+    "profit_factor": 3.344737297046725,
+    "avg_ev_proxy": 0.009596140495068543,
+    "status": "EVALUATED"
+  }
+]
+```

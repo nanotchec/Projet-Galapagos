@@ -1,0 +1,7 @@
+{
+  "version": "v1.29.6",
+  "consistency_status": "RECENT_REGIME_DIAGNOSTIC_CONSISTENT_NO_SELECTION_LEAKAGE",
+  "errors": [],
+  "selected_count_final": 225,
+  "selected_count_matches_v1_29_3": true
+}

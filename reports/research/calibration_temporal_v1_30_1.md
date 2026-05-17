@@ -1,0 +1,67 @@
+# Calibration Temporal - Galapagos v1.30.1
+
+## Status
+- **None**
+
+## Details
+```json
+{
+  "windows": [
+    {
+      "window": "2024 H1",
+      "sample_count": 37044,
+      "avg_predicted_probability": 0.2849606165447638,
+      "realized_win_rate": 0.4243602202785876,
+      "brier": 0.2921363351411635,
+      "ece": 0.1576961772370936,
+      "avg_net_outcome": 0.004396446887476816,
+      "calibration_gap": 0.13939960373382382,
+      "status": "CALIBRATION_DRIFT_RECENT"
+    },
+    {
+      "window": "2024 H2",
+      "sample_count": 37932,
+      "avg_predicted_probability": 0.28767741102364386,
+      "realized_win_rate": 0.44226510597912055,
+      "brier": 0.3014825528757972,
+      "ece": 0.17642731001032386,
+      "avg_net_outcome": 0.0052508394960001275,
+      "calibration_gap": 0.1545876949554767,
+      "status": "CALIBRATION_DRIFT_RECENT"
+    },
+    {
+      "window": "2025 H1",
+      "sample_count": 36144,
+      "avg_predicted_probability": 0.30794522713110706,
+      "realized_win_rate": 0.40903054448871184,
+      "brier": 0.2872407670656218,
+      "ece": 0.14724238604158707,
+      "avg_net_outcome": 0.0016149520071610897,
+      "calibration_gap": 0.10108531735760479,
+      "status": "CALIBRATION_STABLE"
+    },
+    {
+      "window": "2025 H2",
+      "sample_count": 35832,
+      "avg_predicted_probability": 0.3342524518984833,
+      "realized_win_rate": 0.3965170797052914,
+      "brier": 0.2865551908364645,
+      "ece": 0.15380471424689593,
+      "avg_net_outcome": -0.002493060881221101,
+      "calibration_gap": 0.06226462780680808,
+      "status": "CALIBRATION_DRIFT_RECENT"
+    },
+    {
+      "window": "2026 H1",
+      "sample_count": 24360,
+      "avg_predicted_probability": 0.3081567131679,
+      "realized_win_rate": 0.39408866995073893,
+      "brier": 0.2809783092504697,
+      "ece": 0.12782774989082868,
+      "avg_net_outcome": -0.002302006421151162,
+      "calibration_gap": 0.08593195678283894,
+      "status": "CALIBRATION_STABLE"
+    }
+  ]
+}
+```

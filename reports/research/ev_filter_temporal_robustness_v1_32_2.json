@@ -1,0 +1,174 @@
+{
+  "temporal_results": [
+    {
+      "window": "2024_H1",
+      "filter_name": "filter_ev_gt_0",
+      "selected_count": 17221,
+      "net_mean_pnl": 0.0060079043231914195,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2024_H1",
+      "filter_name": "filter_ev_gt_cost_buffer",
+      "selected_count": 16019,
+      "net_mean_pnl": 0.005967655227836244,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2024_H1",
+      "filter_name": "filter_prob_65_ev_pos",
+      "selected_count": 942,
+      "net_mean_pnl": 0.013953023347913584,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2024_H1",
+      "filter_name": "filter_ev_top_quantile_causal",
+      "selected_count": 5237,
+      "net_mean_pnl": 0.019274194275299354,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2024_H2",
+      "filter_name": "filter_ev_gt_0",
+      "selected_count": 37886,
+      "net_mean_pnl": 0.004240547441754916,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2024_H2",
+      "filter_name": "filter_ev_gt_cost_buffer",
+      "selected_count": 32419,
+      "net_mean_pnl": 0.0043890117316821055,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2024_H2",
+      "filter_name": "filter_prob_65_ev_pos",
+      "selected_count": 0,
+      "net_mean_pnl": 0,
+      "status": "NO_SIGNALS"
+    },
+    {
+      "window": "2024_H2",
+      "filter_name": "filter_ev_top_quantile_causal",
+      "selected_count": 198,
+      "net_mean_pnl": 0.010258230981033456,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2025_H1",
+      "filter_name": "filter_ev_gt_0",
+      "selected_count": 36312,
+      "net_mean_pnl": 0.0006470597359301427,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2025_H1",
+      "filter_name": "filter_ev_gt_cost_buffer",
+      "selected_count": 36167,
+      "net_mean_pnl": 0.0006584936060718,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2025_H1",
+      "filter_name": "filter_prob_65_ev_pos",
+      "selected_count": 0,
+      "net_mean_pnl": 0,
+      "status": "NO_SIGNALS"
+    },
+    {
+      "window": "2025_H1",
+      "filter_name": "filter_ev_top_quantile_causal",
+      "selected_count": 756,
+      "net_mean_pnl": 0.010234041314455435,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2025_H2",
+      "filter_name": "filter_ev_gt_0",
+      "selected_count": 35832,
+      "net_mean_pnl": -0.0034930608812211023,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2025_H2",
+      "filter_name": "filter_ev_gt_cost_buffer",
+      "selected_count": 31528,
+      "net_mean_pnl": -0.00295294224000893,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2025_H2",
+      "filter_name": "filter_prob_65_ev_pos",
+      "selected_count": 0,
+      "net_mean_pnl": 0,
+      "status": "NO_SIGNALS"
+    },
+    {
+      "window": "2025_H2",
+      "filter_name": "filter_ev_top_quantile_causal",
+      "selected_count": 395,
+      "net_mean_pnl": 0.006457452431837216,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2026_H1",
+      "filter_name": "filter_ev_gt_0",
+      "selected_count": 19497,
+      "net_mean_pnl": -0.00321872050730674,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2026_H1",
+      "filter_name": "filter_ev_gt_cost_buffer",
+      "selected_count": 12691,
+      "net_mean_pnl": -0.0038218690068997268,
+      "status": "TEMPORAL_EVALUATED"
+    },
+    {
+      "window": "2026_H1",
+      "filter_name": "filter_prob_65_ev_pos",
+      "selected_count": 0,
+      "net_mean_pnl": 0,
+      "status": "NO_SIGNALS"
+    },
+    {
+      "window": "2026_H1",
+      "filter_name": "filter_ev_top_quantile_causal",
+      "selected_count": 0,
+      "net_mean_pnl": 0,
+      "status": "NO_SIGNALS"
+    }
+  ],
+  "summary_by_filter": {
+    "filter_ev_gt_0": {
+      "active_windows_count": 5,
+      "inactive_windows_count": 0,
+      "recent_2026_selected_count": 19497,
+      "recent_2026_pnl": -0.00321872050730674,
+      "activity_status": "TEMPORALLY_ACTIVE"
+    },
+    "filter_ev_gt_cost_buffer": {
+      "active_windows_count": 5,
+      "inactive_windows_count": 0,
+      "recent_2026_selected_count": 12691,
+      "recent_2026_pnl": -0.0038218690068997268,
+      "activity_status": "TEMPORALLY_ACTIVE"
+    },
+    "filter_prob_65_ev_pos": {
+      "active_windows_count": 1,
+      "inactive_windows_count": 4,
+      "recent_2026_selected_count": 0,
+      "recent_2026_pnl": 0.0,
+      "activity_status": "TEMPORAL_ACTIVITY_COLLAPSE"
+    },
+    "filter_ev_top_quantile_causal": {
+      "active_windows_count": 4,
+      "inactive_windows_count": 1,
+      "recent_2026_selected_count": 0,
+      "recent_2026_pnl": 0.0,
+      "activity_status": "RECENT_WINDOW_NO_SIGNALS"
+    }
+  }
+}

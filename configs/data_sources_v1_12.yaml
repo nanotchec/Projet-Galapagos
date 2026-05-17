@@ -1,0 +1,55 @@
+asset: BTC
+symbols:
+  spot_kraken: BTC/USD
+  binance_usdm: BTCUSDT
+  bybit_linear: BTCUSDT
+
+historical_targets:
+  ohlcv_4h:
+    target_years: 5
+    min_years_required_for_report: 3
+  ohlcv_1h:
+    target_years: 3
+    min_years_required_for_report: 2
+  ohlcv_5m:
+    target_months: 12
+    optional: true
+  ohlcv_1m:
+    target_months: 3
+    optional: true
+
+derivatives:
+  binance:
+    enabled: true
+    public_only_by_default: true
+    funding: true
+    open_interest: true
+    premium_index: true
+    taker_buy_sell: true
+    long_short_ratio: true
+  bybit:
+    enabled: true
+    public_only_by_default: true
+    funding: true
+    open_interest: true
+    long_short_ratio: true
+    premium_index: true
+  coinglass:
+    enabled_if_key_present: true
+    optional: true
+
+macro:
+  fred:
+    enabled_if_key_present: true
+    api_key_env: FRED_API_KEY
+    series:
+      - DFF
+      - DGS2
+      - DGS10
+      - T10Y2Y
+      - DTWEXBGS
+      - WALCL
+      - RRPONTSYD
+      - VIXCLS
+      - SP500
+      - NASDAQCOM

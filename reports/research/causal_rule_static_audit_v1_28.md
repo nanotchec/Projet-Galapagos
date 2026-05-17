@@ -1,0 +1,17 @@
+# Causal Rule Static Audit V1 28
+
+```json
+{
+  "rule_name": "unknown",
+  "rule_family": "frequency",
+  "selection_logic": null,
+  "groupby_period_selection": false,
+  "uses_full_period_scores": false,
+  "requires_future_in_period_scores": false,
+  "live_decision_time_defined": false,
+  "decision_time": "undefined",
+  "trade_decision_available_at_signal_time": true,
+  "tie_break_explicit": false,
+  "static_causality_status": "CAUSAL_BY_CONSTRUCTION"
+}
+```

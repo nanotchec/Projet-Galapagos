@@ -1,0 +1,9 @@
+{
+  "version": "V1.81.16",
+  "recommended_next_step": "Keep V1.81.x under strict reporting validation; do not execute V1.82 yet.",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false
+}

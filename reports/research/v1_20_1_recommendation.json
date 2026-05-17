@@ -1,0 +1,12 @@
+{
+  "primary_recommendation": "Extend 5m intrabar history before conclusions",
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true,
+  "verdict": "TRADE_LEDGER_INTRABAR_SAMPLE_TOO_SHORT",
+  "do_not_do_next": [
+    "Do not activate reviewer",
+    "Do not trade live"
+  ],
+  "caveat_30d_intrabar_sample": true
+}

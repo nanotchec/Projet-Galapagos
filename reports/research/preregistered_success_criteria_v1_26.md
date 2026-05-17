@@ -1,0 +1,24 @@
+# Preregistered Success Criteria V1 26
+
+```json
+{
+  "minimal_requirements": {
+    "selected_count": ">= 60",
+    "mean_net_pnl_after_cost_pct": "> 0",
+    "profit_factor": "> 1.2",
+    "beats_random_p95": "monthly_count_preserving_random",
+    "top_10_trades_concentration": "< 0.50",
+    "recent_window_net_mean": "> 0",
+    "cost_robustness": "positive at 0.30%"
+  },
+  "failure_triggers": {
+    "recent_window_negative": true,
+    "sample_size_too_small": "count < 30",
+    "extreme_concentration": "top_10 > 0.60",
+    "failed_random_baseline": true,
+    "cost_fragility": "negative at 0.30%",
+    "anti_leakage_failure": true
+  },
+  "verdict_logic": "All minimal requirements must be passed; no failure triggers must be active."
+}
+```

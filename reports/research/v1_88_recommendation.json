@@ -1,0 +1,7 @@
+{
+  "version": "V1.88",
+  "recommended_next_step": "Keep V1.84 and V1.87 artifacts read-only and require a separate approval gate for any future data write.",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true
+}

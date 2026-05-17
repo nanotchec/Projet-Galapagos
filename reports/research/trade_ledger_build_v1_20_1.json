@@ -1,0 +1,21 @@
+{
+  "version": "v1.20.1",
+  "audit": {
+    "fixed_percent": {
+      "candidates_count": 4275,
+      "fallback_entry_count": 0,
+      "next_candle_entry_count": 4275
+    },
+    "atr_proxy": {
+      "candidates_count": 4275,
+      "fallback_entry_count": 0,
+      "next_candle_entry_count": 4275
+    },
+    "horizon_only": {
+      "candidates_count": 4275,
+      "fallback_entry_count": 0,
+      "next_candle_entry_count": 4275
+    }
+  },
+  "status": "COMPLETE"
+}

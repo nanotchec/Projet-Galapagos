@@ -1,0 +1,29 @@
+# Microstructure Feature Inventory V1 47
+
+```json
+{
+  "status": "MICROSTRUCTURE_INVENTORY_COMPLETED",
+  "features": {
+    "amihud_illiquidity": {
+      "description": "Ratio of absolute return to volume",
+      "type": "liquidity_proxy",
+      "source": "ohlcv"
+    },
+    "realized_vol_proxy": {
+      "description": "Rolling standard deviation of absolute returns",
+      "type": "volatility_proxy",
+      "source": "ohlcv"
+    },
+    "volume_vol_ratio": {
+      "description": "Volume divided by realized volatility",
+      "type": "liquidity_regime_proxy",
+      "source": "ohlcv"
+    },
+    "intraday_range": {
+      "description": "High-low range relative to low",
+      "type": "volatility_proxy",
+      "source": "ohlcv"
+    }
+  }
+}
+```

@@ -1,0 +1,41 @@
+# Preregistration Archive Integrity Audit
+
+```json
+{
+  "version": "v1.26.6",
+  "checked_protocols": {
+    "v1_26_2": {
+      "status": "inconsistent",
+      "inconsistencies": [
+        "V1.26.2 contains mutated score_column 'low_frequency_strict_score' (Discovery artifact name) instead of 'predicted_probability'.",
+        "V1.26.2 contains mutated selection_logic 'fixed_percent_top_rank'.",
+        "V1.26.2 contains mutated tie_break 'random_stable'."
+      ]
+    },
+    "v1_26_3": {
+      "status": "inconsistent",
+      "inconsistencies": [
+        "V1.26.3 contains overly assertive 'first_arrival_stable' tie-break rule."
+      ]
+    },
+    "v1_26_4": {
+      "status": "clean",
+      "inconsistencies": []
+    },
+    "v1_26_5": {
+      "status": "clean",
+      "inconsistencies": []
+    }
+  },
+  "detected_inconsistencies": [
+    "V1.26.2 contains mutated score_column 'low_frequency_strict_score' (Discovery artifact name) instead of 'predicted_probability'.",
+    "V1.26.2 contains mutated selection_logic 'fixed_percent_top_rank'.",
+    "V1.26.2 contains mutated tie_break 'random_stable'.",
+    "V1.26.3 contains overly assertive 'first_arrival_stable' tie-break rule."
+  ],
+  "reference_protocol": "v1.26.6",
+  "historical_protocols_superseded": true,
+  "archive_integrity_status": "PREREGISTRATION_ARCHIVE_HAS_SUPERSEDED_INCONSISTENCIES",
+  "note": "Protocols V1.26.2 to V1.26.5 are superseded by V1.26.6 due to archival consistency hardening. V1.26.6 is the ONLY reference for future paper-forward validation."
+}
+```

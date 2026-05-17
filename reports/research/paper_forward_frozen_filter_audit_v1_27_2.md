@@ -1,0 +1,17 @@
+# Paper Forward Frozen Filter Audit V1 27 2
+
+```json
+{
+  "exact_filter_reconstructable": false,
+  "missing_definition_fields": [
+    "has_threshold"
+  ],
+  "checks": {
+    "is_low_frequency": true,
+    "has_score_column": true,
+    "has_threshold": false,
+    "is_causal": true
+  },
+  "status": "FROZEN_FILTER_DEFINITION_INSUFFICIENT"
+}
+```

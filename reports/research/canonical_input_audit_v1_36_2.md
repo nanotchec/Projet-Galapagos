@@ -1,0 +1,17 @@
+# Canonical Universe Input Audit - V1.36.2
+
+```json
+{
+  "predictions_rows": 171648,
+  "predictions_unique_timestamps": 5087,
+  "dataset_rows": 9486,
+  "dataset_unique_timestamps": 9486,
+  "required_columns_present": true,
+  "forbidden_columns_detected_in_raw": [
+    "actual_target",
+    "cost_adjusted_forward_return"
+  ],
+  "input_audit_status": "CANONICAL_INPUT_AUDIT_WARNINGS",
+  "issues": []
+}
+```

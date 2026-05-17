@@ -1,0 +1,21 @@
+# v1.26.6 Recommendation
+
+```json
+{
+  "version": "v1.26.6",
+  "final_verdict": "FROZEN_FILTER_REFERENCE_PROTOCOL_READY_WITH_ARCHIVE_NOTES",
+  "existing_evidence_status": "EXISTING_EVIDENCE_NOT_CONFIRMATORY",
+  "future_validation_required": true,
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true,
+  "recommended_next_step": "V1.27.4 rerun paper-forward harness with v1.26.6 protocol only",
+  "caution": "tie-break warning remains due to historical implementation stability limits.",
+  "reference_protocol": "v1.26.6",
+  "do_not_use_protocols_for_forward_validation": [
+    "v1.26.2",
+    "v1.26.3",
+    "v1.26.4"
+  ]
+}
+```

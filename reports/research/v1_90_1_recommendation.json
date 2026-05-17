@@ -1,0 +1,7 @@
+{
+  "version": "V1.90.1",
+  "recommended_next_step": "Post-review the strict V1.90.1 release, smoke and audit reports before any further expansion.",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true
+}

@@ -1,0 +1,41 @@
+# Point In Time Feature Audit - Galapagos v1.30.2
+
+## Status
+- **POINT_IN_TIME_AUDIT_PASSED_WITH_CLASSIFIED_OUTCOMES**
+
+## Details
+```json
+{
+  "total_columns": 12,
+  "allowed_feature_columns": [
+    "predicted_probability",
+    "predicted_label",
+    "macro_regime"
+  ],
+  "metadata_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name"
+  ],
+  "forbidden_outcome_columns": [
+    "actual_target",
+    "forward_return_6bar",
+    "forward_return_12bar",
+    "cost_adjusted_forward_return"
+  ],
+  "diagnostic_only_columns": [
+    "actual_target",
+    "forward_return_6bar",
+    "forward_return_12bar",
+    "cost_adjusted_forward_return"
+  ],
+  "unknown_columns": [],
+  "raw_dataset_contains_outcomes": true,
+  "raw_dataset_outcomes_classified": true,
+  "selection_frame_forbidden_columns": [],
+  "point_in_time_status": "POINT_IN_TIME_AUDIT_PASSED_WITH_CLASSIFIED_OUTCOMES",
+  "point_in_time_warning": "Raw dataset contains 4 outcome columns, but they are excluded from selection."
+}
+```

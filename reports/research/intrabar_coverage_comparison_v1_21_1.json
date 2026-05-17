@@ -1,0 +1,14 @@
+{
+  "version": "v1.21",
+  "previous_version": "v1.20.1",
+  "metrics": {
+    "previous_evaluated_count": 249,
+    "current_evaluated_count": 2573,
+    "previous_evaluated_ratio": 0.05824561403508772,
+    "current_evaluated_ratio": 0.6018713450292398,
+    "improvement_factor": 10.333333333333334,
+    "target_ratio": 0.2,
+    "target_reached": true
+  },
+  "verdict": "COVERAGE_TARGET_REACHED"
+}

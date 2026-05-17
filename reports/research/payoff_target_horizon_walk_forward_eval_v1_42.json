@@ -1,0 +1,201 @@
+{
+  "status": "PAYOFF_TARGET_WALK_FORWARD_EVAL_COMPLETE",
+  "eval_results": [
+    {
+      "period": "2024_H1",
+      "net_return_regression": {
+        "spearman_corr": NaN,
+        "top_decile_mean_net_return": NaN,
+        "top_decile_downside_rate": NaN,
+        "top_5pct_mean_net_return": NaN
+      },
+      "downside_weighted_return": {
+        "spearman_corr": NaN,
+        "top_decile_mean_net_return": NaN,
+        "top_decile_downside_rate": NaN,
+        "top_5pct_mean_net_return": NaN
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": NaN,
+        "top_decile_mean_net_return": NaN,
+        "top_decile_downside_rate": NaN,
+        "top_5pct_mean_net_return": NaN
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": NaN,
+        "top_decile_mean_net_return": NaN,
+        "top_decile_downside_rate": NaN,
+        "top_5pct_mean_net_return": NaN
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": NaN,
+        "top_decile_mean_net_return": NaN,
+        "top_decile_downside_rate": NaN,
+        "top_5pct_mean_net_return": NaN
+      },
+      "ev_gap_target": {
+        "spearman_corr": NaN,
+        "top_decile_mean_net_return": NaN,
+        "top_decile_downside_rate": NaN,
+        "top_5pct_mean_net_return": NaN
+      }
+    },
+    {
+      "period": "2024_H2",
+      "net_return_regression": {
+        "spearman_corr": 0.031247550310601172,
+        "top_decile_mean_net_return": 0.001782191012323196,
+        "top_decile_downside_rate": 0.466789667896679,
+        "top_5pct_mean_net_return": 0.002035997098211042
+      },
+      "downside_weighted_return": {
+        "spearman_corr": 0.031247550310601172,
+        "top_decile_mean_net_return": 0.001782191012323196,
+        "top_decile_downside_rate": 0.466789667896679,
+        "top_5pct_mean_net_return": 0.002035997098211042
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": -0.015126477194016642,
+        "top_decile_mean_net_return": 0.001782191012323196,
+        "top_decile_downside_rate": 0.466789667896679,
+        "top_5pct_mean_net_return": 0.002035997098211042
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": 0.0230671602610912,
+        "top_decile_mean_net_return": 0.001782191012323196,
+        "top_decile_downside_rate": 0.466789667896679,
+        "top_5pct_mean_net_return": 0.002035997098211042
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": 0.027668571550633757,
+        "top_decile_mean_net_return": 0.001782191012323196,
+        "top_decile_downside_rate": 0.466789667896679,
+        "top_5pct_mean_net_return": 0.002035997098211042
+      },
+      "ev_gap_target": {
+        "spearman_corr": -0.05093142351224813,
+        "top_decile_mean_net_return": 0.001782191012323196,
+        "top_decile_downside_rate": 0.466789667896679,
+        "top_5pct_mean_net_return": 0.002035997098211042
+      }
+    },
+    {
+      "period": "2025_H1",
+      "net_return_regression": {
+        "spearman_corr": 0.02192535737157933,
+        "top_decile_mean_net_return": 0.0014643750325026472,
+        "top_decile_downside_rate": 0.5019273127753304,
+        "top_5pct_mean_net_return": 0.0026580500957116083
+      },
+      "downside_weighted_return": {
+        "spearman_corr": 0.02192535737157933,
+        "top_decile_mean_net_return": 0.0014643750325026472,
+        "top_decile_downside_rate": 0.5019273127753304,
+        "top_5pct_mean_net_return": 0.0026580500957116083
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": 0.0026791704625931823,
+        "top_decile_mean_net_return": 0.0014643750325026472,
+        "top_decile_downside_rate": 0.5019273127753304,
+        "top_5pct_mean_net_return": 0.0026580500957116083
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": 0.020066988364212297,
+        "top_decile_mean_net_return": 0.0014643750325026472,
+        "top_decile_downside_rate": 0.5019273127753304,
+        "top_5pct_mean_net_return": 0.0026580500957116083
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": 0.021889446698488208,
+        "top_decile_mean_net_return": 0.0014643750325026472,
+        "top_decile_downside_rate": 0.5019273127753304,
+        "top_5pct_mean_net_return": 0.0026580500957116083
+      },
+      "ev_gap_target": {
+        "spearman_corr": -0.05741823047858866,
+        "top_decile_mean_net_return": 0.0014643750325026472,
+        "top_decile_downside_rate": 0.5019273127753304,
+        "top_5pct_mean_net_return": 0.0026580500957116083
+      }
+    },
+    {
+      "period": "2025_H2",
+      "net_return_regression": {
+        "spearman_corr": 0.03727735713935432,
+        "top_decile_mean_net_return": -0.00038614403958758906,
+        "top_decile_downside_rate": 0.513671875,
+        "top_5pct_mean_net_return": 1.1652428133323081e-05
+      },
+      "downside_weighted_return": {
+        "spearman_corr": 0.03727735713935432,
+        "top_decile_mean_net_return": -0.00038614403958758906,
+        "top_decile_downside_rate": 0.513671875,
+        "top_5pct_mean_net_return": 1.1652428133323081e-05
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": -0.05618688019999397,
+        "top_decile_mean_net_return": -0.00038614403958758906,
+        "top_decile_downside_rate": 0.513671875,
+        "top_5pct_mean_net_return": 1.1652428133323081e-05
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": 0.03756132864377965,
+        "top_decile_mean_net_return": -0.00038614403958758906,
+        "top_decile_downside_rate": 0.513671875,
+        "top_5pct_mean_net_return": 1.1652428133323081e-05
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": 0.02779490537929117,
+        "top_decile_mean_net_return": -0.00038614403958758906,
+        "top_decile_downside_rate": 0.513671875,
+        "top_5pct_mean_net_return": 1.1652428133323081e-05
+      },
+      "ev_gap_target": {
+        "spearman_corr": -0.05555744512570538,
+        "top_decile_mean_net_return": -0.00038614403958758906,
+        "top_decile_downside_rate": 0.513671875,
+        "top_5pct_mean_net_return": 1.1652428133323081e-05
+      }
+    },
+    {
+      "period": "2026_H1",
+      "net_return_regression": {
+        "spearman_corr": 0.02198684269184854,
+        "top_decile_mean_net_return": -0.0015688238538601295,
+        "top_decile_downside_rate": 0.5435139573070608,
+        "top_5pct_mean_net_return": -0.0024700279743469842
+      },
+      "downside_weighted_return": {
+        "spearman_corr": 0.02198684269184854,
+        "top_decile_mean_net_return": -0.0015688238538601295,
+        "top_decile_downside_rate": 0.5435139573070608,
+        "top_5pct_mean_net_return": -0.0024700279743469842
+      },
+      "severe_loss_classifier": {
+        "spearman_corr": -0.03719445175799513,
+        "top_decile_mean_net_return": -0.0015688238538601295,
+        "top_decile_downside_rate": 0.5435139573070608,
+        "top_5pct_mean_net_return": -0.0024700279743469842
+      },
+      "positive_payoff_classifier": {
+        "spearman_corr": 0.016613349991872736,
+        "top_decile_mean_net_return": -0.0015688238538601295,
+        "top_decile_downside_rate": 0.5435139573070608,
+        "top_5pct_mean_net_return": -0.0024700279743469842
+      },
+      "payoff_ratio_target": {
+        "spearman_corr": 0.021910867317270866,
+        "top_decile_mean_net_return": -0.0015688238538601295,
+        "top_decile_downside_rate": 0.5435139573070608,
+        "top_5pct_mean_net_return": -0.0024700279743469842
+      },
+      "ev_gap_target": {
+        "spearman_corr": -0.03243466203467798,
+        "top_decile_mean_net_return": -0.0015688238538601295,
+        "top_decile_downside_rate": 0.5435139573070608,
+        "top_5pct_mean_net_return": -0.0024700279743469842
+      }
+    }
+  ],
+  "reference_feature_used": "ev_calibrated_proxy"
+}

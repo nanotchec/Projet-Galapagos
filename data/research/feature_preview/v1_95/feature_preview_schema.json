@@ -1,0 +1,181 @@
+{
+  "version": "V1.95",
+  "feature_count": 13,
+  "features": [
+    {
+      "feature_name": "spread_bps",
+      "family": "spread_bps",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "spread_bps_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "mid_price",
+      "family": "mid_price",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "mid_price_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "bid_ask_imbalance",
+      "family": "bid_ask_imbalance",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "bid_ask_imbalance_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "top_of_book_depth",
+      "family": "top_of_book_depth",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "top_of_book_depth_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "quote_age_ms",
+      "family": "quote_age_ms",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "quote_age_ms_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "recent_trade_count",
+      "family": "recent_trade_count",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "recent_trade_count_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "recent_trade_volume",
+      "family": "recent_trade_volume",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "recent_trade_volume_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "realized_volatility_past_window",
+      "family": "realized_volatility_past_window",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "realized_volatility_past_window_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "return_past_window",
+      "family": "return_past_window",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "return_past_window_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "microprice",
+      "family": "microprice",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "microprice_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "order_book_imbalance",
+      "family": "order_book_imbalance",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "order_book_imbalance_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "liquidity_score",
+      "family": "liquidity_score",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "liquidity_score_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    },
+    {
+      "feature_name": "latency_observation_ms",
+      "family": "latency_observation_ms",
+      "dtype": "float",
+      "availability_rule": "available_ts <= decision_ts",
+      "expression": "latency_observation_ms_computed_from_observations_at_or_before_decision_ts",
+      "description": "Causal market observation available no later than decision_ts.",
+      "source_timestamp_fields": [
+        "event_ts",
+        "available_ts",
+        "decision_ts"
+      ]
+    }
+  ],
+  "timestamp_policy": {
+    "event_ts_required": true,
+    "available_ts_required": true,
+    "decision_ts_required": true,
+    "available_ts_lte_decision_ts": true
+  }
+}

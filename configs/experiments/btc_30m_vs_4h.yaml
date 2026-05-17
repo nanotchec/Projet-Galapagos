@@ -1,0 +1,12 @@
+experiment_name: btc_30m_vs_4h
+experiment_id: btc_30m_vs_4h_v1_4
+profiles:
+  - 30m
+  - 4h
+asset: BTC
+start_mode: live_forward_paper
+initial_capital_per_profile: 10000.0
+use_real_data: false
+use_mock_llm: true
+mock_decision: NO_TRADE
+notes: "Comparaison paper forward locale des profils BTC 30m et 4h."

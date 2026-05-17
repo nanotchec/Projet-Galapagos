@@ -1,0 +1,20 @@
+{
+  "version": "V1.90",
+  "source": "v1_84_v1_87_reports_and_v1_89_approval",
+  "network_executed": false,
+  "ml_signal_validation_executed": false,
+  "trading_allowed": false,
+  "artifact": "consolidated_schema_snapshot",
+  "design_source_version": "V1.89",
+  "allowed_root": "data/research/microstructure_contract_materialization/v1_90/",
+  "allowed_extensions": [
+    ".json"
+  ],
+  "forbidden_extensions": [
+    ".parquet",
+    ".csv",
+    ".sqlite",
+    ".jsonl",
+    ".db"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": "v1.17.1",
+  "primary_recommendation": "B. Add intrabar data first",
+  "secondary_recommendations": [
+    "A. Improve features first"
+  ],
+  "do_not_do_next": [
+    "G. Do not activate LLM reviewer",
+    "Do not enable real trading",
+    "Do not execute holdout"
+  ],
+  "rationale": "Based on verdicts: {'recent_window': 'RECENT_FAILURE_CONFIRMED', 'regime_failure': 'REGIME_OVERFIT_SUSPECTED', 'cost_failure': 'EDGE_EXISTS_BEFORE_COSTS_ONLY', 'feature_drift': 'FEATURE_DRIFT_DETECTED', 'label_diagnostics': 'LABELS_STABLE', 'horizon_diagnostics': 'HORIZON_12BAR_WEAK', 'data_gap_analysis': 'INTRABAR_DATA_PRIORITY'}",
+  "ready_for_reviewer": false,
+  "required_before_llm_reviewer": "A robust ensemble signal across all regimes.",
+  "required_before_holdout": "LLM reviewer success and robust ML signal.",
+  "required_before_live_paper_autonomy": "Holdout success.",
+  "verdicts_used": {
+    "recent_window": "RECENT_FAILURE_CONFIRMED",
+    "regime_failure": "REGIME_OVERFIT_SUSPECTED",
+    "cost_failure": "EDGE_EXISTS_BEFORE_COSTS_ONLY",
+    "feature_drift": "FEATURE_DRIFT_DETECTED",
+    "label_diagnostics": "LABELS_STABLE",
+    "horizon_diagnostics": "HORIZON_12BAR_WEAK",
+    "data_gap_analysis": "INTRABAR_DATA_PRIORITY"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": "V1.99",
+  "split_policy_created": true,
+  "purge_policy_defined": true,
+  "embargo_policy_defined": true,
+  "temporal_split_policy_defined": true,
+  "no_random_shuffle_policy_defined": true,
+  "random_shuffle_used": false,
+  "split_policy": {
+    "split_axis": "decision_ts",
+    "shuffle": "forbidden",
+    "purge": "required before any future research experiment",
+    "embargo": "required around split boundaries"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "version": "V1.90",
+  "allowed_data_write_root": "data/research/microstructure_contract_materialization/v1_90/",
+  "created_file_paths": [
+    "data/research/microstructure_contract_materialization/v1_90/consolidated_manifest.json",
+    "data/research/microstructure_contract_materialization/v1_90/consolidated_schema_snapshot.json",
+    "data/research/microstructure_contract_materialization/v1_90/consolidated_quality_summary.json"
+  ],
+  "created_files_count": 3,
+  "total_new_data_files_created": 3,
+  "total_data_bytes_written": 1365,
+  "unapproved_data_write_detected": false,
+  "unapproved_data_write_paths": [],
+  "consolidated_manifest_json_created": true,
+  "consolidated_schema_snapshot_json_created": true,
+  "consolidated_quality_summary_json_created": true,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "jsonl_created": false,
+  "db_created": false,
+  "existing_v1_84_files_modified": false,
+  "existing_v1_87_files_modified": false,
+  "v1_84_hashes_verified": true,
+  "v1_87_hashes_verified": true
+}

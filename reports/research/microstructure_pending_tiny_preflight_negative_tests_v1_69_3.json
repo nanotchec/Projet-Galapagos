@@ -1,0 +1,16 @@
+{
+  "negative_tests_added": true,
+  "negative_tests_passed": true,
+  "negative_test_count": 60,
+  "portable_tests_passed": true,
+  "absolute_paths_removed_from_tests": true,
+  "validator_rejection_cases_covered": [
+    "approval_granted",
+    "phrase_validated",
+    "network_enabled",
+    "requests_executed",
+    "data_writes",
+    "forbidden_verdicts"
+  ],
+  "missing_rejection_cases": []
+}

@@ -1,0 +1,17 @@
+# Report
+
+```json
+{
+  "status": "REGIME_LABEL_INVENTORY_COMPLETED",
+  "categories": [
+    "volatility_regime_proxy",
+    "trend_regime_proxy",
+    "liquidity_regime_proxy",
+    "volume_regime_proxy",
+    "momentum_regime_proxy",
+    "funding_or_derivatives_proxy",
+    "alpha_score_proxy",
+    "unknown_or_unclassified"
+  ]
+}
+```

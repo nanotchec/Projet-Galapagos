@@ -1,0 +1,142 @@
+[
+  {
+    "window": "2024_H1",
+    "filter_name": "filter_ev_gt_0",
+    "selected_count": 17301,
+    "net_mean_pnl": 0.006008228278288474,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2024_H1",
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "selected_count": 16080,
+    "net_mean_pnl": 0.005964746836820216,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2024_H1",
+    "filter_name": "filter_prob_65_ev_pos",
+    "selected_count": 946,
+    "net_mean_pnl": 0.013909152272994588,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2024_H1",
+    "filter_name": "filter_ev_top_quantile",
+    "selected_count": 9330,
+    "net_mean_pnl": 0.008466678310840157,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2024_H2",
+    "filter_name": "filter_ev_gt_0",
+    "selected_count": 37886,
+    "net_mean_pnl": 0.004240547441754916,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2024_H2",
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "selected_count": 32419,
+    "net_mean_pnl": 0.0043890117316821055,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2024_H2",
+    "filter_name": "filter_prob_65_ev_pos",
+    "selected_count": 0,
+    "net_mean_pnl": 0,
+    "status": "NO_SIGNALS"
+  },
+  {
+    "window": "2024_H2",
+    "filter_name": "filter_ev_top_quantile",
+    "selected_count": 3001,
+    "net_mean_pnl": 0.006710816309855643,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2025_H1",
+    "filter_name": "filter_ev_gt_0",
+    "selected_count": 36312,
+    "net_mean_pnl": 0.0006470597359301427,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2025_H1",
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "selected_count": 36167,
+    "net_mean_pnl": 0.0006584936060718,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2025_H1",
+    "filter_name": "filter_prob_65_ev_pos",
+    "selected_count": 0,
+    "net_mean_pnl": 0,
+    "status": "NO_SIGNALS"
+  },
+  {
+    "window": "2025_H1",
+    "filter_name": "filter_ev_top_quantile",
+    "selected_count": 4008,
+    "net_mean_pnl": 0.002608401320830532,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2025_H2",
+    "filter_name": "filter_ev_gt_0",
+    "selected_count": 35832,
+    "net_mean_pnl": -0.0034930608812211023,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2025_H2",
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "selected_count": 31528,
+    "net_mean_pnl": -0.00295294224000893,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2025_H2",
+    "filter_name": "filter_prob_65_ev_pos",
+    "selected_count": 0,
+    "net_mean_pnl": 0,
+    "status": "NO_SIGNALS"
+  },
+  {
+    "window": "2025_H2",
+    "filter_name": "filter_ev_top_quantile",
+    "selected_count": 826,
+    "net_mean_pnl": 0.003952085498083431,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2026_H1",
+    "filter_name": "filter_ev_gt_0",
+    "selected_count": 19497,
+    "net_mean_pnl": -0.00321872050730674,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2026_H1",
+    "filter_name": "filter_ev_gt_cost_buffer",
+    "selected_count": 12691,
+    "net_mean_pnl": -0.0038218690068997268,
+    "status": "TEMPORAL_EVALUATED"
+  },
+  {
+    "window": "2026_H1",
+    "filter_name": "filter_prob_65_ev_pos",
+    "selected_count": 0,
+    "net_mean_pnl": 0,
+    "status": "NO_SIGNALS"
+  },
+  {
+    "window": "2026_H1",
+    "filter_name": "filter_ev_top_quantile",
+    "selected_count": 0,
+    "net_mean_pnl": 0,
+    "status": "NO_SIGNALS"
+  }
+]

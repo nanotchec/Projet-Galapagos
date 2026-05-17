@@ -1,0 +1,15 @@
+# Microstructure Two Request Authorization Policy
+
+Version: v1.73.1
+
+```json
+{
+  "v1_74_two_request_preflight_authorized": true,
+  "v1_74_must_remain_two_requests_max": true,
+  "v1_74_reports_only": true,
+  "v1_74_no_data_directory_writes": true,
+  "v1_74_no_trading": true,
+  "max_request_count": 2,
+  "max_records_preview": 20
+}
+```

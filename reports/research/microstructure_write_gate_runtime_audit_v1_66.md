@@ -1,0 +1,17 @@
+# Report: Microstructure Write Gate Runtime Audit
+
+```json
+{
+  "write_gate_runtime_checked": true,
+  "write_attempts_blocked_count": 0,
+  "no_data_directory_writes": true,
+  "forbidden_writes_blocked": [
+    "data/",
+    "parquet",
+    "csv",
+    "sqlite",
+    "db",
+    "jsonl"
+  ]
+}
+```

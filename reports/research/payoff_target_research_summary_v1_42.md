@@ -1,0 +1,31 @@
+# Payoff Target Research Summary V1.42
+
+- **version**: V1.42
+- **failure_diagnostic_base**: V1.41
+- **payoff_objective_base_version**: V1.40.1
+- **diagnostic_base**: V1.39
+- **canonical_base_version**: V1.37.2
+- **input_guard_status**: PAYOFF_TARGET_INPUT_GUARD_PASSED
+- **horizon_candidate_status**: PAYOFF_TARGET_HORIZONS_PARTIAL
+- **target_definition_status**: PAYOFF_TARGET_DEFINITIONS_COMPLETE
+- **target_noise_status**: PAYOFF_TARGET_NOISE_ACCEPTABLE
+- **downside_label_status**: DOWNSIDE_LABEL_CAPTURES_SEVERE_LOSSES
+- **horizon_walk_forward_status**: PAYOFF_TARGET_WALK_FORWARD_EVAL_COMPLETE
+- **baseline_comparison_status**: PAYOFF_TARGET_BASELINE_COMPARISON_COMPLETE
+- **temporal_robustness_status**: PAYOFF_TARGET_TEMPORAL_ROBUSTNESS_COMPLETE
+- **regime_breakdown_status**: PAYOFF_TARGET_REGIME_BREAKDOWN_COMPLETE
+- **overfit_guard_status**: PAYOFF_TARGET_OVERFIT_RISK_MODERATE
+- **best_target_observed**: net_return_regression
+- **best_horizon_observed**: forward_return_3bar
+- **best_target_2026_metric**: -0.0015688238538601295
+- **best_target_downside_metric**: 0.5435139573070608
+- **beats_v1_40_1_target**: True
+- **recent_window_status**: PAYOFF_TARGET_RECENT_WINDOW_WEAK
+- **final_verdict**: PAYOFF_TARGET_RESEARCH_PROMISING_BUT_UNVALIDATED
+- **recommended_next_step**: harden best payoff target with ablations and diagnostics, still exploratory only
+- **evidence_classification**: EXPLORATORY_ONLY
+- **no_new_filter**: True
+- **no_strategy_validated**: True
+- **no_preregistration_yet**: True
+- **no_paper_live**: True
+- **no_real_trading**: True

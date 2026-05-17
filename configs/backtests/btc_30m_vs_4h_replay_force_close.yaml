@@ -1,0 +1,17 @@
+backtest_name: btc_30m_vs_4h_replay_force_close
+profiles:
+  - 30m
+  - 4h
+symbol: BTC/USD
+start_date: null
+end_date: null
+initial_capital_per_profile: 10000.0
+fee_model:
+  fee_rate: 0.001
+slippage_model:
+  slippage_bps: 5.0
+llm_provider: mock
+mock_decision_policy: simple_momentum
+force_close_at_end: true
+output_database: data/paper/backtests/btc_30m_vs_4h_replay_force_close.sqlite
+output_reports_dir: reports/backtests

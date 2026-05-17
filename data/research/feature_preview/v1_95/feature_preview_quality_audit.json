@@ -1,0 +1,11 @@
+{
+  "version": "V1.95",
+  "preview_rows_count": 3,
+  "theoretical_features_count": 13,
+  "json_only": true,
+  "supervised_outputs_absent": true,
+  "model_outputs_absent": true,
+  "training_absent": true,
+  "no_trading": true,
+  "available_ts_lte_decision_ts_checked": true
+}

@@ -1,0 +1,15 @@
+{
+  "version": "V1.84",
+  "source": "reports_only_v1_82_4_and_v1_83",
+  "network_executed": false,
+  "ml_signal_validation_executed": false,
+  "trading_allowed": false,
+  "artifact": "manifest",
+  "approval_source_version": "V1.83",
+  "dryrun_source_version": "V1.82.4",
+  "approval_source_verified": true,
+  "authorized_future_scope": "tiny_data_contract_materialization_ultra_bounded_no_network_no_full_dataset_no_ml_no_trading",
+  "max_files": 3,
+  "max_bytes": 20000,
+  "max_preview_records": 5
+}

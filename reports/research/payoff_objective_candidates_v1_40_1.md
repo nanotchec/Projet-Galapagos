@@ -1,0 +1,4 @@
+# Payoff Objective Candidates V1.40.1
+
+Objective candidate status: PAYOFF_OBJECTIVE_CANDIDATES_DEFINED.
+Candidates implemented: probability_only_baseline, expected_net_return_regression, asymmetric_loss_weighted_classifier, downside_aware_score, ev_gap_corrector, two_head_probability_payoff_model.

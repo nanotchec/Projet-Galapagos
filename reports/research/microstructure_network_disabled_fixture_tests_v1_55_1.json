@@ -1,0 +1,7 @@
+{
+  "version": "V1.55.1",
+  "previous_base": "V1.55",
+  "network_disabled": true,
+  "network_block_tests_passed": true,
+  "network_disabled_fixture_tests_status": "PASSED"
+}

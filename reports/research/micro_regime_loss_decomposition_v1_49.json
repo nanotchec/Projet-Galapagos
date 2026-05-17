@@ -1,0 +1,60 @@
+{
+  "outcome_col_used": "target",
+  "loss_by_regime": {
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:high": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 22560
+    },
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:low": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 15924
+    },
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:mid": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 18732
+    },
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:high": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 14892
+    },
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:low": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 23004
+    },
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:mid": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 19344
+    },
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:high": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 19752
+    },
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:low": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 18312
+    },
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:mid": {
+      "mean_outcome": 0.0,
+      "std_outcome": 0.0,
+      "negative_ratio": 0.0,
+      "sample_size": 19128
+    }
+  },
+  "most_lossy_regime": "amihud_illiquidity_regime:high|realized_vol_proxy_regime:high"
+}

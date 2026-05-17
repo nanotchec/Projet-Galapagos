@@ -1,0 +1,27 @@
+# Preregistered Evidence Classification V1 26
+
+```json
+{
+  "discovery_evidence": [
+    "V1.24 filter sweep (low_frequency_strict_score identified)",
+    "V1.24.1 leakage audit (causal rules verified)"
+  ],
+  "retrospective_robustness_evidence": [
+    "V1.25.1 temporal robustness (2024-2025 performance)",
+    "V1.25.1 same-frequency monthly random check",
+    "V1.25.1 cost sensitivity audit",
+    "V1.25.1 performance concentration analysis"
+  ],
+  "non_validating_evidence": [
+    "All windows used for filter discovery or threshold inspection",
+    "Placebo tests without filter re-application",
+    "Analyses with known multiple testing risk (78 rules tested)"
+  ],
+  "future_validation_required": [
+    "Out-of-sample data after 2026-05-06",
+    "Alternative exchange/source validation",
+    "Strict adherence to V1.26 pre-registered protocol"
+  ],
+  "verdict": "EXISTING_EVIDENCE_PROMISING_BUT_NOT_CONFIRMATORY"
+}
+```

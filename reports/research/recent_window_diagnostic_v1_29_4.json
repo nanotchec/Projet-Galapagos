@@ -1,0 +1,45 @@
+{
+  "breakdown": {
+    "2024 H1": {
+      "selected_count": 952,
+      "net_mean_pnl": 0.01488990497899037,
+      "win_rate": 0.5966386554621849,
+      "gross_mean_pnl": 0.01488990497899037,
+      "profit_factor": 2.4572273370075357
+    },
+    "2024 H2": {
+      "selected_count": 1126,
+      "net_mean_pnl": 0.005837706297112815,
+      "win_rate": 0.5861456483126111,
+      "gross_mean_pnl": 0.005837706297112815,
+      "profit_factor": 1.4167999411562897
+    },
+    "2025 H1": {
+      "selected_count": 1018,
+      "net_mean_pnl": 0.013343630951947339,
+      "win_rate": 0.6090373280943026,
+      "gross_mean_pnl": 0.013343630951947339,
+      "profit_factor": 2.3509538850589875
+    },
+    "2025 H2": {
+      "selected_count": 1844,
+      "net_mean_pnl": 0.0009725784005311877,
+      "win_rate": 0.527114967462039,
+      "gross_mean_pnl": 0.0009725784005311877,
+      "profit_factor": 1.1015309644167905
+    },
+    "2026 H1": {
+      "selected_count": 654,
+      "net_mean_pnl": -0.006901037871137916,
+      "win_rate": 0.463302752293578,
+      "gross_mean_pnl": -0.006901037871137916,
+      "profit_factor": 0.6807204150083862
+    }
+  },
+  "recent_window": "2026 H1",
+  "recent_net_mean_pnl": -0.006901037871137916,
+  "historical_avg_pnl": 0.008760955157145428,
+  "recent_vs_historical_delta": -0.015661993028283343,
+  "recent_degradation_confirmed": true,
+  "status": "RECENT_DEGRADATION_CONFIRMED"
+}

@@ -1,0 +1,71 @@
+# Frozen Filter Hardened Audit
+
+```json
+{
+  "version": "v1.26.5",
+  "filter_definition": {
+    "filter_name": "low_frequency_strict_score",
+    "policy": "horizon_only",
+    "score_column": "predicted_probability",
+    "selection_logic": "highest_score_per_period",
+    "threshold": null,
+    "threshold_type": "none",
+    "rank_direction": "descending",
+    "temporal_frequency_rule": "7D",
+    "max_trades_per_period": 1,
+    "period_flooring": "timestamp.dt.floor('7D')",
+    "tie_break_rule": "pandas_current_order_after_score_sort",
+    "tie_break_explicit": false,
+    "tie_break_warning": "Warning: Historical implementation has no explicit secondary sort key for equal scores.",
+    "required_input_columns": [
+      "timestamp",
+      "predicted_probability"
+    ],
+    "allowed_selection_columns": [
+      "timestamp",
+      "predicted_probability"
+    ],
+    "forbidden_selection_columns": [
+      "forward_return_*",
+      "gross_pnl_pct",
+      "net_pnl_pct",
+      "mfe_pct",
+      "mae_pct",
+      "exit_reason",
+      "simulation_status",
+      "any realized future outcome"
+    ],
+    "causal_only": true,
+    "uses_future_returns": false,
+    "uses_realized_pnl": false,
+    "uses_mfe_mae": false,
+    "uses_exit_reason": false,
+    "exact_filter_reconstructable": true
+  },
+  "source_match_checks": {
+    "rule_name_matched": true,
+    "code_period_matched": true,
+    "code_score_column_matched": true,
+    "code_used_columns_matched": true,
+    "code_sort_descending_matched": true,
+    "code_groupby_period_head1_matched": true,
+    "code_causal_true": true,
+    "sweep_rule_found": true,
+    "sweep_rule_family_frequency": true,
+    "sweep_description_weekly": true,
+    "sweep_used_columns_matched": true,
+    "sweep_causal_true": true,
+    "sweep_horizon_only_present": true,
+    "selected_count_consistent": true
+  },
+  "definition_source_files": [
+    "src/galapagos/research/signal_selection/selection_rules.py",
+    "reports/research/signal_selection_filter_sweep_v1_24_1.json"
+  ],
+  "source_extraction_status": "SOURCE_MATCHED_CODE_AND_REPORTS_STRICT",
+  "source_audit_warnings": [],
+  "selected_count_reference": 122,
+  "definition_hash": "de6b57ea813f5d4c79221ebc366647a61b08d286dc00934fedff20cc7fc654cd",
+  "exact_filter_reconstructable": true
+}
+```

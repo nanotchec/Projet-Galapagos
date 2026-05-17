@@ -1,0 +1,14 @@
+# Microstructure No Strategy Linkage Review
+
+Version: v1.72
+
+```json
+{
+  "previous_strategy_link_allowed": true,
+  "previous_no_strategy_validated": true,
+  "previous_trading_allowed": true,
+  "previous_no_real_trading": true,
+  "previous_real_orders_possible": true,
+  "no_strategy_linkage_review_passed": true
+}
+```

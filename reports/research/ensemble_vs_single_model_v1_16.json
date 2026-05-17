@@ -1,0 +1,39 @@
+{
+  "results": {
+    "mean_probability": {
+      "count": 219,
+      "mean_return": 0.593607305936073,
+      "hit_rate": 0.593607305936073,
+      "cost_adjusted_return": 0.5906073059360731,
+      "positive_after_costs": true
+    },
+    "median_probability": {
+      "count": 219,
+      "mean_return": 0.4977168949771689,
+      "hit_rate": 0.4977168949771689,
+      "cost_adjusted_return": 0.494716894977169,
+      "positive_after_costs": true
+    },
+    "majority_vote": {
+      "count": 219,
+      "mean_return": 0.54337899543379,
+      "hit_rate": 0.54337899543379,
+      "cost_adjusted_return": 0.54037899543379,
+      "positive_after_costs": true
+    },
+    "weighted_score": {
+      "count": 219,
+      "mean_return": 0.593607305936073,
+      "hit_rate": 0.593607305936073,
+      "cost_adjusted_return": 0.5906073059360731,
+      "positive_after_costs": true
+    },
+    "conservative_consensus": {
+      "count": 219,
+      "mean_return": 0.4474885844748858,
+      "hit_rate": 0.4474885844748858,
+      "cost_adjusted_return": 0.4444885844748859,
+      "positive_after_costs": true
+    }
+  }
+}

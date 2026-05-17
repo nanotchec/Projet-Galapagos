@@ -1,0 +1,21 @@
+# Dryrun Test Plan (V1.59.1)
+
+- Defines mandatory verification tests.
+
+```json
+{
+  "version": "V1.59.1",
+  "current_version": "V1.59.1",
+  "dryrun_tests_defined": true,
+  "mandatory_tests": [
+    "Network disabled assertion test",
+    "Write protection assertion test",
+    "Manifest schema validation test",
+    "Causal timestamp policy test",
+    "Request mocking validation test",
+    "Rollback/Cleanup verification test"
+  ],
+  "execution_posture": "SIMULATED_ONLY",
+  "plan_status": "READY"
+}
+```

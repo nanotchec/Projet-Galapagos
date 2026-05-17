@@ -1,0 +1,137 @@
+{
+  "version": "v1.20",
+  "signal_audit": {
+    "raw_signal_rows": 23426,
+    "unique_signal_timestamps": 4275,
+    "duplicate_signal_rows": 19151,
+    "duplicates_per_timestamp_max": 20,
+    "selected_signal_policy": "max_predicted_probability",
+    "models_count": 3,
+    "feature_sets_count": 3,
+    "targets_count": 3
+  },
+  "ledger_audit": {
+    "fixed_percent": {
+      "candidates_count": 4275,
+      "fallback_entry_count": 0,
+      "next_candle_entry_count": 4275
+    },
+    "atr_proxy": {
+      "candidates_count": 4275,
+      "fallback_entry_count": 0,
+      "next_candle_entry_count": 4275
+    },
+    "horizon_only": {
+      "candidates_count": 4275,
+      "fallback_entry_count": 0,
+      "next_candle_entry_count": 4275
+    }
+  },
+  "eval_audit": {
+    "fixed_percent": {
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "coverage_mean": 0.05824561403508772,
+      "ambiguous_rate": 0.0
+    },
+    "atr_proxy": {
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "coverage_mean": 0.05824561403508772,
+      "ambiguous_rate": 0.0
+    },
+    "horizon_only": {
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "coverage_mean": 0.05824561403508772,
+      "ambiguous_rate": 0.0
+    }
+  },
+  "policy_metrics": {
+    "fixed_percent": {
+      "candidates_count": 4275,
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "evaluated_ratio": 0.05824561403508772,
+      "intrabar_sample_limited": true,
+      "win_rate": 0.3654618473895582,
+      "mean_pnl_pct": -0.0012613064814842225,
+      "mean_pnl_after_cost_pct": -0.004261306481484223,
+      "median_pnl_after_cost_pct": -0.017999999999999943,
+      "mean_mfe_pct": 0.019147868105418145,
+      "mean_mae_pct": 0.0222237197585698,
+      "exit_reasons": {
+        "stop_loss": 134,
+        "timeout": 68,
+        "take_profit": 47
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 0,
+        "win_rate": 0.0,
+        "mean_pnl_after_cost_pct": 0.0
+      }
+    },
+    "atr_proxy": {
+      "candidates_count": 4275,
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "evaluated_ratio": 0.05824561403508772,
+      "intrabar_sample_limited": true,
+      "win_rate": 0.37751004016064255,
+      "mean_pnl_pct": -0.0035348704373218383,
+      "mean_pnl_after_cost_pct": -0.006534870437321838,
+      "median_pnl_after_cost_pct": -0.010706962260862242,
+      "mean_mfe_pct": 0.019147868105418145,
+      "mean_mae_pct": 0.0222237197585698,
+      "exit_reasons": {
+        "timeout": 127,
+        "stop_loss": 107,
+        "take_profit": 15
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 0,
+        "win_rate": 0.0,
+        "mean_pnl_after_cost_pct": 0.0
+      }
+    },
+    "horizon_only": {
+      "candidates_count": 4275,
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "evaluated_ratio": 0.05824561403508772,
+      "intrabar_sample_limited": true,
+      "win_rate": 0.46184738955823296,
+      "mean_pnl_pct": -0.0027428055551047717,
+      "mean_pnl_after_cost_pct": -0.005742805555104771,
+      "median_pnl_after_cost_pct": -0.0055328878701994865,
+      "mean_mfe_pct": 0.019147868105418145,
+      "mean_mae_pct": 0.0222237197585698,
+      "exit_reasons": {
+        "horizon_timeout": 249
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 0,
+        "win_rate": 0.0,
+        "mean_pnl_after_cost_pct": 0.0
+      }
+    }
+  },
+  "comparison": {
+    "best_policy": "observed_only_fixed_percent",
+    "best_mean_pnl_after_cost_pct": -0.004261306481484223,
+    "verdict": "TRADE_LEDGER_INTRABAR_SAMPLE_TOO_SHORT",
+    "policy_comparison_valid": false,
+    "warnings": [
+      "MEDIAN_PNL_NEGATIVE_ALL_POLICIES"
+    ],
+    "comparison_count": 3,
+    "all_negative": true,
+    "all_median_negative": true
+  },
+  "simulation_input_type": "real_signal_candidates_with_deterministic_research_policies",
+  "is_real_trade_simulation": false,
+  "ready_for_reviewer": false
+}

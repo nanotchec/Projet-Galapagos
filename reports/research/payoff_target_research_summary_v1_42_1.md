@@ -1,0 +1,38 @@
+# Payoff Target Research Summary v1.42.1
+
+- **version**: V1.42.1
+- **failure_diagnostic_base**: V1.41
+- **payoff_objective_base_version**: V1.40.1
+- **diagnostic_base**: V1.41
+- **canonical_base_version**: V1.37.2
+- **input_guard_status**: PAYOFF_TARGET_INPUT_GUARD_PASSED
+- **count_semantics_status**: PAYOFF_TARGET_COUNT_SEMANTICS_CLARIFIED
+- **horizon_candidate_status**: PAYOFF_TARGET_HORIZONS_PARTIAL
+- **target_definition_status**: PAYOFF_TARGET_DEFINITIONS_COMPLETE
+- **target_noise_status**: PAYOFF_TARGET_NOISE_ACCEPTABLE
+- **downside_label_status**: DOWNSIDE_LABEL_CAPTURES_SEVERE_LOSSES
+- **horizon_walk_forward_status**: PAYOFF_TARGET_WALK_FORWARD_EVAL_PARTIAL_LABEL_ONLY
+- **baseline_comparison_status**: PAYOFF_TARGET_BASELINE_COMPARISON_LIMITED
+- **temporal_robustness_status**: PAYOFF_TARGET_TEMPORAL_ROBUSTNESS_COMPLETE
+- **regime_breakdown_status**: PAYOFF_TARGET_REGIME_BREAKDOWN_COMPLETE
+- **overfit_guard_status**: PAYOFF_TARGET_OVERFIT_RISK_MODERATE
+- **json_finiteness_status**: PAYOFF_TARGET_JSON_FINITE_PASSED
+- **best_target_observed**: None
+- **best_horizon_observed**: forward_return_12bar
+- **best_target_2026_metric**: None
+- **best_target_downside_metric**: None
+- **beats_v1_40_1_target**: False
+- **beats_probability_baseline**: False
+- **beats_ev_proxy_baseline**: False
+- **beats_random_baseline**: False
+- **recent_window_status**: PAYOFF_TARGET_RECENT_WINDOW_WEAK
+- **final_verdict**: PAYOFF_TARGET_RESEARCH_RECENT_WINDOW_WEAK
+- **recommended_next_step**: return to feature engineering / regime-aware features before additional payoff objective research
+- **evidence_classification**: EXPLORATORY_ONLY
+- **no_new_filter**: True
+- **no_strategy_validated**: True
+- **no_preregistration_yet**: True
+- **no_paper_live**: True
+- **no_real_trading**: True
+- **holdout_executed**: False
+- **codex_cli_called**: False

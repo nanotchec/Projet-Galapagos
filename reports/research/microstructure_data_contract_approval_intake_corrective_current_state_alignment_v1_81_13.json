@@ -1,0 +1,23 @@
+{
+  "version": "V1.81.13",
+  "current_state_consistent": true,
+  "summary_matches_latest_metrics": true,
+  "summary_matches_project_state": true,
+  "latest_metrics_matches_project_state": true,
+  "checked_fields": [
+    "version",
+    "final_verdict",
+    "pytest_test_count_observed",
+    "smoke_test_passed",
+    "smoke_commands_count",
+    "clean_zip_ready_for_external_review",
+    "audit_zip_project_state_version",
+    "audit_zip_version_parse_correct",
+    "network_executed",
+    "data_directory_writes_allowed",
+    "dataset_created",
+    "trading_allowed",
+    "real_orders_possible"
+  ],
+  "mismatches": []
+}

@@ -1,0 +1,14 @@
+{
+  "smoke_test_passed": true,
+  "smoke_commands_count": 3,
+  "smoke_passed_count": 3,
+  "smoke_failed_count": 0,
+  "smoke_commands_not_empty": true,
+  "smoke_timeout_detected": false,
+  "smoke_runs_audit_clean_zip_full_scan": false,
+  "smoke_runs_full_v1_81_15_pytest_suite": false,
+  "smoke_calls_smoke_script": false,
+  "zip_smoke_test_matches_summary": true,
+  "zip_smoke_test_matches_latest_metrics": true,
+  "zip_smoke_test_matches_project_state": true
+}

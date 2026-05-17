@@ -1,0 +1,9 @@
+{
+  "decision": "MICROSTRUCTURE_COLLECTOR_CONTRACT_PARTIAL",
+  "contract_ready_for_offline_review": false,
+  "real_collection_approved": false,
+  "human_review_required_before_collection": true,
+  "approval_decision_status": "FAILED",
+  "version": "V1.56.1",
+  "previous_base": "V1.56"
+}

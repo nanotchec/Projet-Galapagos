@@ -1,0 +1,47 @@
+{
+  "version": "V1.13",
+  "ohlcv_only_proxy": {
+    "count": 9486,
+    "mean_forward_return_1bar": 0.00010912968292944722,
+    "mean_forward_return_3bar": 0.0003289499007476513,
+    "mean_forward_return_6bar": 0.0006607455653752948,
+    "mean_forward_return_12bar": 0.0013088070636427488,
+    "median_forward_return_6bar": 0.00034637118723990223,
+    "hit_rate_6bar": 0.5093881856540085,
+    "mean_mfe_6bar": 0.019921879302229065,
+    "mean_mae_6bar": -0.01997096651675024,
+    "cost_adjusted_forward_return_6bar": -0.0023392544346247054,
+    "warning": null
+  },
+  "with_derivatives_available": {
+    "count": 2161,
+    "mean_forward_return_1bar": -6.147870414593821e-05,
+    "mean_forward_return_3bar": -0.00017541590058863172,
+    "mean_forward_return_6bar": -0.0003598177104000055,
+    "mean_forward_return_12bar": -0.0007989131183322771,
+    "median_forward_return_6bar": 0.0004305963887885067,
+    "hit_rate_6bar": 0.5095127610208817,
+    "mean_mfe_6bar": 0.015997528173689483,
+    "mean_mae_6bar": -0.017351611368482386,
+    "cost_adjusted_forward_return_6bar": -0.0033598177104000055,
+    "warning": null
+  },
+  "with_derivatives_high_confidence": {
+    "count": 163,
+    "mean_forward_return_1bar": 0.0009322439111959637,
+    "mean_forward_return_3bar": 0.002642786987109044,
+    "mean_forward_return_6bar": 0.004824258471606672,
+    "mean_forward_return_12bar": 0.00975949372534753,
+    "median_forward_return_6bar": 0.0022830099286201833,
+    "hit_rate_6bar": 0.5414012738853503,
+    "mean_mfe_6bar": 0.0193050547806161,
+    "mean_mae_6bar": -0.01279249266005037,
+    "cost_adjusted_forward_return_6bar": 0.0018242584716066717,
+    "warning": null
+  },
+  "missing_rate_derivatives_available_count": 0.772190596668775,
+  "verdict": "DERIVATIVES_IMPROVE_DISCRIMINATION",
+  "dataset": "data/gold/research_dataset/BTC/4h/research_dataset.parquet",
+  "codex_cli_called": false,
+  "holdout_executed": false
+}

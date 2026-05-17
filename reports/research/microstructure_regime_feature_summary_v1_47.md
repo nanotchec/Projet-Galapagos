@@ -1,0 +1,37 @@
+# Microstructure Regime Feature Summary V1.47
+
+- Version: V1.47
+- Previous base: V1.46.3
+- Regime data quality base: V1.46.3
+- Feature ablation base: V1.45.1
+- Canonical base: V1.37.2
+- Input guard: MICROSTRUCTURE_INPUT_GUARD_PASSED
+- Feature inventory: MICROSTRUCTURE_INVENTORY_COMPLETED
+- Feature build: MICROSTRUCTURE_BUILD_COMPLETED
+- Causal availability: MICROSTRUCTURE_CAUSAL_AVAILABILITY_PASSED
+- Coverage audit: MICROSTRUCTURE_COVERAGE_COMPLETED
+- Missingness audit: MICROSTRUCTURE_MISSINGNESS_COMPLETED
+- Stability analysis: MICROSTRUCTURE_STABILITY_COMPLETED
+- Regime relevance: MICROSTRUCTURE_RELEVANCE_COMPLETED
+- Feature quality scorecard: MICROSTRUCTURE_SCORECARD_COMPLETED
+- Recommendation: RECOMMENDATION_READY
+- Built microstructure features: amihud_illiquidity, intraday_range, realized_vol_proxy, volume_vol_ratio
+- Unavailable microstructure features: none
+- Best microstructure candidates: amihud_illiquidity, realized_vol_proxy
+- Weak microstructure candidates: intraday_range, volume_vol_ratio
+- Keep for next research: amihud_illiquidity, realized_vol_proxy
+- Rework: intraday_range, volume_vol_ratio
+- High priority enrichment gap: microstructure
+- Recommended feature gap: microstructure
+- Recommended data enrichment next: improve microstructure regime features
+- Recommended next research step: improve data enrichment / regime labels before new modeling
+- Recommended next step: improve data enrichment / regime labels before new modeling
+- Final verdict: MICROSTRUCTURE_REGIME_FEATURES_ACTIONABLE_BUT_UNVALIDATED
+- Evidence classification: RESEARCH_ONLY
+- No new filter: true
+- No strategy validated: true
+- No preregistration yet: true
+- No paper live: true
+- No real trading: true
+- Holdout executed: false
+- Codex CLI called: false

@@ -1,0 +1,83 @@
+{
+  "status": "PAYOFF_TARGET_REGIME_BREAKDOWN_COMPLETE",
+  "regime_stats": {
+    "risk_on": {
+      "net_return_regression": {
+        "mean": -0.0005905029293950784,
+        "count": 119028
+      },
+      "downside_weighted_return": {
+        "mean": -0.006834557444161504,
+        "count": 119028
+      },
+      "severe_loss_classifier": {
+        "mean": 0.2340961790503075,
+        "count": 119028
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.4639580602883355,
+        "count": 119028
+      },
+      "payoff_ratio_target": {
+        "mean": -0.09250188161292965,
+        "count": 119028
+      },
+      "ev_gap_target": {
+        "mean": -0.002588355607436485,
+        "count": 119028
+      }
+    },
+    "neutral": {
+      "net_return_regression": {
+        "mean": -0.0015909499251109157,
+        "count": 33324
+      },
+      "downside_weighted_return": {
+        "mean": -0.010088445219331638,
+        "count": 33324
+      },
+      "severe_loss_classifier": {
+        "mean": 0.284119553474973,
+        "count": 33324
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.4692113791861721,
+        "count": 33324
+      },
+      "payoff_ratio_target": {
+        "mean": -0.09966419278420956,
+        "count": 33324
+      },
+      "ev_gap_target": {
+        "mean": -0.0034024760409333246,
+        "count": 33324
+      }
+    },
+    "risk_off": {
+      "net_return_regression": {
+        "mean": 0.0005334428360099104,
+        "count": 19296
+      },
+      "downside_weighted_return": {
+        "mean": -0.006921837550441956,
+        "count": 19296
+      },
+      "severe_loss_classifier": {
+        "mean": 0.2555970149253731,
+        "count": 19296
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.5329601990049752,
+        "count": 19296
+      },
+      "payoff_ratio_target": {
+        "mean": 0.027845031866262294,
+        "count": 19296
+      },
+      "ev_gap_target": {
+        "mean": -0.0016026598906893827,
+        "count": 19296
+      }
+    }
+  }
+}

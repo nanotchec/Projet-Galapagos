@@ -1,0 +1,7 @@
+{
+  "version": "V1.44.4",
+  "verdict": "REGIME_AWARE_FEATURE_RESEARCH_INCONCLUSIVE",
+  "recommendation": "run stricter ablation and causal feature importance, then rerun feature-set research",
+  "classification": "RESEARCH_ONLY",
+  "no_preregistration_yet": true
+}

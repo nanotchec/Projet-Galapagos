@@ -1,0 +1,13 @@
+{
+  "raw_prediction_rows": 171648,
+  "unique_timestamps": 5087,
+  "rows_per_timestamp_mean": 33.74248083349715,
+  "rows_per_timestamp_max": 36,
+  "duplicate_timestamp_rows": 171648,
+  "columns_checked": [
+    "model_name",
+    "target",
+    "split_name"
+  ],
+  "status": "DEDUP_AUDIT_COMPLETE"
+}

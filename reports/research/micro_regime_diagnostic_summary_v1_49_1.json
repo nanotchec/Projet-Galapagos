@@ -1,0 +1,49 @@
+{
+  "version": "V1.49.1",
+  "previous_base": "V1.49",
+  "microstructure_regime_label_base_version": "V1.48.1",
+  "microstructure_feature_base_version": "V1.47",
+  "regime_data_quality_base_version": "V1.46.3",
+  "feature_ablation_base_version": "V1.45.1",
+  "canonical_base_version": "V1.37.2",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false,
+  "input_guard_status": "MICROSTRUCTURE_REGIME_DIAGNOSTIC_INPUT_GUARD_PASSED",
+  "micro_label_load_status": "COMPLETED",
+  "regime_slice_status": "COMPLETED",
+  "loss_decomposition_status": "COMPLETED",
+  "failure_2026_explanation_status": "COMPLETED",
+  "comparison_to_previous_status": "IMPROVED",
+  "causal_availability_status": "PASSED",
+  "recommendation_status": "COMPLETED",
+  "selected_microstructure_regime_labels": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ],
+  "best_explanatory_regime_labels": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ],
+  "weak_explanatory_regime_labels": [],
+  "regimes_explaining_2026_degradation": [],
+  "improves_over_previous_regime_diagnostics": true,
+  "improves_2026_failure_explanation": false,
+  "recommended_keep_for_next_research": [
+    "amihud_illiquidity_regime",
+    "realized_vol_proxy_regime"
+  ],
+  "recommended_rework": [],
+  "final_verdict": "MICRO_REGIME_DIAGNOSTIC_ACTIONABLE_BUT_UNVALIDATED",
+  "recommended_next_step": "improve microstructure data coverage before further regime diagnostics",
+  "evidence_classification": "RESEARCH_ONLY",
+  "feature_interaction_status": "N/A",
+  "temporal_stability_status": "N/A",
+  "separability_eval_status": "N/A",
+  "transition_eval_status": "N/A"
+}

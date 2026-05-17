@@ -1,0 +1,13 @@
+# Microstructure Http Status No Data Write Guard
+
+```json
+{
+  "new_data_files_created": false,
+  "no_data_directory_writes": true,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "jsonl_created": false,
+  "db_created": false
+}
+```

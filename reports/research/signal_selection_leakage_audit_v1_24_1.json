@@ -1,0 +1,416 @@
+{
+  "version": "V1.24.1",
+  "status": "SIGNAL_SELECTION_LEAKAGE_AUDIT_PASSED",
+  "verdicts": [
+    "SIGNAL_SELECTION_LEAKAGE_AUDIT_PASSED"
+  ],
+  "column_classes": {
+    "candidate_id": "unknown",
+    "timestamp": "causal_allowed",
+    "entry_time": "unknown",
+    "policy": "causal_allowed",
+    "side": "causal_allowed",
+    "predicted_probability": "causal_allowed",
+    "model_name": "causal_allowed",
+    "target": "causal_allowed",
+    "feature_set": "causal_allowed",
+    "split_name": "causal_allowed",
+    "gross_pnl_pct": "realized_outcome",
+    "net_pnl_pct": "realized_outcome",
+    "cost_pct": "causal_allowed",
+    "mfe_pct": "realized_outcome",
+    "mae_pct": "realized_outcome",
+    "exit_reason": "realized_outcome",
+    "bars_held_intrabar": "realized_outcome",
+    "simulation_status": "realized_outcome",
+    "diagnostic_forward_move_pct": "diagnostic_only",
+    "realized_volatility": "causal_allowed",
+    "mfe_proxy_pct": "causal_allowed",
+    "volatility_regime": "causal_allowed",
+    "trend_regime": "causal_allowed",
+    "macro_regime": "causal_allowed",
+    "derivatives_risk_regime": "causal_allowed",
+    "combined_alpha_score": "causal_allowed",
+    "ohlcv_only_alpha_score": "causal_allowed",
+    "derivatives_regime_score": "causal_allowed",
+    "causal_expected_move_pct": "causal_allowed",
+    "gross_expected_move_pct": "causal_allowed",
+    "expected_move_model_pct": "causal_allowed",
+    "confidence_bucket": "causal_allowed",
+    "cost_to_expected_move_ratio": "causal_allowed",
+    "gross_edge_after_cost": "causal_allowed",
+    "is_cost_viable": "causal_allowed",
+    "is_high_confidence": "causal_allowed",
+    "is_high_volatility": "causal_allowed",
+    "is_top_decile_by_probability": "causal_allowed",
+    "is_top_decile_by_mfe_proxy": "causal_allowed"
+  },
+  "forbidden_future_columns": [],
+  "realized_outcome_columns": [
+    "bars_held_intrabar",
+    "exit_reason",
+    "gross_pnl_pct",
+    "mae_pct",
+    "mfe_pct",
+    "net_pnl_pct",
+    "simulation_status"
+  ],
+  "diagnostic_only_columns": [
+    "diagnostic_forward_move_pct"
+  ],
+  "causal_allowed_columns": [
+    "causal_expected_move_pct",
+    "combined_alpha_score",
+    "confidence_bucket",
+    "cost_pct",
+    "cost_to_expected_move_ratio",
+    "derivatives_regime_score",
+    "derivatives_risk_regime",
+    "expected_move_model_pct",
+    "feature_set",
+    "gross_edge_after_cost",
+    "gross_expected_move_pct",
+    "is_cost_viable",
+    "is_high_confidence",
+    "is_high_volatility",
+    "is_top_decile_by_mfe_proxy",
+    "is_top_decile_by_probability",
+    "macro_regime",
+    "mfe_proxy_pct",
+    "model_name",
+    "ohlcv_only_alpha_score",
+    "policy",
+    "predicted_probability",
+    "realized_volatility",
+    "side",
+    "split_name",
+    "target",
+    "timestamp",
+    "trend_regime",
+    "volatility_regime"
+  ],
+  "rules": [
+    {
+      "name": "all_candidates",
+      "family": "baseline",
+      "description": "Tous les candidats.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "no_trade",
+      "family": "baseline",
+      "description": "Aucun trade.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "prob_ge_0_55",
+      "family": "confidence",
+      "description": "Probabilité >= 0.55.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "predicted_probability"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "prob_ge_0_60",
+      "family": "confidence",
+      "description": "Probabilité >= 0.60.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "predicted_probability"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "prob_ge_0_65",
+      "family": "confidence",
+      "description": "Probabilité >= 0.65.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "predicted_probability"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "top_25pct_probability",
+      "family": "confidence",
+      "description": "Top 25% probabilité.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "predicted_probability"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "top_10pct_probability",
+      "family": "confidence",
+      "description": "Top 10% probabilité.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "predicted_probability"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "expected_move_gt_cost",
+      "family": "cost",
+      "description": "Move attendu > coût.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "gross_expected_move_pct",
+        "cost_pct"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "expected_move_gt_1_5x_cost",
+      "family": "cost",
+      "description": "Move attendu > 1.5x coût.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "gross_expected_move_pct",
+        "cost_pct"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "expected_move_gt_2x_cost",
+      "family": "cost",
+      "description": "Move attendu > 2x coût.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "gross_expected_move_pct",
+        "cost_pct"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "mfe_proxy_gt_cost",
+      "family": "cost",
+      "description": "Proxy MFE > coût.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "mfe_proxy_pct",
+        "cost_pct"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "mfe_proxy_gt_1_5x_cost",
+      "family": "cost",
+      "description": "Proxy MFE > 1.5x coût.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "mfe_proxy_pct",
+        "cost_pct"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "mfe_proxy_gt_2x_cost",
+      "family": "cost",
+      "description": "Proxy MFE > 2x coût.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "mfe_proxy_pct",
+        "cost_pct"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "low_normal_volatility_only",
+      "family": "regime",
+      "description": "Volatilité basse/normale uniquement.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "volatility_regime"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "exclude_high_volatility",
+      "family": "regime",
+      "description": "Exclure high volatility.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "volatility_regime"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "trend_aligned_only",
+      "family": "regime",
+      "description": "LONG seulement bull/range.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "trend_regime"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "bull_range_only",
+      "family": "regime",
+      "description": "Bull ou range uniquement.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "trend_regime"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "top25_probability_cost_viable",
+      "family": "combined",
+      "description": "Top 25% probabilité + coût viable.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "predicted_probability",
+        "gross_expected_move_pct",
+        "cost_pct"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "top10_probability_cost_viable",
+      "family": "combined",
+      "description": "Top 10% probabilité + coût viable.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "predicted_probability",
+        "gross_expected_move_pct",
+        "cost_pct"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "cost_viable_exclude_high_vol",
+      "family": "combined",
+      "description": "Coût viable + exclure high vol.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "gross_expected_move_pct",
+        "cost_pct",
+        "volatility_regime"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "prob60_bull_range",
+      "family": "combined",
+      "description": "Probabilité >=0.60 + bull/range.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "predicted_probability",
+        "trend_regime"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "low_frequency_strict_score",
+      "family": "frequency",
+      "description": "Meilleur score par semaine.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "timestamp",
+        "predicted_probability"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "one_trade_per_day",
+      "family": "frequency",
+      "description": "Premier signal par jour.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "timestamp"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "one_trade_per_12h",
+      "family": "frequency",
+      "description": "Premier signal par 12h.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "timestamp"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "highest_score_per_day",
+      "family": "frequency",
+      "description": "Meilleur score par jour.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "timestamp",
+        "predicted_probability"
+      ],
+      "forbidden_used_columns": []
+    },
+    {
+      "name": "highest_score_per_week",
+      "family": "frequency",
+      "description": "Meilleur score par semaine.",
+      "causal": true,
+      "declared_causal": true,
+      "used_columns": [
+        "timestamp",
+        "predicted_probability"
+      ],
+      "forbidden_used_columns": []
+    }
+  ],
+  "causal_rules_count": 26,
+  "diagnostic_rules_count": 0,
+  "causal_rules_with_forbidden_columns": [],
+  "source_scan": {
+    "files": [
+      {
+        "path": "src/galapagos/research/signal_selection/candidate_features.py",
+        "status": "inspected",
+        "forward_mentions": [
+          "forward_return_6bar",
+          "forward_return_12bar"
+        ],
+        "gross_expected_move_is_separated_from_diagnostic": true
+      },
+      {
+        "path": "src/galapagos/research/signal_selection/selection_rules.py",
+        "status": "inspected",
+        "forward_mentions": []
+      }
+    ],
+    "dangerous_assignments": []
+  },
+  "leakage_risk_resolved_for_causal_rules": true,
+  "causal_subset_available": true
+}

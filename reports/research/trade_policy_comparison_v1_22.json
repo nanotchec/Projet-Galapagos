@@ -1,0 +1,32 @@
+{
+  "version": "v1.22",
+  "verdict": "ALL_POLICIES_NEGATIVE_AFTER_COSTS_CONTINUOUS",
+  "policy_comparison_valid": "preliminary",
+  "continuous_backtest_valid": true,
+  "gap_aware_required": false,
+  "evaluated_ratio": 1.0,
+  "target_reached": true,
+  "best_policy": "horizon_only",
+  "all_negative": true,
+  "all_median_negative": true,
+  "warnings": [
+    "MEDIAN_PNL_NEGATIVE_ALL_POLICIES"
+  ],
+  "policy_metrics_summary": {
+    "fixed_percent": {
+      "win_rate": 0.4502923976608187,
+      "mean_pnl_ac": -0.0021272517779456494,
+      "median_pnl_ac": -0.006748773249608117
+    },
+    "atr_proxy": {
+      "win_rate": 0.4886549707602339,
+      "mean_pnl_ac": -0.0021187202589215627,
+      "median_pnl_ac": -0.003647098821396258
+    },
+    "horizon_only": {
+      "win_rate": 0.5328654970760234,
+      "mean_pnl_ac": -0.0016620411026697934,
+      "median_pnl_ac": -0.0014479745847560278
+    }
+  }
+}

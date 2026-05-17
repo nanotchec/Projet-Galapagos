@@ -1,0 +1,54 @@
+{
+  "version": "V1.93.1",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v1.93.1-clean.zip",
+  "extracted_to": "<TEMP_DIR>/extracted",
+  "commands": [
+    {
+      "command": [
+        "/Users/lilianserre/miniconda3/bin/python",
+        "scripts/validate_mini_research_dataset_post_review_v1_93_1_reports.py",
+        "--version",
+        "v1_93_1"
+      ],
+      "passed": true,
+      "timeout_detected": false
+    },
+    {
+      "command": [
+        "/Users/lilianserre/miniconda3/bin/python",
+        "-c",
+        "import sys; sys.path.insert(0, 'src'); import galapagos.research.mini_research_dataset_post_review"
+      ],
+      "passed": true,
+      "timeout_detected": false
+    },
+    {
+      "command": [
+        "/Users/lilianserre/miniconda3/bin/python",
+        "-c",
+        "from pathlib import Path; assert Path('reports/research/mini_research_dataset_post_review_summary_v1_93_1.json').exists()"
+      ],
+      "passed": true,
+      "timeout_detected": false
+    }
+  ],
+  "passed_count": 3,
+  "failed_count": 0,
+  "smoke_test_passed": true,
+  "smoke_timeout_detected": false,
+  "smoke_timeout_seconds_per_command": 30,
+  "smoke_total_timeout_seconds": 90,
+  "smoke_runs_full_pytest_suite": false,
+  "smoke_calls_smoke_script": false,
+  "smoke_runs_audit_clean_zip_full_scan": false,
+  "failures": [],
+  "codex_cli_called": false,
+  "holdout_executed": false,
+  "real_orders_possible": false,
+  "smoke_uses_manual_pythonpath": false,
+  "smoke_commands_count": 3,
+  "smoke_passed_count": 3,
+  "smoke_failed_count": 0,
+  "smoke_commands_not_empty": true,
+  "bounded_smoke_for_v1_93_1": true
+}

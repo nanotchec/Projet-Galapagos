@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "lineage_status": "INTRABAR_LINEAGE_OK",
+  "intrabar_file_path": "<PROJECT_ROOT>/data/silver/intrabar/binance/BTCUSDT/5m/history_5m_v1_21.parquet",
+  "file_exists": true,
+  "rows": 151852,
+  "first_timestamp": "2024-05-06T20:40:00+00:00",
+  "last_timestamp": "2026-05-06T20:35:00+00:00",
+  "inferred_days": 730.0,
+  "source": "binance",
+  "symbol": "BTCUSDT",
+  "timeframe": "5m",
+  "manifest_exists": true,
+  "manifest_path": "data/manifests/intrabar/binance_BTCUSDT_5m_history_manifest.json",
+  "download_report_exists": true,
+  "download_report_path": "reports/research/intrabar_history_download_v1_21.json"
+}

@@ -1,0 +1,21 @@
+{
+  "http_status_capture_hardened": true,
+  "response_status_required_per_request": true,
+  "missing_status_codes_now_blocking": true,
+  "successful_response_requires_status_code": true,
+  "per_request_status_schema_defined": true,
+  "status_capture_policy": {
+    "fields": [
+      "request_index",
+      "endpoint",
+      "symbol",
+      "status_code",
+      "status_code_present",
+      "success_flag",
+      "response_size_bytes",
+      "preview_record_count",
+      "error_type",
+      "error_message_preview"
+    ]
+  }
+}

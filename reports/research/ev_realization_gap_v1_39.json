@@ -1,0 +1,10 @@
+{
+  "mean_predicted_ev_pre_2026": 0.0029013328854558145,
+  "mean_realized_return_pre_2026": 0.0005361270200264257,
+  "ev_realization_gap_pre_2026": -0.0023652058654293887,
+  "mean_predicted_ev_2026": 0.0011658474212062932,
+  "mean_realized_return_2026": -0.00321872050730674,
+  "ev_realization_gap_2026": -0.004384567928513033,
+  "ev_overestimation_2026": 0.004384567928513033,
+  "ev_realization_gap_status": "EV_PROXY_OVERESTIMATES_2026"
+}

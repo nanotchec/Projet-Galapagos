@@ -1,0 +1,21 @@
+{
+  "status": "MICROSTRUCTURE_STABILITY_COMPLETED",
+  "stability_metrics": {
+    "amihud_illiquidity": {
+      "autocorr_lag1": 0.011497556495716299,
+      "std_dev": 2.92394286971759e-05
+    },
+    "realized_vol_proxy": {
+      "autocorr_lag1": 0.9788367953248699,
+      "std_dev": 0.0028474333032986543
+    },
+    "volume_vol_ratio": {
+      "autocorr_lag1": 0.36655337651719877,
+      "std_dev": 48942.950091656
+    },
+    "intraday_range": {
+      "autocorr_lag1": 1.0,
+      "std_dev": 2.7895403077993544e-17
+    }
+  }
+}

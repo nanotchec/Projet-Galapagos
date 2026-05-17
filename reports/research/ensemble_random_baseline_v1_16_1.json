@@ -1,0 +1,23 @@
+{
+  "2024": {
+    "random_mean": 0.0018071564250217954,
+    "actual_mean": 0.008463785425756334,
+    "p_value": 0.001,
+    "beaten": true,
+    "count": 219
+  },
+  "2025": {
+    "random_mean": -0.0030252124750589577,
+    "actual_mean": 0.00682417474152277,
+    "p_value": 0.0,
+    "beaten": true,
+    "count": 218
+  },
+  "2026": {
+    "random_mean": -0.0050320089607379034,
+    "actual_mean": -0.016770096922601167,
+    "p_value": 0.995,
+    "beaten": false,
+    "count": 71
+  }
+}

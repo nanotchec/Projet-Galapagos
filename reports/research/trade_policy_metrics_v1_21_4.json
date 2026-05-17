@@ -1,0 +1,75 @@
+{
+  "version": "v1.21.4",
+  "metrics": {
+    "fixed_percent": {
+      "candidates_count": 4275,
+      "evaluated_count": 2573,
+      "missing_intrabar_count": 1702,
+      "evaluated_ratio": 0.6018713450292398,
+      "intrabar_sample_limited": false,
+      "win_rate": 0.42168674698795183,
+      "mean_pnl_pct": 0.00028496683785442727,
+      "mean_pnl_after_cost_pct": -0.0027150331621455725,
+      "median_pnl_after_cost_pct": -0.012068264721208987,
+      "mean_mfe_pct": 0.02036958257170861,
+      "mean_mae_pct": 0.020869075173021587,
+      "exit_reasons": {
+        "stop_loss": 1257,
+        "timeout": 814,
+        "take_profit": 502
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 563,
+        "win_rate": 0.43161634103019536,
+        "mean_pnl_after_cost_pct": -0.0031659211078399144
+      }
+    },
+    "atr_proxy": {
+      "candidates_count": 4275,
+      "evaluated_count": 2573,
+      "missing_intrabar_count": 1702,
+      "evaluated_ratio": 0.6018713450292398,
+      "intrabar_sample_limited": false,
+      "win_rate": 0.46910221531286433,
+      "mean_pnl_pct": 0.0002911368132239241,
+      "mean_pnl_after_cost_pct": -0.0027088631867760757,
+      "median_pnl_after_cost_pct": -0.0048877285113430894,
+      "mean_mfe_pct": 0.02036958257170861,
+      "mean_mae_pct": 0.020869075173021587,
+      "exit_reasons": {
+        "timeout": 1431,
+        "stop_loss": 889,
+        "take_profit": 253
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 563,
+        "win_rate": 0.46714031971580816,
+        "mean_pnl_after_cost_pct": -0.0037787048873414953
+      }
+    },
+    "horizon_only": {
+      "candidates_count": 4275,
+      "evaluated_count": 2573,
+      "missing_intrabar_count": 1702,
+      "evaluated_ratio": 0.6018713450292398,
+      "intrabar_sample_limited": false,
+      "win_rate": 0.5102992615623786,
+      "mean_pnl_pct": 0.0005383693743303891,
+      "mean_pnl_after_cost_pct": -0.002461630625669611,
+      "median_pnl_after_cost_pct": -0.002469330844036873,
+      "mean_mfe_pct": 0.02036958257170861,
+      "mean_mae_pct": 0.020869075173021587,
+      "exit_reasons": {
+        "horizon_timeout": 2573
+      },
+      "ambiguous_rate": 0.0,
+      "recent_window": {
+        "count": 563,
+        "win_rate": 0.5115452930728241,
+        "mean_pnl_after_cost_pct": -0.0038116168823347767
+      }
+    }
+  }
+}

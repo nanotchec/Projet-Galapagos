@@ -1,0 +1,16 @@
+# Microstructure Scorecard V1 47
+
+```json
+{
+  "status": "MICROSTRUCTURE_SCORECARD_COMPLETED",
+  "scorecard": {
+    "overall_quality_score": 1.0,
+    "metrics": {
+      "coverage_score": 1.0,
+      "causal_availability_score": 1.0,
+      "missingness_penalty": 0.0,
+      "stability_average": 0.5892219320844463
+    }
+  }
+}
+```

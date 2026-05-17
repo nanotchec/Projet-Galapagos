@@ -1,0 +1,9 @@
+{
+  "version": "V1.99",
+  "training_dataset_preview_physical_audit_executed": true,
+  "training_dataset_preview_json_valid": true,
+  "training_dataset_preview_checksums_verified": true,
+  "total_data_bytes_written": 5717,
+  "training_preview_rows_count": 3,
+  "joined_feature_label_pairs_count": 3
+}

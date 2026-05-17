@@ -1,0 +1,26 @@
+# Outcome Availability Audit - V1.34.1
+
+```json
+{
+  "outcomes_found": [
+    "outcome_forward_return",
+    "actual_target",
+    "forward_return_12bar"
+  ],
+  "availability": {
+    "outcome_forward_return": {
+      "missing_total": 120,
+      "missing_2026": 120
+    },
+    "actual_target": {
+      "missing_total": 0,
+      "missing_2026": 0
+    },
+    "forward_return_12bar": {
+      "missing_total": 120,
+      "missing_2026": 120
+    }
+  },
+  "outcome_filtering_status": "OUTCOME_FILTERING_PARTIAL_EXPLANATION"
+}
+```

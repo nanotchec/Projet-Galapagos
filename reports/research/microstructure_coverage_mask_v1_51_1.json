@@ -1,0 +1,8 @@
+{
+  "mask_count": 8766,
+  "blocked_count": 720,
+  "version": "V1.51.1",
+  "previous_base": "V1.51",
+  "migrated_from": "V1.51",
+  "migration_reason": "missing required reports fix"
+}

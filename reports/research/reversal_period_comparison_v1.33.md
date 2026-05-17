@@ -1,0 +1,24 @@
+# Period Comparison - V1.33
+
+```json
+{
+  "periods": {
+    "2024 H1": {
+      "status": "NO_DATA"
+    },
+    "2024 H2": {
+      "status": "NO_DATA"
+    },
+    "2025 H1": {
+      "status": "NO_DATA"
+    },
+    "2025 H2": {
+      "status": "NO_DATA"
+    },
+    "2026 H1": {
+      "status": "NO_DATA"
+    }
+  },
+  "comparison_status": "PERFORMANCE_VOLATILE_NO_CLEAR_REVERSAL"
+}
+```

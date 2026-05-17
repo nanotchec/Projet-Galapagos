@@ -1,0 +1,30 @@
+{
+  "version": "V1.92.1",
+  "source_versions": [
+    "V1.84",
+    "V1.87.2",
+    "V1.90.1"
+  ],
+  "event_ts": "source_artifact_static",
+  "available_ts": "source_artifact_static",
+  "decision_ts": "v1_92_seed_build_time",
+  "anti_leakage_note": "available_ts must be less than or equal to decision_ts",
+  "artifact": "seed_manifest",
+  "allowed_data_write_root": "data/research/dataset_seed/v1_92/",
+  "created_file_paths": [
+    "data/research/dataset_seed/v1_92/seed_manifest.json",
+    "data/research/dataset_seed/v1_92/seed_schema.json",
+    "data/research/dataset_seed/v1_92/seed_preview_records.json",
+    "data/research/dataset_seed/v1_92/seed_provenance.json",
+    "data/research/dataset_seed/v1_92/seed_quality_audit.json"
+  ],
+  "max_files": 5,
+  "max_bytes": 50000,
+  "preview_records_count": 3,
+  "seed_file_checksums": {
+    "seed_schema.json": "3a059661c512b5fb0edd8f8a6f0fb91c73a8411d24eb25e79258ca221af92453",
+    "seed_preview_records.json": "e75f870c3f53834cc7f090e7a1139e78c2b04ac8ea92c8c9d9a03c6a725732d0",
+    "seed_provenance.json": "1ee00ea940b65fb3a63b700ac0af723e37bf70707af18328de9a31df7301b114",
+    "seed_quality_audit.json": "6e2b1795e55027105995d76e7269a95718fb2d755129fcaeeb0bf5b057b1a722"
+  }
+}

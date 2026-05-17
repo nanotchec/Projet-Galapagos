@@ -1,0 +1,58 @@
+{
+  "status": "REGIME_ROBUSTNESS_COMPLETE",
+  "results": {
+    "v1_38_core_baseline": {
+      "regime_stability": {
+        "risk_on": 0.0769996913661062,
+        "neutral": NaN,
+        "risk_off": NaN
+      },
+      "regime_invariant": "TRUE"
+    },
+    "v1_44_regime_aware_raw": {
+      "regime_stability": {
+        "risk_on": NaN,
+        "neutral": NaN,
+        "risk_off": NaN
+      },
+      "regime_invariant": "FALSE"
+    },
+    "v1_44_alpha_only": {
+      "regime_stability": {
+        "risk_on": NaN,
+        "neutral": NaN,
+        "risk_off": NaN
+      },
+      "regime_invariant": "FALSE"
+    },
+    "v1_44_combined_regime_alpha": {
+      "regime_stability": {
+        "risk_on": NaN,
+        "neutral": NaN,
+        "risk_off": NaN
+      },
+      "regime_invariant": "FALSE"
+    },
+    "v1_44_derivatives_heavy": {
+      "regime_stability": {
+        "risk_on": 0.10905747076275617,
+        "neutral": 0.14035970697641312,
+        "risk_off": NaN
+      },
+      "regime_invariant": "TRUE"
+    },
+    "v1_44_macro_heavy": {
+      "regime_stability": {
+        "risk_on": 0.10905747076275617,
+        "neutral": 0.14035970697641312,
+        "risk_off": NaN
+      },
+      "regime_invariant": "TRUE"
+    }
+  },
+  "regimes_evaluated": [
+    "risk_on",
+    "neutral",
+    "risk_off"
+  ]
+}

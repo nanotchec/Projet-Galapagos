@@ -1,0 +1,30 @@
+{
+  "regime_transfer_status": "PAYOFF_OBJECTIVE_FAILS_IN_2026_REGIME",
+  "regime_column": "macro_regime",
+  "rows": [
+    {
+      "regime": "neutral",
+      "count": 9396,
+      "mean_net_return": 0.0016291484802687323,
+      "mean_gross_return": 0.002629148480268733,
+      "mean_cost_proxy": 0.001
+    },
+    {
+      "regime": "risk_off",
+      "count": 3924,
+      "mean_net_return": -0.005035011888300243,
+      "mean_gross_return": -0.004035011888300242,
+      "mean_cost_proxy": 0.0010000000000000005
+    },
+    {
+      "regime": "risk_on",
+      "count": 11040,
+      "mean_net_return": -0.006846986242719117,
+      "mean_gross_return": -0.005857855807936506,
+      "mean_cost_proxy": 0.0010000000000000002
+    }
+  ],
+  "dominant_2026_regime": "risk_on",
+  "dominant_2026_regime_count": 11040,
+  "dominant_2026_mean_net_return": -0.006846986242719117
+}

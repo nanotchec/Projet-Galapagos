@@ -1,0 +1,7 @@
+{
+  "version": "v1.44.2",
+  "verdict": "REGIME_AWARE_FEATURE_RESEARCH_PROMISING_BUT_UNVALIDATED",
+  "recommendation": "run stricter ablation and causal feature importance",
+  "classification": "RESEARCH_ONLY",
+  "no_preregistration_yet": true
+}

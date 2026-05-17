@@ -1,0 +1,12 @@
+{
+  "version": "v1.37.2",
+  "consistency_check_status": "CANONICAL_UNIVERSE_REPORTS_CONSISTENT_REAL_DATA_FORMAL_SPLIT",
+  "input_path_guard_passed": true,
+  "count_sanity_guard_passed": true,
+  "v1_36_8_count_match": true,
+  "v1_37_mock_contamination_fixed": true,
+  "project_state_consistency_aligned": true,
+  "latest_metrics_consistency_aligned": true,
+  "project_state_root_clean": true,
+  "issues_found": []
+}

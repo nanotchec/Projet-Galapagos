@@ -1,0 +1,16 @@
+# Ev Filter Overfit Guard - v1.32.1
+
+```json
+{
+  "filters_tested_count": 5,
+  "families_tested": [
+    "EV_GT_0",
+    "EV_GT_COST",
+    "PROB_EV_COMBO",
+    "TOP_QUANTILE"
+  ],
+  "parameter_count": 10,
+  "multiple_testing_risk": "LOW",
+  "evidence_classification": "EXPLORATORY_ONLY"
+}
+```

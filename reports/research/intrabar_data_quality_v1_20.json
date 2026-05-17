@@ -1,0 +1,12 @@
+{
+  "status": "INTRABAR_DATA_QUALITY_OK",
+  "rows": 12000,
+  "is_monotonic": true,
+  "duplicates": 0,
+  "ohlc_valid": true,
+  "gaps_count": 0,
+  "notable_gaps": [],
+  "coverage_pct": 1.0000833402783564,
+  "start_time": "2025-11-07T19:40:00+00:00",
+  "end_time": "2025-12-19T11:35:00+00:00"
+}

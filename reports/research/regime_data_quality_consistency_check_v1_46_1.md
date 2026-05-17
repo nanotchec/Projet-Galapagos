@@ -1,0 +1,7 @@
+# Report
+
+```json
+{
+  "consistency_check_status": "REGIME_DATA_QUALITY_REPORTS_CONSISTENT_DIAGNOSTIC_ONLY"
+}
+```

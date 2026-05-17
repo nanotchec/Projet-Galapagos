@@ -1,0 +1,75 @@
+{
+  "version": "V1.14",
+  "filters": {
+    "avoid_positive_funding_extreme": {
+      "count": 9448,
+      "mean_forward_return_1bar": 0.00010948817154862312,
+      "mean_forward_return_3bar": 0.0003266469910302816,
+      "mean_forward_return_6bar": 0.0006141059079420909,
+      "mean_forward_return_12bar": 0.0012360842354659535,
+      "median_forward_return_6bar": 0.00031820333865073547,
+      "hit_rate_6bar": 0.5087905104850667,
+      "mean_mfe_6bar": 0.01987652338683779,
+      "mean_mae_6bar": -0.01994564224144539,
+      "cost_adjusted_forward_return_6bar": -0.0023858940920579094,
+      "warning": null
+    },
+    "avoid_negative_funding_extreme": {
+      "count": 9274,
+      "mean_forward_return_1bar": 0.00011159780740941843,
+      "mean_forward_return_3bar": 0.0003579631695780973,
+      "mean_forward_return_6bar": 0.0006952101150271295,
+      "mean_forward_return_12bar": 0.0013561013465497236,
+      "median_forward_return_6bar": 0.0003605353768370012,
+      "hit_rate_6bar": 0.5100345274061286,
+      "mean_mfe_6bar": 0.01996960596165231,
+      "mean_mae_6bar": -0.01992608130277474,
+      "cost_adjusted_forward_return_6bar": -0.002304789884972871,
+      "warning": null
+    },
+    "avoid_premium_extreme": {
+      "count": 9486,
+      "mean_forward_return_1bar": 0.00010912968292944722,
+      "mean_forward_return_3bar": 0.0003289499007476513,
+      "mean_forward_return_6bar": 0.0006607455653752948,
+      "mean_forward_return_12bar": 0.0013088070636427488,
+      "median_forward_return_6bar": 0.00034637118723990223,
+      "hit_rate_6bar": 0.5093881856540085,
+      "mean_mfe_6bar": 0.019921879302229065,
+      "mean_mae_6bar": -0.01997096651675024,
+      "cost_adjusted_forward_return_6bar": -0.0023392544346247054,
+      "warning": null
+    },
+    "avoid_low_derivatives_confidence": {
+      "count": 163,
+      "mean_forward_return_1bar": 0.0009322439111959637,
+      "mean_forward_return_3bar": 0.002642786987109044,
+      "mean_forward_return_6bar": 0.004824258471606672,
+      "mean_forward_return_12bar": 0.00975949372534753,
+      "median_forward_return_6bar": 0.0022830099286201833,
+      "hit_rate_6bar": 0.5414012738853503,
+      "mean_mfe_6bar": 0.0193050547806161,
+      "mean_mae_6bar": -0.01279249266005037,
+      "cost_adjusted_forward_return_6bar": 0.0018242584716066717,
+      "warning": null
+    },
+    "avoid_crowded_regimes": {
+      "count": 9448,
+      "mean_forward_return_1bar": 0.00010948817154862312,
+      "mean_forward_return_3bar": 0.0003266469910302816,
+      "mean_forward_return_6bar": 0.0006141059079420909,
+      "mean_forward_return_12bar": 0.0012360842354659535,
+      "median_forward_return_6bar": 0.00031820333865073547,
+      "hit_rate_6bar": 0.5087905104850667,
+      "mean_mfe_6bar": 0.01987652338683779,
+      "mean_mae_6bar": -0.01994564224144539,
+      "cost_adjusted_forward_return_6bar": -0.0023858940920579094,
+      "warning": null
+    }
+  },
+  "verdict": "DERIVATIVES_REGIME_FILTER_CANDIDATE",
+  "warning": "Hypotheses offline uniquement; aucune regle trading modifiee.",
+  "dataset": "data/gold/research_dataset/BTC/4h/research_dataset.parquet",
+  "codex_cli_called": false,
+  "holdout_executed": false
+}

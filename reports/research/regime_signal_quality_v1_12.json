@@ -1,0 +1,33 @@
+{
+  "version": "V1.12",
+  "holdout_executed": false,
+  "regimes": {
+    "calibration": {
+      "window": {
+        "regime_label": "downtrend",
+        "return_pct": -0.061600401628953305,
+        "max_drawdown": -0.07515537879892753,
+        "realized_volatility": 0.008964009167298235
+      },
+      "signal_quality": {}
+    },
+    "validation_1": {
+      "window": {
+        "regime_label": "uptrend",
+        "return_pct": 0.0891437165714839,
+        "max_drawdown": -0.025945034371382292,
+        "realized_volatility": 0.008669028704204631
+      },
+      "signal_quality": {}
+    },
+    "validation_2": {
+      "window": {
+        "regime_label": "low_volatility",
+        "return_pct": 0.045408649996170114,
+        "max_drawdown": -0.039911581998333556,
+        "realized_volatility": 0.007944037738430802
+      },
+      "signal_quality": {}
+    }
+  }
+}

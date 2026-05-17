@@ -1,0 +1,21 @@
+{
+  "version": "V1.95",
+  "created_files": [
+    "data/research/feature_preview/v1_95/feature_preview_manifest.json",
+    "data/research/feature_preview/v1_95/feature_preview_schema.json",
+    "data/research/feature_preview/v1_95/feature_preview_rows.json",
+    "data/research/feature_preview/v1_95/feature_preview_quality_audit.json"
+  ],
+  "feature_preview_file_checksums": {
+    "feature_preview_schema.json": "a0739eb1e5abec9379afcf9278f4c84b8297ee68e5240aade78dae8676d67575",
+    "feature_preview_rows.json": "a451941f60f6aca47969160ed833f82fbd7c412eddbe4ed91c88b3660db34666",
+    "feature_preview_quality_audit.json": "b6e320cf3e6ee1c121f355d91aa13ce78d32cd2c8c6f4ac0a9ee21944b8fb943"
+  },
+  "allowed_data_write_root": "data/research/feature_preview/v1_95/",
+  "total_new_data_files_created": 4,
+  "json_only": true,
+  "source_versions": [
+    "V1.92.1",
+    "V1.94"
+  ]
+}

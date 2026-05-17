@@ -1,0 +1,29 @@
+{
+  "by_policy": {
+    "fixed_percent": {
+      "total_net_pnl_pct": -9.094001350717651,
+      "total_negative_pnl_pct": -37.763042587425424,
+      "top_1pct_loss_contribution_to_negative_pnl": 0.020019573323568532,
+      "top_5pct_loss_contribution_to_negative_pnl": 0.10152783614095458,
+      "worst_trade_pnl_pct": -0.01800000000000012,
+      "verdict": "LOSSES_DIFFUSE"
+    },
+    "atr_proxy": {
+      "total_net_pnl_pct": -9.05752910688968,
+      "total_negative_pnl_pct": -42.12340239047174,
+      "top_1pct_loss_contribution_to_negative_pnl": 0.047817311647301325,
+      "top_5pct_loss_contribution_to_negative_pnl": 0.20006699262921637,
+      "worst_trade_pnl_pct": -0.05300000000000008,
+      "verdict": "LOSSES_DIFFUSE"
+    },
+    "horizon_only": {
+      "total_net_pnl_pct": -7.1052257139133665,
+      "total_negative_pnl_pct": -42.64304748187974,
+      "top_1pct_loss_contribution_to_negative_pnl": 0.0895899572433743,
+      "top_5pct_loss_contribution_to_negative_pnl": 0.29991581042996046,
+      "worst_trade_pnl_pct": -0.15704738165673182,
+      "verdict": "LOSSES_DIFFUSE"
+    }
+  },
+  "verdict": "LOSSES_DIFFUSE"
+}

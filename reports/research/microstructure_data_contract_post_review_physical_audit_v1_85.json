@@ -1,0 +1,32 @@
+{
+  "version": "V1.85",
+  "reviewed_data_root": "data/research/microstructure_contract_materialization/v1_84/",
+  "reviewed_file_paths": [
+    "data/research/microstructure_contract_materialization/v1_84/manifest.json",
+    "data/research/microstructure_contract_materialization/v1_84/schema_snapshot.json",
+    "data/research/microstructure_contract_materialization/v1_84/preview_records.json"
+  ],
+  "expected_file_paths": [
+    "data/research/microstructure_contract_materialization/v1_84/manifest.json",
+    "data/research/microstructure_contract_materialization/v1_84/schema_snapshot.json",
+    "data/research/microstructure_contract_materialization/v1_84/preview_records.json"
+  ],
+  "reviewed_files_count": 3,
+  "expected_files_count": 3,
+  "unexpected_files_count": 0,
+  "unexpected_file_paths": [],
+  "missing_expected_files_count": 0,
+  "missing_expected_file_paths": [],
+  "total_data_bytes_observed": 1533,
+  "preview_records_count": 3,
+  "manifest_json_valid": true,
+  "schema_snapshot_json_valid": true,
+  "preview_records_json_valid": true,
+  "manifest_matches_physical_files": true,
+  "schema_snapshot_matches_contract": true,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "jsonl_created": false,
+  "db_created": false
+}

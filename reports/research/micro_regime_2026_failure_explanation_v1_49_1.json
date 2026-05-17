@@ -1,0 +1,85 @@
+{
+  "version": "V1.49.1",
+  "previous_base": "V1.49",
+  "microstructure_regime_label_base_version": "V1.48.1",
+  "microstructure_feature_base_version": "V1.47",
+  "regime_data_quality_base_version": "V1.46.3",
+  "feature_ablation_base_version": "V1.45.1",
+  "canonical_base_version": "V1.37.2",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false,
+  "regime_shift_2026": {
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:mid": {
+      "pre_2026_weight": 0.10273749388952257,
+      "post_2026_weight": 0.1477832512315271,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": 0.04504575734200454
+    },
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:high": {
+      "pre_2026_weight": 0.1161805442398566,
+      "post_2026_weight": 0.10837438423645321,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": -0.007806160003403395
+    },
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:high": {
+      "pre_2026_weight": 0.12229102167182662,
+      "post_2026_weight": 0.18669950738916255,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": 0.06440848571733593
+    },
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:low": {
+      "pre_2026_weight": 0.14094834609744175,
+      "post_2026_weight": 0.09211822660098522,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": -0.048830119496456534
+    },
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:low": {
+      "pre_2026_weight": 0.1110477431970018,
+      "post_2026_weight": 0.08029556650246306,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": -0.030752176694538738
+    },
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:high": {
+      "pre_2026_weight": 0.08921297050676226,
+      "post_2026_weight": 0.07192118226600985,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": -0.017291788240752407
+    },
+    "amihud_illiquidity_regime:high|realized_vol_proxy_regime:low": {
+      "pre_2026_weight": 0.08872413231220466,
+      "post_2026_weight": 0.11724137931034483,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": 0.028517246998140164
+    },
+    "amihud_illiquidity_regime:low|realized_vol_proxy_regime:mid": {
+      "pre_2026_weight": 0.11357340720221606,
+      "post_2026_weight": 0.10738916256157635,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": -0.006184244640639713
+    },
+    "amihud_illiquidity_regime:mid|realized_vol_proxy_regime:mid": {
+      "pre_2026_weight": 0.11528434088316768,
+      "post_2026_weight": 0.08817733990147783,
+      "pre_2026_perf": null,
+      "post_2026_perf": null,
+      "weight_delta": -0.027107000981689847
+    }
+  },
+  "explaining_regimes": [],
+  "total_2026_rows": 24360,
+  "total_pre_2026_rows": 147288
+}

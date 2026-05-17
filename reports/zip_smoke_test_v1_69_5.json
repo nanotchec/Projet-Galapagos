@@ -1,0 +1,61 @@
+{
+  "version": "V1.69.5",
+  "zip_path": "<PROJECT_ROOT>/projet-galapagos-v1.69.5-clean.zip",
+  "extracted_to": "<TEMP_DIR>/extracted",
+  "commands": [
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python3",
+        "-c",
+        "import sys; sys.path.insert(0, 'src'); import galapagos"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python3",
+        "-c",
+        "import sys; sys.path.insert(0, 'src'); import galapagos.research.microstructure_pending_tiny_preflight; import galapagos.research.microstructure_pending_tiny_preflight.approval_phrase_gate; import galapagos.research.microstructure_pending_tiny_preflight.pending_approval_mode; import galapagos.research.microstructure_pending_tiny_preflight.tiny_preflight_command_builder; import galapagos.research.microstructure_pending_tiny_preflight.blocked_runner; import galapagos.research.microstructure_pending_tiny_preflight.no_network_runtime_assertions; import galapagos.research.microstructure_pending_tiny_preflight.no_write_runtime_assertions; import galapagos.research.microstructure_pending_tiny_preflight.future_execution_protocol; import galapagos.research.microstructure_pending_tiny_preflight.pending_approval_verdict_engine; import galapagos.research.microstructure_pending_tiny_preflight.recommendation_engine; import galapagos.research.microstructure_pending_tiny_preflight.report_writer"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python3",
+        "scripts/validate_microstructure_pending_tiny_preflight_reports.py",
+        "--version",
+        "V1.69.5"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "SU***redacted***5\n",
+      "stderr_preview": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/research/test_microstructure_pending_tiny_preflight_v1_69_2.py"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "..***redacted***s\n",
+      "stderr_preview": "",
+      "passed": true
+    }
+  ],
+  "passed_count": 4,
+  "failed_count": 0,
+  "smoke_test_passed": true,
+  "failures": [],
+  "codex_cli_called": false,
+  "holdout_executed": false,
+  "real_orders_possible": false
+}

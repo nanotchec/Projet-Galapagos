@@ -1,0 +1,19 @@
+{
+  "version": "v1.17.1",
+  "verdict": "RECENT_FAILURE_CONFIRMED",
+  "historical_stats": {
+    "mean_btc_return": 0.021868039181659558,
+    "volatility": 1.0295915947294454,
+    "signal_count": 4386,
+    "top_bucket_rate": 0.0
+  },
+  "recent_stats": {
+    "mean_btc_return": -0.014566736768637987,
+    "volatility": 0.9982226595741489,
+    "signal_count": 720,
+    "top_bucket_rate": 0.0
+  },
+  "historical_mean_edge": 0.008390751673288987,
+  "recent_mean_edge": -0.017032652724828606,
+  "edge_degradation": -0.02542340439811759
+}

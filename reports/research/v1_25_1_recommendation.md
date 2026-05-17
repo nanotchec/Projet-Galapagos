@@ -1,0 +1,17 @@
+# V1 25 1 Recommendation
+
+```json
+{
+  "version": "v1.25.1",
+  "primary_recommendation": "Maintain filter as research hypothesis; do not promote to production.",
+  "recommended_next_step": "Pre-registered validation protocol on future data.",
+  "do_not_do_next": [
+    "ACTIVATE_REVIEWER",
+    "EXECUTE_HOLDOUT",
+    "REAL_TRADING"
+  ],
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}
+```

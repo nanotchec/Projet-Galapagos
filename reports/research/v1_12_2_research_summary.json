@@ -1,0 +1,16 @@
+{
+  "version": "V1.12.2",
+  "dataset_rows": 9486,
+  "dataset_start": "2022-01-01 00:00:00+00:00",
+  "dataset_end": "2026-04-30 20:00:00+00:00",
+  "derivatives_included": true,
+  "macro_included": true,
+  "signal_quality_verdict": [
+    "NO_EDGE_DETECTED",
+    "READY_FOR_LONG_HISTORY_RESEARCH"
+  ],
+  "fred_status": "available_for_fetch",
+  "coinglass_used": false,
+  "codex_cli_called": false,
+  "holdout_executed": false
+}

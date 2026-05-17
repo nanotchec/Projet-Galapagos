@@ -1,0 +1,17 @@
+# V1.45.1 Source Contract
+
+- Status: FEATURE_ABLATION_SOURCE_CONTRACT_PASSED
+
+## Data Preview
+
+```json
+{
+  "passed": true,
+  "status": "FEATURE_ABLATION_SOURCE_CONTRACT_PASSED",
+  "forbidden_columns_detected": [],
+  "model_outputs_excluded": true,
+  "ev_proxies_excluded": true,
+  "metadata_excluded": true,
+  "outcomes_excluded": true
+}
+```

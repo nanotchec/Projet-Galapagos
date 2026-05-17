@@ -1,0 +1,14 @@
+# Microstructure Blocked Window Analysis
+
+```json
+{
+  "status": "BLOCKED_WINDOWS_IDENTIFIED",
+  "count": 720,
+  "summary": {
+    "2026-01": 186,
+    "2026-02": 168,
+    "2026-03": 186,
+    "2026-04": 180
+  }
+}
+```

@@ -1,0 +1,14 @@
+{
+  "version": "v1.22",
+  "dry_run": false,
+  "input_path": "data/silver/intrabar/binance/BTCUSDT/5m/history_5m_v1_22.parquet",
+  "output_path": "data/silver/intrabar/binance/BTCUSDT/5m/history_5m_v1_22.parquet",
+  "chunks_attempted": 19,
+  "chunks_successful": 19,
+  "rows_before": 210240,
+  "rows_after": 246727,
+  "first_timestamp": "2024-01-01T04:05:00+00:00",
+  "last_timestamp": "2026-05-06T20:35:00+00:00",
+  "generated_at": "2026-05-06T23:03:28.889376+00:00",
+  "status": "GAP_FILLED"
+}

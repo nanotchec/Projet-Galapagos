@@ -1,0 +1,28 @@
+# Write Gate Policy (V1.59)
+
+- Limits writes to reporting only.
+
+```json
+{
+  "version": "V1.59",
+  "current_version": "V1.59",
+  "no_data_directory_writes": true,
+  "new_data_files_created": false,
+  "allowed_writes": [
+    "reports/research/*.json",
+    "reports/research/*.md",
+    "reports/*.json",
+    "reports/*.md"
+  ],
+  "forbidden_writes": [
+    "data/*",
+    "*.parquet",
+    "*.csv",
+    "*.sqlite",
+    "*.db",
+    "*.jsonl"
+  ],
+  "write_protection_level": "REPORTING_ONLY",
+  "policy_status": "LOCKED"
+}
+```

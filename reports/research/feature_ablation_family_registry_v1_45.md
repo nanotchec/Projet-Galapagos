@@ -1,0 +1,196 @@
+# V1.45 Family Registry
+
+- Families registered: 8
+
+## Data Preview
+
+```json
+{
+  "families": [
+    {
+      "family_name": "microstructure",
+      "source_type": "raw_market_feature",
+      "feature_count": 1,
+      "feature_names": [
+        "funding_rate_spread_binance_bybit"
+      ],
+      "allowed_by_contract": true,
+      "diagnostic_role": "Measure impact of microstructure signals."
+    },
+    {
+      "family_name": "price_return",
+      "source_type": "raw_market_feature",
+      "feature_count": 4,
+      "feature_names": [
+        "forward_return_12bar",
+        "forward_return_1bar",
+        "forward_return_3bar",
+        "forward_return_6bar"
+      ],
+      "allowed_by_contract": true,
+      "diagnostic_role": "Measure impact of price_return signals."
+    },
+    {
+      "family_name": "regime_proxy",
+      "source_type": "regime_proxy_feature",
+      "feature_count": 6,
+      "feature_names": [
+        "VIXCLS",
+        "derivatives_regime_score",
+        "derivatives_risk_regime",
+        "macro_regime",
+        "macro_regime_score",
+        "vol_regime_vix"
+      ],
+      "allowed_by_contract": true,
+      "diagnostic_role": "Measure impact of regime_proxy signals."
+    },
+    {
+      "family_name": "trend_momentum",
+      "source_type": "derived_causal_feature",
+      "feature_count": 9,
+      "feature_names": [
+        "max_adverse_excursion_12bar",
+        "max_adverse_excursion_1bar",
+        "max_adverse_excursion_3bar",
+        "max_adverse_excursion_6bar",
+        "max_favorable_excursion_12bar",
+        "max_favorable_excursion_1bar",
+        "max_favorable_excursion_3bar",
+        "max_favorable_excursion_6bar",
+        "ohlcv_momentum_score"
+      ],
+      "allowed_by_contract": true,
+      "diagnostic_role": "Measure impact of trend_momentum signals."
+    },
+    {
+      "family_name": "volatility",
+      "source_type": "raw_market_feature",
+      "feature_count": 1,
+      "feature_names": [
+        "volatility_quality_score"
+      ],
+      "allowed_by_contract": true,
+      "diagnostic_role": "Measure impact of volatility signals."
+    },
+    {
+      "family_name": "volume_liquidity",
+      "source_type": "raw_market_feature",
+      "feature_count": 6,
+      "feature_names": [
+        "taker_buy_volume",
+        "taker_buy_volume_binance",
+        "taker_sell_volume",
+        "taker_sell_volume_binance",
+        "volume",
+        "volume_quality_score"
+      ],
+      "allowed_by_contract": true,
+      "diagnostic_role": "Measure impact of volume_liquidity signals."
+    },
+    {
+      "family_name": "alpha_score_family",
+      "source_type": "alpha_score_feature",
+      "feature_count": 22,
+      "feature_names": [
+        "combined_alpha_score",
+        "combined_alpha_score_no_derivatives",
+        "combined_alpha_score_no_macro",
+        "cost_penalty_score",
+        "derivatives_confidence_score",
+        "derivatives_crowding_score",
+        "derivatives_leverage_score",
+        "derivatives_score",
+        "funding_rate_zscore_30d",
+        "funding_rate_zscore_90d",
+        "funding_zscore_30d",
+        "funding_zscore_90d",
+        "long_short_ratio_zscore",
+        "macro_derivatives_score",
+        "ohlcv_breakout_score",
+        "ohlcv_only_alpha_score",
+        "oi_zscore_30d",
+        "oi_zscore_90d",
+        "open_interest_zscore_30d",
+        "open_interest_zscore_90d",
+        "premium_zscore_30d",
+        "taker_imbalance_zscore"
+      ],
+      "allowed_by_contract": true,
+      "diagnostic_role": "Measure impact of alpha_score_family signals."
+    },
+    {
+      "family_name": "other_remaining",
+      "source_type": "unknown",
+      "feature_count": 63,
+      "feature_names": [
+        "DFF",
+        "DGS10",
+        "DGS2",
+        "NASDAQCOM",
+        "SP500",
+        "T10Y2Y",
+        "available_timestamp",
+        "basis_proxy",
+        "close",
+        "crowded_trade_penalty",
+        "derivatives_available_count",
+        "derivatives_available_timestamp",
+        "derivatives_feature_status",
+        "derivatives_included",
+        "derivatives_missing_count",
+        "direction_up_after_cost_3bar",
+        "direction_up_after_cost_6bar",
+        "equity_market_trend",
+        "feature_status",
+        "funding_extreme_negative",
+        "funding_extreme_positive",
+        "funding_rate",
+        "funding_rate_binance",
+        "funding_rate_bybit",
+        "funding_rate_change_1",
+        "funding_rate_change_3",
+        "funding_rate_diff_binance_bybit",
+        "funding_rate_mean",
+        "funding_trend_3",
+        "high",
+        "liquidation_proxy",
+        "long_short_crowding",
+        "long_short_ratio",
+        "long_short_ratio_binance",
+        "low",
+        "macro_confidence",
+        "macro_included",
+        "macro_last_updated",
+        "missing_data_penalty",
+        "oi_change_1",
+        "oi_change_3",
+        "open",
+        "open_interest",
+        "open_interest_bybit",
+        "open_interest_change_1",
+        "open_interest_change_3",
+        "open_interest_mean",
+        "premium",
+        "premium_binance",
+        "premium_bybit",
+        "premium_mean",
+        "premium_proxy",
+        "price_oi_confirmation",
+        "price_oi_divergence",
+        "rates_pressure",
+        "taker_buy_sell_ratio",
+        "taker_buy_sell_ratio_binance",
+        "taker_imbalance",
+        "timeframe_x",
+        "timeframe_y",
+        "timestamp",
+        "tp_before_sl_conservative",
+        "yield_curve_slope"
+      ],
+      "allowed_by_contract": true,
+      "diagnostic_role": "Catch-all for miscellaneous features."
+    }
+  ]
+}
+```

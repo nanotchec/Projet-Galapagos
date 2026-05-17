@@ -1,0 +1,17 @@
+{
+  "version": "V1.93.1",
+  "physical_seed_semantic_scan_executed": true,
+  "forbidden_seed_terms_detected": false,
+  "forbidden_seed_terms_count": 0,
+  "forbidden_seed_term_occurrences": [],
+  "target_like_fields_detected": false,
+  "future_information_fields_detected": false,
+  "label_like_fields_detected": false,
+  "prediction_like_fields_detected": false,
+  "available_ts_policy_present": true,
+  "decision_ts_policy_present": true,
+  "feature_available_ts_lte_decision_ts_rule_present": true,
+  "no_lookahead_policy_present": true,
+  "leakage_detected": false,
+  "lookahead_detected": false
+}

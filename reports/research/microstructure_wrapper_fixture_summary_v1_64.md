@@ -1,0 +1,54 @@
+# Microstructure Wrapper Fixture Summary - V1.64
+
+- **version**: V1.64
+- **input_guard_passed**: True
+- **issues**: []
+- **wrapper_fixture_run_executed**: True
+- **records_processed**: 0
+- **manifest_preview**: {'manifest_entries': []}
+- **wrapper_real_execution**: False
+- **safety_audit_passed**: True
+- **no_real_trading**: True
+- **no_paper_live**: True
+- **holdout_executed**: False
+- **wrapper_fixture_implementation_passed**: True
+- **final_verdict**: MICROSTRUCTURE_NETWORK_DISABLED_WRAPPER_FIXTURE_IMPLEMENTED
+- **next_allowed_phase**: network_disabled_wrapper_fixture_execution_review
+- **current_version**: V1.64
+- **previous_version**: V1.63.2
+- **previous_base**: V1.63.2
+- **recommended_next_step**: review network-disabled wrapper fixture execution before any network-enabled phase
+- **evidence_classification**: INFRASTRUCTURE_ONLY
+- **verdict_alignment_status**: WRAPPER_FIXTURE_VERDICT_ALIGNED
+- **real_collection_approved**: False
+- **real_collection_executed**: False
+- **network_enabled**: False
+- **no_new_filter**: True
+- **no_strategy_validated**: True
+- **wrapper_fixture_only**: True
+- **wrapper_plan_only**: False
+- **wrapper_executed**: False
+- **network_gate_enabled**: True
+- **write_gate_enabled**: True
+- **network_disabled**: True
+- **network_disabled_by_default**: True
+- **future_network_activation_requires_separate_approval**: True
+- **real_collection_approval_status**: NOT_APPROVED
+- **controlled_local_preflight_executed**: False
+- **real_preflight_executed**: False
+- **human_review_required_before_collection**: True
+- **dry_run_only**: True
+- **local_fixture_only**: True
+- **fixture_only**: True
+- **synthetic_or_minimal_sample**: True
+- **not_for_research_results**: True
+- **simulated_requests_allowed**: True
+- **requests_executed_count**: 0
+- **external_api_called**: False
+- **external_data_downloaded**: False
+- **no_data_directory_writes**: True
+- **status_field_policy**: REMOVED
+- **status_field_present**: False
+- **no_preregistration_yet**: True
+- **codex_cli_called**: False
+- **real_orders_possible**: False

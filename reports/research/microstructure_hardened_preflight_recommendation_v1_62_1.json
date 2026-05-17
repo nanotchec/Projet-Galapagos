@@ -1,0 +1,10 @@
+{
+  "status": "PASSED",
+  "recommended_next_step": "plan network-disabled collector preflight wrapper before any network-enabled phase",
+  "version": "V1.62.1",
+  "current_version": "V1.62.1",
+  "previous_version": "V1.62",
+  "previous_base": "V1.62",
+  "migrated_from": "V1.62",
+  "migration_reason": "hardened preflight review state alignment fix"
+}

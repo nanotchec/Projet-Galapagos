@@ -1,0 +1,19 @@
+{
+  "version": "V1.99",
+  "json_only": true,
+  "created_files_count": 5,
+  "row_limit_respected": true,
+  "pair_limit_respected": true,
+  "research_only": true,
+  "direct_ml_use_allowed": false,
+  "anti_leakage_join_guard_applied": true,
+  "label_availability_policy_applied": true,
+  "purge_policy_applied": true,
+  "embargo_policy_applied": true,
+  "temporal_split_policy_applied": true,
+  "no_random_shuffle_policy_applied": true,
+  "alignment_leakage_detected": false,
+  "alignment_lookahead_detected": false,
+  "training_dataset_leakage_detected": false,
+  "training_dataset_lookahead_detected": false
+}

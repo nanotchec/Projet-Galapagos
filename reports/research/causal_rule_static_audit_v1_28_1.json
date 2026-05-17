@@ -1,0 +1,14 @@
+{
+  "rule_name": "low_frequency_strict_score",
+  "rule_family": "frequency",
+  "selection_logic": "highest_score_per_period",
+  "temporal_frequency_rule": "7D",
+  "groupby_period_selection": true,
+  "uses_full_period_scores": true,
+  "requires_future_in_period_scores": true,
+  "live_decision_time_defined": false,
+  "decision_time": "after_period_known",
+  "trade_decision_available_at_signal_time": false,
+  "tie_break_explicit": false,
+  "static_causality_status": "NON_CAUSAL_FULL_PERIOD_SELECTION"
+}

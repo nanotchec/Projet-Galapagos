@@ -1,0 +1,19 @@
+{
+  "version": "v1.22.1",
+  "impact_comparison": {
+    "previous_gap_ratio": 0.3886377039512483,
+    "current_gap_ratio": 0.00019657951641438963,
+    "gap_ratio_reduction": 0.3884411244348339,
+    "previous_gap_candidates": 1661,
+    "current_gap_candidates": 0
+  },
+  "ledger_comparison": {
+    "previous_evaluated_ratio": 0.6018713450292398,
+    "current_evaluated_ratio": 1.0,
+    "coverage_increase": 0.3981286549707602,
+    "previous_verdict": "ALL_POLICIES_NEGATIVE_AFTER_COSTS_GAP_AWARE",
+    "current_verdict": "ALL_POLICIES_NEGATIVE_AFTER_COSTS_CONTINUOUS"
+  },
+  "generated_at": "2026-05-06T23:18:01.080065+00:00",
+  "status": "GAP_FILL_SUCCESSFUL"
+}

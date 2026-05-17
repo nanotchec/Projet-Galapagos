@@ -1,0 +1,566 @@
+# Causal Filter Temporal Robustness V1 29 1
+
+```json
+{
+  "temporal": [
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 276,
+          "net_mean_pnl": 0.009281814982342096,
+          "win_rate": 0.5543478260869565
+        },
+        "2024 H2": {
+          "selected_count": 325,
+          "net_mean_pnl": 0.005820446511778081,
+          "win_rate": 0.5784615384615385
+        },
+        "2025 H1": {
+          "selected_count": 229,
+          "net_mean_pnl": 0.005967384550242707,
+          "win_rate": 0.5458515283842795
+        },
+        "2025 H2": {
+          "selected_count": 391,
+          "net_mean_pnl": 0.0006662938531159164,
+          "win_rate": 0.5345268542199488
+        },
+        "2026 H1": {
+          "selected_count": 120,
+          "net_mean_pnl": -0.009959441766387748,
+          "win_rate": 0.4444444444444444
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_PROMISING",
+      "filter_name": "prob_ge_0.55"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 206,
+          "net_mean_pnl": 0.010339126313305906,
+          "win_rate": 0.558252427184466
+        },
+        "2024 H2": {
+          "selected_count": 256,
+          "net_mean_pnl": 0.00441957356883543,
+          "win_rate": 0.5703125
+        },
+        "2025 H1": {
+          "selected_count": 162,
+          "net_mean_pnl": 0.008433132137384771,
+          "win_rate": 0.5617283950617284
+        },
+        "2025 H2": {
+          "selected_count": 303,
+          "net_mean_pnl": 0.0006528223560230608,
+          "win_rate": 0.5313531353135313
+        },
+        "2026 H1": {
+          "selected_count": 71,
+          "net_mean_pnl": -0.014166412273169018,
+          "win_rate": 0.4
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_PROMISING",
+      "filter_name": "prob_ge_0.6"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 152,
+          "net_mean_pnl": 0.013965395107337067,
+          "win_rate": 0.5921052631578947
+        },
+        "2024 H2": {
+          "selected_count": 187,
+          "net_mean_pnl": 0.005841140907503405,
+          "win_rate": 0.6096256684491979
+        },
+        "2025 H1": {
+          "selected_count": 109,
+          "net_mean_pnl": 0.01346818250140582,
+          "win_rate": 0.5963302752293578
+        },
+        "2025 H2": {
+          "selected_count": 231,
+          "net_mean_pnl": 0.0021799213777131407,
+          "win_rate": 0.5411255411255411
+        },
+        "2026 H1": {
+          "selected_count": 41,
+          "net_mean_pnl": -0.014034538239121007,
+          "win_rate": 0.4146341463414634
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_PROMISING",
+      "filter_name": "prob_ge_0.65"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 104,
+          "net_mean_pnl": 0.014444045165121579,
+          "win_rate": 0.5576923076923077
+        },
+        "2024 H2": {
+          "selected_count": 130,
+          "net_mean_pnl": 0.009168411375176825,
+          "win_rate": 0.6230769230769231
+        },
+        "2025 H1": {
+          "selected_count": 84,
+          "net_mean_pnl": 0.01644119134319245,
+          "win_rate": 0.6071428571428571
+        },
+        "2025 H2": {
+          "selected_count": 163,
+          "net_mean_pnl": 0.0043289080445364295,
+          "win_rate": 0.5644171779141104
+        },
+        "2026 H1": {
+          "selected_count": 25,
+          "net_mean_pnl": -0.011786058206243321,
+          "win_rate": 0.44
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_PROMISING",
+      "filter_name": "prob_ge_0.7"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 26,
+          "net_mean_pnl": 0.0003595106402794906,
+          "win_rate": 0.46153846153846156
+        },
+        "2024 H2": {
+          "selected_count": 26,
+          "net_mean_pnl": 0.0009908830026690125,
+          "win_rate": 0.5
+        },
+        "2025 H1": {
+          "selected_count": 26,
+          "net_mean_pnl": 0.0013661880927557464,
+          "win_rate": 0.5384615384615384
+        },
+        "2025 H2": {
+          "selected_count": 25,
+          "net_mean_pnl": -0.007730047515196925,
+          "win_rate": 0.36
+        },
+        "2026 H1": {
+          "selected_count": 15,
+          "net_mean_pnl": -0.014553633019869738,
+          "win_rate": 0.26666666666666666
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "first_ge_0.55_per_7D"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 105,
+          "net_mean_pnl": 0.004259235876223084,
+          "win_rate": 0.49523809523809526
+        },
+        "2024 H2": {
+          "selected_count": 109,
+          "net_mean_pnl": 0.003482496684151947,
+          "win_rate": 0.5596330275229358
+        },
+        "2025 H1": {
+          "selected_count": 94,
+          "net_mean_pnl": 0.006278294790791003,
+          "win_rate": 0.5425531914893617
+        },
+        "2025 H2": {
+          "selected_count": 119,
+          "net_mean_pnl": -0.0011506452796033644,
+          "win_rate": 0.4789915966386555
+        },
+        "2026 H1": {
+          "selected_count": 51,
+          "net_mean_pnl": -0.009082081020389998,
+          "win_rate": 0.46
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "first_ge_0.55_per_1D"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 26,
+          "net_mean_pnl": 0.0005877671117253381,
+          "win_rate": 0.46153846153846156
+        },
+        "2024 H2": {
+          "selected_count": 26,
+          "net_mean_pnl": 0.008270876280272673,
+          "win_rate": 0.5
+        },
+        "2025 H1": {
+          "selected_count": 22,
+          "net_mean_pnl": 0.005198016156869242,
+          "win_rate": 0.6363636363636364
+        },
+        "2025 H2": {
+          "selected_count": 24,
+          "net_mean_pnl": -0.006250989652426801,
+          "win_rate": 0.4166666666666667
+        },
+        "2026 H1": {
+          "selected_count": 14,
+          "net_mean_pnl": -0.009116180307686324,
+          "win_rate": 0.38461538461538464
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "first_ge_0.6_per_7D"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 88,
+          "net_mean_pnl": 0.006559352037223406,
+          "win_rate": 0.5227272727272727
+        },
+        "2024 H2": {
+          "selected_count": 96,
+          "net_mean_pnl": 0.00434956559402586,
+          "win_rate": 0.5520833333333334
+        },
+        "2025 H1": {
+          "selected_count": 71,
+          "net_mean_pnl": 0.005274890395253069,
+          "win_rate": 0.5352112676056338
+        },
+        "2025 H2": {
+          "selected_count": 93,
+          "net_mean_pnl": -0.0024606687114915923,
+          "win_rate": 0.4731182795698925
+        },
+        "2026 H1": {
+          "selected_count": 34,
+          "net_mean_pnl": -0.010198197008024944,
+          "win_rate": 0.48484848484848486
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "first_ge_0.6_per_1D"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 25,
+          "net_mean_pnl": 0.004821003108290962,
+          "win_rate": 0.52
+        },
+        "2024 H2": {
+          "selected_count": 25,
+          "net_mean_pnl": 0.00532377978663531,
+          "win_rate": 0.48
+        },
+        "2025 H1": {
+          "selected_count": 20,
+          "net_mean_pnl": 0.008006645411627628,
+          "win_rate": 0.6
+        },
+        "2025 H2": {
+          "selected_count": 24,
+          "net_mean_pnl": -0.003371854021140236,
+          "win_rate": 0.5
+        },
+        "2026 H1": {
+          "selected_count": 10,
+          "net_mean_pnl": -0.02485780647627921,
+          "win_rate": 0.1
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "first_ge_0.65_per_7D"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 71,
+          "net_mean_pnl": 0.008384100217196202,
+          "win_rate": 0.5211267605633803
+        },
+        "2024 H2": {
+          "selected_count": 84,
+          "net_mean_pnl": 0.005026580365533324,
+          "win_rate": 0.5833333333333334
+        },
+        "2025 H1": {
+          "selected_count": 46,
+          "net_mean_pnl": 0.009686464434248697,
+          "win_rate": 0.5869565217391305
+        },
+        "2025 H2": {
+          "selected_count": 81,
+          "net_mean_pnl": -0.0006325909226698309,
+          "win_rate": 0.49382716049382713
+        },
+        "2026 H1": {
+          "selected_count": 23,
+          "net_mean_pnl": -0.021559983245879353,
+          "win_rate": 0.34782608695652173
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "first_ge_0.65_per_1D"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 23,
+          "net_mean_pnl": 0.007792204558379749,
+          "win_rate": 0.391304347826087
+        },
+        "2024 H2": {
+          "selected_count": 21,
+          "net_mean_pnl": 0.009657260462525928,
+          "win_rate": 0.5238095238095238
+        },
+        "2025 H1": {
+          "selected_count": 18,
+          "net_mean_pnl": 0.007196777784462106,
+          "win_rate": 0.6111111111111112
+        },
+        "2025 H2": {
+          "selected_count": 23,
+          "net_mean_pnl": -0.0006172202958590213,
+          "win_rate": 0.4782608695652174
+        },
+        "2026 H1": {
+          "selected_count": 7,
+          "net_mean_pnl": -0.024620591664576957,
+          "win_rate": 0.14285714285714285
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "first_ge_0.7_per_7D"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 50,
+          "net_mean_pnl": 0.010421944761807278,
+          "win_rate": 0.5
+        },
+        "2024 H2": {
+          "selected_count": 58,
+          "net_mean_pnl": 0.007122208099379531,
+          "win_rate": 0.603448275862069
+        },
+        "2025 H1": {
+          "selected_count": 36,
+          "net_mean_pnl": 0.014672395779282242,
+          "win_rate": 0.6388888888888888
+        },
+        "2025 H2": {
+          "selected_count": 67,
+          "net_mean_pnl": 0.0013808013656817183,
+          "win_rate": 0.4925373134328358
+        },
+        "2026 H1": {
+          "selected_count": 12,
+          "net_mean_pnl": -0.027778129732633845,
+          "win_rate": 0.25
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_PROMISING",
+      "filter_name": "first_ge_0.7_per_1D"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 74,
+          "net_mean_pnl": 0.005390763716338719,
+          "win_rate": 0.527027027027027
+        },
+        "2024 H2": {
+          "selected_count": 79,
+          "net_mean_pnl": 0.0035013560317984876,
+          "win_rate": 0.5316455696202531
+        },
+        "2025 H1": {
+          "selected_count": 59,
+          "net_mean_pnl": 0.005692689562484956,
+          "win_rate": 0.5254237288135594
+        },
+        "2025 H2": {
+          "selected_count": 76,
+          "net_mean_pnl": -0.002134303139797038,
+          "win_rate": 0.5
+        },
+        "2026 H1": {
+          "selected_count": 30,
+          "net_mean_pnl": -0.006560898566576539,
+          "win_rate": 0.4827586206896552
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "prob_ge_0.6_cooldown_1 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 38,
+          "net_mean_pnl": -0.0020212527020811327,
+          "win_rate": 0.4473684210526316
+        },
+        "2024 H2": {
+          "selected_count": 38,
+          "net_mean_pnl": 0.008483374025448026,
+          "win_rate": 0.5526315789473685
+        },
+        "2025 H1": {
+          "selected_count": 34,
+          "net_mean_pnl": 0.004878003937050251,
+          "win_rate": 0.5882352941176471
+        },
+        "2025 H2": {
+          "selected_count": 35,
+          "net_mean_pnl": -0.002710708033706398,
+          "win_rate": 0.42857142857142855
+        },
+        "2026 H1": {
+          "selected_count": 20,
+          "net_mean_pnl": -0.01520432960056299,
+          "win_rate": 0.42105263157894735
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "prob_ge_0.6_cooldown_3 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 20,
+          "net_mean_pnl": -0.0015053411810985462,
+          "win_rate": 0.4
+        },
+        "2024 H2": {
+          "selected_count": 23,
+          "net_mean_pnl": 0.006891459315769303,
+          "win_rate": 0.5217391304347826
+        },
+        "2025 H1": {
+          "selected_count": 18,
+          "net_mean_pnl": 0.0046256932761905385,
+          "win_rate": 0.5
+        },
+        "2025 H2": {
+          "selected_count": 18,
+          "net_mean_pnl": -0.002270923043877049,
+          "win_rate": 0.4444444444444444
+        },
+        "2026 H1": {
+          "selected_count": 13,
+          "net_mean_pnl": -0.011048752594500213,
+          "win_rate": 0.3333333333333333
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "prob_ge_0.6_cooldown_7 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 60,
+          "net_mean_pnl": 0.008329683658736771,
+          "win_rate": 0.55
+        },
+        "2024 H2": {
+          "selected_count": 66,
+          "net_mean_pnl": 0.005109823686673334,
+          "win_rate": 0.5454545454545454
+        },
+        "2025 H1": {
+          "selected_count": 40,
+          "net_mean_pnl": 0.009717869066100907,
+          "win_rate": 0.575
+        },
+        "2025 H2": {
+          "selected_count": 65,
+          "net_mean_pnl": -0.0011045992119414149,
+          "win_rate": 0.5230769230769231
+        },
+        "2026 H1": {
+          "selected_count": 18,
+          "net_mean_pnl": -0.019096619312214878,
+          "win_rate": 0.3333333333333333
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "prob_ge_0.65_cooldown_1 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 33,
+          "net_mean_pnl": 0.0035006532741509375,
+          "win_rate": 0.48484848484848486
+        },
+        "2024 H2": {
+          "selected_count": 36,
+          "net_mean_pnl": 0.00591150555269636,
+          "win_rate": 0.5
+        },
+        "2025 H1": {
+          "selected_count": 27,
+          "net_mean_pnl": 0.009996459138533453,
+          "win_rate": 0.5925925925925926
+        },
+        "2025 H2": {
+          "selected_count": 31,
+          "net_mean_pnl": -0.0017801178174038116,
+          "win_rate": 0.4838709677419355
+        },
+        "2026 H1": {
+          "selected_count": 12,
+          "net_mean_pnl": -0.03755641201997693,
+          "win_rate": 0.08333333333333333
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "prob_ge_0.65_cooldown_3 days 00:00:00"
+    },
+    {
+      "breakdown": {
+        "2024 H1": {
+          "selected_count": 18,
+          "net_mean_pnl": 0.0013458689691195408,
+          "win_rate": 0.3888888888888889
+        },
+        "2024 H2": {
+          "selected_count": 19,
+          "net_mean_pnl": -0.009015959411399765,
+          "win_rate": 0.3684210526315789
+        },
+        "2025 H1": {
+          "selected_count": 17,
+          "net_mean_pnl": 0.0060703460287694876,
+          "win_rate": 0.5294117647058824
+        },
+        "2025 H2": {
+          "selected_count": 18,
+          "net_mean_pnl": -0.004111990028778273,
+          "win_rate": 0.5555555555555556
+        },
+        "2026 H1": {
+          "selected_count": 8,
+          "net_mean_pnl": -0.03647789437623175,
+          "win_rate": 0.0
+        }
+      },
+      "status": "TEMPORAL_ROBUSTNESS_WEAK",
+      "filter_name": "prob_ge_0.65_cooldown_7 days 00:00:00"
+    }
+  ]
+}
+```

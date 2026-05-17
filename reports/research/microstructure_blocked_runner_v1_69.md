@@ -1,0 +1,10 @@
+# Report: Microstructure Blocked Runner
+
+```json
+{
+  "tiny_network_preflight_runner_blocked_without_approval": true,
+  "blocked_runner_test_passed": true,
+  "tiny_network_collection_executed": false,
+  "requests_executed_count": 0
+}
+```

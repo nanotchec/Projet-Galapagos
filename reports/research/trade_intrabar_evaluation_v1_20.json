@@ -1,0 +1,24 @@
+{
+  "version": "v1.20",
+  "audit": {
+    "fixed_percent": {
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "coverage_mean": 0.05824561403508772,
+      "ambiguous_rate": 0.0
+    },
+    "atr_proxy": {
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "coverage_mean": 0.05824561403508772,
+      "ambiguous_rate": 0.0
+    },
+    "horizon_only": {
+      "evaluated_count": 249,
+      "missing_intrabar_count": 4026,
+      "coverage_mean": 0.05824561403508772,
+      "ambiguous_rate": 0.0
+    }
+  },
+  "status": "COMPLETE"
+}

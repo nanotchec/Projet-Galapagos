@@ -1,0 +1,84 @@
+{
+  "version": "v1.17.1",
+  "verdict": "HORIZON_12BAR_WEAK",
+  "horizon_analysis": {
+    "2024": {
+      "1bar": {
+        "mean_return": 0.0004233904864297463,
+        "hit_rate_gross": 0.5245901639344263,
+        "mean_cost_adj_return": -0.0005766095135702537,
+        "assumed_cost": 0.001
+      },
+      "3bar": {
+        "mean_return": 0.0012563769500431373,
+        "hit_rate_gross": 0.5359744990892532,
+        "mean_cost_adj_return": 0.00025637695004313726,
+        "assumed_cost": 0.001
+      },
+      "6bar": {
+        "mean_return": 0.0025006778952740044,
+        "hit_rate_gross": 0.5396174863387978,
+        "mean_cost_adj_return": 0.0005006778952740044,
+        "assumed_cost": 0.002
+      },
+      "12bar": {
+        "mean_return": 0.004899303725122557,
+        "hit_rate_gross": 0.5432604735883424,
+        "mean_cost_adj_return": 0.0018993037251225572,
+        "assumed_cost": 0.003
+      }
+    },
+    "2025": {
+      "1bar": {
+        "mean_return": 1.4437487823027403e-05,
+        "hit_rate_gross": 0.5045662100456622,
+        "mean_cost_adj_return": -0.0009855625121769726,
+        "assumed_cost": 0.001
+      },
+      "3bar": {
+        "mean_return": 4.423463102057443e-05,
+        "hit_rate_gross": 0.5082191780821917,
+        "mean_cost_adj_return": -0.0009557653689794256,
+        "assumed_cost": 0.001
+      },
+      "6bar": {
+        "mean_return": 6.55357893812025e-05,
+        "hit_rate_gross": 0.5136986301369864,
+        "mean_cost_adj_return": -0.0019344642106187975,
+        "assumed_cost": 0.002
+      },
+      "12bar": {
+        "mean_return": 5.182167118935031e-05,
+        "hit_rate_gross": 0.5127853881278539,
+        "mean_cost_adj_return": -0.00294817832881065,
+        "assumed_cost": 0.003
+      }
+    },
+    "2026": {
+      "1bar": {
+        "mean_return": -0.00014566736768637986,
+        "hit_rate_gross": 0.5,
+        "mean_cost_adj_return": -0.00114566736768638,
+        "assumed_cost": 0.001
+      },
+      "3bar": {
+        "mean_return": -0.00041670896439867486,
+        "hit_rate_gross": 0.4861111111111111,
+        "mean_cost_adj_return": -0.0014167089643986749,
+        "assumed_cost": 0.001
+      },
+      "6bar": {
+        "mean_return": -0.0008782700578203108,
+        "hit_rate_gross": 0.4861111111111111,
+        "mean_cost_adj_return": -0.0028782700578203107,
+        "assumed_cost": 0.002
+      },
+      "12bar": {
+        "mean_return": -0.0019156134670812869,
+        "hit_rate_gross": 0.49166666666666664,
+        "mean_cost_adj_return": -0.004915613467081287,
+        "assumed_cost": 0.003
+      }
+    }
+  }
+}

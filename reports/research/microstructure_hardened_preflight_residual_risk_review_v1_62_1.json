@@ -1,0 +1,18 @@
+{
+  "status": "PASSED",
+  "residual_risks": [
+    "fixtures still synthetic/minimal (local-only)",
+    "no real exchange metadata exercised",
+    "no network path exercised (strictly disabled)",
+    "no real file layout created (no data writes)",
+    "no real manifest file created (preview only)"
+  ],
+  "residual_risks_count": 5,
+  "risks_identified": true,
+  "version": "V1.62.1",
+  "current_version": "V1.62.1",
+  "previous_version": "V1.62",
+  "previous_base": "V1.62",
+  "migrated_from": "V1.62",
+  "migration_reason": "hardened preflight review state alignment fix"
+}

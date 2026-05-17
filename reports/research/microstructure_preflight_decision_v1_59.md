@@ -1,0 +1,15 @@
+# Preflight Decision (V1.59)
+
+- Evaluates plan readiness.
+
+```json
+{
+  "version": "V1.59",
+  "current_version": "V1.59",
+  "preflight_plan_ready": true,
+  "verdict": "MICROSTRUCTURE_PREFLIGHT_PLAN_READY",
+  "next_allowed_phase": "controlled_local_preflight_dryrun",
+  "evidence_classification": "INFRASTRUCTURE_ONLY",
+  "policy_alignment_confirmed": true
+}
+```

@@ -1,0 +1,12 @@
+# Signal Selection Overfit Audit V1 25
+
+```json
+{
+  "rules_tested_count": 78,
+  "multiple_testing_warning": true,
+  "best_filter_beats_p95": true,
+  "top_filter_rank": 1,
+  "verdict": "MULTIPLE_TESTING_RISK_HIGH",
+  "recommendation": "FILTER_NEEDS_OUT_OF_SAMPLE_CONFIRMATION"
+}
+```

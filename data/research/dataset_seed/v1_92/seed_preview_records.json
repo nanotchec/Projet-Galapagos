@@ -1,0 +1,43 @@
+{
+  "version": "V1.92.1",
+  "source_versions": [
+    "V1.84",
+    "V1.87.2",
+    "V1.90.1"
+  ],
+  "event_ts": "source_artifact_static",
+  "available_ts": "source_artifact_static",
+  "decision_ts": "v1_92_seed_build_time",
+  "anti_leakage_note": "available_ts must be less than or equal to decision_ts",
+  "artifact": "seed_preview_records",
+  "preview_records_count": 3,
+  "records": [
+    {
+      "source_version": "V1.84",
+      "artifact_name": "manifest.json",
+      "artifact_kind": "base_materialization_manifest",
+      "event_ts": "source_artifact_static",
+      "available_ts": "source_artifact_static",
+      "decision_ts": "v1_92_seed_build_time",
+      "source_checksum_sha256": "524c43853d97904aadcbd476e955dd5571adecaae5644505a9384e209825aa47"
+    },
+    {
+      "source_version": "V1.87.2",
+      "artifact_name": "extension_manifest.json",
+      "artifact_kind": "extension_manifest",
+      "event_ts": "source_artifact_static",
+      "available_ts": "source_artifact_static",
+      "decision_ts": "v1_92_seed_build_time",
+      "source_checksum_sha256": "525276f53e29bcef84e176dc9d698d37c8a06e2880b7e08965da54aa00e347e4"
+    },
+    {
+      "source_version": "V1.90.1",
+      "artifact_name": "consolidated_manifest.json",
+      "artifact_kind": "consolidation_manifest",
+      "event_ts": "source_artifact_static",
+      "available_ts": "source_artifact_static",
+      "decision_ts": "v1_92_seed_build_time",
+      "source_checksum_sha256": "ba35f8db2bec770512c3ece4acf7145e6d445c8fa0cef2b5b729707e025d3393"
+    }
+  ]
+}

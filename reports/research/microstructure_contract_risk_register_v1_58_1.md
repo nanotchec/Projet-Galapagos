@@ -1,0 +1,7 @@
+# Contract Risk Register (V1.58.1)
+
+- **version**: V1.58.1
+- **current_version**: V1.58.1
+- **risks**: [{'id': 'RISK_001', 'category': 'TECHNICAL', 'description': "Mismatch entre la sémantique des champs annoncée et la réalité de l'API Bybit.", 'severity': 'HIGH', 'mitigation': 'Review humaine offline exhaustive et tests preflight locaux.', 'blocking_for_preflight': False}, {'id': 'RISK_002', 'category': 'TECHNICAL', 'description': "Divergence des schémas entre exchanges lors d'une collecte simultanée.", 'severity': 'MEDIUM', 'mitigation': "Normalisation stricte dans l'adapter layer.", 'blocking_for_preflight': False}, {'id': 'RISK_003', 'category': 'OPERATIONAL', 'description': "Risque d'activation accidentelle du réseau lors des phases de développement.", 'severity': 'CRITICAL', 'mitigation': 'NetworkGuard activé par défaut et vérifié par validateur automatique.', 'blocking_for_preflight': False}, {'id': 'RISK_004', 'category': 'DATA', 'description': 'Overconfidence basée sur des fixtures statiques non représentatives de la prod.', 'severity': 'MEDIUM', 'mitigation': 'Extension prévue du plan de fixtures en V1.57.2.', 'blocking_for_preflight': False}]
+- **blocking_risks_count**: 0
+- **non_blocking_risks_count**: 4

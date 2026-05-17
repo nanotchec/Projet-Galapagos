@@ -1,0 +1,21 @@
+suite_name: btc_llm_offline_vs_baselines_v1_7
+profiles:
+  - 30m
+  - 4h
+policies:
+  - always_no_trade
+  - state_aware_momentum
+  - state_aware_breakout
+  - llm_offline_conservative
+  - llm_offline_balanced
+  - llm_offline_aggressive
+symbol: BTC/USD
+requested_days: 30
+initial_capital_per_profile: 10000.0
+force_close_at_end: true
+fee_model:
+  fee_rate: 0.001
+slippage_model:
+  slippage_bps: 5.0
+llm_provider: offline
+output_reports_dir: reports/backtests

@@ -1,0 +1,29 @@
+{
+  "mandatory_for_offline_review": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "quote_asset_volume",
+    "number_of_trades"
+  ],
+  "optional_for_real_collection": [
+    "taker_buy_base_asset_volume",
+    "taker_buy_quote_asset_volume"
+  ],
+  "unavailable_until_real_source_metadata": [],
+  "field_alias_map": {
+    "open": "open",
+    "high": "high",
+    "low": "low",
+    "close": "close",
+    "volume": "volume",
+    "quote_asset_volume": "quote_volume",
+    "number_of_trades": "trade_count",
+    "taker_buy_base_asset_volume": "taker_buy_base_volume",
+    "taker_buy_quote_asset_volume": "taker_buy_quote_volume"
+  },
+  "version": "V1.57.2",
+  "previous_base": "V1.57.1"
+}

@@ -1,0 +1,27 @@
+{
+  "version": "V1.97",
+  "theoretical_labels_count": 5,
+  "fields": [
+    {
+      "name": "horizon_seconds",
+      "dtype": "integer"
+    },
+    {
+      "name": "label_available_ts",
+      "dtype": "timestamp"
+    },
+    {
+      "name": "label_policy_name",
+      "dtype": "string"
+    },
+    {
+      "name": "label_preview_kind",
+      "dtype": "string"
+    },
+    {
+      "name": "label_value_placeholder",
+      "dtype": "nullable"
+    }
+  ],
+  "labels_separated_from_features": true
+}

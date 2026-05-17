@@ -1,0 +1,16 @@
+{
+  "reference_end_timestamp": "2026-05-06T20:35:00Z",
+  "data_sources": {
+    "predictions": "data/gold/ml_predictions/BTC/4h/ml_predictions_v1_16_3.parquet",
+    "dataset": "data/gold/research_dataset/BTC/4h/research_dataset_with_alpha_scores.parquet",
+    "intrabar": "data/silver/intrabar/binance/BTCUSDT/5m/history_5m_v1_22.parquet"
+  },
+  "max_timestamps": {
+    "predictions": "2026-04-29T20:00:00",
+    "dataset": "2026-04-30T20:00:00",
+    "intrabar": "Error: No match for FieldRef.Name(open_time) in timestamp: timestamp[ms, tz=UTC]\nopen: double\nhigh: double\nlow: double\nclose: double\nvolume: double\nsource: large_string\nsymbol: large_string\ntimeframe: large_string\navailable_timestamp: timestamp[ms, tz=UTC]\ndownloaded_at: timestamp[us, tz=UTC]\n__fragment_index: int32\n__batch_index: int32\n__last_in_fragment: bool\n__filename: string"
+  },
+  "has_new_out_of_sample_data": false,
+  "out_of_sample_duration_days": 0,
+  "status": "NO_NEW_OUT_OF_SAMPLE_DATA"
+}

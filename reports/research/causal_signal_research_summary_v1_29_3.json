@@ -1,0 +1,12 @@
+{
+  "version": "v1.29.3",
+  "causal_filters_tested": 22,
+  "causal_filters_passed_audit": 18,
+  "data_separation_status": "DATA_SEPARATION_PASSED",
+  "dedup_robustness_status": "ORDER_DEPENDENT_WITHOUT_PRIORITY",
+  "best_filter_observed": "prob_ge_0.65",
+  "best_filter_net_mean_pnl": 0.007431167286480073,
+  "final_verdict": "CAUSAL_FILTER_EXPLORATORY_RECENT_WINDOW_WEAK",
+  "evidence_classification": "EXPLORATORY_ONLY",
+  "recommended_next_step": "fix robustness issues / improve alpha"
+}

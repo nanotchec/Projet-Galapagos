@@ -1,0 +1,11 @@
+{
+  "status": "PAPER_FORWARD_HARNESS_FAILED_MOCKS_DETECTED",
+  "protocol_check_passed": true,
+  "protocol_immutability_passed": true,
+  "data_availability_read_ok": true,
+  "exact_filter_reconstructable": false,
+  "mock_audit_status": "PAPER_FORWARD_MOCKS_DETECTED",
+  "mock_components_present": true,
+  "real_metrics_available": false,
+  "reports_generated": true
+}

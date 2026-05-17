@@ -1,0 +1,45 @@
+{
+  "targets_defined": [
+    "net_return_regression_target",
+    "signed_payoff_classification_target",
+    "asymmetric_payoff_weighted_target",
+    "downside_risk_target",
+    "ev_realization_gap_target"
+  ],
+  "target_columns_used": {
+    "net_return_regression_target": [
+      "forward_return_12bar",
+      "cost_proxy"
+    ],
+    "signed_payoff_classification_target": [
+      "forward_return_12bar",
+      "cost_proxy"
+    ],
+    "asymmetric_payoff_weighted_target": [
+      "forward_return_12bar",
+      "cost_proxy"
+    ],
+    "downside_risk_target": [
+      "forward_return_12bar",
+      "cost_proxy"
+    ],
+    "ev_realization_gap_target": [
+      "forward_return_12bar",
+      "cost_proxy",
+      "ev_calibrated_proxy"
+    ]
+  },
+  "target_availability": {
+    "net_return_regression_target": 171528,
+    "signed_payoff_classification_target": 171648,
+    "asymmetric_payoff_weighted_target": 171528,
+    "downside_risk_target": 171648,
+    "ev_realization_gap_target": 134316
+  },
+  "future_outcomes_used_only_as_training_labels": true,
+  "targets_not_available_at_decision_time": true,
+  "target_leakage_policy": "LABEL_ONLY_NOT_SELECTION_FEATURE",
+  "payoff_target_status": "PAYOFF_OBJECTIVE_TARGETS_DEFINED_LABEL_ONLY",
+  "target_builder_status": "PAYOFF_OBJECTIVE_TARGET_BUILDER_COMPLETE",
+  "labels_only": true
+}

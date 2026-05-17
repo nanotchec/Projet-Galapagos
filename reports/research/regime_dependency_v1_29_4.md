@@ -1,0 +1,18 @@
+# Regime Dependency V1 29 4
+
+```json
+{
+  "regime_metrics": {
+    "bull_strength": {
+      "selected_count": 5594,
+      "share": 1.0,
+      "net_mean_pnl": 0.0056511295928647785,
+      "win_rate": 0.558276725062567
+    }
+  },
+  "dominant_regime": "bull_strength",
+  "dominant_regime_share": 1.0,
+  "regime_dependency_status": "BULL_REGIME_DEPENDENT",
+  "regime_diversity_insufficient": true
+}
+```

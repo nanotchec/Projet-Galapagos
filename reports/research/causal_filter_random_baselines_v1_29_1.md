@@ -1,0 +1,152 @@
+# Causal Filter Random Baselines V1 29 1
+
+```json
+{
+  "baselines": [
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0017869082252921216,
+      "random_p75": 0.0023348280022977095,
+      "random_p95": 0.002973453124825081,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.55"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0018548249313464354,
+      "random_p75": 0.002482410228182744,
+      "random_p95": 0.0035211996929587043,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.6"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.001740392153329412,
+      "random_p75": 0.0024846372785519537,
+      "random_p95": 0.003435877945655976,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.65"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.001726175943618039,
+      "random_p75": 0.0026814717843813987,
+      "random_p95": 0.004327881718900147,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.7"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.002078900339715907,
+      "random_p75": 0.004145000491493786,
+      "random_p95": 0.007143077797590443,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "first_ge_0.55_per_7D"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0019505766168914957,
+      "random_p75": 0.0029035257516442595,
+      "random_p95": 0.004313167312424285,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "first_ge_0.55_per_1D"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.001834591439920248,
+      "random_p75": 0.0038857576949957555,
+      "random_p95": 0.006812914521081848,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "first_ge_0.6_per_7D"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0017410454063528256,
+      "random_p75": 0.0028051854052063008,
+      "random_p95": 0.0045127257530991225,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "first_ge_0.6_per_1D"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0022790026457773804,
+      "random_p75": 0.0047133486232051325,
+      "random_p95": 0.006813473653785297,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "first_ge_0.65_per_7D"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0020332953550122324,
+      "random_p75": 0.003111127408430017,
+      "random_p95": 0.005202991789679929,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "first_ge_0.65_per_1D"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0016478933693868953,
+      "random_p75": 0.0038776312036142976,
+      "random_p95": 0.006991346812124891,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "first_ge_0.7_per_7D"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0019721080805610467,
+      "random_p75": 0.00344692978386602,
+      "random_p95": 0.005949029402505808,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "first_ge_0.7_per_1D"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0015834876855619225,
+      "random_p75": 0.0031218293539660266,
+      "random_p95": 0.00490694267113472,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.6_cooldown_1 days 00:00:00"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0014055267241737516,
+      "random_p75": 0.0030261928474789547,
+      "random_p95": 0.005948346786470623,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.6_cooldown_3 days 00:00:00"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0020168192882833802,
+      "random_p75": 0.004228257301275915,
+      "random_p95": 0.008030279642509802,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.6_cooldown_7 days 00:00:00"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0016395664165415212,
+      "random_p75": 0.003190073271657521,
+      "random_p95": 0.0054839610496868795,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.65_cooldown_1 days 00:00:00"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.0018442235291684186,
+      "random_p75": 0.0036705255999540266,
+      "random_p95": 0.0054036373990744525,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.65_cooldown_3 days 00:00:00"
+    },
+    {
+      "n_random_runs": 200,
+      "random_p50": 0.001972519388567174,
+      "random_p75": 0.004322233715385716,
+      "random_p95": 0.008072474491370314,
+      "status": "RANDOM_BASELINE_COMPLETE",
+      "filter_name": "prob_ge_0.65_cooldown_7 days 00:00:00"
+    }
+  ]
+}
+```

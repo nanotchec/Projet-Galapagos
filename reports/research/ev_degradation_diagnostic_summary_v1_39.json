@@ -1,0 +1,693 @@
+{
+  "version": "V1.39",
+  "diagnostic_base": "V1.38.4",
+  "canonical_base_version": "V1.37.2",
+  "selected_filter": "filter_ev_gt_0",
+  "selected_count_total": 129527,
+  "selected_count_2026": 19497,
+  "source_v1_38_4_selected_count": 129527,
+  "source_v1_38_4_selected_count_2026": 19497,
+  "count_match_v1_38_4": true,
+  "rebuild_status": "EV_DEGRADATION_SELECTED_TRADES_REBUILT",
+  "period_comparison_status": "EV_DEGRADATION_2026_CONFIRMED",
+  "ev_realization_gap_status": "EV_PROXY_OVERESTIMATES_2026",
+  "payoff_degradation_status": "PAYOFF_ASYMMETRY_DEGRADED_2026",
+  "calibration_degradation_status": "CALIBRATION_STABLE_BUT_PAYOFF_DEGRADED",
+  "cost_drag_status": "EDGE_NEGATIVE_BEFORE_COSTS",
+  "probability_distribution_shift_status": "PROBABILITY_DISTRIBUTION_SHIFT_DETECTED",
+  "ev_distribution_shift_status": "EV_DISTRIBUTION_SHIFT_DETECTED",
+  "feature_distribution_shift_status": "FEATURE_DISTRIBUTION_SHIFT_DETECTED",
+  "regime_degradation_status": "REGIME_EXPLAINS_DEGRADATION",
+  "trade_concentration_status": "LOSSES_CONCENTRATED_IN_OUTLIERS",
+  "loss_decomposition_status": "LOSS_DECOMPOSITION_COMPLETED",
+  "primary_degradation_driver": "EV_PROXY_OVERESTIMATES_2026",
+  "secondary_degradation_drivers": [
+    "PAYOFF_ASYMMETRY_DEGRADED_2026",
+    "CALIBRATION_STABLE_BUT_PAYOFF_DEGRADED",
+    "EDGE_NEGATIVE_BEFORE_COSTS",
+    "PROBABILITY_DISTRIBUTION_SHIFT_DETECTED",
+    "EV_DISTRIBUTION_SHIFT_DETECTED"
+  ],
+  "final_verdict": "EV_DEGRADATION_MULTI_FACTOR",
+  "recommended_next_step": "research payoff-aware EV model objective",
+  "consistency_check_status": "EV_DEGRADATION_DIAGNOSTIC_REPORTS_CONSISTENT_DIAGNOSTIC_ONLY",
+  "evidence_classification": "DIAGNOSTIC_ONLY",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "release_ready_for_external_review": true,
+  "targeted_tests_status": "PASSED",
+  "selected_period_metrics": {
+    "2024": {
+      "selected_count": 37886,
+      "mean_net_pnl": 0.004240547441754916,
+      "median_net_pnl": 0.004330819565032563,
+      "win_rate": 0.5462176001689278,
+      "avg_win": 0.031151723461663214,
+      "avg_loss": -0.028152418853962993,
+      "payoff_ratio": 1.1065380784244054,
+      "total_pnl_proxy": 160.65738037832676,
+      "gross_mean_pnl": 0.005240547441754918
+    },
+    "2025": {
+      "selected_count": 72144,
+      "mean_net_pnl": -0.0014092277163009982,
+      "median_net_pnl": -0.0009405079808841857,
+      "win_rate": 0.4868596141051231,
+      "avg_win": 0.0218363574507719,
+      "avg_loss": -0.02346427724110566,
+      "payoff_ratio": 0.9306213537452624,
+      "total_pnl_proxy": -101.66732436481921,
+      "gross_mean_pnl": -0.00040922771630099727
+    },
+    "2026_H1": {
+      "selected_count": 19497,
+      "mean_net_pnl": -0.00321872050730674,
+      "median_net_pnl": -0.0018152004442767425,
+      "win_rate": 0.4742780940657537,
+      "avg_win": 0.02459043288510742,
+      "avg_loss": -0.028528882064359277,
+      "payoff_ratio": 0.8619487027088206,
+      "total_pnl_proxy": -62.46570888530191,
+      "gross_mean_pnl": -0.0022187205073067396
+    },
+    "pre_2026": {
+      "selected_count": 110030,
+      "mean_net_pnl": 0.0005361270200264257,
+      "median_net_pnl": 0.00037594456085587955,
+      "win_rate": 0.5072980096337363,
+      "avg_win": 0.025289942033332808,
+      "avg_loss": -0.024951005836402695,
+      "payoff_ratio": 1.0135840694821054,
+      "total_pnl_proxy": 58.99005601350761,
+      "gross_mean_pnl": 0.001536127020026426
+    }
+  },
+  "selected_periods_status": "EV_DEGRADATION_2026_CONFIRMED",
+  "strategy_reviewer_ready": false,
+  "paper_live_ready": false,
+  "preregistration_ready": false,
+  "money_deployment_ready": false,
+  "reviewer_readiness_semantics_status": "EV_NET_REVIEWER_READINESS_SEMANTICS_CLARIFIED",
+  "status_field_policy": "REMOVED",
+  "status_field_present": false,
+  "status_field_matches_consistency_check_status": true,
+  "ambiguous_ready_for_reviewer_removed": true,
+  "period_comparison": {
+    "status": "EV_DEGRADATION_2026_CONFIRMED",
+    "periods": {
+      "2024": {
+        "selected_count": 37886,
+        "mean_net_pnl": 0.004240547441754916,
+        "median_net_pnl": 0.004330819565032563,
+        "win_rate": 0.5462176001689278,
+        "avg_win": 0.031151723461663214,
+        "avg_loss": -0.028152418853962993,
+        "payoff_ratio": 1.1065380784244054,
+        "total_pnl_proxy": 160.65738037832676,
+        "gross_mean_pnl": 0.005240547441754918
+      },
+      "2025": {
+        "selected_count": 72144,
+        "mean_net_pnl": -0.0014092277163009982,
+        "median_net_pnl": -0.0009405079808841857,
+        "win_rate": 0.4868596141051231,
+        "avg_win": 0.0218363574507719,
+        "avg_loss": -0.02346427724110566,
+        "payoff_ratio": 0.9306213537452624,
+        "total_pnl_proxy": -101.66732436481921,
+        "gross_mean_pnl": -0.00040922771630099727
+      },
+      "2026_H1": {
+        "selected_count": 19497,
+        "mean_net_pnl": -0.00321872050730674,
+        "median_net_pnl": -0.0018152004442767425,
+        "win_rate": 0.4742780940657537,
+        "avg_win": 0.02459043288510742,
+        "avg_loss": -0.028528882064359277,
+        "payoff_ratio": 0.8619487027088206,
+        "total_pnl_proxy": -62.46570888530191,
+        "gross_mean_pnl": -0.0022187205073067396
+      },
+      "pre_2026": {
+        "selected_count": 110030,
+        "mean_net_pnl": 0.0005361270200264257,
+        "median_net_pnl": 0.00037594456085587955,
+        "win_rate": 0.5072980096337363,
+        "avg_win": 0.025289942033332808,
+        "avg_loss": -0.024951005836402695,
+        "payoff_ratio": 1.0135840694821054,
+        "total_pnl_proxy": 58.99005601350761,
+        "gross_mean_pnl": 0.001536127020026426
+      }
+    }
+  },
+  "ev_realization_gap": {
+    "mean_predicted_ev_pre_2026": 0.0029013328854558145,
+    "mean_realized_return_pre_2026": 0.0005361270200264257,
+    "ev_realization_gap_pre_2026": -0.0023652058654293887,
+    "mean_predicted_ev_2026": 0.0011658474212062932,
+    "mean_realized_return_2026": -0.00321872050730674,
+    "ev_realization_gap_2026": -0.004384567928513033,
+    "ev_overestimation_2026": 0.004384567928513033,
+    "ev_realization_gap_status": "EV_PROXY_OVERESTIMATES_2026"
+  },
+  "payoff_degradation": {
+    "pre_2026": {
+      "count": 110030,
+      "mean_net": 0.0005361270200264257,
+      "median_net": 0.00037594456085587955,
+      "win_rate": 0.5072980096337363,
+      "avg_win": 0.025289942033332808,
+      "avg_loss": -0.024951005836402695,
+      "payoff_ratio": 1.0135840694821054,
+      "quantile_01": -0.08447211857943215,
+      "quantile_05": -0.0532712090848364,
+      "quantile_10": -0.039554909748251266,
+      "quantile_50": 0.00037594456085587955,
+      "quantile_90": 0.04080916003284185
+    },
+    "2026": {
+      "count": 19497,
+      "mean_net": -0.00321872050730674,
+      "median_net": -0.0018152004442767425,
+      "win_rate": 0.4742780940657537,
+      "avg_win": 0.02459043288510742,
+      "avg_loss": -0.028528882064359277,
+      "payoff_ratio": 0.8619487027088206,
+      "quantile_01": -0.10045015447186778,
+      "quantile_05": -0.06291811291619664,
+      "quantile_10": -0.0483798879930003,
+      "quantile_50": -0.0018152004442767425,
+      "quantile_90": 0.038757642153273486
+    },
+    "payoff_asymmetry_delta": {
+      "avg_win_delta": -0.0006995091482253878,
+      "avg_loss_delta": -0.0035778762279565814,
+      "payoff_ratio_delta": -0.15163536677328482
+    },
+    "payoff_degradation_status": "PAYOFF_ASYMMETRY_DEGRADED_2026"
+  },
+  "calibration_degradation": {
+    "pre_2026": {
+      "brier": 0.24288060067308545,
+      "ece": 0.025911097794097074
+    },
+    "2026": {
+      "brier": 0.2390493434064965,
+      "ece": 0.04364655373370705
+    },
+    "calibration_degradation_status": "CALIBRATION_STABLE_BUT_PAYOFF_DEGRADED"
+  },
+  "cost_drag_diagnostic": {
+    "gross_mean_return_pre_2026": 0.001536127020026426,
+    "gross_mean_return_2026": -0.0022187205073067396,
+    "net_mean_return_pre_2026": 0.0005361270200264257,
+    "net_mean_return_2026": -0.00321872050730674,
+    "cost_proxy_mean": 0.0010000000000000002,
+    "edge_before_costs_pre_2026": 0.001536127020026426,
+    "edge_before_costs_2026": -0.0022187205073067396,
+    "edge_after_costs_pre_2026": 0.0005361270200264257,
+    "edge_after_costs_2026": -0.00321872050730674,
+    "cost_drag_status": "EDGE_NEGATIVE_BEFORE_COSTS"
+  },
+  "probability_distribution_shift": {
+    "pre_2026": {
+      "count": 110076,
+      "mean": 0.4312918001185876,
+      "median": 0.4375676923123394,
+      "q10": 0.39065603170115976,
+      "q50": 0.4375676923123394,
+      "q90": 0.46258371117040886,
+      "share_above_0_5": 0.006004942040045059,
+      "top_decile_mean": 0.0028689101080106427
+    },
+    "2026": {
+      "count": 24360,
+      "mean": 0.41901333201628166,
+      "median": 0.42449391949240756,
+      "q10": 0.38826847099012496,
+      "q50": 0.42449391949240756,
+      "q90": 0.4386688127218266,
+      "share_above_0_5": 0.0,
+      "top_decile_mean": -0.0068234578378657705
+    },
+    "probability_distribution_shift_status": "PROBABILITY_DISTRIBUTION_SHIFT_DETECTED"
+  },
+  "ev_distribution_shift": {
+    "pre_2026": {
+      "count": 110076,
+      "mean": 0.002900118420961957,
+      "median": 0.00304605900411905,
+      "q10": 0.0011324147868854509,
+      "q50": 0.00304605900411905,
+      "q90": 0.004551173225681156,
+      "share_positive_ev": 0.9995821069079545
+    },
+    "2026": {
+      "count": 24360,
+      "mean": 0.0008272786434384118,
+      "median": 0.0010485883736655417,
+      "q10": -0.0005658413523370858,
+      "q50": 0.0010485883736655417,
+      "q90": 0.0018243546960907573,
+      "share_positive_ev": 0.8003694581280788
+    },
+    "ev_distribution_shift_status": "EV_DISTRIBUTION_SHIFT_DETECTED"
+  },
+  "feature_distribution_shift": {
+    "feature_shifts": [
+      {
+        "feature": "derivatives_confidence_score",
+        "pre_2026_mean": 0.19999999999999998,
+        "2026_mean": 0.3028571428571428,
+        "pre_2026_missing_rate": 0.0,
+        "2026_missing_rate": 0.0,
+        "standardized_mean_difference": 3705802288910050.5
+      },
+      {
+        "feature": "funding_rate",
+        "pre_2026_mean": 5.6317225553254123e-05,
+        "2026_mean": 9.43953385127636e-06,
+        "pre_2026_missing_rate": 0.0,
+        "2026_missing_rate": 0.1123152709359606,
+        "standardized_mean_difference": 0.8089254327878902
+      },
+      {
+        "feature": "funding_rate_binance",
+        "pre_2026_mean": 5.6317225553254123e-05,
+        "2026_mean": 1.0670276497695853e-05,
+        "pre_2026_missing_rate": 0.0,
+        "2026_missing_rate": 0.2517241379310345,
+        "standardized_mean_difference": 0.7876876330635622
+      },
+      {
+        "feature": "funding_rate_bybit",
+        "pre_2026_mean": null,
+        "2026_mean": -2.8917331288343534e-06,
+        "pre_2026_missing_rate": 1.0,
+        "2026_missing_rate": 0.6788177339901478,
+        "standardized_mean_difference": null
+      },
+      {
+        "feature": "open_interest",
+        "pre_2026_mean": null,
+        "2026_mean": 51541.206432967025,
+        "pre_2026_missing_rate": 1.0,
+        "2026_missing_rate": 0.7758620689655172,
+        "standardized_mean_difference": null
+      },
+      {
+        "feature": "open_interest_bybit",
+        "pre_2026_mean": null,
+        "2026_mean": 51541.206432967025,
+        "pre_2026_missing_rate": 1.0,
+        "2026_missing_rate": 0.7758620689655172,
+        "standardized_mean_difference": null
+      },
+      {
+        "feature": "taker_imbalance",
+        "pre_2026_mean": null,
+        "2026_mean": 0.011606329233632147,
+        "pre_2026_missing_rate": 1.0,
+        "2026_missing_rate": 0.7980295566502463,
+        "standardized_mean_difference": null
+      },
+      {
+        "feature": "taker_buy_sell_ratio",
+        "pre_2026_mean": null,
+        "2026_mean": 1.0317296340056283,
+        "pre_2026_missing_rate": 1.0,
+        "2026_missing_rate": 0.7980295566502463,
+        "standardized_mean_difference": null
+      },
+      {
+        "feature": "long_short_crowding",
+        "pre_2026_mean": null,
+        "2026_mean": 0.6599545666356005,
+        "pre_2026_missing_rate": 1.0,
+        "2026_missing_rate": 0.8847290640394089,
+        "standardized_mean_difference": null
+      },
+      {
+        "feature": "derivatives_crowding_score",
+        "pre_2026_mean": null,
+        "2026_mean": 0.21998485554520014,
+        "pre_2026_missing_rate": 1.0,
+        "2026_missing_rate": 0.8847290640394089,
+        "standardized_mean_difference": null
+      }
+    ],
+    "feature_distribution_shift_status": "FEATURE_DISTRIBUTION_SHIFT_DETECTED"
+  },
+  "regime_diagnostic": {
+    "regime_available": true,
+    "regime_column": "derivatives_risk_regime",
+    "pre_2026_counts": {
+      "neutral": 103073,
+      "negative_funding_extreme": 5841,
+      "positive_funding_extreme": 1116
+    },
+    "2026_counts": {
+      "neutral": 17883,
+      "negative_funding_extreme": 1002,
+      "leverage_expanding": 342,
+      "leverage_contracting": 225,
+      "positive_funding_extreme": 45
+    },
+    "pre_2026_performance": {
+      "negative_funding_extreme": {
+        "count": 5841,
+        "mean": 0.0003886397024465878,
+        "median": -0.0005333382304012471
+      },
+      "neutral": {
+        "count": 103073,
+        "mean": 0.0003006807157851309,
+        "median": 0.0002362927653979394
+      },
+      "positive_funding_extreme": {
+        "count": 1116,
+        "mean": 0.023053716929566554,
+        "median": 0.019351166381504803
+      }
+    },
+    "2026_performance": {
+      "leverage_contracting": {
+        "count": 225,
+        "mean": 0.021134403130353113,
+        "median": 0.0147386614708368
+      },
+      "leverage_expanding": {
+        "count": 342,
+        "mean": -0.00821164379497219,
+        "median": -0.008128977896171397
+      },
+      "negative_funding_extreme": {
+        "count": 1002,
+        "mean": -0.0107615157908677,
+        "median": -0.0015302489965507418
+      },
+      "neutral": {
+        "count": 17793,
+        "mean": -0.0030146239204565843,
+        "median": -0.0018152004442767425
+      },
+      "positive_funding_extreme": {
+        "count": 45,
+        "mean": 0.0002149961640570247,
+        "median": 0.007106977866841669
+      }
+    },
+    "regime_degradation_status": "REGIME_EXPLAINS_DEGRADATION"
+  },
+  "trade_concentration": {
+    "negative_trade_count": 64372,
+    "negative_months": 12,
+    "monthly_net_sum": {
+      "2024-07": 4.826717812761772,
+      "2024-08": -36.103777893014865,
+      "2024-09": 23.930531737629565,
+      "2024-10": 41.70171220516985,
+      "2024-11": 139.97694929549775,
+      "2024-12": -13.674752779717293,
+      "2025-01": 19.6925707878855,
+      "2025-02": -63.1425161649558,
+      "2025-03": -15.33433481054676,
+      "2025-04": 52.31223048777941,
+      "2025-05": 30.06509696112671,
+      "2025-06": -0.09701413019372954,
+      "2025-07": 16.989529153466826,
+      "2025-08": -25.48713872881805,
+      "2025-09": 21.803886214559764,
+      "2025-10": -37.58228363113583,
+      "2025-11": -97.89162430203578,
+      "2025-12": -2.995726201951442,
+      "2026-01": -48.75243598862545,
+      "2026-02": -46.4331438305016,
+      "2026-03": -1.684921413902185,
+      "2026-04": 34.40479234772732
+    },
+    "top_1_loss_share": 0.0488216223231625,
+    "top_5_loss_share": 0.17566359518145175,
+    "top_10_loss_share": 0.298687108100397,
+    "trade_concentration_status": "LOSSES_CONCENTRATED_IN_OUTLIERS"
+  },
+  "loss_decomposition": {
+    "primary_driver": "EV_PROXY_OVERESTIMATES_2026",
+    "secondary_drivers": [
+      "PAYOFF_ASYMMETRY_DEGRADED_2026",
+      "CALIBRATION_STABLE_BUT_PAYOFF_DEGRADED",
+      "EDGE_NEGATIVE_BEFORE_COSTS",
+      "PROBABILITY_DISTRIBUTION_SHIFT_DETECTED",
+      "EV_DISTRIBUTION_SHIFT_DETECTED"
+    ],
+    "loss_decomposition_status": "LOSS_DECOMPOSITION_COMPLETED"
+  },
+  "input_guard": {
+    "version": "V1.39",
+    "diagnostic_base": "V1.38.4",
+    "canonical_base_version": "V1.37.2",
+    "research_base_version": "V1.38.4",
+    "input_paths_status": "REAL_DATA_ONLY",
+    "mock_data_detected": false,
+    "raw_prediction_rows": 171648,
+    "selection_dataset_rows": 171648,
+    "outcome_dataset_rows": 171648,
+    "opportunity_index_rows": 171648,
+    "ev_net_final_verdict": "EV_NET_CANONICAL_RESEARCH_RECENT_WINDOW_NEGATIVE",
+    "input_guard_status": "EV_DEGRADATION_INPUT_GUARD_PASSED",
+    "issues": []
+  },
+  "ev_net_v1_38_4_summary": {
+    "version": "V1.38.4",
+    "canonical_base_version": "V1.37.2",
+    "input_guard_status": "EV_NET_CANONICAL_INPUT_GUARD_PASSED",
+    "selection_outcome_split_status": "PREDICTION_FRAME_INTEGRITY_PASSED",
+    "selection_dataset_rows": 171648,
+    "outcome_dataset_rows": 171648,
+    "opportunity_index_rows": 171648,
+    "raw_prediction_rows": 171648,
+    "raw_prediction_rows_2026": 24360,
+    "ev_feature_rebuild_status": "EV_NET_FEATURE_REBUILD_COMPLETE",
+    "filter_grid_status": "EV_NET_CANONICAL_FILTER_GRID_DEFINED",
+    "evaluation_status": "EV_NET_CANONICAL_FILTER_EVALUATION_COMPLETED",
+    "random_baseline_status": "EV_NET_CANONICAL_RANDOM_BASELINES_COMPLETED",
+    "temporal_robustness_status": "EV_NET_CANONICAL_TEMPORAL_ROBUSTNESS_COMPLETED",
+    "regime_robustness_status": "REGIME_ANALYSIS_COMPLETED",
+    "overfit_guard_status": "EV_NET_CANONICAL_OVERFIT_GUARD_COMPLETED_EXPLORATORY_ONLY",
+    "best_filter_observed": "filter_ev_gt_0",
+    "best_filter_selection_status": "BEST_FILTER_EVALUATED",
+    "best_filter_selected_count": 129527,
+    "best_filter_selected_count_2026": 19497,
+    "best_filter_mean_net_pnl": -2.6852081489793344e-05,
+    "best_filter_2026_mean_net_pnl": -0.00321872050730674,
+    "beats_global_random_p95": false,
+    "beats_monthly_random_p95": true,
+    "active_windows_count": 4,
+    "recent_window_status": "RECENT_WINDOW_NEGATIVE",
+    "selected_count_total": 253106,
+    "filters_tested_count": 5,
+    "eligible_filters_count": 4,
+    "excluded_filters_count": 1,
+    "causal_filter_count": 4,
+    "non_causal_filter_count": 1,
+    "default_payoff_used": false,
+    "fallback_probability_used": false,
+    "artificial_probability_threshold_used": false,
+    "evidence_classification": "EXPLORATORY_ONLY",
+    "no_strategy_validated": true,
+    "no_preregistration_yet": true,
+    "no_paper_live": true,
+    "no_money_deployment": true,
+    "no_real_trading": true,
+    "holdout_executed": false,
+    "codex_cli_called": false,
+    "selection_frame_forbidden_columns": [],
+    "selection_frame_status": "POINT_IN_TIME_AUDIT_HAS_UNKNOWN_COLUMNS",
+    "outcome_frame_status": "OUTCOME_FRAME_AVAILABLE",
+    "rows_blocked_by_warmup_count": 37212,
+    "final_verdict": "EV_NET_CANONICAL_RESEARCH_RECENT_WINDOW_NEGATIVE",
+    "recommended_next_step": "diagnose canonical EV-net 2026 degradation before preregistration",
+    "release_ready_for_external_review": true,
+    "project_state_structured": true,
+    "previous_v1_38_release_ready_inconsistency_fixed": true,
+    "baseline_reporting_status": "EV_NET_BASELINE_REPORTING_CLARIFIED",
+    "strategy_reviewer_ready": false,
+    "strategy_reviewer_ready_reason": "recent 2026 window negative and no strategy validated",
+    "paper_live_ready": false,
+    "preregistration_ready": false,
+    "money_deployment_ready": false,
+    "reviewer_readiness_semantics_status": "EV_NET_REVIEWER_READINESS_SEMANTICS_CLARIFIED",
+    "ambiguous_ready_for_reviewer_removed": true,
+    "consistency_check_status": "EV_NET_CANONICAL_RESEARCH_REPORTS_CONSISTENT_EXPLORATORY_ONLY",
+    "status_field_policy": "REMOVED",
+    "status_field_present": false,
+    "status_field_matches_consistency_check_status": true,
+    "recommendation_artifact_json_path": "reports/research/v1_38_4_recommendation.json",
+    "recommendation_artifact_md_path": "reports/research/v1_38_4_recommendation.md",
+    "baseline_interpretation_payload": {
+      "best_filter_observed": "filter_ev_gt_0",
+      "best_filter_mean_net_pnl": -2.6852081489793344e-05,
+      "best_filter_2026_mean_net_pnl": -0.00321872050730674,
+      "beats_global_random_p95": false,
+      "beats_monthly_random_p95": true,
+      "baseline_interpretation": "Le filtre principal reste exploratoire: il bat la baseline monthly-count preserving mais pas la baseline globale, et il reste negatif sur le recent 2026 window. Le meilleur filtre global est inactif en 2026, donc il ne peut pas servir de candidat robuste sans diagnostic additionnel.",
+      "chosen_due_to_recent_activity": true,
+      "not_chosen_by_global_pnl_only": true,
+      "top_global_pnl_filter": "filter_ev_top_quantile_causal",
+      "top_global_pnl_filter_mean_net_pnl": 0.006775835866973116,
+      "top_global_pnl_filter_recent_2026_selected_count": 0,
+      "top_global_pnl_filter_recent_status": "RECENT_WINDOW_NO_SIGNALS",
+      "baseline_reporting_status": "EV_NET_BASELINE_REPORTING_CLARIFIED"
+    },
+    "top_global_pnl_filter": "filter_ev_top_quantile_causal",
+    "top_global_pnl_filter_mean_net_pnl": 0.006775835866973116,
+    "top_global_pnl_filter_recent_2026_selected_count": 0,
+    "top_global_pnl_filter_recent_status": "RECENT_WINDOW_NO_SIGNALS",
+    "causal_safety_status": "EV_FILTER_CAUSAL_SAFETY_PASSED_WITH_EXCLUSIONS",
+    "causal_safety_issues": [
+      "Non-causal filter detected: filter_ev_top_quantile_non_causal"
+    ],
+    "causal_safety_passed_filters": [
+      "filter_ev_gt_0",
+      "filter_ev_gt_cost_buffer",
+      "filter_prob_65_ev_pos",
+      "filter_ev_top_quantile_causal"
+    ],
+    "causal_safety_excluded_filters": [
+      "filter_ev_top_quantile_non_causal"
+    ],
+    "ev_proxy_status": "EV_NET_FEATURE_REBUILD_COMPLETE",
+    "cost_proxy_status": "COST_PROXY_REBUILT_EXPLICITLY",
+    "best_filter_net_mean_pnl": -2.6852081489793344e-05
+  },
+  "ev_net_v1_38_4_evaluation": {
+    "status": "EV_NET_CANONICAL_FILTER_EVALUATION_COMPLETED",
+    "results": [
+      {
+        "filter_name": "filter_ev_gt_0",
+        "selected_count": 129527,
+        "net_mean_pnl": -2.6852081489793344e-05,
+        "net_median_pnl": 0.0001380095178978866,
+        "win_rate": 0.4126784377002478,
+        "profit_factor": 1.079817072527059,
+        "avg_ev_proxy": 0.0026400996283243057,
+        "status": "EVALUATED"
+      },
+      {
+        "filter_name": "filter_ev_gt_cost_buffer",
+        "selected_count": 112805,
+        "net_mean_pnl": 0.00021918980864594277,
+        "net_median_pnl": 0.0002854408744806811,
+        "win_rate": 0.41831479101103675,
+        "profit_factor": 1.1016154576486978,
+        "avg_ev_proxy": 0.0029515977041316994,
+        "status": "EVALUATED"
+      },
+      {
+        "filter_name": "filter_prob_65_ev_pos",
+        "selected_count": 0,
+        "status": "NO_SIGNALS_SELECTED"
+      },
+      {
+        "filter_name": "filter_ev_top_quantile_causal",
+        "selected_count": 10774,
+        "net_mean_pnl": 0.006775835866973116,
+        "net_median_pnl": 0.005371351717379348,
+        "win_rate": 0.5118804529422685,
+        "profit_factor": 1.7935067206044006,
+        "avg_ev_proxy": 0.0050490589242797234,
+        "status": "EVALUATED"
+      }
+    ],
+    "selected_count_total": 253106,
+    "selected_count_total_2026": 19497
+  },
+  "ev_net_v1_38_4_feature_rebuild": {
+    "rebuild_rows": 171648,
+    "rebuild_rows_2026": 24360,
+    "calibrated_probability_rebuilt": {
+      "rows_with_values": 134436,
+      "rows_without_values": 37212,
+      "calibration_splits": 4,
+      "calibration_rows_written": 134436
+    },
+    "payoff_estimates_rebuilt": {
+      "avg_win_past_rows": 171548,
+      "avg_loss_past_rows": 171392,
+      "payoff_ready_rows": 171392
+    },
+    "cost_proxy_rebuilt": {
+      "fixed_cost_bps": 10.0,
+      "fixed_cost_pct": 0.001
+    },
+    "ev_calibrated_proxy_rebuilt": {
+      "rows_with_values": 134436,
+      "rows_without_values": 37212
+    },
+    "warmup_blocked_rows": 37212,
+    "ev_ready_rows": 134436,
+    "ev_ready_rows_2026": 24360,
+    "default_payoff_used": false,
+    "fallback_probability_used": false,
+    "artificial_probability_threshold_used": false,
+    "selection_frame_forbidden_columns": [],
+    "selection_frame_status": "POINT_IN_TIME_AUDIT_HAS_UNKNOWN_COLUMNS",
+    "outcome_frame_status": "OUTCOME_FRAME_AVAILABLE",
+    "selection_outcome_split_status": "PREDICTION_FRAME_INTEGRITY_PASSED",
+    "ev_feature_rebuild_status": "EV_NET_FEATURE_REBUILD_COMPLETE",
+    "selection_dataset_rows": 171648,
+    "outcome_dataset_rows": 171648
+  },
+  "period_comparison_summary": {
+    "2024": {
+      "selected_count": 37886,
+      "mean_net_pnl": 0.004240547441754916,
+      "median_net_pnl": 0.004330819565032563,
+      "win_rate": 0.5462176001689278,
+      "avg_win": 0.031151723461663214,
+      "avg_loss": -0.028152418853962993,
+      "payoff_ratio": 1.1065380784244054,
+      "total_pnl_proxy": 160.65738037832676,
+      "gross_mean_pnl": 0.005240547441754918
+    },
+    "2025": {
+      "selected_count": 72144,
+      "mean_net_pnl": -0.0014092277163009982,
+      "median_net_pnl": -0.0009405079808841857,
+      "win_rate": 0.4868596141051231,
+      "avg_win": 0.0218363574507719,
+      "avg_loss": -0.02346427724110566,
+      "payoff_ratio": 0.9306213537452624,
+      "total_pnl_proxy": -101.66732436481921,
+      "gross_mean_pnl": -0.00040922771630099727
+    },
+    "2026_H1": {
+      "selected_count": 19497,
+      "mean_net_pnl": -0.00321872050730674,
+      "median_net_pnl": -0.0018152004442767425,
+      "win_rate": 0.4742780940657537,
+      "avg_win": 0.02459043288510742,
+      "avg_loss": -0.028528882064359277,
+      "payoff_ratio": 0.8619487027088206,
+      "total_pnl_proxy": -62.46570888530191,
+      "gross_mean_pnl": -0.0022187205073067396
+    },
+    "pre_2026": {
+      "selected_count": 110030,
+      "mean_net_pnl": 0.0005361270200264257,
+      "median_net_pnl": 0.00037594456085587955,
+      "win_rate": 0.5072980096337363,
+      "avg_win": 0.025289942033332808,
+      "avg_loss": -0.024951005836402695,
+      "payoff_ratio": 1.0135840694821054,
+      "total_pnl_proxy": 58.99005601350761,
+      "gross_mean_pnl": 0.001536127020026426
+    }
+  }
+}

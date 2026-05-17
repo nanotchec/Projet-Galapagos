@@ -1,0 +1,10 @@
+{
+  "version": "V1.81.11",
+  "pytest_executed": true,
+  "pytest_exit_code": 0,
+  "pytest_failed_count": 0,
+  "pytest_passed_count": 127,
+  "pytest_test_count_observed": 127,
+  "reported_test_count_matches_pytest": true,
+  "pytest_counts_aligned_across_state_files": true
+}

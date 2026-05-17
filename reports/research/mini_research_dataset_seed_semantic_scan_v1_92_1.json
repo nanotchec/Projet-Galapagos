@@ -1,0 +1,10 @@
+{
+  "physical_seed_semantic_scan_executed": true,
+  "forbidden_seed_terms_detected": false,
+  "forbidden_seed_terms_count": 0,
+  "forbidden_seed_term_occurrences": [],
+  "target_like_fields_detected": false,
+  "future_information_fields_detected": false,
+  "label_like_fields_detected": false,
+  "prediction_like_fields_detected": false
+}

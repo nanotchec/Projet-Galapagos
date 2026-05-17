@@ -1,0 +1,17 @@
+{
+  "version": "V1.11",
+  "profile": "4h",
+  "timeframe": "4h",
+  "dry_run": true,
+  "download_started": false,
+  "local_path": null,
+  "available": false,
+  "bars": 0,
+  "start_timestamp": null,
+  "end_timestamp": null,
+  "missing": [
+    "BTC 4h 3-5 ans recommandé pour recherche robuste.",
+    "Historique local court pour evaluation multi-fenetres."
+  ],
+  "note": "Readiness locale; telechargements longs seulement via flags controles."
+}

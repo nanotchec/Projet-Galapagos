@@ -1,0 +1,27 @@
+# Optional Field Policy
+
+## Results
+```json
+{
+  "adapters": {
+    "binance": {
+      "remaining_mandatory_for_offline_review": [],
+      "downgraded_to_optional_fields": [],
+      "policy_applied": true
+    },
+    "bybit": {
+      "remaining_mandatory_for_offline_review": [],
+      "downgraded_to_optional_fields": [
+        {
+          "field": "number_of_trades",
+          "reason": "Bybit V5 Kline API limitation, turnover available as proxy for activity level."
+        }
+      ],
+      "policy_applied": true
+    }
+  },
+  "version": "V1.57",
+  "previous_base": "V1.56.1"
+}
+```
+

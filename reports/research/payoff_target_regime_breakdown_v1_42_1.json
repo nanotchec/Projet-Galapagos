@@ -1,0 +1,83 @@
+{
+  "status": "PAYOFF_TARGET_REGIME_BREAKDOWN_COMPLETE",
+  "regime_stats": {
+    "risk_on": {
+      "net_return_regression": {
+        "mean": 0.0009035674257569208,
+        "count": 119028
+      },
+      "downside_weighted_return": {
+        "mean": -0.010716536017497773,
+        "count": 119028
+      },
+      "severe_loss_classifier": {
+        "mean": 0.34015525758645027,
+        "count": 119028
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.49682427664079043,
+        "count": 119028
+      },
+      "payoff_ratio_target": {
+        "mean": 0.0002523126412896214,
+        "count": 119028
+      },
+      "ev_gap_target": {
+        "mean": -0.0010955833322238697,
+        "count": 119028
+      }
+    },
+    "neutral": {
+      "net_return_regression": {
+        "mean": -0.0021334479696353665,
+        "count": 33324
+      },
+      "downside_weighted_return": {
+        "mean": -0.01814301232415644,
+        "count": 33324
+      },
+      "severe_loss_classifier": {
+        "mean": 0.4094346416996759,
+        "count": 33324
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.469571480014404,
+        "count": 33324
+      },
+      "payoff_ratio_target": {
+        "mean": -0.05626667860867489,
+        "count": 33324
+      },
+      "ev_gap_target": {
+        "mean": -0.003944974085457775,
+        "count": 33324
+      }
+    },
+    "risk_off": {
+      "net_return_regression": {
+        "mean": 0.003630606747634344,
+        "count": 19296
+      },
+      "downside_weighted_return": {
+        "mean": -0.009664506478936324,
+        "count": 19296
+      },
+      "severe_loss_classifier": {
+        "mean": 0.30783582089552236,
+        "count": 19296
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.595771144278607,
+        "count": 19296
+      },
+      "payoff_ratio_target": {
+        "mean": 0.16974462078974198,
+        "count": 19296
+      },
+      "ev_gap_target": {
+        "mean": 0.0014945040209350519,
+        "count": 19296
+      }
+    }
+  }
+}

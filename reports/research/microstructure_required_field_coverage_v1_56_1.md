@@ -1,0 +1,46 @@
+# Microstructure Required Field Coverage
+
+## Results
+```json
+{
+  "status": "PARTIAL",
+  "adapters": {
+    "binance": {
+      "covered_fields": [
+        "close",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "missing_required_fields": [
+        "number_of_trades",
+        "quote_asset_volume",
+        "taker_buy_base_asset_volume",
+        "taker_buy_quote_asset_volume"
+      ],
+      "coverage_ratio": 0.5555555555555556
+    },
+    "bybit": {
+      "covered_fields": [
+        "close",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "missing_required_fields": [
+        "number_of_trades",
+        "quote_asset_volume",
+        "taker_buy_base_asset_volume",
+        "taker_buy_quote_asset_volume"
+      ],
+      "coverage_ratio": 0.5555555555555556
+    }
+  },
+  "all_adapters_covered": false,
+  "version": "V1.56.1",
+  "previous_base": "V1.55.3"
+}
+```
+

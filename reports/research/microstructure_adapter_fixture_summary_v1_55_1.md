@@ -1,0 +1,90 @@
+# Microstructure Adapter Fixture Summary V1 55 1
+
+```json
+{
+  "version": "V1.55.1",
+  "previous_base": "V1.55",
+  "microstructure_collector_network_disabled_base_version": "V1.54",
+  "microstructure_backfill_dryrun_base_version": "V1.53.2",
+  "microstructure_data_enrichment_base_version": "V1.52",
+  "canonical_base_version": "V1.37.2",
+  "input_guard_status": "PASSED",
+  "fixture_inventory_status": "PASSED",
+  "fixture_loader_audit_status": "PASSED",
+  "adapter_field_mapping_status": "PASSED",
+  "timestamp_normalization_status": "PASSED",
+  "normalized_record_schema_status": "PASSED",
+  "fixture_manifest_validation_status": "PASSED",
+  "network_disabled_fixture_tests_status": "PASSED",
+  "adapter_refinement_audit_status": "PASSED",
+  "fixture_validation_audit_status": "PASSED",
+  "adapter_fixture_test_results_status": "PASSED",
+  "recommendation_status": "PASSED",
+  "network_disabled": true,
+  "dry_run_only": true,
+  "local_fixture_only": true,
+  "fixture_only": true,
+  "synthetic_or_minimal_sample": true,
+  "not_for_research_results": true,
+  "real_collection_executed": false,
+  "external_data_downloaded": false,
+  "external_api_called": false,
+  "new_data_files_created": false,
+  "no_data_directory_writes": true,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "requests_executed_count": 0,
+  "fixture_records_loaded_count": 4,
+  "normalized_records_built_count": 4,
+  "adapters_refined": [
+    "binance",
+    "bybit"
+  ],
+  "mapped_fields_by_adapter": {
+    "binance": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "quote_volume",
+      "trade_count",
+      "taker_buy_base_volume",
+      "taker_buy_quote_volume"
+    ],
+    "bybit": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "quote_volume"
+    ]
+  },
+  "missing_fields_by_adapter": {
+    "binance": [],
+    "bybit": [
+      "trade_count",
+      "taker_buy_base_volume",
+      "taker_buy_quote_volume"
+    ]
+  },
+  "timestamp_causality_passed": true,
+  "manifest_validation_passed": true,
+  "network_block_tests_passed": true,
+  "fixture_path_guard_passed": true,
+  "data_path_rejected": true,
+  "final_verdict": "MICROSTRUCTURE_ADAPTER_FIXTURE_TESTS_READY",
+  "recommended_next_step": "implement collector contract approval checks before any real collection",
+  "evidence_classification": "INFRASTRUCTURE_ONLY",
+  "no_new_filter": true,
+  "no_strategy_validated": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false
+}
+```

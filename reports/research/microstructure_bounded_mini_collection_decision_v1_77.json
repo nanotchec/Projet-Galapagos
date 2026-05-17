@@ -1,0 +1,6 @@
+{
+  "final_verdict": "MICROSTRUCTURE_BOUNDED_REPORTS_ONLY_MINI_COLLECTION_PASSED",
+  "recommended_next_step": "review bounded mini-collection before any data-write or dataset proposal",
+  "next_allowed_phase": "bounded_mini_collection_review_before_any_data_write_proposal",
+  "bounded_mini_collection_executed": true
+}

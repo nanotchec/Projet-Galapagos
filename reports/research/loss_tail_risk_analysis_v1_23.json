@@ -1,0 +1,7 @@
+{
+  "total_net_loss_pct": -42.64304748187974,
+  "top_1pct_loss_contribution": 0.0895899572433743,
+  "top_5pct_loss_contribution": 0.29991581042996046,
+  "worst_trade_pnl_pct": -0.15704738165673182,
+  "verdict": "LOSSES_DIFFUSE"
+}

@@ -1,0 +1,12 @@
+# Microstructure Loss Slice Relevance
+
+```json
+{
+  "version": "V1.48",
+  "loss_slice_relevance": {
+    "amihud_illiquidity_regime": 0.75,
+    "realized_vol_proxy_regime": 0.75
+  },
+  "loss_relevance_status": "MICROSTRUCTURE_LOSS_SLICE_RELEVANCE_COMPLETED"
+}
+```

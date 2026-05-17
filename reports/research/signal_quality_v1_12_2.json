@@ -1,0 +1,363 @@
+{
+  "version": "V1.12.2",
+  "dry_run": false,
+  "profile": "4h",
+  "dataset_path": "data/gold/research_dataset/BTC/4h/research_dataset.parquet",
+  "long_history": true,
+  "windows": [
+    "calibration",
+    "validation_1",
+    "validation_2"
+  ],
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "include_cached_decisions": false,
+  "signal_counts": {
+    "calibration": 767,
+    "validation_1": 764,
+    "validation_2": 770
+  },
+  "signal_quality": {
+    "calibration": {
+      "groups": {
+        "state_aware_breakout": {
+          "count": 63,
+          "mean_forward_return_1bar": -0.0036688166593621574,
+          "mean_forward_return_3bar": -0.005385811095857777,
+          "mean_forward_return_6bar": -0.00579581258097271,
+          "mean_forward_return_12bar": -0.011355288684730467,
+          "median_forward_return_6bar": -0.0033292137024051316,
+          "hit_rate_up_after_cost": 0.42857142857142855,
+          "mean_mfe": 0.0267259775626731,
+          "mean_mae": 0.03829725373070776,
+          "mfe_mae_ratio": 0.6978562418757327,
+          "information_coefficient_simple": null,
+          "t_stat_approx": -1.1085674347161336,
+          "cost_adjusted_expected_return": -0.008795812580972711,
+          "percentage_beating_random_baseline": 0.0
+        },
+        "state_aware_momentum": {
+          "count": 704,
+          "mean_forward_return_1bar": -1.734865808056705e-06,
+          "mean_forward_return_3bar": -0.00018824602480535803,
+          "mean_forward_return_6bar": -0.0007941194342625677,
+          "mean_forward_return_12bar": -0.0012513694591868238,
+          "median_forward_return_6bar": -0.00112283230278043,
+          "hit_rate_up_after_cost": 0.42165242165242167,
+          "mean_mfe": 0.02320867758909393,
+          "mean_mae": 0.02359337899701227,
+          "mfe_mae_ratio": 0.9836945183660613,
+          "information_coefficient_simple": null,
+          "t_stat_approx": -0.6672539286953794,
+          "cost_adjusted_expected_return": -0.0037941194342625676,
+          "percentage_beating_random_baseline": 1.0
+        }
+      },
+      "warnings": [],
+      "verdicts": [
+        "NO_EDGE_DETECTED"
+      ]
+    },
+    "validation_1": {
+      "groups": {
+        "state_aware_breakout": {
+          "count": 47,
+          "mean_forward_return_1bar": 0.004273848295731262,
+          "mean_forward_return_3bar": 0.007795057756002375,
+          "mean_forward_return_6bar": 0.011632039962464985,
+          "mean_forward_return_12bar": 0.017331186521412058,
+          "median_forward_return_6bar": 0.014032142558197958,
+          "hit_rate_up_after_cost": 0.5531914893617021,
+          "mean_mfe": 0.03244968995865362,
+          "mean_mae": 0.019515772807751058,
+          "mfe_mae_ratio": 1.662741736046733,
+          "information_coefficient_simple": null,
+          "t_stat_approx": 2.4911988223141477,
+          "cost_adjusted_expected_return": 0.008632039962464984,
+          "percentage_beating_random_baseline": 1.0
+        },
+        "state_aware_momentum": {
+          "count": 717,
+          "mean_forward_return_1bar": 0.0002891161141019914,
+          "mean_forward_return_3bar": 0.0010215642780695099,
+          "mean_forward_return_6bar": 0.0024182440370355855,
+          "mean_forward_return_12bar": 0.005255694328182558,
+          "median_forward_return_6bar": 0.00034624495630808383,
+          "hit_rate_up_after_cost": 0.4,
+          "mean_mfe": 0.01845656229974975,
+          "mean_mae": 0.016199150138346316,
+          "mfe_mae_ratio": 1.139353740296519,
+          "information_coefficient_simple": null,
+          "t_stat_approx": 2.826606839812925,
+          "cost_adjusted_expected_return": -0.0005817559629644146,
+          "percentage_beating_random_baseline": 0.0
+        }
+      },
+      "warnings": [],
+      "verdicts": [
+        "READY_FOR_LONG_HISTORY_RESEARCH"
+      ]
+    },
+    "validation_2": {
+      "groups": {
+        "state_aware_breakout": {
+          "count": 77,
+          "mean_forward_return_1bar": 0.0017611696190601058,
+          "mean_forward_return_3bar": 0.002525239478137637,
+          "mean_forward_return_6bar": 0.0003945907231819442,
+          "mean_forward_return_12bar": 0.005048702446201175,
+          "median_forward_return_6bar": 0.0018736258483891266,
+          "hit_rate_up_after_cost": 0.4675324675324675,
+          "mean_mfe": 0.022346476741915578,
+          "mean_mae": 0.026407334683641596,
+          "mfe_mae_ratio": 0.8462223472995336,
+          "information_coefficient_simple": null,
+          "t_stat_approx": 0.1211463449997515,
+          "cost_adjusted_expected_return": -0.002605409276818056,
+          "percentage_beating_random_baseline": 0.0
+        },
+        "state_aware_momentum": {
+          "count": 693,
+          "mean_forward_return_1bar": 0.00026225789205014795,
+          "mean_forward_return_3bar": 6.611124230290466e-05,
+          "mean_forward_return_6bar": 0.0008078864835845311,
+          "mean_forward_return_12bar": 0.001225532052309425,
+          "median_forward_return_6bar": 0.0009619092791000039,
+          "hit_rate_up_after_cost": 0.44573082489146165,
+          "mean_mfe": 0.02038312835355382,
+          "mean_mae": 0.020610508169569074,
+          "mfe_mae_ratio": 0.98896777245158,
+          "information_coefficient_simple": null,
+          "t_stat_approx": 0.8225312952333083,
+          "cost_adjusted_expected_return": -0.002192113516415469,
+          "percentage_beating_random_baseline": 1.0
+        }
+      },
+      "warnings": [],
+      "verdicts": [
+        "NO_EDGE_DETECTED"
+      ]
+    }
+  },
+  "benchmarks": {
+    "calibration": {
+      "cash": {
+        "name": "cash",
+        "return": 0.0,
+        "max_drawdown": 0.0,
+        "volatility": 0.0,
+        "exposure_time": 0.0
+      },
+      "buy_and_hold": {
+        "name": "buy_and_hold",
+        "return": -0.512141169953296,
+        "max_drawdown": -0.6721240323018172,
+        "volatility": 0.602211659187805,
+        "sharpe_approx": -0.7994670635793386,
+        "sortino_approx": -1.0391777901400163,
+        "calmar_approx": -0.7619741972316786,
+        "exposure_time": 1.0,
+        "return_per_exposure": -0.512141169953296
+      },
+      "trend_filter": {
+        "name": "trend_filter",
+        "return": 0.06478996900667022,
+        "max_drawdown": -0.3044806400776816,
+        "volatility": 0.31211383940105536,
+        "sharpe_approx": 0.3416106884775939,
+        "sortino_approx": 0.2754742732458107,
+        "calmar_approx": 0.2127884682262244,
+        "exposure_time": 0.34373681990721217,
+        "return_per_exposure": 0.18848713682799398
+      },
+      "volatility_target": {
+        "name": "volatility_target",
+        "return": -0.08721428689197996,
+        "max_drawdown": -0.2672728899488719,
+        "volatility": 0.1756866106439161,
+        "sharpe_approx": -0.39192980163339064,
+        "sortino_approx": -0.5084533577468429,
+        "calmar_approx": -0.326311759148725,
+        "exposure_time": 0.3428363314630556,
+        "return_per_exposure": -0.2543904449093613
+      }
+    },
+    "validation_1": {
+      "cash": {
+        "name": "cash",
+        "return": 0.0,
+        "max_drawdown": 0.0,
+        "volatility": 0.0,
+        "exposure_time": 0.0
+      },
+      "buy_and_hold": {
+        "name": "buy_and_hold",
+        "return": 1.677055168780519,
+        "max_drawdown": -0.21284007301655639,
+        "volatility": 0.427916000492384,
+        "sharpe_approx": 2.339304523809349,
+        "sortino_approx": 3.159746773902485,
+        "calmar_approx": 7.8794145529637385,
+        "exposure_time": 1.0,
+        "return_per_exposure": 1.677055168780519
+      },
+      "trend_filter": {
+        "name": "trend_filter",
+        "return": 1.278378485904403,
+        "max_drawdown": -0.19527497434028318,
+        "volatility": 0.33109814519445335,
+        "sharpe_approx": 2.462867553047649,
+        "sortino_approx": 2.585596362199853,
+        "calmar_approx": 6.546555646586439,
+        "exposure_time": 0.560522986081822,
+        "return_per_exposure": 2.280688781098073
+      },
+      "volatility_target": {
+        "name": "volatility_target",
+        "return": 0.4643696926513581,
+        "max_drawdown": -0.11638077283713222,
+        "volatility": 0.188892709784927,
+        "sharpe_approx": 1.9593682241952324,
+        "sortino_approx": 2.6413621252267068,
+        "calmar_approx": 3.99008943944044,
+        "exposure_time": 0.453430953706281,
+        "return_per_exposure": 1.0241243762819132
+      }
+    },
+    "validation_2": {
+      "cash": {
+        "name": "cash",
+        "return": 0.0,
+        "max_drawdown": 0.0,
+        "volatility": 0.0,
+        "exposure_time": 0.0
+      },
+      "buy_and_hold": {
+        "name": "buy_and_hold",
+        "return": 0.32689410393087814,
+        "max_drawdown": -0.30086008291564315,
+        "volatility": 0.5342985768824358,
+        "sharpe_approx": 0.7561682326030211,
+        "sortino_approx": 0.999337857445638,
+        "calmar_approx": 1.0865319877696589,
+        "exposure_time": 1.0,
+        "return_per_exposure": 0.32689410393087814
+      },
+      "trend_filter": {
+        "name": "trend_filter",
+        "return": 0.23385834763921665,
+        "max_drawdown": -0.19264807840443343,
+        "volatility": 0.3166884212506713,
+        "sharpe_approx": 0.770718277979249,
+        "sortino_approx": 0.7433990711977696,
+        "calmar_approx": 1.213914769231536,
+        "exposure_time": 0.44580345845634756,
+        "return_per_exposure": 0.5245772395956316
+      },
+      "volatility_target": {
+        "name": "volatility_target",
+        "return": 0.02358094740001193,
+        "max_drawdown": -0.1368864334958818,
+        "volatility": 0.17339975540084812,
+        "sharpe_approx": 0.21081979969276055,
+        "sortino_approx": 0.26932256592136145,
+        "calmar_approx": 0.17226650441383118,
+        "exposure_time": 0.33929337602369,
+        "return_per_exposure": 0.06950017025491671
+      }
+    }
+  },
+  "regimes": {
+    "calibration": {
+      "window": {
+        "regime_label": "high_volatility",
+        "return_pct": -0.5121411699532972,
+        "max_drawdown": -0.6721240323018175,
+        "realized_volatility": 0.012871190494332586
+      },
+      "signal_quality": {
+        "downtrend": {
+          "count": 155,
+          "mean_forward_return_6bar": -0.004371140583754042
+        },
+        "range": {
+          "count": 209,
+          "mean_forward_return_6bar": 0.0012252727911060866
+        },
+        "uptrend": {
+          "count": 180,
+          "mean_forward_return_6bar": -0.0005920633008718516
+        },
+        "low_volatility": {
+          "count": 159,
+          "mean_forward_return_6bar": -0.0027285783652881254
+        },
+        "high_volatility": {
+          "count": 62,
+          "mean_forward_return_6bar": 0.0006330983213684914
+        }
+      }
+    },
+    "validation_1": {
+      "window": {
+        "regime_label": "high_volatility",
+        "return_pct": 1.6770551687805049,
+        "max_drawdown": -0.21284007301655627,
+        "realized_volatility": 0.009145930186463664
+      },
+      "signal_quality": {
+        "low_volatility": {
+          "count": 412,
+          "mean_forward_return_6bar": 0.0021176375235164523
+        },
+        "downtrend": {
+          "count": 91,
+          "mean_forward_return_6bar": 0.003762845483752491
+        },
+        "uptrend": {
+          "count": 187,
+          "mean_forward_return_6bar": 0.0035839695624594087
+        },
+        "range": {
+          "count": 72,
+          "mean_forward_return_6bar": 0.0054258674698074065
+        }
+      }
+    },
+    "validation_2": {
+      "window": {
+        "regime_label": "high_volatility",
+        "return_pct": 0.32689410393087437,
+        "max_drawdown": -0.30086008291564426,
+        "realized_volatility": 0.011419670648393011
+      },
+      "signal_quality": {
+        "uptrend": {
+          "count": 192,
+          "mean_forward_return_6bar": -0.0004733709678059021
+        },
+        "range": {
+          "count": 199,
+          "mean_forward_return_6bar": -0.0009149429044843934
+        },
+        "downtrend": {
+          "count": 136,
+          "mean_forward_return_6bar": 0.004821079476860538
+        },
+        "low_volatility": {
+          "count": 229,
+          "mean_forward_return_6bar": -0.00011885058696824188
+        },
+        "high_volatility": {
+          "count": 12,
+          "mean_forward_return_6bar": 0.019428657101311864
+        }
+      }
+    }
+  },
+  "verdicts": [
+    "NO_EDGE_DETECTED",
+    "READY_FOR_LONG_HISTORY_RESEARCH"
+  ],
+  "scientific_warning": "Ces resultats mesurent la qualite des signaux, pas une profitabilite."
+}

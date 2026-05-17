@@ -1,0 +1,14 @@
+{
+  "version": "V1.81.4",
+  "corrective_for_version": "V1.81.3",
+  "negative_test_coverage_complete": true,
+  "required_negative_invariants_count": 33,
+  "covered_negative_invariants_count": 33,
+  "missing_negative_invariants": [],
+  "duplicate_test_names": [],
+  "missing_test_functions": [],
+  "unmapped_tests": [],
+  "coverage_introspection_enabled": true,
+  "coverage_test_file_scanned": true,
+  "discovered_test_functions_count": 85
+}

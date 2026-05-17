@@ -1,0 +1,10 @@
+{
+  "version": "V1.91.4",
+  "consistency_check_status": "V1_91_4_MINI_RESEARCH_DATASET_READINESS_REPORTS_CONSISTENT",
+  "issues": [],
+  "project_state_aligned": true,
+  "latest_metrics_aligned": true,
+  "physical_audit_aligned": true,
+  "approval_decision_aligned": true,
+  "anti_leakage_plan_complete": true
+}

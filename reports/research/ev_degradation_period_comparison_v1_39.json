@@ -1,0 +1,50 @@
+{
+  "selected_filter": "filter_ev_gt_0",
+  "comparison_status": "EV_DEGRADATION_2026_CONFIRMED",
+  "periods": {
+    "2024": {
+      "selected_count": 37886,
+      "mean_net_pnl": 0.004240547441754916,
+      "median_net_pnl": 0.004330819565032563,
+      "win_rate": 0.5462176001689278,
+      "avg_win": 0.031151723461663214,
+      "avg_loss": -0.028152418853962993,
+      "payoff_ratio": 1.1065380784244054,
+      "total_pnl_proxy": 160.65738037832676,
+      "gross_mean_pnl": 0.005240547441754918
+    },
+    "2025": {
+      "selected_count": 72144,
+      "mean_net_pnl": -0.0014092277163009982,
+      "median_net_pnl": -0.0009405079808841857,
+      "win_rate": 0.4868596141051231,
+      "avg_win": 0.0218363574507719,
+      "avg_loss": -0.02346427724110566,
+      "payoff_ratio": 0.9306213537452624,
+      "total_pnl_proxy": -101.66732436481921,
+      "gross_mean_pnl": -0.00040922771630099727
+    },
+    "2026_H1": {
+      "selected_count": 19497,
+      "mean_net_pnl": -0.00321872050730674,
+      "median_net_pnl": -0.0018152004442767425,
+      "win_rate": 0.4742780940657537,
+      "avg_win": 0.02459043288510742,
+      "avg_loss": -0.028528882064359277,
+      "payoff_ratio": 0.8619487027088206,
+      "total_pnl_proxy": -62.46570888530191,
+      "gross_mean_pnl": -0.0022187205073067396
+    },
+    "pre_2026": {
+      "selected_count": 110030,
+      "mean_net_pnl": 0.0005361270200264257,
+      "median_net_pnl": 0.00037594456085587955,
+      "win_rate": 0.5072980096337363,
+      "avg_win": 0.025289942033332808,
+      "avg_loss": -0.024951005836402695,
+      "payoff_ratio": 1.0135840694821054,
+      "total_pnl_proxy": 58.99005601350761,
+      "gross_mean_pnl": 0.001536127020026426
+    }
+  }
+}

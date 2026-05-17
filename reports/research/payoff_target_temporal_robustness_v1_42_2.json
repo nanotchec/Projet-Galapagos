@@ -1,0 +1,84 @@
+{
+  "status": "PAYOFF_TARGET_TEMPORAL_ROBUSTNESS_COMPLETE",
+  "yearly_stats": {
+    "2024": {
+      "net_return_regression": {
+        "mean": 0.003834112146514036,
+        "std": 0.03780139826690527
+      },
+      "downside_weighted_return": {
+        "mean": -0.008593760018555472,
+        "std": 0.05570765141370039
+      },
+      "severe_loss_classifier": {
+        "mean": 0.34350047908016607,
+        "std": 0.4748798806033583
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.5255509421909933,
+        "std": 0.499350045213691
+      },
+      "payoff_ratio_target": {
+        "mean": 0.06360038750256558,
+        "std": 1.2936732141580745
+      },
+      "ev_gap_target": {
+        "mean": 0.002391887009068109,
+        "std": 0.03781744755474783
+      }
+    },
+    "2025": {
+      "net_return_regression": {
+        "mean": -0.0014092277163009982,
+        "std": 0.030322192150875026
+      },
+      "downside_weighted_return": {
+        "mean": -0.013449695994546332,
+        "std": 0.047392836956763607
+      },
+      "severe_loss_classifier": {
+        "mean": 0.35013306719893544,
+        "std": 0.47701473401248884
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.4868596141051231,
+        "std": 0.49983076456413633
+      },
+      "payoff_ratio_target": {
+        "mean": -0.03518433514390249,
+        "std": 1.3142859032117904
+      },
+      "ev_gap_target": {
+        "mean": -0.004331977627278649,
+        "std": 0.030280295010049123
+      }
+    },
+    "2026": {
+      "net_return_regression": {
+        "mean": -0.0033020064211511627,
+        "std": 0.03585791437050998
+      },
+      "downside_weighted_return": {
+        "mean": -0.018534717566480487,
+        "std": 0.05864775975916764
+      },
+      "severe_loss_classifier": {
+        "mean": 0.3694581280788177,
+        "std": 0.48266798447570963
+      },
+      "positive_payoff_classifier": {
+        "mean": 0.47881773399014776,
+        "std": 0.49956136393235956
+      },
+      "payoff_ratio_target": {
+        "mean": -0.03343586829691585,
+        "std": 1.3003553477684469
+      },
+      "ev_gap_target": {
+        "mean": -0.00412985780408132,
+        "std": 0.03589891205624429
+      }
+    }
+  },
+  "recent_window_status": "PAYOFF_TARGET_RECENT_WINDOW_WEAK"
+}

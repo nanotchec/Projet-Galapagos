@@ -1,0 +1,67 @@
+{
+  "baseline_methods": [
+    "probability_only_baseline",
+    "ev_proxy_v1_38",
+    "random_monthly_count_preserving",
+    "no_selection"
+  ],
+  "best_candidate_by_2026_gap": "asymmetric_loss_weighted_classifier",
+  "best_candidate_by_downside_control": "ev_gap_corrector",
+  "beats_probability_baseline": true,
+  "beats_ev_proxy_baseline": true,
+  "beats_random_baseline": false,
+  "baseline_comparison_status": "PAYOFF_OBJECTIVE_BASELINE_COMPARISON_COMPLETE",
+  "probability_only_baseline": {
+    "candidate_name": "probability_only_baseline",
+    "candidate_type": "baseline",
+    "description": "Baseline score: predicted_probability_calibrated",
+    "uses_ev_proxy": false,
+    "uses_probability": false,
+    "uses_downside_weighting": false,
+    "target_column": "net_return_label",
+    "feature_columns": [
+      "predicted_probability_calibrated"
+    ],
+    "split_count": 3,
+    "mean_spearman_corr": -0.01103930125082292,
+    "mean_realized_return_top_decile": -0.003842342531021207,
+    "mean_downside_loss_rate_top_decile": 0.5169036475935713,
+    "mean_payoff_ratio_top_decile": 0.8628731510676589,
+    "best_2026_metric": -0.00779134183688931,
+    "best_downside_metric": 0.5287356321839081,
+    "recent_2026_selected_count": 2436,
+    "recent_2026_random_p95": -0.003285740379667659,
+    "recent_2026_beats_random_p95": false,
+    "recent_window_status": "RECENT_WINDOW_WEAK",
+    "selected_count_total": 9650
+  },
+  "ev_proxy_v1_38": {
+    "candidate_name": "ev_proxy_v1_38",
+    "candidate_type": "baseline",
+    "description": "Baseline score: ev_calibrated_proxy",
+    "uses_ev_proxy": false,
+    "uses_probability": false,
+    "uses_downside_weighting": false,
+    "target_column": "net_return_label",
+    "feature_columns": [
+      "ev_calibrated_proxy"
+    ],
+    "split_count": 3,
+    "mean_spearman_corr": 0.011146598830471739,
+    "mean_realized_return_top_decile": -0.0004994009049873223,
+    "mean_downside_loss_rate_top_decile": 0.5072449464282106,
+    "mean_payoff_ratio_top_decile": 1.0385006297613188,
+    "best_2026_metric": -0.006285196019940501,
+    "best_downside_metric": 0.5554187192118226,
+    "recent_2026_selected_count": 2436,
+    "recent_2026_random_p95": -0.003285740379667659,
+    "recent_2026_beats_random_p95": false,
+    "recent_window_status": "RECENT_WINDOW_WEAK",
+    "selected_count_total": 9650
+  },
+  "split_integrity_status": "PAYOFF_OBJECTIVE_SPLIT_INTEGRITY_PASSED",
+  "invalid_split_count": 0,
+  "evaluated_split_count": 3,
+  "skipped_split_count": 2,
+  "status_uses_valid_splits_only": true
+}

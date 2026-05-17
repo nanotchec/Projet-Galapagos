@@ -1,0 +1,16 @@
+# Microstructure Tiny Network Input Guard
+
+Version: v1.71
+
+```json
+{
+  "version_check_passed": true,
+  "human_approval_granted": true,
+  "approval_phrase_validated": true,
+  "v1_71_network_preflight_authorized": true,
+  "max_request_count_limit": true,
+  "no_data_directory_writes_limit": true,
+  "no_real_trading_limit": true,
+  "input_guard_passed": true
+}
+```

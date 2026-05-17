@@ -1,0 +1,14 @@
+{
+  "status": "INTRABAR_REPORTS_CONSISTENT_GAP_AWARE",
+  "version": "v1.21.1",
+  "issues": [],
+  "warnings": [
+    "data_has_gaps"
+  ],
+  "metrics": {
+    "evaluated_ratio": 0.6018713450292398,
+    "target_reached": true,
+    "rows": 151852,
+    "has_gaps": true
+  }
+}

@@ -1,0 +1,45 @@
+provider: codex_cli
+provider_name: codex_cli
+model: gpt-5.5
+reasoning_effort: low
+temperature: 0.0
+strict_json: true
+max_tokens: 800
+timeout_seconds: 45
+max_retries: 1
+allow_network_calls: false
+allow_codex_cli_calls: false
+auth_mode: chatgpt_codex
+base_url: null
+api_key_env: null
+endpoint_type: responses
+codex_cli:
+  executable: codex
+  model: gpt-5.5
+  reasoning_effort: low
+  sandbox: read-only
+  skip_git_repo_check: true
+  output_last_message: true
+  timeout_seconds: 45
+  max_prompt_chars: 12000
+  require_json_object: true
+  prompt_modes:
+    - conservative
+    - balanced
+    - setup_review
+  default_prompt_mode: conservative
+fallback_provider: mock
+fallback_provider_for_tests: mock
+fallback_policy: no_trade
+invalid_response_policy: NO_TRADE
+mock_decision: NO_TRADE
+context_validation:
+  enabled: true
+  max_entry_price_deviation_bps: 50
+  unavailable_data_policy: fallback_no_trade
+decision_postprocessing:
+  active_required_critical_data:
+    - price
+    - volatility
+  missing_required_policy: fallback_no_trade
+  add_warnings: true

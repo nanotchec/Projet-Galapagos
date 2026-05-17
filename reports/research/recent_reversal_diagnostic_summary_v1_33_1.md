@@ -1,0 +1,39 @@
+# Summary - V1.33.1
+
+```json
+{
+  "selected_filter": "filter_ev_gt_cost_buffer",
+  "selected_count_total": 74742,
+  "selected_count_2026": 8939,
+  "source_v1_32_4_recent_2026_selected_count": 12691,
+  "source_v1_32_4_recent_2026_pnl": -0.0038218690068997268,
+  "source_count_match": false,
+  "rebuild_comparability_status": "SELECTED_FILTER_REBUILD_COUNT_MISMATCH_EXPLAINED",
+  "recent_2026_pnl": -0.003020376393830889,
+  "period_comparison_status": "PERFORMANCE_DEGRADED",
+  "calibration_reversal_status": "CALIBRATION_STABLE_BUT_PAYOFF_DEGRADED",
+  "ev_proxy_reversal_status": "EV_PROXY_OVERESTIMATES_2026",
+  "payoff_reversal_status": "PAYOFF_ASYMMETRY_DEGRADED_2026",
+  "cost_drag_status": "EDGE_NEGATIVE_BEFORE_COSTS",
+  "score_distribution_shift_status": "SCORE_DISTRIBUTION_STABLE_OUTCOME_DEGRADED",
+  "feature_distribution_shift_status": "FEATURE_DISTRIBUTION_STABLE",
+  "regime_reversal_status": "REGIME_NOT_EXPLANATORY",
+  "trade_concentration_status": "LOSSES_DIFFUSE",
+  "primary_reversal_driver": "EV_PROXY_DEGRADATION",
+  "secondary_reversal_drivers": [
+    "calibration_driver",
+    "payoff_driver",
+    "score_shift_driver"
+  ],
+  "final_verdict": "RECENT_REVERSAL_DIAGNOSTIC_INCONCLUSIVE",
+  "recommended_next_step": "V1.34 first resolve source/rebuild universe mismatch, then payoff-aware research",
+  "evidence_classification": "DIAGNOSTIC_ONLY",
+  "no_new_filter": true,
+  "no_preregistration_yet": true,
+  "no_paper_live": true,
+  "no_money_deployment": true,
+  "ready_for_reviewer": false,
+  "holdout_executed": false,
+  "no_real_trading": true
+}
+```

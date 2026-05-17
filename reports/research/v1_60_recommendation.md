@@ -1,0 +1,41 @@
+# V1.60 Recommendation
+
+Final gate for dry-run phase.
+
+- **Version**: V1.60
+- **Status**: COMPLETED
+
+```json
+{
+  "version": "V1.60",
+  "current_version": "V1.60",
+  "previous_version": "V1.59.1",
+  "previous_base": "V1.59.1",
+  "final_verdict": "MICROSTRUCTURE_PREFLIGHT_DRYRUN_PASSED",
+  "recommended_next_step": "review controlled local preflight dry-run results before any network-enabled phase",
+  "evidence_classification": "INFRASTRUCTURE_ONLY",
+  "consistency_check_status": "MICROSTRUCTURE_PREFLIGHT_DRYRUN_REPORTS_CONSISTENT_INFRASTRUCTURE_ONLY",
+  "controlled_local_preflight_executed": true,
+  "preflight_execution_mode": "LOCAL_FIXTURE_ONLY",
+  "real_preflight_executed": false,
+  "network_enabled": false,
+  "network_disabled": true,
+  "real_collection_approved": false,
+  "real_collection_approval_status": "NOT_APPROVED",
+  "human_review_required_before_collection": true,
+  "dry_run_only": true,
+  "local_fixture_only": true,
+  "fixture_only": true,
+  "synthetic_or_minimal_sample": true,
+  "not_for_research_results": true,
+  "external_api_called": false,
+  "external_data_downloaded": false,
+  "requests_executed_count": 0,
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true,
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "real_orders_possible": false
+}
+```

@@ -1,0 +1,13 @@
+# Causal Availability Audit V1.46.2
+
+```json
+{
+  "version": "V1.46.2",
+  "causal_availability_status": "REGIME_CAUSAL_AVAILABILITY_PASSED",
+  "forbidden_columns_used": [],
+  "model_outputs_used": [],
+  "ev_proxies_used": [],
+  "outcome_columns_used": [],
+  "future_columns_used": []
+}
+```

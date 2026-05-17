@@ -1,0 +1,10 @@
+{
+  "version": "V1.87",
+  "artifact": "extension_manifest",
+  "previous_version": "V1.84",
+  "approval_source": "V1.86",
+  "tiny_extension_only": true,
+  "full_dataset_created": false,
+  "network_executed": false,
+  "ml_trading_allowed": false
+}

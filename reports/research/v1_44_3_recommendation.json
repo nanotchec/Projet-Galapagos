@@ -1,0 +1,7 @@
+{
+  "version": "V1.44.3",
+  "verdict": "REGIME_AWARE_FEATURE_RESEARCH_INCONCLUSIVE",
+  "recommendation": "no valid metrics observed; check data loader and evaluation pipeline",
+  "classification": "RESEARCH_ONLY",
+  "no_preregistration_yet": true
+}

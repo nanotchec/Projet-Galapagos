@@ -1,0 +1,25 @@
+{
+  "version": "V1.98",
+  "training_dataset_policy_created": true,
+  "future_training_dataset_materialization_requires_v1_98_approval": true,
+  "future_training_dataset_allowed_root": "data/research/training_dataset_preview/v1_99/",
+  "future_training_dataset_max_files": 5,
+  "future_training_dataset_max_bytes": 75000,
+  "future_training_dataset_allowed_extensions": [
+    ".json"
+  ],
+  "future_training_dataset_no_network": true,
+  "future_training_dataset_no_ml": true,
+  "future_training_dataset_no_backtest": true,
+  "future_training_dataset_no_trading": true,
+  "purge_policy_defined": true,
+  "embargo_policy_defined": true,
+  "temporal_split_policy_defined": true,
+  "no_random_shuffle_policy_defined": true,
+  "label_availability_policy_defined": true,
+  "policy_notes": [
+    "Tout futur dataset d'entrainement doit rester preview ultra-bornee.",
+    "Les labels ne sont utilisables qu'apres leur horizon et jamais au decision_ts.",
+    "Les splits doivent etre temporels avec purge et embargo theoriques."
+  ]
+}

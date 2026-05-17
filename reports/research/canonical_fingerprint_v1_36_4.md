@@ -1,0 +1,13 @@
+# Canonical Universe Fingerprint - V1.36.4
+
+```json
+{
+  "universe_fingerprint": "8e2c4516d2a6b9e1c362e20682a345507d9d737cf217f2ca57772277c5357bfa",
+  "definition_fingerprint": "5268a76e855e4116450867f1d889a4cb0c4007ad280187e0df87ea18c74f2198",
+  "canonical_key_hash": "92fdbeb93dde015a6acdef22752692b3aeda8ccf642141bae766c8de99ef04f9",
+  "rows_count": 171648,
+  "min_timestamp": "2024-01-01 04:00:00",
+  "max_timestamp": "2026-04-29 20:00:00",
+  "fingerprint_status": "CANONICAL_UNIVERSE_FINGERPRINT_CREATED"
+}
+```

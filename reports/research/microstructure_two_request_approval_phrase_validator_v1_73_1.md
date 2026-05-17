@@ -1,0 +1,14 @@
+# Microstructure Two Request Approval Phrase Validator
+
+Version: v1.73.1
+
+```json
+{
+  "approval_phrase_required": true,
+  "required_approval_phrase": "I explicitly approve a two-request tiny network preflight with reports-only output, no data directory writes, and no trading.",
+  "approval_phrase_input_present": true,
+  "approval_phrase_provided": true,
+  "approval_phrase_validated": true,
+  "human_approval_granted": true
+}
+```

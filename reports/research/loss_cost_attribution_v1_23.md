@@ -1,0 +1,18 @@
+# Cost Attribution
+
+```json
+{
+  "avg_gross_pnl_pct": 0.0013379588973302069,
+  "avg_net_pnl_pct": -0.0016620411026697934,
+  "avg_cost_per_trade_pct": 0.003,
+  "cost_to_gross_ratio": 2.2422213462508207,
+  "sensitivity_scenarios": {
+    "current_cost": -0.0016620411026697934,
+    "half_cost": -0.00016204110266979316,
+    "zero_cost": 0.0013379588973302069,
+    "double_cost": -0.004662041102669793
+  },
+  "breakeven_cost_pct": 0.0013379588973302069,
+  "verdict": "COSTS_PRIMARY_LOSS_DRIVER"
+}
+```

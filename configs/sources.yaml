@@ -1,0 +1,22 @@
+ohlcv:
+  provider: kraken
+  library: ccxt
+  symbol: BTC/USD
+  limit: 250
+derivatives:
+  provider: binance_futures
+  library: ccxt
+  symbol: BTC/USDT:USDT
+  funding: true
+  open_interest: true
+  liquidations: false
+  long_short_ratio: false
+  basis: false
+rate_limit:
+  enabled: true
+  max_retries: 3
+  retry_sleep_seconds: 2
+data_quality:
+  max_ohlcv_gap_multiplier: 2
+  missing_derivatives_policy: unavailable
+

@@ -1,0 +1,53 @@
+{
+  "check_type": "retrospective",
+  "not_out_of_sample": true,
+  "multiple_testing_risk_present": true,
+  "cannot_validate_strategy": true,
+  "checks": {
+    "selected_count": {
+      "passed": false,
+      "evidence": null
+    },
+    "mean_net_pnl_positive": {
+      "passed": true,
+      "evidence": 0.007856600971404403
+    },
+    "median_net_pnl_non_negative": {
+      "passed": true,
+      "evidence": null
+    },
+    "total_net_pnl_positive": {
+      "passed": false,
+      "evidence": null
+    },
+    "profit_factor_ok": {
+      "passed": false,
+      "evidence": null
+    },
+    "beats_monthly_random": {
+      "passed": true,
+      "evidence": 0.0020884839833784567
+    },
+    "concentration_trade_check": {
+      "passed": false,
+      "evidence": 0.6165574626293503
+    },
+    "concentration_month_check": {
+      "passed": true,
+      "evidence": 0.12779734281688007
+    },
+    "recent_window_pnl": {
+      "passed": true,
+      "evidence": 0.0063011115079344366
+    },
+    "cost_0_30_robust": {
+      "passed": true,
+      "evidence": 1.0856600971404402
+    },
+    "leakage_audit": {
+      "passed": true,
+      "evidence": "V1.24.1 Audit Passed"
+    }
+  },
+  "verdict": "RETROSPECTIVE_CHECK_PROMISING_BUT_FAILS_ROBUSTNESS"
+}

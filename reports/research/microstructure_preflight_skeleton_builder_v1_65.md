@@ -1,0 +1,21 @@
+# Report: Microstructure Preflight Skeleton Builder
+
+```json
+{
+  "version": "V1.65",
+  "preflight_skeleton_created": true,
+  "preflight_skeleton_executed": false,
+  "network_enabled": false,
+  "write_enabled": false,
+  "fixture_only": true,
+  "collector_type": "MICROSTRUCTURE_PREFLIGHT_NETWORK_DISABLED",
+  "supported_modes": [
+    "FIXTURE_ONLY",
+    "DRY_RUN"
+  ],
+  "forbidden_modes": [
+    "REAL_COLLECTION",
+    "LIVE_NETWORK"
+  ]
+}
+```

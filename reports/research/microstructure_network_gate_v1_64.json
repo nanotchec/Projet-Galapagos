@@ -1,0 +1,9 @@
+{
+  "version": "V1.64",
+  "network_gate_enabled": true,
+  "network_attempts_blocked": 0,
+  "blocked_endpoints": [],
+  "requests_executed_count": 0,
+  "external_api_called": false,
+  "status": "MICROSTRUCTURE_NETWORK_GATE_ACTIVE"
+}

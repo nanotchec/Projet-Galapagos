@@ -1,0 +1,249 @@
+{
+  "version": "V1.15.2",
+  "verdict": "ML_LEAKAGE_AUDIT_PASSED",
+  "results": [
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_basic",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "ohlcv_macro_derivatives",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_up_after_cost_6bar",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_up_after_cost_12bar",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2023",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2024",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    },
+    {
+      "feature_set": "alpha_scores",
+      "target": "target_tp_before_sl_conservative",
+      "window": "train_2022_2025",
+      "audit": {
+        "status": "ML_LEAKAGE_AUDIT_PASSED",
+        "reason": "all_checks_passed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Causal Signal Dedup Robustness V1 29 3
+
+```json
+{
+  "raw_prediction_rows": 171648,
+  "unique_timestamps": 5087,
+  "rows_per_timestamp_mean": 33.74248083349715,
+  "rows_per_timestamp_max": 36,
+  "duplicate_timestamp_rows": 171648,
+  "columns_checked": [
+    "model_name",
+    "target",
+    "split_name"
+  ],
+  "available_models": [
+    "logistic_regression",
+    "random_forest",
+    "hist_gradient_boosting",
+    "dummy_most_frequent"
+  ],
+  "per_model_counts": {
+    "logistic_regression": 42912,
+    "random_forest": 42912,
+    "hist_gradient_boosting": 42912,
+    "dummy_most_frequent": 42912
+  },
+  "excluded_models": [
+    "dummy_most_frequent"
+  ],
+  "model_filtering_applied": true,
+  "default_policy_order_dependency": true,
+  "dedup_robustness_status": "ORDER_DEPENDENT_WITHOUT_PRIORITY",
+  "status": "DEDUP_AUDIT_COMPLETE"
+}
+```

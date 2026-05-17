@@ -1,0 +1,88 @@
+{
+  "version": "V1.81.14",
+  "zip_path": "<PROJECT_ROOT>/projet-galapagos-v1.81.14-clean.zip",
+  "extracted_to": "<TEMP_DIR>/extracted",
+  "commands": [
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python",
+        "scripts/validate_microstructure_data_contract_approval_intake_corrective_v1_81_14_reports.py",
+        "--version",
+        "v1_81_14"
+      ],
+      "exit_code": 1,
+      "stdout_preview": "ER***redacted***e\n",
+      "stderr_preview": "",
+      "passed": false,
+      "timeout_detected": false,
+      "smoke_runs_full_pytest_suite": false,
+      "smoke_calls_smoke_script": false,
+      "smoke_runs_audit_clean_zip_full_scan": false
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python",
+        "-c",
+        "import sys; sys.path.insert(0, 'src'); import galapagos"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "passed": true,
+      "timeout_detected": false,
+      "smoke_runs_full_pytest_suite": false,
+      "smoke_calls_smoke_script": false,
+      "smoke_runs_audit_clean_zip_full_scan": false
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python",
+        "-c",
+        "from pathlib import Path; assert Path('reports/research/microstructure_data_contract_approval_intake_corrective_summary_v1_81_14.json').exists()"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "passed": true,
+      "timeout_detected": false,
+      "smoke_runs_full_pytest_suite": false,
+      "smoke_calls_smoke_script": false,
+      "smoke_runs_audit_clean_zip_full_scan": false
+    }
+  ],
+  "passed_count": 2,
+  "failed_count": 1,
+  "smoke_test_passed": false,
+  "smoke_timeout_detected": false,
+  "smoke_timeout_seconds_per_command": 30,
+  "smoke_total_timeout_seconds": 90,
+  "smoke_runs_full_v1_81_12_pytest_suite": false,
+  "smoke_calls_smoke_script": false,
+  "smoke_runs_audit_clean_zip_full_scan": false,
+  "failures": [
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python",
+        "scripts/validate_microstructure_data_contract_approval_intake_corrective_v1_81_14_reports.py",
+        "--version",
+        "v1_81_14"
+      ],
+      "exit_code": 1,
+      "stdout_preview": "ER***redacted***e\n",
+      "stderr_preview": "",
+      "passed": false,
+      "timeout_detected": false,
+      "smoke_runs_full_pytest_suite": false,
+      "smoke_calls_smoke_script": false,
+      "smoke_runs_audit_clean_zip_full_scan": false
+    }
+  ],
+  "codex_cli_called": false,
+  "holdout_executed": false,
+  "real_orders_possible": false,
+  "smoke_uses_manual_pythonpath": false,
+  "smoke_commands_count": 3,
+  "smoke_passed_count": 2,
+  "smoke_failed_count": 1,
+  "smoke_commands_not_empty": true
+}

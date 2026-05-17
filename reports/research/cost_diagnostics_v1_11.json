@@ -1,0 +1,31 @@
+{
+  "version": "V1.11",
+  "holdout_executed": false,
+  "codex_cli_called": false,
+  "source": "latest available closed_trades_ledger reports",
+  "analysis": {
+    "trade_count": 62,
+    "gross_pnl": 898.879224007448,
+    "fees": 508.8280525643655,
+    "slippage": 5033.432844999261,
+    "net_pnl": 390.05117144308247,
+    "total_costs": 5542.260897563627,
+    "costs_to_abs_gross_ratio": 6.165745908393255,
+    "average_cost_per_trade": 89.39130479941333,
+    "break_even_move_required": 89.39130479941333,
+    "net_edge_after_cost": 6.29114792650133,
+    "positive_gross_destroyed_count": 0,
+    "costs_gt_abs_gross_count": 52,
+    "costs_dominate": true
+  },
+  "verdict": [
+    "COSTS_DOMINATE",
+    "EDGE_REDUCED_BY_COSTS"
+  ],
+  "questions": {
+    "costs_dominate": true,
+    "edge_needed": 89.39130479941333,
+    "thirty_minute_warning": "Le 30m est presume plus sensible aux couts; non teste live.",
+    "four_hour_viability": "A verifier sur historique long; les couts restent centraux."
+  }
+}

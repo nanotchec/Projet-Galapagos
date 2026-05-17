@@ -1,0 +1,15 @@
+# Report: Microstructure Future Execution Protocol
+
+```json
+{
+  "future_execution_protocol_defined": true,
+  "protocol_rules": [
+    "Network activation only in separate version (V1.70+)",
+    "One request max strictly enforced",
+    "Output redirection to reports/research/ only",
+    "Forbidden writes to data/ and subfolders",
+    "No strategy or trading components linked",
+    "Immediate stop and rollback on any anomaly"
+  ]
+}
+```

@@ -1,0 +1,7 @@
+# Report: Microstructure Preflight Skeleton Recommendation
+
+```json
+{
+  "recommendation": "execute network-disabled preflight skeleton on local fixtures only"
+}
+```

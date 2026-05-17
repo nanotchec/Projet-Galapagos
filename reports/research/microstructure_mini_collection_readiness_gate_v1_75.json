@@ -1,0 +1,9 @@
+{
+  "mini_collection_readiness_gate_created": true,
+  "bounded_mini_collection_approved": false,
+  "future_mini_collection_requires_new_human_approval": true,
+  "max_future_request_count_without_new_approval": 0,
+  "readiness_status": "READY_FOR_APPROVAL_INTAKE",
+  "mini_collection_scope": "BOUNDED_REPORTS_ONLY_NO_DATA_NO_TRADING",
+  "mini_collection_max_requests": 100
+}

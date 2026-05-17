@@ -1,0 +1,12 @@
+{
+  "gross_mean_return_pre_2026": 0.001536127020026426,
+  "gross_mean_return_2026": -0.0022187205073067396,
+  "net_mean_return_pre_2026": 0.0005361270200264257,
+  "net_mean_return_2026": -0.00321872050730674,
+  "cost_proxy_mean": 0.0010000000000000002,
+  "edge_before_costs_pre_2026": 0.001536127020026426,
+  "edge_before_costs_2026": -0.0022187205073067396,
+  "edge_after_costs_pre_2026": 0.0005361270200264257,
+  "edge_after_costs_2026": -0.00321872050730674,
+  "cost_drag_status": "EDGE_NEGATIVE_BEFORE_COSTS"
+}

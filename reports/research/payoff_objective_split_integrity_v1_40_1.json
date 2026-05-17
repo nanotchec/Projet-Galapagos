@@ -1,0 +1,67 @@
+{
+  "split_integrity_status": "PAYOFF_OBJECTIVE_SPLIT_INTEGRITY_PASSED",
+  "invalid_split_count": 0,
+  "invalid_splits": [],
+  "skipped_split_count": 2,
+  "skipped_splits": [
+    {
+      "name": "2024_H1",
+      "train_start": "2024-07-01T00:00:00+00:00",
+      "train_end": "2024-01-01T00:00:00+00:00",
+      "test_start": "2024-01-01T00:00:00+00:00",
+      "test_end": "2024-07-01T00:00:00+00:00",
+      "train_count": 0,
+      "test_count": 0,
+      "skip_reason": "NO_PRIOR_TRAINING_HISTORY",
+      "split_status": "SKIPPED_NO_TRAINING_HISTORY"
+    },
+    {
+      "name": "2024_H2",
+      "train_start": "2024-07-01T00:00:00+00:00",
+      "train_end": "2024-07-01T00:00:00+00:00",
+      "test_start": "2024-07-01T00:00:00+00:00",
+      "test_end": "2025-01-01T00:00:00+00:00",
+      "train_count": 0,
+      "test_count": 37932,
+      "skip_reason": "NO_PRIOR_TRAINING_HISTORY",
+      "split_status": "SKIPPED_NO_TRAINING_HISTORY"
+    }
+  ],
+  "evaluated_split_count": 3,
+  "evaluated_splits": [
+    {
+      "name": "2025_H1",
+      "train_start": "2024-07-01T00:00:00+00:00",
+      "train_end": "2025-01-01T00:00:00+00:00",
+      "test_start": "2025-01-01T00:00:00+00:00",
+      "test_end": "2025-07-01T00:00:00+00:00",
+      "train_count": 37932,
+      "test_count": 36312,
+      "split_status": "EVALUATED"
+    },
+    {
+      "name": "2025_H2",
+      "train_start": "2024-07-01T00:00:00+00:00",
+      "train_end": "2025-07-01T00:00:00+00:00",
+      "test_start": "2025-07-01T00:00:00+00:00",
+      "test_end": "2026-01-01T00:00:00+00:00",
+      "train_count": 74244,
+      "test_count": 35832,
+      "split_status": "EVALUATED"
+    },
+    {
+      "name": "2026_H1",
+      "train_start": "2024-07-01T00:00:00+00:00",
+      "train_end": "2026-01-01T00:00:00+00:00",
+      "test_start": "2026-01-01T00:00:00+00:00",
+      "test_end": "2026-07-01T00:00:00+00:00",
+      "train_count": 110076,
+      "test_count": 24360,
+      "split_status": "EVALUATED"
+    }
+  ],
+  "train_before_test_enforced": true,
+  "no_negative_train_window": true,
+  "no_silent_zero_metrics_for_invalid_split": true,
+  "all_splits_temporally_valid": true
+}

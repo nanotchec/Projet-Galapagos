@@ -1,0 +1,36 @@
+{
+  "calibration_by_semester": {
+    "2024 H1": {
+      "avg_predicted_probability": 0.7552016134924748,
+      "realized_win_rate": 0.5966386554621849,
+      "calibration_gap": -0.15856295803028997,
+      "selected_count": 952
+    },
+    "2024 H2": {
+      "avg_predicted_probability": 0.7515743895912809,
+      "realized_win_rate": 0.5861456483126111,
+      "calibration_gap": -0.1654287412786698,
+      "selected_count": 1126
+    },
+    "2025 H1": {
+      "avg_predicted_probability": 0.7520978393549892,
+      "realized_win_rate": 0.6090373280943026,
+      "calibration_gap": -0.14306051126068664,
+      "selected_count": 1018
+    },
+    "2025 H2": {
+      "avg_predicted_probability": 0.7524742765202179,
+      "realized_win_rate": 0.527114967462039,
+      "calibration_gap": -0.2253593090581789,
+      "selected_count": 1844
+    },
+    "2026 H1": {
+      "avg_predicted_probability": 0.7804075071658678,
+      "realized_win_rate": 0.463302752293578,
+      "calibration_gap": -0.31710475487228984,
+      "selected_count": 654
+    }
+  },
+  "calibration_status": "CALIBRATION_DEGRADED_RECENTLY",
+  "calibration_proxy_only": true
+}

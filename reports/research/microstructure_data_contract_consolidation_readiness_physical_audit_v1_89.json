@@ -1,0 +1,43 @@
+{
+  "version": "V1.89",
+  "v1_84_data_root": "data/research/microstructure_contract_materialization/v1_84/",
+  "v1_87_data_root": "data/research/microstructure_contract_materialization/v1_87/",
+  "v1_84_file_paths": [
+    "data/research/microstructure_contract_materialization/v1_84/manifest.json",
+    "data/research/microstructure_contract_materialization/v1_84/schema_snapshot.json",
+    "data/research/microstructure_contract_materialization/v1_84/preview_records.json"
+  ],
+  "v1_87_file_paths": [
+    "data/research/microstructure_contract_materialization/v1_87/extension_manifest.json",
+    "data/research/microstructure_contract_materialization/v1_87/extension_quality_summary.json"
+  ],
+  "v1_84_files_count": 3,
+  "v1_87_files_count": 2,
+  "v1_84_missing_files_count": 0,
+  "v1_87_missing_files_count": 0,
+  "v1_84_unexpected_files_count": 0,
+  "v1_87_unexpected_files_count": 0,
+  "v1_84_missing_file_paths": [],
+  "v1_87_missing_file_paths": [],
+  "v1_84_unexpected_file_paths": [],
+  "v1_87_unexpected_file_paths": [],
+  "v1_84_hashes_observed": {
+    "manifest.json": "524c43853d97904aadcbd476e955dd5571adecaae5644505a9384e209825aa47",
+    "schema_snapshot.json": "2ef9706d2be0363b08b61e90585d64c2adb322f16b6317e941d834cffd967638",
+    "preview_records.json": "2ec5fa4e2911fbb28d6869bd795b1264b9eeb9bc0b5cb531d53e88103f82b01c"
+  },
+  "v1_87_hashes_observed": {
+    "extension_manifest.json": "525276f53e29bcef84e176dc9d698d37c8a06e2880b7e08965da54aa00e347e4",
+    "extension_quality_summary.json": "ddc107e6e862c9b2c3090387279840c587c99a826c96cdebb79c5c7175a2217d"
+  },
+  "v1_84_hashes_verified": true,
+  "v1_87_hashes_verified": true,
+  "v1_84_json_valid": true,
+  "v1_87_json_valid": true,
+  "forbidden_file_types_detected": false,
+  "parquet_created": false,
+  "csv_created": false,
+  "sqlite_created": false,
+  "jsonl_created": false,
+  "db_created": false
+}

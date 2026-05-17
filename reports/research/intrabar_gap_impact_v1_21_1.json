@@ -1,0 +1,10 @@
+{
+  "total_signals": 171648,
+  "covered_signals": 106176,
+  "gap_signals": 65472,
+  "gap_ratio": 0.3814317673378076,
+  "segments_count": 2,
+  "largest_gap_duration": "202 days 17:45:00",
+  "verdict": "GAP_IMPACT_SIGNIFICANT_GAP_AWARE_EVALUATION_REQUIRED",
+  "is_biased_by_missing_segment": true
+}

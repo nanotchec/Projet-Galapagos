@@ -1,0 +1,9 @@
+{
+  "version": "V1.89",
+  "recommended_next_step": "Only execute V1.90 if the approved ultra-bounded consolidation scope is preserved.",
+  "v1_90_authorized": true,
+  "authorized_future_scope": "tiny_data_contract_consolidation_ultra_bounded_no_network_no_full_dataset_no_ml_no_trading",
+  "no_strategy_validated": true,
+  "no_paper_live": true,
+  "no_real_trading": true
+}

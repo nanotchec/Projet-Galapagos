@@ -1,0 +1,9 @@
+{
+  "status": "dry_run",
+  "source": "binance",
+  "symbol": "BTCUSDT",
+  "timeframe": "5m",
+  "days": 30,
+  "rows": 0,
+  "file_path": "data/silver/intrabar/binance/BTCUSDT/5m/sample.parquet"
+}

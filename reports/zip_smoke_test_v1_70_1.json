@@ -1,0 +1,61 @@
+{
+  "version": "V1.70.1",
+  "zip_path": "<PROJECT_ROOT>/projet-galapagos-v1.70.1-clean.zip",
+  "extracted_to": "<TEMP_DIR>/extracted",
+  "commands": [
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python3",
+        "-c",
+        "import sys; sys.path.insert(0, 'src'); import galapagos"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python3",
+        "-c",
+        "import sys; sys.path.insert(0, 'src'); import galapagos.research.microstructure_human_approval_intake"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "",
+      "stderr_preview": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python3",
+        "scripts/validate_microstructure_human_approval_intake_reports.py",
+        "--version",
+        "V1.70.1"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "SU***redacted***1\n",
+      "stderr_preview": "",
+      "passed": true
+    },
+    {
+      "command": [
+        "<USER_HOME>/miniconda3/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/research/test_microstructure_human_approval_intake_v1_70.py"
+      ],
+      "exit_code": 0,
+      "stdout_preview": "..***redacted***s\n",
+      "stderr_preview": "",
+      "passed": true
+    }
+  ],
+  "passed_count": 4,
+  "failed_count": 0,
+  "smoke_test_passed": true,
+  "failures": [],
+  "codex_cli_called": false,
+  "holdout_executed": false,
+  "real_orders_possible": false
+}

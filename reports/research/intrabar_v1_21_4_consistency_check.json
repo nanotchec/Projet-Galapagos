@@ -1,0 +1,42 @@
+{
+  "status": "INTRABAR_REPORTS_INCONSISTENT",
+  "version": "v1.21.4",
+  "issues": [
+    "Evaluated ratio 0.00% is below target 20%",
+    "Standalone comparison valid mismatch",
+    "Standalone continuous_backtest_valid should be false"
+  ],
+  "warnings": [
+    "data_has_gaps"
+  ],
+  "required_reports": [
+    "intrabar_data_quality_v1_21_4.json",
+    "intrabar_data_lineage_v1_21_4.json",
+    "intrabar_gap_impact_v1_21_4.json",
+    "trade_policy_comparison_v1_21_4.json",
+    "trade_ledger_intrabar_eval_v1_21_4.json",
+    "v1_21_4_recommendation.json",
+    "intrabar_gap_impact_v1_21_4.json"
+  ],
+  "checked_reports": [
+    "intrabar_data_quality_v1_21_4.json",
+    "intrabar_data_lineage_v1_21_4.json",
+    "intrabar_gap_impact_v1_21_4.json",
+    "trade_policy_comparison_v1_21_4.json",
+    "trade_ledger_intrabar_eval_v1_21_4.json",
+    "v1_21_4_recommendation.json",
+    "intrabar_gap_impact_v1_21_4.json"
+  ],
+  "missing_reports": [],
+  "policy_comparison_valid": true,
+  "continuous_backtest_valid": false,
+  "ready_for_reviewer": false,
+  "gap_metrics_present": true,
+  "trade_policy_comparison_json_present": true,
+  "metrics": {
+    "evaluated_ratio": null,
+    "target_reached": null,
+    "rows": 151852,
+    "has_gaps": true
+  }
+}

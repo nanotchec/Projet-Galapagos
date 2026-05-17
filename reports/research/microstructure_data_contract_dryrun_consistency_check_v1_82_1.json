@@ -1,0 +1,9 @@
+{
+  "version": "V1.82.1",
+  "all_required_reports_present": true,
+  "safety_invariants_passed": true,
+  "final_consistency_passed": true,
+  "pytest_passed": true,
+  "no_pass_only_tests": true,
+  "corrective_for": "V1.82"
+}

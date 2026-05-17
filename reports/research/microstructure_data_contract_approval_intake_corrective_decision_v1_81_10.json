@@ -1,0 +1,9 @@
+{
+  "approval_phrase_expected_exact": "J'approuve V1.82 dry-run data contract reports-only, sans écriture data, sans dataset, sans trading.",
+  "approval_phrase_provided": "J'approuve V1.82 dry-run data contract reports-only, sans écriture data, sans dataset, sans trading.",
+  "approval_phrase_match": true,
+  "human_approval_granted": true,
+  "v1_82_authorized": true,
+  "authorized_future_version": "V1.82",
+  "authorized_future_scope": "tiny_data_contract_materialization_dryrun_reports_only_no_data_write_no_dataset_no_network_no_trading"
+}

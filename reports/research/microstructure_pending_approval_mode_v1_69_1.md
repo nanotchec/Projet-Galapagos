@@ -1,0 +1,11 @@
+# Report: Microstructure Pending Approval Mode
+
+```json
+{
+  "pending_human_approval_mode": true,
+  "pending_human_approval_mode_ready": true,
+  "approval_phrase_required": true,
+  "human_approval_required_before_network": true,
+  "network_disabled_by_default": true
+}
+```

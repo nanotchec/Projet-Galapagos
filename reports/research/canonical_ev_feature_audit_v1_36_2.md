@@ -1,0 +1,25 @@
+# Canonical Universe Ev Feature Audit - V1.36.2
+
+```json
+{
+  "calibrated_probability_available": false,
+  "payoff_estimates_available": false,
+  "avg_win_past_available": false,
+  "avg_loss_past_available": false,
+  "cost_proxy_available": false,
+  "ev_calibrated_proxy_available": false,
+  "warmup_ready_rows": 168048,
+  "warmup_ready_rows_2026": 24360,
+  "ev_feature_ready_rows": 168048,
+  "ev_feature_ready_rows_2026": 0,
+  "ev_proxy_ready_rows": 0,
+  "ev_proxy_ready_rows_2026": 0,
+  "ev_feature_rows_not_ready": 3600,
+  "ev_feature_rows_not_ready_2026": 0,
+  "default_payoff_used": false,
+  "fallback_used": false,
+  "artificial_probability_threshold_used": false,
+  "ev_feature_status": "EV_FEATURES_NOT_INCLUDED_IN_CANONICAL_OPPORTUNITY_UNIVERSE",
+  "ev_feature_notes": "Warmup readiness is independent of feature availability. Proxy readiness requires both EV and Cost features."
+}
+```

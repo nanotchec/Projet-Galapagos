@@ -1,0 +1,59 @@
+# Release Packaging Audit V1.81.8
+
+```json
+{
+  "packaging_audit_enabled": true,
+  "version_suffix": "v1_81_8",
+  "required_reports_checked": true,
+  "missing_reports": [
+    "release_zip_v1_81_6.json"
+  ],
+  "required_reports_present": false,
+  "report_index_exists": true,
+  "report_index_links_checked": true,
+  "dead_links": [
+    "docs/microstructure_regime_label_research_v1_48.md",
+    "research/microstructure_data_contract_approval_intake_corrective_summary_v1_81_5.json",
+    "reports/research/microstructure_pending_tiny_preflight_summary_v1_69_3.md",
+    "reports/research/microstructure_pending_tiny_preflight_consistency_check_v1_69_3.md",
+    "reports/research/microstructure_pending_tiny_preflight_external_validation_audit_v1_69_3.md",
+    "reports/research/microstructure_pending_tiny_preflight_decision_v1_69_3.md",
+    "reports/research/v1_69_3_recommendation.md",
+    "reports/research/microstructure_pending_tiny_preflight_summary_v1_69_2.md",
+    "research/regime_dependency_diagnostic_v1_29_4.md",
+    "research/calibration_drift_diagnostic_v1_29_4.md",
+    "research/cost_drag_diagnostic_v1_29_4.md",
+    "research/outcome_distribution_diagnostic_v1_29_4.md",
+    "research/release_zip_v1_22_1.md",
+    "research/zip_audit_v1_22_1.md",
+    "research/zip_smoke_test_v1_22_1.md",
+    "research/release_zip_v1_22.md",
+    "research/zip_audit_v1_22.md",
+    "research/zip_smoke_test_v1_22.md",
+    "release_zip_v1_36_8.json",
+    "zip_audit_v1_36_8.json",
+    "research/v1_56_recommendation.md",
+    "research/microstructure_collector_contract_approval_summary_v1_56.md",
+    "research/microstructure_collector_contract_approval_consistency_check_v1_56.md",
+    "research/microstructure_collector_contract_approval_summary_v1_56_1.md",
+    "research/microstructure_collector_contract_approval_consistency_check_v1_56_1.md",
+    "docs/microstructure_adapter_field_coverage_v1_57_2.md",
+    "docs/microstructure_collector_offline_review_v1_58.md",
+    "docs/microstructure_collector_offline_review_v1_58_1.md",
+    "docs/microstructure_collector_offline_review_v1_58_2.md",
+    "research/microstructure_preflight_plan_summary_v1_60_2.md",
+    "research/microstructure_preflight_plan_consistency_check_v1_60_2.md",
+    "docs/microstructure_controlled_preflight_plan_v1_60_2.md",
+    "research/microstructure_controlled_preflight_dryrun_summary_v1_61.md",
+    "research/microstructure_controlled_preflight_dryrun_consistency_check_v1_61.md",
+    "docs/microstructure_hardened_preflight_review_v1_62.md",
+    "docs/microstructure_hardened_preflight_review_v1_62_1.md",
+    "docs/code_review_v1_81_3.md",
+    "docs/microstructure_data_contract_approval_intake_corrective_v1_81_3.md",
+    "docs/code_review_v1_81_4.md",
+    "docs/microstructure_data_contract_approval_intake_corrective_v1_81_4.md"
+  ],
+  "report_index_references_version": true,
+  "packaging_audit_passed": false
+}
+```

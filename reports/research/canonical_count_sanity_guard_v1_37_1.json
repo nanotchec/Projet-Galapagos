@@ -1,0 +1,13 @@
+{
+  "expected_raw_prediction_rows_from_v1_36_8": 171648,
+  "observed_raw_prediction_rows": 171648,
+  "expected_canonical_opportunity_rows_from_v1_36_8": 171648,
+  "observed_canonical_opportunity_rows": 171648,
+  "selection_dataset_rows": 171648,
+  "outcome_dataset_rows": 171648,
+  "opportunity_index_rows": 171648,
+  "count_match_v1_36_8": true,
+  "suspicious_mock_count_detected": false,
+  "count_sanity_guard_status": "CANONICAL_COUNT_SANITY_GUARD_PASSED",
+  "issues": []
+}

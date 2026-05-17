@@ -1,0 +1,9 @@
+{
+  "status": "REVIEWED",
+  "number_of_trades_bybit_reviewed": true,
+  "justification_accepted": true,
+  "blocking_for_offline_review": false,
+  "downgraded_count": 1,
+  "version": "V1.58.1",
+  "current_version": "V1.58.1"
+}

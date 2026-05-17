@@ -1,0 +1,51 @@
+version: V1.10.3
+evaluation_name: btc_4h_long_only_holding_v1_10_3
+profile: galapagos_4h
+asset: BTC/USD
+timeframe: 4h
+source_policies:
+  - state_aware_breakout
+  - state_aware_momentum
+min_bars_per_window: 80
+warmup_bars: 50
+min_spacing_bars: 3
+
+experiment_hypothesis: "Trades closed after 1-2 bars were strongly negative in V1.10.2. Test whether delaying discretionary agent_close until at least 3 bars improves stability."
+holdout_policy: "Do not execute holdout until holding-aware long-only is validated on calibration and validation."
+
+trade_constraints:
+  allow_long: true
+  allow_short: false
+  short_policy: "fallback_no_trade"
+  allow_hold: true
+  allow_close: true
+
+exit_policy:
+  holding_aware:
+    enabled: true
+    min_holding_bars_before_agent_close: 3
+    agent_close_before_min_policy: convert_to_hold
+    stop_loss_priority: true
+    take_profit_priority: true
+    max_duration_priority: true
+
+evaluation:
+  force_close_at_end: true
+
+windows:
+  calibration:
+    label: calibration
+    max_candidates: 20
+    purpose: "debug seulement, autorisé pour inspection"
+  validation_1:
+    label: validation_1
+    max_candidates: 20
+    purpose: "évaluation intermédiaire"
+  validation_2:
+    label: validation_2
+    max_candidates: 20
+    purpose: "évaluation intermédiaire"
+  holdout:
+    label: holdout
+    max_candidates: 20
+    purpose: "test final intouchable, ne pas utiliser pour modifier le prompt"

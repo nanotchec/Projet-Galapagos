@@ -1,0 +1,52 @@
+# Payoff Asymmetry - Galapagos V1.30
+
+## Status
+- **None**
+
+## Details
+```json
+{
+  "asymmetry": [
+    {
+      "bin": "[0.50, 0.60)",
+      "avg_win": 0.02633332830311856,
+      "avg_loss_abs": 0.02620687615963681,
+      "win_loss_ratio": 1.0048251513347672,
+      "realized_win_rate": 0.4556614862217579,
+      "breakeven_win_rate_before_costs": 0.49879661542265796,
+      "breakeven_win_rate_after_costs": 0.5178296589790241,
+      "payoff_asymmetry_status": "PAYOFF_ASYMMETRY_UNFAVORABLE"
+    },
+    {
+      "bin": "[0.60, 0.70)",
+      "avg_win": 0.029541335724858456,
+      "avg_loss_abs": 0.02704746792137073,
+      "win_loss_ratio": 1.0922033741101982,
+      "realized_win_rate": 0.4590973201692525,
+      "breakeven_win_rate_before_costs": 0.47796500683175414,
+      "breakeven_win_rate_after_costs": 0.49563634701861525,
+      "payoff_asymmetry_status": "PAYOFF_ASYMMETRY_UNFAVORABLE"
+    },
+    {
+      "bin": "[0.70, 0.80)",
+      "avg_win": 0.029797720426312093,
+      "avg_loss_abs": 0.027757758527443072,
+      "win_loss_ratio": 1.073491593236975,
+      "realized_win_rate": 0.46541974771639844,
+      "breakeven_win_rate_before_costs": 0.4822782996862202,
+      "breakeven_win_rate_after_costs": 0.49965284018484907,
+      "payoff_asymmetry_status": "PAYOFF_ASYMMETRY_UNFAVORABLE"
+    },
+    {
+      "bin": "[0.80, 1.00)",
+      "avg_win": 0.036795903164549074,
+      "avg_loss_abs": 0.028395716553204234,
+      "win_loss_ratio": 1.2958258368161146,
+      "realized_win_rate": 0.5304682488774856,
+      "breakeven_win_rate_before_costs": 0.4355731101043861,
+      "breakeven_win_rate_after_costs": 0.4509125050193997,
+      "payoff_asymmetry_status": "PAYOFF_ASYMMETRY_FAVORABLE"
+    }
+  ]
+}
+```

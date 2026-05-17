@@ -1,0 +1,14 @@
+# Microstructure Data Action Plan
+
+```json
+{
+  "status": "DATA_ACTION_PLAN_DEFINED",
+  "actions": [
+    "URGENT: Re-collect intrabar data for 2026 to reduce blocked windows"
+  ],
+  "minimum_conditions": [
+    "Intrabar coverage > 98% for 2026",
+    "Feature missingness < 2% across all usable windows"
+  ]
+}
+```

@@ -1,0 +1,20 @@
+{
+  "version": "V1.99",
+  "artifact": "training_dataset_preview",
+  "fields": [
+    "preview_row_id",
+    "feature_row_ref",
+    "label_row_ref",
+    "event_ts",
+    "available_ts",
+    "decision_ts",
+    "label_available_ts",
+    "horizon_seconds",
+    "research_only",
+    "usable_for_direct_ml",
+    "features",
+    "label_preview"
+  ],
+  "max_rows": 10,
+  "max_pairs": 10
+}

@@ -1,0 +1,21 @@
+{
+  "version": "V1.97",
+  "created_files": [
+    "data/research/label_preview/v1_97/label_preview_manifest.json",
+    "data/research/label_preview/v1_97/label_preview_schema.json",
+    "data/research/label_preview/v1_97/label_preview_rows.json",
+    "data/research/label_preview/v1_97/label_preview_quality_audit.json"
+  ],
+  "label_preview_file_checksums": {
+    "label_preview_schema.json": "5972467ab634b73870e0f141d9e2995c8ce9d87bd79dd387d71aadb95d235945",
+    "label_preview_rows.json": "ea0e36d0b9da49734f72d28eb8e09046c118d9a3af7001ed38d09a46f7440f27",
+    "label_preview_quality_audit.json": "10665603847234fdba2c8db51a62ddf7a71a1c8c9dcb600c512812b08754e8fb"
+  },
+  "allowed_data_write_root": "data/research/label_preview/v1_97/",
+  "total_new_data_files_created": 4,
+  "json_only": true,
+  "source_versions": [
+    "V1.95.1",
+    "V1.96.1"
+  ]
+}

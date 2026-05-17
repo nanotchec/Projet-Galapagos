@@ -1,0 +1,34 @@
+# Prediction Frame Integrity - Galapagos v1.30.2
+
+## Status
+- **PREDICTION_FRAME_INTEGRITY_PASSED**
+
+## Details
+```json
+{
+  "raw_rows": 171648,
+  "unique_timestamps": 5087,
+  "selection_columns": [
+    "timestamp",
+    "model_name",
+    "feature_set",
+    "target",
+    "split_name",
+    "predicted_probability",
+    "predicted_label",
+    "macro_regime"
+  ],
+  "outcome_columns": [
+    "timestamp",
+    "actual_target",
+    "forward_return_6bar",
+    "forward_return_12bar",
+    "cost_adjusted_forward_return"
+  ],
+  "forbidden_columns_in_selection": [],
+  "filters_received_outcomes": false,
+  "selection_frame_status": "POINT_IN_TIME_AUDIT_PASSED",
+  "outcome_frame_status": "OUTCOME_FRAME_AVAILABLE",
+  "integrity_status": "PREDICTION_FRAME_INTEGRITY_PASSED"
+}
+```

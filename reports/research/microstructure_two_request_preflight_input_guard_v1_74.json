@@ -1,0 +1,10 @@
+{
+  "version_check_passed": true,
+  "approval_phrase_validated": true,
+  "human_approval_granted": true,
+  "v1_74_authorized": true,
+  "max_request_count_is_2": true,
+  "no_data_writes_mandate": true,
+  "no_trading_mandate": true,
+  "input_guard_passed": true
+}

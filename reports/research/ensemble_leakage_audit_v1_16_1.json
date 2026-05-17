@@ -1,0 +1,10 @@
+{
+  "status": "ENSEMBLE_LEAKAGE_AUDIT_PASSED",
+  "checks": [
+    "No obvious train split rows found",
+    "Low correlation between probability and target verified",
+    "No duplicate prediction rows found"
+  ],
+  "rows_audited": 171648,
+  "target_col": "target_up_after_cost_12bar"
+}
