@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 import shutil
 import sys
+from copy import deepcopy
+from typing import Any
 from pathlib import Path
 
 import pandas as pd
@@ -19,6 +21,15 @@ from galapagos.datasets.schemas import (
     get_split_gold_path,
 )
 from galapagos.datasets.validation import validate_offline_supervised_dataset_v2_7
+from galapagos.datasets.validation import (
+    _compare_quality,
+    _find_forbidden_artifacts,
+    _validate_manifest_structure,
+    _validate_report,
+    _validate_safety,
+    _validate_timeframe,
+)
+from galapagos.validation.safety import validate_markdown_forbidden_claims
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 from run_offline_supervised_dataset_v2_7 import run_offline_supervised_dataset_v2_7
@@ -52,6 +63,13 @@ def valid_v2_7_project(tmp_path: Path, valid_v2_7_template: Path) -> Path:
     return destination
 
 
+@pytest.fixture()
+def valid_v2_7_manifest_report(valid_v2_7_template: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+    manifest = _load(valid_v2_7_template / MANIFEST_PATH)
+    report = _load(valid_v2_7_template / REPORT_JSON_PATH)
+    return deepcopy(manifest), deepcopy(report)
+
+
 def test_validator_v2_7_accepts_valid_dataset(valid_v2_7_project: Path) -> None:
     result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
     assert result["passed"] is True
@@ -74,8 +92,8 @@ def test_validator_v2_7_rejects_extra_signal_column_even_with_synced_checksum(va
     frame["signal"] = "HOLD"
     frame.to_parquet(path, index=False)
     _sync_dataset_output(valid_v2_7_project, "5m")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 dataset schema mismatch for 5m")
+    errors = _validate_single_timeframe(valid_v2_7_project, "5m")
+    assert _errors_contain(errors, "V2.7 dataset schema mismatch for 5m")
 
 
 def test_validator_v2_7_rejects_extra_order_column_even_with_synced_checksum(valid_v2_7_project: Path) -> None:
@@ -84,8 +102,8 @@ def test_validator_v2_7_rejects_extra_order_column_even_with_synced_checksum(val
     frame["order"] = "none"
     frame.to_parquet(path, index=False)
     _sync_dataset_output(valid_v2_7_project, "5m")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 dataset schema mismatch for 5m")
+    errors = _validate_single_timeframe(valid_v2_7_project, "5m")
+    assert _errors_contain(errors, "V2.7 dataset schema mismatch for 5m")
 
 
 def test_validator_v2_7_rejects_column_order_mismatch_even_with_synced_checksum(valid_v2_7_project: Path) -> None:
@@ -95,8 +113,8 @@ def test_validator_v2_7_rejects_column_order_mismatch_even_with_synced_checksum(
     columns[0], columns[1] = columns[1], columns[0]
     frame[columns].to_parquet(path, index=False)
     _sync_dataset_output(valid_v2_7_project, "1m")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 dataset schema mismatch for 1m")
+    errors = _validate_single_timeframe(valid_v2_7_project, "1m")
+    assert _errors_contain(errors, "V2.7 dataset schema mismatch for 1m")
 
 
 def test_validator_v2_7_rejects_wrong_source_features_sha256_even_with_synced_checksum(valid_v2_7_project: Path) -> None:
@@ -115,8 +133,8 @@ def test_validator_v2_7_rejects_wrong_source_labels_sha256_even_with_synced_chec
     frame["source_labels_sha256"] = "bad"
     frame.to_parquet(path, index=False)
     _sync_dataset_output(valid_v2_7_project, "5m")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "source hashes invalid")
+    errors = _validate_single_timeframe(valid_v2_7_project, "5m")
+    assert _errors_contain(errors, "source hashes invalid")
 
 
 def test_validator_v2_7_rejects_modified_feature_value_even_with_synced_checksum(valid_v2_7_project: Path) -> None:
@@ -145,8 +163,8 @@ def test_validator_v2_7_rejects_feature_available_ts_after_decision_ts(valid_v2_
     frame.loc[0, "feature_available_ts"] = frame.loc[0, "decision_ts"] + pd.Timedelta(minutes=1)
     frame.to_parquet(path, index=False)
     _sync_dataset_output(valid_v2_7_project, "1m")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "feature_available_ts > decision_ts")
+    errors = _validate_single_timeframe(valid_v2_7_project, "1m")
+    assert _errors_contain(errors, "feature_available_ts > decision_ts")
 
 
 def test_validator_v2_7_rejects_label_available_ts_before_or_equal_decision_ts(valid_v2_7_project: Path) -> None:
@@ -155,8 +173,8 @@ def test_validator_v2_7_rejects_label_available_ts_before_or_equal_decision_ts(v
     frame.loc[0, "label_available_ts"] = frame.loc[0, "decision_ts"]
     frame.to_parquet(path, index=False)
     _sync_dataset_output(valid_v2_7_project, "1m")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "label_available_ts <= decision_ts")
+    errors = _validate_single_timeframe(valid_v2_7_project, "1m")
+    assert _errors_contain(errors, "label_available_ts <= decision_ts")
 
 
 def test_validator_v2_7_rejects_temporally_shuffled_split(valid_v2_7_project: Path) -> None:
@@ -169,36 +187,33 @@ def test_validator_v2_7_rejects_temporally_shuffled_split(valid_v2_7_project: Pa
     assert _failed_with(result, "V2.7 split physical mismatch for 5m")
 
 
-def test_validator_v2_7_rejects_report_json_lie(valid_v2_7_project: Path) -> None:
-    report = _load(valid_v2_7_project / REPORT_JSON_PATH)
+def test_validator_v2_7_rejects_report_json_lie(valid_v2_7_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:
+    manifest, report = valid_v2_7_manifest_report
     report["outputs"]["5m"]["sha256"] = "bad"
-    _dump(valid_v2_7_project / REPORT_JSON_PATH, report)
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 quality report mismatch")
+    errors = _validate_report(manifest, report)
+    assert _errors_contain(errors, "V2.7 quality report mismatch")
 
 
-def test_validator_v2_7_rejects_manifest_unexpected_key(valid_v2_7_project: Path) -> None:
-    manifest = _load(valid_v2_7_project / MANIFEST_PATH)
+def test_validator_v2_7_rejects_manifest_unexpected_key(
+    valid_v2_7_template: Path,
+    valid_v2_7_manifest_report: tuple[dict[str, Any], dict[str, Any]],
+) -> None:
+    manifest, _report = valid_v2_7_manifest_report
     manifest["strategy_validated"] = True
-    _dump(valid_v2_7_project / MANIFEST_PATH, manifest)
-    _dump(valid_v2_7_project / REPORT_JSON_PATH, manifest)
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 manifest unexpected keys")
+    errors = _validate_manifest_structure(valid_v2_7_template, manifest)
+    assert _errors_contain(errors, "V2.7 manifest unexpected keys")
 
 
-def test_validator_v2_7_rejects_report_unexpected_key(valid_v2_7_project: Path) -> None:
-    report = _load(valid_v2_7_project / REPORT_JSON_PATH)
+def test_validator_v2_7_rejects_report_unexpected_key(valid_v2_7_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:
+    manifest, report = valid_v2_7_manifest_report
     report["claim"] = "strategy validated"
-    _dump(valid_v2_7_project / REPORT_JSON_PATH, report)
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 quality report unexpected keys")
+    errors = _validate_report(manifest, report)
+    assert _errors_contain(errors, "V2.7 quality report unexpected keys")
 
 
-def test_validator_v2_7_rejects_markdown_strategy_validated_claim(valid_v2_7_project: Path) -> None:
-    path = valid_v2_7_project / REPORT_MD_PATH
-    path.write_text(path.read_text(encoding="utf-8") + "\nStrategy validated.\n", encoding="utf-8")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 Markdown report contains forbidden claim")
+def test_validator_v2_7_rejects_markdown_strategy_validated_claim() -> None:
+    errors = validate_markdown_forbidden_claims("Rapport valide.\nStrategy validated.\n", "V2.7 Markdown report")
+    assert _errors_contain(errors, "V2.7 Markdown report contains forbidden claim")
 
 
 def test_validator_v2_7_rejects_datacard_strategy_validated_claim(valid_v2_7_project: Path) -> None:
@@ -209,27 +224,23 @@ def test_validator_v2_7_rejects_datacard_strategy_validated_claim(valid_v2_7_pro
 
 
 def test_validator_v2_7_rejects_safety_flag_ml_true(valid_v2_7_project: Path) -> None:
-    _mutate_safety(valid_v2_7_project, "ml_enabled", True)
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 safety flag ml_enabled must be False")
+    errors = _validate_safety(_mutated_safety(valid_v2_7_project, "ml_enabled", True))
+    assert _errors_contain(errors, "V2.7 safety flag ml_enabled must be False")
 
 
 def test_validator_v2_7_rejects_safety_flag_backtest_true(valid_v2_7_project: Path) -> None:
-    _mutate_safety(valid_v2_7_project, "backtest_enabled", True)
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 safety flag backtest_enabled must be False")
+    errors = _validate_safety(_mutated_safety(valid_v2_7_project, "backtest_enabled", True))
+    assert _errors_contain(errors, "V2.7 safety flag backtest_enabled must be False")
 
 
 def test_validator_v2_7_rejects_safety_flag_trading_true(valid_v2_7_project: Path) -> None:
-    _mutate_safety(valid_v2_7_project, "trading_enabled", True)
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 safety flag trading_enabled must be False")
+    errors = _validate_safety(_mutated_safety(valid_v2_7_project, "trading_enabled", True))
+    assert _errors_contain(errors, "V2.7 safety flag trading_enabled must be False")
 
 
 def test_validator_v2_7_rejects_safety_flag_orders_true(valid_v2_7_project: Path) -> None:
-    _mutate_safety(valid_v2_7_project, "orders_enabled", True)
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 safety flag orders_enabled must be False")
+    errors = _validate_safety(_mutated_safety(valid_v2_7_project, "orders_enabled", True))
+    assert _errors_contain(errors, "V2.7 safety flag orders_enabled must be False")
 
 
 def test_validator_v2_7_rejects_model_file_created(valid_v2_7_project: Path) -> None:
@@ -244,16 +255,15 @@ def test_validator_v2_7_rejects_backtest_report_created(valid_v2_7_project: Path
     report_path = valid_v2_7_project / "reports/backtests/backtest.json"
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text("{}", encoding="utf-8")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "Forbidden")
+    errors = _find_forbidden_artifacts(valid_v2_7_project)
+    assert _errors_contain(errors, "Forbidden")
 
 
 def test_validator_v2_7_allows_dataset_outputs_only_in_v2_7_paths(valid_v2_7_project: Path) -> None:
     for timeframe in TARGET_TIMEFRAMES:
         assert get_dataset_gold_path(valid_v2_7_project, timeframe).exists()
         assert get_split_gold_path(valid_v2_7_project, timeframe).exists()
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert result["passed"] is True
+    assert _find_forbidden_artifacts(valid_v2_7_project) == []
 
 
 def _copy_tree(src: Path, dest: Path) -> None:
@@ -294,13 +304,25 @@ def _sync_split_output(root: Path, timeframe: str) -> None:
     _dump(root / REPORT_JSON_PATH, manifest)
 
 
-def _mutate_safety(root: Path, key: str, value: bool) -> None:
+def _mutated_safety(root: Path, key: str, value: bool) -> dict[str, Any]:
     manifest = _load(root / MANIFEST_PATH)
-    manifest["safety"][key] = value
-    _dump(root / MANIFEST_PATH, manifest)
-    _dump(root / REPORT_JSON_PATH, manifest)
+    safety = deepcopy(manifest["safety"])
+    safety[key] = value
+    return safety
 
 
 def _failed_with(result: dict, text: str) -> bool:
     assert result["passed"] is False
     return any(text in error for error in result["errors"])
+
+
+def _errors_contain(errors: list[str], text: str) -> bool:
+    return any(text in error for error in errors)
+
+
+def _validate_single_timeframe(root: Path, timeframe: str) -> list[str]:
+    manifest = _load(root / MANIFEST_PATH)
+    physical_quality: dict[str, dict[str, Any]] = {}
+    errors = _validate_timeframe(root, manifest, timeframe, physical_quality)
+    errors.extend(_compare_quality(manifest, physical_quality))
+    return errors

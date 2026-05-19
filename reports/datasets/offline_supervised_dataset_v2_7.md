@@ -1,5 +1,9 @@
 # Rapport qualite - V2.7 Offline Supervised Dataset
 
+## Correction V2.7.1
+
+V2.7.1 conserve les artefacts physiques V2.7. La correction porte sur le runtime du fichier complet de tests du validateur V2.7, sans relacher le validateur de production.
+
 ## Objectif
 
 V2.7 assemble un dataset supervise offline en joignant les features causales V2.5 et les labels forward V2.6 deja valides.

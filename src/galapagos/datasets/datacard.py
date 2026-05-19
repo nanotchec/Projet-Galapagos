@@ -9,6 +9,10 @@ def build_quality_markdown(manifest: dict[str, Any]) -> str:
     lines = [
         "# Rapport qualite - V2.7 Offline Supervised Dataset",
         "",
+        "## Correction V2.7.1",
+        "",
+        "V2.7.1 conserve les artefacts physiques V2.7. La correction porte sur le runtime du fichier complet de tests du validateur V2.7, sans relacher le validateur de production.",
+        "",
         "## Objectif",
         "",
         "V2.7 assemble un dataset supervise offline en joignant les features causales V2.5 et les labels forward V2.6 deja valides.",
@@ -87,6 +91,7 @@ def build_datacard_markdown(manifest: dict[str, Any]) -> str:
         "",
         "- Dataset name : `offline_supervised_dataset_v2_7`",
         f"- Version : `{manifest['version']}`",
+        "- Correction candidate : `V2.7.1` runtime validator tests, pending external audit.",
         "- Source : Binance public archive read-only, BTCUSDT spot.",
         "- Periode : 2024-01-15 uniquement.",
         "- Timeframes : 1m, 5m, 15m, 1h.",

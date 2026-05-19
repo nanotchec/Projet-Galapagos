@@ -1,13 +1,14 @@
 {
   "last_validated_version": "V2.6.2",
-  "candidate_version": "V2.7",
+  "candidate_version": "V2.7.1",
   "candidate_status": "pending_external_audit",
-  "direction": "offline supervised dataset assembly preview",
+  "direction": "offline supervised dataset validator runtime finalization",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
   "clean_label_factory_v2_6_2_validated": true,
-  "offline_supervised_dataset_v2_7_candidate": true,
+  "offline_supervised_dataset_v2_7_1_candidate": true,
+  "v2_7_refused_reason": "validator test file runtime too slow in strict external audit",
   "datasets_created": true,
   "split_files_created": true,
   "dataset_timeframes": ["1m", "5m", "15m", "1h"],
@@ -35,5 +36,5 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v2_7_validated_by_external_audit": false
+  "v2_7_1_validated_by_external_audit": false
 }

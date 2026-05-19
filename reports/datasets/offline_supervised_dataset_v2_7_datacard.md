@@ -2,6 +2,7 @@
 
 - Dataset name : `offline_supervised_dataset_v2_7`
 - Version : `V2.7`
+- Correction candidate : `V2.7.1` runtime validator tests, pending external audit.
 - Source : Binance public archive read-only, BTCUSDT spot.
 - Periode : 2024-01-15 uniquement.
 - Timeframes : 1m, 5m, 15m, 1h.
