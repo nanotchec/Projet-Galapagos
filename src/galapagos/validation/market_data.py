@@ -467,8 +467,8 @@ def _validate_project_state_scope(root: Path) -> list[str]:
                 errors.append(f"{relative}: stale V2.3 candidate scope in {field}: {stale_tokens}")
         if payload.get("v2_3_validated") is True:
             errors.append(f"{relative}: V2.3 must remain unvalidated after V2.3.1 correction")
-        if payload.get("last_validated_version") not in {None, "V2.2.1", "V2.3.1"}:
-            errors.append(f"{relative}: last_validated_version must remain V2.2.1 or V2.3.1")
+        if payload.get("last_validated_version") not in {None, "V2.2.1", "V2.3.1", "V2.4.8"}:
+            errors.append(f"{relative}: last_validated_version must remain V2.2.1 or V2.3.1 or V2.4.8")
     return errors
 
 

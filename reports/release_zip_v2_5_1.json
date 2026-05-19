@@ -1,0 +1,16 @@
+{
+  "version": "V2.5",
+  "correction_version": "V2.5.1",
+  "status": "PASS",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v2.5.1-clean.zip",
+  "zip_size_bytes": 696056,
+  "files_included": 66,
+  "minimal_clean_zip": true,
+  "contains_raw_public_archive": true,
+  "contains_silver_parquet": true,
+  "contains_features_gold_parquet": true,
+  "contains_features_validator": true,
+  "contains_tests": true,
+  "forbidden_entries_included": false,
+  "release_ready_for_external_audit": true
+}

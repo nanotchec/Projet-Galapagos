@@ -92,6 +92,13 @@ def monkeypatch_scans_if_mutation(request: pytest.FixtureRequest, monkeypatch: p
         import galapagos.validation.resampling as resampling_module
         monkeypatch.setattr(safety_module, "scan_new_modules_for_forbidden_terms", lambda root: [])
         monkeypatch.setattr(resampling_module, "_scan_v2_4_scripts", lambda root: [])
+        if "included_v2_3" not in request.node.name:
+            import galapagos.validation.market_data as market_data_module
+            monkeypatch.setattr(
+                market_data_module,
+                "validate_public_market_ingestion_v2_3",
+                lambda root: {"passed": True, "errors": [], "manifest": {}},
+            )
 
 
 # --- Famille A : Intégration Complète ---

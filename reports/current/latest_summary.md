@@ -1,5 +1,12 @@
-# Latest Summary V2.4.7 candidate
+# Résumé du Projet V2.5.1 (Feature Store Test Reproducibility & V2.4 Runtime Regression Fix)
 
-V2.3.1 est validee pour le scope data/research offline : ingestion publique read-only BTCUSDT 1m, raw ZIP reel, silver Parquet normalise, validation physique, lineage raw vers silver et absence de trading/ML/labels/backtest.
+- **Dernière version validée** : V2.4.8 (finalisation robuste du validateur de resampling via focused Unit/Integration split sous les 5 secondes).
+- **Version refusée en audit** : V2.5 (en raison de tests validator non reproductibles utilisant un chemin absolu local et de la régression runtime du validateur V2.4).
+- **Version candidate** : V2.5.1.
+- **Statut candidate** : `pending_external_audit` (en attente de validation par audit externe).
 
-V2.4 a ajoute le resampling OHLCV 1m vers 5m, 15m et 1h, puis les sous-versions V2.4.1 a V2.4.6 ont durci la coherence manifest/report, les schemas stricts, les limitations, les claims, les formats temporels, la validation stricte des colonnes physiques et le smoke test avec import dynamique. V2.4.6 a ete refusee car la commande complète de tests validateur ne terminait pas de maniere fiable et propre dans l'environnement d'audit strict. V2.4.7 est candidate et reste en attente d'audit externe. Elle finalise le runtime sans affaiblir les tests : elle met en place une copie minimale des dossiers de donnees et rapports pour les tests de mutation, associee a un monkeypatching cible des scans globaux coûteux. Le test nominal nominal complet execute les scans réels sans monkeypatch sur une copie complète comprenant les scripts et le code source, ce qui permet a toute la suite de s'executer en moins de 12 secondes et de maniere totalement stable. V2.4.7 ne valide aucune strategie, ne produit aucun signal, ne lance aucun ML, ne cree aucun label, ne fait aucun backtest et ne permet aucun ordre reel ni paper live.
+## Synthèse technique de la V2.5.1
+1. **Reproductibilité des tests V2.5** : La racine du projet est déterminée dynamiquement à partir de `__file__`, éliminant tout chemin absolu en dur `/Users/lilianserre/` dans la suite de tests du validateur. Les tests s'exécutent de façon totalement reproductible et isolée dans le ZIP clean.
+2. **Performance du validateur V2.4** : Application d'un monkeypatch ciblé de l'ingestion publique V2.3 limitant les scans redondants du Parquet silver 1m lors des tests de mutation. La suite complète de 47 tests s'exécute désormais en environ 6 secondes au lieu de provoquer un timeout dans l'environnement d'audit.
+3. **Feature Store Preview V2.5.1** : Produit uniquement des features OHLCV causales déterministes sur BTCUSDT 1m/5m/15m/1h à partir des données de marché V2.4.
+4. **Zéro Trading, Zéro ML** : La version candidate ne contient aucune stratégie, aucun signal de trading, aucun modèle ML, aucun label, aucun backtest, aucun paper live, et n'autorise aucune exécution d'ordres ou utilisation d'API privées.
