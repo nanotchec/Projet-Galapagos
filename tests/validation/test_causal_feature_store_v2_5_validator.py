@@ -68,9 +68,13 @@ def valid_v2_5_template(tmp_path_factory: pytest.TempPathFactory) -> Path:
     # Write a nominal manifest/report mock for the template
     # Let's generate a temporary manifest to make the validation pass
     import sys
-    if str(workspace) not in sys.path:
-        sys.path.insert(0, str(workspace))
-    from scripts.run_causal_feature_store_v2_5 import run_feature_store_generation
+    import importlib.util
+    script_path = workspace / "scripts" / "run_causal_feature_store_v2_5.py"
+    spec = importlib.util.spec_from_file_location("run_causal_feature_store_v2_5", script_path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules["run_causal_feature_store_v2_5"] = module
+    spec.loader.exec_module(module)
+    run_feature_store_generation = module.run_feature_store_generation
     run_feature_store_generation(root, feature_run_id=feature_run_id)
     
     res = validate_causal_feature_store_v2_5(root)

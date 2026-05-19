@@ -1,9 +1,9 @@
 {
   "version": "V2.5",
-  "correction_version": "V2.5.1",
+  "correction_version": "V2.5.2",
   "status": "PASS",
-  "created_at_utc": "2026-05-19T20:02:53.335678Z",
-  "feature_run_id": "v2_5_20260519T200253Z_8b042e12",
+  "created_at_utc": "2026-05-19T20:16:12.002495Z",
+  "feature_run_id": "v2_5_20260519T201612Z_45fce57a",
   "input_ohlcv": {
     "1m": {
       "path": "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/year=2024/month=01/part-2024-01-15.parquet",
@@ -29,29 +29,29 @@
   "outputs": {
     "1m": {
       "path": "data/gold/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/year=2024/month=01/features-2024-01-15.parquet",
-      "sha256": "2d4f2a07a77a88e0e433422372243b2dbf3f899c0ff984c8e4f332f3a9f31574",
-      "bytes": 400949,
+      "sha256": "be52eb83719cb4e8dc5a8d9c037c7a5e86e405dc1531b896f07a649a79b2a3dd",
+      "bytes": 400262,
       "rows": 1440,
       "format": "parquet"
     },
     "5m": {
       "path": "data/gold/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/year=2024/month=01/features-2024-01-15.parquet",
-      "sha256": "022f89d43b29814dc48c970efe93059de5f75f3ea6bab563ffff8eb6f796d996",
-      "bytes": 103446,
+      "sha256": "65bac5fb83a89bdab04fa829d21ad227b3b44706c2cfbb148ebb35a94e2a2d70",
+      "bytes": 102827,
       "rows": 288,
       "format": "parquet"
     },
     "15m": {
       "path": "data/gold/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/year=2024/month=01/features-2024-01-15.parquet",
-      "sha256": "06781c0094d350dd0dea6e55624de38d7aa18e58d5c4119a74fa962baad151d1",
-      "bytes": 53099,
+      "sha256": "2202f8fda99ee51066d76766e3b9a8187fa4d91b74a38af12f2d49c68c583c8b",
+      "bytes": 52507,
       "rows": 96,
       "format": "parquet"
     },
     "1h": {
       "path": "data/gold/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/year=2024/month=01/features-2024-01-15.parquet",
-      "sha256": "dc849409ff5a206f9365620affbc802842a462422c669306b4f2e37c4cbda485",
-      "bytes": 33263,
+      "sha256": "0868aa33e29ce02ebb7ac8dac92456fb719457a6308f31b1bf4d093825bc51f0",
+      "bytes": 32728,
       "rows": 24,
       "format": "parquet"
     }

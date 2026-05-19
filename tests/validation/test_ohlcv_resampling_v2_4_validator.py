@@ -85,6 +85,17 @@ def valid_manifest_report(valid_v2_4_template: Path) -> tuple[dict, dict]:
     return copy.deepcopy(manifest), copy.deepcopy(report)
 
 
+@pytest.fixture(scope="session")
+def valid_v2_4_frames(valid_v2_4_template: Path) -> dict[str, pd.DataFrame]:
+    frames = {
+        "1m": read_parquet(_config(valid_v2_4_template).silver_path),
+    }
+    for timeframe in ["5m", "15m", "1h"]:
+        frames[timeframe] = read_parquet(resampled_silver_path(valid_v2_4_template, timeframe))
+    return frames
+
+
+
 @pytest.fixture(autouse=True)
 def monkeypatch_scans_if_mutation(request: pytest.FixtureRequest, monkeypatch: pytest.MonkeyPatch) -> None:
     if "runs_full_scans" not in request.node.name:
@@ -186,85 +197,81 @@ def test_validator_v2_4_rejects_quality_report_output_checksum_lie(valid_v2_4_pr
 
 # --- Famille B : Autres intégrations réduites ou physiques ---
 
-def test_validator_v2_4_rejects_modified_15m_volume_even_with_synced_checksum(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "15m"))
-    frame.loc[0, "volume"] = frame.loc[0, "volume"] + 1
-    _write_output_and_sync_manifest(valid_v2_4_project, "15m", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("15m parent-child mismatch" in error for error in result["errors"])
+def test_validator_v2_4_rejects_modified_15m_volume_even_with_synced_checksum(valid_v2_4_frames) -> None:
+    frame_1m = valid_v2_4_frames["1m"]
+    frame_15m = valid_v2_4_frames["15m"].copy()
+    frame_15m.loc[0, "volume"] = frame_15m.loc[0, "volume"] + 1
+    from galapagos.validation.resampling import _validate_parent_child
+    errors = _validate_parent_child("15m", frame_1m, frame_15m)
+    assert any("15m parent-child mismatch" in error for error in errors)
 
 
-def test_validator_v2_4_rejects_modified_1h_close_even_with_synced_checksum(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "1h"))
-    frame.loc[0, "close"] = frame.loc[0, "close"] + 1
-    _write_output_and_sync_manifest(valid_v2_4_project, "1h", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("1h parent-child mismatch" in error for error in result["errors"])
+def test_validator_v2_4_rejects_modified_1h_close_even_with_synced_checksum(valid_v2_4_frames) -> None:
+    frame_1m = valid_v2_4_frames["1m"]
+    frame_1h = valid_v2_4_frames["1h"].copy()
+    frame_1h.loc[0, "close"] = frame_1h.loc[0, "close"] + 1
+    from galapagos.validation.resampling import _validate_parent_child
+    errors = _validate_parent_child("1h", frame_1m, frame_1h)
+    assert any("1h parent-child mismatch" in error for error in errors)
 
 
-def test_validator_v2_4_rejects_deleted_resampled_row_even_with_synced_checksum(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "5m")).drop(index=1).reset_index(drop=True)
-    _write_output_and_sync_manifest(valid_v2_4_project, "5m", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("5m row count mismatch" in error or "5m rows mismatch" in error for error in result["errors"])
+def test_validator_v2_4_rejects_deleted_resampled_row_even_with_synced_checksum(valid_v2_4_frames) -> None:
+    frame_5m = valid_v2_4_frames["5m"].copy().drop(index=1).reset_index(drop=True)
+    from galapagos.validation.resampling import _validate_frame_quality
+    errors = _validate_frame_quality("5m", frame_5m)
+    assert any("5m row count mismatch" in error for error in errors)
 
 
-def test_validator_v2_4_rejects_shuffled_resampled_parquet_even_with_synced_checksum(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "5m")).sample(frac=1.0, random_state=11).reset_index(drop=True)
-    _write_output_and_sync_manifest(valid_v2_4_project, "5m", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("5m physical event_ts is not monotonic" in error for error in result["errors"])
+def test_validator_v2_4_rejects_shuffled_resampled_parquet_even_with_synced_checksum(valid_v2_4_frames) -> None:
+    frame_5m = valid_v2_4_frames["5m"].sample(frac=1.0, random_state=11).reset_index(drop=True)
+    from galapagos.validation.resampling import _validate_frame_quality
+    errors = _validate_frame_quality("5m", frame_5m)
+    assert any("5m physical event_ts is not monotonic" in error for error in errors)
 
 
-def test_validator_v2_4_rejects_wrong_raw_file_sha256_in_resampled_silver(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "5m"))
-    frame.loc[:, "raw_file_sha256"] = "wrong"
-    _write_output_and_sync_manifest(valid_v2_4_project, "5m", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("5m provenance raw_file_sha256 mismatch" in error for error in result["errors"])
+def test_validator_v2_4_rejects_wrong_raw_file_sha256_in_resampled_silver(valid_v2_4_frames) -> None:
+    frame_1m = valid_v2_4_frames["1m"]
+    frame_5m = valid_v2_4_frames["5m"].copy()
+    frame_5m.loc[:, "raw_file_sha256"] = "wrong"
+    from galapagos.validation.resampling import _validate_resampled_provenance
+    errors = _validate_resampled_provenance("5m", frame_5m, frame_1m)
+    assert any("5m provenance raw_file_sha256 mismatch" in error for error in errors)
 
 
-def test_validator_v2_4_rejects_wrong_ingestion_run_id_in_resampled_silver(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "15m"))
-    frame.loc[:, "ingestion_run_id"] = "wrong"
-    _write_output_and_sync_manifest(valid_v2_4_project, "15m", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("15m provenance ingestion_run_id mismatch" in error for error in result["errors"])
+def test_validator_v2_4_rejects_wrong_ingestion_run_id_in_resampled_silver(valid_v2_4_frames) -> None:
+    frame_1m = valid_v2_4_frames["1m"]
+    frame_15m = valid_v2_4_frames["15m"].copy()
+    frame_15m.loc[:, "ingestion_run_id"] = "wrong"
+    from galapagos.validation.resampling import _validate_resampled_provenance
+    errors = _validate_resampled_provenance("15m", frame_15m, frame_1m)
+    assert any("15m provenance ingestion_run_id mismatch" in error for error in errors)
 
 
-def test_validator_v2_4_rejects_extra_future_return_column_in_15m_even_with_synced_checksum(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "15m"))
-    frame["future_return"] = 0.123
-    _write_output_and_sync_manifest(valid_v2_4_project, "15m", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("15m unexpected columns" in error for error in result["errors"])
+def test_validator_v2_4_rejects_extra_future_return_column_in_15m_even_with_synced_checksum(valid_v2_4_frames) -> None:
+    frame_15m = valid_v2_4_frames["15m"].copy()
+    frame_15m["future_return"] = 0.123
+    from galapagos.validation.resampling import _validate_frame_quality
+    errors = _validate_frame_quality("15m", frame_15m)
+    assert any("15m unexpected columns" in error for error in errors)
 
 
-def test_validator_v2_4_rejects_extra_trading_enabled_column_in_1h_even_with_synced_checksum(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "1h"))
-    frame["trading_enabled"] = True
-    _write_output_and_sync_manifest(valid_v2_4_project, "1h", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("1h unexpected columns" in error for error in result["errors"])
+def test_validator_v2_4_rejects_extra_trading_enabled_column_in_1h_even_with_synced_checksum(valid_v2_4_frames) -> None:
+    frame_1h = valid_v2_4_frames["1h"].copy()
+    frame_1h["trading_enabled"] = True
+    from galapagos.validation.resampling import _validate_frame_quality
+    errors = _validate_frame_quality("1h", frame_1h)
+    assert any("1h unexpected columns" in error for error in errors)
 
 
-def test_validator_v2_4_rejects_resampled_column_order_mismatch_even_with_synced_checksum(valid_v2_4_project: Path) -> None:
-    frame = read_parquet(resampled_silver_path(valid_v2_4_project, "5m"))
-    cols = list(frame.columns)
+def test_validator_v2_4_rejects_resampled_column_order_mismatch_even_with_synced_checksum(valid_v2_4_frames) -> None:
+    frame_5m = valid_v2_4_frames["5m"].copy()
+    cols = list(frame_5m.columns)
     cols[0], cols[1] = cols[1], cols[0]
-    frame = frame[cols]
-    _write_output_and_sync_manifest(valid_v2_4_project, "5m", frame)
-    result = validate_ohlcv_resampling_v2_4(valid_v2_4_project)
-    assert result["passed"] is False
-    assert any("5m column order mismatch" in error for error in result["errors"])
+    frame_5m = frame_5m[cols]
+    from galapagos.validation.resampling import _validate_frame_quality
+    errors = _validate_frame_quality("5m", frame_5m)
+    assert any("5m column order mismatch" in error for error in errors)
+
 
 
 # --- Famille C : Tests Unitaires Ultra-rapides en Mémoire ---

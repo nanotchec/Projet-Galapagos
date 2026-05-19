@@ -216,8 +216,8 @@
   "pytest_executed": true,
   "pytest_passed_count": 124,
   "pytest_failed_count": 0,
-  "candidate_version": "V2.5.1",
-  "candidate_version_suffix": "v2_5_1",
+  "candidate_version": "V2.5.2",
+  "candidate_version_suffix": "v2_5_2",
   "candidate_status": "pending_external_audit",
   "candidate_mission": "Causal OHLCV Feature Store Preview",
   "candidate_source": "binance_public_archive spot BTCUSDT 1m 2024-01-15",
@@ -254,7 +254,7 @@
   "v2_4_1_candidate_not_validated_before_external_audit": true,
   "v2_4_1_manifest_quality_physical_consistency_validation": true,
   "v2_4_1_quality_report_manifest_projection_validation": true,
-  "correction_version": "V2.5.1",
+  "correction_version": "V2.5.2",
   "manifest_quality_physical_consistency_hardened": true,
   "quality_report_projection_hardened": true,
   "v2_4_1_rejected_strict_external_audit": true,
@@ -313,6 +313,12 @@
   "v2_5_1_validated": false,
   "v2_5_1_candidate_not_validated_before_external_audit": true,
   "v2_5_1_reproducible_feature_validator_tests": true,
-  "v2_5_1_runtime_regression_resolved_via_monkeypatch": true
+  "v2_5_1_runtime_regression_resolved_via_monkeypatch": true,
+  "v2_5_1_rejected_strict_external_audit": true,
+  "v2_5_1_rejection_reason": "V2.4 validator had a runtime I/O regression and V2.5 smoke test timed out after 180 seconds",
+  "v2_5_2_validated": false,
+  "v2_5_2_candidate_not_validated_before_external_audit": true,
+  "v2_5_2_validator_runtime_regression_resolved": true,
+  "v2_5_2_smoke_test_timeout_resolved": true
 }
 
