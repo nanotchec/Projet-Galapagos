@@ -216,12 +216,12 @@
   "pytest_executed": true,
   "pytest_passed_count": 124,
   "pytest_failed_count": 0,
-  "candidate_version": "V2.6",
+  "candidate_version": "V2.6.1",
   "candidate_version_suffix": "v2_6",
   "candidate_status": "pending_external_audit",
   "candidate_mission": "Clean Forward Label Factory Preview",
   "candidate_source": "binance_public_archive spot BTCUSDT 1m 2024-01-15",
-  "next_direction": "clean forward label factory preview",
+  "next_direction": "clean label factory manifest/report hardening",
   "v2_3_validated": false,
   "v2_3_candidate_not_validated_before_external_audit": true,
   "public_market_data_read_only_ingestion_candidate_created": true,
@@ -322,6 +322,10 @@
   "v2_5_2_smoke_test_timeout_resolved": true,
   "v2_6_validated": false,
   "v2_6_candidate_not_validated_before_external_audit": true,
-  "v2_6_clean_forward_label_factory_preview": true
+  "v2_6_clean_forward_label_factory_preview": true,
+  "v2_6_1_candidate_not_validated_before_external_audit": true,
+  "v2_6_1_manifest_report_hardening": true,
+  "v2_6_rejected_strict_reason": "manifest/report permissifs: cles inattendues, claims interdites et mensonges outputs/quality acceptes",
+  "ml_dataset_created": false,
+  "real_trading_enabled": false
 }
-

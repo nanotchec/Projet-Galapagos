@@ -1,5 +1,7 @@
 # Galapagos V2.6 — Clean Forward Label Factory Preview
 
+> Correction V2.6.1 : V2.6 a été refusée en strict pour manifest/report permissifs. V2.6.1 durcit les schémas JSON, rejette les claims positives interdites et compare le manifest aux valeurs physiques recalculées. La candidate reste `pending_external_audit`.
+
 Ce document décrit l'architecture technique, les spécifications physiques et les mécanismes de sécurité de la première usine de labels forward (Label Factory) de Galapagos.
 
 ---
@@ -72,6 +74,7 @@ Le validateur de la V2.6 applique un protocole d'audit extrêmement rigoureux :
 2. **Rejet Strict des Colonnes Interdites** : Toute présence de colonnes de features V2.5 (`pct_change_1m`, `volatility_1m`, etc.) ou de signaux/modèles de trading dans les fichiers de labels est immédiatement rejetée.
 3. **Causalité et Cohérence Temporelle** : Garantit mathématiquement que pour chaque ligne valide, `label_available_ts` est égal au timestamp de clôture du plus grand horizon ($h=5$) et est postérieur à `decision_ts`.
 4. **Cohérence du Manifeste & Rapports** : Les métadonnées physiques (checksums SHA256 des Parquets labels, tailles de fichiers, nombre de lignes) doivent correspondre exactement aux informations consignées dans les manifestes JSON.
+5. **Schéma strict V2.6.1** : Le manifest et le rapport JSON refusent toute clé inattendue et le rapport doit être une projection déterministe du manifest.
 
 ---
 

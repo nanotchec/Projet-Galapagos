@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import datetime, timezone
 import numpy as np
 import pandas as pd
 from pathlib import Path
@@ -19,6 +20,94 @@ from galapagos.labels.registry import (
 )
 from galapagos.data.public_market.provenance import sha256_file
 from galapagos.labels.quality import assess_label_quality
+from galapagos.validation.safety import (
+    scan_payload_for_forbidden_claims,
+    validate_exact_keys,
+    validate_markdown_forbidden_claims,
+)
+
+
+EXPECTED_TIMEFRAMES_V2_6 = {"1m", "5m", "15m", "1h"}
+EXPECTED_HORIZON_KEYS_V2_6 = {"h1", "h3", "h5"}
+
+MANIFEST_KEYS_V2_6 = {
+    "version",
+    "correction_version",
+    "status",
+    "created_at_utc",
+    "label_run_id",
+    "input_ohlcv",
+    "outputs",
+    "label_schema_version",
+    "label_columns",
+    "horizons",
+    "threshold",
+    "quality",
+    "safety",
+    "limitations",
+}
+
+INPUT_OHLCV_KEYS_V2_6 = {"path", "sha256", "rows"}
+OUTPUT_KEYS_V2_6 = {"path", "sha256", "bytes", "rows", "format"}
+QUALITY_KEYS_V2_6 = {
+    "rows",
+    "expected_rows",
+    "duplicate_rows",
+    "tail_rows",
+    "valid_counts_by_horizon",
+    "null_counts_by_column",
+    "forbidden_columns_present",
+    "timestamps_utc",
+    "monotonic_event_ts",
+    "label_available_ts_valid",
+    "label_end_ts_valid",
+    "causal_separation_guard_passed",
+    "errors",
+    "warnings",
+}
+SAFETY_KEYS_V2_6 = {
+    "public_read_only",
+    "authentication_used",
+    "api_key_used",
+    "private_endpoint_used",
+    "orders_enabled",
+    "paper_live_enabled",
+    "trading_enabled",
+    "ml_enabled",
+    "labels_enabled",
+    "backtest_enabled",
+}
+EXPECTED_LIMITATIONS_V2_6 = [
+    "V2.6 produit uniquement des labels forward separes sur BTCUSDT 2024-01-15 a partir des donnees OHLCV V2.4 validees.",
+    "V2.6 ne produit aucun dataset ML, aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.",
+]
+
+
+def _is_iso_utc(value: Any) -> bool:
+    if not isinstance(value, str) or not value or not value.endswith("Z"):
+        return False
+    try:
+        parsed = datetime.fromisoformat(value.removesuffix("Z") + "+00:00")
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None and parsed.utcoffset() == timezone.utc.utcoffset(parsed)
+
+
+def _compare_nested(expected: Any, actual: Any, prefix: str) -> list[str]:
+    if expected == actual:
+        return []
+    errors: list[str] = []
+    if isinstance(expected, dict) and isinstance(actual, dict):
+        expected_keys = set(expected)
+        actual_keys = set(actual)
+        for key in sorted(expected_keys - actual_keys):
+            errors.append(f"{prefix}.{key}")
+        for key in sorted(actual_keys - expected_keys):
+            errors.append(f"{prefix}.{key}")
+        for key in sorted(expected_keys & actual_keys):
+            errors.extend(_compare_nested(expected[key], actual[key], f"{prefix}.{key}"))
+        return errors
+    return [prefix]
 
 
 def validate_label_factory_v2_6(
@@ -48,44 +137,22 @@ def validate_label_factory_v2_6(
         return {"passed": False, "errors": errors, "warnings": warnings}
 
     # PARTIE A - Top-level keys verification
-    MANIFEST_KEYS = {
-        "version", "correction_version", "status", "created_at_utc", "label_run_id",
-        "input_ohlcv", "outputs", "label_schema_version", "label_columns", "horizons",
-        "threshold", "quality", "safety", "limitations"
-    }
-    manifest_keys_actual = set(manifest.keys())
-    unexpected = manifest_keys_actual - MANIFEST_KEYS
-    missing = MANIFEST_KEYS - manifest_keys_actual
-    if unexpected:
-        errors.append(f"V2.6 manifest unexpected keys: {sorted(list(unexpected))}")
-    if missing:
-        errors.append(f"V2.6 manifest missing keys: {sorted(list(missing))}")
+    errors.extend(validate_exact_keys(manifest, MANIFEST_KEYS_V2_6, "V2.6 manifest"))
 
     # PARTIE F - created_at_utc and label_run_id validation
     created_at = manifest.get("created_at_utc")
-    if not isinstance(created_at, str) or not created_at or not created_at.endswith("Z"):
-        errors.append("Invalid created_at_utc in manifest")
-    else:
-        try:
-            pd.to_datetime(created_at)
-        except Exception:
-            errors.append("Invalid created_at_utc format in manifest")
+    if not _is_iso_utc(created_at):
+        errors.append("V2.6 manifest created_at_utc invalid")
 
     label_run_id = manifest.get("label_run_id")
     if not isinstance(label_run_id, str) or not re.match(r"^v2_6_[0-9]{8}T[0-9]{6}Z_[0-9a-f]{8}$", label_run_id):
-        errors.append("Invalid label_run_id in manifest")
+        errors.append("V2.6 manifest label_run_id invalid")
 
     # PARTIE B - Sous-schémas stricts du manifest
     # safety validation
     safety = manifest.get("safety", {})
     if isinstance(safety, dict):
-        safety_keys_expected = {
-            "public_read_only", "authentication_used", "api_key_used", "private_endpoint_used",
-            "orders_enabled", "paper_live_enabled", "trading_enabled", "ml_enabled",
-            "labels_enabled", "backtest_enabled"
-        }
-        if set(safety.keys()) != safety_keys_expected:
-            errors.append("Safety keys mismatch in manifest")
+        errors.extend(validate_exact_keys(safety, SAFETY_KEYS_V2_6, "V2.6 manifest safety"))
         
         # Safety configuration values checks
         safety_checks = {
@@ -109,12 +176,10 @@ def validate_label_factory_v2_6(
     # input_ohlcv validation
     input_ohlcv = manifest.get("input_ohlcv", {})
     if isinstance(input_ohlcv, dict):
-        if set(input_ohlcv.keys()) != {"1m", "5m", "15m", "1h"}:
-            errors.append("input_ohlcv timeframes mismatch in manifest")
+        errors.extend(validate_exact_keys(input_ohlcv, EXPECTED_TIMEFRAMES_V2_6, "V2.6 manifest input_ohlcv"))
         for tf, tf_input in input_ohlcv.items():
             if isinstance(tf_input, dict):
-                if set(tf_input.keys()) != {"path", "sha256", "rows"}:
-                    errors.append(f"input_ohlcv {tf} keys mismatch in manifest")
+                errors.extend(validate_exact_keys(tf_input, INPUT_OHLCV_KEYS_V2_6, f"V2.6 manifest input_ohlcv.{tf}"))
             else:
                 errors.append(f"input_ohlcv {tf} must be a dictionary")
     else:
@@ -123,12 +188,10 @@ def validate_label_factory_v2_6(
     # outputs validation
     outputs = manifest.get("outputs", {})
     if isinstance(outputs, dict):
-        if set(outputs.keys()) != {"1m", "5m", "15m", "1h"}:
-            errors.append("outputs timeframes mismatch in manifest")
+        errors.extend(validate_exact_keys(outputs, EXPECTED_TIMEFRAMES_V2_6, "V2.6 manifest outputs"))
         for tf, tf_output in outputs.items():
             if isinstance(tf_output, dict):
-                if set(tf_output.keys()) != {"path", "sha256", "bytes", "rows", "format"}:
-                    errors.append(f"outputs {tf} keys mismatch in manifest")
+                errors.extend(validate_exact_keys(tf_output, OUTPUT_KEYS_V2_6, f"V2.6 manifest outputs.{tf}"))
             else:
                 errors.append(f"outputs {tf} must be a dictionary")
     else:
@@ -137,23 +200,14 @@ def validate_label_factory_v2_6(
     # quality validation
     quality = manifest.get("quality", {})
     if isinstance(quality, dict):
-        if set(quality.keys()) != {"1m", "5m", "15m", "1h"}:
-            errors.append("quality timeframes mismatch in manifest")
+        errors.extend(validate_exact_keys(quality, EXPECTED_TIMEFRAMES_V2_6, "V2.6 manifest quality"))
         for tf, tf_qual in quality.items():
             if isinstance(tf_qual, dict):
-                expected_qual_keys = {
-                    "rows", "expected_rows", "duplicate_rows", "tail_rows",
-                    "valid_counts_by_horizon", "null_counts_by_column", "forbidden_columns_present",
-                    "timestamps_utc", "monotonic_event_ts", "label_available_ts_valid",
-                    "label_end_ts_valid", "causal_separation_guard_passed", "errors", "warnings"
-                }
-                if set(tf_qual.keys()) != expected_qual_keys:
-                    errors.append(f"quality {tf} keys mismatch in manifest")
+                errors.extend(validate_exact_keys(tf_qual, QUALITY_KEYS_V2_6, f"V2.6 manifest quality.{tf}"))
                 
                 valid_counts = tf_qual.get("valid_counts_by_horizon", {})
                 if isinstance(valid_counts, dict):
-                    if set(valid_counts.keys()) != {"h1", "h3", "h5"}:
-                        errors.append(f"quality {tf} valid_counts_by_horizon keys mismatch in manifest")
+                    errors.extend(validate_exact_keys(valid_counts, EXPECTED_HORIZON_KEYS_V2_6, f"V2.6 manifest quality.{tf}.valid_counts_by_horizon"))
                 else:
                     errors.append(f"quality {tf} valid_counts_by_horizon must be a dictionary")
             else:
@@ -169,12 +223,8 @@ def validate_label_factory_v2_6(
         
     # Check limitations claims
     limitations = manifest.get("limitations", [])
-    expected_limitations = [
-        "V2.6 produit uniquement des labels forward separes sur BTCUSDT 2024-01-15 a partir des donnees OHLCV V2.4 validees.",
-        "V2.6 ne produit aucun dataset ML, aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre."
-    ]
-    if limitations != expected_limitations:
-        errors.append("Limitations claim modified or invalid in manifest")
+    if limitations != EXPECTED_LIMITATIONS_V2_6:
+        errors.append("V2.6 manifest limitations mismatch")
         
     # Check parameters
     if manifest.get("horizons") != HORIZONS:
@@ -353,32 +403,11 @@ def validate_label_factory_v2_6(
         # Evaluate recalculated stats against manifest to check physical coherence
         assessments = assess_label_quality(label_df, expected_rows)
         tf_qual = quality.get(tf, {}) if isinstance(quality, dict) else {}
-        
-        stat_keys_to_compare = [
-            "rows", "expected_rows", "duplicate_rows", "tail_rows",
-            "forbidden_columns_present", "timestamps_utc", "monotonic_event_ts",
-            "label_available_ts_valid", "label_end_ts_valid", "causal_separation_guard_passed"
-        ]
-        
-        for key in stat_keys_to_compare:
-            if tf_qual.get(key) != assessments.get(key):
-                errors.append(f"V2.6 manifest quality mismatch for {tf}.{key}")
-                
-        # Check valid_counts_by_horizon
-        expected_counts = assessments.get("valid_counts_by_horizon", {})
-        manifest_counts = tf_qual.get("valid_counts_by_horizon", {}) if isinstance(tf_qual, dict) else {}
-        if isinstance(manifest_counts, dict):
-            for h_key in {"h1", "h3", "h5"}:
-                if expected_counts.get(h_key) != manifest_counts.get(h_key):
-                    errors.append(f"V2.6 manifest quality mismatch for {tf}.valid_counts_by_horizon.{h_key}")
-                    
-        # Check null_counts_by_column
-        expected_nulls = assessments.get("null_counts_by_column", {})
-        manifest_nulls = tf_qual.get("null_counts_by_column", {}) if isinstance(tf_qual, dict) else {}
-        if isinstance(manifest_nulls, dict):
-            for col_key in expected_nulls:
-                if expected_nulls.get(col_key) != manifest_nulls.get(col_key):
-                    errors.append(f"V2.6 manifest quality mismatch for {tf}.null_counts_by_column.{col_key}")
+
+        if isinstance(tf_qual, dict):
+            expected_quality = {key: assessments.get(key) for key in QUALITY_KEYS_V2_6}
+            for mismatch_path in _compare_nested(expected_quality, tf_qual, tf):
+                errors.append(f"V2.6 manifest quality mismatch for {mismatch_path}")
                     
         # Proactively check that no files in gold/features have been modified.
         feature_gold_path = project_root / f"data/gold/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe={tf}/year=2024/month=01/features-2024-01-15.parquet"
@@ -394,62 +423,58 @@ def validate_label_factory_v2_6(
     # 3. PARTIE C - Check JSON report alignment with manifest (strict projection validation)
     if not report_json_path.exists():
         errors.append(f"JSON Report not found: {report_json_path}")
+        report_json: Any = None
     else:
         try:
             with open(report_json_path, "r") as f:
                 report_json = json.load(f)
             
             # Check top level quality report keys
-            report_keys_actual = set(report_json.keys())
-            unexpected_rep = report_keys_actual - MANIFEST_KEYS
-            missing_rep = MANIFEST_KEYS - report_keys_actual
-            if unexpected_rep:
-                errors.append(f"V2.6 quality report unexpected keys: {sorted(list(unexpected_rep))}")
-            if missing_rep:
-                errors.append(f"V2.6 quality report missing keys: {sorted(list(missing_rep))}")
+            errors.extend(validate_exact_keys(report_json, MANIFEST_KEYS_V2_6, "V2.6 quality report"))
+            if isinstance(report_json.get("input_ohlcv"), dict):
+                errors.extend(validate_exact_keys(report_json["input_ohlcv"], EXPECTED_TIMEFRAMES_V2_6, "V2.6 quality report input_ohlcv"))
+                for tf, tf_input in report_json["input_ohlcv"].items():
+                    errors.extend(validate_exact_keys(tf_input, INPUT_OHLCV_KEYS_V2_6, f"V2.6 quality report input_ohlcv.{tf}"))
+            if isinstance(report_json.get("outputs"), dict):
+                errors.extend(validate_exact_keys(report_json["outputs"], EXPECTED_TIMEFRAMES_V2_6, "V2.6 quality report outputs"))
+                for tf, tf_output in report_json["outputs"].items():
+                    errors.extend(validate_exact_keys(tf_output, OUTPUT_KEYS_V2_6, f"V2.6 quality report outputs.{tf}"))
+            if isinstance(report_json.get("quality"), dict):
+                errors.extend(validate_exact_keys(report_json["quality"], EXPECTED_TIMEFRAMES_V2_6, "V2.6 quality report quality"))
+                for tf, tf_qual in report_json["quality"].items():
+                    errors.extend(validate_exact_keys(tf_qual, QUALITY_KEYS_V2_6, f"V2.6 quality report quality.{tf}"))
+                    if isinstance(tf_qual, dict):
+                        errors.extend(
+                            validate_exact_keys(
+                                tf_qual.get("valid_counts_by_horizon", {}),
+                                EXPECTED_HORIZON_KEYS_V2_6,
+                                f"V2.6 quality report quality.{tf}.valid_counts_by_horizon",
+                            )
+                        )
+            if isinstance(report_json.get("safety"), dict):
+                errors.extend(validate_exact_keys(report_json["safety"], SAFETY_KEYS_V2_6, "V2.6 quality report safety"))
                 
             # Compare every field value between report and manifest
-            for field in MANIFEST_KEYS:
+            for field in MANIFEST_KEYS_V2_6:
                 if field in manifest and field in report_json:
                     if manifest[field] != report_json[field]:
                         errors.append(f"V2.6 quality report mismatch for {field}")
+            if report_json.get("limitations") != EXPECTED_LIMITATIONS_V2_6:
+                errors.append("V2.6 quality report limitations mismatch")
+            if report_json.get("created_at_utc") != manifest.get("created_at_utc"):
+                errors.append("V2.6 quality report created_at_utc mismatch")
+            if report_json.get("label_run_id") != manifest.get("label_run_id"):
+                errors.append("V2.6 quality report label_run_id mismatch")
         except Exception as e:
+            report_json = None
             errors.append(f"Failed to read or parse JSON report: {str(e)}")
             
     # 4. PARTIE E - Claims positives interdites récursives
-    FORBIDDEN_CLAIMS = [
-        "strategy validated", "stratégie validée", "strategie validee",
-        "signal validated", "signal validé", "signal valide",
-        "trading enabled", "trading activé", "trading active",
-        "paper live enabled", "paper live activé", "paper live active",
-        "orders enabled", "ordre activé", "ordre active",
-        "real trading", "trading réel activé", "trading reel active",
-        "ml validated", "modèle ml validé", "modele ml valide",
-        "backtest validated", "backtest validé", "backtest valide",
-        "execution enabled", "live enabled", "production ready",
-        "ordre réel activé", "ordre reel active", "strategy_validated"
-    ]
-
-    # Verify manifest
-    try:
-        manifest_str = json.dumps(manifest, ensure_ascii=False).lower()
-        for claim in FORBIDDEN_CLAIMS:
-            if claim in manifest_str:
-                errors.append(f"Forbidden claim pattern detected in manifest: '{claim}'")
-    except Exception as e:
-        warnings.append(f"Could not scan manifest for claims: {e}")
+    errors.extend(scan_payload_for_forbidden_claims(manifest, "V2.6 manifest"))
 
     # Verify report JSON
-    if report_json_path.exists():
-        try:
-            with open(report_json_path, "r") as f:
-                rep_data = json.load(f)
-            rep_str = json.dumps(rep_data, ensure_ascii=False).lower()
-            for claim in FORBIDDEN_CLAIMS:
-                if claim in rep_str:
-                    errors.append(f"Forbidden claim pattern detected in report JSON: '{claim}'")
-        except Exception as e:
-            warnings.append(f"Could not scan report JSON for claims: {e}")
+    if isinstance(report_json, dict):
+        errors.extend(scan_payload_for_forbidden_claims(report_json, "V2.6 quality report"))
 
     # Verify Markdown report
     if not report_md_path.exists():
@@ -458,10 +483,7 @@ def validate_label_factory_v2_6(
         try:
             with open(report_md_path, "r") as f:
                 md_content = f.read()
-            md_content_lower = md_content.lower()
-            for claim in FORBIDDEN_CLAIMS:
-                if claim in md_content_lower:
-                    errors.append(f"Forbidden claim pattern detected in Markdown report: '{claim}'")
+            errors.extend(validate_markdown_forbidden_claims(md_content, "V2.6 Markdown report"))
         except Exception as e:
             errors.append(f"Failed to read Markdown report: {str(e)}")
             

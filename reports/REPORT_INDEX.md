@@ -1,10 +1,10 @@
 # Report Index
 
-## V2.6: Clean Forward Label Factory Preview
-- [Manifest V2.6](manifests/clean_label_factory_v2_6_manifest.json)
-- [Quality Report V2.6 (JSON)](labels/clean_label_factory_v2_6.json)
-- [Quality Report V2.6 (Markdown)](labels/clean_label_factory_v2_6.md)
-- [Doc V2.6](../docs/clean_label_factory_v2_6.md)
+## V2.6.1: Clean Label Factory Manifest/Report Hardening
+- [Manifest V2.6 + correction V2.6.1](manifests/clean_label_factory_v2_6_manifest.json)
+- [Quality Report V2.6 + correction V2.6.1 (JSON)](labels/clean_label_factory_v2_6.json)
+- [Quality Report V2.6 + correction V2.6.1 (Markdown)](labels/clean_label_factory_v2_6.md)
+- [Doc V2.6 / V2.6.1](../docs/clean_label_factory_v2_6.md)
 
 ## V2.5.2: Causal Feature Store Test Reproducibility & Smoke Timeout Fix
 - [Manifest V2.5](manifests/causal_feature_store_v2_5_manifest.json)

@@ -129,7 +129,7 @@ def test_validator_limitations_claim_modified(project_v2_6: Path):
         
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
-    assert any("Limitations claim modified" in err for err in res["errors"])
+    assert any("V2.6 manifest limitations mismatch" in err for err in res["errors"])
 
 
 def test_validator_output_checksum_mismatch(project_v2_6: Path):
@@ -283,7 +283,7 @@ def test_validator_forbidden_claim_in_markdown(project_v2_6: Path):
         
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
-    assert any("Forbidden claim pattern detected in Markdown report" in err for err in res["errors"])
+    assert any("V2.6 Markdown report contains forbidden claim" in err for err in res["errors"])
 
 
 def test_validator_ml_dataset_directory_present(project_v2_6: Path):
@@ -348,6 +348,32 @@ def test_validator_v2_6_rejects_report_quality_rows_lie(project_v2_6: Path):
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
     assert any("V2.6 quality report mismatch for quality" in err for err in res["errors"])
+
+
+def test_validator_v2_6_rejects_report_threshold_lie(project_v2_6: Path):
+    report_file = project_v2_6 / QUALITY_JSON_PATH
+    with open(report_file, "r") as f:
+        report = json.load(f)
+    report["threshold"] = 0.1
+    with open(report_file, "w") as f:
+        json.dump(report, f, indent=2)
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("V2.6 quality report mismatch for threshold" in err for err in res["errors"])
+
+
+def test_validator_v2_6_rejects_report_horizons_lie(project_v2_6: Path):
+    report_file = project_v2_6 / QUALITY_JSON_PATH
+    with open(report_file, "r") as f:
+        report = json.load(f)
+    report["horizons"] = [1, 2, 3]
+    with open(report_file, "w") as f:
+        json.dump(report, f, indent=2)
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("V2.6 quality report mismatch for horizons" in err for err in res["errors"])
 
 
 def test_validator_v2_6_rejects_manifest_outputs_rows_lie(project_v2_6: Path):
@@ -421,7 +447,7 @@ def test_validator_v2_6_rejects_synced_limitations_strategy_validated_claim(proj
         
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
-    assert any("Forbidden claim pattern detected" in err or "Limitations claim modified" in err for err in res["errors"])
+    assert any("forbidden claim" in err or "V2.6 manifest limitations mismatch" in err for err in res["errors"])
 
 
 def test_validator_v2_6_rejects_empty_synced_limitations(project_v2_6: Path):
@@ -443,7 +469,7 @@ def test_validator_v2_6_rejects_empty_synced_limitations(project_v2_6: Path):
         
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
-    assert any("Limitations claim modified" in err for err in res["errors"])
+    assert any("V2.6 manifest limitations mismatch" in err for err in res["errors"])
 
 
 def test_validator_v2_6_rejects_invalid_created_at_even_if_report_synced(project_v2_6: Path):
@@ -465,7 +491,7 @@ def test_validator_v2_6_rejects_invalid_created_at_even_if_report_synced(project
         
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
-    assert any("Invalid created_at_utc" in err for err in res["errors"])
+    assert any("V2.6 manifest created_at_utc invalid" in err for err in res["errors"])
 
 
 def test_validator_v2_6_rejects_invalid_label_run_id_even_if_report_synced(project_v2_6: Path):
@@ -487,7 +513,7 @@ def test_validator_v2_6_rejects_invalid_label_run_id_even_if_report_synced(proje
         
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
-    assert any("Invalid label_run_id" in err for err in res["errors"])
+    assert any("V2.6 manifest label_run_id invalid" in err for err in res["errors"])
 
 
 def test_validator_v2_6_rejects_markdown_strategy_validated_claim(project_v2_6: Path):
@@ -503,7 +529,7 @@ def test_validator_v2_6_rejects_markdown_strategy_validated_claim(project_v2_6: 
         
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
-    assert any("Forbidden claim pattern detected in Markdown report" in err for err in res["errors"])
+    assert any("V2.6 Markdown report contains forbidden claim" in err for err in res["errors"])
 
 
 def test_validator_v2_6_allows_markdown_negative_claims(project_v2_6: Path):

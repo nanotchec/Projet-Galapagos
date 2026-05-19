@@ -2,13 +2,15 @@
 
 ## Etat actuel du projet
 
-- Derniere version validee : V2.3.1.
-- Candidate : V2.4.4, durcissement global des artefacts inclus et finalisation runtime du validateur OHLCV.
+- Derniere version validee : V2.5.2.
+- Candidate : V2.6.1, durcissement du manifest et du rapport JSON de la Clean Label Factory.
 - Le projet est actuellement data/research/offline only.
 - Aucun trading reel n'est autorise.
 - Aucun paper live n'est autorise.
 - Aucun ordre n'est autorise.
 - Aucun modele ML n'est valide.
+- Aucun dataset ML n'est cree par la candidate V2.6.1.
+- V2.6.1 reste `pending_external_audit` et n'est pas validee avant audit externe.
 - Les anciennes parties paper trading V1 sont legacy et ne sont pas autorisees dans la roadmap actuelle.
 
 Projet Galapagos est une V1 verticale d'agent autonome de trading en paper trading sur BTC.

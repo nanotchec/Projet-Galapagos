@@ -60,6 +60,7 @@ FORBIDDEN_POSITIVE_CLAIMS = [
     "production ready",
     "ordre réel activé",
     "ordre reel active",
+    "strategy_validated",
 ]
 
 
@@ -95,6 +96,10 @@ def scan_payload_for_forbidden_claims(payload: Any, label: str) -> list[str]:
         if isinstance(value, dict):
             for key, child in value.items():
                 child_path = f"{path}.{key}" if path else str(key)
+                key_text = str(key).casefold()
+                for term in FORBIDDEN_POSITIVE_CLAIMS:
+                    if term.casefold() in key_text:
+                        errors.append(f"{label} contains forbidden claim at {child_path}: {term}")
                 walk(child, child_path)
             return
         if isinstance(value, list):

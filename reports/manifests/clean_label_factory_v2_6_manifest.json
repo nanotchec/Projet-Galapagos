@@ -1,9 +1,9 @@
 {
   "version": "V2.6",
-  "correction_version": "V2.6.0",
+  "correction_version": "V2.6.1",
   "status": "PASS",
-  "created_at_utc": "2026-05-19T20:35:13.083721Z",
-  "label_run_id": "v2_6_20260519T203512Z_0cfe9675",
+  "created_at_utc": "2026-05-19T21:01:12.903334Z",
+  "label_run_id": "v2_6_20260519T210112Z_9b4100e8",
   "input_ohlcv": {
     "1m": {
       "path": "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/year=2024/month=01/part-2024-01-15.parquet",
@@ -29,29 +29,29 @@
   "outputs": {
     "1m": {
       "path": "data/gold/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/year=2024/month=01/labels-2024-01-15.parquet",
-      "sha256": "96a6d2d40bcd4605470509abfe57d3128709864a9e88131ba9ac4155f47ddc68",
-      "bytes": 228359,
+      "sha256": "54fb622b36e987f757c9c8dec84619dc1d1d273a6073fa7daddb9cad94f001ca",
+      "bytes": 227884,
       "rows": 1440,
       "format": "parquet"
     },
     "5m": {
       "path": "data/gold/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/year=2024/month=01/labels-2024-01-15.parquet",
-      "sha256": "ebf5c6cae43ca0434ea808897ba8093a46793f13ee09466fd3434b35225ef277",
-      "bytes": 64437,
+      "sha256": "9703173ad5dab946147240b508ab43f3e3d335baeea469c7aa7f59847e21ee3b",
+      "bytes": 63980,
       "rows": 288,
       "format": "parquet"
     },
     "15m": {
       "path": "data/gold/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/year=2024/month=01/labels-2024-01-15.parquet",
-      "sha256": "57a06f9f68af6a4db3b51dfb5d2ce5071cc8e06313f04240e93a1c8749540acf",
-      "bytes": 37468,
+      "sha256": "c8876d7c0c080d8444231cb5f8a3feb3ec11d44b4c91c946f62f4c3afdcfec50",
+      "bytes": 37027,
       "rows": 96,
       "format": "parquet"
     },
     "1h": {
       "path": "data/gold/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/year=2024/month=01/labels-2024-01-15.parquet",
-      "sha256": "df2a974de56e056123cd78ab6ecd67e22a38622586bbaf7bca8163643a5c30fa",
-      "bytes": 26648,
+      "sha256": "10a0aeeeb4665b3dde710c56fa54eaef6e67d6f5e44e284cad55d8d5af30834b",
+      "bytes": 26237,
       "rows": 24,
       "format": "parquet"
     }
