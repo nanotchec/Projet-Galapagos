@@ -1,24 +1,39 @@
-# Etat Projet V2.4.8 + candidat V2.5.2
+# État du Projet : V2.5.2 validée + candidat V2.6
 
-- **Dernière version validée** : V2.4.8.
-- **Verdict validé** : Finalisation robuste du validateur de resampling via focused Unit/Integration split sous les 5 secondes.
-- **Versions refusées en audit externe** :
-  - V2.5 (pour tests non reproductibles et régression de temps d'exécution).
-  - V2.5.1 (pour régression de temps d'exécution du validateur V2.4 sous pytest et timeout du smoke test après 180 secondes).
-- **Version candidate** : V2.5.2.
+- **Dernière version validée** : V2.5.2 (Feature Store Causal).
+- **Verdict validé** : Validation physique complète et rigoureuse du Feature Store Causal avec correction des régressions runtime V2.4 et résolution des timeouts de smoke test.
+- **Versions antérieures validées** : V2.4.8 (Resampling OHLCV Silver), V2.3.1 (Ingestion Raw).
+- **Version candidate** : V2.6.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : Finalisation et correction des tests du Feature Store Causal (V2.4 Runtime Regression & V2.5 Smoke Timeout Fix).
-- **V2.5.2 produit uniquement** des features OHLCV causales déterministes sur BTCUSDT 2024-01-15 à partir des données V2.4 validées, sous forme de fichiers Parquet Gold sous `data/gold/features/`.
+- **Direction suivante** : Clean Forward Label Factory Preview (V2.6) – Implémentation isolée de labels causaux et non-leakage.
+- **V2.6 produit uniquement** des labels forward (prix futurs, simple/log returns, direction, up/down/flat ternaire) sur BTCUSDT 2024-01-15 à partir des données OHLCV V2.4 validées, sous forme de fichiers Parquet Gold sous `data/gold/labels/forward_returns/`.
 
-## Détails de la version candidate V2.5.2
-- **Reproductibilité V2.5** : Élimination complète de tout chemin absolu local en dur `/Users/lilianserre/` dans la suite de tests du validateur (héritée de la V2.5.1).
-- **Optimisation V2.4** : Résolution de la régression de performance I/O du validateur V2.4 sous pytest par la séparation rigoureuse des tests physiques critiques et le remplacement des tests redondants par des tests logiques unitaires purs en mémoire (temps d'exécution total de la suite réduit de 50% en local, assurant un passage ultra-rapide sous les 60 secondes en audit).
-- **Smoke Test Robuste** : Refonte totale du smoke test de Galapagos pour en faire un processus ultra-rapide, autonome, sans pytest, avec des timeouts stricts de 30 secondes et une vérification directe des structures physiques des fichiers Parquet.
-- **Stabilité physique** : L'architecture modulaire de features sous `src/galapagos/features/` (`causal_ohlcv.py`, `quality.py`, `validation.py`, `schemas.py`, `registry.py`) reste 100% valide.
-- **Sécurité et conformité** : Le validateur V2.5.2 intègre récursivement les validateurs V2.3 et V2.4. Il rejette strictement toute colonne extra (future_return, strategy_validated, etc.), label, signal, ou terme interdit.
-- **Release ZIP V2.5.2** : Le package zip épuré `projet-galapagos-v2.5.2-clean.zip` passe à 100% l'audit de structure et le smoke test en moins de 15 secondes dans un environnement isolé.
+---
 
-## Clause de Sécurité Réglementaire V2.5.2
-- Aucun trading réel, paper live, ordre, modèle ML, label ou backtest n'est autorisé.
-- Le Feature Store V2.5.2 est strictement limité à des fins d'analyse de données historiques (Data/Research Only).
-- La V2.5.2 est déclarée `pending_external_audit` avant toute validation externe finale.
+## Détails de la version candidate V2.6
+
+- **Isolation stricte** : Aucun mélange entre les features causales de la V2.5.2 et les labels de la V2.6. Les labels résident exclusivement dans `data/gold/labels/forward_returns/` et ne parasitent aucun silver Parquet.
+- **Formule mathématique stricte** :
+  - Simple returns et Log returns calculés sur 3 horizons temporels $h \in \{1, 3, 5\}$.
+  - Direction ternaire (`1.0`, `-1.0`, `0.0`).
+  - Classification Up/Down/Flat ternaire avec un seuil strict fixé à $0.0005$ ($0.05\%$).
+- **Garantie anti-leakage temporel (Causal Separation)** :
+  - `label_available_ts` correspond à la fin de l'horizon physique maximal ($h=5$).
+  - Assertion stricte que pour chaque ligne valide, `label_available_ts > decision_ts`, garantissant qu'aucune décision ne dispose de look-ahead bias.
+- **Gestion robuste des queues de séries** :
+  - Les 5 dernières lignes de chaque fichier (pour $h=5$) sont marquées `tail_row = True`.
+  - Toutes les colonnes de labels invalides associées à la queue de série sont **strictement nullifiées** (`NaN` / `None`), empêchant toute fausse interpolation ou contamination.
+- **Validateur physique V2.6** :
+  - Rejette strictement toute colonne de features V2.5 dans les labels.
+  - Rejette toute colonne de labels dans les features V2.5 ou les Parquets silver V2.4.
+  - Vérifie récursivement l'intégrité de toutes les versions précédentes (V2.3, V2.4, V2.5).
+- **Performance de tests ultra-rapide** :
+  - Les suites de tests de validation pytest (`test_clean_label_factory_v2_6_validator.py` et `test_forward_labels_v2_6.py`) s'exécutent entièrement en mémoire de façon isolée et passent à 100% en moins de 3 secondes.
+- **Release ZIP V2.6** : Le package zip épuré `projet-galapagos-v2.6-clean.zip` (84 fichiers, 901 Ko) passe avec un succès complet l'audit de structure et les 5 commandes de smoke test en moins de 5 secondes dans un environnement isolé temporaire.
+
+---
+
+## Clause de Sécurité Réglementaire V2.6
+- Aucun trading réel, paper live, ordre, modèle ML ou backtest n'est autorisé.
+- La Label Factory V2.6 est strictement limitée à des fins d'analyse de données historiques (Data/Research Only).
+- La V2.6 est déclarée `pending_external_audit` avant toute validation externe finale.

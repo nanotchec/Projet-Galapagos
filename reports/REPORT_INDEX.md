@@ -1,6 +1,18 @@
 # Report Index
 
-## V2.4.4: Global Included-Artifact Claims Hardening & Validator Runtime Finalization
+## V2.6: Clean Forward Label Factory Preview
+- [Manifest V2.6](manifests/clean_label_factory_v2_6_manifest.json)
+- [Quality Report V2.6 (JSON)](labels/clean_label_factory_v2_6.json)
+- [Quality Report V2.6 (Markdown)](labels/clean_label_factory_v2_6.md)
+- [Doc V2.6](../docs/clean_label_factory_v2_6.md)
+
+## V2.5.2: Causal Feature Store Test Reproducibility & Smoke Timeout Fix
+- [Manifest V2.5](manifests/causal_feature_store_v2_5_manifest.json)
+- [Quality Report V2.5 (JSON)](features/causal_feature_store_v2_5.json)
+- [Quality Report V2.5 (Markdown)](features/causal_feature_store_v2_5.md)
+- [Doc V2.5](../docs/causal_feature_store_v2_5.md)
+
+## V2.4.8: Validator Test Runtime Finalization by Focused Unit/Integration Split
 - [Manifest V2.4](manifests/ohlcv_resampling_v2_4_manifest.json)
 - [Quality Report V2.4](data_quality/ohlcv_resampling_v2_4.md)
 - [Doc V2.4](../docs/ohlcv_resampling_v2_4.md)
