@@ -5,6 +5,11 @@
 - [Quality Report V2.4](data_quality/ohlcv_resampling_v2_4.md)
 - [Doc V2.4](../docs/ohlcv_resampling_v2_4.md)
 
+## V2.4.2: Strict Schema Hardening for OHLCV Resampling Manifest/Report
+- [Manifest V2.4](manifests/ohlcv_resampling_v2_4_manifest.json)
+- [Quality Report V2.4](data_quality/ohlcv_resampling_v2_4.md)
+- [Doc V2.4](../docs/ohlcv_resampling_v2_4.md)
+
 ## V2.2.1: Offline Baseline Expanded
 - [Summary v2_2_1](research/offline_baseline_expanded_summary_v2_2_1.md)
 - [Results v2_2_1](research/offline_baseline_expanded_results_v2_2_1.md)

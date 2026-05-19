@@ -220,6 +220,106 @@ def test_validator_v2_4_rejects_quality_report_limitations_lie(tmp_path: Path) -
     assert "quality report limitations mismatch" in result["errors"]
 
 
+def test_validator_v2_4_rejects_quality_report_unexpected_top_level_key(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["claim"] = "strategy validated"
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("quality report unexpected keys" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_quality_report_top_level_trading_enabled_true(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["trading_enabled"] = True
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("quality report unexpected keys" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_manifest_unexpected_top_level_key(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["strategy_validated"] = True
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["strategy_validated"] = True
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("V2.4 manifest unexpected keys" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_manifest_unexpected_execution_key(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["execution_enabled"] = True
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("V2.4 manifest unexpected keys" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_output_unexpected_key(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["outputs"]["5m"]["claim"] = "ok"
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["outputs"]["5m"]["claim"] = "ok"
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("V2.4 manifest outputs.5m unexpected keys" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_quality_unexpected_key(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["quality"]["5m"]["claim"] = "ok"
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["quality"]["5m"]["claim"] = "ok"
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("V2.4 manifest quality.5m unexpected keys" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_report_safety_unexpected_key(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["safety"]["execution_enabled"] = True
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("quality report safety unexpected keys" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_markdown_forbidden_strategy_claim(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    markdown_path = tmp_path / "reports/data_quality/ohlcv_resampling_v2_4.md"
+    markdown_path.write_text(markdown_path.read_text(encoding="utf-8") + "\nStrategy validated.\n", encoding="utf-8")
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert "quality markdown contains forbidden claim: strategy validated" in result["errors"]
+
+
+def test_validator_v2_4_allows_markdown_negative_safety_claims(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    markdown_path = tmp_path / "reports/data_quality/ohlcv_resampling_v2_4.md"
+    markdown_path.write_text(
+        markdown_path.read_text(encoding="utf-8")
+        + "\nAucun trading. V2.4 ne valide aucune stratégie. Aucun ordre.\n",
+        encoding="utf-8",
+    )
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is True
+
+
 def _assert_safety_flag_rejected(tmp_path: Path, field: str, expected_error: str) -> None:
     _prepare_valid_resampling(tmp_path)
     manifest = _load_json(tmp_path / MANIFEST_PATH)

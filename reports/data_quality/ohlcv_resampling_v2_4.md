@@ -1,8 +1,8 @@
 # OHLCV Resampling V2.4
 
-- Correction : `V2.4.1`
+- Correction : `V2.4.2`
 - Statut : `PASS`
-- Run : `v2_4_20260519T161140Z_8f3387cd`
+- Run : `v2_4_20260519T163754Z_73d0ca18`
 - Parent-child consistency : `True`
 
 ## Lignes

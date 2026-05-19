@@ -21,7 +21,7 @@ from galapagos.validation.safety import scan_new_modules_for_forbidden_terms, va
 
 
 VERSION = "V2.4"
-CORRECTION_VERSION = "V2.4.1"
+CORRECTION_VERSION = "V2.4.2"
 VERSION_SUFFIX = "v2_4"
 TARGETS = ["5m", "15m", "1h"]
 EXPECTED_ROWS = {"1m": 1440, "5m": 288, "15m": 96, "1h": 24}
@@ -46,6 +46,82 @@ QUALITY_FIELDS = [
     "timestamps_utc",
     "errors",
     "warnings",
+]
+MANIFEST_TOP_LEVEL_KEYS = {
+    "version",
+    "correction_version",
+    "status",
+    "created_at_utc",
+    "resampling_run_id",
+    "input_1m",
+    "outputs",
+    "expected_rows",
+    "quality",
+    "parent_child_consistency",
+    "public_read_only",
+    "authentication_used",
+    "api_key_used",
+    "private_endpoint_used",
+    "orders_enabled",
+    "paper_live_enabled",
+    "trading_enabled",
+    "ml_enabled",
+    "labels_enabled",
+    "backtest_enabled",
+    "limitations",
+}
+REPORT_TOP_LEVEL_KEYS = {
+    "version",
+    "correction_version",
+    "status",
+    "created_at_utc",
+    "resampling_run_id",
+    "input_1m",
+    "outputs",
+    "expected_rows",
+    "quality",
+    "parent_child_consistency",
+    "safety",
+    "limitations",
+}
+INPUT_1M_KEYS = {"path", "sha256", "bytes", "rows"}
+OUTPUT_KEYS = {"path", "sha256", "bytes", "rows", "format"}
+EXPECTED_ROW_KEYS = {"1m", "5m", "15m", "1h"}
+QUALITY_TIMEFRAME_KEYS = {"1m", "5m", "15m", "1h"}
+QUALITY_FIELD_KEYS = set(QUALITY_FIELDS)
+SAFETY_KEYS = {
+    "public_read_only",
+    "authentication_used",
+    "api_key_used",
+    "private_endpoint_used",
+    "orders_enabled",
+    "paper_live_enabled",
+    "trading_enabled",
+    "ml_enabled",
+    "labels_enabled",
+    "backtest_enabled",
+}
+MARKDOWN_FORBIDDEN_CLAIMS = [
+    "strategy validated",
+    "strategie validee",
+    "stratégie validée",
+    "signal validated",
+    "signal valide",
+    "signal validé",
+    "trading enabled",
+    "paper live enabled",
+    "real trading",
+    "trading reel active",
+    "trading réel activé",
+    "orders enabled",
+    "ordre active",
+    "ordre activé",
+    "ml validated",
+    "modele ml valide",
+    "modèle ml validé",
+    "backtest validated",
+    "backtest valide",
+    "backtest validé",
 ]
 
 
@@ -159,6 +235,7 @@ def validate_ohlcv_resampling_v2_4(root: Path = Path(".")) -> dict[str, Any]:
         errors.extend(_validate_parent_child(timeframe, frame_1m, frame))
     errors.extend(_validate_manifest_quality(manifest, physical_qualities))
     errors.extend(_validate_report(manifest, report))
+    errors.extend(_validate_quality_markdown(root))
     errors.extend(scan_new_modules_for_forbidden_terms(root))
     errors.extend(_scan_v2_4_scripts(root))
     return _result(errors, manifest=manifest)
@@ -180,26 +257,33 @@ def resampled_silver_path(root: Path, timeframe: str) -> Path:
 
 def _validate_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
     errors: list[str] = []
+    errors.extend(_validate_keys(manifest, MANIFEST_TOP_LEVEL_KEYS, "V2.4 manifest"))
     if manifest.get("version") != VERSION:
         errors.append("manifest version must be V2.4")
     if manifest.get("correction_version") != CORRECTION_VERSION:
-        errors.append("manifest correction_version must be V2.4.1")
+        errors.append("manifest correction_version must be V2.4.2")
     if manifest.get("status") != "PASS":
         errors.append("manifest status must be PASS")
     errors.extend(validate_safety_flags(manifest))
     if manifest.get("parent_child_consistency") is not True:
         errors.append("parent_child_consistency must be true")
     input_path = _input_config(root).silver_path
-    input_block = manifest.get("input_1m", {})
+    input_block_raw = manifest.get("input_1m", {})
+    input_block = input_block_raw if isinstance(input_block_raw, dict) else {}
+    errors.extend(_validate_keys(input_block, INPUT_1M_KEYS, "V2.4 manifest input_1m"))
     if (root / Path(input_block.get("path", ""))).resolve() != input_path.resolve():
         errors.append("input_1m path mismatch")
     if input_block.get("sha256") != sha256_file(input_path):
         errors.append("input_1m checksum mismatch")
     if input_block.get("rows") != EXPECTED_ROWS["1m"]:
         errors.append("input_1m rows mismatch")
-    outputs = manifest.get("outputs", {})
+    outputs_raw = manifest.get("outputs", {})
+    outputs = outputs_raw if isinstance(outputs_raw, dict) else {}
+    errors.extend(_validate_keys(outputs, set(TARGETS), "V2.4 manifest outputs"))
     for timeframe in TARGETS:
-        block = outputs.get(timeframe, {})
+        block_raw = outputs.get(timeframe, {})
+        block = block_raw if isinstance(block_raw, dict) else {}
+        errors.extend(_validate_keys(block, OUTPUT_KEYS, f"V2.4 manifest outputs.{timeframe}"))
         path = resampled_silver_path(root, timeframe)
         if (root / Path(block.get("path", ""))).resolve() != path.resolve():
             errors.append(f"{timeframe} path mismatch")
@@ -214,10 +298,19 @@ def _validate_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
             errors.append(f"{timeframe} rows mismatch")
         if block.get("format") != "parquet":
             errors.append(f"{timeframe} format must be parquet")
-    expected_rows = manifest.get("expected_rows", {})
+    expected_rows_raw = manifest.get("expected_rows", {})
+    expected_rows = expected_rows_raw if isinstance(expected_rows_raw, dict) else {}
+    errors.extend(_validate_keys(expected_rows, EXPECTED_ROW_KEYS, "V2.4 manifest expected_rows"))
     for timeframe, expected in EXPECTED_ROWS.items():
         if expected_rows.get(timeframe) != expected:
             errors.append(f"expected rows mismatch for {timeframe}")
+    quality_raw = manifest.get("quality", {})
+    quality = quality_raw if isinstance(quality_raw, dict) else {}
+    errors.extend(_validate_keys(quality, QUALITY_TIMEFRAME_KEYS, "V2.4 manifest quality"))
+    for timeframe in ["1m", *TARGETS]:
+        quality_block_raw = quality.get(timeframe, {})
+        quality_block = quality_block_raw if isinstance(quality_block_raw, dict) else {}
+        errors.extend(_validate_keys(quality_block, QUALITY_FIELD_KEYS, f"V2.4 manifest quality.{timeframe}"))
     return errors
 
 
@@ -247,6 +340,10 @@ def _validate_manifest_quality(manifest: dict[str, Any], physical_qualities: dic
 def _validate_report(manifest: dict[str, Any], report: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     expected = _build_report(manifest)
+    errors.extend(_validate_keys(report, set(expected), "quality report"))
+    safety_raw = report.get("safety", {})
+    safety = safety_raw if isinstance(safety_raw, dict) else {}
+    errors.extend(_validate_keys(safety, SAFETY_KEYS, "quality report safety"))
     for field, message in [
         ("version", "quality report version mismatch"),
         ("correction_version", "quality report correction_version mismatch"),
@@ -264,6 +361,32 @@ def _validate_report(manifest: dict[str, Any], report: dict[str, Any]) -> list[s
         if report.get(field) != expected.get(field):
             errors.append(message)
     errors.extend(validate_safety_flags(report.get("safety", {})))
+    return errors
+
+
+def _validate_keys(payload: Any, expected_keys: set[str], label: str) -> list[str]:
+    if not isinstance(payload, dict):
+        return [f"{label} must be an object"]
+    actual_keys = set(payload)
+    errors: list[str] = []
+    unexpected = sorted(actual_keys - expected_keys)
+    missing = sorted(expected_keys - actual_keys)
+    if unexpected:
+        errors.append(f"{label} unexpected keys: {unexpected}")
+    if missing:
+        errors.append(f"{label} missing keys: {missing}")
+    return errors
+
+
+def _validate_quality_markdown(root: Path) -> list[str]:
+    path = root / QUALITY_MD_PATH
+    if not path.exists():
+        return [f"missing quality markdown: {QUALITY_MD_PATH}"]
+    text = path.read_text(encoding="utf-8").casefold()
+    errors: list[str] = []
+    for term in MARKDOWN_FORBIDDEN_CLAIMS:
+        if term.casefold() in text:
+            errors.append(f"quality markdown contains forbidden claim: {term}")
     return errors
 
 
