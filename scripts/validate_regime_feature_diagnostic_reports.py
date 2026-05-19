@@ -5,7 +5,10 @@ import argparse
 import json
 from pathlib import Path
 
-from _bootstrap import bootstrap_src_path
+try:
+    from _bootstrap import bootstrap_src_path
+except ModuleNotFoundError:
+    from scripts._bootstrap import bootstrap_src_path
 bootstrap_src_path()
 
 def check_for_nan_inf(data: any) -> bool:

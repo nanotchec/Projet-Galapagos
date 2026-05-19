@@ -1,5 +1,16 @@
 # Projet Galapagos
 
+## Etat actuel du projet
+
+- Derniere version validee : V2.3.1.
+- Candidate : V2.4.1, durcissement de coherence physique manifest/report du resampling OHLCV.
+- Le projet est actuellement data/research/offline only.
+- Aucun trading reel n'est autorise.
+- Aucun paper live n'est autorise.
+- Aucun ordre n'est autorise.
+- Aucun modele ML n'est valide.
+- Les anciennes parties paper trading V1 sont legacy et ne sont pas autorisees dans la roadmap actuelle.
+
 Projet Galapagos est une V1 verticale d'agent autonome de trading en paper trading sur BTC.
 Le systeme collecte ou simule les donnees marche, prepare des indicateurs, construit un contexte,
 demande une decision a un provider LLM abstrait, applique un moteur de risque deterministe, puis

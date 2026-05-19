@@ -1,5 +1,118 @@
 # Report Index
 
+## V2.4.1: OHLCV Resampling Manifest/Report Physical Consistency Hardening
+- [Manifest V2.4](manifests/ohlcv_resampling_v2_4_manifest.json)
+- [Quality Report V2.4](data_quality/ohlcv_resampling_v2_4.md)
+- [Doc V2.4](../docs/ohlcv_resampling_v2_4.md)
+
+## V2.2.1: Offline Baseline Expanded
+- [Summary v2_2_1](research/offline_baseline_expanded_summary_v2_2_1.md)
+- [Results v2_2_1](research/offline_baseline_expanded_results_v2_2_1.md)
+- [Metrics v2_2_1](research/offline_baseline_expanded_metrics_v2_2_1.md)
+- [Split Results v2_2_1](research/offline_baseline_expanded_split_results_v2_2_1.md)
+- [Anti Overfit Audit v2_2_1](research/offline_baseline_expanded_anti_overfit_audit_v2_2_1.md)
+- [Stability Checks v2_2_1](research/offline_baseline_expanded_stability_checks_v2_2_1.md)
+- [Recommendation v2_2_1](research/v2_2_1_recommendation.md)
+
+## V2.2: Offline Baseline Expanded
+- [Summary v2_2](research/offline_baseline_expanded_summary_v2_2.md)
+- [Results v2_2](research/offline_baseline_expanded_results_v2_2.md)
+- [Metrics v2_2](research/offline_baseline_expanded_metrics_v2_2.md)
+- [Split Results v2_2](research/offline_baseline_expanded_split_results_v2_2.md)
+- [Anti Overfit Audit v2_2](research/offline_baseline_expanded_anti_overfit_audit_v2_2.md)
+- [Stability Checks v2_2](research/offline_baseline_expanded_stability_checks_v2_2.md)
+- [Recommendation v2_2](research/v2_2_recommendation.md)
+
+## V2.1.5: Strict Root Release/Audit/Smoke Report Validation
+- [Summary v2_1_5](research/offline_baseline_preview_summary_v2_1_5.md)
+- [Results v2_1_5](research/offline_baseline_preview_results_v2_1_5.md)
+- [Metrics v2_1_5](research/offline_baseline_preview_metrics_v2_1_5.md)
+- [Limitations v2_1_5](research/offline_baseline_preview_limitations_v2_1_5.md)
+- [Sanity Checks v2_1_5](research/offline_baseline_preview_sanity_checks_v2_1_5.md)
+- [Safety Check v2_1_5](research/offline_baseline_preview_safety_check_v2_1_5.md)
+- [Consistency Check v2_1_5](research/offline_baseline_preview_consistency_check_v2_1_5.md)
+- [Approval Decision v2_1_5](research/offline_baseline_preview_approval_decision_v2_1_5.md)
+- [Recommendation v2_1_5](research/v2_1_5_recommendation.md)
+- [Code Review v2_1_5](../docs/code_review_v2_1_5.md)
+- [Doc v2_1_5](../docs/offline_baseline_preview_v2_1_5.md)
+
+## V2.1.4: Strict Expected Value Validation for Summary, latest_metrics and PROJECT_STATE
+- [Summary v2_1_4](research/offline_baseline_preview_summary_v2_1_4.md)
+- [Results v2_1_4](research/offline_baseline_preview_results_v2_1_4.md)
+- [Metrics v2_1_4](research/offline_baseline_preview_metrics_v2_1_4.md)
+- [Limitations v2_1_4](research/offline_baseline_preview_limitations_v2_1_4.md)
+- [Sanity Checks v2_1_4](research/offline_baseline_preview_sanity_checks_v2_1_4.md)
+- [Safety Check v2_1_4](research/offline_baseline_preview_safety_check_v2_1_4.md)
+- [Consistency Check v2_1_4](research/offline_baseline_preview_consistency_check_v2_1_4.md)
+- [Approval Decision v2_1_4](research/offline_baseline_preview_approval_decision_v2_1_4.md)
+- [Recommendation v2_1_4](research/v2_1_4_recommendation.md)
+- [Code Review v2_1_4](../docs/code_review_v2_1_4.md)
+- [Doc v2_1_4](../docs/offline_baseline_preview_v2_1_4.md)
+
+## V2.1.3: Strict Release/Audit/Smoke Validation
+- [Summary v2_1_3](research/offline_baseline_preview_summary_v2_1_3.md)
+- [Results v2_1_3](research/offline_baseline_preview_results_v2_1_3.md)
+- [Metrics v2_1_3](research/offline_baseline_preview_metrics_v2_1_3.md)
+- [Limitations v2_1_3](research/offline_baseline_preview_limitations_v2_1_3.md)
+- [Sanity Checks v2_1_3](research/offline_baseline_preview_sanity_checks_v2_1_3.md)
+- [Safety Check v2_1_3](research/offline_baseline_preview_safety_check_v2_1_3.md)
+- [Consistency Check v2_1_3](research/offline_baseline_preview_consistency_check_v2_1_3.md)
+- [Approval Decision v2_1_3](research/offline_baseline_preview_approval_decision_v2_1_3.md)
+- [Recommendation v2_1_3](research/v2_1_3_recommendation.md)
+- [Code Review v2_1_3](../docs/code_review_v2_1_3.md)
+- [Doc v2_1_3](../docs/offline_baseline_preview_v2_1_3.md)
+
+## V2.1: First Offline Baseline Ultra-Bounded
+- [Summary v2_1](research/offline_baseline_preview_summary_v2_1.md)
+- [Results v2_1](research/offline_baseline_preview_results_v2_1.md)
+- [Metrics v2_1](research/offline_baseline_preview_metrics_v2_1.md)
+- [Limitations v2_1](research/offline_baseline_preview_limitations_v2_1.md)
+- [Sanity Checks v2_1](research/offline_baseline_preview_sanity_checks_v2_1.md)
+- [Safety Check v2_1](research/offline_baseline_preview_safety_check_v2_1.md)
+- [Consistency Check v2_1](research/offline_baseline_preview_consistency_check_v2_1.md)
+- [Approval Decision v2_1](research/offline_baseline_preview_approval_decision_v2_1.md)
+- [Recommendation v2_1](research/v2_1_recommendation.md)
+- [Code Review v2_1](../docs/code_review_v2_1.md)
+- [Doc v2_1](../docs/offline_baseline_preview_v2_1.md)
+
+## V2.0.1: Research Dataset Expansion
+- [Summary v2_0_1](research/research_dataset_expansion_summary_v2_0_1.md)
+- [File Audit v2_0_1](research/research_dataset_expansion_file_audit_v2_0_1.md)
+- [Semantic Audit v2_0_1](research/research_dataset_expansion_semantic_audit_v2_0_1.md)
+- [Leakage Audit v2_0_1](research/research_dataset_expansion_leakage_audit_v2_0_1.md)
+- [Split Preview v2_0_1](research/research_dataset_expansion_split_preview_v2_0_1.md)
+- [Data Card v2_0_1](research/research_dataset_expansion_data_card_v2_0_1.md)
+- [Baseline Readiness v2_0_1](research/research_dataset_expansion_baseline_readiness_v2_0_1.md)
+- [Recommendation v2_0_1](research/v2_0_1_recommendation.md)
+- [Code Review v2_0_1](../docs/code_review_v2_0_1.md)
+- [Doc v2_0_1](../docs/research_dataset_expansion_v2_0_1.md)
+
+
+## V2.0: Research Dataset Expansion
+- [Summary v2_0](research/research_dataset_expansion_summary_v2_0.md)
+- [File Audit v2_0](research/research_dataset_expansion_file_audit_v2_0.md)
+- [Semantic Audit v2_0](research/research_dataset_expansion_semantic_audit_v2_0.md)
+- [Leakage Audit v2_0](research/research_dataset_expansion_leakage_audit_v2_0.md)
+- [Split Preview v2_0](research/research_dataset_expansion_split_preview_v2_0.md)
+- [Data Card v2_0](research/research_dataset_expansion_data_card_v2_0.md)
+- [Baseline Readiness v2_0](research/research_dataset_expansion_baseline_readiness_v2_0.md)
+- [Recommendation v2_0](research/v2_0_recommendation.md)
+- [Code Review v2_0](../docs/code_review_v2_0.md)
+- [Doc v2_0](../docs/research_dataset_expansion_v2_0.md)
+
+
+## V1.99.1: Training Dataset Preview Materialization
+- [Summary v1_99_1](research/training_dataset_preview_materialization_summary_v1_99_1.md)
+- [File Audit v1_99_1](research/training_dataset_preview_materialization_file_audit_v1_99_1.md)
+- [Semantic Audit v1_99_1](research/training_dataset_preview_materialization_semantic_audit_v1_99_1.md)
+- [Leakage Audit v1_99_1](research/training_dataset_preview_materialization_leakage_audit_v1_99_1.md)
+- [Safety v1_99_1](research/training_dataset_preview_materialization_safety_check_v1_99_1.md)
+- [Consistency v1_99_1](research/training_dataset_preview_materialization_consistency_check_v1_99_1.md)
+- [Recommendation v1_99_1](research/v1_99_1_recommendation.md)
+- [Code Review v1_99_1](../docs/code_review_v1_99_1.md)
+- [Doc v1_99_1](../docs/training_dataset_preview_materialization_v1_99_1.md)
+
+
 ## V1.99: Training Dataset Preview Materialization
 - [Summary v1_99](research/training_dataset_preview_materialization_summary_v1_99.md)
 - [File Audit v1_99](research/training_dataset_preview_materialization_file_audit_v1_99.md)
@@ -1800,3 +1913,16 @@
 - [Final Documentation](docs/microstructure_data_contract_approval_intake_corrective_v1_81_4.md)
 
 - [V1.81.9 Corrective Research](docs/microstructure_data_contract_approval_intake_corrective_v1_81_9.md) - [Summary](reports/research/microstructure_data_contract_approval_intake_corrective_summary_v1_81_9.json)- [V1.81.10 Corrective](docs/microstructure_data_contract_approval_intake_corrective_v1_81_10.md)
+
+
+## Data Reports (V2.3.1 candidate: Public Market Data Ingestion Validation Hardening)
+- [Manifest ingestion publique V2.3 + correction V2.3.1](manifests/public_market_ingestion_v2_3_manifest.json)
+- [Rapport qualite JSON V2.3 + correction V2.3.1](data_quality/public_market_ingestion_v2_3.json)
+- [Rapport qualite Markdown V2.3 + correction V2.3.1](data_quality/public_market_ingestion_v2_3.md)
+- [Documentation V2.3 / V2.3.1](../docs/public_market_ingestion_v2_3.md)
+
+## Data Reports (V2.4 candidate: Normalized OHLCV Resampling & Storage Hardening)
+- [Manifest resampling OHLCV V2.4](manifests/ohlcv_resampling_v2_4_manifest.json)
+- [Rapport qualite JSON resampling V2.4](data_quality/ohlcv_resampling_v2_4.json)
+- [Rapport qualite Markdown resampling V2.4](data_quality/ohlcv_resampling_v2_4.md)
+- [Documentation resampling V2.4](../docs/ohlcv_resampling_v2_4.md)

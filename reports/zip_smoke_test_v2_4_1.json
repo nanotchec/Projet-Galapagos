@@ -1,0 +1,10 @@
+{
+  "version": "V2.4.1",
+  "resampling_artifact_version": "V2.4",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v2.4.1-clean.zip",
+  "smoke_test_passed": true,
+  "smoke_commands_count": 3,
+  "smoke_failed_count": 0,
+  "bounded_smoke_for_v2_4_1": true,
+  "errors": []
+}
