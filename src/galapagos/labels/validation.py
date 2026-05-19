@@ -132,6 +132,11 @@ LEGACY_ALLOWED_V2_6_ARTIFACT_ROOTS = [
     Path("reports/research"),
     Path("data/gold/ml_predictions"),
 ]
+FUTURE_ALLOWED_DATASET_ROOTS_AFTER_V2_6 = [
+    # V2.7 creates an explicitly offline supervised dataset. The V2.6 validator
+    # still rejects every other data/gold/datasets path.
+    Path("data/gold/datasets/offline_supervised"),
+]
 
 
 def _is_iso_utc(value: Any) -> bool:
@@ -180,6 +185,17 @@ def find_forbidden_v2_6_artifacts(project_root: Path) -> list[str]:
     for relative in FORBIDDEN_V2_6_ARTIFACT_PATHS:
         candidate = project_root / relative
         if candidate.exists():
+            if relative == Path("data/gold/datasets"):
+                children = list(candidate.rglob("*"))
+                forbidden_children = [
+                    child
+                    for child in children
+                    if child.is_file()
+                    and not any(_is_under(child.relative_to(project_root), allowed) for allowed in FUTURE_ALLOWED_DATASET_ROOTS_AFTER_V2_6)
+                ]
+                for child in forbidden_children:
+                    forbidden.add(child.relative_to(project_root).as_posix())
+                continue
             if relative == Path("reports/backtests"):
                 direct_new_artifacts = [
                     child
