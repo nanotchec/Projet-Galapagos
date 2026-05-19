@@ -1,9 +1,9 @@
 {
   "version": "V2.4",
-  "correction_version": "V2.4.2",
+  "correction_version": "V2.4.3",
   "status": "PASS",
-  "created_at_utc": "2026-05-19T16:37:54.171536Z",
-  "resampling_run_id": "v2_4_20260519T163754Z_73d0ca18",
+  "created_at_utc": "2026-05-19T17:05:21.169115Z",
+  "resampling_run_id": "v2_4_20260519T170521Z_b7af642c",
   "input_1m": {
     "path": "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/year=2024/month=01/part-2024-01-15.parquet",
     "sha256": "1ca0840df651680f5ede34a719d06539225ea075dfbd525865fa24d78648eb0f",

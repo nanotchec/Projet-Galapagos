@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import uuid
 from datetime import UTC, datetime
 from pathlib import Path
@@ -21,10 +22,15 @@ from galapagos.validation.safety import scan_new_modules_for_forbidden_terms, va
 
 
 VERSION = "V2.4"
-CORRECTION_VERSION = "V2.4.2"
+CORRECTION_VERSION = "V2.4.3"
 VERSION_SUFFIX = "v2_4"
 TARGETS = ["5m", "15m", "1h"]
 EXPECTED_ROWS = {"1m": 1440, "5m": 288, "15m": 96, "1h": 24}
+RUN_ID_PATTERN = re.compile(r"^v2_4_[0-9]{8}T[0-9]{6}Z_[0-9a-f]{8}$")
+EXPECTED_LIMITATIONS_V2_4 = [
+    "V2.4 resample uniquement BTCUSDT 2024-01-15 depuis le silver 1m valide V2.3.1.",
+    "V2.4 est data-only : aucun signal, aucun label, aucun ML, aucun backtest et aucun trading.",
+]
 MANIFEST_PATH = Path("reports/manifests/ohlcv_resampling_v2_4_manifest.json")
 QUALITY_JSON_PATH = Path("reports/data_quality/ohlcv_resampling_v2_4.json")
 QUALITY_MD_PATH = Path("reports/data_quality/ohlcv_resampling_v2_4.md")
@@ -110,9 +116,13 @@ MARKDOWN_FORBIDDEN_CLAIMS = [
     "signal validé",
     "trading enabled",
     "paper live enabled",
+    "paper live active",
+    "paper live activé",
     "real trading",
     "trading reel active",
     "trading réel activé",
+    "trading active",
+    "trading activé",
     "orders enabled",
     "ordre active",
     "ordre activé",
@@ -122,6 +132,8 @@ MARKDOWN_FORBIDDEN_CLAIMS = [
     "backtest validated",
     "backtest valide",
     "backtest validé",
+    "execution enabled",
+    "live enabled",
 ]
 
 
@@ -184,10 +196,7 @@ def run_ohlcv_resampling_v2_4(root: Path = Path(".")) -> dict[str, Any]:
         "ml_enabled": False,
         "labels_enabled": False,
         "backtest_enabled": False,
-        "limitations": [
-            "V2.4 resample uniquement BTCUSDT 2024-01-15 depuis le silver 1m valide V2.3.1.",
-            "V2.4 est data-only : aucun signal, aucun label, aucun ML, aucun backtest et aucun trading.",
-        ],
+        "limitations": EXPECTED_LIMITATIONS_V2_4,
     }
     report = _build_report(manifest)
     _write_json(root / MANIFEST_PATH, manifest)
@@ -210,6 +219,7 @@ def validate_ohlcv_resampling_v2_4(root: Path = Path(".")) -> dict[str, Any]:
     manifest = load_json(manifest_path)
     report = load_json(quality_path)
     errors.extend(_validate_manifest(root, manifest))
+    errors.extend(_scan_forbidden_claims(manifest, "V2.4 manifest"))
     ingestion_validation = validate_public_market_ingestion_v2_3(root)
     if not ingestion_validation["passed"]:
         errors.append(f"V2.3.1 input validation failed: {ingestion_validation['errors']}")
@@ -235,6 +245,7 @@ def validate_ohlcv_resampling_v2_4(root: Path = Path(".")) -> dict[str, Any]:
         errors.extend(_validate_parent_child(timeframe, frame_1m, frame))
     errors.extend(_validate_manifest_quality(manifest, physical_qualities))
     errors.extend(_validate_report(manifest, report))
+    errors.extend(_scan_forbidden_claims(report, "quality report"))
     errors.extend(_validate_quality_markdown(root))
     errors.extend(scan_new_modules_for_forbidden_terms(root))
     errors.extend(_scan_v2_4_scripts(root))
@@ -261,9 +272,16 @@ def _validate_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
     if manifest.get("version") != VERSION:
         errors.append("manifest version must be V2.4")
     if manifest.get("correction_version") != CORRECTION_VERSION:
-        errors.append("manifest correction_version must be V2.4.2")
+        errors.append("manifest correction_version must be V2.4.3")
     if manifest.get("status") != "PASS":
         errors.append("manifest status must be PASS")
+    if not _is_valid_utc_iso(manifest.get("created_at_utc")):
+        errors.append("V2.4 manifest created_at_utc invalid")
+    run_id = manifest.get("resampling_run_id")
+    if not isinstance(run_id, str) or RUN_ID_PATTERN.fullmatch(run_id) is None:
+        errors.append("V2.4 manifest resampling_run_id invalid")
+    if manifest.get("limitations") != EXPECTED_LIMITATIONS_V2_4:
+        errors.append("V2.4 manifest limitations mismatch")
     errors.extend(validate_safety_flags(manifest))
     if manifest.get("parent_child_consistency") is not True:
         errors.append("parent_child_consistency must be true")
@@ -341,6 +359,8 @@ def _validate_report(manifest: dict[str, Any], report: dict[str, Any]) -> list[s
     errors: list[str] = []
     expected = _build_report(manifest)
     errors.extend(_validate_keys(report, set(expected), "quality report"))
+    if report.get("limitations") != EXPECTED_LIMITATIONS_V2_4:
+        errors.append("quality report limitations mismatch")
     safety_raw = report.get("safety", {})
     safety = safety_raw if isinstance(safety_raw, dict) else {}
     errors.extend(_validate_keys(safety, SAFETY_KEYS, "quality report safety"))
@@ -388,6 +408,38 @@ def _validate_quality_markdown(root: Path) -> list[str]:
         if term.casefold() in text:
             errors.append(f"quality markdown contains forbidden claim: {term}")
     return errors
+
+
+def _scan_forbidden_claims(payload: Any, label: str) -> list[str]:
+    errors: list[str] = []
+
+    def walk(value: Any, path: str) -> None:
+        if isinstance(value, dict):
+            for key, child in value.items():
+                walk(child, f"{path}.{key}" if path else str(key))
+            return
+        if isinstance(value, list):
+            for index, child in enumerate(value):
+                walk(child, f"{path}[{index}]")
+            return
+        if isinstance(value, str):
+            text = value.casefold()
+            for term in MARKDOWN_FORBIDDEN_CLAIMS:
+                if term.casefold() in text:
+                    errors.append(f"{label} contains forbidden claim at {path}: {term}")
+
+    walk(payload, "")
+    return errors
+
+
+def _is_valid_utc_iso(value: Any) -> bool:
+    if not isinstance(value, str) or not value or not value.endswith("Z"):
+        return False
+    try:
+        parsed = datetime.fromisoformat(value[:-1] + "+00:00")
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None and parsed.utcoffset() == pd.Timedelta(0).to_pytimedelta()
 
 
 def _validate_frame_quality(timeframe: str, frame: pd.DataFrame) -> list[str]:

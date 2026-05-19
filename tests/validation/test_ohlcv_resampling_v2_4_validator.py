@@ -1,22 +1,40 @@
 from __future__ import annotations
 
 import json
+import shutil
 import zipfile
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 from galapagos.data.public_market.config import PublicMarketIngestionConfig
 from galapagos.data.public_market.ingestion import run_public_market_ingestion
 from galapagos.data.public_market.provenance import sha256_file
 from galapagos.data.public_market.storage import read_parquet, write_parquet
 from galapagos.validation.resampling import (
+    EXPECTED_LIMITATIONS_V2_4,
     MANIFEST_PATH,
     QUALITY_JSON_PATH,
     resampled_silver_path,
     run_ohlcv_resampling_v2_4,
     validate_ohlcv_resampling_v2_4,
 )
+
+
+@pytest.fixture(scope="session")
+def valid_v2_4_template(tmp_path_factory: pytest.TempPathFactory) -> Path:
+    root = tmp_path_factory.mktemp("valid_v2_4_template")
+    _prepare_valid_resampling(root)
+    return root
+
+
+@pytest.fixture()
+def tmp_path(tmp_path_factory: pytest.TempPathFactory, valid_v2_4_template: Path) -> Path:
+    destination = tmp_path_factory.mktemp("valid_v2_4_project")
+    shutil.copytree(valid_v2_4_template, destination, dirs_exist_ok=True)
+    _sync_copied_ingestion_manifest(destination)
+    return destination
 
 
 def test_validator_v2_4_accepts_valid_resampling(tmp_path: Path) -> None:
@@ -320,6 +338,84 @@ def test_validator_v2_4_allows_markdown_negative_safety_claims(tmp_path: Path) -
     assert result["passed"] is True
 
 
+def test_validator_v2_4_rejects_synced_limitations_strategy_validated_claim(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["limitations"].append("strategy validated")
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["limitations"].append("strategy validated")
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("forbidden claim" in error or "V2.4 manifest limitations mismatch" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_synced_limitations_trading_enabled_claim(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["limitations"].append("trading enabled")
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["limitations"].append("trading enabled")
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any("forbidden claim" in error or "V2.4 manifest limitations mismatch" in error for error in result["errors"])
+
+
+def test_validator_v2_4_rejects_empty_synced_limitations(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["limitations"] = []
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["limitations"] = []
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert any(
+        error in {"V2.4 manifest limitations mismatch", "quality report limitations mismatch"}
+        for error in result["errors"]
+    )
+
+
+def test_validator_v2_4_rejects_invalid_created_at_even_if_report_synced(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["created_at_utc"] = "not-a-date"
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["created_at_utc"] = "not-a-date"
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert "V2.4 manifest created_at_utc invalid" in result["errors"]
+
+
+def test_validator_v2_4_rejects_invalid_resampling_run_id_even_if_report_synced(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    manifest["resampling_run_id"] = "bogus"
+    _write_json(tmp_path / MANIFEST_PATH, manifest)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    report["resampling_run_id"] = "bogus"
+    _write_json(tmp_path / QUALITY_JSON_PATH, report)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is False
+    assert "V2.4 manifest resampling_run_id invalid" in result["errors"]
+
+
+def test_validator_v2_4_allows_expected_limitations(tmp_path: Path) -> None:
+    _prepare_valid_resampling(tmp_path)
+    manifest = _load_json(tmp_path / MANIFEST_PATH)
+    report = _load_json(tmp_path / QUALITY_JSON_PATH)
+    result = validate_ohlcv_resampling_v2_4(tmp_path)
+    assert result["passed"] is True
+    assert manifest["limitations"] == EXPECTED_LIMITATIONS_V2_4
+    assert report["limitations"] == EXPECTED_LIMITATIONS_V2_4
+
+
 def _assert_safety_flag_rejected(tmp_path: Path, field: str, expected_error: str) -> None:
     _prepare_valid_resampling(tmp_path)
     manifest = _load_json(tmp_path / MANIFEST_PATH)
@@ -331,11 +427,25 @@ def _assert_safety_flag_rejected(tmp_path: Path, field: str, expected_error: str
 
 
 def _prepare_valid_resampling(tmp_path: Path) -> None:
+    if (tmp_path / MANIFEST_PATH).exists() and (tmp_path / QUALITY_JSON_PATH).exists():
+        return
     _write_raw_zip(tmp_path, minutes=1440)
     manifest = run_public_market_ingestion(_config(tmp_path))
     assert manifest["status"] == "PASS"
     resampling_manifest = run_ohlcv_resampling_v2_4(tmp_path)
     assert resampling_manifest["status"] == "PASS"
+
+
+def _sync_copied_ingestion_manifest(root: Path) -> None:
+    config = _config(root)
+    manifest = _load_json(config.manifest_path)
+    manifest["raw"]["path"] = str(config.raw_path.relative_to(root))
+    manifest["raw"]["sha256"] = sha256_file(config.raw_path)
+    manifest["raw"]["bytes"] = config.raw_path.stat().st_size
+    manifest["silver"]["path"] = str(config.silver_path.relative_to(root))
+    manifest["silver"]["sha256"] = sha256_file(config.silver_path)
+    manifest["silver"]["bytes"] = config.silver_path.stat().st_size
+    _write_json(config.manifest_path, manifest)
 
 
 def _config(tmp_path: Path) -> PublicMarketIngestionConfig:
