@@ -8,6 +8,8 @@ Correction V2.4.2 : V2.4.1 a ete refusee car le manifest et le rapport JSON acce
 
 Correction V2.4.3 : V2.4.2 a ete refusee car `limitations` pouvait encore contenir des claims positives synchronisees, et parce que le runtime du fichier complet de tests validateur devait etre durci. V2.4.3 ajoute `correction_version = V2.4.3`, impose les limitations attendues exactes, scanne les claims positives dans le manifest et le rapport JSON, valide strictement `created_at_utc` et `resampling_run_id`, et optimise les tests par template physique recopie.
 
+Correction V2.4.4 : V2.4.3 a ete refusee car les artefacts V2.3 inclus dans le ZIP acceptaient encore des fausses claims et parce que le runtime complet du validateur V2.4 restait non fiable en audit. V2.4.4 ajoute `correction_version = V2.4.4`, centralise les helpers de claims, durcit le manifest et le rapport qualite V2.3, et finalise la fixture `valid_v2_4_project`.
+
 ## Objectif
 
 L'objectif est de produire des fichiers Parquet silver 5m, 15m et 1h deterministes, audites physiquement et comparables a leur parent 1m. Cette version reste strictement data-only.
@@ -48,7 +50,7 @@ Aucun bucket partiel n'est materialise.
 
 Le validateur V2.4 relit physiquement le silver 1m, recalcule les sorties 5m, 15m et 1h, puis compare ces resultats aux Parquet ecrits. Une mutation d'un high, d'un volume, d'un close, d'un ordre physique ou d'une provenance doit faire echouer la validation, meme si le checksum du manifest est resynchronise.
 
-En V2.4.1, le validateur compare aussi strictement `manifest["quality"][timeframe]` avec la qualite recalculee pour `1m`, `5m`, `15m` et `1h`. Le rapport `reports/data_quality/ohlcv_resampling_v2_4.json` doit correspondre au manifest sur `version`, `correction_version`, `status`, `created_at_utc`, `resampling_run_id`, `input_1m`, `outputs`, `expected_rows`, `quality`, `parent_child_consistency`, `safety` et `limitations`. En V2.4.2, toute cle inattendue dans ces structures fait echouer la validation. En V2.4.3, les limitations doivent correspondre exactement a la liste attendue et les champs `created_at_utc` / `resampling_run_id` doivent respecter leur format strict.
+En V2.4.1, le validateur compare aussi strictement `manifest["quality"][timeframe]` avec la qualite recalculee pour `1m`, `5m`, `15m` et `1h`. Le rapport `reports/data_quality/ohlcv_resampling_v2_4.json` doit correspondre au manifest sur `version`, `correction_version`, `status`, `created_at_utc`, `resampling_run_id`, `input_1m`, `outputs`, `expected_rows`, `quality`, `parent_child_consistency`, `safety` et `limitations`. En V2.4.2, toute cle inattendue dans ces structures fait echouer la validation. En V2.4.3, les limitations doivent correspondre exactement a la liste attendue et les champs `created_at_utc` / `resampling_run_id` doivent respecter leur format strict. En V2.4.4, le validateur V2.4 herite aussi du durcissement V2.3 : toute fausse claim dans les artefacts V2.3 inclus fait echouer la validation globale.
 
 ## Timestamps et provenance
 

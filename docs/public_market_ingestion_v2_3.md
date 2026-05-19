@@ -42,6 +42,13 @@ Correction V2.3.1 :
 - un nombre de lignes different de `1440` est une erreur, pas un simple warning ;
 - la colonne `normalized_file_sha256` a ete supprimee du silver, car un fichier ne peut pas porter son propre checksum final de maniere stable.
 
+Durcissement V2.4.4 applique aux artefacts V2.3 inclus :
+
+- le manifest V2.3 et le rapport qualite V2.3 ont des schemas stricts ;
+- les limitations V2.3 doivent correspondre exactement aux limitations attendues ;
+- les claims positives de type strategie validee, trading active, ordre active, ML valide ou backtest valide sont scannees dans les JSON et le Markdown ;
+- `created_at_utc` et `ingestion_run_id` sont valides physiquement.
+
 ## Securite
 
 V2.3 utilise uniquement une source publique read-only. Aucune cle API, aucun secret, aucun endpoint prive et aucune authentification ne sont utilises.
@@ -50,4 +57,4 @@ V2.3 ne valide aucune strategie. V2.3 ne valide aucun modele ML. V2.3 ne produit
 
 ## Statut
 
-V2.3.1 est une version candidate en attente d'audit externe. La derniere version validee reste V2.2.1 tant que l'audit externe n'a pas valide V2.3.1.
+V2.3.1 est la derniere version validee pour le scope ingestion publique read-only. V2.4.4 reutilise ces artefacts comme source incluse et durcit leur validation contre les fausses claims.

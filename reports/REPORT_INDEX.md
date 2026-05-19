@@ -1,5 +1,11 @@
 # Report Index
 
+## V2.4.4: Global Included-Artifact Claims Hardening & Validator Runtime Finalization
+- [Manifest V2.4](manifests/ohlcv_resampling_v2_4_manifest.json)
+- [Quality Report V2.4](data_quality/ohlcv_resampling_v2_4.md)
+- [Doc V2.4](../docs/ohlcv_resampling_v2_4.md)
+- [Doc V2.3](../docs/public_market_ingestion_v2_3.md)
+
 ## V2.4.3: Semantic Claims & Validator Test Runtime Hardening
 - [Manifest V2.4](manifests/ohlcv_resampling_v2_4_manifest.json)
 - [Quality Report V2.4](data_quality/ohlcv_resampling_v2_4.md)

@@ -11,7 +11,7 @@ from galapagos.data.public_market.ingestion import run_public_market_ingestion
 from galapagos.data.public_market.provenance import sha256_file
 from galapagos.data.public_market.quality import assess_ohlcv_quality
 from galapagos.data.public_market.storage import read_parquet, write_parquet
-from galapagos.validation.market_data import validate_public_market_ingestion_v2_3
+from galapagos.validation.market_data import EXPECTED_LIMITATIONS_V2_3, validate_public_market_ingestion_v2_3
 
 
 def test_validator_accepts_valid_physical_ingestion(tmp_path: Path) -> None:
@@ -267,6 +267,152 @@ def test_validator_rejects_safety_flag_backtest_true(tmp_path: Path) -> None:
     result = validate_public_market_ingestion_v2_3(tmp_path)
     assert result["passed"] is False
     assert "backtest_enabled must be false" in result["errors"]
+
+
+def test_validator_rejects_v2_3_manifest_unexpected_strategy_validated_key(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    manifest_path = _config(tmp_path).manifest_path
+    manifest = _load_json(manifest_path)
+    manifest["strategy_validated"] = True
+    _write_json(manifest_path, manifest)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert any("V2.3 manifest unexpected keys" in error for error in result["errors"])
+
+
+def test_validator_rejects_v2_3_quality_report_unexpected_claim_key(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    report_path = _config(tmp_path).quality_json_path
+    report = _load_json(report_path)
+    report["claim"] = "strategy validated"
+    _write_json(report_path, report)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert any("V2.3 quality report unexpected keys" in error or "forbidden claim" in error for error in result["errors"])
+
+
+def test_validator_rejects_v2_3_synced_limitations_strategy_validated_claim(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    config = _config(tmp_path)
+    manifest = _load_json(config.manifest_path)
+    manifest["limitations"].append("strategy validated")
+    _write_json(config.manifest_path, manifest)
+    report = _load_json(config.quality_json_path)
+    report["limitations"].append("strategy validated")
+    _write_json(config.quality_json_path, report)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert any("forbidden claim" in error or "limitations mismatch" in error for error in result["errors"])
+
+
+def test_validator_rejects_v2_3_synced_limitations_trading_enabled_claim(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    config = _config(tmp_path)
+    manifest = _load_json(config.manifest_path)
+    manifest["limitations"].append("trading enabled")
+    _write_json(config.manifest_path, manifest)
+    report = _load_json(config.quality_json_path)
+    report["limitations"].append("trading enabled")
+    _write_json(config.quality_json_path, report)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert any("forbidden claim" in error or "limitations mismatch" in error for error in result["errors"])
+
+
+def test_validator_rejects_v2_3_empty_synced_limitations(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    config = _config(tmp_path)
+    manifest = _load_json(config.manifest_path)
+    manifest["limitations"] = []
+    _write_json(config.manifest_path, manifest)
+    report = _load_json(config.quality_json_path)
+    report["limitations"] = []
+    _write_json(config.quality_json_path, report)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert any("limitations mismatch" in error for error in result["errors"])
+
+
+def test_validator_rejects_v2_3_invalid_created_at_even_if_report_synced(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    config = _config(tmp_path)
+    manifest = _load_json(config.manifest_path)
+    manifest["created_at_utc"] = "not-a-date"
+    _write_json(config.manifest_path, manifest)
+    report = _load_json(config.quality_json_path)
+    report["created_at_utc"] = "not-a-date"
+    _write_json(config.quality_json_path, report)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert "V2.3 manifest created_at_utc invalid" in result["errors"]
+
+
+def test_validator_rejects_v2_3_invalid_ingestion_run_id_even_if_report_synced(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    config = _config(tmp_path)
+    manifest = _load_json(config.manifest_path)
+    manifest["ingestion_run_id"] = "bogus"
+    _write_json(config.manifest_path, manifest)
+    report = _load_json(config.quality_json_path)
+    report["ingestion_run_id"] = "bogus"
+    _write_json(config.quality_json_path, report)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert "V2.3 manifest ingestion_run_id invalid" in result["errors"]
+
+
+def test_validator_rejects_v2_3_markdown_forbidden_strategy_claim(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    markdown_path = _config(tmp_path).quality_md_path
+    markdown_path.write_text(markdown_path.read_text(encoding="utf-8") + "\nStrategy validated.\n", encoding="utf-8")
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert "V2.3 quality markdown contains forbidden claim: strategy validated" in result["errors"]
+
+
+def test_validator_allows_v2_3_markdown_negative_safety_claims(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    markdown_path = _config(tmp_path).quality_md_path
+    markdown_path.write_text(
+        markdown_path.read_text(encoding="utf-8")
+        + "\nAucun trading. V2.3 ne valide aucune strategie. Aucun ordre.\n",
+        encoding="utf-8",
+    )
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is True
+
+
+def test_validator_rejects_v2_3_quality_report_raw_checksum_lie(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    report_path = _config(tmp_path).quality_json_path
+    report = _load_json(report_path)
+    report["raw_checksum"] = "bad"
+    _write_json(report_path, report)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert "V2.3 quality report raw_checksum mismatch" in result["errors"]
+
+
+def test_validator_rejects_v2_3_quality_report_silver_path_lie(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    report_path = _config(tmp_path).quality_json_path
+    report = _load_json(report_path)
+    report["silver_path"] = "bad"
+    _write_json(report_path, report)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert "V2.3 quality report silver_path mismatch" in result["errors"]
+
+
+def test_validator_allows_expected_v2_3_limitations(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    config = _config(tmp_path)
+    manifest = _load_json(config.manifest_path)
+    report = _load_json(config.quality_json_path)
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is True
+    assert manifest["limitations"] == EXPECTED_LIMITATIONS_V2_3
+    assert report["limitations"] == EXPECTED_LIMITATIONS_V2_3
 
 
 def _prepare_valid_ingestion(tmp_path: Path) -> None:

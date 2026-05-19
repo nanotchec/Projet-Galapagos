@@ -30,6 +30,38 @@ FORBIDDEN_CODE_TOKENS = [
     "trading_enabled = True",
 ]
 
+FORBIDDEN_POSITIVE_CLAIMS = [
+    "strategy validated",
+    "stratégie validée",
+    "strategie validee",
+    "signal validated",
+    "signal validé",
+    "signal valide",
+    "trading enabled",
+    "trading activé",
+    "trading active",
+    "paper live enabled",
+    "paper live activé",
+    "paper live active",
+    "orders enabled",
+    "ordre activé",
+    "ordre active",
+    "real trading",
+    "trading réel activé",
+    "trading reel active",
+    "ml validated",
+    "modèle ml validé",
+    "modele ml valide",
+    "backtest validated",
+    "backtest validé",
+    "backtest valide",
+    "execution enabled",
+    "live enabled",
+    "production ready",
+    "ordre réel activé",
+    "ordre reel active",
+]
+
 
 def validate_safety_flags(payload: dict[str, Any]) -> list[str]:
     errors: list[str] = []
@@ -40,6 +72,52 @@ def validate_safety_flags(payload: dict[str, Any]) -> list[str]:
         if payload.get(field) is not False:
             errors.append(f"{field} must be false")
     return errors
+
+
+def validate_exact_keys(payload: Any, expected_keys: set[str], label: str) -> list[str]:
+    if not isinstance(payload, dict):
+        return [f"{label} must be an object"]
+    actual_keys = set(payload)
+    errors: list[str] = []
+    unexpected = sorted(actual_keys - expected_keys)
+    missing = sorted(expected_keys - actual_keys)
+    if unexpected:
+        errors.append(f"{label} unexpected keys: {unexpected}")
+    if missing:
+        errors.append(f"{label} missing keys: {missing}")
+    return errors
+
+
+def scan_payload_for_forbidden_claims(payload: Any, label: str) -> list[str]:
+    errors: list[str] = []
+
+    def walk(value: Any, path: str) -> None:
+        if isinstance(value, dict):
+            for key, child in value.items():
+                child_path = f"{path}.{key}" if path else str(key)
+                walk(child, child_path)
+            return
+        if isinstance(value, list):
+            for index, child in enumerate(value):
+                walk(child, f"{path}[{index}]")
+            return
+        if isinstance(value, str):
+            text = value.casefold()
+            for term in FORBIDDEN_POSITIVE_CLAIMS:
+                if term.casefold() in text:
+                    errors.append(f"{label} contains forbidden claim at {path}: {term}")
+
+    walk(payload, "")
+    return errors
+
+
+def validate_markdown_forbidden_claims(text: str, label: str) -> list[str]:
+    lowered = text.casefold()
+    return [
+        f"{label} contains forbidden claim: {term}"
+        for term in FORBIDDEN_POSITIVE_CLAIMS
+        if term.casefold() in lowered
+    ]
 
 
 def scan_new_modules_for_forbidden_terms(root: Path) -> list[str]:

@@ -18,11 +18,17 @@ from galapagos.data.public_market.schemas import OHLCV_COLUMNS
 from galapagos.data.public_market.storage import ensure_parent, read_parquet, write_parquet
 from galapagos.validation.manifests import load_json
 from galapagos.validation.market_data import validate_public_market_ingestion_v2_3
-from galapagos.validation.safety import scan_new_modules_for_forbidden_terms, validate_safety_flags
+from galapagos.validation.safety import (
+    scan_new_modules_for_forbidden_terms,
+    scan_payload_for_forbidden_claims,
+    validate_exact_keys,
+    validate_markdown_forbidden_claims,
+    validate_safety_flags,
+)
 
 
 VERSION = "V2.4"
-CORRECTION_VERSION = "V2.4.3"
+CORRECTION_VERSION = "V2.4.4"
 VERSION_SUFFIX = "v2_4"
 TARGETS = ["5m", "15m", "1h"]
 EXPECTED_ROWS = {"1m": 1440, "5m": 288, "15m": 96, "1h": 24}
@@ -107,35 +113,6 @@ SAFETY_KEYS = {
     "labels_enabled",
     "backtest_enabled",
 }
-MARKDOWN_FORBIDDEN_CLAIMS = [
-    "strategy validated",
-    "strategie validee",
-    "stratégie validée",
-    "signal validated",
-    "signal valide",
-    "signal validé",
-    "trading enabled",
-    "paper live enabled",
-    "paper live active",
-    "paper live activé",
-    "real trading",
-    "trading reel active",
-    "trading réel activé",
-    "trading active",
-    "trading activé",
-    "orders enabled",
-    "ordre active",
-    "ordre activé",
-    "ml validated",
-    "modele ml valide",
-    "modèle ml validé",
-    "backtest validated",
-    "backtest valide",
-    "backtest validé",
-    "execution enabled",
-    "live enabled",
-]
-
 
 def run_ohlcv_resampling_v2_4(root: Path = Path(".")) -> dict[str, Any]:
     root = root.resolve()
@@ -219,7 +196,7 @@ def validate_ohlcv_resampling_v2_4(root: Path = Path(".")) -> dict[str, Any]:
     manifest = load_json(manifest_path)
     report = load_json(quality_path)
     errors.extend(_validate_manifest(root, manifest))
-    errors.extend(_scan_forbidden_claims(manifest, "V2.4 manifest"))
+    errors.extend(scan_payload_for_forbidden_claims(manifest, "V2.4 manifest"))
     ingestion_validation = validate_public_market_ingestion_v2_3(root)
     if not ingestion_validation["passed"]:
         errors.append(f"V2.3.1 input validation failed: {ingestion_validation['errors']}")
@@ -245,7 +222,7 @@ def validate_ohlcv_resampling_v2_4(root: Path = Path(".")) -> dict[str, Any]:
         errors.extend(_validate_parent_child(timeframe, frame_1m, frame))
     errors.extend(_validate_manifest_quality(manifest, physical_qualities))
     errors.extend(_validate_report(manifest, report))
-    errors.extend(_scan_forbidden_claims(report, "quality report"))
+    errors.extend(scan_payload_for_forbidden_claims(report, "quality report"))
     errors.extend(_validate_quality_markdown(root))
     errors.extend(scan_new_modules_for_forbidden_terms(root))
     errors.extend(_scan_v2_4_scripts(root))
@@ -268,11 +245,11 @@ def resampled_silver_path(root: Path, timeframe: str) -> Path:
 
 def _validate_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
     errors: list[str] = []
-    errors.extend(_validate_keys(manifest, MANIFEST_TOP_LEVEL_KEYS, "V2.4 manifest"))
+    errors.extend(validate_exact_keys(manifest, MANIFEST_TOP_LEVEL_KEYS, "V2.4 manifest"))
     if manifest.get("version") != VERSION:
         errors.append("manifest version must be V2.4")
     if manifest.get("correction_version") != CORRECTION_VERSION:
-        errors.append("manifest correction_version must be V2.4.3")
+        errors.append("manifest correction_version must be V2.4.4")
     if manifest.get("status") != "PASS":
         errors.append("manifest status must be PASS")
     if not _is_valid_utc_iso(manifest.get("created_at_utc")):
@@ -288,7 +265,7 @@ def _validate_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
     input_path = _input_config(root).silver_path
     input_block_raw = manifest.get("input_1m", {})
     input_block = input_block_raw if isinstance(input_block_raw, dict) else {}
-    errors.extend(_validate_keys(input_block, INPUT_1M_KEYS, "V2.4 manifest input_1m"))
+    errors.extend(validate_exact_keys(input_block, INPUT_1M_KEYS, "V2.4 manifest input_1m"))
     if (root / Path(input_block.get("path", ""))).resolve() != input_path.resolve():
         errors.append("input_1m path mismatch")
     if input_block.get("sha256") != sha256_file(input_path):
@@ -297,11 +274,11 @@ def _validate_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
         errors.append("input_1m rows mismatch")
     outputs_raw = manifest.get("outputs", {})
     outputs = outputs_raw if isinstance(outputs_raw, dict) else {}
-    errors.extend(_validate_keys(outputs, set(TARGETS), "V2.4 manifest outputs"))
+    errors.extend(validate_exact_keys(outputs, set(TARGETS), "V2.4 manifest outputs"))
     for timeframe in TARGETS:
         block_raw = outputs.get(timeframe, {})
         block = block_raw if isinstance(block_raw, dict) else {}
-        errors.extend(_validate_keys(block, OUTPUT_KEYS, f"V2.4 manifest outputs.{timeframe}"))
+        errors.extend(validate_exact_keys(block, OUTPUT_KEYS, f"V2.4 manifest outputs.{timeframe}"))
         path = resampled_silver_path(root, timeframe)
         if (root / Path(block.get("path", ""))).resolve() != path.resolve():
             errors.append(f"{timeframe} path mismatch")
@@ -318,17 +295,17 @@ def _validate_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
             errors.append(f"{timeframe} format must be parquet")
     expected_rows_raw = manifest.get("expected_rows", {})
     expected_rows = expected_rows_raw if isinstance(expected_rows_raw, dict) else {}
-    errors.extend(_validate_keys(expected_rows, EXPECTED_ROW_KEYS, "V2.4 manifest expected_rows"))
+    errors.extend(validate_exact_keys(expected_rows, EXPECTED_ROW_KEYS, "V2.4 manifest expected_rows"))
     for timeframe, expected in EXPECTED_ROWS.items():
         if expected_rows.get(timeframe) != expected:
             errors.append(f"expected rows mismatch for {timeframe}")
     quality_raw = manifest.get("quality", {})
     quality = quality_raw if isinstance(quality_raw, dict) else {}
-    errors.extend(_validate_keys(quality, QUALITY_TIMEFRAME_KEYS, "V2.4 manifest quality"))
+    errors.extend(validate_exact_keys(quality, QUALITY_TIMEFRAME_KEYS, "V2.4 manifest quality"))
     for timeframe in ["1m", *TARGETS]:
         quality_block_raw = quality.get(timeframe, {})
         quality_block = quality_block_raw if isinstance(quality_block_raw, dict) else {}
-        errors.extend(_validate_keys(quality_block, QUALITY_FIELD_KEYS, f"V2.4 manifest quality.{timeframe}"))
+        errors.extend(validate_exact_keys(quality_block, QUALITY_FIELD_KEYS, f"V2.4 manifest quality.{timeframe}"))
     return errors
 
 
@@ -358,12 +335,12 @@ def _validate_manifest_quality(manifest: dict[str, Any], physical_qualities: dic
 def _validate_report(manifest: dict[str, Any], report: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     expected = _build_report(manifest)
-    errors.extend(_validate_keys(report, set(expected), "quality report"))
+    errors.extend(validate_exact_keys(report, set(expected), "quality report"))
     if report.get("limitations") != EXPECTED_LIMITATIONS_V2_4:
         errors.append("quality report limitations mismatch")
     safety_raw = report.get("safety", {})
     safety = safety_raw if isinstance(safety_raw, dict) else {}
-    errors.extend(_validate_keys(safety, SAFETY_KEYS, "quality report safety"))
+    errors.extend(validate_exact_keys(safety, SAFETY_KEYS, "quality report safety"))
     for field, message in [
         ("version", "quality report version mismatch"),
         ("correction_version", "quality report correction_version mismatch"),
@@ -384,52 +361,11 @@ def _validate_report(manifest: dict[str, Any], report: dict[str, Any]) -> list[s
     return errors
 
 
-def _validate_keys(payload: Any, expected_keys: set[str], label: str) -> list[str]:
-    if not isinstance(payload, dict):
-        return [f"{label} must be an object"]
-    actual_keys = set(payload)
-    errors: list[str] = []
-    unexpected = sorted(actual_keys - expected_keys)
-    missing = sorted(expected_keys - actual_keys)
-    if unexpected:
-        errors.append(f"{label} unexpected keys: {unexpected}")
-    if missing:
-        errors.append(f"{label} missing keys: {missing}")
-    return errors
-
-
 def _validate_quality_markdown(root: Path) -> list[str]:
     path = root / QUALITY_MD_PATH
     if not path.exists():
         return [f"missing quality markdown: {QUALITY_MD_PATH}"]
-    text = path.read_text(encoding="utf-8").casefold()
-    errors: list[str] = []
-    for term in MARKDOWN_FORBIDDEN_CLAIMS:
-        if term.casefold() in text:
-            errors.append(f"quality markdown contains forbidden claim: {term}")
-    return errors
-
-
-def _scan_forbidden_claims(payload: Any, label: str) -> list[str]:
-    errors: list[str] = []
-
-    def walk(value: Any, path: str) -> None:
-        if isinstance(value, dict):
-            for key, child in value.items():
-                walk(child, f"{path}.{key}" if path else str(key))
-            return
-        if isinstance(value, list):
-            for index, child in enumerate(value):
-                walk(child, f"{path}[{index}]")
-            return
-        if isinstance(value, str):
-            text = value.casefold()
-            for term in MARKDOWN_FORBIDDEN_CLAIMS:
-                if term.casefold() in text:
-                    errors.append(f"{label} contains forbidden claim at {path}: {term}")
-
-    walk(payload, "")
-    return errors
+    return validate_markdown_forbidden_claims(path.read_text(encoding="utf-8"), "quality markdown")
 
 
 def _is_valid_utc_iso(value: Any) -> bool:

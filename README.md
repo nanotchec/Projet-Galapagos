@@ -3,7 +3,7 @@
 ## Etat actuel du projet
 
 - Derniere version validee : V2.3.1.
-- Candidate : V2.4.3, durcissement semantique des claims et runtime tests du validateur OHLCV.
+- Candidate : V2.4.4, durcissement global des artefacts inclus et finalisation runtime du validateur OHLCV.
 - Le projet est actuellement data/research/offline only.
 - Aucun trading reel n'est autorise.
 - Aucun paper live n'est autorise.

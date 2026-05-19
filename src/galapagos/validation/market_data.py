@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -14,7 +16,97 @@ from galapagos.data.public_market.schemas import OHLCV_COLUMNS
 from galapagos.data.public_market.sources.binance_archive import parse_binance_kline_zip
 from galapagos.data.public_market.storage import read_parquet
 from galapagos.validation.manifests import load_json
-from galapagos.validation.safety import scan_new_modules_for_forbidden_terms, validate_safety_flags
+from galapagos.validation.safety import (
+    scan_new_modules_for_forbidden_terms,
+    scan_payload_for_forbidden_claims,
+    validate_exact_keys,
+    validate_markdown_forbidden_claims,
+    validate_safety_flags,
+)
+
+EXPECTED_LIMITATIONS_V2_3 = [
+    "V2.3 couvre une seule source publique read-only, un seul symbole, un seul timeframe et une seule journee.",
+    "V2.3 ne valide aucune strategie, aucun modele ML, aucun signal, aucun backtest et aucun trading.",
+]
+
+INGESTION_RUN_ID_PATTERN = re.compile(r"^v2_3_[0-9]{8}T[0-9]{6}Z_[0-9a-f]{8}$")
+
+MANIFEST_TOP_LEVEL_KEYS = {
+    "version",
+    "correction_version",
+    "mission",
+    "status",
+    "created_at_utc",
+    "ingestion_run_id",
+    "network_used",
+    "public_read_only",
+    "authentication_used",
+    "api_key_used",
+    "private_endpoint_used",
+    "orders_enabled",
+    "paper_live_enabled",
+    "trading_enabled",
+    "ml_enabled",
+    "labels_enabled",
+    "backtest_enabled",
+    "source",
+    "raw",
+    "silver",
+    "quality",
+    "limitations",
+}
+
+REPORT_TOP_LEVEL_KEYS = {
+    "version",
+    "correction_version",
+    "status",
+    "created_at_utc",
+    "ingestion_run_id",
+    "source_url",
+    "source",
+    "quality",
+    "raw_checksum",
+    "silver_checksum",
+    "raw_path",
+    "silver_path",
+    "safety",
+    "limitations",
+}
+
+SOURCE_KEYS = {"name", "venue", "market_type", "symbol", "timeframe", "date"}
+RAW_KEYS = {"path", "sha256", "bytes"}
+SILVER_KEYS = {"path", "sha256", "bytes", "format"}
+QUALITY_KEYS = {
+    "rows",
+    "expected_rows",
+    "duplicate_rows",
+    "gap_count",
+    "gaps",
+    "ohlc_violations",
+    "negative_volume_rows",
+    "null_critical_rows",
+    "min_event_ts",
+    "max_event_ts",
+    "min_close_ts",
+    "max_close_ts",
+    "monotonic_event_ts",
+    "timestamp_order_valid",
+    "timestamps_utc",
+    "errors",
+    "warnings",
+}
+SAFETY_KEYS = {
+    "public_read_only",
+    "authentication_used",
+    "api_key_used",
+    "private_endpoint_used",
+    "orders_enabled",
+    "paper_live_enabled",
+    "trading_enabled",
+    "ml_enabled",
+    "labels_enabled",
+    "backtest_enabled",
+}
 
 RAW_SILVER_LINEAGE_COLUMNS = [
     "event_ts",
@@ -73,6 +165,9 @@ def validate_public_market_ingestion_v2_3(root: Path = Path(".")) -> dict[str, A
     quality_report = load_json(config.quality_json_path)
     errors.extend(_validate_manifest(root=root, config=config, manifest=manifest))
     errors.extend(_validate_quality_report(manifest=manifest, quality_report=quality_report))
+    errors.extend(scan_payload_for_forbidden_claims(manifest, "V2.3 manifest"))
+    errors.extend(scan_payload_for_forbidden_claims(quality_report, "V2.3 quality report"))
+    errors.extend(_validate_quality_markdown(config.quality_md_path))
     frame = read_parquet(config.silver_path)
     errors.extend(_validate_silver_frame(frame))
     errors.extend(_validate_silver_provenance(frame, manifest))
@@ -94,10 +189,22 @@ def _validate_required_files(config: PublicMarketIngestionConfig) -> list[str]:
 
 def _validate_manifest(*, root: Path, config: PublicMarketIngestionConfig, manifest: dict[str, Any]) -> list[str]:
     errors: list[str] = []
+    errors.extend(validate_exact_keys(manifest, MANIFEST_TOP_LEVEL_KEYS, "V2.3 manifest"))
     if manifest.get("version") != VERSION:
         errors.append("manifest version must be V2.3")
+    if manifest.get("correction_version") != "V2.3.1":
+        errors.append("manifest correction_version must be V2.3.1")
+    if manifest.get("mission") != "Public Market Data Read-Only Ingestion Preview":
+        errors.append("manifest mission mismatch")
     if manifest.get("status") != "PASS":
         errors.append("manifest status must be PASS")
+    if not _is_valid_utc_iso(manifest.get("created_at_utc")):
+        errors.append("V2.3 manifest created_at_utc invalid")
+    run_id = manifest.get("ingestion_run_id")
+    if not isinstance(run_id, str) or INGESTION_RUN_ID_PATTERN.fullmatch(run_id) is None:
+        errors.append("V2.3 manifest ingestion_run_id invalid")
+    if manifest.get("limitations") != EXPECTED_LIMITATIONS_V2_3:
+        errors.append("V2.3 manifest limitations mismatch")
     errors.extend(validate_safety_flags(manifest))
     expected_source = {
         "name": "binance_public_archive",
@@ -109,8 +216,18 @@ def _validate_manifest(*, root: Path, config: PublicMarketIngestionConfig, manif
     }
     if manifest.get("source") != expected_source:
         errors.append("manifest source block mismatch")
-    raw = manifest.get("raw", {})
-    silver = manifest.get("silver", {})
+    source_raw = manifest.get("source", {})
+    source = source_raw if isinstance(source_raw, dict) else {}
+    raw_raw = manifest.get("raw", {})
+    raw = raw_raw if isinstance(raw_raw, dict) else {}
+    silver_raw = manifest.get("silver", {})
+    silver = silver_raw if isinstance(silver_raw, dict) else {}
+    quality_raw = manifest.get("quality", {})
+    quality = quality_raw if isinstance(quality_raw, dict) else {}
+    errors.extend(validate_exact_keys(source, SOURCE_KEYS, "V2.3 manifest source"))
+    errors.extend(validate_exact_keys(raw, RAW_KEYS, "V2.3 manifest raw"))
+    errors.extend(validate_exact_keys(silver, SILVER_KEYS, "V2.3 manifest silver"))
+    errors.extend(validate_exact_keys(quality, QUALITY_KEYS, "V2.3 manifest quality"))
     if (root / Path(raw.get("path", ""))).resolve() != config.raw_path.resolve():
         errors.append("manifest raw path mismatch")
     if (root / Path(silver.get("path", ""))).resolve() != config.silver_path.resolve():
@@ -130,13 +247,37 @@ def _validate_manifest(*, root: Path, config: PublicMarketIngestionConfig, manif
 
 def _validate_quality_report(*, manifest: dict[str, Any], quality_report: dict[str, Any]) -> list[str]:
     errors: list[str] = []
-    if quality_report.get("version") != "V2.3":
-        errors.append("quality report version mismatch")
-    if quality_report.get("status") != manifest.get("status"):
-        errors.append("quality report status mismatch")
-    if quality_report.get("quality") != manifest.get("quality"):
-        errors.append("quality report quality block mismatch")
-    safety = quality_report.get("safety", {})
+    errors.extend(validate_exact_keys(quality_report, REPORT_TOP_LEVEL_KEYS, "V2.3 quality report"))
+    source_raw = quality_report.get("source", {})
+    source = source_raw if isinstance(source_raw, dict) else {}
+    quality_raw = quality_report.get("quality", {})
+    quality = quality_raw if isinstance(quality_raw, dict) else {}
+    safety_raw = quality_report.get("safety", {})
+    safety = safety_raw if isinstance(safety_raw, dict) else {}
+    errors.extend(validate_exact_keys(source, SOURCE_KEYS, "V2.3 quality report source"))
+    errors.extend(validate_exact_keys(quality, QUALITY_KEYS, "V2.3 quality report quality"))
+    errors.extend(validate_exact_keys(safety, SAFETY_KEYS, "V2.3 quality report safety"))
+    expected_safety = {field: manifest.get(field) for field in SAFETY_KEYS}
+    comparisons = [
+        ("version", manifest.get("version"), "V2.3 quality report version mismatch"),
+        ("correction_version", manifest.get("correction_version"), "V2.3 quality report correction_version mismatch"),
+        ("status", manifest.get("status"), "V2.3 quality report status mismatch"),
+        ("created_at_utc", manifest.get("created_at_utc"), "V2.3 quality report created_at_utc mismatch"),
+        ("ingestion_run_id", manifest.get("ingestion_run_id"), "V2.3 quality report ingestion_run_id mismatch"),
+        ("source", manifest.get("source"), "V2.3 quality report source mismatch"),
+        ("quality", manifest.get("quality"), "V2.3 quality report quality mismatch"),
+        ("raw_checksum", manifest.get("raw", {}).get("sha256"), "V2.3 quality report raw_checksum mismatch"),
+        ("silver_checksum", manifest.get("silver", {}).get("sha256"), "V2.3 quality report silver_checksum mismatch"),
+        ("raw_path", manifest.get("raw", {}).get("path"), "V2.3 quality report raw_path mismatch"),
+        ("silver_path", manifest.get("silver", {}).get("path"), "V2.3 quality report silver_path mismatch"),
+        ("safety", expected_safety, "V2.3 quality report safety mismatch"),
+        ("limitations", manifest.get("limitations"), "V2.3 quality report limitations mismatch"),
+    ]
+    for field, expected, message in comparisons:
+        if quality_report.get(field) != expected:
+            errors.append(message)
+    if quality_report.get("limitations") != EXPECTED_LIMITATIONS_V2_3:
+        errors.append("V2.3 quality report limitations mismatch")
     errors.extend(validate_safety_flags(safety))
     return errors
 
@@ -170,7 +311,10 @@ def _validate_silver_provenance(frame: pd.DataFrame, manifest: dict[str, Any]) -
     errors: list[str] = []
     expected_raw_sha = manifest.get("raw", {}).get("sha256")
     expected_run_id = manifest.get("ingestion_run_id")
-    expected_ingested_at = pd.Timestamp(manifest.get("created_at_utc")).tz_convert("UTC")
+    try:
+        expected_ingested_at = pd.Timestamp(manifest.get("created_at_utc")).tz_convert("UTC")
+    except Exception:
+        expected_ingested_at = None
     checks = {
         "raw_file_sha256": expected_raw_sha,
         "ingestion_run_id": expected_run_id,
@@ -190,7 +334,7 @@ def _validate_silver_provenance(frame: pd.DataFrame, manifest: dict[str, Any]) -
         ingested_at = pd.to_datetime(frame["ingested_at_ts"], utc=True)
         if ingested_at.isna().any():
             errors.append("silver provenance ingested_at_ts contains null")
-        if not (ingested_at == expected_ingested_at).all():
+        if expected_ingested_at is None or not (ingested_at == expected_ingested_at).all():
             errors.append("silver provenance ingested_at_ts mismatch")
     return errors
 
@@ -282,6 +426,22 @@ def _compare_quality(*, manifest_quality: dict[str, Any], physical_quality: dict
     if physical_quality.get("monotonic_event_ts") is not True:
         errors.append("event_ts physical order is not monotonic")
     return errors
+
+
+def _validate_quality_markdown(path: Path) -> list[str]:
+    if not path.exists():
+        return [f"missing quality markdown: {path}"]
+    return validate_markdown_forbidden_claims(path.read_text(encoding="utf-8"), "V2.3 quality markdown")
+
+
+def _is_valid_utc_iso(value: Any) -> bool:
+    if not isinstance(value, str) or not value or not value.endswith("Z"):
+        return False
+    try:
+        parsed = datetime.fromisoformat(value[:-1] + "+00:00")
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None and parsed.utcoffset() == UTC.utcoffset(parsed)
 
 
 def _validate_project_state_scope(root: Path) -> list[str]:
