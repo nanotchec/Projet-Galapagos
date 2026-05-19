@@ -286,9 +286,15 @@ def _validate_silver_frame(frame: pd.DataFrame) -> list[str]:
     errors: list[str] = []
     if "normalized_file_sha256" in frame.columns:
         errors.append("silver must not contain normalized_file_sha256")
-    missing = [column for column in OHLCV_COLUMNS if column not in frame.columns]
-    if missing:
-        errors.append(f"silver missing columns: {missing}")
+    if list(frame.columns) != OHLCV_COLUMNS:
+        missing = [column for column in OHLCV_COLUMNS if column not in frame.columns]
+        unexpected = [column for column in frame.columns if column not in OHLCV_COLUMNS]
+        if missing:
+            errors.append(f"silver missing columns: {missing}")
+        if unexpected:
+            errors.append(f"silver unexpected columns: {unexpected}")
+        if not missing and not unexpected:
+            errors.append("silver column order mismatch")
         return errors
     for column in ["event_ts", "close_ts", "available_ts", "decision_ts", "ingested_at_ts"]:
         series = pd.to_datetime(frame[column], utc=True)

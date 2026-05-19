@@ -28,7 +28,7 @@ from galapagos.validation.safety import (
 
 
 VERSION = "V2.4"
-CORRECTION_VERSION = "V2.4.4"
+CORRECTION_VERSION = "V2.4.8"
 VERSION_SUFFIX = "v2_4"
 TARGETS = ["5m", "15m", "1h"]
 EXPECTED_ROWS = {"1m": 1440, "5m": 288, "15m": 96, "1h": 24}
@@ -249,7 +249,7 @@ def _validate_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
     if manifest.get("version") != VERSION:
         errors.append("manifest version must be V2.4")
     if manifest.get("correction_version") != CORRECTION_VERSION:
-        errors.append("manifest correction_version must be V2.4.4")
+        errors.append(f"manifest correction_version must be {CORRECTION_VERSION}")
     if manifest.get("status") != "PASS":
         errors.append("manifest status must be PASS")
     if not _is_valid_utc_iso(manifest.get("created_at_utc")):
@@ -382,9 +382,15 @@ def _validate_frame_quality(timeframe: str, frame: pd.DataFrame) -> list[str]:
     errors: list[str] = []
     if "normalized_file_sha256" in frame.columns:
         errors.append(f"{timeframe} must not contain normalized_file_sha256")
-    missing = [column for column in OHLCV_COLUMNS if column not in frame.columns]
-    if missing:
-        errors.append(f"{timeframe} missing columns: {missing}")
+    if list(frame.columns) != OHLCV_COLUMNS:
+        missing = [column for column in OHLCV_COLUMNS if column not in frame.columns]
+        unexpected = [column for column in frame.columns if column not in OHLCV_COLUMNS]
+        if missing:
+            errors.append(f"{timeframe} missing columns: {missing}")
+        if unexpected:
+            errors.append(f"{timeframe} unexpected columns: {unexpected}")
+        if not missing and not unexpected:
+            errors.append(f"{timeframe} column order mismatch")
         return errors
     if set(frame["timeframe"].astype(str).unique()) != {timeframe}:
         errors.append(f"{timeframe} timeframe column mismatch")

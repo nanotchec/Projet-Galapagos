@@ -415,6 +415,56 @@ def test_validator_allows_expected_v2_3_limitations(tmp_path: Path) -> None:
     assert report["limitations"] == EXPECTED_LIMITATIONS_V2_3
 
 
+def test_validator_rejects_extra_strategy_validated_column_in_silver_even_with_synced_checksum(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    frame = read_parquet(_config(tmp_path).silver_path)
+    frame["strategy_validated"] = True
+    _write_silver_and_sync_basic_manifest(tmp_path, frame)
+    
+    config = _config(tmp_path)
+    report = _load_json(config.quality_json_path)
+    report["silver_checksum"] = sha256_file(config.silver_path)
+    _write_json(config.quality_json_path, report)
+    
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert any("silver unexpected columns" in error for error in result["errors"])
+
+
+def test_validator_rejects_extra_future_return_column_in_silver_even_with_synced_checksum(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    frame = read_parquet(_config(tmp_path).silver_path)
+    frame["future_return"] = 0.123
+    _write_silver_and_sync_basic_manifest(tmp_path, frame)
+    
+    config = _config(tmp_path)
+    report = _load_json(config.quality_json_path)
+    report["silver_checksum"] = sha256_file(config.silver_path)
+    _write_json(config.quality_json_path, report)
+    
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert any("silver unexpected columns" in error for error in result["errors"])
+
+
+def test_validator_rejects_silver_column_order_mismatch_even_with_synced_checksum(tmp_path: Path) -> None:
+    _prepare_valid_ingestion(tmp_path)
+    frame = read_parquet(_config(tmp_path).silver_path)
+    cols = list(frame.columns)
+    cols[0], cols[1] = cols[1], cols[0]
+    frame = frame[cols]
+    _write_silver_and_sync_basic_manifest(tmp_path, frame)
+    
+    config = _config(tmp_path)
+    report = _load_json(config.quality_json_path)
+    report["silver_checksum"] = sha256_file(config.silver_path)
+    _write_json(config.quality_json_path, report)
+    
+    result = validate_public_market_ingestion_v2_3(tmp_path)
+    assert result["passed"] is False
+    assert any("silver column order mismatch" in error for error in result["errors"])
+
+
 def _prepare_valid_ingestion(tmp_path: Path) -> None:
     _write_raw_zip(tmp_path, minutes=1440)
     manifest = run_public_market_ingestion(_config(tmp_path))
