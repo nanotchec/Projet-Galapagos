@@ -1,7 +1,7 @@
-# Résumé courant — V2.6.1 candidate
+# Résumé courant — V2.6.2 candidate
 
-La dernière version validée reste **V2.5.2**. La version candidate est **V2.6.1**, en statut `pending_external_audit`.
+La dernière version validée reste **V2.5.2**. La version candidate est **V2.6.2**, en statut `pending_external_audit`.
 
-V2.6.1 corrige le refus strict de V2.6 : le manifest et le rapport JSON de la Clean Label Factory sont désormais validés avec schémas stricts, projection déterministe du manifest, comparaison aux valeurs physiques recalculées, rejet récursif des claims positives interdites, et validation stricte de `created_at_utc` / `label_run_id`.
+V2.6.2 corrige le refus strict de V2.6.1 : le validateur de la Clean Label Factory rejette désormais les chemins réalistes de dataset ML, backtest, modèles, prédictions, ordres et artefacts d'exécution, notamment `data/gold/datasets/ml_offline`.
 
 Le système reste data/research only : aucun trading réel, aucun paper live, aucun ordre, aucun ML, aucun dataset ML, aucun backtest, aucune API privée et aucune clé API.

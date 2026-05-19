@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 VERSION = "V2.6"
-CORRECTION_VERSION = "V2.6.1"
+CORRECTION_VERSION = "V2.6.2"
 LABEL_SCHEMA_VERSION = "V2.6"
 
 TARGET_TIMEFRAMES = ["1m", "5m", "15m", "1h"]

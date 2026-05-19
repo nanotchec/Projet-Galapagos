@@ -82,6 +82,57 @@ EXPECTED_LIMITATIONS_V2_6 = [
     "V2.6 ne produit aucun dataset ML, aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.",
 ]
 
+FORBIDDEN_V2_6_ARTIFACT_PATHS = [
+    Path("data/gold/dataset_ml"),
+    Path("data/gold/datasets"),
+    Path("data/gold/datasets/ml"),
+    Path("data/gold/datasets/ml_offline"),
+    Path("data/gold/ml"),
+    Path("data/gold/ml_offline"),
+    Path("data/gold/training"),
+    Path("data/gold/training_datasets"),
+    Path("data/gold/backtests"),
+    Path("data/gold/strategies"),
+    Path("data/gold/signals"),
+    Path("data/gold/predictions"),
+    Path("reports/ml"),
+    Path("reports/backtests"),
+    Path("reports/strategies"),
+    Path("reports/signals"),
+    Path("reports/predictions"),
+    Path("models"),
+    Path("checkpoints"),
+    Path("execution"),
+    Path("orders"),
+]
+FORBIDDEN_V2_6_ARTIFACT_PATTERNS = [
+    "dataset_ml",
+    "ml_dataset",
+    "ml_offline",
+    "training_dataset",
+    "training_datasets",
+    "model",
+    "prediction",
+    "signal",
+    "strategy",
+    "backtest",
+    "order",
+    "execution",
+]
+ALLOWED_V2_6_ARTIFACT_ROOTS = [
+    Path("data/gold/features"),
+    Path("data/gold/labels"),
+    Path("reports/features"),
+    Path("reports/labels"),
+]
+LEGACY_ALLOWED_V2_6_ARTIFACT_ROOTS = [
+    # Historical V1 reports and pre-V2 data remain in the repository, but they are not
+    # artifacts produced by the V2.6 label factory candidate.
+    Path("reports/backtests"),
+    Path("reports/research"),
+    Path("data/gold/ml_predictions"),
+]
+
 
 def _is_iso_utc(value: Any) -> bool:
     if not isinstance(value, str) or not value or not value.endswith("Z"):
@@ -108,6 +159,63 @@ def _compare_nested(expected: Any, actual: Any, prefix: str) -> list[str]:
             errors.extend(_compare_nested(expected[key], actual[key], f"{prefix}.{key}"))
         return errors
     return [prefix]
+
+
+def _is_under(path: Path, root: Path) -> bool:
+    return path == root or root in path.parents
+
+
+def _report_forbidden_artifact(path: Path) -> str:
+    if path.is_dir():
+        files = [child for child in sorted(path.rglob("*")) if child.is_file()]
+        if files:
+            return files[0].as_posix()
+    return path.as_posix()
+
+
+def find_forbidden_v2_6_artifacts(project_root: Path) -> list[str]:
+    """Finds ML/dataset/backtest/execution artifacts forbidden in V2.6 label factory scope."""
+    forbidden: set[str] = set()
+
+    for relative in FORBIDDEN_V2_6_ARTIFACT_PATHS:
+        candidate = project_root / relative
+        if candidate.exists():
+            if relative == Path("reports/backtests"):
+                direct_new_artifacts = [
+                    child
+                    for child in candidate.iterdir()
+                    if child.name in {"backtest.json", "backtest.md", "summary.json", "summary.md"}
+                ]
+                for child in direct_new_artifacts:
+                    forbidden.add(child.relative_to(project_root).as_posix())
+                continue
+            forbidden.add(_report_forbidden_artifact(relative))
+
+    scan_roots = [
+        Path("models"),
+        Path("checkpoints"),
+        Path("execution"),
+        Path("orders"),
+    ]
+    for scan_root in scan_roots:
+        absolute_root = project_root / scan_root
+        if not absolute_root.exists():
+            continue
+        candidates = [absolute_root, *absolute_root.rglob("*")]
+        for candidate in candidates:
+            try:
+                relative = candidate.relative_to(project_root)
+            except ValueError:
+                continue
+            if any(_is_under(relative, allowed) for allowed in ALLOWED_V2_6_ARTIFACT_ROOTS):
+                continue
+            if any(_is_under(relative, allowed) for allowed in LEGACY_ALLOWED_V2_6_ARTIFACT_ROOTS):
+                continue
+            text = relative.as_posix().casefold()
+            if any(pattern in text for pattern in FORBIDDEN_V2_6_ARTIFACT_PATTERNS):
+                forbidden.add(_report_forbidden_artifact(relative))
+
+    return [f"Forbidden V2.6 artifact detected: {path}" for path in sorted(forbidden)]
 
 
 def validate_label_factory_v2_6(
@@ -487,10 +595,8 @@ def validate_label_factory_v2_6(
         except Exception as e:
             errors.append(f"Failed to read Markdown report: {str(e)}")
             
-    # Check if a ML dataset has been created (forbidden)
-    ml_dataset_path = project_root / "data/gold/dataset_ml"
-    if ml_dataset_path.exists():
-        errors.append("Violation: ML dataset directory 'data/gold/dataset_ml' was created")
+    # Check if forbidden ML/dataset/backtest/execution artifacts have been created.
+    errors.extend(find_forbidden_v2_6_artifacts(project_root))
         
     passed = len(errors) == 0
     return {

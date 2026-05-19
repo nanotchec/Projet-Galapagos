@@ -293,7 +293,7 @@ def test_validator_ml_dataset_directory_present(project_v2_6: Path):
     
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is False
-    assert any("Violation: ML dataset directory" in err for err in res["errors"])
+    assert any("Forbidden V2.6 artifact detected" in err for err in res["errors"])
 
 
 # --- PART G MANDATORY TESTS V2.6.1 ---
@@ -545,3 +545,82 @@ def test_validator_v2_6_allows_markdown_negative_claims(project_v2_6: Path):
         
     res = validate_label_factory_v2_6(project_v2_6)
     assert res["passed"] is True
+
+
+def test_validator_v2_6_rejects_data_gold_datasets_ml_offline_directory(project_v2_6: Path):
+    forbidden = project_v2_6 / "data/gold/datasets/ml_offline/dummy.txt"
+    forbidden.parent.mkdir(parents=True, exist_ok=True)
+    forbidden.write_text("not allowed in V2.6 label factory\n", encoding="utf-8")
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("Forbidden V2.6 artifact detected" in err for err in res["errors"])
+
+
+def test_validator_v2_6_rejects_data_gold_datasets_directory(project_v2_6: Path):
+    forbidden = project_v2_6 / "data/gold/datasets/dummy.txt"
+    forbidden.parent.mkdir(parents=True, exist_ok=True)
+    forbidden.write_text("not allowed in V2.6 label factory\n", encoding="utf-8")
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("Forbidden V2.6 artifact detected" in err for err in res["errors"])
+
+
+def test_validator_v2_6_rejects_reports_ml_directory(project_v2_6: Path):
+    forbidden = project_v2_6 / "reports/ml/summary.json"
+    forbidden.parent.mkdir(parents=True, exist_ok=True)
+    forbidden.write_text("{}", encoding="utf-8")
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("Forbidden V2.6 artifact detected" in err for err in res["errors"])
+
+
+def test_validator_v2_6_rejects_reports_backtests_directory(project_v2_6: Path):
+    forbidden = project_v2_6 / "reports/backtests/backtest.json"
+    forbidden.parent.mkdir(parents=True, exist_ok=True)
+    forbidden.write_text("{}", encoding="utf-8")
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("Forbidden V2.6 artifact detected" in err for err in res["errors"])
+
+
+def test_validator_v2_6_rejects_models_directory(project_v2_6: Path):
+    forbidden = project_v2_6 / "models/model.pkl"
+    forbidden.parent.mkdir(parents=True, exist_ok=True)
+    forbidden.write_bytes(b"forbidden")
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("Forbidden V2.6 artifact detected" in err for err in res["errors"])
+
+
+def test_validator_v2_6_rejects_predictions_directory(project_v2_6: Path):
+    forbidden = project_v2_6 / "reports/predictions/predictions.json"
+    forbidden.parent.mkdir(parents=True, exist_ok=True)
+    forbidden.write_text("{}", encoding="utf-8")
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("Forbidden V2.6 artifact detected" in err for err in res["errors"])
+
+
+def test_validator_v2_6_rejects_orders_directory(project_v2_6: Path):
+    forbidden = project_v2_6 / "orders/order.json"
+    forbidden.parent.mkdir(parents=True, exist_ok=True)
+    forbidden.write_text("{}", encoding="utf-8")
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is False
+    assert any("Forbidden V2.6 artifact detected" in err for err in res["errors"])
+
+
+def test_validator_v2_6_allows_legitimate_features_and_labels_directories(project_v2_6: Path):
+    assert (project_v2_6 / "data/gold/features").exists()
+    assert (project_v2_6 / "data/gold/labels").exists()
+
+    res = validate_label_factory_v2_6(project_v2_6)
+    assert res["passed"] is True
+    assert not any("Forbidden V2.6 artifact detected" in err for err in res["errors"])

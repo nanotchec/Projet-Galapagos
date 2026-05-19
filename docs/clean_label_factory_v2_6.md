@@ -1,6 +1,6 @@
 # Galapagos V2.6 — Clean Forward Label Factory Preview
 
-> Correction V2.6.1 : V2.6 a été refusée en strict pour manifest/report permissifs. V2.6.1 durcit les schémas JSON, rejette les claims positives interdites et compare le manifest aux valeurs physiques recalculées. La candidate reste `pending_external_audit`.
+> Correction V2.6.2 : V2.6.1 a été refusée en strict car le validateur acceptait certains chemins réalistes de dataset ML ou d'exécution, notamment `data/gold/datasets/ml_offline`. V2.6.2 conserve les schémas stricts V2.6.1 et ajoute un garde-fou physique contre les artefacts ML/dataset/backtest/execution. La candidate reste `pending_external_audit`.
 
 Ce document décrit l'architecture technique, les spécifications physiques et les mécanismes de sécurité de la première usine de labels forward (Label Factory) de Galapagos.
 

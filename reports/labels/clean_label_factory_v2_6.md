@@ -2,7 +2,7 @@
 
 Ce document fournit une analyse exhaustive de la qualité physique, structurelle et causale des labels forward générés par la version **V2.6**. 
 
-Correction appliquée : **V2.6.1**. V2.6.1 durcit le manifest et le rapport JSON contre les clés inattendues, claims interdites et mensonges synchronisés sur `outputs` / `quality`.
+Correction appliquée : **V2.6.2**. V2.6.1 durcit le manifest et le rapport JSON contre les clés inattendues, claims interdites et mensonges synchronisés sur `outputs` / `quality`.
 
 ---
 
