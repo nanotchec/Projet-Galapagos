@@ -367,12 +367,27 @@ def _validate_markdown(project_root: Path) -> list[str]:
 
 
 def _find_forbidden_artifacts(project_root: Path) -> list[str]:
-    forbidden_roots = [Path("models"), Path("reports/ml"), Path("reports/strategies"), Path("reports/signals"), Path("reports/predictions"), Path("orders"), Path("execution")]
+    forbidden_roots = [Path("models"), Path("reports/strategies"), Path("reports/signals"), Path("reports/predictions"), Path("orders"), Path("execution")]
+    allowed_v2_8_ml_reports = {
+        Path("reports/ml/offline_ml_research_v2_8.json"),
+        Path("reports/ml/offline_ml_research_v2_8.md"),
+        Path("reports/ml/offline_research_scores_v2_8.json"),
+        Path("reports/ml/offline_research_scores_v2_8.md"),
+    }
     errors: list[str] = []
     for relative in forbidden_roots:
         path = project_root / relative
         if path.exists():
             errors.append(f"Forbidden V2.7 artifact detected: {relative.as_posix()}")
+    ml_reports = project_root / "reports/ml"
+    if ml_reports.exists():
+        forbidden_ml = [
+            child
+            for child in ml_reports.rglob("*")
+            if child.is_file() and child.relative_to(project_root) not in allowed_v2_8_ml_reports
+        ]
+        for child in forbidden_ml:
+            errors.append(f"Forbidden V2.7 artifact detected: {child.relative_to(project_root).as_posix()}")
     backtests = project_root / "reports/backtests"
     if backtests.exists():
         direct_forbidden = [child for child in backtests.iterdir() if child.name in {"backtest.json", "backtest.md", "summary.json", "summary.md"}]

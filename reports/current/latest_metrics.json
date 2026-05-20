@@ -1,9 +1,8 @@
 {
   "last_validated_version": "V2.6.2",
-  "candidate_version": "V2.7.2",
+  "candidate_version": "V2.8",
   "candidate_status": "pending_external_audit",
-  "direction": "offline supervised dataset validator runtime finalization",
-  "v2_7_1_refused_reason": "validator test file runtime still too slow in strict external audit",
+  "direction": "first offline ML research baselines",
   "dataset_timeframes": ["1m", "5m", "15m", "1h"],
   "dataset_rows": {
     "1m": 1440,
@@ -20,9 +19,11 @@
   },
   "dataset_enabled": true,
   "labels_enabled": true,
-  "ml_enabled": false,
-  "model_created": false,
-  "model_training_executed": false,
+  "ml_enabled": true,
+  "model_created": true,
+  "model_training_executed": true,
+  "offline_ml_only": true,
+  "ml_models_validated_for_trading": false,
   "backtest_enabled": false,
   "backtest_executed": false,
   "paper_live_enabled": false,
@@ -32,5 +33,5 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v2_7_2_validated_by_external_audit": false
+  "v2_8_validated_by_external_audit": false
 }

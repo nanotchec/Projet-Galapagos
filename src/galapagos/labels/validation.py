@@ -137,6 +137,17 @@ FUTURE_ALLOWED_DATASET_ROOTS_AFTER_V2_6 = [
     # still rejects every other data/gold/datasets path.
     Path("data/gold/datasets/offline_supervised"),
 ]
+FUTURE_ALLOWED_ML_ROOTS_AFTER_V2_6 = [
+    # V2.8 creates explicitly offline ML research scores. The V2.6 validator
+    # still rejects every other ML/backtest/execution artifact path.
+    Path("data/gold/ml/offline_research"),
+]
+FUTURE_ALLOWED_ML_REPORTS_AFTER_V2_6 = {
+    Path("reports/ml/offline_ml_research_v2_8.json"),
+    Path("reports/ml/offline_ml_research_v2_8.md"),
+    Path("reports/ml/offline_research_scores_v2_8.json"),
+    Path("reports/ml/offline_research_scores_v2_8.md"),
+}
 
 
 def _is_iso_utc(value: Any) -> bool:
@@ -192,6 +203,27 @@ def find_forbidden_v2_6_artifacts(project_root: Path) -> list[str]:
                     for child in children
                     if child.is_file()
                     and not any(_is_under(child.relative_to(project_root), allowed) for allowed in FUTURE_ALLOWED_DATASET_ROOTS_AFTER_V2_6)
+                ]
+                for child in forbidden_children:
+                    forbidden.add(child.relative_to(project_root).as_posix())
+                continue
+            if relative == Path("data/gold/ml"):
+                children = list(candidate.rglob("*"))
+                forbidden_children = [
+                    child
+                    for child in children
+                    if child.is_file()
+                    and not any(_is_under(child.relative_to(project_root), allowed) for allowed in FUTURE_ALLOWED_ML_ROOTS_AFTER_V2_6)
+                ]
+                for child in forbidden_children:
+                    forbidden.add(child.relative_to(project_root).as_posix())
+                continue
+            if relative == Path("reports/ml"):
+                children = list(candidate.rglob("*"))
+                forbidden_children = [
+                    child
+                    for child in children
+                    if child.is_file() and child.relative_to(project_root) not in FUTURE_ALLOWED_ML_REPORTS_AFTER_V2_6
                 ]
                 for child in forbidden_children:
                     forbidden.add(child.relative_to(project_root).as_posix())

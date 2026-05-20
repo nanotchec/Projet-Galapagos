@@ -1,29 +1,29 @@
-# État du Projet : V2.6.2 validée + candidat V2.7.2
+# État du Projet : V2.7.2 validée + candidat V2.8
 
-- **Dernière version validée** : V2.6.2 (Clean Label Factory hardened).
-- **Versions antérieures validées** : V2.5.2 (Feature Store Causal), V2.4.8 (Resampling OHLCV Silver), V2.3.1 (Ingestion Raw).
-- **Version candidate** : V2.7.2.
+- **Dernière version validée** : V2.7.2 (Offline Supervised Dataset).
+- **Versions antérieures validées** : V2.6.2 (Clean Label Factory), V2.5.2 (Feature Store Causal), V2.4.8 (Resampling OHLCV Silver), V2.3.1 (Ingestion Raw).
+- **Version candidate** : V2.8.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : offline supervised dataset validator runtime finalization.
+- **Direction suivante** : first offline ML research baselines.
 
-## Candidat V2.7.2
+## Candidat V2.8
 
-- V2.7 assemble les features causales V2.5 et les labels forward V2.6 dans un dataset supervise offline.
-- V2.7 a été refusée en strict uniquement parce que le fichier complet de tests du validateur V2.7 était trop lent en audit externe.
-- V2.7.1 a été refusée en strict parce que le runtime complet du fichier de tests V2.7 validator restait trop lent en audit externe.
-- V2.7.2 conserve les artefacts V2.7 et impose un hard cap de 4 tests d'intégration complète du validateur, sans relâcher la validation de production.
-- Les sorties couvrent `1m`, `5m`, `15m` et `1h` sur BTCUSDT 2024-01-15.
-- Les splits temporels train / validation / test sont une preview technique sans shuffle.
-- Les fichiers features et labels sources restent separes et leurs hashes sont controles.
-- V2.7 ne declare aucune strategie validee et ne produit aucun modele.
+- V2.8 entraîne des baselines ML offline simples sur les datasets supervisés V2.7 déjà validés.
+- Les modèles autorisés sont bornés : `majority_class_baseline`, `random_seeded_baseline`, `logistic_regression`, `decision_tree_depth_2`.
+- La cible unique est `up_down_flat_h1`.
+- Les métriques produites sont descriptives et non actionnables.
+- V2.8 ne valide aucune stratégie et ne transforme aucun score en signal.
+- V2.8 produit des artefacts de recherche offline uniquement.
+- V2.8 reste candidate `pending_external_audit`.
 
 ## Clause De Sécurité
 
 - Aucun trading réel.
 - Aucun paper live.
 - Aucun ordre.
-- Aucun modèle ML.
+- Aucun signal de trading.
 - Aucun backtest.
 - Aucune API privée.
 - Aucune clé API.
-- V2.7.2 reste non validée avant audit externe.
+- Aucun modèle n'est validé pour une exploitation trading.
+- V2.8 reste non validée avant audit externe.

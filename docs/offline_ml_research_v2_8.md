@@ -1,0 +1,94 @@
+# V2.8 — First Offline ML Research Baselines
+
+## Objectif
+
+V2.8 construit un laboratoire ML offline borné à partir du dataset supervisé V2.7 validé.
+
+La chaîne cible est :
+
+`dataset supervisé offline V2.7 -> entraînement ML offline simple -> scores de recherche -> métriques descriptives -> manifest -> rapport -> validateur`
+
+V2.8 ne transforme pas les prédictions en décision, signal, stratégie, ordre ou backtest.
+
+## Entrées
+
+Les seules entrées autorisées sont les datasets supervisés V2.7 et les split files V2.7 pour :
+
+- `1m`
+- `5m`
+- `15m`
+- `1h`
+
+Avant entraînement, le script V2.8 relance les validateurs V2.3, V2.4, V2.5, V2.6 et V2.7.
+
+## Cible
+
+- Target unique : `up_down_flat_h1`
+- Lignes exclues : `label_valid_h1 = false`
+- Lignes exclues : `warmup_row = true`
+
+V2.8 n'utilise pas `h3` ou `h5` comme cible.
+
+## Features autorisées
+
+Les features sont limitées aux colonnes causales V2.5 listées dans `ALLOWED_FEATURE_COLUMNS_V2_8`.
+
+Sont explicitement interdits comme features :
+
+- `future_*`
+- `label_*`
+- `direction_*`
+- `up_down_flat_*`
+- `split`
+- `warmup_row`
+- `tail_row`
+- toute colonne assimilable à signal, stratégie, ordre, PnL ou backtest.
+
+## Modèles autorisés
+
+- `majority_class_baseline`
+- `random_seeded_baseline`
+- `logistic_regression`
+- `decision_tree_depth_2`
+
+Aucune recherche d'hyperparamètres, aucun modèle complexe et aucun modèle exploitable en trading ne sont ajoutés.
+
+## Sorties
+
+Les scores de recherche sont écrits sous :
+
+`data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=<tf>/year=2024/month=01/ml-scores-2024-01-15.parquet`
+
+Les rapports sont écrits sous :
+
+- `reports/manifests/offline_ml_research_v2_8_manifest.json`
+- `reports/ml/offline_ml_research_v2_8.json`
+- `reports/ml/offline_ml_research_v2_8.md`
+- `reports/ml/offline_research_scores_v2_8.json`
+- `reports/ml/offline_research_scores_v2_8.md`
+
+Les colonnes de scores utilisent des noms de recherche (`research_predicted_class`, `research_probability_*`) et jamais des noms de signal ou d'ordre.
+
+## Métriques
+
+V2.8 calcule uniquement des métriques de classification descriptives :
+
+- accuracy
+- balanced accuracy
+- macro F1
+- precision/recall par classe
+- matrice de confusion
+- distributions de classes
+
+V2.8 ne calcule aucun PnL, Sharpe, drawdown, equity curve, profit factor ou métrique de trading.
+
+## Sécurité
+
+- V2.8 ne valide aucune stratégie.
+- V2.8 ne produit aucun backtest.
+- V2.8 ne produit aucun signal de trading.
+- V2.8 ne produit aucun ordre.
+- V2.8 n'autorise aucun paper live.
+- V2.8 n'autorise aucun trading réel.
+- Les métriques sont descriptives et non actionnables.
+- V2.8 reste `pending_external_audit`.
