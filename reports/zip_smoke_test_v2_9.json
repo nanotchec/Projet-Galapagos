@@ -1,0 +1,8 @@
+{
+  "version": "V2.9",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v2.9-clean.zip",
+  "smoke_test_passed": true,
+  "smoke_validators_run": 7,
+  "smoke_failed_count": 0,
+  "errors": []
+}

@@ -1,0 +1,12 @@
+{
+  "version": "V2.9",
+  "status": "PASS",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v2.9-clean.zip",
+  "zip_size_bytes": 3190996,
+  "files_included": 163,
+  "minimal_clean_zip": true,
+  "contains_multi_day_raw": true,
+  "contains_multi_day_outputs": true,
+  "forbidden_entries_included": false,
+  "release_ready_for_external_audit": true
+}

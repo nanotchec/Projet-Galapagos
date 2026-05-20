@@ -1,36 +1,32 @@
 {
-  "last_validated_version": "V2.7.2",
-  "candidate_version": "V2.8.4",
+  "last_validated_version": "V2.8.4",
+  "candidate_version": "V2.9",
   "candidate_status": "pending_external_audit",
-  "direction": "offline ML validator runtime and smoke timeout finalization",
-  "dataset_timeframes": [
+  "direction": "multi-day public market data expansion preview",
+  "multi_day_window_start": "2024-01-15",
+  "multi_day_window_end": "2024-01-21",
+  "multi_day_days": 7,
+  "multi_day_timeframes": [
     "1m",
     "5m",
     "15m",
     "1h"
   ],
-  "dataset_rows": {
-    "1m": 1440,
-    "5m": 288,
-    "15m": 96,
-    "1h": 24
+  "multi_day_rows": {
+    "1m": 10080,
+    "5m": 2016,
+    "15m": 672,
+    "1h": 168
   },
-  "split_policy": {
-    "train_ratio": 0.6,
-    "validation_ratio": 0.2,
-    "test_ratio": 0.2,
-    "shuffle": false,
-    "purge_embargo": "none_v2_7_preview"
-  },
-  "dataset_enabled": true,
-  "labels_enabled": true,
-  "ml_enabled": true,
-  "model_created": true,
-  "model_training_executed": true,
-  "offline_ml_only": true,
-  "ml_models_validated_for_trading": false,
+  "multi_day_raw_zips_present": true,
+  "multi_day_silver_outputs_present": true,
+  "features_v2_9_created": false,
+  "labels_v2_9_created": false,
+  "dataset_ml_v2_9_created": false,
+  "ml_v2_9_created": false,
+  "model_v2_9_created": false,
   "backtest_enabled": false,
-  "backtest_executed": false,
+  "strategy_enabled": false,
   "paper_live_enabled": false,
   "orders_enabled": false,
   "trading_enabled": false,
@@ -38,19 +34,5 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v2_8_validated_by_external_audit": false,
-  "offline_ml_research_v2_8_1_candidate": true,
-  "v2_8_refused_strict_reason": "scripts release/audit non autonomes et garde-fou artefacts ML/backtest incomplet",
-  "v2_8_1_validated_by_external_audit": false,
-  "persistent_model_created": false,
-  "strategy_enabled": false,
-  "offline_ml_research_v2_8_2_candidate": true,
-  "v2_8_1_refused_strict_reason": "fichier complet de tests V2.8 validator trop lent",
-  "v2_8_2_validated_by_external_audit": false,
-  "offline_ml_research_v2_8_3_candidate": true,
-  "v2_8_2_refused_strict_reason": "runtime du fichier validator V2.8 et timeout smoke",
-  "v2_8_3_validated_by_external_audit": false,
-  "offline_ml_research_v2_8_4_candidate": true,
-  "v2_8_3_refused_strict_reason": "test nominal relancant une validation complete et smoke appelant encore les validateurs via subprocess",
-  "v2_8_4_validated_by_external_audit": false
+  "v2_9_validated_by_external_audit": false
 }

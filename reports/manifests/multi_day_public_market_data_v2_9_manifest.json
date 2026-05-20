@@ -1,0 +1,200 @@
+{
+  "version": "V2.9",
+  "status": "PASS",
+  "created_at_utc": "2026-05-20T21:36:32.902266Z",
+  "run_id": "v2_9_20260520T213632Z_86e3ed9f",
+  "source": {
+    "name": "binance_public_archive",
+    "venue": "binance",
+    "market_type": "spot",
+    "symbol": "BTCUSDT",
+    "source_timeframe": "1m",
+    "window_start": "2024-01-15",
+    "window_end": "2024-01-21"
+  },
+  "raw_files": {
+    "2024-01-15": {
+      "path": "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2024-01-15.zip",
+      "sha256": "281154f7aab59486732bbe9ad19e8ad9cbaeb7142565cce4b3edf6406301ebf8",
+      "bytes": 70904,
+      "rows": 1440
+    },
+    "2024-01-16": {
+      "path": "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2024-01-16.zip",
+      "sha256": "96d8c3e7f66bd8f94d888fac3b078e2223aceec6b3898a2395a240e0eb7d0399",
+      "bytes": 70950,
+      "rows": 1440
+    },
+    "2024-01-17": {
+      "path": "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2024-01-17.zip",
+      "sha256": "91790216ea49ea61b27f3b8382ce76a405d63cc2c40a0b29591cb4cc346de11d",
+      "bytes": 70138,
+      "rows": 1440
+    },
+    "2024-01-18": {
+      "path": "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2024-01-18.zip",
+      "sha256": "1c6715e192a6de81269303ce4fadaa2deec57373691834a721e2dfa9e2c65efc",
+      "bytes": 70380,
+      "rows": 1440
+    },
+    "2024-01-19": {
+      "path": "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2024-01-19.zip",
+      "sha256": "62aa2b0434e7bbb8cf77731b9916c35194867c9fad946f57a29b8e301abd33c9",
+      "bytes": 71346,
+      "rows": 1440
+    },
+    "2024-01-20": {
+      "path": "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2024-01-20.zip",
+      "sha256": "8c0e45887e167f7f15319257a2b97f3b66044f4bd9c8939fcaf7141e8c088159",
+      "bytes": 67071,
+      "rows": 1440
+    },
+    "2024-01-21": {
+      "path": "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2024-01-21.zip",
+      "sha256": "2784cf791667a6f985919902e3108b55be542d506187f4289a7026eaa2d8e62a",
+      "bytes": 64454,
+      "rows": 1440
+    }
+  },
+  "outputs": {
+    "1m": {
+      "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-15_2024-01-21/ohlcv.parquet",
+      "sha256": "706e45ebe15cd22c00652171d68386368b2dc67522529495712a9d4f37d3c5d4",
+      "bytes": 1161844,
+      "rows": 10080,
+      "format": "parquet"
+    },
+    "5m": {
+      "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-15_2024-01-21/ohlcv.parquet",
+      "sha256": "b2655d8181b1ae9776def91a0b4330fba1300d1d416d45868e393706926ad92c",
+      "bytes": 246895,
+      "rows": 2016,
+      "format": "parquet"
+    },
+    "15m": {
+      "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-15_2024-01-21/ohlcv.parquet",
+      "sha256": "8670e94fce6b994499cacea0db70fea11b3844894d04ce8ca74501ed3765e491",
+      "bytes": 95306,
+      "rows": 672,
+      "format": "parquet"
+    },
+    "1h": {
+      "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-15_2024-01-21/ohlcv.parquet",
+      "sha256": "b523e6b504df08b23b11db267dd4406c4a80747c3342d009c0b1bcb724b766e6",
+      "bytes": 35420,
+      "rows": 168,
+      "format": "parquet"
+    }
+  },
+  "expected_rows": {
+    "1m": 10080,
+    "5m": 2016,
+    "15m": 672,
+    "1h": 168
+  },
+  "quality": {
+    "1m": {
+      "rows": 10080,
+      "expected_rows": 10080,
+      "duplicate_rows": 0,
+      "gap_count": 0,
+      "gaps": [],
+      "ohlc_violations": 0,
+      "negative_volume_rows": 0,
+      "null_critical_rows": 0,
+      "min_event_ts": "2024-01-15T00:00:00Z",
+      "max_event_ts": "2024-01-21T23:59:00Z",
+      "min_close_ts": "2024-01-15T00:00:59.999000Z",
+      "max_close_ts": "2024-01-21T23:59:59.999000Z",
+      "monotonic_event_ts": true,
+      "timestamp_order_valid": true,
+      "timestamps_utc": true,
+      "errors": [],
+      "warnings": [],
+      "parent_child_consistency": true,
+      "forbidden_columns_present": []
+    },
+    "5m": {
+      "rows": 2016,
+      "expected_rows": 2016,
+      "duplicate_rows": 0,
+      "gap_count": 0,
+      "gaps": [],
+      "ohlc_violations": 0,
+      "negative_volume_rows": 0,
+      "null_critical_rows": 0,
+      "min_event_ts": "2024-01-15T00:00:00Z",
+      "max_event_ts": "2024-01-21T23:55:00Z",
+      "min_close_ts": "2024-01-15T00:04:59.999000Z",
+      "max_close_ts": "2024-01-21T23:59:59.999000Z",
+      "monotonic_event_ts": true,
+      "timestamp_order_valid": true,
+      "timestamps_utc": true,
+      "errors": [],
+      "warnings": [],
+      "parent_child_consistency": true,
+      "forbidden_columns_present": []
+    },
+    "15m": {
+      "rows": 672,
+      "expected_rows": 672,
+      "duplicate_rows": 0,
+      "gap_count": 0,
+      "gaps": [],
+      "ohlc_violations": 0,
+      "negative_volume_rows": 0,
+      "null_critical_rows": 0,
+      "min_event_ts": "2024-01-15T00:00:00Z",
+      "max_event_ts": "2024-01-21T23:45:00Z",
+      "min_close_ts": "2024-01-15T00:14:59.999000Z",
+      "max_close_ts": "2024-01-21T23:59:59.999000Z",
+      "monotonic_event_ts": true,
+      "timestamp_order_valid": true,
+      "timestamps_utc": true,
+      "errors": [],
+      "warnings": [],
+      "parent_child_consistency": true,
+      "forbidden_columns_present": []
+    },
+    "1h": {
+      "rows": 168,
+      "expected_rows": 168,
+      "duplicate_rows": 0,
+      "gap_count": 0,
+      "gaps": [],
+      "ohlc_violations": 0,
+      "negative_volume_rows": 0,
+      "null_critical_rows": 0,
+      "min_event_ts": "2024-01-15T00:00:00Z",
+      "max_event_ts": "2024-01-21T23:00:00Z",
+      "min_close_ts": "2024-01-15T00:59:59.999000Z",
+      "max_close_ts": "2024-01-21T23:59:59.999000Z",
+      "monotonic_event_ts": true,
+      "timestamp_order_valid": true,
+      "timestamps_utc": true,
+      "errors": [],
+      "warnings": [],
+      "parent_child_consistency": true,
+      "forbidden_columns_present": []
+    }
+  },
+  "safety": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": false,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "limitations": [
+    "V2.9 etend uniquement les donnees marche publiques BTCUSDT sur une fenetre fixe de 7 jours.",
+    "V2.9 ne produit aucune feature, aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie et aucun ordre."
+  ]
+}
