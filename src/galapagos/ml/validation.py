@@ -18,6 +18,7 @@ from galapagos.ml.metrics import compute_classification_metrics
 from galapagos.ml.quality import assess_ml_quality
 from galapagos.ml.schemas import (
     ALLOWED_FEATURE_COLUMNS_V2_8,
+    CORRECTION_VERSION,
     EXPECTED_LIMITATIONS_V2_8,
     FORBIDDEN_FEATURE_TERMS_V2_8,
     FORBIDDEN_METRIC_TERMS_V2_8,
@@ -50,6 +51,7 @@ INPUT_KEYS = {"path", "sha256", "rows"}
 OUTPUT_KEYS = {"path", "sha256", "bytes", "rows", "format"}
 MANIFEST_KEYS = {
     "version",
+    "correction_version",
     "status",
     "created_at_utc",
     "ml_run_id",
@@ -153,6 +155,8 @@ def _validate_manifest_structure(manifest: dict[str, Any]) -> list[str]:
     errors.extend(validate_exact_keys(manifest, MANIFEST_KEYS, "V2.8 manifest"))
     if manifest.get("version") != VERSION:
         errors.append("V2.8 manifest version mismatch")
+    if manifest.get("correction_version") != CORRECTION_VERSION:
+        errors.append("V2.8 manifest correction_version mismatch")
     if manifest.get("status") != "PASS":
         errors.append("V2.8 manifest status must be PASS")
     if not _is_iso_utc(manifest.get("created_at_utc")):
@@ -187,9 +191,10 @@ def _validate_report(manifest: dict[str, Any], report: dict[str, Any]) -> list[s
 
 
 def _validate_scores_report(manifest: dict[str, Any], report: dict[str, Any]) -> list[str]:
-    errors = validate_exact_keys(report, {"version", "ml_run_id", "outputs", "metrics"}, "V2.8 scores report")
+    errors = validate_exact_keys(report, {"version", "correction_version", "ml_run_id", "outputs", "metrics"}, "V2.8 scores report")
     expected = {
         "version": manifest.get("version"),
+        "correction_version": manifest.get("correction_version"),
         "ml_run_id": manifest.get("ml_run_id"),
         "outputs": manifest.get("outputs"),
         "metrics": manifest.get("metrics"),
@@ -259,19 +264,119 @@ def _validate_safety(safety: Any) -> list[str]:
 
 
 def _find_forbidden_artifacts(root: Path) -> list[str]:
-    forbidden_roots = ["models", "reports/strategies", "reports/signals", "reports/predictions", "orders", "execution"]
     errors: list[str] = []
+    forbidden_roots = [
+        Path("models"),
+        Path("checkpoints"),
+        Path("reports/strategies"),
+        Path("reports/signals"),
+        Path("reports/predictions"),
+        Path("data/gold/backtests"),
+        Path("data/gold/strategies"),
+        Path("data/gold/signals"),
+        Path("data/gold/predictions"),
+        Path("data/gold/orders"),
+        Path("data/gold/execution"),
+        Path("reports/orders"),
+        Path("reports/execution"),
+        Path("orders"),
+        Path("execution"),
+    ]
+    persistent_model_suffixes = {".pkl", ".pickle", ".joblib", ".sav", ".model", ".ckpt", ".pt", ".pth", ".onnx"}
+    forbidden_name_terms = {"backtest", "strategy", "trading_signal", "signal", "order", "execution"}
+
+    def add_path(path: Path) -> None:
+        if path.is_dir():
+            files = [child for child in sorted(path.rglob("*")) if child.is_file()]
+            if files:
+                path = files[0]
+        errors.append(f"Forbidden V2.8 artifact detected: {path.relative_to(root).as_posix()}")
+
     for relative in forbidden_roots:
-        if (root / relative).exists():
-            errors.append(f"Forbidden V2.8 artifact detected: {relative}")
+        path = root / relative
+        if path.exists():
+            add_path(path)
+
     backtests = root / "reports/backtests"
     if backtests.exists():
-        direct_forbidden = [
-            child for child in backtests.iterdir() if child.name in {"backtest.json", "backtest.md", "summary.json", "summary.md"}
-        ]
-        for child in direct_forbidden:
-            errors.append(f"Forbidden V2.8 artifact detected: {child.relative_to(root).as_posix()}")
+        for child in sorted(backtests.rglob("*")):
+            if child.is_file() and child.name != ".gitkeep":
+                if _is_legacy_backtest_report(child.relative_to(root)):
+                    continue
+                add_path(child)
+
+    data_gold_ml = root / "data/gold/ml"
+    if data_gold_ml.exists():
+        for child in sorted(data_gold_ml.rglob("*")):
+            if not child.is_file():
+                continue
+            relative = child.relative_to(root)
+            if _is_allowed_v2_8_ml_score_path(relative):
+                continue
+            lower_name = child.name.casefold()
+            if child.suffix.casefold() in persistent_model_suffixes or any(term in lower_name for term in forbidden_name_terms):
+                add_path(child)
+            else:
+                add_path(child)
+
+    reports_ml = root / "reports/ml"
+    allowed_reports = {
+        Path("reports/ml/offline_ml_research_v2_8.json"),
+        Path("reports/ml/offline_ml_research_v2_8.md"),
+        Path("reports/ml/offline_research_scores_v2_8.json"),
+        Path("reports/ml/offline_research_scores_v2_8.md"),
+    }
+    if reports_ml.exists():
+        for child in sorted(reports_ml.rglob("*")):
+            if not child.is_file():
+                continue
+            relative = child.relative_to(root)
+            lower_name = child.name.casefold()
+            if relative in allowed_reports:
+                continue
+            if child.suffix.casefold() in persistent_model_suffixes or any(term in lower_name for term in forbidden_name_terms):
+                add_path(child)
+            else:
+                add_path(child)
     return errors
+
+
+def _is_allowed_v2_8_ml_score_path(relative: Path) -> bool:
+    parts = relative.parts
+    if len(parts) != 11:
+        return False
+    return (
+        parts[0] == "data"
+        and parts[1] == "gold"
+        and parts[2] == "ml"
+        and parts[3] == "offline_research"
+        and parts[4] == "source=binance_archive"
+        and parts[5] == "market_type=spot"
+        and parts[6] == "symbol=BTCUSDT"
+        and parts[7] in {f"timeframe={timeframe}" for timeframe in TARGET_TIMEFRAMES}
+        and parts[8] == "year=2024"
+        and parts[9] == "month=01"
+        and parts[10] == "ml-scores-2024-01-15.parquet"
+    )
+
+
+def _is_legacy_backtest_report(relative: Path) -> bool:
+    """Allow historical pre-V2.8 reports that remain in the local repository tree."""
+    if len(relative.parts) != 3 or relative.parts[0] != "reports" or relative.parts[1] != "backtests":
+        return False
+    name = relative.parts[2]
+    legacy_exact_prefixes = (
+        "baseline_suite_v1_",
+        "codex_cli_sample_backtest_v1_",
+        "codex_prompt_mode_comparison_v1_",
+        "codex_setup_review_v1_",
+        "first_mechanical_backtest_review.",
+        "llm_offline_suite_v1_",
+        "mechanical_backtest_v1_",
+    )
+    if name.startswith(legacy_exact_prefixes):
+        return True
+    return bool(re.fullmatch(r"backtest_[0-9a-f-]{36}\.(json|md)", name))
 
 
 def _validate_markdown(root: Path) -> list[str]:

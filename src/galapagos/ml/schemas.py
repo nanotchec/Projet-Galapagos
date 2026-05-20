@@ -5,6 +5,7 @@ from pathlib import Path
 from galapagos.datasets.schemas import TARGET_TIMEFRAMES
 
 VERSION = "V2.8"
+CORRECTION_VERSION = "V2.8.1"
 ML_SCHEMA_VERSION = "V2.8"
 TARGET_NAME = "up_down_flat_h1"
 RANDOM_SEED = 42

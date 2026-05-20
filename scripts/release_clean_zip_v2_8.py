@@ -4,8 +4,7 @@ import json
 import zipfile
 from pathlib import Path
 
-from release_clean_zip_v2_7_2 import INCLUDED_PATHS as V2_7_INCLUDED_PATHS
-from release_clean_zip_v2_7_2 import RAW_ARCHIVE_ENTRY
+from release_clean_zip_v2_8_1 import INCLUDED_PATHS, RAW_ARCHIVE_ENTRY
 
 
 ZIP_NAME = "projet-galapagos-v2.8-clean.zip"
@@ -13,33 +12,6 @@ REPORT_PATH = Path("reports/release_zip_v2_8.json")
 REPORT_MD_PATH = Path("reports/release_zip_v2_8.md")
 TIMEFRAMES = ["1m", "5m", "15m", "1h"]
 ML_BASE = "data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT"
-
-REMOVED_V2_7_RELEASE_SCRIPTS = {
-    "scripts/release_clean_zip_v2_7_2.py",
-    "scripts/audit_clean_zip_v2_7_2.py",
-    "scripts/smoke_test_clean_zip_v2_7_2.py",
-}
-
-V2_8_PATHS = [
-    "src/galapagos/ml",
-    "scripts/run_offline_ml_research_v2_8.py",
-    "scripts/validate_offline_ml_research_v2_8.py",
-    "scripts/release_clean_zip_v2_8.py",
-    "scripts/audit_clean_zip_v2_8.py",
-    "scripts/smoke_test_clean_zip_v2_8.py",
-    "tests/ml/test_offline_ml_research_v2_8.py",
-    "tests/validation/test_offline_ml_research_v2_8_validator.py",
-    "reports/manifests/offline_ml_research_v2_8_manifest.json",
-    "reports/ml/offline_ml_research_v2_8.json",
-    "reports/ml/offline_ml_research_v2_8.md",
-    "reports/ml/offline_research_scores_v2_8.json",
-    "reports/ml/offline_research_scores_v2_8.md",
-    "docs/offline_ml_research_v2_8.md",
-]
-
-INCLUDED_PATHS = [path for path in V2_7_INCLUDED_PATHS if path not in REMOVED_V2_7_RELEASE_SCRIPTS] + V2_8_PATHS
-for tf in TIMEFRAMES:
-    INCLUDED_PATHS.append(f"{ML_BASE}/timeframe={tf}/year=2024/month=01/ml-scores-2024-01-15.parquet")
 
 EXCLUDED_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", ".ruff_cache", ".mypy_cache"}
 FORBIDDEN_ZIP_PREFIXES = [

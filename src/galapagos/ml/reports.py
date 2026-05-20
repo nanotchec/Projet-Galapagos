@@ -7,6 +7,8 @@ def build_ml_markdown(manifest: dict[str, Any]) -> str:
     lines = [
         "# Rapport ML offline V2.8",
         "",
+        f"- Correction : `{manifest.get('correction_version', 'V2.8')}`",
+        "",
         "## Objectif",
         "",
         "V2.8 entraine uniquement des baselines ML offline simples sur le dataset supervise V2.7 valide.",
@@ -49,4 +51,3 @@ def build_ml_markdown(manifest: dict[str, Any]) -> str:
         ]
     )
     return "\n".join(lines) + "\n"
-

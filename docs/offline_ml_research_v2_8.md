@@ -1,5 +1,18 @@
 # V2.8 — First Offline ML Research Baselines
 
+## Correction V2.8.1
+
+V2.8.1 conserve le scope ML offline V2.8, sans ajouter de modèle ni de métrique.
+
+La correction rend les scripts release/audit autonomes dans le ZIP clean et durcit le garde-fou contre les artefacts interdits :
+
+- aucun fichier sous `reports/backtests/` dans le ZIP clean ;
+- aucun modèle persistant `.pkl`, `.pickle`, `.joblib`, `.sav`, `.model`, `.ckpt`, `.pt`, `.pth` ou `.onnx` ;
+- sous `data/gold/ml/offline_research/`, seuls les fichiers `ml-scores-2024-01-15.parquet` sont autorisés ;
+- aucune stratégie, aucun ordre, aucun backtest et aucun artefact d'exécution.
+
+V2.8.1 reste `pending_external_audit`.
+
 ## Objectif
 
 V2.8 construit un laboratoire ML offline borné à partir du dataset supervisé V2.7 validé.

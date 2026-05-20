@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V2.6.2",
-  "candidate_version": "V2.8",
+  "last_validated_version": "V2.7.2",
+  "candidate_version": "V2.8.1",
   "candidate_status": "pending_external_audit",
-  "direction": "first offline ML research baselines",
+  "direction": "offline ML release self-containment and artifact guard hardening",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -11,7 +11,12 @@
   "offline_ml_research_v2_8_candidate": true,
   "datasets_created": true,
   "split_files_created": true,
-  "dataset_timeframes": ["1m", "5m", "15m", "1h"],
+  "dataset_timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
   "dataset_rows": {
     "1m": 1440,
     "5m": 288,
@@ -38,5 +43,10 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v2_8_validated_by_external_audit": false
+  "v2_8_validated_by_external_audit": false,
+  "offline_ml_research_v2_8_1_candidate": true,
+  "v2_8_refused_strict_reason": "scripts release/audit non autonomes et garde-fou artefacts ML/backtest incomplet",
+  "v2_8_1_validated_by_external_audit": false,
+  "persistent_model_created": false,
+  "strategy_enabled": false
 }

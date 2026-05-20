@@ -21,6 +21,7 @@ from galapagos.ml.quality import assess_ml_quality
 from galapagos.ml.reports import build_ml_markdown
 from galapagos.ml.schemas import (
     ALLOWED_FEATURE_COLUMNS_V2_8,
+    CORRECTION_VERSION,
     EXPECTED_LIMITATIONS_V2_8,
     MANIFEST_PATH,
     MODEL_NAMES,
@@ -93,6 +94,7 @@ def run_offline_ml_research_v2_8(root: Path = Path("."), ml_run_id: str | None =
     metrics = compute_classification_metrics(all_scores_frame)
     manifest = {
         "version": VERSION,
+        "correction_version": CORRECTION_VERSION,
         "status": "PASS",
         "created_at_utc": created_at,
         "ml_run_id": ml_run_id,
@@ -114,7 +116,10 @@ def run_offline_ml_research_v2_8(root: Path = Path("."), ml_run_id: str | None =
     (root / SCORES_JSON_PATH).parent.mkdir(parents=True, exist_ok=True)
     _write_json(root / MANIFEST_PATH, manifest)
     _write_json(root / REPORT_JSON_PATH, manifest)
-    _write_json(root / SCORES_JSON_PATH, {"version": VERSION, "ml_run_id": ml_run_id, "outputs": outputs, "metrics": metrics})
+    _write_json(
+        root / SCORES_JSON_PATH,
+        {"version": VERSION, "correction_version": CORRECTION_VERSION, "ml_run_id": ml_run_id, "outputs": outputs, "metrics": metrics},
+    )
     markdown = build_ml_markdown(manifest)
     (root / REPORT_MD_PATH).write_text(markdown, encoding="utf-8")
     (root / SCORES_MD_PATH).write_text(markdown, encoding="utf-8")

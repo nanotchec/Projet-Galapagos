@@ -135,6 +135,85 @@ def test_validator_v2_8_rejects_orders_directory_created(valid_v2_8_project: Pat
     assert _errors_contain(errors, "Forbidden V2.8 artifact detected")
 
 
+def test_validator_v2_8_rejects_any_reports_backtests_file(valid_v2_8_project: Path) -> None:
+    path = valid_v2_8_project / "reports/backtests/not_named_backtest_report.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("{}", encoding="utf-8")
+    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+
+
+def test_validator_v2_8_rejects_data_gold_ml_root_model_pickle(valid_v2_8_project: Path) -> None:
+    path = valid_v2_8_project / "data/gold/ml/offline_research/model.pkl"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(b"not-a-model")
+    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+
+
+def test_validator_v2_8_rejects_data_gold_ml_timeframe_model_pickle(valid_v2_8_project: Path) -> None:
+    path = (
+        valid_v2_8_project
+        / "data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/year=2024/month=01/model.pkl"
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(b"not-a-model")
+    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+
+
+def test_validator_v2_8_rejects_data_gold_ml_timeframe_model_joblib(valid_v2_8_project: Path) -> None:
+    path = (
+        valid_v2_8_project
+        / "data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/year=2024/month=01/model.joblib"
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(b"not-a-model")
+    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+
+
+def test_validator_v2_8_rejects_data_gold_ml_backtest_file(valid_v2_8_project: Path) -> None:
+    path = (
+        valid_v2_8_project
+        / "data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/year=2024/month=01/backtest.json"
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("{}", encoding="utf-8")
+    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+
+
+def test_validator_v2_8_allows_only_ml_score_parquets_under_data_gold_ml(valid_v2_8_project: Path) -> None:
+    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
+    score_files = sorted((valid_v2_8_project / "data/gold/ml/offline_research").rglob("*"))
+    assert result["passed"] is True
+    assert [path.name for path in score_files if path.is_file()] == ["ml-scores-2024-01-15.parquet"] * 4
+
+
+def test_release_v2_8_1_script_is_self_contained() -> None:
+    root = Path(__file__).resolve().parents[2]
+    release_text = (root / "scripts/release_clean_zip_v2_8_1.py").read_text(encoding="utf-8")
+    audit_text = (root / "scripts/audit_clean_zip_v2_8_1.py").read_text(encoding="utf-8")
+    assert "release_clean_zip_v2_7_2" not in release_text
+    assert "release_clean_zip_v2_7_2" not in audit_text
+    assert "from release_clean_zip_v2_8_1 import" in audit_text
+
+
+def test_audit_v2_8_1_script_is_self_contained() -> None:
+    root = Path(__file__).resolve().parents[2]
+    audit_text = (root / "scripts/audit_clean_zip_v2_8_1.py").read_text(encoding="utf-8")
+    smoke_text = (root / "scripts/smoke_test_clean_zip_v2_8_1.py").read_text(encoding="utf-8")
+    assert "release_clean_zip_v2_7_2" not in audit_text
+    assert "release_clean_zip_v2_7_2" not in smoke_text
+    assert "from release_clean_zip_v2_8_1 import" in audit_text
+
+
 def test_validator_v2_8_rejects_report_json_lie(valid_v2_8_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:
     manifest, report = valid_v2_8_manifest_report
     report["metrics"] = {}

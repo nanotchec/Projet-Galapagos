@@ -5,12 +5,13 @@ import json
 import zipfile
 from pathlib import Path
 
-from release_clean_zip_v2_8_1 import INCLUDED_PATHS, RAW_ARCHIVE_ENTRY
+from release_clean_zip_v2_8_1 import FORBIDDEN_SUFFIXES, INCLUDED_PATHS, RAW_ARCHIVE_ENTRY
 
 
 FORBIDDEN_PARTS = [".git/", ".venv/", "__pycache__/", ".pytest_cache/", ".ruff_cache/", ".mypy_cache/", "node_modules/"]
 FORBIDDEN_PREFIXES = [
     "models/",
+    "checkpoints/",
     "reports/backtests/",
     "reports/strategies/",
     "reports/signals/",
@@ -18,6 +19,12 @@ FORBIDDEN_PREFIXES = [
     "orders/",
     "execution/",
 ]
+ALLOWED_REPORTS_ML = {
+    "reports/ml/offline_ml_research_v2_8.json",
+    "reports/ml/offline_ml_research_v2_8.md",
+    "reports/ml/offline_research_scores_v2_8.json",
+    "reports/ml/offline_research_scores_v2_8.md",
+}
 
 
 def main() -> None:
@@ -33,8 +40,9 @@ def main() -> None:
         with zipfile.ZipFile(zip_path) as archive:
             names = archive.namelist()
 
+    name_set = set(names)
     for required in INCLUDED_PATHS:
-        if required.endswith((".py", ".json", ".md", ".toml", ".parquet", ".zip")) and required not in names:
+        if required.endswith((".py", ".json", ".md", ".toml", ".parquet", ".zip")) and required not in name_set:
             errors.append(f"missing required entry: {required}")
     for forbidden in FORBIDDEN_PARTS:
         if any(forbidden in name for name in names):
@@ -45,9 +53,24 @@ def main() -> None:
     unexpected_zips = [name for name in names if name.endswith(".zip") and name != RAW_ARCHIVE_ENTRY]
     if unexpected_zips:
         errors.append(f"unexpected nested zip found: {unexpected_zips[:5]}")
+    forbidden_suffixes = [name for name in names if Path(name).suffix.casefold() in FORBIDDEN_SUFFIXES]
+    if forbidden_suffixes:
+        errors.append(f"forbidden model artifact found: {forbidden_suffixes[:5]}")
+    unexpected_reports_ml = [name for name in names if name.startswith("reports/ml/") and name not in ALLOWED_REPORTS_ML]
+    if unexpected_reports_ml:
+        errors.append(f"unexpected reports/ml entry found: {unexpected_reports_ml[:5]}")
+    unexpected_data_gold_ml = [
+        name
+        for name in names
+        if name.startswith("data/gold/ml/")
+        and not (name.endswith("/ml-scores-2024-01-15.parquet") and "/offline_research/" in name)
+    ]
+    if unexpected_data_gold_ml:
+        errors.append(f"unexpected data/gold/ml entry found: {unexpected_data_gold_ml[:5]}")
 
     payload = {
         "version": "V2.8",
+        "correction_version": "V2.8.1",
         "zip_path": str(zip_path.resolve()),
         "zip_size_bytes": zip_path.stat().st_size if zip_path.exists() else 0,
         "entries_count": len(names),
@@ -55,9 +78,9 @@ def main() -> None:
         "errors": errors,
     }
     Path("reports").mkdir(exist_ok=True)
-    Path("reports/zip_audit_v2_8.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    Path("reports/zip_audit_v2_8.md").write_text(
-        "# Audit ZIP V2.8\n\n"
+    Path("reports/zip_audit_v2_8_1.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    Path("reports/zip_audit_v2_8_1.md").write_text(
+        "# Audit ZIP V2.8.1\n\n"
         f"- Statut : `{payload['clean_zip_audit_passed']}`\n"
         f"- Erreurs : `{len(errors)}`\n",
         encoding="utf-8",
