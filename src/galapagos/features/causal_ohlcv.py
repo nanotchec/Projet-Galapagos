@@ -12,6 +12,8 @@ def build_causal_features(
     ohlcv_df: pd.DataFrame,
     source_ohlcv_sha256: str,
     feature_run_id: str,
+    *,
+    feature_schema_version: str = "V2.5",
 ) -> pd.DataFrame:
     """Calculates causal OHLCV features from validated OHLCV data.
     
@@ -116,7 +118,7 @@ def build_causal_features(
     df["decision_ts"] = df["available_ts"]
     df["feature_run_id"] = feature_run_id
     df["source_ohlcv_sha256"] = source_ohlcv_sha256
-    df["feature_schema_version"] = "V2.5"
+    df["feature_schema_version"] = feature_schema_version
     
     # Cast boolean columns explicitly
     df["warmup_row"] = df["warmup_row"].astype(bool)

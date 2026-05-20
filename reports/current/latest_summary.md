@@ -1,11 +1,9 @@
-# Résumé courant — V2.9.1 candidate
+# Latest Summary
 
-La dernière version validée est **V2.8.4**. La version candidate est **V2.9.1**, en statut `pending_external_audit`.
+V2.9.1 est la dernière version validée par audit externe.
 
-V2.9 ne passe pas au backtest. Elle élargit uniquement les données marché publiques réelles avant toute conclusion robuste : BTCUSDT spot 1m sur Binance public archive, du 2024-01-15 au 2024-01-21 inclus.
+V3.0 est la candidate courante et construit uniquement un feature store causal multi-day à partir des OHLCV V2.9 validés. Les sorties sont isolées sous `data/research/v3_0/features/ohlcv` avec les row counts attendus `10080 / 2016 / 672 / 168`.
 
-V2.9 a été refusée en strict uniquement parce que le fichier complet de tests du validateur V2.9 était trop lent. V2.9.1 finalise ce runtime sans changer le périmètre data.
+V3.0 reste `pending_external_audit`.
 
-Les sorties V2.9 sont isolées sous `data/research/v2_9/silver/ohlcv` avec row counts attendus 1m `10080`, 5m `2016`, 15m `672`, 1h `168`. Les artefacts V2.3 à V2.8.4 restent inchangés.
-
-Le système reste data/research/offline : aucun trading réel, aucun paper live, aucun ordre, aucun signal de trading, aucun backtest, aucune stratégie, aucun modèle ML V2.9, aucune API privée et aucune clé API.
+V3.0 ne produit aucun label, aucun dataset ML, aucun modèle ML, aucun backtest, aucune stratégie, aucun paper live, aucun ordre et aucun trading réel.

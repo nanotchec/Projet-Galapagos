@@ -57,6 +57,8 @@ FEATURE_COLUMNS_V2_5 = [
     "feature_error_count",
 ]
 
+FEATURE_COLUMNS_V3_0 = FEATURE_COLUMNS_V2_5.copy()
+
 FORBIDDEN_TERMS = [
     "future",
     "label",
