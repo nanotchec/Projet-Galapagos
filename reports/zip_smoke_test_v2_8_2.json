@@ -1,0 +1,9 @@
+{
+  "version": "V2.8",
+  "correction_version": "V2.8.2",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v2.8.2-clean.zip",
+  "smoke_test_passed": true,
+  "smoke_commands_count": 7,
+  "smoke_failed_count": 0,
+  "errors": []
+}

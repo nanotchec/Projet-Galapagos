@@ -139,18 +139,16 @@ def test_validator_v2_8_rejects_any_reports_backtests_file(valid_v2_8_project: P
     path = valid_v2_8_project / "reports/backtests/not_named_backtest_report.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("{}", encoding="utf-8")
-    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
-    assert result["passed"] is False
-    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+    errors = _find_forbidden_artifacts(valid_v2_8_project)
+    assert _errors_contain(errors, "Forbidden V2.8 artifact detected")
 
 
 def test_validator_v2_8_rejects_data_gold_ml_root_model_pickle(valid_v2_8_project: Path) -> None:
     path = valid_v2_8_project / "data/gold/ml/offline_research/model.pkl"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(b"not-a-model")
-    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
-    assert result["passed"] is False
-    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+    errors = _find_forbidden_artifacts(valid_v2_8_project)
+    assert _errors_contain(errors, "Forbidden V2.8 artifact detected")
 
 
 def test_validator_v2_8_rejects_data_gold_ml_timeframe_model_pickle(valid_v2_8_project: Path) -> None:
@@ -160,9 +158,8 @@ def test_validator_v2_8_rejects_data_gold_ml_timeframe_model_pickle(valid_v2_8_p
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(b"not-a-model")
-    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
-    assert result["passed"] is False
-    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+    errors = _find_forbidden_artifacts(valid_v2_8_project)
+    assert _errors_contain(errors, "Forbidden V2.8 artifact detected")
 
 
 def test_validator_v2_8_rejects_data_gold_ml_timeframe_model_joblib(valid_v2_8_project: Path) -> None:
@@ -172,9 +169,8 @@ def test_validator_v2_8_rejects_data_gold_ml_timeframe_model_joblib(valid_v2_8_p
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(b"not-a-model")
-    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
-    assert result["passed"] is False
-    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+    errors = _find_forbidden_artifacts(valid_v2_8_project)
+    assert _errors_contain(errors, "Forbidden V2.8 artifact detected")
 
 
 def test_validator_v2_8_rejects_data_gold_ml_backtest_file(valid_v2_8_project: Path) -> None:
@@ -184,34 +180,43 @@ def test_validator_v2_8_rejects_data_gold_ml_backtest_file(valid_v2_8_project: P
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("{}", encoding="utf-8")
-    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
-    assert result["passed"] is False
-    assert _errors_contain(result["errors"], "Forbidden V2.8 artifact detected")
+    errors = _find_forbidden_artifacts(valid_v2_8_project)
+    assert _errors_contain(errors, "Forbidden V2.8 artifact detected")
 
 
 def test_validator_v2_8_allows_only_ml_score_parquets_under_data_gold_ml(valid_v2_8_project: Path) -> None:
-    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
+    errors = _find_forbidden_artifacts(valid_v2_8_project)
     score_files = sorted((valid_v2_8_project / "data/gold/ml/offline_research").rglob("*"))
-    assert result["passed"] is True
+    assert errors == []
     assert [path.name for path in score_files if path.is_file()] == ["ml-scores-2024-01-15.parquet"] * 4
 
 
-def test_release_v2_8_1_script_is_self_contained() -> None:
+def test_release_v2_8_scripts_are_self_contained() -> None:
     root = Path(__file__).resolve().parents[2]
     release_text = (root / "scripts/release_clean_zip_v2_8_1.py").read_text(encoding="utf-8")
     audit_text = (root / "scripts/audit_clean_zip_v2_8_1.py").read_text(encoding="utf-8")
+    release_2_text = (root / "scripts/release_clean_zip_v2_8_2.py").read_text(encoding="utf-8")
+    audit_2_text = (root / "scripts/audit_clean_zip_v2_8_2.py").read_text(encoding="utf-8")
     assert "release_clean_zip_v2_7_2" not in release_text
     assert "release_clean_zip_v2_7_2" not in audit_text
+    assert "release_clean_zip_v2_7_2" not in release_2_text
+    assert "release_clean_zip_v2_7_2" not in audit_2_text
     assert "from release_clean_zip_v2_8_1 import" in audit_text
+    assert "from release_clean_zip_v2_8_2 import" in audit_2_text
 
 
-def test_audit_v2_8_1_script_is_self_contained() -> None:
+def test_audit_v2_8_scripts_are_self_contained() -> None:
     root = Path(__file__).resolve().parents[2]
     audit_text = (root / "scripts/audit_clean_zip_v2_8_1.py").read_text(encoding="utf-8")
     smoke_text = (root / "scripts/smoke_test_clean_zip_v2_8_1.py").read_text(encoding="utf-8")
+    audit_2_text = (root / "scripts/audit_clean_zip_v2_8_2.py").read_text(encoding="utf-8")
+    smoke_2_text = (root / "scripts/smoke_test_clean_zip_v2_8_2.py").read_text(encoding="utf-8")
     assert "release_clean_zip_v2_7_2" not in audit_text
     assert "release_clean_zip_v2_7_2" not in smoke_text
+    assert "release_clean_zip_v2_7_2" not in audit_2_text
+    assert "release_clean_zip_v2_7_2" not in smoke_2_text
     assert "from release_clean_zip_v2_8_1 import" in audit_text
+    assert "from release_clean_zip_v2_8_2 import" in audit_2_text
 
 
 def test_validator_v2_8_rejects_report_json_lie(valid_v2_8_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:

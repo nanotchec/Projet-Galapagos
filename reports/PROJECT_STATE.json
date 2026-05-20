@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V2.7.2",
-  "candidate_version": "V2.8.1",
+  "candidate_version": "V2.8.2",
   "candidate_status": "pending_external_audit",
-  "direction": "offline ML release self-containment and artifact guard hardening",
+  "direction": "offline ML validator runtime finalization",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -48,5 +48,8 @@
   "v2_8_refused_strict_reason": "scripts release/audit non autonomes et garde-fou artefacts ML/backtest incomplet",
   "v2_8_1_validated_by_external_audit": false,
   "persistent_model_created": false,
-  "strategy_enabled": false
+  "strategy_enabled": false,
+  "offline_ml_research_v2_8_2_candidate": true,
+  "v2_8_1_refused_strict_reason": "fichier complet de tests V2.8 validator trop lent",
+  "v2_8_2_validated_by_external_audit": false
 }

@@ -13,6 +13,19 @@ La correction rend les scripts release/audit autonomes dans le ZIP clean et durc
 
 V2.8.1 reste `pending_external_audit`.
 
+## Correction V2.8.2
+
+V2.8.2 conserve exactement le même scope ML offline que V2.8/V2.8.1.
+
+La correction finalise uniquement le runtime du fichier complet `tests/validation/test_offline_ml_research_v2_8_validator.py` :
+
+- les tests d'artefacts interdits utilisent directement `_find_forbidden_artifacts()` ;
+- les tests JSON, safety et métriques restent ciblés sur les helpers de validation ;
+- le validateur de production `validate_offline_ml_research_v2_8()` n'est pas relâché ;
+- aucun modèle, backtest, stratégie, ordre ou artefact d'exécution n'est ajouté.
+
+V2.8.2 reste `pending_external_audit`.
+
 ## Objectif
 
 V2.8 construit un laboratoire ML offline borné à partir du dataset supervisé V2.7 validé.
