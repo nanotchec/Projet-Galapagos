@@ -1,9 +1,9 @@
 {
   "last_validated_version": "V2.6.2",
-  "candidate_version": "V2.7.1",
+  "candidate_version": "V2.7.2",
   "candidate_status": "pending_external_audit",
   "direction": "offline supervised dataset validator runtime finalization",
-  "v2_7_refused_reason": "validator test file runtime too slow in strict external audit",
+  "v2_7_1_refused_reason": "validator test file runtime still too slow in strict external audit",
   "dataset_timeframes": ["1m", "5m", "15m", "1h"],
   "dataset_rows": {
     "1m": 1440,
@@ -32,5 +32,5 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v2_7_1_validated_by_external_audit": false
+  "v2_7_2_validated_by_external_audit": false
 }

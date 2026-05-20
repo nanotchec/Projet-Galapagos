@@ -1,8 +1,8 @@
 # V2.7 — Offline Supervised Dataset Assembly Preview
 
-## Correction V2.7.1
+## Correction V2.7.2
 
-V2.7.1 est une correction runtime-only. V2.7 a été refusée en strict uniquement parce que `tests/validation/test_offline_supervised_dataset_v2_7_validator.py` ne terminait pas assez vite en audit externe. V2.7.1 conserve les artefacts dataset V2.7, garde le validateur de production strict, et rend le fichier complet de tests du validateur fiable sans ajouter de ML, modèle, backtest, paper live, ordre ou trading réel.
+V2.7.2 est une correction runtime-only. V2.7.1 a été refusée en strict uniquement parce que `tests/validation/test_offline_supervised_dataset_v2_7_validator.py` restait trop lent en audit externe. V2.7.2 conserve les artefacts dataset V2.7, garde le validateur de production strict, et limite les tests d'intégration complète du validateur a 4 cas critiques. Les autres controles utilisent des helpers cibles rapides, sans ajouter de ML, modèle, backtest, paper live, ordre ou trading réel.
 
 ## Objectif
 
@@ -73,4 +73,4 @@ Comme V2.7 couvre une seule journee, ces splits sont une preview technique, pas 
 - V2.7 ne produit aucun ordre.
 - V2.7 n'autorise aucun paper live.
 - V2.7 n'autorise aucun trading reel.
-- V2.7.1 reste candidate `pending_external_audit`.
+- V2.7.2 reste candidate `pending_external_audit`.

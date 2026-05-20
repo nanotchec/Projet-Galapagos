@@ -123,8 +123,8 @@ def test_validator_v2_7_rejects_wrong_source_features_sha256_even_with_synced_ch
     frame["source_features_sha256"] = "bad"
     frame.to_parquet(path, index=False)
     _sync_dataset_output(valid_v2_7_project, "5m")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "source hashes invalid")
+    errors = _validate_single_timeframe(valid_v2_7_project, "5m")
+    assert _errors_contain(errors, "source hashes invalid")
 
 
 def test_validator_v2_7_rejects_wrong_source_labels_sha256_even_with_synced_checksum(valid_v2_7_project: Path) -> None:
@@ -153,8 +153,8 @@ def test_validator_v2_7_rejects_modified_label_value_even_with_synced_checksum(v
     frame.loc[0, "future_log_return_h1"] = 999.0
     frame.to_parquet(path, index=False)
     _sync_dataset_output(valid_v2_7_project, "15m")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 dataset physical mismatch for 15m")
+    errors = _validate_single_timeframe(valid_v2_7_project, "15m")
+    assert _errors_contain(errors, "V2.7 dataset physical mismatch for 15m")
 
 
 def test_validator_v2_7_rejects_feature_available_ts_after_decision_ts(valid_v2_7_project: Path) -> None:
@@ -216,11 +216,9 @@ def test_validator_v2_7_rejects_markdown_strategy_validated_claim() -> None:
     assert _errors_contain(errors, "V2.7 Markdown report contains forbidden claim")
 
 
-def test_validator_v2_7_rejects_datacard_strategy_validated_claim(valid_v2_7_project: Path) -> None:
-    path = valid_v2_7_project / DATACARD_MD_PATH
-    path.write_text(path.read_text(encoding="utf-8") + "\nStrategy validated.\n", encoding="utf-8")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "V2.7 data card contains forbidden claim")
+def test_validator_v2_7_rejects_datacard_strategy_validated_claim() -> None:
+    errors = validate_markdown_forbidden_claims("Data card valide.\nStrategy validated.\n", "V2.7 data card")
+    assert _errors_contain(errors, "V2.7 data card contains forbidden claim")
 
 
 def test_validator_v2_7_rejects_safety_flag_ml_true(valid_v2_7_project: Path) -> None:
@@ -247,8 +245,8 @@ def test_validator_v2_7_rejects_model_file_created(valid_v2_7_project: Path) -> 
     model_path = valid_v2_7_project / "models/model.pkl"
     model_path.parent.mkdir(parents=True, exist_ok=True)
     model_path.write_text("not allowed", encoding="utf-8")
-    result = validate_offline_supervised_dataset_v2_7(valid_v2_7_project)
-    assert _failed_with(result, "Forbidden")
+    errors = _find_forbidden_artifacts(valid_v2_7_project)
+    assert _errors_contain(errors, "Forbidden")
 
 
 def test_validator_v2_7_rejects_backtest_report_created(valid_v2_7_project: Path) -> None:
