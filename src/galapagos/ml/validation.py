@@ -227,6 +227,15 @@ def _validate_timeframe(
     errors.extend(_compare_input_block(manifest["input_datasets"][timeframe], dataset_path, sha256_file(dataset_path), len(dataset), root, f"V2.8 manifest input_datasets.{timeframe}"))
     errors.extend(_compare_input_block(manifest["input_splits"][timeframe], split_path, sha256_file(split_path), len(split), root, f"V2.8 manifest input_splits.{timeframe}"))
     errors.extend(_compare_output_block(manifest["outputs"][timeframe], score_path, sha256_file(score_path), len(scores), root, f"V2.8 manifest outputs.{timeframe}"))
+    errors.extend(_validate_score_frame_schema_only(scores, timeframe))
+    quality = assess_ml_quality(dataset, scores, timeframe)
+    physical_quality[timeframe] = quality
+    errors.extend(quality["errors"])
+    return errors
+
+
+def _validate_score_frame_schema_only(scores: pd.DataFrame, timeframe: str) -> list[str]:
+    errors: list[str] = []
     if list(scores.columns) != ML_SCORE_COLUMNS_V2_8:
         errors.append(f"V2.8 score schema mismatch for {timeframe}")
     forbidden_output = [
@@ -234,18 +243,15 @@ def _validate_timeframe(
     ]
     if forbidden_output:
         errors.append(f"V2.8 score forbidden columns for {timeframe}: {forbidden_output}")
-    if not scores["prediction_available_ts"].ge(scores["decision_ts"]).all():
+    if {"prediction_available_ts", "decision_ts"}.issubset(scores.columns) and not scores["prediction_available_ts"].ge(scores["decision_ts"]).all():
         errors.append(f"V2.8 prediction_available_ts invalid for {timeframe}")
     if len(scores) > 0:
-        if set(scores["model_name"].unique()) != set(MODEL_NAMES):
+        if "model_name" in scores.columns and set(scores["model_name"].unique()) != set(MODEL_NAMES):
             errors.append(f"V2.8 score models mismatch for {timeframe}")
-        if set(scores["target_name"].unique()) != {TARGET_NAME}:
+        if "target_name" in scores.columns and set(scores["target_name"].unique()) != {TARGET_NAME}:
             errors.append(f"V2.8 score target mismatch for {timeframe}")
-        if set(scores["feature_columns_sha256"].unique()) != {get_feature_columns_sha256()}:
+        if "feature_columns_sha256" in scores.columns and set(scores["feature_columns_sha256"].unique()) != {get_feature_columns_sha256()}:
             errors.append(f"V2.8 score feature_columns_sha256 mismatch for {timeframe}")
-    quality = assess_ml_quality(dataset, scores, timeframe)
-    physical_quality[timeframe] = quality
-    errors.extend(quality["errors"])
     return errors
 
 

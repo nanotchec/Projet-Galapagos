@@ -26,6 +26,19 @@ La correction finalise uniquement le runtime du fichier complet `tests/validatio
 
 V2.8.2 reste `pending_external_audit`.
 
+## Correction V2.8.3
+
+V2.8.3 conserve le même scope ML offline et ne modifie pas les modèles, les features autorisées, la cible ou les métriques.
+
+La correction est strictement runtime/smoke :
+
+- les tests de colonnes score utilisent un helper pur `_validate_score_frame_schema_only()` quand une validation physique complète n'est pas nécessaire ;
+- un seul test de colonne score conserve une mutation Parquet physique ;
+- le smoke V2.8.3 appelle les validateurs via des snippets Python silencieux et ne capture plus le gros JSON du validateur ML ;
+- aucun backtest, aucune stratégie, aucun ordre, aucun modèle persistant et aucun artefact d'exécution n'est ajouté.
+
+V2.8.3 reste `pending_external_audit`.
+
 ## Objectif
 
 V2.8 construit un laboratoire ML offline borné à partir du dataset supervisé V2.7 validé.
