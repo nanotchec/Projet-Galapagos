@@ -29,7 +29,7 @@ from run_offline_ml_research_v2_8 import run_offline_ml_research_v2_8
 
 
 @pytest.fixture(scope="session")
-def valid_v2_8_template(tmp_path_factory: pytest.TempPathFactory) -> Path:
+def valid_v2_8_template_bundle(tmp_path_factory: pytest.TempPathFactory) -> dict[str, Any]:
     root = tmp_path_factory.mktemp("valid_v2_8_template")
     workspace = Path(__file__).resolve().parents[2]
     for relative in [
@@ -48,7 +48,18 @@ def valid_v2_8_template(tmp_path_factory: pytest.TempPathFactory) -> Path:
     run_offline_ml_research_v2_8(root)
     result = validate_offline_ml_research_v2_8(root)
     assert result["passed"], result["errors"]
-    return root
+    return {"root": root, "validation_result": result}
+
+
+@pytest.fixture(scope="session")
+def valid_v2_8_template(valid_v2_8_template_bundle: dict[str, Any]) -> Path:
+    return valid_v2_8_template_bundle["root"]
+
+
+@pytest.fixture(scope="session")
+def valid_v2_8_template_validation_result(valid_v2_8_template_bundle: dict[str, Any]) -> dict[str, Any]:
+    result = valid_v2_8_template_bundle["validation_result"]
+    return deepcopy(result)
 
 
 @pytest.fixture()
@@ -68,8 +79,10 @@ def valid_score_frame(valid_v2_8_template: Path) -> pd.DataFrame:
     return pd.read_parquet(get_ml_score_path(valid_v2_8_template, "5m")).copy()
 
 
-def test_validator_v2_8_accepts_valid_offline_ml_research(valid_v2_8_project: Path) -> None:
-    result = validate_offline_ml_research_v2_8(valid_v2_8_project)
+def test_validator_v2_8_accepts_valid_offline_ml_research(
+    valid_v2_8_template_validation_result: dict[str, Any],
+) -> None:
+    result = valid_v2_8_template_validation_result
     assert result["passed"] is True
     assert result["errors"] == []
 
@@ -207,15 +220,20 @@ def test_release_v2_8_scripts_are_self_contained() -> None:
     audit_2_text = (root / "scripts/audit_clean_zip_v2_8_2.py").read_text(encoding="utf-8")
     release_3_text = (root / "scripts/release_clean_zip_v2_8_3.py").read_text(encoding="utf-8")
     audit_3_text = (root / "scripts/audit_clean_zip_v2_8_3.py").read_text(encoding="utf-8")
+    release_4_text = (root / "scripts/release_clean_zip_v2_8_4.py").read_text(encoding="utf-8")
+    audit_4_text = (root / "scripts/audit_clean_zip_v2_8_4.py").read_text(encoding="utf-8")
     assert "release_clean_zip_v2_7_2" not in release_text
     assert "release_clean_zip_v2_7_2" not in audit_text
     assert "release_clean_zip_v2_7_2" not in release_2_text
     assert "release_clean_zip_v2_7_2" not in audit_2_text
     assert "release_clean_zip_v2_7_2" not in release_3_text
     assert "release_clean_zip_v2_7_2" not in audit_3_text
+    assert "release_clean_zip_v2_7_2" not in release_4_text
+    assert "release_clean_zip_v2_7_2" not in audit_4_text
     assert "from release_clean_zip_v2_8_1 import" in audit_text
     assert "from release_clean_zip_v2_8_2 import" in audit_2_text
     assert "from release_clean_zip_v2_8_3 import" in audit_3_text
+    assert "from release_clean_zip_v2_8_4 import" in audit_4_text
 
 
 def test_audit_v2_8_scripts_are_self_contained() -> None:
@@ -226,15 +244,21 @@ def test_audit_v2_8_scripts_are_self_contained() -> None:
     smoke_2_text = (root / "scripts/smoke_test_clean_zip_v2_8_2.py").read_text(encoding="utf-8")
     audit_3_text = (root / "scripts/audit_clean_zip_v2_8_3.py").read_text(encoding="utf-8")
     smoke_3_text = (root / "scripts/smoke_test_clean_zip_v2_8_3.py").read_text(encoding="utf-8")
+    audit_4_text = (root / "scripts/audit_clean_zip_v2_8_4.py").read_text(encoding="utf-8")
+    smoke_4_text = (root / "scripts/smoke_test_clean_zip_v2_8_4.py").read_text(encoding="utf-8")
     assert "release_clean_zip_v2_7_2" not in audit_text
     assert "release_clean_zip_v2_7_2" not in smoke_text
     assert "release_clean_zip_v2_7_2" not in audit_2_text
     assert "release_clean_zip_v2_7_2" not in smoke_2_text
     assert "release_clean_zip_v2_7_2" not in audit_3_text
     assert "release_clean_zip_v2_7_2" not in smoke_3_text
+    assert "release_clean_zip_v2_7_2" not in audit_4_text
+    assert "release_clean_zip_v2_7_2" not in smoke_4_text
     assert "from release_clean_zip_v2_8_1 import" in audit_text
     assert "from release_clean_zip_v2_8_2 import" in audit_2_text
     assert "from release_clean_zip_v2_8_3 import" in audit_3_text
+    assert "from release_clean_zip_v2_8_4 import" in audit_4_text
+    assert "subprocess" not in smoke_4_text
 
 
 def test_validator_v2_8_rejects_report_json_lie(valid_v2_8_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:

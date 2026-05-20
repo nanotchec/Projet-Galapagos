@@ -1,9 +1,9 @@
 {
   "version": "V2.8",
-  "correction_version": "V2.8.3",
+  "correction_version": "V2.8.4",
   "status": "PASS",
-  "created_at_utc": "2026-05-20T18:41:02.317009Z",
-  "ml_run_id": "v2_8_20260520T184102Z_c09cd3d4",
+  "created_at_utc": "2026-05-20T21:04:36.107115Z",
+  "ml_run_id": "v2_8_20260520T210436Z_95c879ad",
   "input_datasets": {
     "1m": {
       "path": "data/gold/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/year=2024/month=01/dataset-2024-01-15.parquet",
@@ -51,21 +51,21 @@
   "outputs": {
     "1m": {
       "path": "data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/year=2024/month=01/ml-scores-2024-01-15.parquet",
-      "sha256": "b50f1f7139f5816e5c35bc536c6bb027b16a24b561b067c60b19447219d3e2de",
+      "sha256": "014116d9553ec19164c83b72e548893be45969bc843b819fa5e5bb2c29191cbc",
       "bytes": 127348,
       "rows": 5636,
       "format": "parquet"
     },
     "5m": {
       "path": "data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/year=2024/month=01/ml-scores-2024-01-15.parquet",
-      "sha256": "e7c3544fbec0bff0fd5a1fcca32b9b970fa39b1097ce929f7d42d895195a47e4",
+      "sha256": "734804e28aefcbb1a6544d08122abc5117d9e8dffc9e1e10cd202bd8f6175b70",
       "bytes": 36112,
       "rows": 1028,
       "format": "parquet"
     },
     "15m": {
       "path": "data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/year=2024/month=01/ml-scores-2024-01-15.parquet",
-      "sha256": "9995181e868de028f3904d290194c598ba6bd6d0aae789533171275ba969c8ce",
+      "sha256": "a1d2b62085436ddc3707457729764afb7d581c7f0a2c12d2a5d4cce61b0ecac4",
       "bytes": 20738,
       "rows": 260,
       "format": "parquet"
