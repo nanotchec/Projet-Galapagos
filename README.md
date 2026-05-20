@@ -3,14 +3,15 @@
 ## Etat actuel du projet
 
 - Derniere version validee : V2.8.4.
-- Candidate : V2.9, multi-day public market data expansion preview.
+- Candidate : V2.9.1, multi-day public market data validator runtime finalization.
 - Le projet est actuellement data/research/offline only.
 - Aucun trading reel n'est autorise.
 - Aucun paper live n'est autorise.
 - Aucun ordre n'est autorise.
 - V2.9 etend uniquement les donnees marche publiques BTCUSDT sur 7 jours.
+- V2.9.1 finalise uniquement le runtime des tests du validateur V2.9 apres refus strict de V2.9 pour fichier de tests trop lent.
 - V2.9 ne produit aucune feature, aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie et aucun signal de trading.
-- V2.9 reste `pending_external_audit` et n'est pas validee avant audit externe.
+- V2.9.1 reste `pending_external_audit` et n'est pas validee avant audit externe.
 - Les anciennes parties paper trading V1 sont legacy et ne sont pas autorisees dans la roadmap actuelle.
 
 Projet Galapagos est une V1 verticale d'agent autonome de trading en paper trading sur BTC.

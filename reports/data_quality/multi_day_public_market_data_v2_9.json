@@ -1,8 +1,8 @@
 {
   "version": "V2.9",
   "status": "PASS",
-  "created_at_utc": "2026-05-20T21:36:32.902266Z",
-  "run_id": "v2_9_20260520T213632Z_86e3ed9f",
+  "created_at_utc": "2026-05-20T22:01:23.258158Z",
+  "run_id": "v2_9_20260520T220123Z_b9668f02",
   "source": {
     "name": "binance_public_archive",
     "venue": "binance",
@@ -59,28 +59,28 @@
   "outputs": {
     "1m": {
       "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-15_2024-01-21/ohlcv.parquet",
-      "sha256": "706e45ebe15cd22c00652171d68386368b2dc67522529495712a9d4f37d3c5d4",
+      "sha256": "cf027ba4303f1c18c58fa35666e78ba7446e4d20407fda5fd5a1fe24415ab69e",
       "bytes": 1161844,
       "rows": 10080,
       "format": "parquet"
     },
     "5m": {
       "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-15_2024-01-21/ohlcv.parquet",
-      "sha256": "b2655d8181b1ae9776def91a0b4330fba1300d1d416d45868e393706926ad92c",
+      "sha256": "4f1531e13a2d5af7d1b7815aff5b462e2c52eadc07cc4cab035b1a4b3795943c",
       "bytes": 246895,
       "rows": 2016,
       "format": "parquet"
     },
     "15m": {
       "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-15_2024-01-21/ohlcv.parquet",
-      "sha256": "8670e94fce6b994499cacea0db70fea11b3844894d04ce8ca74501ed3765e491",
+      "sha256": "178cf00da1192b181dd6820ab0b9220342223c9b43a4da04ee0bd6cc08a07f51",
       "bytes": 95306,
       "rows": 672,
       "format": "parquet"
     },
     "1h": {
       "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-15_2024-01-21/ohlcv.parquet",
-      "sha256": "b523e6b504df08b23b11db267dd4406c4a80747c3342d009c0b1bcb724b766e6",
+      "sha256": "54720f306120a58206dfc958e0eec9f960b63c0f5355c03da3dbbc216445963a",
       "bytes": 35420,
       "rows": 168,
       "format": "parquet"

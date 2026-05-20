@@ -1,8 +1,9 @@
 {
   "last_validated_version": "V2.8.4",
-  "candidate_version": "V2.9",
+  "candidate_version": "V2.9.1",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day public market data expansion preview",
+  "direction": "multi-day public market data validator runtime finalization",
+  "v2_9_external_audit_refusal_reason": "V2.9 refusee en strict uniquement parce que le fichier complet de tests du validateur V2.9 etait trop lent.",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,

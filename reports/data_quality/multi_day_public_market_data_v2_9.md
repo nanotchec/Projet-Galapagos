@@ -1,5 +1,11 @@
 # Multi-Day Public Market Data V2.9
 
+## Correction V2.9.1
+
+V2.9.1 finalise uniquement le runtime du fichier complet de tests du validateur V2.9.
+
+V2.9 a ete refusee en strict parce que `tests/validation/test_multi_day_public_market_data_v2_9_validator.py` relancait trop souvent le validateur complet. Les artefacts data V2.9 restent inchanges et V2.9.1 reste `pending_external_audit`.
+
 ## Objectif
 
 V2.9 etend les donnees marche publiques BTCUSDT 1m sur une fenetre fixe de 7 jours, du 2024-01-15 au 2024-01-21.
@@ -12,7 +18,7 @@ V2.9 etend les donnees marche publiques BTCUSDT 1m sur une fenetre fixe de 7 jou
 - Symbole : `BTCUSDT`
 - Timeframe source : `1m`
 - Fenetre : `2024-01-15` -> `2024-01-21`
-- Run : `v2_9_20260520T213632Z_86e3ed9f`
+- Run : `v2_9_20260520T220123Z_b9668f02`
 
 ## Fichiers raw
 
@@ -26,10 +32,10 @@ V2.9 etend les donnees marche publiques BTCUSDT 1m sur une fenetre fixe de 7 jou
 
 ## Outputs
 
-- 1m: `10080` lignes, checksum `706e45ebe15cd22c00652171d68386368b2dc67522529495712a9d4f37d3c5d4`
-- 5m: `2016` lignes, checksum `b2655d8181b1ae9776def91a0b4330fba1300d1d416d45868e393706926ad92c`
-- 15m: `672` lignes, checksum `8670e94fce6b994499cacea0db70fea11b3844894d04ce8ca74501ed3765e491`
-- 1h: `168` lignes, checksum `b523e6b504df08b23b11db267dd4406c4a80747c3342d009c0b1bcb724b766e6`
+- 1m: `10080` lignes, checksum `cf027ba4303f1c18c58fa35666e78ba7446e4d20407fda5fd5a1fe24415ab69e`
+- 5m: `2016` lignes, checksum `4f1531e13a2d5af7d1b7815aff5b462e2c52eadc07cc4cab035b1a4b3795943c`
+- 15m: `672` lignes, checksum `178cf00da1192b181dd6820ab0b9220342223c9b43a4da04ee0bd6cc08a07f51`
+- 1h: `168` lignes, checksum `54720f306120a58206dfc958e0eec9f960b63c0f5355c03da3dbbc216445963a`
 
 ## Qualite
 

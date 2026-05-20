@@ -116,23 +116,8 @@ def validate_multi_day_public_market_data_v2_9(root: Path = Path(".")) -> dict[s
     errors.extend(_validate_manifest_structure(manifest))
     errors.extend(scan_payload_for_forbidden_claims(manifest, "V2.9 manifest"))
     frames: dict[str, pd.DataFrame] = {}
-    raw_rows: dict[str, int] = {}
-    for date in DATES_V2_9:
-        path = raw_zip_path(root, date)
-        if not path.exists():
-            errors.append(f"missing raw zip: {path.relative_to(root)}")
-            continue
-        raw_sha = sha256_file(path)
-        raw_payload = manifest.get("raw_files", {}).get(date, {})
-        if raw_payload.get("sha256") != raw_sha:
-            errors.append(f"V2.9 raw checksum mismatch for {date}")
-        try:
-            raw_rows[date] = int(len(parse_binance_kline_zip(path)))
-        except Exception as exc:
-            errors.append(f"V2.9 raw parse failed for {date}: {exc}")
-            raw_rows[date] = -1
-        if raw_payload.get("rows") != raw_rows[date]:
-            errors.append(f"V2.9 raw rows mismatch for {date}")
+    raw_errors, raw_rows = _validate_raw_files(root, manifest)
+    errors.extend(raw_errors)
     for timeframe in TIMEFRAMES_V2_9:
         path = output_path(root, timeframe)
         if not path.exists():
@@ -204,6 +189,28 @@ def _validate_safety(safety: dict[str, Any]) -> list[str]:
         if safety.get(flag) is not False:
             errors.append(f"V2.9 safety flag {flag} must be False")
     return errors
+
+
+def _validate_raw_files(root: Path, manifest: dict[str, Any]) -> tuple[list[str], dict[str, int]]:
+    errors: list[str] = []
+    raw_rows: dict[str, int] = {}
+    for date in DATES_V2_9:
+        path = raw_zip_path(root, date)
+        if not path.exists():
+            errors.append(f"missing raw zip: {path.relative_to(root)}")
+            continue
+        raw_sha = sha256_file(path)
+        raw_payload = manifest.get("raw_files", {}).get(date, {})
+        if raw_payload.get("sha256") != raw_sha:
+            errors.append(f"V2.9 raw checksum mismatch for {date}")
+        try:
+            raw_rows[date] = int(len(parse_binance_kline_zip(path)))
+        except Exception as exc:
+            errors.append(f"V2.9 raw parse failed for {date}: {exc}")
+            raw_rows[date] = -1
+        if raw_payload.get("rows") != raw_rows[date]:
+            errors.append(f"V2.9 raw rows mismatch for {date}")
+    return errors, raw_rows
 
 
 def _validate_output_entry(root: Path, manifest: dict[str, Any], timeframe: str, path: Path, frame: pd.DataFrame) -> list[str]:

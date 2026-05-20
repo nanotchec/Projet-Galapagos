@@ -1,8 +1,10 @@
-# Résumé courant — V2.9 candidate
+# Résumé courant — V2.9.1 candidate
 
-La dernière version validée est **V2.8.4**. La version candidate est **V2.9**, en statut `pending_external_audit`.
+La dernière version validée est **V2.8.4**. La version candidate est **V2.9.1**, en statut `pending_external_audit`.
 
 V2.9 ne passe pas au backtest. Elle élargit uniquement les données marché publiques réelles avant toute conclusion robuste : BTCUSDT spot 1m sur Binance public archive, du 2024-01-15 au 2024-01-21 inclus.
+
+V2.9 a été refusée en strict uniquement parce que le fichier complet de tests du validateur V2.9 était trop lent. V2.9.1 finalise ce runtime sans changer le périmètre data.
 
 Les sorties V2.9 sont isolées sous `data/research/v2_9/silver/ohlcv` avec row counts attendus 1m `10080`, 5m `2016`, 15m `672`, 1h `168`. Les artefacts V2.3 à V2.8.4 restent inchangés.
 

@@ -1,5 +1,13 @@
 # Multi-Day Public Market Data V2.9
 
+## Correction V2.9.1
+
+V2.9.1 finalise le runtime des tests du validateur V2.9.
+
+V2.9 a été refusée en strict uniquement parce que le fichier complet `tests/validation/test_multi_day_public_market_data_v2_9_validator.py` était trop lent. V2.9.1 conserve les mêmes artefacts data et le même validateur de production, mais remplace les tests non physiques par des appels ciblés aux helpers de validation.
+
+V2.9.1 reste `pending_external_audit`.
+
 ## Objectif
 
 V2.9 construit une preview multi-day de données marché publiques réelles, bornée et validée physiquement.

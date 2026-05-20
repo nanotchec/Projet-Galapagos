@@ -237,6 +237,12 @@ def _write_markdown(path: Path, report: dict[str, Any]) -> None:
     limitations = "\n".join(f"- {item}" for item in report["limitations"])
     text = f"""# Multi-Day Public Market Data V2.9
 
+## Correction V2.9.1
+
+V2.9.1 finalise uniquement le runtime du fichier complet de tests du validateur V2.9.
+
+V2.9 a ete refusee en strict parce que `tests/validation/test_multi_day_public_market_data_v2_9_validator.py` relancait trop souvent le validateur complet. Les artefacts data V2.9 restent inchanges et V2.9.1 reste `pending_external_audit`.
+
 ## Objectif
 
 V2.9 etend les donnees marche publiques BTCUSDT 1m sur une fenetre fixe de 7 jours, du {WINDOW_START} au {WINDOW_END}.
