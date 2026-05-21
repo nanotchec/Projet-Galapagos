@@ -11,6 +11,8 @@ def build_forward_labels(
     ohlcv_df: pd.DataFrame,
     source_ohlcv_sha256: str,
     label_run_id: str,
+    *,
+    label_schema_version: str = LABEL_SCHEMA_VERSION,
 ) -> pd.DataFrame:
     """Calculates forward looking labels for physical OHLCV series.
     
@@ -106,7 +108,7 @@ def build_forward_labels(
     # 4. Strict metadata alignment
     df["label_run_id"] = label_run_id
     df["source_ohlcv_sha256"] = source_ohlcv_sha256
-    df["label_schema_version"] = LABEL_SCHEMA_VERSION
+    df["label_schema_version"] = label_schema_version
     
     # Types casting
     df["tail_row"] = df["tail_row"].astype(bool)

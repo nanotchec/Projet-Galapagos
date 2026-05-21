@@ -1,21 +1,23 @@
-# État du Projet : V2.9.1 validée + candidat V3.0
+# État du Projet : V3.0 validée + candidat V3.1
 
-- **Dernière version validée** : V2.9.1.
-- **Versions antérieures validées** : V2.8.4, V2.7.2, V2.6.2, V2.5.2, V2.4.8, V2.3.1.
-- **Version candidate** : V3.0.
+- **Dernière version validée** : V3.0.
+- **Versions antérieures validées** : V2.9.1, V2.8.4, V2.7.2, V2.6.2, V2.5.2, V2.4.8, V2.3.1.
+- **Version candidate** : V3.1.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : multi-day causal feature store preview.
+- **Direction suivante** : multi-day clean forward label factory preview.
 
-## Candidat V3.0
+## Candidat V3.1
 
-- V3.0 produit uniquement des features OHLCV causales multi-day.
+- V3.1 produit uniquement des labels forward multi-day séparés.
 - Inputs autorisés : OHLCV multi-day V2.9 validés sous `data/research/v2_9/silver/ohlcv`.
-- Outputs : features isolées sous `data/research/v3_0/features/ohlcv`.
+- Outputs : labels isolés sous `data/research/v3_1/labels/forward_returns`.
 - Fenêtre : 2024-01-15 à 2024-01-21 inclus.
 - Row counts attendus : 1m `10080`, 5m `2016`, 15m `672`, 1h `168`.
-- Les features single-day V2.5 ne sont pas écrasées.
-- V3.0 ne produit aucun label, aucun dataset ML, aucun modèle ML, aucun backtest, aucune stratégie et aucun ordre.
-- V3.0 reste candidate `pending_external_audit`.
+- Horizons : `[1, 3, 5]`.
+- Threshold fixe : `0.0005`.
+- Les features multi-day V3.0 restent séparées et ne sont pas modifiées par V3.1.
+- V3.1 ne produit aucun dataset ML, aucun modèle ML, aucun backtest, aucune stratégie et aucun ordre.
+- V3.1 reste candidate `pending_external_audit`.
 
 ## Clause De Sécurité
 
@@ -27,5 +29,5 @@
 - Aucune stratégie.
 - Aucune API privée.
 - Aucune clé API.
-- Aucun modèle ML V3.0.
-- V3.0 reste non validée avant audit externe.
+- Aucun modèle ML V3.1.
+- V3.1 reste non validée avant audit externe.

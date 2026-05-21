@@ -45,6 +45,8 @@ LABEL_COLUMNS_V2_6 = [
     "tail_row",
 ]
 
+LABEL_COLUMNS_V3_1 = LABEL_COLUMNS_V2_6.copy()
+
 FORBIDDEN_COLUMNS_V2_6 = [
     "signal",
     "strategy",
@@ -61,3 +63,5 @@ FORBIDDEN_COLUMNS_V2_6 = [
     "position_size",
     "execution",
 ]
+
+FORBIDDEN_COLUMNS_V3_1 = FORBIDDEN_COLUMNS_V2_6.copy()

@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V2.9.1",
-  "candidate_version": "V3.0",
+  "last_validated_version": "V3.0",
+  "candidate_version": "V3.1",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day causal feature store preview",
+  "direction": "multi-day clean forward label factory preview",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -10,7 +10,8 @@
   "offline_supervised_dataset_v2_7_2_validated": true,
   "offline_ml_research_v2_8_4_validated": true,
   "multi_day_public_market_data_v2_9_1_validated": true,
-  "multi_day_causal_feature_store_v3_0_candidate": true,
+  "multi_day_causal_feature_store_v3_0_validated": true,
+  "multi_day_label_factory_v3_1_candidate": true,
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -20,17 +21,22 @@
     "15m",
     "1h"
   ],
-  "multi_day_feature_rows": {
+  "multi_day_label_rows": {
     "1m": 10080,
     "5m": 2016,
     "15m": 672,
     "1h": 168
   },
-  "multi_day_features_v3_0_created": true,
-  "labels_v3_0_created": false,
-  "dataset_ml_v3_0_created": false,
-  "ml_v3_0_created": false,
-  "model_v3_0_created": false,
+  "multi_day_label_horizons": [
+    1,
+    3,
+    5
+  ],
+  "multi_day_label_threshold": 0.0005,
+  "labels_v3_1_created": true,
+  "dataset_ml_v3_1_created": false,
+  "ml_v3_1_created": false,
+  "model_v3_1_created": false,
   "backtest_enabled": false,
   "backtest_executed": false,
   "strategy_enabled": false,
@@ -44,5 +50,5 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v3_0_validated_by_external_audit": false
+  "v3_1_validated_by_external_audit": false
 }

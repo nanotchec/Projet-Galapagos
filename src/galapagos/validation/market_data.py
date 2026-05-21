@@ -477,10 +477,11 @@ def _validate_project_state_scope(root: Path) -> list[str]:
             "V2.7.2",
             "V2.8.4",
             "V2.9.1",
+            "V3.0",
         }
         if payload.get("last_validated_version") not in allowed_validated_versions:
             errors.append(
-                f"{relative}: last_validated_version must remain V2.2.1, V2.3.1, V2.4.8, V2.5.2, V2.6.2, V2.7.2, V2.8.4 or V2.9.1"
+                f"{relative}: last_validated_version must remain V2.2.1, V2.3.1, V2.4.8, V2.5.2, V2.6.2, V2.7.2, V2.8.4, V2.9.1 or V3.0"
             )
     return errors
 
