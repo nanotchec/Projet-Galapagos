@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 from copy import deepcopy
 from pathlib import Path
@@ -239,31 +240,33 @@ def test_validator_v3_1_rejects_backtest_report_created(tmp_path: Path) -> None:
     assert _errors_contain(errors, "Forbidden V3.1 artifact detected")
 
 
-def test_smoke_v3_1_4_runs_validators_before_parquet_checks() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_4.py").read_text(encoding="utf-8")
-    run_validators_pos = script.index("validator_errors, validator_timings = _run_validators(tmp_path)")
-    label_outputs_pos = script.index("errors.extend(_validate_label_outputs(tmp_path))")
+def test_smoke_v3_1_6_runs_validators_before_parquet_checks() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_6.py").read_text(encoding="utf-8")
+    run_validators_pos = script.index("validator_errors, validator_timings = _run_validators(base_extract, validator_runs, smoke_logs)")
+    label_outputs_pos = script.index("errors.extend(_validate_label_outputs(base_extract))")
     pandas_import_pos = script.index("import pandas as pd")
     assert run_validators_pos < label_outputs_pos
     assert run_validators_pos < pandas_import_pos
+    assert "validators_use_isolated_roots" in script
 
 
-def test_smoke_v3_1_5_runs_validators_before_parquet_checks() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_5.py").read_text(encoding="utf-8")
-    run_validators_pos = script.index("validator_errors, validator_timings = _run_validators(extracted_root, smoke_logs)")
-    label_outputs_pos = script.index("errors.extend(_validate_label_outputs(extracted_root))")
-    pandas_import_pos = script.index("import pandas as pd")
-    assert run_validators_pos < label_outputs_pos
-    assert run_validators_pos < pandas_import_pos
-
-
-def test_smoke_v3_1_5_writes_logs_outside_extracted_root() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_5.py").read_text(encoding="utf-8")
+def test_smoke_v3_1_6_writes_logs_outside_validated_roots() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_6.py").read_text(encoding="utf-8")
     assert "smoke_logs = tmp_path / \"smoke_logs\"" in script
+    assert "validator_runs = tmp_path / \"validator_runs\"" in script
     assert "log_path = smoke_logs / f\"{name}.log\"" in script
     assert "root / f\".smoke-" not in script
     assert "root / \".smoke-" not in script
-    assert ".glob(\".smoke-*\")" in script
+    assert ".rglob(\".smoke-*\")" in script
+
+
+def test_no_stale_v3_1_4_smoke_reference() -> None:
+    root = Path(__file__).resolve().parents[2]
+    script = (root / "tests/validation/test_multi_day_label_factory_v3_1_validator.py").read_text(encoding="utf-8")
+    stale_script = "smoke_test_clean_zip_" + "v3_1_4.py"
+    assert stale_script not in script
+    for referenced_script in re.findall(r"smoke_test_clean_zip_v3_1_\d+\.py", script):
+        assert (root / "scripts" / referenced_script).exists()
 
 
 def _assert_extra_column_rejected(frame: pd.DataFrame, column: str) -> None:

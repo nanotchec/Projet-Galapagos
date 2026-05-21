@@ -1,15 +1,15 @@
-# État du Projet : V3.0 validée + candidat V3.1.5
+# État du Projet : V3.0 validée + candidat V3.1.6
 
 - **Dernière version validée** : V3.0.
 - **Versions antérieures validées** : V2.9.1, V2.8.4, V2.7.2, V2.6.2, V2.5.2, V2.4.8, V2.3.1.
-- **Version candidate** : V3.1.5.
+- **Version candidate** : V3.1.6.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : correction smoke-only avec logs hors du root extrait.
+- **Direction suivante** : correction smoke/test-only avec isolation par validateur.
 
-## Candidat V3.1.5
+## Candidat V3.1.6
 
-- V3.1.4 a été refusée en strict uniquement parce que le smoke écrivait ses logs dans le root extrait du ZIP, polluant les validateurs suivants.
-- V3.1.5 conserve les labels forward multi-day séparés et corrige uniquement l’isolation des logs du smoke : validateurs dans `extracted`, logs dans `smoke_logs`.
+- V3.1.5 a été refusée en strict parce que le smoke lançait tous les validateurs sur le même root extrait, provoquant encore un timeout sur V2.8.
+- V3.1.6 conserve les labels forward multi-day séparés et corrige uniquement l’isolation smoke/test : un root propre par validateur, logs hors des roots validés, référence de test V3.1.4 retirée.
 - Inputs autorisés : OHLCV multi-day V2.9 validés sous `data/research/v2_9/silver/ohlcv`.
 - Outputs : labels isolés sous `data/research/v3_1/labels/forward_returns`.
 - Fenêtre : 2024-01-15 à 2024-01-21 inclus.
@@ -18,7 +18,7 @@
 - Threshold fixe : `0.0005`.
 - Les features multi-day V3.0 restent séparées et ne sont pas modifiées par V3.1.
 - V3.1 ne produit aucun dataset ML, aucun modèle ML, aucun backtest, aucune stratégie et aucun ordre.
-- V3.1.5 reste candidate `pending_external_audit`.
+- V3.1.6 reste candidate `pending_external_audit`.
 
 ## Clause De Sécurité
 
@@ -31,4 +31,4 @@
 - Aucune API privée.
 - Aucune clé API.
 - Aucun modèle ML V3.1.
-- V3.1.5 reste non validée avant audit externe.
+- V3.1.6 reste non validée avant audit externe.
