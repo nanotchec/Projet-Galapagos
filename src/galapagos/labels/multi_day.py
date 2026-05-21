@@ -173,11 +173,11 @@ def _write_markdown(path: Path, report: dict[str, Any]) -> None:
 
 V3.1 construit uniquement des labels forward multi-day sur BTCUSDT du 2024-01-15 au 2024-01-21, a partir des OHLCV multi-day V2.9 valides.
 
-## Correction V3.1.4
+## Correction V3.1.5
 
-V3.1.4 est une correction smoke-only. V3.1.3 a été refusée en strict uniquement parce que le smoke importait et lisait les Parquet avant les subprocess de validateurs, causant un timeout.
+V3.1.5 est une correction smoke-only. V3.1.4 a été refusée en strict uniquement parce que le smoke écrivait ses logs dans le root extrait du ZIP, polluant les validateurs suivants.
 
-V3.1.4 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons `[1, 3, 5]`, même threshold `0.0005`, mêmes row counts `10080 / 2016 / 672 / 168`, aucune jointure features + labels et aucun dataset ML.
+V3.1.5 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons `[1, 3, 5]`, même threshold `0.0005`, mêmes row counts `10080 / 2016 / 672 / 168`, aucune jointure features + labels et aucun dataset ML.
 
 ## Inputs
 
@@ -233,6 +233,6 @@ V3.1.4 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons
 - V3.1 n’autorise aucun paper live
 - V3.1 n’autorise aucun trading réel
 
-V3.1.4 reste `pending_external_audit`.
+V3.1.5 reste `pending_external_audit`.
 """
     path.write_text(text, encoding="utf-8")

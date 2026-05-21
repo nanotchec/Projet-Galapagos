@@ -248,6 +248,24 @@ def test_smoke_v3_1_4_runs_validators_before_parquet_checks() -> None:
     assert run_validators_pos < pandas_import_pos
 
 
+def test_smoke_v3_1_5_runs_validators_before_parquet_checks() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_5.py").read_text(encoding="utf-8")
+    run_validators_pos = script.index("validator_errors, validator_timings = _run_validators(extracted_root, smoke_logs)")
+    label_outputs_pos = script.index("errors.extend(_validate_label_outputs(extracted_root))")
+    pandas_import_pos = script.index("import pandas as pd")
+    assert run_validators_pos < label_outputs_pos
+    assert run_validators_pos < pandas_import_pos
+
+
+def test_smoke_v3_1_5_writes_logs_outside_extracted_root() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_5.py").read_text(encoding="utf-8")
+    assert "smoke_logs = tmp_path / \"smoke_logs\"" in script
+    assert "log_path = smoke_logs / f\"{name}.log\"" in script
+    assert "root / f\".smoke-" not in script
+    assert "root / \".smoke-" not in script
+    assert ".glob(\".smoke-*\")" in script
+
+
 def _assert_extra_column_rejected(frame: pd.DataFrame, column: str) -> None:
     frame[column] = 0
     errors = _validate_label_schema(frame, "1m")
