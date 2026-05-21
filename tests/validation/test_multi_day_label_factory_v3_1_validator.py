@@ -239,6 +239,15 @@ def test_validator_v3_1_rejects_backtest_report_created(tmp_path: Path) -> None:
     assert _errors_contain(errors, "Forbidden V3.1 artifact detected")
 
 
+def test_smoke_v3_1_4_runs_validators_before_parquet_checks() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_4.py").read_text(encoding="utf-8")
+    run_validators_pos = script.index("validator_errors, validator_timings = _run_validators(tmp_path)")
+    label_outputs_pos = script.index("errors.extend(_validate_label_outputs(tmp_path))")
+    pandas_import_pos = script.index("import pandas as pd")
+    assert run_validators_pos < label_outputs_pos
+    assert run_validators_pos < pandas_import_pos
+
+
 def _assert_extra_column_rejected(frame: pd.DataFrame, column: str) -> None:
     frame[column] = 0
     errors = _validate_label_schema(frame, "1m")
