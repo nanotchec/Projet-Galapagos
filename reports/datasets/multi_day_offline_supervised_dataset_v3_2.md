@@ -61,6 +61,7 @@ Cette preview ne fait aucun entrainement ML et ne produit aucun signal operation
 
 - V3.2 assemble uniquement un dataset supervise offline multi-day a partir des features V3.0 et labels V3.1 valides sur BTCUSDT 2024-01-15 a 2024-01-21.
 - V3.2 ne produit aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.
+- V3.2.1 ajoute une contrainte de rejet stricte: la présence de `reports/backtests` (même vide) fait échouer la validation.
 
 ## Non-usage Warnings
 

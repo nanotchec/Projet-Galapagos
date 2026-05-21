@@ -2,7 +2,9 @@
 
 V3.1.10 est la dernière version validée par audit externe.
 
-V3.2 est la candidate courante. Elle assemble un dataset supervisé offline multi-day à partir des features causales V3.0 et des labels forward V3.1, sur BTCUSDT du 2024-01-15 au 2024-01-21.
+V3.2.1 est la candidate courante. Elle assemble un dataset supervisé offline multi-day à partir des features causales V3.0 et des labels forward V3.1, sur BTCUSDT du 2024-01-15 au 2024-01-21.
+
+V3.2 a été refusée en strict car un artefact `reports/backtests/not_named_backtest_report.json` était accepté ; V3.2.1 renforce cette règle et rejette tout contenu sous `reports/backtests`.
 
 Les outputs V3.2 sont écrits sous `data/research/v3_2/datasets/offline_supervised` avec quatre timeframes : 1m `10080` lignes, 5m `2016` lignes, 15m `672` lignes et 1h `168` lignes. Les splits sont temporels, sans shuffle : train 60 %, validation 20 %, test 20 %.
 

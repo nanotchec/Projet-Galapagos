@@ -1,6 +1,6 @@
 {
   "last_validated_version": "V3.1.10",
-  "candidate_version": "V3.2",
+  "candidate_version": "V3.2.1",
   "candidate_status": "pending_external_audit",
   "direction": "multi-day offline supervised dataset assembly preview",
   "multi_day_window_start": "2024-01-15",

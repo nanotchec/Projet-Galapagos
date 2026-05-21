@@ -383,13 +383,10 @@ def _find_forbidden_v3_2_artifacts(project_root: Path) -> list[str]:
             errors.append(f"Forbidden V3.2 artifact detected: {relative.as_posix()}")
     backtests = project_root / "reports/backtests"
     if backtests.exists():
-        forbidden_backtests = [
-            child
-            for child in backtests.rglob("*")
-            if child.is_file() and ("v3_2" in child.name.casefold() or child.name in {"backtest.json", "backtest.md", "summary.json", "summary.md"})
-        ]
-        for child in forbidden_backtests:
-            errors.append(f"Forbidden V3.2 artifact detected: {child.relative_to(project_root).as_posix()}")
+        errors.append("Forbidden V3.2 artifact detected: reports/backtests")
+        for child in sorted(backtests.rglob("*")):
+            if child.is_file():
+                errors.append(f"Forbidden V3.2 artifact detected: {child.relative_to(project_root).as_posix()}")
     for suffix in [".pkl", ".pickle", ".joblib", ".ckpt", ".pt", ".pth", ".onnx"]:
         matches = [path for path in project_root.rglob(f"*{suffix}") if ".venv" not in path.parts and ".git" not in path.parts]
         for path in matches:

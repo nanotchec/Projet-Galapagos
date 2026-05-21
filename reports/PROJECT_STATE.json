@@ -1,6 +1,6 @@
 {
   "last_validated_version": "V3.1.10",
-  "candidate_version": "V3.2",
+  "candidate_version": "V3.2.1",
   "candidate_status": "pending_external_audit",
   "direction": "multi-day offline supervised dataset assembly preview",
   "public_market_ingestion_v2_3_validated": true,

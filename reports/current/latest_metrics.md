@@ -1,7 +1,7 @@
 # Latest Metrics
 
 - Dernière version validée : V3.1.10.
-- Candidate : V3.2.
+- Candidate : V3.2.1.
 - Statut : `pending_external_audit`.
 - Direction : multi-day offline supervised dataset assembly preview.
 - Fenêtre : 2024-01-15 à 2024-01-21 inclus.

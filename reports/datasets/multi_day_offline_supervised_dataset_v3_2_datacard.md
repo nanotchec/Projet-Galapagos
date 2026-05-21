@@ -27,6 +27,7 @@ Labels forward V3.1 sur horizons h1, h3 et h5. Les labels sont presents uniqueme
 
 - V3.2 assemble uniquement un dataset supervise offline multi-day a partir des features V3.0 et labels V3.1 valides sur BTCUSDT 2024-01-15 a 2024-01-21.
 - V3.2 ne produit aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.
+- V3.2.1 renforce la garde anti-backtest: la présence de `reports/backtests` (fichier ou répertoire) provoque un rejet.
 
 ## Non-usage Warnings
 

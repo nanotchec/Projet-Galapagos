@@ -215,6 +215,31 @@ def test_validator_v3_2_rejects_backtest_report_created(valid_v3_2_project: Path
     assert _errors_contain(_find_forbidden_v3_2_artifacts(valid_v3_2_project), "Forbidden V3.2")
 
 
+def test_validator_v3_2_rejects_any_reports_backtests_file(valid_v3_2_project: Path) -> None:
+    path = valid_v3_2_project / "reports/backtests/not_named_backtest_report.json"
+    path.parent.mkdir(parents=True)
+    path.write_text("{}", encoding="utf-8")
+    result = validate_multi_day_offline_supervised_dataset_v3_2(valid_v3_2_project)
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "Forbidden V3.2 artifact detected")
+
+
+def test_validator_v3_2_rejects_empty_reports_backtests_directory(valid_v3_2_project: Path) -> None:
+    (valid_v3_2_project / "reports/backtests").mkdir(parents=True)
+    result = validate_multi_day_offline_supervised_dataset_v3_2(valid_v3_2_project)
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "Forbidden V3.2 artifact detected")
+
+
+def test_validator_v3_2_rejects_nested_reports_backtests_file(valid_v3_2_project: Path) -> None:
+    path = valid_v3_2_project / "reports/backtests/nested/random.csv"
+    path.parent.mkdir(parents=True)
+    path.write_text("oops", encoding="utf-8")
+    result = validate_multi_day_offline_supervised_dataset_v3_2(valid_v3_2_project)
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "Forbidden V3.2 artifact detected")
+
+
 def test_validator_v3_2_allows_dataset_outputs_only_in_v3_2_paths(valid_v3_2_project: Path) -> None:
     errors = _find_forbidden_v3_2_artifacts(valid_v3_2_project)
     assert not _errors_contain(errors, "data/research/v3_2/datasets")
