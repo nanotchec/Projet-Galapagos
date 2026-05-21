@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -77,6 +78,43 @@ FORBIDDEN_ARTIFACT_ROOTS = [
     Path("data/research/v3_4/strategies"),
 ]
 PERSISTENT_MODEL_SUFFIXES = {".pkl", ".pickle", ".joblib", ".ckpt", ".pt", ".pth", ".onnx"}
+CLASSIFICATION_METRIC_SUFFIXES = (
+    "accuracy",
+    "balanced_accuracy",
+    "macro_f1",
+    "precision",
+    "recall",
+)
+EXPLICIT_UNIT_METRIC_FIELDS = {
+    "majority_class_baseline_accuracy",
+    "majority_class_baseline_macro_f1",
+    "random_seeded_baseline_accuracy",
+    "random_seeded_baseline_macro_f1",
+    "original_accuracy",
+    "original_macro_f1",
+    "shuffled_accuracy",
+    "shuffled_macro_f1",
+}
+DELTA_GAP_RANGE_TERMS = ("delta", "gap", "range")
+NON_NEGATIVE_PROBABILITY_FIELDS = {
+    "probability_sum_max_abs_error",
+    "probability_nan_count",
+    "probability_inf_count",
+}
+EXPECTED_BOOL_FIELDS = {
+    "train_test_accuracy_gap_gt_0_10",
+    "train_test_macro_f1_gap_gt_0_10",
+    "validation_test_accuracy_gap_gt_0_05",
+    "validation_test_macro_f1_gap_gt_0_05",
+    "learned_model_underperforms_majority_on_test",
+    "learned_model_underperforms_random_on_test",
+    "no_clear_edge_vs_shuffled_labels",
+    "validation_test_contaminated",
+    "single_timeframe_concentration_warning",
+    "feature_leakage_detected",
+    "metric_forbidden_terms_detected",
+}
+COUNT_FIELD_SUFFIXES = ("_rows", "_count", "_counts", "rows", "count")
 
 
 def validate_multi_day_ml_robustness_v3_4(project_root: Path = Path(".")) -> dict[str, Any]:
@@ -94,6 +132,7 @@ def validate_multi_day_ml_robustness_v3_4(project_root: Path = Path(".")) -> dic
     manifest = _load_json(manifest_path)
     report = _load_json(report_path)
     errors.extend(_validate_manifest_structure(manifest))
+    errors.extend(_validate_metric_value_bounds(manifest.get("analyses", {})))
     errors.extend(_validate_report(manifest, report))
     errors.extend(_validate_input_hashes(project_root, manifest))
     errors.extend(_validate_score_files(project_root, manifest))
@@ -205,6 +244,76 @@ def _validate_safety(safety: Any) -> list[str]:
 def _scan_metrics_for_forbidden_terms(payload: Any) -> list[str]:
     text = json.dumps(payload, ensure_ascii=False, sort_keys=True).casefold()
     return [f"V3.4 metrics contain forbidden trading metric: {term}" for term in FORBIDDEN_ROBUSTNESS_METRIC_TERMS_V3_4 if term in text]
+
+
+def _validate_metric_value_bounds(analyses: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    _walk_metric_value_bounds(analyses, "analyses", errors)
+    return errors
+
+
+def _walk_metric_value_bounds(value: Any, path: str, errors: list[str]) -> None:
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}.{key}"
+            _validate_metric_field(key, child, child_path, errors)
+            _walk_metric_value_bounds(child, child_path, errors)
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            child_path = f"{path}.{index}"
+            _walk_metric_value_bounds(child, child_path, errors)
+
+
+def _validate_metric_field(field: str, value: Any, path: str, errors: list[str]) -> None:
+    if field in EXPECTED_BOOL_FIELDS and not isinstance(value, bool):
+        errors.append(f"V3.4 metric bound violation: {path} = {value}")
+        return
+    if isinstance(value, dict | list):
+        return
+    if field in {"probability_min", "probability_max"}:
+        _validate_numeric_range(path, value, 0.0, 1.0, errors)
+        return
+    if field in NON_NEGATIVE_PROBABILITY_FIELDS:
+        _validate_numeric_min(path, value, 0.0, errors)
+        return
+    if _contains_delta_gap_or_range(field):
+        _validate_numeric_range(path, value, -1.0, 1.0, errors)
+        return
+    if field in EXPLICIT_UNIT_METRIC_FIELDS or _is_classification_metric_field(field):
+        _validate_numeric_range(path, value, 0.0, 1.0, errors)
+        return
+    if _is_count_field(field) and _is_numeric_like(value):
+        _validate_numeric_min(path, value, 0.0, errors)
+
+
+def _is_classification_metric_field(field: str) -> bool:
+    return any(field == suffix or field.endswith(f"_{suffix}") for suffix in CLASSIFICATION_METRIC_SUFFIXES)
+
+
+def _contains_delta_gap_or_range(field: str) -> bool:
+    return any(term in field for term in DELTA_GAP_RANGE_TERMS)
+
+
+def _is_count_field(field: str) -> bool:
+    return any(field == suffix or field.endswith(suffix) for suffix in COUNT_FIELD_SUFFIXES)
+
+
+def _is_numeric_like(value: Any) -> bool:
+    return isinstance(value, int | float) and not isinstance(value, bool)
+
+
+def _validate_numeric_range(path: str, value: Any, lower: float, upper: float, errors: list[str]) -> None:
+    if not _is_finite_number(value) or not lower <= float(value) <= upper:
+        errors.append(f"V3.4 metric bound violation: {path} = {value}")
+
+
+def _validate_numeric_min(path: str, value: Any, lower: float, errors: list[str]) -> None:
+    if not _is_finite_number(value) or float(value) < lower:
+        errors.append(f"V3.4 metric bound violation: {path} = {value}")
+
+
+def _is_finite_number(value: Any) -> bool:
+    return _is_numeric_like(value) and math.isfinite(float(value))
 
 
 def _validate_markdown(root: Path) -> list[str]:

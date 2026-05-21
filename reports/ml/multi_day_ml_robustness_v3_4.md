@@ -5,6 +5,12 @@
 V3.4 audite les resultats ML offline V3.3 avec des analyses descriptives et falsifiables.
 Cet audit ne transforme pas les scores en decision operationnelle.
 
+## Correction V3.4.1
+
+V3.4.1 durcit le validateur V3.4 contre les metriques impossibles synchronisees entre le manifest et le report JSON.
+
+Le manifest V3.4 conserve son schema strict `V3.4`; la correction V3.4.1 est documentee dans l'etat projet et verifiee par les scripts ZIP V3.4.1.
+
 ## Analyses
 
 - `baseline_delta` compare chaque modele aux baselines majority et random.

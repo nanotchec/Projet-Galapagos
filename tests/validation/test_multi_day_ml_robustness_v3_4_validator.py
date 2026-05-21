@@ -1,22 +1,26 @@
 from __future__ import annotations
 
 import json
+import shutil
 from copy import deepcopy
 from pathlib import Path
 from typing import Any
 
 import pytest
 
-from galapagos.ml.robustness import MANIFEST_PATH_V3_4, REPORT_JSON_PATH_V3_4
+from galapagos.datasets.schemas import MANIFEST_PATH_V3_2
+from galapagos.ml.robustness import DOC_PATH_V3_4, MANIFEST_PATH_V3_4, REPORT_JSON_PATH_V3_4, REPORT_MD_PATH_V3_4
 from galapagos.ml.robustness_validation import (
     _find_forbidden_v3_4_artifacts,
     _scan_metrics_for_forbidden_terms,
     _validate_findings,
+    _validate_metric_value_bounds,
     _validate_manifest_structure,
     _validate_report,
     _validate_safety,
     validate_multi_day_ml_robustness_v3_4,
 )
+from galapagos.ml.schemas import MANIFEST_PATH_V3_3, TIMEFRAMES_V3_3, get_multi_day_ml_score_path_v3_3
 from galapagos.validation.safety import validate_markdown_forbidden_claims
 
 
@@ -35,6 +39,62 @@ def test_validator_v3_4_accepts_valid_robustness_report() -> None:
 
     assert result["passed"] is True
     assert result["errors"] == []
+
+
+def test_validator_v3_4_accepts_valid_metric_bounds(valid_v3_4_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:
+    manifest, _report = valid_v3_4_manifest_report
+    errors = _validate_metric_value_bounds(manifest["analyses"])
+    assert errors == []
+
+
+def test_validator_v3_4_rejects_synced_baseline_delta_accuracy_out_of_bounds(tmp_path: Path) -> None:
+    project = _copy_valid_v3_4_project(tmp_path)
+    _mutate_synced_analysis_metric(project, "baseline_delta", "accuracy", 999)
+
+    result = validate_multi_day_ml_robustness_v3_4(project)
+
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "V3.4 metric bound violation")
+
+
+def test_validator_v3_4_rejects_synced_baseline_delta_macro_f1_negative(tmp_path: Path) -> None:
+    project = _copy_valid_v3_4_project(tmp_path)
+    _mutate_synced_analysis_metric(project, "baseline_delta", "macro_f1", -0.1)
+
+    result = validate_multi_day_ml_robustness_v3_4(project)
+
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "V3.4 metric bound violation")
+
+
+def test_validator_v3_4_rejects_synced_split_stability_gap_out_of_bounds(tmp_path: Path) -> None:
+    project = _copy_valid_v3_4_project(tmp_path)
+    _mutate_synced_analysis_metric(project, "split_stability", "validation_test_accuracy_gap", 9)
+
+    result = validate_multi_day_ml_robustness_v3_4(project)
+
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "V3.4 metric bound violation")
+
+
+def test_validator_v3_4_rejects_synced_label_shuffle_accuracy_out_of_bounds(tmp_path: Path) -> None:
+    project = _copy_valid_v3_4_project(tmp_path)
+    _mutate_synced_analysis_metric(project, "label_shuffle_falsification", "original_accuracy", 999)
+
+    result = validate_multi_day_ml_robustness_v3_4(project)
+
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "V3.4 metric bound violation")
+
+
+def test_validator_v3_4_rejects_synced_timeframe_accuracy_range_out_of_bounds(tmp_path: Path) -> None:
+    project = _copy_valid_v3_4_project(tmp_path)
+    _mutate_synced_analysis_metric(project, "timeframe_stability", "accuracy_range", 5)
+
+    result = validate_multi_day_ml_robustness_v3_4(project)
+
+    assert result["passed"] is False
+    assert _errors_contain(result["errors"], "V3.4 metric bound violation")
 
 
 def test_validator_v3_4_rejects_strategy_validated_true(valid_v3_4_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:
@@ -143,6 +203,38 @@ def test_validator_v3_4_rejects_report_json_lie(valid_v3_4_manifest_report: tupl
 
 def _load(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _copy_valid_v3_4_project(tmp_path: Path) -> Path:
+    source_root = Path(__file__).resolve().parents[2]
+    project = tmp_path / "project"
+    paths_to_copy = [
+        MANIFEST_PATH_V3_2,
+        MANIFEST_PATH_V3_3,
+        MANIFEST_PATH_V3_4,
+        REPORT_JSON_PATH_V3_4,
+        REPORT_MD_PATH_V3_4,
+        DOC_PATH_V3_4,
+    ]
+    for relative in paths_to_copy:
+        _copy_file(source_root / relative, project / relative)
+    for timeframe in TIMEFRAMES_V3_3:
+        score_path = get_multi_day_ml_score_path_v3_3(source_root, timeframe)
+        _copy_file(score_path, project / score_path.relative_to(source_root))
+    return project
+
+
+def _copy_file(source: Path, destination: Path) -> None:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, destination)
+
+
+def _mutate_synced_analysis_metric(project: Path, section: str, field: str, value: Any) -> None:
+    for relative in [MANIFEST_PATH_V3_4, REPORT_JSON_PATH_V3_4]:
+        payload = _load(project / relative)
+        first_entry = next(iter(payload["analyses"][section]))
+        payload["analyses"][section][first_entry][field] = value
+        (project / relative).write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def _mutated_safety(bundle: tuple[dict[str, Any], dict[str, Any]], key: str, value: Any) -> dict[str, Any]:
