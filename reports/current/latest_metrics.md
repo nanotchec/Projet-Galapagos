@@ -1,7 +1,7 @@
 # Latest Metrics
 
 - Dernière version validée : V3.0.
-- Candidate : V3.1.7.
+- Candidate : V3.1.8.
 - Statut : `pending_external_audit`.
 - Direction : correction smoke-only avec reextraction ZIP par validateur.
 - Fenêtre : 2024-01-15 à 2024-01-21 inclus.
@@ -16,4 +16,4 @@
 - Aucun ordre.
 - Aucun trading réel.
 
-V3.1.6 a été refusée en strict parce que le smoke bloquait encore pendant la préparation/exécution de validate_multi_day_causal_feature_store_v3_0. V3.1.7 ne change pas le fond fonctionnel des labels.
+V3.1.7 a été refusée en strict parce que le smoke relançait encore trop de validateurs historiques lourds. V3.1.8 ne change pas le fond fonctionnel des labels.
