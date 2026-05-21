@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V3.0",
-  "candidate_version": "V3.1.8",
+  "candidate_version": "V3.1.9",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day label factory smoke scope reduction fix",
+  "direction": "multi-day label factory run script runtime fix",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -11,8 +11,8 @@
   "offline_ml_research_v2_8_4_validated": true,
   "multi_day_public_market_data_v2_9_1_validated": true,
   "multi_day_causal_feature_store_v3_0_validated": true,
-  "multi_day_label_factory_v3_1_8_candidate": true,
-  "v3_1_7_refused_reason": "V3.1.7 refusee en strict parce que le smoke relancait encore trop de validateurs historiques lourds.",
+  "multi_day_label_factory_v3_1_9_candidate": true,
+  "v3_1_8_refused_reason": "V3.1.8 refusee en strict parce que run_multi_day_label_factory_v3_1.py relancait les validations historiques et timeout.",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -51,5 +51,5 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v3_1_8_validated_by_external_audit": false
+  "v3_1_9_validated_by_external_audit": false
 }

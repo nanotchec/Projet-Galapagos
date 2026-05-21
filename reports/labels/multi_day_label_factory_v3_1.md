@@ -4,11 +4,11 @@
 
 V3.1 construit uniquement des labels forward multi-day sur BTCUSDT du 2024-01-15 au 2024-01-21, a partir des OHLCV multi-day V2.9 valides.
 
-## Correction V3.1.8
+## Correction V3.1.9
 
-V3.1.8 est une correction smoke-only. V3.1.7 a été refusée en strict parce que le smoke relançait encore trop de validateurs historiques lourds.
+V3.1.9 est une correction run-script-only. V3.1.8 a été refusée en strict parce que `run_multi_day_label_factory_v3_1.py` relançait les validations historiques et timeout.
 
-V3.1.8 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons `[1, 3, 5]`, même threshold `0.0005`, mêmes row counts `10080 / 2016 / 672 / 168`, aucune jointure features + labels et aucun dataset ML. Le smoke V3.1.8 vérifie les artefacts historiques par manifest/rapports et relance uniquement `validate_multi_day_label_factory_v3_1.py`.
+V3.1.9 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons `[1, 3, 5]`, même threshold `0.0005`, mêmes row counts `10080 / 2016 / 672 / 168`, aucune jointure features + labels et aucun dataset ML. Le script run V3.1 utilise `validate_previous_layers=False` par défaut; les validations historiques restent exécutées séparément par les commandes d'audit.
 
 ## Inputs
 
@@ -107,4 +107,4 @@ V3.1.8 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons
 - V3.1 n’autorise aucun paper live
 - V3.1 n’autorise aucun trading réel
 
-V3.1.8 reste `pending_external_audit`.
+V3.1.9 reste `pending_external_audit`.

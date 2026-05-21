@@ -292,6 +292,16 @@ def test_smoke_v3_1_8_no_stale_smoke_references() -> None:
         assert (root / "scripts" / referenced_script).exists()
 
 
+def test_run_script_v3_1_defaults_to_no_previous_layer_validation() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/run_multi_day_label_factory_v3_1.py").read_text(
+        encoding="utf-8"
+    )
+    assert "--validate-previous-layers" in script
+    assert "validate_previous_layers = bool(args.validate_previous_layers)" in script
+    assert "validate_previous_layers=validate_previous_layers" in script
+    assert "V3.1 run mode: validate_previous_layers=" in script
+
+
 def _assert_extra_column_rejected(frame: pd.DataFrame, column: str) -> None:
     frame[column] = 0
     errors = _validate_label_schema(frame, "1m")
