@@ -2,8 +2,8 @@
 
 ## Etat actuel du projet
 
-- Derniere version validee : V3.0.
-- Candidate : V3.1.6, correction smoke/test-only avec isolation par validateur.
+- Derniere version validee : V3.1.10.
+- Candidate : V3.2, preview d'assemblage dataset supervise offline multi-day.
 - Le projet est actuellement data/research/offline only.
 - Aucun trading reel n'est autorise.
 - Aucun paper live n'est autorise.
@@ -11,9 +11,9 @@
 - V2.9.1 etend uniquement les donnees marche publiques BTCUSDT sur 7 jours.
 - V3.0 construit uniquement des features OHLCV causales multi-day dans `data/research/v3_0/features/ohlcv`.
 - V3.1 construit uniquement des labels forward multi-day dans `data/research/v3_1/labels/forward_returns`.
-- V3.1 ne produit aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie et aucun signal de trading.
-- V3.1.5 a ete refusee en strict parce que le smoke lancait tous les validateurs sur le meme root extrait, provoquant encore un timeout sur V2.8.
-- V3.1.6 reste `pending_external_audit` et n'est pas validee avant audit externe.
+- V3.2 assemble uniquement un dataset supervise offline multi-day dans `data/research/v3_2/datasets/offline_supervised`.
+- V3.2 ne produit aucun ML, aucun modele ML, aucun backtest, aucune strategie et aucun signal de trading.
+- V3.2 reste `pending_external_audit` et n'est pas validee avant audit externe.
 - Les anciennes parties paper trading V1 sont legacy et ne sont pas autorisees dans la roadmap actuelle.
 
 Projet Galapagos est une V1 verticale d'agent autonome de trading en paper trading sur BTC.
