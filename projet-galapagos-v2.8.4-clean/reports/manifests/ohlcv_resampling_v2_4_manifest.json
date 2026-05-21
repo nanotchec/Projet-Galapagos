@@ -1,0 +1,135 @@
+{
+  "version": "V2.4",
+  "correction_version": "V2.4.8",
+  "status": "PASS",
+  "created_at_utc": "2026-05-19T19:27:10.451660Z",
+  "resampling_run_id": "v2_4_20260519T192710Z_84092dd6",
+  "input_1m": {
+    "path": "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/year=2024/month=01/part-2024-01-15.parquet",
+    "sha256": "1ca0840df651680f5ede34a719d06539225ea075dfbd525865fa24d78648eb0f",
+    "bytes": 176263,
+    "rows": 1440
+  },
+  "outputs": {
+    "5m": {
+      "path": "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/year=2024/month=01/part-2024-01-15.parquet",
+      "sha256": "74d238d325bf98490b97ec600acb9633a6e19f035942db48a486dd8963d5aa79",
+      "bytes": 48022,
+      "rows": 288,
+      "format": "parquet"
+    },
+    "15m": {
+      "path": "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/year=2024/month=01/part-2024-01-15.parquet",
+      "sha256": "d86501e8d95dc9fb0f3c0c5aeda9b7d1f97bb81fbd71fc2a1c0468b946a44fcd",
+      "bytes": 26304,
+      "rows": 96,
+      "format": "parquet"
+    },
+    "1h": {
+      "path": "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/year=2024/month=01/part-2024-01-15.parquet",
+      "sha256": "12141b57e13dc2dd97edbe3f3cd9fb04533a5a26c2cb5331c20282c59fc05864",
+      "bytes": 17797,
+      "rows": 24,
+      "format": "parquet"
+    }
+  },
+  "expected_rows": {
+    "1m": 1440,
+    "5m": 288,
+    "15m": 96,
+    "1h": 24
+  },
+  "quality": {
+    "1m": {
+      "rows": 1440,
+      "expected_rows": 1440,
+      "duplicate_rows": 0,
+      "gap_count": 0,
+      "gaps": [],
+      "ohlc_violations": 0,
+      "negative_volume_rows": 0,
+      "null_critical_rows": 0,
+      "min_event_ts": "2024-01-15T00:00:00Z",
+      "max_event_ts": "2024-01-15T23:59:00Z",
+      "min_close_ts": "2024-01-15T00:00:59.999000Z",
+      "max_close_ts": "2024-01-15T23:59:59.999000Z",
+      "monotonic_event_ts": true,
+      "timestamp_order_valid": true,
+      "timestamps_utc": true,
+      "errors": [],
+      "warnings": []
+    },
+    "5m": {
+      "rows": 288,
+      "expected_rows": 288,
+      "duplicate_rows": 0,
+      "gap_count": 0,
+      "gaps": [],
+      "ohlc_violations": 0,
+      "negative_volume_rows": 0,
+      "null_critical_rows": 0,
+      "min_event_ts": "2024-01-15T00:00:00Z",
+      "max_event_ts": "2024-01-15T23:55:00Z",
+      "min_close_ts": "2024-01-15T00:04:59.999000Z",
+      "max_close_ts": "2024-01-15T23:59:59.999000Z",
+      "monotonic_event_ts": true,
+      "timestamp_order_valid": true,
+      "timestamps_utc": true,
+      "errors": [],
+      "warnings": []
+    },
+    "15m": {
+      "rows": 96,
+      "expected_rows": 96,
+      "duplicate_rows": 0,
+      "gap_count": 0,
+      "gaps": [],
+      "ohlc_violations": 0,
+      "negative_volume_rows": 0,
+      "null_critical_rows": 0,
+      "min_event_ts": "2024-01-15T00:00:00Z",
+      "max_event_ts": "2024-01-15T23:45:00Z",
+      "min_close_ts": "2024-01-15T00:14:59.999000Z",
+      "max_close_ts": "2024-01-15T23:59:59.999000Z",
+      "monotonic_event_ts": true,
+      "timestamp_order_valid": true,
+      "timestamps_utc": true,
+      "errors": [],
+      "warnings": []
+    },
+    "1h": {
+      "rows": 24,
+      "expected_rows": 24,
+      "duplicate_rows": 0,
+      "gap_count": 0,
+      "gaps": [],
+      "ohlc_violations": 0,
+      "negative_volume_rows": 0,
+      "null_critical_rows": 0,
+      "min_event_ts": "2024-01-15T00:00:00Z",
+      "max_event_ts": "2024-01-15T23:00:00Z",
+      "min_close_ts": "2024-01-15T00:59:59.999000Z",
+      "max_close_ts": "2024-01-15T23:59:59.999000Z",
+      "monotonic_event_ts": true,
+      "timestamp_order_valid": true,
+      "timestamps_utc": true,
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "parent_child_consistency": true,
+  "public_read_only": true,
+  "authentication_used": false,
+  "api_key_used": false,
+  "private_endpoint_used": false,
+  "orders_enabled": false,
+  "paper_live_enabled": false,
+  "trading_enabled": false,
+  "ml_enabled": false,
+  "labels_enabled": false,
+  "backtest_enabled": false,
+  "limitations": [
+    "V2.4 resample uniquement BTCUSDT 2024-01-15 depuis le silver 1m valide V2.3.1.",
+    "V2.4 est data-only : aucun signal, aucun label, aucun ML, aucun backtest et aucun trading."
+  ]
+}
