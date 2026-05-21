@@ -218,35 +218,81 @@ def _validate_label_frame(
     label_run_id: Any,
 ) -> tuple[list[str], dict[str, Any]]:
     errors: list[str] = []
+    errors.extend(_validate_label_schema(frame, timeframe))
+    if len(frame) != len(input_frame):
+        errors.append(f"V3.1 label row count mismatch for {timeframe}")
+    input_sha = sha256_file(input_path)
+    errors.extend(_validate_label_metadata(timeframe, frame, str(label_run_id), input_sha))
+    errors.extend(
+        _validate_label_values_against_ohlcv(
+            timeframe,
+            frame,
+            input_frame,
+            str(label_run_id),
+            source_ohlcv_sha256=input_sha,
+        )
+    )
+    source_hashes_valid = _source_hashes_valid(frame, input_sha)
+    quality = assess_multi_day_label_quality(frame, timeframe)
+    quality["source_hashes_valid"] = source_hashes_valid
+    errors.extend(f"V3.1 physical quality error for {timeframe}: {error}" for error in quality["errors"])
+    return errors, quality
+
+
+def _validate_label_schema(frame: pd.DataFrame, timeframe: str) -> list[str]:
+    errors: list[str] = []
     if list(frame.columns) != LABEL_COLUMNS_V3_1:
         errors.append(f"V3.1 label schema mismatch for {timeframe}")
     forbidden = _forbidden_columns(frame)
     if forbidden:
         errors.append(f"V3.1 forbidden label columns for {timeframe}: {forbidden}")
-    if len(frame) != len(input_frame):
-        errors.append(f"V3.1 label row count mismatch for {timeframe}")
-    input_sha = sha256_file(input_path)
-    source_hashes_valid = bool("source_ohlcv_sha256" in frame.columns and set(frame["source_ohlcv_sha256"].astype(str).unique()) == {input_sha})
-    if not source_hashes_valid:
+    return errors
+
+
+def _validate_label_metadata(
+    timeframe: str,
+    frame: pd.DataFrame,
+    label_run_id: str,
+    source_ohlcv_sha256: str,
+) -> list[str]:
+    errors: list[str] = []
+    if not _source_hashes_valid(frame, source_ohlcv_sha256):
         errors.append(f"V3.1 source_ohlcv_sha256 mismatch for {timeframe}")
-    if "label_run_id" in frame.columns and label_run_id is not None:
+    if "label_run_id" in frame.columns:
         if set(frame["label_run_id"].astype(str).unique()) != {str(label_run_id)}:
             errors.append(f"V3.1 label_run_id mismatch for {timeframe}")
     if "label_schema_version" in frame.columns:
         if set(frame["label_schema_version"].astype(str).unique()) != {LABEL_SCHEMA_VERSION}:
             errors.append(f"V3.1 label_schema_version mismatch for {timeframe}")
+    return errors
+
+
+def _source_hashes_valid(frame: pd.DataFrame, source_ohlcv_sha256: str) -> bool:
+    return bool(
+        "source_ohlcv_sha256" in frame.columns
+        and set(frame["source_ohlcv_sha256"].astype(str).unique()) == {source_ohlcv_sha256}
+    )
+
+
+def _validate_label_values_against_ohlcv(
+    timeframe: str,
+    label_frame: pd.DataFrame,
+    input_frame: pd.DataFrame,
+    label_run_id: str,
+    *,
+    source_ohlcv_sha256: str,
+) -> list[str]:
+    if list(label_frame.columns) != LABEL_COLUMNS_V3_1:
+        return []
     expected = build_forward_labels(
         input_frame,
-        input_sha,
-        str(label_run_id),
+        source_ohlcv_sha256,
+        label_run_id,
         label_schema_version=LABEL_SCHEMA_VERSION,
     )
-    errors.extend(_compare_recomputed_labels(timeframe, frame, expected))
-    errors.extend(_validate_temporal_label_rules(timeframe, frame))
-    quality = assess_multi_day_label_quality(frame, timeframe)
-    quality["source_hashes_valid"] = source_hashes_valid
-    errors.extend(f"V3.1 physical quality error for {timeframe}: {error}" for error in quality["errors"])
-    return errors, quality
+    errors = _compare_recomputed_labels(timeframe, label_frame, expected)
+    errors.extend(_validate_temporal_label_rules(timeframe, label_frame))
+    return errors
 
 
 def _compare_recomputed_labels(timeframe: str, frame: pd.DataFrame, expected: pd.DataFrame) -> list[str]:

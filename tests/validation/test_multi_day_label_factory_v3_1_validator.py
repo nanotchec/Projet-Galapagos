@@ -11,7 +11,9 @@ import pytest
 
 from galapagos.data.public_market.multi_day import output_path as v2_9_ohlcv_path
 from galapagos.data.public_market.storage import read_parquet
+from galapagos.labels.forward_returns import build_forward_labels
 from galapagos.labels.multi_day import (
+    LABEL_SCHEMA_VERSION,
     MANIFEST_PATH,
     REPORT_JSON_PATH,
     REPORT_MD_PATH,
@@ -21,11 +23,14 @@ from galapagos.labels.multi_day import (
 )
 from galapagos.labels.multi_day_validation import (
     _find_forbidden_v3_1_artifacts,
-    _validate_label_frame,
+    _validate_label_metadata,
+    _validate_label_schema,
+    _validate_label_values_against_ohlcv,
     _validate_manifest_structure,
     _validate_markdown,
     _validate_report,
     _validate_safety,
+    _validate_temporal_label_rules,
     validate_multi_day_label_factory_v3_1,
 )
 
@@ -64,12 +69,27 @@ def valid_v3_1_manifest_report(valid_v3_1_template: Path) -> tuple[dict[str, Any
 
 @pytest.fixture(scope="session")
 def valid_v3_1_frame_cache(valid_v3_1_template: Path) -> dict[str, pd.DataFrame]:
-    return {timeframe: read_parquet(output_path(valid_v3_1_template, timeframe)) for timeframe in TIMEFRAMES_V3_1}
+    return {timeframe: read_parquet(output_path(valid_v3_1_template, timeframe)) for timeframe in ["1m", "5m"]}
 
 
 @pytest.fixture()
 def valid_v3_1_frames(valid_v3_1_frame_cache: dict[str, pd.DataFrame]) -> dict[str, pd.DataFrame]:
     return {timeframe: frame.copy(deep=True) for timeframe, frame in valid_v3_1_frame_cache.items()}
+
+
+@pytest.fixture()
+def mini_ohlcv_and_labels_v3_1() -> tuple[pd.DataFrame, pd.DataFrame, str, str]:
+    workspace = Path(__file__).resolve().parents[2]
+    input_frame = read_parquet(v2_9_ohlcv_path(workspace, "1m")).head(12).reset_index(drop=True)
+    label_run_id = "v3_1_20240115T000000Z_abcdef12"
+    source_sha = "mini_v3_1_source_sha256"
+    label_frame = build_forward_labels(
+        input_frame,
+        source_sha,
+        label_run_id,
+        label_schema_version=LABEL_SCHEMA_VERSION,
+    )
+    return input_frame, label_frame, label_run_id, source_sha
 
 
 def test_validator_v3_1_accepts_valid_label_store(valid_v3_1_template_validation_result: dict[str, Any]) -> None:
@@ -79,71 +99,76 @@ def test_validator_v3_1_accepts_valid_label_store(valid_v3_1_template_validation
 
 
 def test_validator_v3_1_rejects_extra_signal_column_even_with_synced_checksum(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
-    _assert_extra_column_rejected(valid_v3_1_template, valid_v3_1_frames, "signal")
-
-
-def test_validator_v3_1_rejects_extra_strategy_column_even_with_synced_checksum(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
-    _assert_extra_column_rejected(valid_v3_1_template, valid_v3_1_frames, "strategy_validated")
-
-
-def test_validator_v3_1_rejects_extra_order_column_even_with_synced_checksum(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
-    _assert_extra_column_rejected(valid_v3_1_template, valid_v3_1_frames, "order_side")
-
-
-def test_validator_v3_1_rejects_column_order_mismatch_even_with_synced_checksum(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
     frame = valid_v3_1_frames["1m"]
+    _assert_extra_column_rejected(frame, "signal")
+
+
+def test_validator_v3_1_rejects_extra_strategy_column_even_with_synced_checksum(mini_ohlcv_and_labels_v3_1: tuple[pd.DataFrame, pd.DataFrame, str, str]) -> None:
+    _input_frame, frame, _label_run_id, _source_sha = mini_ohlcv_and_labels_v3_1
+    _assert_extra_column_rejected(frame, "strategy_validated")
+
+
+def test_validator_v3_1_rejects_extra_order_column_even_with_synced_checksum(mini_ohlcv_and_labels_v3_1: tuple[pd.DataFrame, pd.DataFrame, str, str]) -> None:
+    _input_frame, frame, _label_run_id, _source_sha = mini_ohlcv_and_labels_v3_1
+    _assert_extra_column_rejected(frame, "order_side")
+
+
+def test_validator_v3_1_rejects_column_order_mismatch_even_with_synced_checksum(mini_ohlcv_and_labels_v3_1: tuple[pd.DataFrame, pd.DataFrame, str, str]) -> None:
+    _input_frame, frame, _label_run_id, _source_sha = mini_ohlcv_and_labels_v3_1
     columns = list(frame.columns)
     columns[0], columns[1] = columns[1], columns[0]
-    errors, _quality = _frame_errors(valid_v3_1_template, "1m", frame[columns])
+    errors = _validate_label_schema(frame[columns], "1m")
     assert _errors_contain(errors, "V3.1 label schema mismatch")
 
 
 def test_validator_v3_1_rejects_wrong_source_ohlcv_sha256_even_with_synced_checksum(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
     frame = valid_v3_1_frames["5m"]
+    expected_source_sha = str(frame["source_ohlcv_sha256"].iloc[0])
+    manifest = _load(valid_v3_1_template / MANIFEST_PATH)
     frame["source_ohlcv_sha256"] = "bad"
-    errors, _quality = _frame_errors(valid_v3_1_template, "5m", frame)
+    errors = _validate_label_metadata("5m", frame, manifest["label_run_id"], expected_source_sha)
     assert _errors_contain(errors, "V3.1 source_ohlcv_sha256 mismatch")
 
 
 def test_validator_v3_1_rejects_label_available_ts_before_or_equal_decision_ts(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
     frame = valid_v3_1_frames["1m"]
     frame.loc[0, "label_available_ts"] = frame.loc[0, "decision_ts"]
-    errors, _quality = _frame_errors(valid_v3_1_template, "1m", frame)
+    errors = _validate_temporal_label_rules("1m", frame)
     assert _errors_contain(errors, "label_available_ts <= decision_ts")
 
 
-def test_validator_v3_1_rejects_wrong_future_close_h1(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
-    frame = valid_v3_1_frames["1m"]
+def test_validator_v3_1_rejects_wrong_future_close_h1(mini_ohlcv_and_labels_v3_1: tuple[pd.DataFrame, pd.DataFrame, str, str]) -> None:
+    input_frame, frame, label_run_id, source_sha = mini_ohlcv_and_labels_v3_1
     frame.loc[0, "future_close_h1"] = float(frame.loc[0, "future_close_h1"]) + 1.0
-    errors, _quality = _frame_errors(valid_v3_1_template, "1m", frame)
+    errors = _mini_value_errors(input_frame, frame, label_run_id, source_sha)
     assert _errors_contain(errors, "future_close_h1 mismatch")
 
 
-def test_validator_v3_1_rejects_wrong_future_log_return_h3(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
-    frame = valid_v3_1_frames["1m"]
+def test_validator_v3_1_rejects_wrong_future_log_return_h3(mini_ohlcv_and_labels_v3_1: tuple[pd.DataFrame, pd.DataFrame, str, str]) -> None:
+    input_frame, frame, label_run_id, source_sha = mini_ohlcv_and_labels_v3_1
     frame.loc[0, "future_log_return_h3"] = float(frame.loc[0, "future_log_return_h3"]) + 0.01
-    errors, _quality = _frame_errors(valid_v3_1_template, "1m", frame)
+    errors = _mini_value_errors(input_frame, frame, label_run_id, source_sha)
     assert _errors_contain(errors, "future_log_return_h3 mismatch")
 
 
-def test_validator_v3_1_rejects_wrong_direction_h5(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
-    frame = valid_v3_1_frames["1m"]
+def test_validator_v3_1_rejects_wrong_direction_h5(mini_ohlcv_and_labels_v3_1: tuple[pd.DataFrame, pd.DataFrame, str, str]) -> None:
+    input_frame, frame, label_run_id, source_sha = mini_ohlcv_and_labels_v3_1
     frame.loc[0, "direction_h5"] = 9.0
-    errors, _quality = _frame_errors(valid_v3_1_template, "1m", frame)
+    errors = _mini_value_errors(input_frame, frame, label_run_id, source_sha)
     assert _errors_contain(errors, "direction_h5 mismatch")
 
 
-def test_validator_v3_1_rejects_wrong_up_down_flat_h1(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
-    frame = valid_v3_1_frames["1m"]
+def test_validator_v3_1_rejects_wrong_up_down_flat_h1(mini_ohlcv_and_labels_v3_1: tuple[pd.DataFrame, pd.DataFrame, str, str]) -> None:
+    input_frame, frame, label_run_id, source_sha = mini_ohlcv_and_labels_v3_1
     frame.loc[0, "up_down_flat_h1"] = "BROKEN"
-    errors, _quality = _frame_errors(valid_v3_1_template, "1m", frame)
+    errors = _mini_value_errors(input_frame, frame, label_run_id, source_sha)
     assert _errors_contain(errors, "up_down_flat_h1 mismatch")
 
 
-def test_validator_v3_1_rejects_wrong_label_valid_tail(valid_v3_1_template: Path, valid_v3_1_frames: dict[str, pd.DataFrame]) -> None:
-    frame = valid_v3_1_frames["1m"]
+def test_validator_v3_1_rejects_wrong_label_valid_tail(mini_ohlcv_and_labels_v3_1: tuple[pd.DataFrame, pd.DataFrame, str, str]) -> None:
+    input_frame, frame, label_run_id, source_sha = mini_ohlcv_and_labels_v3_1
     frame.loc[len(frame) - 1, "label_valid_h1"] = True
-    errors, _quality = _frame_errors(valid_v3_1_template, "1m", frame)
+    errors = _mini_value_errors(input_frame, frame, label_run_id, source_sha)
     assert _errors_contain(errors, "label_valid")
 
 
@@ -214,18 +239,20 @@ def test_validator_v3_1_rejects_backtest_report_created(tmp_path: Path) -> None:
     assert _errors_contain(errors, "Forbidden V3.1 artifact detected")
 
 
-def _assert_extra_column_rejected(root: Path, frames: dict[str, pd.DataFrame], column: str) -> None:
-    frame = frames["1m"]
+def _assert_extra_column_rejected(frame: pd.DataFrame, column: str) -> None:
     frame[column] = 0
-    errors, _quality = _frame_errors(root, "1m", frame)
+    errors = _validate_label_schema(frame, "1m")
     assert _errors_contain(errors, "V3.1 label schema mismatch")
 
 
-def _frame_errors(root: Path, timeframe: str, frame: pd.DataFrame) -> tuple[list[str], dict[str, Any]]:
-    input_path = v2_9_ohlcv_path(root, timeframe)
-    input_frame = read_parquet(input_path)
-    manifest = _load(root / MANIFEST_PATH)
-    return _validate_label_frame(timeframe, frame, input_path, input_frame, manifest["label_run_id"])
+def _mini_value_errors(input_frame: pd.DataFrame, frame: pd.DataFrame, label_run_id: str, source_sha: str) -> list[str]:
+    return _validate_label_values_against_ohlcv(
+        "1m",
+        frame,
+        input_frame,
+        label_run_id,
+        source_ohlcv_sha256=source_sha,
+    )
 
 
 def _assert_safety_flag_rejected(manifest_report: tuple[dict[str, Any], dict[str, Any]], flag: str) -> None:

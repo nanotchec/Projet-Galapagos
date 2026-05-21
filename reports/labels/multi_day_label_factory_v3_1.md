@@ -4,17 +4,17 @@
 
 V3.1 construit uniquement des labels forward multi-day sur BTCUSDT du 2024-01-15 au 2024-01-21, a partir des OHLCV multi-day V2.9 valides.
 
-## Correction V3.1.1
+## Correction V3.1.2
 
-V3.1.1 est une correction runtime/import uniquement. V3.1 a été refusée en strict uniquement parce que l'import du validateur V3.1, le validateur direct et les fichiers de tests V3.1 ne terminaient pas de façon fiable dans le temps attendu.
+V3.1.2 est une correction runtime/smoke uniquement. V3.1.1 a été refusée en strict pour runtime du fichier validator V3.1 et timeout smoke.
 
-V3.1.1 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons `[1, 3, 5]`, même threshold `0.0005`, mêmes row counts `10080 / 2016 / 672 / 168`, aucune jointure features + labels et aucun dataset ML.
+V3.1.2 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons `[1, 3, 5]`, même threshold `0.0005`, mêmes row counts `10080 / 2016 / 672 / 168`, aucune jointure features + labels et aucun dataset ML.
 
 ## Inputs
 
 - Source : OHLCV V2.9 `data/research/v2_9/silver/ohlcv`
 - Timeframes : `1m`, `5m`, `15m`, `1h`
-- Run : `v3_1_20260521T113357Z_e2148a88`
+- Run : `v3_1_20260521T120157Z_bade7f45`
 
 ## Outputs
 
@@ -107,4 +107,4 @@ V3.1.1 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons
 - V3.1 n’autorise aucun paper live
 - V3.1 n’autorise aucun trading réel
 
-V3.1.1 reste `pending_external_audit`.
+V3.1.2 reste `pending_external_audit`.

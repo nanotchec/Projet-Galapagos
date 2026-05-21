@@ -1,15 +1,15 @@
-# État du Projet : V3.0 validée + candidat V3.1.1
+# État du Projet : V3.0 validée + candidat V3.1.2
 
 - **Dernière version validée** : V3.0.
 - **Versions antérieures validées** : V2.9.1, V2.8.4, V2.7.2, V2.6.2, V2.5.2, V2.4.8, V2.3.1.
-- **Version candidate** : V3.1.1.
+- **Version candidate** : V3.1.2.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : finalisation runtime/import de la label factory multi-day.
+- **Direction suivante** : finalisation runtime du validator V3.1 et smoke V3.1.2.
 
-## Candidat V3.1.1
+## Candidat V3.1.2
 
-- V3.1 a été refusée en strict uniquement pour runtime/import du validateur et des tests V3.1.
-- V3.1.1 conserve les labels forward multi-day séparés et rend les imports/validations/tests terminables.
+- V3.1.1 a été refusée en strict pour runtime du fichier validator V3.1 et timeout smoke.
+- V3.1.2 conserve les labels forward multi-day séparés et finalise uniquement le runtime des tests validator et du smoke.
 - Inputs autorisés : OHLCV multi-day V2.9 validés sous `data/research/v2_9/silver/ohlcv`.
 - Outputs : labels isolés sous `data/research/v3_1/labels/forward_returns`.
 - Fenêtre : 2024-01-15 à 2024-01-21 inclus.
@@ -18,7 +18,7 @@
 - Threshold fixe : `0.0005`.
 - Les features multi-day V3.0 restent séparées et ne sont pas modifiées par V3.1.
 - V3.1 ne produit aucun dataset ML, aucun modèle ML, aucun backtest, aucune stratégie et aucun ordre.
-- V3.1.1 reste candidate `pending_external_audit`.
+- V3.1.2 reste candidate `pending_external_audit`.
 
 ## Clause De Sécurité
 
@@ -31,4 +31,4 @@
 - Aucune API privée.
 - Aucune clé API.
 - Aucun modèle ML V3.1.
-- V3.1.1 reste non validée avant audit externe.
+- V3.1.2 reste non validée avant audit externe.
