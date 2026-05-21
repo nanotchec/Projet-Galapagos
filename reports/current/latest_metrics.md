@@ -1,7 +1,7 @@
 # Latest Metrics
 
 - Dernière version validée : V3.2.1.
-- Candidate : V3.3.
+- Candidate : V3.3.1.
 - Statut : `pending_external_audit`.
 - Direction : multi-day offline ML research baselines.
 - Fenêtre : 2024-01-15 à 2024-01-21 inclus.
@@ -17,4 +17,4 @@
 - Aucun ordre.
 - Aucun trading réel.
 
-V3.3 entraîne uniquement des baselines ML offline simples et produit des métriques descriptives non actionnables.
+V3.3.1 est un correctif runtime des tests de validation V3.3. Les artefacts ML V3.3 restent des baselines offline simples avec métriques descriptives non actionnables.

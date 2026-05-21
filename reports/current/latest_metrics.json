@@ -1,6 +1,6 @@
 {
   "last_validated_version": "V3.2.1",
-  "candidate_version": "V3.3",
+  "candidate_version": "V3.3.1",
   "candidate_status": "pending_external_audit",
   "direction": "multi-day offline ML research baselines",
   "multi_day_window_start": "2024-01-15",
@@ -67,5 +67,6 @@
   "authentication_used": false,
   "external_validation_required": true,
   "v3_2_validated_by_external_audit": true,
-  "v3_3_validated_by_external_audit": false
+  "v3_3_validated_by_external_audit": false,
+  "v3_3_1_validated_by_external_audit": false
 }

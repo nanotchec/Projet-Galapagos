@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
+import subprocess
+import sys
 from copy import deepcopy
 from pathlib import Path
 from typing import Any
@@ -9,7 +12,6 @@ from typing import Any
 import pandas as pd
 import pytest
 
-from galapagos.ml.multi_day import run_multi_day_offline_ml_research_v3_3
 from galapagos.ml.multi_day_validation import (
     _find_forbidden_v3_3_artifacts,
     _scan_metrics_for_forbidden_terms,
@@ -18,7 +20,6 @@ from galapagos.ml.multi_day_validation import (
     _validate_safety,
     _validate_score_frame_schema_only,
     _validate_scores_report,
-    validate_multi_day_offline_ml_research_v3_3,
 )
 from galapagos.ml.schemas import (
     MANIFEST_PATH_V3_3,
@@ -37,14 +38,27 @@ def valid_v3_3_template_bundle(tmp_path_factory: pytest.TempPathFactory) -> dict
         "data/research/v3_0",
         "data/research/v3_1",
         "data/research/v3_2",
-        "reports/manifests",
-        "reports/datasets",
-        "docs",
+        "data/research/v3_3",
     ]:
         _copy_tree(workspace / relative, root / relative)
-    run_multi_day_offline_ml_research_v3_3(root, validate_dataset=True)
-    result = validate_multi_day_offline_ml_research_v3_3(root)
-    assert result["passed"], result["errors"]
+    for relative in [
+        "scripts/_bootstrap.py",
+        "scripts/validate_multi_day_offline_ml_research_v3_3.py",
+        "reports/manifests/multi_day_offline_supervised_dataset_v3_2_manifest.json",
+        "reports/manifests/multi_day_offline_ml_research_v3_3_manifest.json",
+        "reports/datasets/multi_day_offline_supervised_dataset_v3_2.json",
+        "reports/datasets/multi_day_offline_supervised_dataset_v3_2.md",
+        "reports/datasets/multi_day_offline_supervised_dataset_v3_2_datacard.md",
+        "reports/ml/multi_day_offline_ml_research_v3_3.json",
+        "reports/ml/multi_day_offline_ml_research_v3_3.md",
+        "reports/ml/multi_day_offline_research_scores_v3_3.json",
+        "reports/ml/multi_day_offline_research_scores_v3_3.md",
+        "docs/multi_day_offline_supervised_dataset_v3_2.md",
+        "docs/multi_day_offline_ml_research_v3_3.md",
+    ]:
+        _copy_file(workspace / relative, root / relative)
+    result = _run_validator_script_subprocess(root, workspace)
+    assert result["passed"], result["stderr"]
     return {"root": root, "validation_result": result}
 
 
@@ -82,7 +96,9 @@ def valid_score_frame_v3_3(valid_v3_3_template: Path) -> pd.DataFrame:
 def test_validator_v3_3_accepts_valid_offline_ml_research(valid_v3_3_template_validation_result: dict[str, Any]) -> None:
     result = valid_v3_3_template_validation_result
     assert result["passed"] is True
-    assert result["errors"] == []
+    assert result["returncode"] == 0
+    assert result["timeout"] is False
+    assert "timeout" not in result["stderr"].casefold()
 
 
 def test_validator_v3_3_rejects_forbidden_future_feature(valid_v3_3_manifest_report: tuple[dict[str, Any], dict[str, Any], dict[str, Any]]) -> None:
@@ -222,6 +238,18 @@ def test_validator_v3_3_rejects_trading_metric_in_metrics() -> None:
     assert _errors_contain(errors, "V3.3 metrics contain forbidden trading metric")
 
 
+def test_v3_3_validator_tests_do_not_call_run_or_validate_directly_in_fixture() -> None:
+    text = Path(__file__).read_text(encoding="utf-8")
+    fixture_start = text.index("def valid_v3_3_template_bundle")
+    next_fixture = text.index("@pytest.fixture", fixture_start + 1)
+    fixture_body = text[fixture_start:next_fixture]
+
+    assert "run_multi_day_offline_ml_research_v3_3(" not in fixture_body
+    assert "validate_multi_day_offline_ml_research_v3_3(" not in fixture_body
+    assert "subprocess.run" in text
+    assert "timeout=120" in text
+
+
 def _copy_tree(src: Path, dest: Path) -> None:
     if not src.exists():
         return
@@ -230,6 +258,43 @@ def _copy_tree(src: Path, dest: Path) -> None:
             target = dest / item.relative_to(src)
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(item, target)
+
+
+def _copy_file(src: Path, dest: Path) -> None:
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, dest)
+
+
+def _run_validator_script_subprocess(root: Path, workspace: Path) -> dict[str, Any]:
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(workspace / "src") + os.pathsep + env.get("PYTHONPATH", "")
+    try:
+        completed = subprocess.run(
+            [sys.executable, "scripts/validate_multi_day_offline_ml_research_v3_3.py"],
+            cwd=root,
+            env=env,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.PIPE,
+            text=True,
+            timeout=120,
+            check=False,
+        )
+    except subprocess.TimeoutExpired as exc:
+        stderr = exc.stderr or ""
+        if isinstance(stderr, bytes):
+            stderr = stderr.decode("utf-8", errors="replace")
+        return {
+            "passed": False,
+            "returncode": None,
+            "timeout": True,
+            "stderr": stderr[-4000:],
+        }
+    return {
+        "passed": completed.returncode == 0,
+        "returncode": completed.returncode,
+        "timeout": False,
+        "stderr": completed.stderr[-4000:],
+    }
 
 
 def _load(path: Path) -> dict[str, Any]:

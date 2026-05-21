@@ -5,6 +5,8 @@
 V3.3 entraine des baselines ML offline simples sur le dataset multi-day V3.2 valide.
 Ces sorties sont des scores de recherche descriptifs, non actionnables et sans usage de trading.
 
+Note V3.3.1 : ce correctif ne change pas les scores ML V3.3. Il corrige uniquement le runtime du fichier de tests de validation en isolant le validateur nominal dans un subprocess avec timeout.
+
 ## Cible et modeles
 
 - Cible : `up_down_flat_h1`.

@@ -1,6 +1,6 @@
 {
   "last_validated_version": "V3.2.1",
-  "candidate_version": "V3.3",
+  "candidate_version": "V3.3.1",
   "candidate_status": "pending_external_audit",
   "direction": "multi-day offline ML research baselines",
   "public_market_ingestion_v2_3_validated": true,
@@ -14,6 +14,7 @@
   "multi_day_label_factory_v3_1_10_validated": true,
   "multi_day_offline_supervised_dataset_v3_2_1_validated": true,
   "multi_day_offline_ml_research_v3_3_candidate": true,
+  "multi_day_offline_ml_research_v3_3_1_candidate": true,
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -102,5 +103,6 @@
   "authentication_used": false,
   "external_validation_required": true,
   "v3_2_validated_by_external_audit": true,
-  "v3_3_validated_by_external_audit": false
+  "v3_3_validated_by_external_audit": false,
+  "v3_3_1_validated_by_external_audit": false
 }

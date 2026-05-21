@@ -1,0 +1,154 @@
+from __future__ import annotations
+
+import json
+import zipfile
+from pathlib import Path
+
+
+ZIP_NAME = "projet-galapagos-v3.3.1-clean.zip"
+REPORT_PATH = Path("reports/release_zip_v3_3_1.json")
+REPORT_MD_PATH = Path("reports/release_zip_v3_3_1.md")
+
+TIMEFRAMES = ["1m", "5m", "15m", "1h"]
+DATES = ["2024-01-15", "2024-01-16", "2024-01-17", "2024-01-18", "2024-01-19", "2024-01-20", "2024-01-21"]
+V2_9_BASE = "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT"
+V3_0_BASE = "data/research/v3_0/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT"
+V3_1_BASE = "data/research/v3_1/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT"
+V3_2_BASE = "data/research/v3_2/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT"
+V3_3_BASE = "data/research/v3_3/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT"
+
+INCLUDED_PATHS = [
+    "src/galapagos/data/public_market",
+    "src/galapagos/validation",
+    "src/galapagos/features",
+    "src/galapagos/labels",
+    "src/galapagos/datasets",
+    "src/galapagos/ml",
+    "scripts",
+    "tests/data",
+    "tests/features",
+    "tests/labels",
+    "tests/datasets",
+    "tests/ml",
+    "tests/validation",
+    "reports/manifests",
+    "reports/data_quality",
+    "reports/features",
+    "reports/labels",
+    "reports/datasets",
+    "reports/ml",
+    "docs",
+    "reports/PROJECT_STATE.json",
+    "reports/PROJECT_STATE.md",
+    "reports/current/latest_metrics.json",
+    "reports/current/latest_metrics.md",
+    "reports/current/latest_summary.md",
+    "reports/REPORT_INDEX.md",
+    "galapagos/__init__.py",
+    "pyproject.toml",
+    "README.md",
+]
+
+for date in DATES:
+    INCLUDED_PATHS.append(f"data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-{date}.zip")
+
+for timeframe in TIMEFRAMES:
+    INCLUDED_PATHS.extend(
+        [
+            f"data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe={timeframe}/year=2024/month=01/part-2024-01-15.parquet",
+            f"data/gold/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe={timeframe}/year=2024/month=01/features-2024-01-15.parquet",
+            f"data/gold/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe={timeframe}/year=2024/month=01/labels-2024-01-15.parquet",
+            f"data/gold/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe={timeframe}/year=2024/month=01/dataset-2024-01-15.parquet",
+            f"data/gold/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe={timeframe}/year=2024/month=01/splits-2024-01-15.parquet",
+            f"data/gold/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe={timeframe}/year=2024/month=01/ml-scores-2024-01-15.parquet",
+            f"{V2_9_BASE}/timeframe={timeframe}/window=2024-01-15_2024-01-21/ohlcv.parquet",
+            f"{V3_0_BASE}/timeframe={timeframe}/window=2024-01-15_2024-01-21/features.parquet",
+            f"{V3_1_BASE}/timeframe={timeframe}/window=2024-01-15_2024-01-21/labels.parquet",
+            f"{V3_2_BASE}/timeframe={timeframe}/window=2024-01-15_2024-01-21/dataset.parquet",
+            f"{V3_2_BASE}/timeframe={timeframe}/window=2024-01-15_2024-01-21/splits.parquet",
+            f"{V3_3_BASE}/timeframe={timeframe}/window=2024-01-15_2024-01-21/ml-scores.parquet",
+        ]
+    )
+
+EXCLUDED_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", ".ruff_cache", ".mypy_cache"}
+FORBIDDEN_PREFIXES = [
+    "models/",
+    "checkpoints/",
+    "reports/backtests/",
+    "reports/strategies/",
+    "reports/signals/",
+    "reports/predictions/",
+    "orders/",
+    "execution/",
+    "data/research/v3_3/backtests/",
+    "data/research/v3_3/strategies/",
+    "data/research/v3_3/orders/",
+]
+FORBIDDEN_SUFFIXES = {".pkl", ".pickle", ".joblib", ".sav", ".model", ".ckpt", ".pt", ".pth", ".onnx"}
+
+
+def main() -> None:
+    root = Path(".").resolve()
+    zip_path = root / ZIP_NAME
+    included = collect_files(root)
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for relative in included:
+            archive.write(root / relative, relative.as_posix())
+    payload = {
+        "version": "V3.3.1",
+        "status": "PASS",
+        "zip_path": str(zip_path),
+        "zip_size_bytes": zip_path.stat().st_size,
+        "files_included": len(included),
+        "minimal_clean_zip": True,
+        "contains_multi_day_datasets": True,
+        "contains_multi_day_ml_scores": True,
+        "forbidden_entries_included": False,
+        "release_ready_for_external_audit": True,
+    }
+    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    REPORT_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    REPORT_MD_PATH.write_text(
+        "# Release ZIP V3.3.1\n\n"
+        f"- Statut : `{payload['status']}`\n"
+        f"- ZIP : `{payload['zip_path']}`\n"
+        f"- Taille : `{payload['zip_size_bytes']}` octets\n"
+        "- Usage : audit externe du correctif runtime de tests V3.3.1 sur les baselines ML offline multi-day.\n",
+        encoding="utf-8",
+    )
+    print(json.dumps(payload, indent=2, ensure_ascii=False))
+
+
+def collect_files(root: Path) -> list[Path]:
+    files: list[Path] = []
+    for item in INCLUDED_PATHS:
+        path = root / item
+        if not path.exists():
+            raise FileNotFoundError(f"missing release input: {item}")
+        if path.is_file():
+            if _allowed(path.relative_to(root)):
+                files.append(path.relative_to(root))
+        else:
+            for child in sorted(path.rglob("*")):
+                if child.is_file() and _allowed(child.relative_to(root)):
+                    files.append(child.relative_to(root))
+    return sorted(set(files))
+
+
+def _allowed(relative: Path) -> bool:
+    name = relative.as_posix()
+    if any(part in EXCLUDED_PARTS for part in relative.parts):
+        return False
+    if relative.name.startswith(".smoke-") or relative.name in {".DS_Store", ".env"}:
+        return False
+    if "secret" in name.casefold():
+        return False
+    if relative.suffix.casefold() in FORBIDDEN_SUFFIXES:
+        return False
+    if relative.suffix == ".zip" and not name.startswith("data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/"):
+        return False
+    return not any(name.startswith(prefix) for prefix in FORBIDDEN_PREFIXES)
+
+
+if __name__ == "__main__":
+    main()
