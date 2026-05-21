@@ -12,7 +12,7 @@ from galapagos.data.public_market.multi_day import output_path as v2_9_ohlcv_pat
 from galapagos.data.public_market.provenance import sha256_file
 from galapagos.data.public_market.storage import read_parquet
 from galapagos.labels.forward_returns import build_forward_labels
-from galapagos.labels.multi_day import (
+from galapagos.labels.multi_day_config import (
     EXPECTED_LIMITATIONS_V3_1,
     LABEL_SCHEMA_VERSION,
     MANIFEST_PATH,

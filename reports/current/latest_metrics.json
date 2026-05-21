@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V3.0",
-  "candidate_version": "V3.1",
+  "candidate_version": "V3.1.1",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day clean forward label factory preview",
+  "direction": "multi-day label factory import and runtime finalization",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -37,5 +37,6 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v3_1_validated_by_external_audit": false
+  "v3_1_refused_reason": "V3.1 refusee en strict uniquement pour runtime/import du validateur et des tests V3.1.",
+  "v3_1_1_validated_by_external_audit": false
 }

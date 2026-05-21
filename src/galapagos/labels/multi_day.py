@@ -6,34 +6,24 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from galapagos.data.public_market.multi_day import WINDOW_LABEL, output_path as v2_9_ohlcv_path
-from galapagos.data.public_market.multi_day_validation import validate_multi_day_public_market_data_v2_9
+from galapagos.data.public_market.multi_day import output_path as v2_9_ohlcv_path
 from galapagos.data.public_market.provenance import sha256_file, utc_now_iso
 from galapagos.data.public_market.storage import read_parquet, write_parquet
-from galapagos.datasets.validation import validate_offline_supervised_dataset_v2_7
-from galapagos.features.multi_day_validation import validate_multi_day_causal_feature_store_v3_0
-from galapagos.features.validation import validate_causal_feature_store_v2_5
 from galapagos.labels.forward_returns import build_forward_labels
+from galapagos.labels.multi_day_config import (
+    DOC_PATH,
+    EXPECTED_LIMITATIONS_V3_1,
+    LABEL_SCHEMA_VERSION,
+    MANIFEST_PATH,
+    REPORT_JSON_PATH,
+    REPORT_MD_PATH,
+    TIMEFRAMES_V3_1,
+    VERSION,
+    output_path,
+)
 from galapagos.labels.multi_day_quality import EXPECTED_ROWS_V3_1, assess_multi_day_label_quality
 from galapagos.labels.registry import HORIZONS, THRESHOLD
 from galapagos.labels.schemas import LABEL_COLUMNS_V3_1
-from galapagos.labels.validation import validate_label_factory_v2_6
-from galapagos.ml.validation import validate_offline_ml_research_v2_8
-from galapagos.validation.market_data import validate_public_market_ingestion_v2_3
-from galapagos.validation.resampling import validate_ohlcv_resampling_v2_4
-
-
-VERSION = "V3.1"
-LABEL_SCHEMA_VERSION = "V3.1"
-TIMEFRAMES_V3_1 = ["1m", "5m", "15m", "1h"]
-MANIFEST_PATH = Path("reports/manifests/multi_day_label_factory_v3_1_manifest.json")
-REPORT_JSON_PATH = Path("reports/labels/multi_day_label_factory_v3_1.json")
-REPORT_MD_PATH = Path("reports/labels/multi_day_label_factory_v3_1.md")
-DOC_PATH = Path("docs/multi_day_label_factory_v3_1.md")
-EXPECTED_LIMITATIONS_V3_1 = [
-    "V3.1 produit uniquement des labels forward multi-day separes sur BTCUSDT 2024-01-15 a 2024-01-21 a partir des donnees OHLCV V2.9 validees.",
-    "V3.1 ne produit aucun dataset ML, aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.",
-]
 
 
 def run_multi_day_label_factory_v3_1(root: Path = Path("."), *, validate_previous_layers: bool = True) -> dict[str, Any]:
@@ -98,20 +88,16 @@ def run_multi_day_label_factory_v3_1(root: Path = Path("."), *, validate_previou
     return manifest
 
 
-def output_path(root: Path, timeframe: str) -> Path:
-    return (
-        root
-        / "data/research/v3_1/labels/forward_returns"
-        / "source=binance_archive"
-        / "market_type=spot"
-        / "symbol=BTCUSDT"
-        / f"timeframe={timeframe}"
-        / f"window={WINDOW_LABEL}"
-        / "labels.parquet"
-    )
-
-
 def _validate_previous_layers(root: Path) -> None:
+    from galapagos.data.public_market.multi_day_validation import validate_multi_day_public_market_data_v2_9
+    from galapagos.datasets.validation import validate_offline_supervised_dataset_v2_7
+    from galapagos.features.multi_day_validation import validate_multi_day_causal_feature_store_v3_0
+    from galapagos.features.validation import validate_causal_feature_store_v2_5
+    from galapagos.labels.validation import validate_label_factory_v2_6
+    from galapagos.ml.validation import validate_offline_ml_research_v2_8
+    from galapagos.validation.market_data import validate_public_market_ingestion_v2_3
+    from galapagos.validation.resampling import validate_ohlcv_resampling_v2_4
+
     validators = [
         ("V2.3.1", validate_public_market_ingestion_v2_3),
         ("V2.4.8", validate_ohlcv_resampling_v2_4),
@@ -187,6 +173,12 @@ def _write_markdown(path: Path, report: dict[str, Any]) -> None:
 
 V3.1 construit uniquement des labels forward multi-day sur BTCUSDT du 2024-01-15 au 2024-01-21, a partir des OHLCV multi-day V2.9 valides.
 
+## Correction V3.1.1
+
+V3.1.1 est une correction runtime/import uniquement. V3.1 a été refusée en strict uniquement parce que l'import du validateur V3.1, le validateur direct et les fichiers de tests V3.1 ne terminaient pas de façon fiable dans le temps attendu.
+
+V3.1.1 conserve les artefacts fonctionnels V3.1 : mêmes labels, mêmes horizons `[1, 3, 5]`, même threshold `0.0005`, mêmes row counts `10080 / 2016 / 672 / 168`, aucune jointure features + labels et aucun dataset ML.
+
 ## Inputs
 
 - Source : OHLCV V2.9 `data/research/v2_9/silver/ohlcv`
@@ -241,6 +233,6 @@ V3.1 construit uniquement des labels forward multi-day sur BTCUSDT du 2024-01-15
 - V3.1 n’autorise aucun paper live
 - V3.1 n’autorise aucun trading réel
 
-V3.1 reste `pending_external_audit`.
+V3.1.1 reste `pending_external_audit`.
 """
     path.write_text(text, encoding="utf-8")
