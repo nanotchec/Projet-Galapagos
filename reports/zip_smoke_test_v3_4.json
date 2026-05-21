@@ -1,0 +1,14 @@
+{
+  "version": "V3.4",
+  "smoke_test_passed": true,
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.4-clean.zip",
+  "current_validator_run": "validate_multi_day_ml_robustness_v3_4",
+  "current_validator_timing_seconds": 1.202,
+  "historical_validators_run": false,
+  "robustness_manifest_checked": true,
+  "forbidden_entries_found": [],
+  "safety_flags_ok": true,
+  "smoke_duration_seconds": 1.422,
+  "errors": [],
+  "warnings": []
+}

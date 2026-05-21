@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V3.2.1",
-  "candidate_version": "V3.3.1",
+  "last_validated_version": "V3.3.1",
+  "candidate_version": "V3.4",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day offline ML research baselines",
+  "direction": "multi-day ML robustness and falsification audit",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -54,7 +54,11 @@
   },
   "dataset_v3_2_created": true,
   "ml_v3_3_created": true,
+  "ml_robustness_v3_4_created": true,
+  "robust_edge_claimed_v3_4": false,
+  "actionable_signal_produced_v3_4": false,
   "persistent_model_v3_3_created": false,
+  "persistent_model_v3_4_created": false,
   "ml_v3_2_created": false,
   "model_v3_2_created": false,
   "backtest_enabled": false,
@@ -68,5 +72,6 @@
   "external_validation_required": true,
   "v3_2_validated_by_external_audit": true,
   "v3_3_validated_by_external_audit": false,
-  "v3_3_1_validated_by_external_audit": false
+  "v3_3_1_validated_by_external_audit": true,
+  "v3_4_validated_by_external_audit": false
 }
