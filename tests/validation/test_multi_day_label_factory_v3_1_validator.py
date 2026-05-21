@@ -240,8 +240,8 @@ def test_validator_v3_1_rejects_backtest_report_created(tmp_path: Path) -> None:
     assert _errors_contain(errors, "Forbidden V3.1 artifact detected")
 
 
-def test_smoke_v3_1_8_does_not_run_historical_validators() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_8.py").read_text(encoding="utf-8")
+def test_smoke_v3_1_10_does_not_run_historical_validators() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_10.py").read_text(encoding="utf-8")
     historical_scripts = [
         "validate_public_market_ingestion_v2_3.py",
         "validate_ohlcv_resampling_v2_4.py",
@@ -257,38 +257,40 @@ def test_smoke_v3_1_8_does_not_run_historical_validators() -> None:
         assert historical_script not in script
 
 
-def test_smoke_v3_1_8_runs_only_current_validator() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_8.py").read_text(encoding="utf-8")
+def test_smoke_v3_1_10_runs_only_current_validator() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_10.py").read_text(encoding="utf-8")
     assert "validate_multi_day_label_factory_v3_1.py" in script
     assert '"current_validator_run": CURRENT_VALIDATOR' in script
     assert '"historical_validators_run": False' in script
     assert '"historical_validators_checked_by_manifest_only": True' in script
 
 
-def test_smoke_v3_1_8_has_timeout_for_current_validator() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_8.py").read_text(encoding="utf-8")
+def test_smoke_v3_1_10_has_timeout_for_current_validator() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_10.py").read_text(encoding="utf-8")
     validator_pos = script.index("def _run_current_validator")
     timeout_pos = script.index("process.wait(timeout=120)")
     assert validator_pos < timeout_pos
 
 
-def test_smoke_v3_1_8_payload_reports_scope_reduction() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_8.py").read_text(encoding="utf-8")
+def test_smoke_v3_1_10_payload_reports_scope_reduction() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_10.py").read_text(encoding="utf-8")
     assert '"historical_validators_run": False' in script
     assert '"historical_validators_checked_by_manifest_only": True' in script
     assert '"label_row_counts": label_row_counts' in script
     assert '"forbidden_entries_found": forbidden_entries' in script
-    assert "reports/zip_smoke_test_v3_1_8.json" in script
+    assert "reports/zip_smoke_test_v3_1_10.json" in script
 
 
-def test_smoke_v3_1_8_no_stale_smoke_references() -> None:
+def test_no_stale_v3_1_smoke_references() -> None:
     root = Path(__file__).resolve().parents[2]
     script = (root / "tests/validation/test_multi_day_label_factory_v3_1_validator.py").read_text(encoding="utf-8")
-    stale_versions = ["4", "5", "6", "7"]
+    stale_versions = ["4", "5", "6", "7", "8", "9"]
+    current_script = "smoke_test_clean_zip_" + "v3_1_10.py"
     for suffix in stale_versions:
         stale_name = "smoke_test_clean_zip_" + f"v3_1_{suffix}.py"
         assert stale_name not in script
     for referenced_script in re.findall(r"smoke_test_clean_zip_v3_1_\d+\.py", script):
+        assert referenced_script == current_script
         assert (root / "scripts" / referenced_script).exists()
 
 
