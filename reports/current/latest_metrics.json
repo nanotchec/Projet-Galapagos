@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V3.0",
-  "candidate_version": "V3.1.2",
+  "candidate_version": "V3.1.3",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day label factory validator runtime and smoke finalization",
+  "direction": "multi-day label factory smoke isolation fix",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -37,6 +37,6 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v3_1_1_refused_reason": "V3.1.1 refusee en strict pour runtime du fichier validator V3.1 et timeout smoke.",
-  "v3_1_2_validated_by_external_audit": false
+  "v3_1_2_refused_reason": "V3.1.2 refusee en strict uniquement parce que le smoke test V3.1.2 timeout.",
+  "v3_1_3_validated_by_external_audit": false
 }

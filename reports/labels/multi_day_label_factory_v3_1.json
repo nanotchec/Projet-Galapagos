@@ -1,8 +1,8 @@
 {
   "version": "V3.1",
   "status": "PASS",
-  "created_at_utc": "2026-05-21T12:01:57.357358Z",
-  "label_run_id": "v3_1_20260521T120157Z_bade7f45",
+  "created_at_utc": "2026-05-21T12:27:51.552456Z",
+  "label_run_id": "v3_1_20260521T122751Z_5d751ab3",
   "input_ohlcv": {
     "1m": {
       "path": "data/research/v2_9/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-15_2024-01-21/ohlcv.parquet",
@@ -28,28 +28,28 @@
   "outputs": {
     "1m": {
       "path": "data/research/v3_1/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-15_2024-01-21/labels.parquet",
-      "sha256": "7df65b421c2cee3a58274037a8ecaa273c901fb15948ffc07dc1ca08ac016a7e",
+      "sha256": "867dab8a229d34e20ee046806731fd1d48bbb57c2560c4cb6adb0b3565ee3714",
       "bytes": 1501129,
       "rows": 10080,
       "format": "parquet"
     },
     "5m": {
       "path": "data/research/v3_1/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-15_2024-01-21/labels.parquet",
-      "sha256": "8f793b1219f13f69eef705fe5d2ed162a88596dfce03bff9f753c5ed3bee8cb7",
+      "sha256": "960e40e93925d4c8929443fae271d3ca592d7c08376c8cd676bdd881fda323f7",
       "bytes": 312391,
       "rows": 2016,
       "format": "parquet"
     },
     "15m": {
       "path": "data/research/v3_1/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-15_2024-01-21/labels.parquet",
-      "sha256": "f380f371af4ca1a8f7129570cc3b7821717f8f9f194a9db15caa8d6b4bedb777",
+      "sha256": "563e858c918264eb2f55b9104e8f07cd077dee19e2a102ce6692d3e41c03bb87",
       "bytes": 123418,
       "rows": 672,
       "format": "parquet"
     },
     "1h": {
       "path": "data/research/v3_1/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-15_2024-01-21/labels.parquet",
-      "sha256": "2213b0b57fc57f01ba82ee01669d3d2bc772ccf658aae29703ca29d01a0a1f49",
+      "sha256": "566251746966ba53df83ebf4c3428e5d126b8c07440ade3f5f049126e5238313",
       "bytes": 47730,
       "rows": 168,
       "format": "parquet"
