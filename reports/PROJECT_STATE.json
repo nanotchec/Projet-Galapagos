@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V3.0",
-  "candidate_version": "V3.1.6",
+  "candidate_version": "V3.1.7",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day label factory smoke per-validator isolation and stale test reference fix",
+  "direction": "multi-day label factory smoke per-validator re-extraction fix",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -11,8 +11,8 @@
   "offline_ml_research_v2_8_4_validated": true,
   "multi_day_public_market_data_v2_9_1_validated": true,
   "multi_day_causal_feature_store_v3_0_validated": true,
-  "multi_day_label_factory_v3_1_6_candidate": true,
-  "v3_1_5_refused_reason": "V3.1.5 refusee en strict parce que le smoke lancait tous les validateurs sur le meme root extrait, provoquant encore un timeout sur V2.8.",
+  "multi_day_label_factory_v3_1_7_candidate": true,
+  "v3_1_6_refused_reason": "V3.1.6 refusee en strict parce que le smoke bloquait encore pendant la preparation/execution de validate_multi_day_causal_feature_store_v3_0.",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -51,5 +51,5 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v3_1_6_validated_by_external_audit": false
+  "v3_1_7_validated_by_external_audit": false
 }

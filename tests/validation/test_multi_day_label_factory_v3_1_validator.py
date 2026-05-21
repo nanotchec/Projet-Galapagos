@@ -240,18 +240,34 @@ def test_validator_v3_1_rejects_backtest_report_created(tmp_path: Path) -> None:
     assert _errors_contain(errors, "Forbidden V3.1 artifact detected")
 
 
-def test_smoke_v3_1_6_runs_validators_before_parquet_checks() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_6.py").read_text(encoding="utf-8")
-    run_validators_pos = script.index("validator_errors, validator_timings = _run_validators(base_extract, validator_runs, smoke_logs)")
+def test_smoke_v3_1_7_does_not_use_copytree_for_validator_roots() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_7.py").read_text(encoding="utf-8")
+    assert "shutil.copytree(base_extract" not in script
+    assert "copytree(base_extract" not in script
+    assert "archive.extractall(validator_root)" in script
+    assert "\"copytree_used_for_validator_roots\": False" in script
+
+
+def test_smoke_v3_1_7_reextracts_zip_per_validator() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_7.py").read_text(encoding="utf-8")
+    validators_loop_pos = script.index("for name, script, timeout_seconds in VALIDATORS:")
+    root_pos = script.index("validator_root = validator_runs / name")
+    extract_pos = script.index("archive.extractall(validator_root)")
+    assert validators_loop_pos < root_pos < extract_pos
+    assert "validators_use_zip_reextract_per_validator" in script
+
+
+def test_smoke_v3_1_7_runs_validators_before_parquet_checks() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_7.py").read_text(encoding="utf-8")
+    run_validators_pos = script.index("validator_errors, validator_timings, preparation_timings, validator_warnings = _run_validators(")
     label_outputs_pos = script.index("errors.extend(_validate_label_outputs(base_extract))")
     pandas_import_pos = script.index("import pandas as pd")
     assert run_validators_pos < label_outputs_pos
     assert run_validators_pos < pandas_import_pos
-    assert "validators_use_isolated_roots" in script
 
 
-def test_smoke_v3_1_6_writes_logs_outside_validated_roots() -> None:
-    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_6.py").read_text(encoding="utf-8")
+def test_smoke_v3_1_7_writes_logs_outside_validated_roots() -> None:
+    script = (Path(__file__).resolve().parents[2] / "scripts/smoke_test_clean_zip_v3_1_7.py").read_text(encoding="utf-8")
     assert "smoke_logs = tmp_path / \"smoke_logs\"" in script
     assert "validator_runs = tmp_path / \"validator_runs\"" in script
     assert "log_path = smoke_logs / f\"{name}.log\"" in script
@@ -260,11 +276,13 @@ def test_smoke_v3_1_6_writes_logs_outside_validated_roots() -> None:
     assert ".rglob(\".smoke-*\")" in script
 
 
-def test_no_stale_v3_1_4_smoke_reference() -> None:
+def test_no_stale_v3_1_4_or_v3_1_5_smoke_reference() -> None:
     root = Path(__file__).resolve().parents[2]
     script = (root / "tests/validation/test_multi_day_label_factory_v3_1_validator.py").read_text(encoding="utf-8")
-    stale_script = "smoke_test_clean_zip_" + "v3_1_4.py"
-    assert stale_script not in script
+    stale_v3_1_4 = "smoke_test_clean_zip_" + "v3_1_4.py"
+    stale_v3_1_5 = "smoke_test_clean_zip_" + "v3_1_5.py"
+    assert stale_v3_1_4 not in script
+    assert stale_v3_1_5 not in script
     for referenced_script in re.findall(r"smoke_test_clean_zip_v3_1_\d+\.py", script):
         assert (root / "scripts" / referenced_script).exists()
 

@@ -1,0 +1,39 @@
+{
+  "version": "V3.1.7",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.1.7-clean.zip",
+  "smoke_test_passed": true,
+  "smoke_validators_run": 9,
+  "smoke_failed_count": 0,
+  "validator_timings_seconds": {
+    "validate_public_market_ingestion_v2_3": 0.401,
+    "validate_ohlcv_resampling_v2_4": 0.616,
+    "validate_causal_feature_store_v2_5": 0.664,
+    "validate_label_factory_v2_6": 0.461,
+    "validate_offline_supervised_dataset_v2_7": 1.102,
+    "validate_offline_ml_research_v2_8": 2.557,
+    "validate_multi_day_public_market_data_v2_9": 1.467,
+    "validate_multi_day_causal_feature_store_v3_0": 1.191,
+    "validate_multi_day_label_factory_v3_1": 0.674
+  },
+  "preparation_timings_seconds": {
+    "validate_public_market_ingestion_v2_3": 0.056,
+    "validate_ohlcv_resampling_v2_4": 0.056,
+    "validate_causal_feature_store_v2_5": 0.057,
+    "validate_label_factory_v2_6": 0.059,
+    "validate_offline_supervised_dataset_v2_7": 0.058,
+    "validate_offline_ml_research_v2_8": 0.056,
+    "validate_multi_day_public_market_data_v2_9": 0.059,
+    "validate_multi_day_causal_feature_store_v3_0": 0.061,
+    "validate_multi_day_label_factory_v3_1": 0.058
+  },
+  "validators_isolated_by_subprocess": true,
+  "validators_use_isolated_roots": true,
+  "validators_use_zip_reextract_per_validator": true,
+  "copytree_used_for_validator_roots": false,
+  "validators_run_before_parquet_checks": true,
+  "parent_imports_pandas_before_validators": false,
+  "logs_outside_validated_roots": true,
+  "smoke_log_leaks_in_validated_roots": false,
+  "errors": [],
+  "warnings": []
+}
