@@ -1,35 +1,31 @@
-# État du Projet : V3.1.10 validée + candidat V3.2.1
+# État du Projet : V3.2.1 validée + candidat V3.3
 
-- **Dernière version validée** : V3.1.10.
-- **Versions antérieures validées** : V3.0, V2.9.1, V2.8.4, V2.7.2, V2.6.2, V2.5.2, V2.4.8, V2.3.1.
-- **Version candidate** : V3.2.1.
+- **Dernière version validée** : V3.2.1.
+- **Versions antérieures validées** : V3.1.10, V3.0, V2.9.1, V2.8.4, V2.7.2, V2.6.2, V2.5.2, V2.4.8, V2.3.1.
+- **Version candidate** : V3.3.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : multi-day offline supervised dataset assembly preview.
+- **Direction suivante** : multi-day offline ML research baselines.
 
-## Candidat V3.2.1
+## Candidat V3.3
 
-- V3.2.1 assemble un dataset supervisé offline multi-day à partir des features causales V3.0 et des labels forward V3.1.
-- Inputs autorisés : features V3.0 sous `data/research/v3_0/features/ohlcv` et labels V3.1 sous `data/research/v3_1/labels/forward_returns`.
-- Outputs : datasets et splits isolés sous `data/research/v3_2/datasets/offline_supervised`.
-- Fenêtre : 2024-01-15 à 2024-01-21 inclus.
-- Row counts attendus : 1m `10080`, 5m `2016`, 15m `672`, 1h `168`.
-- Splits temporels : train 60 %, validation 20 %, test 20 %, sans shuffle.
-- Les features sources V3.0 et labels sources V3.1 ne sont pas modifiés par V3.2.
-- V3.2 a été refusée en strict car un artefact `reports/backtests/not_named_backtest_report.json` a été accepté.
-- V3.2.1 renforce le garde-fou et refuse tout contenu sous `reports/backtests` (fichier, dossier vide ou fichier imbriqué).
-- V3.2 ne produit aucun modèle ML, aucun backtest, aucune stratégie, aucun signal de trading et aucun ordre.
-- V3.2 reste candidate `pending_external_audit`.
+- V3.3 entraîne uniquement des baselines ML offline simples sur le dataset supervisé multi-day V3.2.1.
+- Target unique : `up_down_flat_h1`.
+- Modèles autorisés : `majority_class_baseline`, `random_seeded_baseline`, `logistic_regression`, `decision_tree_depth_2`.
+- Scores research V3.3 : 1m `40196`, 5m `7940`, 15m `2564`, 1h `548`.
+- Les features autorisées sont uniquement les features causales V3.0 présentes dans le dataset V3.2.
+- Les métriques sont descriptives et non actionnables.
+- Aucun modèle persistant n’est écrit.
+- V3.3 ne produit aucun backtest, aucune stratégie, aucun signal de trading, aucun ordre et aucun trading réel.
+- V3.3 reste candidate `pending_external_audit`.
 
 ## Clause De Sécurité
 
 - Aucun trading réel.
 - Aucun paper live.
 - Aucun ordre.
-- Aucun signal de trading.
 - Aucun backtest.
 - Aucune stratégie.
+- Aucun modèle persistant.
 - Aucune API privée.
 - Aucune clé API.
-- Aucun ML V3.2.
-- Aucun modèle ML V3.2.
-- V3.2 reste non validée avant audit externe.
+- V3.3 reste non validée avant audit externe.

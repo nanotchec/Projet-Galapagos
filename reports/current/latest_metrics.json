@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V3.1.10",
-  "candidate_version": "V3.2.1",
+  "last_validated_version": "V3.2.1",
+  "candidate_version": "V3.3",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day offline supervised dataset assembly preview",
+  "direction": "multi-day offline ML research baselines",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -40,7 +40,21 @@
       "test": 35
     }
   },
+  "multi_day_ml_score_rows_v3_3": {
+    "1m": 40196,
+    "5m": 7940,
+    "15m": 2564,
+    "1h": 548
+  },
+  "multi_day_ml_rows_used_v3_3": {
+    "1m": 10049,
+    "5m": 1985,
+    "15m": 641,
+    "1h": 137
+  },
   "dataset_v3_2_created": true,
+  "ml_v3_3_created": true,
+  "persistent_model_v3_3_created": false,
   "ml_v3_2_created": false,
   "model_v3_2_created": false,
   "backtest_enabled": false,
@@ -52,5 +66,6 @@
   "private_endpoint_used": false,
   "authentication_used": false,
   "external_validation_required": true,
-  "v3_2_validated_by_external_audit": false
+  "v3_2_validated_by_external_audit": true,
+  "v3_3_validated_by_external_audit": false
 }
