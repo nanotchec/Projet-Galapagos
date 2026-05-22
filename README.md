@@ -2,8 +2,8 @@
 
 ## Etat actuel du projet
 
-- Derniere version validee : V3.4.1.
-- Candidate : V3.5, expansion data marche publique 90 jours.
+- Derniere version validee : V3.5.2.
+- Candidate : V3.6, feature store causal 90 jours.
 - Le projet est actuellement data/research/offline only.
 - Aucun trading reel n'est autorise.
 - Aucun paper live n'est autorise.
@@ -15,8 +15,9 @@
 - V3.3 produit uniquement des baselines ML offline et des scores `research_*`.
 - V3.4 audite uniquement la robustesse descriptive et la falsification des baselines ML V3.3.
 - V3.5 etend uniquement les donnees marche publiques BTCUSDT sur 90 jours dans `data/research/v3_5/silver/ohlcv`.
-- V3.5 ne produit aucune feature, aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
-- V3.5 reste `pending_external_audit` et n'est pas validee avant audit externe.
+- V3.6 construit uniquement des features OHLCV causales 90 jours dans `data/research/v3_6/features/ohlcv`.
+- V3.6 ne produit aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+- V3.6 reste `pending_external_audit` et n'est pas validee avant audit externe.
 - Les anciennes parties paper trading V1 sont legacy et ne sont pas autorisees dans la roadmap actuelle.
 
 Projet Galapagos est une V1 verticale d'agent autonome de trading en paper trading sur BTC.

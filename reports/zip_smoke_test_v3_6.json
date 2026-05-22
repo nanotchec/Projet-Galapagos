@@ -1,0 +1,20 @@
+{
+  "version": "V3.6",
+  "smoke_test_passed": true,
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.6-clean.zip",
+  "current_validator_run": "validate_expanded_causal_feature_store_v3_6",
+  "current_validator_timing_seconds": 0.626,
+  "historical_validators_run": false,
+  "feature_row_counts": {
+    "1m": 129600,
+    "5m": 25920,
+    "15m": 8640,
+    "1h": 2160
+  },
+  "feature_schema_strict": true,
+  "forbidden_entries_found": [],
+  "safety_flags_ok": true,
+  "smoke_duration_seconds": 1.358,
+  "errors": [],
+  "warnings": []
+}
