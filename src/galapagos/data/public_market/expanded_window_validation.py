@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import zipfile
 from pathlib import Path
 from typing import Any
 
@@ -23,10 +24,10 @@ from galapagos.data.public_market.expanded_window_quality import (
     FORBIDDEN_OHLCV_COLUMNS_V3_5,
     assess_expanded_timeframe,
     parent_child_consistent,
+    resample_expanded_ohlcv,
 )
 from galapagos.data.public_market.provenance import sha256_file
 from galapagos.data.public_market.schemas import OHLCV_COLUMNS
-from galapagos.data.public_market.sources.binance_archive import parse_binance_kline_zip
 from galapagos.data.public_market.storage import read_parquet
 from galapagos.validation.manifests import load_json
 from galapagos.validation.safety import (
@@ -132,19 +133,28 @@ def validate_expanded_public_market_data_v3_5(root: Path = Path(".")) -> dict[st
         frame = read_parquet(path)
         frames[timeframe] = frame
         errors.extend(_validate_output_entry(root, manifest, timeframe, path, frame))
-        errors.extend(_validate_ohlcv_frame(timeframe, frame))
     if "1m" in frames:
         errors.extend(_validate_raw_to_1m(manifest, frames["1m"], raw_rows))
+    expected_children: dict[str, pd.DataFrame] = {}
+    if "1m" in frames:
+        for timeframe in ["5m", "15m", "1h"]:
+            try:
+                expected_children[timeframe] = resample_expanded_ohlcv(frames["1m"], target_timeframe=timeframe)
+            except ValueError as exc:
+                errors.append(f"V3.5 parent-child resample failed for {timeframe}: {exc}")
     physical_quality: dict[str, dict[str, Any]] = {}
     for timeframe, frame in frames.items():
-        consistency = True if timeframe == "1m" else ("1m" in frames and parent_child_consistent(frames["1m"], frame, timeframe))
+        consistency = True if timeframe == "1m" else _child_matches_expected(expected_children.get(timeframe), frame)
         if timeframe != "1m" and not consistency:
             errors.append(f"V3.5 parent-child consistency mismatch for {timeframe}")
-        physical_quality[timeframe] = assess_expanded_timeframe(
+        quality = assess_expanded_timeframe(
             frame,
             timeframe=timeframe,
             parent_child_consistency=consistency,
         )
+        physical_quality[timeframe] = quality
+        for error in quality["errors"]:
+            errors.append(f"V3.5 physical quality error for {timeframe}: {error}")
     errors.extend(_validate_manifest_quality(manifest, physical_quality))
     errors.extend(_validate_report(manifest, report))
     errors.extend(scan_payload_for_forbidden_claims(report, "V3.5 quality report"))
@@ -226,7 +236,7 @@ def _validate_raw_files(root: Path, manifest: dict[str, Any]) -> tuple[list[str]
         if raw_payload.get("bytes") != path.stat().st_size:
             errors.append(f"V3.5 raw bytes mismatch for {current_date}")
         try:
-            raw_rows[current_date] = int(len(parse_binance_kline_zip(path)))
+            raw_rows[current_date] = _count_binance_kline_zip_rows_fast(path)
         except Exception as exc:
             errors.append(f"V3.5 raw parse failed for {current_date}: {exc}")
             raw_rows[current_date] = -1
@@ -266,6 +276,29 @@ def _validate_ohlcv_frame(timeframe: str, frame: pd.DataFrame) -> list[str]:
     return errors
 
 
+def _count_binance_kline_zip_rows_fast(path: Path) -> int:
+    with zipfile.ZipFile(path) as archive:
+        csv_names = [name for name in archive.namelist() if name.endswith(".csv")]
+        if len(csv_names) != 1:
+            raise ValueError(f"expected one CSV member, found {len(csv_names)}")
+        count = 0
+        first_non_empty: bytes | None = None
+        with archive.open(csv_names[0], "r") as handle:
+            for raw_line in handle:
+                line = raw_line.strip()
+                if not line:
+                    continue
+                if first_non_empty is None:
+                    first_non_empty = line
+                count += 1
+    if first_non_empty is None:
+        return 0
+    first_token = first_non_empty.split(b",", 1)[0].strip().lower()
+    if first_token in {b"open_time", b"timestamp", b"date"}:
+        count -= 1
+    return count
+
+
 def _validate_raw_to_1m(manifest: dict[str, Any], frame_1m: pd.DataFrame, raw_rows: dict[str, int]) -> list[str]:
     errors: list[str] = []
     frame = frame_1m.copy()
@@ -278,6 +311,46 @@ def _validate_raw_to_1m(manifest: dict[str, Any], frame_1m: pd.DataFrame, raw_ro
         if set(day_rows["raw_file_sha256"].astype(str).unique()) != {expected_sha}:
             errors.append(f"V3.5 raw-to-1m checksum mismatch for {current_date}")
     return errors
+
+
+def _child_matches_expected(expected: pd.DataFrame | None, child: pd.DataFrame) -> bool:
+    if expected is None or list(expected.columns) != list(child.columns):
+        return False
+    comparable_columns = [
+        "source",
+        "venue",
+        "market_type",
+        "symbol",
+        "timeframe",
+        "event_ts",
+        "close_ts",
+        "available_ts",
+        "decision_ts",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_base_volume",
+        "taker_buy_quote_volume",
+        "source_open_time_raw",
+        "source_close_time_raw",
+        "source_timestamp_unit",
+        "ingestion_run_id",
+    ]
+    try:
+        pdt.assert_frame_equal(
+            expected[comparable_columns].reset_index(drop=True),
+            child[comparable_columns].reset_index(drop=True),
+            check_dtype=False,
+            atol=1e-10,
+            rtol=1e-10,
+        )
+    except AssertionError:
+        return False
+    return True
 
 
 def _validate_manifest_quality(manifest: dict[str, Any], physical_quality: dict[str, dict[str, Any]]) -> list[str]:

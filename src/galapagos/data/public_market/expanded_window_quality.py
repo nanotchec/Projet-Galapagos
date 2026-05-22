@@ -113,40 +113,38 @@ def resample_expanded_ohlcv(frame_1m: pd.DataFrame, *, target_timeframe: str) ->
     bucket_sizes = frame.groupby("_bucket", sort=True).size()
     if not (bucket_sizes == minutes).all():
         raise ValueError("source 1m rows contain a partial or incomplete resampling bucket.")
-    rows: list[dict[str, Any]] = []
-    for _bucket, group in frame.groupby("_bucket", sort=True):
-        group = group.sort_values("event_ts").reset_index(drop=True)
-        first = group.iloc[0]
-        last = group.iloc[-1]
-        rows.append(
-            {
-                "source": first["source"],
-                "venue": first["venue"],
-                "market_type": first["market_type"],
-                "symbol": first["symbol"],
-                "timeframe": target_timeframe,
-                "event_ts": first["event_ts"],
-                "close_ts": last["close_ts"],
-                "available_ts": last["close_ts"],
-                "decision_ts": last["close_ts"],
-                "ingested_at_ts": first["ingested_at_ts"],
-                "open": float(first["open"]),
-                "high": float(group["high"].max()),
-                "low": float(group["low"].min()),
-                "close": float(last["close"]),
-                "volume": float(group["volume"].sum()),
-                "quote_volume": float(group["quote_volume"].sum()),
-                "trade_count": int(group["trade_count"].sum()),
-                "taker_buy_base_volume": float(group["taker_buy_base_volume"].sum()),
-                "taker_buy_quote_volume": float(group["taker_buy_quote_volume"].sum()),
-                "source_open_time_raw": int(first["source_open_time_raw"]),
-                "source_close_time_raw": int(last["source_close_time_raw"]),
-                "source_timestamp_unit": first["source_timestamp_unit"],
-                "raw_file_sha256": ",".join(sorted(set(group["raw_file_sha256"].astype(str)))),
-                "ingestion_run_id": first["ingestion_run_id"],
-            }
-        )
-    result = pd.DataFrame(rows, columns=OHLCV_COLUMNS).sort_values("event_ts").reset_index(drop=True)
+
+    grouped = frame.groupby("_bucket", sort=True)
+    result = grouped.agg(
+        source=("source", "first"),
+        venue=("venue", "first"),
+        market_type=("market_type", "first"),
+        symbol=("symbol", "first"),
+        event_ts=("event_ts", "first"),
+        close_ts=("close_ts", "last"),
+        available_ts=("close_ts", "last"),
+        decision_ts=("close_ts", "last"),
+        ingested_at_ts=("ingested_at_ts", "first"),
+        open=("open", "first"),
+        high=("high", "max"),
+        low=("low", "min"),
+        close=("close", "last"),
+        volume=("volume", "sum"),
+        quote_volume=("quote_volume", "sum"),
+        trade_count=("trade_count", "sum"),
+        taker_buy_base_volume=("taker_buy_base_volume", "sum"),
+        taker_buy_quote_volume=("taker_buy_quote_volume", "sum"),
+        source_open_time_raw=("source_open_time_raw", "first"),
+        source_close_time_raw=("source_close_time_raw", "last"),
+        source_timestamp_unit=("source_timestamp_unit", "first"),
+        raw_file_sha256=("raw_file_sha256", lambda values: ",".join(sorted(set(values.astype(str))))),
+        ingestion_run_id=("ingestion_run_id", "first"),
+    ).reset_index(drop=True)
+    result.insert(4, "timeframe", target_timeframe)
+    integer_columns = ["trade_count", "source_open_time_raw", "source_close_time_raw"]
+    for column in integer_columns:
+        result[column] = result[column].astype("int64")
+    result = result[OHLCV_COLUMNS].sort_values("event_ts").reset_index(drop=True)
     expected_rows = EXPECTED_ROWS_V3_5[target_timeframe]
     if len(result) != expected_rows:
         raise ValueError(f"resampled {target_timeframe} rows {len(result)} != expected {expected_rows}")

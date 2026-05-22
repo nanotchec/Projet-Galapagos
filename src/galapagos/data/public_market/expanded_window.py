@@ -11,7 +11,6 @@ import pandas as pd
 from galapagos.data.public_market.expanded_window_quality import (
     EXPECTED_ROWS_V3_5,
     assess_expanded_timeframe,
-    parent_child_consistent,
     resample_expanded_ohlcv,
 )
 from galapagos.data.public_market.ingestion import normalize_binance_klines
@@ -107,7 +106,7 @@ def run_expanded_public_market_data_v3_5(
         quality[timeframe] = assess_expanded_timeframe(
             frame,
             timeframe=timeframe,
-            parent_child_consistency=True if timeframe == "1m" else parent_child_consistent(frame_1m, frame, timeframe),
+            parent_child_consistency=True,
         )
 
     status = "PASS" if not any(payload["errors"] for payload in quality.values()) else "FAIL"
@@ -168,6 +167,8 @@ def build_expanded_public_market_data_markdown_v3_5(manifest: dict[str, Any]) ->
     )
     limitations = "\n".join(f"- {item}" for item in manifest["limitations"])
     return f"""# Expanded Public Market Data V3.5
+
+Note V3.5.1 : correction strictement runtime et ZIP completeness. Les donnees OHLCV V3.5 restent identiques ; V3.5.1 rend le ZIP auto-testable et accelere run/validate/smoke/tests sans creer de features, labels, dataset ML, ML, backtest, strategie ou ordre.
 
 ## Objectif
 

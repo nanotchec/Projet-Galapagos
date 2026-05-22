@@ -1,8 +1,8 @@
 {
   "version": "V3.5",
   "status": "PASS",
-  "created_at_utc": "2026-05-22T00:49:29.737309Z",
-  "run_id": "v3_5_20260522T004929Z_f22dee56",
+  "created_at_utc": "2026-05-22T08:02:24.727986Z",
+  "run_id": "v3_5_20260522T080224Z_e1153bd0",
   "source": {
     "name": "binance_public_archive",
     "venue": "binance",
@@ -557,28 +557,28 @@
   "outputs": {
     "1m": {
       "path": "data/research/v3_5/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/ohlcv.parquet",
-      "sha256": "2cbc7572304879c6a3c9df33e70a01acfce9831275039228ffa108ae55694771",
+      "sha256": "8e6d3fd31719fd143ac3bf191b0c5fb5fa0838d1fa914273762eccdd3fec8913",
       "bytes": 15362060,
       "rows": 129600,
       "format": "parquet"
     },
     "5m": {
       "path": "data/research/v3_5/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/ohlcv.parquet",
-      "sha256": "55aaf60fd28ee34a3954f4c61ce1779999a09b26ff042e98bdcaf7273dc297bb",
-      "bytes": 3137918,
+      "sha256": "e73217997ea9decba3d173d62c76ce195eeba55e52917fcf85b331fc870d3902",
+      "bytes": 3133934,
       "rows": 25920,
       "format": "parquet"
     },
     "15m": {
       "path": "data/research/v3_5/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/ohlcv.parquet",
-      "sha256": "84aa841d1c6965d7e204c888f126a67155018432a47bb85c12683bdcf53fa68f",
-      "bytes": 1077030,
+      "sha256": "e38895cb4d09cef74d3901608aca6d6867cb6780b77a8c8ef77afe6deee0fccc",
+      "bytes": 1077172,
       "rows": 8640,
       "format": "parquet"
     },
     "1h": {
       "path": "data/research/v3_5/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/ohlcv.parquet",
-      "sha256": "227e8bc0513f81b5971daf956d28934f57f89b57074f786b8973eec2d1d0e442",
+      "sha256": "61098b1c8127c54bac7347b254abf2c727d9e59a792dec4421c121850b1792e0",
       "bytes": 282208,
       "rows": 2160,
       "format": "parquet"

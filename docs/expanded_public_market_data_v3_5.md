@@ -1,5 +1,7 @@
 # Expanded Public Market Data V3.5
 
+Note V3.5.1 : correction strictement runtime et ZIP completeness. Les donnees OHLCV V3.5 restent identiques ; V3.5.1 rend le ZIP auto-testable et accelere run/validate/smoke/tests sans creer de features, labels, dataset ML, ML, backtest, strategie ou ordre.
+
 ## Objectif
 
 V3.5 etend les donnees marche publiques BTCUSDT 1m sur une fenetre fixe de 90 jours, du 2024-01-01 au 2024-03-30.
@@ -12,14 +14,14 @@ V3.5 etend les donnees marche publiques BTCUSDT 1m sur une fenetre fixe de 90 jo
 - Symbole : `BTCUSDT`
 - Timeframe source : `1m`
 - Fenetre : `2024-01-01` -> `2024-03-30`
-- Run : `v3_5_20260522T004929Z_f22dee56`
+- Run : `v3_5_20260522T080224Z_e1153bd0`
 
 ## Outputs
 
-- 1m: `129600` lignes, checksum `2cbc7572304879c6a3c9df33e70a01acfce9831275039228ffa108ae55694771`
-- 5m: `25920` lignes, checksum `55aaf60fd28ee34a3954f4c61ce1779999a09b26ff042e98bdcaf7273dc297bb`
-- 15m: `8640` lignes, checksum `84aa841d1c6965d7e204c888f126a67155018432a47bb85c12683bdcf53fa68f`
-- 1h: `2160` lignes, checksum `227e8bc0513f81b5971daf956d28934f57f89b57074f786b8973eec2d1d0e442`
+- 1m: `129600` lignes, checksum `8e6d3fd31719fd143ac3bf191b0c5fb5fa0838d1fa914273762eccdd3fec8913`
+- 5m: `25920` lignes, checksum `e73217997ea9decba3d173d62c76ce195eeba55e52917fcf85b331fc870d3902`
+- 15m: `8640` lignes, checksum `e38895cb4d09cef74d3901608aca6d6867cb6780b77a8c8ef77afe6deee0fccc`
+- 1h: `2160` lignes, checksum `61098b1c8127c54bac7347b254abf2c727d9e59a792dec4421c121850b1792e0`
 
 ## Qualite
 

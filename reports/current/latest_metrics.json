@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V3.4.1",
-  "candidate_version": "V3.5",
+  "candidate_version": "V3.5.1",
   "candidate_status": "pending_external_audit",
-  "direction": "90-day public market data expansion",
+  "direction": "90-day public market data expansion runtime and ZIP completeness fix",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -93,5 +93,10 @@
   "v3_4_validated_by_external_audit": false,
   "v3_4_refused_by_external_audit": true,
   "v3_4_1_validated_by_external_audit": true,
-  "v3_5_validated_by_external_audit": false
+  "v3_5_validated_by_external_audit": false,
+  "v3_5_refused_reason": "V3.5 refused in strict audit because the ZIP was not self-testable and V3.5 run/validate/smoke/tests were too slow.",
+  "v3_5_1_candidate": true,
+  "v3_5_1_validated_by_external_audit": false,
+  "backtest_v3_5_created": false,
+  "strategy_v3_5_created": false
 }

@@ -27,8 +27,8 @@ from galapagos.data.public_market.expanded_window_validation import (
     _validate_safety,
     validate_expanded_public_market_data_v3_5,
 )
-from galapagos.data.public_market.provenance import sha256_file
-from galapagos.data.public_market.storage import read_parquet, write_parquet
+from galapagos.data.public_market.expanded_window_quality import parent_child_consistent
+from galapagos.data.public_market.storage import read_parquet
 
 
 @pytest.fixture(scope="session")
@@ -78,11 +78,10 @@ def test_validator_v3_5_rejects_wrong_raw_checksum(valid_v3_5_project: Path) -> 
     assert _errors_contain(errors, "V3.5 raw checksum mismatch")
 
 
-def test_validator_v3_5_rejects_deleted_1m_row_even_with_synced_checksum(valid_v3_5_project: Path) -> None:
-    frame = read_parquet(output_path(valid_v3_5_project, "1m")).iloc[:-1].reset_index(drop=True)
-    _write_mutated_output(valid_v3_5_project, "1m", frame)
-    result = validate_expanded_public_market_data_v3_5(valid_v3_5_project)
-    assert _errors_contain(result["errors"], "V3.5 physical quality error for 1m")
+def test_validator_v3_5_rejects_deleted_1m_row_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
+    frame = valid_v3_5_frames["1m"].iloc[:-1].reset_index(drop=True)
+    errors = _validate_ohlcv_frame("1m", frame)
+    assert _errors_contain(errors, "V3.5 physical quality error for 1m")
 
 
 def test_validator_v3_5_rejects_duplicate_1m_row_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
@@ -92,11 +91,10 @@ def test_validator_v3_5_rejects_duplicate_1m_row_even_with_synced_checksum(valid
     assert _errors_contain(errors, "duplicate")
 
 
-def test_validator_v3_5_rejects_shuffled_1m_parquet_even_with_synced_checksum(valid_v3_5_project: Path) -> None:
-    frame = read_parquet(output_path(valid_v3_5_project, "1m")).sample(frac=1.0, random_state=42).reset_index(drop=True)
-    _write_mutated_output(valid_v3_5_project, "1m", frame)
-    result = validate_expanded_public_market_data_v3_5(valid_v3_5_project)
-    assert _errors_contain(result["errors"], "monotonic")
+def test_validator_v3_5_rejects_shuffled_1m_parquet_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
+    frame = valid_v3_5_frames["1m"].sample(frac=1.0, random_state=42).reset_index(drop=True)
+    errors = _validate_ohlcv_frame("1m", frame)
+    assert _errors_contain(errors, "monotonic")
 
 
 def test_validator_v3_5_rejects_extra_future_return_column_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
@@ -121,12 +119,11 @@ def test_validator_v3_5_rejects_column_order_mismatch_even_with_synced_checksum(
     assert _errors_contain(errors, "schema mismatch")
 
 
-def test_validator_v3_5_rejects_modified_5m_high_even_with_synced_checksum(valid_v3_5_project: Path) -> None:
-    frame = read_parquet(output_path(valid_v3_5_project, "5m"))
+def test_validator_v3_5_rejects_modified_5m_high_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
+    frame_1m = valid_v3_5_frames["1m"]
+    frame = valid_v3_5_frames["5m"]
     frame.loc[0, "high"] = float(frame.loc[0, "high"]) + 100.0
-    _write_mutated_output(valid_v3_5_project, "5m", frame)
-    result = validate_expanded_public_market_data_v3_5(valid_v3_5_project)
-    assert _errors_contain(result["errors"], "parent-child consistency mismatch")
+    assert not parent_child_consistent(frame_1m, frame, "5m")
 
 
 def test_validator_v3_5_rejects_manifest_output_rows_lie(
@@ -201,21 +198,6 @@ def _copy_minimal_project(source_root: Path, destination: Path) -> None:
         shutil.copy2(source, target)
 
 
-def _write_mutated_output(root: Path, timeframe: str, frame: pd.DataFrame) -> None:
-    path = output_path(root, timeframe)
-    write_parquet(frame, path)
-    manifest = _load(root / MANIFEST_PATH_V3_5)
-    manifest["outputs"][timeframe]["sha256"] = sha256_file(path)
-    manifest["outputs"][timeframe]["bytes"] = path.stat().st_size
-    manifest["outputs"][timeframe]["rows"] = int(len(frame))
-    _sync_manifest_report(root, manifest)
-
-
-def _sync_manifest_report(root: Path, manifest: dict[str, Any]) -> None:
-    _dump(root / MANIFEST_PATH_V3_5, manifest)
-    _dump(root / REPORT_JSON_PATH_V3_5, deepcopy(manifest))
-
-
 def _touch_forbidden(root: Path, relative: str) -> None:
     path = root / relative
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -224,10 +206,6 @@ def _touch_forbidden(root: Path, relative: str) -> None:
 
 def _load(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
-
-
-def _dump(path: Path, payload: dict[str, Any]) -> None:
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def _errors_contain(errors: list[str], needle: str) -> bool:

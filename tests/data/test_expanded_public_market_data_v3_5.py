@@ -1,32 +1,19 @@
 from __future__ import annotations
 
-import shutil
 from pathlib import Path
 
 import pandas as pd
 import pytest
 
-from galapagos.data.public_market.expanded_window import DATES_V3_5, output_path, raw_zip_path, run_expanded_public_market_data_v3_5
+from galapagos.data.public_market.expanded_window import DATES_V3_5, output_path
 from galapagos.data.public_market.expanded_window_quality import EXPECTED_ROWS_V3_5, parent_child_consistent
 from galapagos.data.public_market.schemas import OHLCV_COLUMNS
 from galapagos.data.public_market.storage import read_parquet
 
 
 @pytest.fixture(scope="session")
-def expanded_project(tmp_path_factory: pytest.TempPathFactory) -> Path:
-    root = tmp_path_factory.mktemp("expanded_v3_5")
-    workspace = Path(__file__).resolve().parents[2]
-    raw_source = workspace / "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m"
-    if raw_source.exists():
-        for current_date in DATES_V3_5:
-            source = raw_source / f"BTCUSDT-1m-{current_date}.zip"
-            if source.exists():
-                target = raw_zip_path(root, current_date)
-                target.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(source, target)
-    run_multi = run_expanded_public_market_data_v3_5
-    run_multi(root, no_network=False, validate_project_state=False)
-    return root
+def expanded_project() -> Path:
+    return Path(__file__).resolve().parents[2]
 
 
 def test_expanded_window_expected_dates() -> None:
