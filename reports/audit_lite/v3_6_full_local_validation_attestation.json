@@ -1,0 +1,168 @@
+{
+  "version": "V3.6",
+  "validation_scope": "full_local",
+  "created_at_utc": "2026-05-22T12:18:16.590063Z",
+  "audit_lite_zip_path": "projet-galapagos-v3.6-audit-lite.zip",
+  "audit_lite_zip_sha256": "79f303f7ad7cbe91a15aec8c2b5bffd631763d71c6f8071828e01b8107b24245",
+  "audit_lite_zip_bytes": 527802,
+  "full_local_project_path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+  "commands_executed": [
+    "python scripts/run_expanded_causal_feature_store_v3_6.py",
+    "python scripts/validate_expanded_causal_feature_store_v3_6.py",
+    "python -m pytest -q tests/features/test_expanded_causal_features_v3_6.py",
+    "python -m pytest -q tests/validation/test_expanded_causal_feature_store_v3_6_validator.py",
+    "python scripts/release_audit_lite_zip_v3_6.py",
+    "python scripts/audit_audit_lite_zip_v3_6.py --zip projet-galapagos-v3.6-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v3_6.py --zip projet-galapagos-v3.6-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_expanded_causal_feature_store_v3_6.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python scripts/validate_expanded_causal_feature_store_v3_6.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python -m pytest -q tests/features/test_expanded_causal_features_v3_6.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python -m pytest -q tests/validation/test_expanded_causal_feature_store_v3_6_validator.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python scripts/release_audit_lite_zip_v3_6.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python scripts/audit_audit_lite_zip_v3_6.py --zip projet-galapagos-v3.6-audit-lite.zip": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python scripts/smoke_audit_lite_zip_v3_6.py --zip projet-galapagos-v3.6-audit-lite.zip": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python -m pytest --collect-only -q": {
+      "returncode": 0,
+      "passed": true
+    }
+  },
+  "command_durations_seconds": {
+    "python scripts/run_expanded_causal_feature_store_v3_6.py": 2.82,
+    "python scripts/validate_expanded_causal_feature_store_v3_6.py": 0.889,
+    "python -m pytest -q tests/features/test_expanded_causal_features_v3_6.py": 0.654,
+    "python -m pytest -q tests/validation/test_expanded_causal_feature_store_v3_6_validator.py": 2.166,
+    "python scripts/release_audit_lite_zip_v3_6.py": 0.676,
+    "python scripts/audit_audit_lite_zip_v3_6.py --zip projet-galapagos-v3.6-audit-lite.zip": 0.401,
+    "python scripts/smoke_audit_lite_zip_v3_6.py --zip projet-galapagos-v3.6-audit-lite.zip": 0.434,
+    "python -m pytest --collect-only -q": 2.14
+  },
+  "command_output_tails": {
+    "python scripts/run_expanded_causal_feature_store_v3_6.py": {
+      "stdout_tail": "=== Generating Galapagos V3.6 90-Day Causal Feature Store Preview ===\nV3.6 run mode: validate_inputs=True\nOnly validate_expanded_public_market_data_v3_5 is called before feature generation.\nStatus: PASS\nRun ID: v3_6_20260522T121713Z_150a036c\n  1m: data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/features.parquet (129600 rows)\n  5m: data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/features.parquet (25920 rows)\n  15m: data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/features.parquet (8640 rows)\n  1h: data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/features.parquet (2160 rows)\n====================================================================\n",
+      "stderr_tail": ""
+    },
+    "python scripts/validate_expanded_causal_feature_store_v3_6.py": {
+      "stdout_tail": "\n        \"inf_counts_by_column\": {\n          \"close_lag_1\": 0,\n          \"return_1\": 0,\n          \"log_return_1\": 0,\n          \"return_3\": 0,\n          \"log_return_3\": 0,\n          \"return_5\": 0,\n          \"log_return_5\": 0,\n          \"rolling_vol_5\": 0,\n          \"rolling_vol_15\": 0,\n          \"rolling_vol_30\": 0,\n          \"candle_range\": 0,\n          \"candle_body\": 0,\n          \"upper_wick\": 0,\n          \"lower_wick\": 0,\n          \"close_position_in_range\": 0,\n          \"volume_lag_1\": 0,\n          \"volume_return_1\": 0,\n          \"rolling_volume_mean_5\": 0,\n          \"rolling_volume_mean_15\": 0,\n          \"rolling_volume_zscore_15\": 0,\n          \"sma_5\": 0,\n          \"sma_15\": 0,\n          \"sma_30\": 0,\n          \"close_to_sma_5\": 0,\n          \"close_to_sma_15\": 0,\n          \"close_to_sma_30\": 0\n        },\n        \"forbidden_columns_present\": false,\n        \"timestamps_utc\": true,\n        \"monotonic_event_ts\": true,\n        \"feature_available_ts_valid\": true,\n        \"decision_ts_valid\": true,\n        \"causal_guard_passed\": true,\n        \"errors\": [],\n        \"warnings\": [],\n        \"source_hashes_valid\": true\n      },\n      \"1h\": {\n        \"rows\": 2160,\n        \"expected_rows\": 2160,\n        \"warmup_rows\": 30,\n        \"rows_after_warmup\": 2130,\n        \"duplicate_rows\": 0,\n        \"null_counts_by_column\": {\n          \"close_lag_1\": 1,\n          \"return_1\": 1,\n          \"log_return_1\": 1,\n          \"return_3\": 3,\n          \"log_return_3\": 3,\n          \"return_5\": 5,\n          \"log_return_5\": 5,\n          \"rolling_vol_5\": 5,\n          \"rolling_vol_15\": 15,\n          \"rolling_vol_30\": 30,\n          \"candle_range\": 0,\n          \"candle_body\": 0,\n          \"upper_wick\": 0,\n          \"lower_wick\": 0,\n          \"close_position_in_range\": 0,\n          \"volume_lag_1\": 1,\n          \"volume_return_1\": 0,\n          \"rolling_volume_mean_5\": 4,\n          \"rolling_volume_mean_15\": 14,\n          \"rolling_volume_zscore_15\": 0,\n          \"sma_5\": 4,\n          \"sma_15\": 14,\n          \"sma_30\": 29,\n          \"close_to_sma_5\": 4,\n          \"close_to_sma_15\": 14,\n          \"close_to_sma_30\": 29\n        },\n        \"inf_counts_by_column\": {\n          \"close_lag_1\": 0,\n          \"return_1\": 0,\n          \"log_return_1\": 0,\n          \"return_3\": 0,\n          \"log_return_3\": 0,\n          \"return_5\": 0,\n          \"log_return_5\": 0,\n          \"rolling_vol_5\": 0,\n          \"rolling_vol_15\": 0,\n          \"rolling_vol_30\": 0,\n          \"candle_range\": 0,\n          \"candle_body\": 0,\n          \"upper_wick\": 0,\n          \"lower_wick\": 0,\n          \"close_position_in_range\": 0,\n          \"volume_lag_1\": 0,\n          \"volume_return_1\": 0,\n          \"rolling_volume_mean_5\": 0,\n          \"rolling_volume_mean_15\": 0,\n          \"rolling_volume_zscore_15\": 0,\n          \"sma_5\": 0,\n          \"sma_15\": 0,\n          \"sma_30\": 0,\n          \"close_to_sma_5\": 0,\n          \"close_to_sma_15\": 0,\n          \"close_to_sma_30\": 0\n        },\n        \"forbidden_columns_present\": false,\n        \"timestamps_utc\": true,\n        \"monotonic_event_ts\": true,\n        \"feature_available_ts_valid\": true,\n        \"decision_ts_valid\": true,\n        \"causal_guard_passed\": true,\n        \"errors\": [],\n        \"warnings\": [],\n        \"source_hashes_valid\": true\n      }\n    },\n    \"safety\": {\n      \"public_read_only\": true,\n      \"authentication_used\": false,\n      \"api_key_used\": false,\n      \"private_endpoint_used\": false,\n      \"orders_enabled\": false,\n      \"paper_live_enabled\": false,\n      \"trading_enabled\": false,\n      \"ml_enabled\": false,\n      \"labels_enabled\": false,\n      \"dataset_enabled\": false,\n      \"backtest_enabled\": false,\n      \"strategy_enabled\": false,\n      \"execution_enabled\": false\n    },\n    \"limitations\": [\n      \"V3.6 produit uniquement des features OHLCV causales sur BTCUSDT 2024-01-01 a 2024-03-30 a partir des donnees V3.5 validees.\",\n      \"V3.6 ne produit aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie et aucun ordre.\"\n    ]\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    "python -m pytest -q tests/features/test_expanded_causal_features_v3_6.py": {
+      "stdout_tail": ".........                                                                [100%]\n9 passed in 0.43s\n",
+      "stderr_tail": ""
+    },
+    "python -m pytest -q tests/validation/test_expanded_causal_feature_store_v3_6_validator.py": {
+      "stdout_tail": "......................                                                   [100%]\n22 passed in 1.96s\n",
+      "stderr_tail": ""
+    },
+    "python scripts/release_audit_lite_zip_v3_6.py": {
+      "stdout_tail": "{\n  \"version\": \"V3.6\",\n  \"status\": \"PASS\",\n  \"zip_path\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.6-audit-lite.zip\",\n  \"zip_size_bytes\": 527802,\n  \"files_included\": 106,\n  \"raw_zips_excluded\": true,\n  \"raw_zip_inventory_count\": 90,\n  \"full_parquet_excluded_count\": 8,\n  \"sample_parquet_count\": 4,\n  \"audit_lite_does_not_replace_full_validation\": true\n}\n",
+      "stderr_tail": ""
+    },
+    "python scripts/audit_audit_lite_zip_v3_6.py --zip projet-galapagos-v3.6-audit-lite.zip": {
+      "stdout_tail": "{\n  \"version\": \"V3.6\",\n  \"zip_path\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.6-audit-lite.zip\",\n  \"zip_size_bytes\": 527802,\n  \"zip_size_mb\": 0.503,\n  \"entries_count\": 106,\n  \"audit_lite_zip_passed\": true,\n  \"raw_zips_absent\": true,\n  \"top_20_largest_files\": [\n    {\n      \"path\": \"data/audit_lite/v3_6/features/timeframe=15m/sample.parquet\",\n      \"bytes\": 133866\n    },\n    {\n      \"path\": \"data/audit_lite/v3_6/features/timeframe=5m/sample.parquet\",\n      \"bytes\": 132424\n    },\n    {\n      \"path\": \"data/audit_lite/v3_6/features/timeframe=1h/sample.parquet\",\n      \"bytes\": 132246\n    },\n    {\n      \"path\": \"data/audit_lite/v3_6/features/timeframe=1m/sample.parquet\",\n      \"bytes\": 129307\n    },\n    {\n      \"path\": \"reports/audit_lite/v3_6_artifact_inventory.json\",\n      \"bytes\": 46126\n    },\n    {\n      \"path\": \"src/galapagos/labels/validation.py\",\n      \"bytes\": 29670\n    },\n    {\n      \"path\": \"reports/data_quality/expanded_public_market_data_v3_5.json\",\n      \"bytes\": 28253\n    },\n    {\n      \"path\": \"reports/manifests/expanded_public_market_data_v3_5_manifest.json\",\n      \"bytes\": 28253\n    },\n    {\n      \"path\": \"src/galapagos/validation/resampling.py\",\n      \"bytes\": 23404\n    },\n    {\n      \"path\": \"src/galapagos/validation/market_data.py\",\n      \"bytes\": 20115\n    },\n    {\n      \"path\": \"src/galapagos/labels/multi_day_validation.py\",\n      \"bytes\": 19813\n    },\n    {\n      \"path\": \"src/galapagos/ml/robustness.py\",\n      \"bytes\": 19445\n    },\n    {\n      \"path\": \"src/galapagos/ml/multi_day_validation.py\",\n      \"bytes\": 19166\n    },\n    {\n      \"path\": \"src/galapagos/ml/validation.py\",\n      \"bytes\": 18878\n    },\n    {\n      \"path\": \"src/galapagos/datasets/multi_day_validation.py\",\n      \"bytes\": 18614\n    },\n    {\n      \"path\": \"src/galapagos/datasets/validation.py\",\n      \"bytes\": 18274\n    },\n    {\n      \"path\": \"scripts/release_audit_lite_zip_v3_6.py\",\n      \"bytes\": 18127\n    },\n    {\n      \"path\": \"src/galapagos/features/validation.py\",\n      \"bytes\": 17222\n    },\n    {\n      \"path\": \"src/galapagos/data/public_market/expanded_window_validation.py\",\n      \"bytes\": 16608\n    },\n    {\n      \"path\": \"src/galapagos/ml/robustness_validation.py\",\n      \"bytes\": 15747\n    }\n  ],\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+      "stderr_tail": ""
+    },
+    "python scripts/smoke_audit_lite_zip_v3_6.py --zip projet-galapagos-v3.6-audit-lite.zip": {
+      "stdout_tail": "{\n  \"version\": \"V3.6\",\n  \"zip_path\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.6-audit-lite.zip\",\n  \"smoke_passed\": true,\n  \"raw_zips_absent\": true,\n  \"full_validation_replaced\": false,\n  \"full_validation_note\": \"audit-lite does not replace full local validation\",\n  \"sample_rows\": {\n    \"1m\": 398,\n    \"5m\": 398,\n    \"15m\": 397,\n    \"1h\": 390\n  },\n  \"smoke_duration_seconds\": 0.372,\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+      "stderr_tail": ""
+    },
+    "python -m pytest --collect-only -q": {
+      "stdout_tail": "ngestion_v2_3_validator.py::test_validator_rejects_wrong_raw_file_sha256_in_silver_even_with_synced_silver_checksum\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_wrong_ingestion_run_id_in_silver_even_with_synced_silver_checksum\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_wrong_ingested_at_ts_in_silver_even_with_synced_silver_checksum\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_duplicate_row_even_with_synced_manifest_checksum\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_negative_volume_even_with_synced_manifest_checksum\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_ohlc_violation_even_with_synced_manifest_checksum\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_missing_critical_column\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_authentication_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_api_key_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_private_endpoint_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_orders_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_paper_live_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_trading_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_ml_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_labels_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_safety_flag_backtest_true\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_manifest_unexpected_strategy_validated_key\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_quality_report_unexpected_claim_key\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_synced_limitations_strategy_validated_claim\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_synced_limitations_trading_enabled_claim\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_empty_synced_limitations\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_invalid_created_at_even_if_report_synced\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_invalid_ingestion_run_id_even_if_report_synced\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_markdown_forbidden_strategy_claim\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_allows_v2_3_markdown_negative_safety_claims\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_quality_report_raw_checksum_lie\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_v2_3_quality_report_silver_path_lie\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_allows_expected_v2_3_limitations\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_extra_strategy_validated_column_in_silver_even_with_synced_checksum\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_extra_future_return_column_in_silver_even_with_synced_checksum\ntests/validation/test_public_market_ingestion_v2_3_validator.py::test_validator_rejects_silver_column_order_mismatch_even_with_synced_checksum\n\n3841 tests collected in 1.86s\n",
+      "stderr_tail": ""
+    }
+  },
+  "feature_output_files": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/features.parquet",
+      "sha256": "686a88848abc11697585380cc30cb75a7d919d2e4233d92b7f143e411996a8ca",
+      "bytes": 2401445,
+      "rows": 8640,
+      "columns_count": 46,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/features.parquet",
+      "sha256": "935054e4ab575c15b9b7105af5c36edb974b191204d2b4b14f1994e5b3ea987e",
+      "bytes": 615274,
+      "rows": 2160,
+      "columns_count": 46,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/features.parquet",
+      "sha256": "b67f5b563d0d7a1300aa956af2ecae9616f7c5d74550c0ed75ad332809167136",
+      "bytes": 34478157,
+      "rows": 129600,
+      "columns_count": 46,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/features.parquet",
+      "sha256": "89479d3014e538f502ab11fa3c888d116af986e678d389f2f0ed3b18d430fac7",
+      "bytes": 7049909,
+      "rows": 25920,
+      "columns_count": 46,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:55:00Z"
+    }
+  ],
+  "manifest_path": "reports/manifests/expanded_causal_feature_store_v3_6_manifest.json",
+  "manifest_sha256": "94cdde40762d61be59f84f25683cb5d09e6ab438fdb8fc553e9a5fa2c563be92",
+  "report_path": "reports/features/expanded_causal_feature_store_v3_6.json",
+  "report_sha256": "94cdde40762d61be59f84f25683cb5d09e6ab438fdb8fc553e9a5fa2c563be92",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": false,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "audit_lite_does_not_replace_full_local_validation": true,
+  "errors": [],
+  "warnings": []
+}

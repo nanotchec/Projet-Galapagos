@@ -37,6 +37,8 @@ REQUIRED_ENTRIES = [
     "reports/audit_lite/v3_6_artifact_inventory.json",
     "reports/audit_lite/v3_6_artifact_inventory.md",
     "reports/audit_lite/v3_6_parquet_summary.json",
+    "reports/audit_lite/v3_6_full_local_validation_attestation.json",
+    "reports/audit_lite/v3_6_full_local_validation_attestation.md",
     "reports/audit_lite/zip_size_report_v3_6.json",
     "reports/audit_lite/zip_size_report_v3_6.md",
     "reports/PROJECT_STATE.json",
@@ -165,6 +167,7 @@ def _validate_json_reports(root: Path) -> list[str]:
     errors: list[str] = []
     inventory = _read_json(root / "reports/audit_lite/v3_6_artifact_inventory.json")
     parquet_summary = _read_json(root / "reports/audit_lite/v3_6_parquet_summary.json")
+    attestation = _read_json(root / "reports/audit_lite/v3_6_full_local_validation_attestation.json")
     size_report = _read_json(root / "reports/audit_lite/zip_size_report_v3_6.json")
     manifest = _read_json(root / "reports/manifests/expanded_causal_feature_store_v3_6_manifest.json")
     report = _read_json(root / "reports/features/expanded_causal_feature_store_v3_6.json")
@@ -176,6 +179,13 @@ def _validate_json_reports(root: Path) -> list[str]:
         errors.append("parquet summary must include V3.6 feature summaries")
     if size_report.get("raw_zips_excluded") is not True:
         errors.append("zip size report must mark raw zips excluded")
+    if attestation.get("validation_scope") != "full_local":
+        errors.append("full local attestation must use validation_scope=full_local")
+    if attestation.get("audit_lite_does_not_replace_full_local_validation") is not True:
+        errors.append("full local attestation must state audit-lite does not replace full validation")
+    for flag in ["tests_passed", "validator_passed", "audit_lite_passed", "smoke_audit_lite_passed", "no_trading", "no_backtest", "no_orders"]:
+        if attestation.get(flag) is not True:
+            errors.append(f"full local attestation flag must be true: {flag}")
     if manifest != report:
         errors.append("V3.6 manifest/report mismatch in audit-lite zip")
     safety = manifest.get("safety", {})

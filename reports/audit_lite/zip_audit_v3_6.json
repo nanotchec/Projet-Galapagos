@@ -1,9 +1,9 @@
 {
   "version": "V3.6",
   "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.6-audit-lite.zip",
-  "zip_size_bytes": 527729,
-  "zip_size_mb": 0.503,
-  "entries_count": 106,
+  "zip_size_bytes": 532679,
+  "zip_size_mb": 0.508,
+  "entries_count": 108,
   "audit_lite_zip_passed": true,
   "raw_zips_absent": true,
   "top_20_largest_files": [
@@ -52,6 +52,10 @@
       "bytes": 19813
     },
     {
+      "path": "reports/audit_lite/v3_6_full_local_validation_attestation.json",
+      "bytes": 19759
+    },
+    {
       "path": "src/galapagos/ml/robustness.py",
       "bytes": 19445
     },
@@ -73,7 +77,7 @@
     },
     {
       "path": "scripts/release_audit_lite_zip_v3_6.py",
-      "bytes": 17644
+      "bytes": 18127
     },
     {
       "path": "src/galapagos/features/validation.py",
@@ -82,10 +86,6 @@
     {
       "path": "src/galapagos/data/public_market/expanded_window_validation.py",
       "bytes": 16608
-    },
-    {
-      "path": "src/galapagos/ml/robustness_validation.py",
-      "bytes": 15747
     }
   ],
   "errors": [],

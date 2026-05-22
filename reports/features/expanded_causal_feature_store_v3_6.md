@@ -8,7 +8,7 @@ V3.6 construit uniquement un feature store OHLCV causal 90 jours sur BTCUSDT du 
 
 - Source : OHLCV V3.5 `data/research/v3_5/silver/ohlcv`
 - Timeframes : `1m`, `5m`, `15m`, `1h`
-- Run : `v3_6_20260522T093427Z_0d383807`
+- Run : `v3_6_20260522T121713Z_150a036c`
 
 ## Outputs
 

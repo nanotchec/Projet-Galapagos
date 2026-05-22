@@ -1047,7 +1047,7 @@
     {
       "timeframe": "15m",
       "path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/features.parquet",
-      "sha256": "7c2c7f0a7ce443001b4afd09c18f2143df05e931ec5186c83edafde77caff3e4",
+      "sha256": "686a88848abc11697585380cc30cb75a7d919d2e4233d92b7f143e411996a8ca",
       "bytes": 2401445,
       "rows": 8640,
       "columns": [
@@ -1104,7 +1104,7 @@
     {
       "timeframe": "1h",
       "path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/features.parquet",
-      "sha256": "77983d288b328363b05f27f82ff5cd3df7d8b17db932267eec9a7a0cbb9405b5",
+      "sha256": "935054e4ab575c15b9b7105af5c36edb974b191204d2b4b14f1994e5b3ea987e",
       "bytes": 615274,
       "rows": 2160,
       "columns": [
@@ -1161,7 +1161,7 @@
     {
       "timeframe": "1m",
       "path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/features.parquet",
-      "sha256": "08b4aab00960a1594f05c006290c86655e7160c023750a1b05d0e7885b8bd555",
+      "sha256": "b67f5b563d0d7a1300aa956af2ecae9616f7c5d74550c0ed75ad332809167136",
       "bytes": 34478157,
       "rows": 129600,
       "columns": [
@@ -1218,7 +1218,7 @@
     {
       "timeframe": "5m",
       "path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/features.parquet",
-      "sha256": "37cea960703a0fa9237e575f5511d5b6ef3194bf746d2334391a4c1c228d29b3",
+      "sha256": "89479d3014e538f502ab11fa3c888d116af986e678d389f2f0ed3b18d430fac7",
       "bytes": 7049909,
       "rows": 25920,
       "columns": [
@@ -1277,38 +1277,38 @@
     {
       "timeframe": "1m",
       "path": "data/audit_lite/v3_6/features/timeframe=1m/sample.parquet",
-      "sha256": "ceb897edb99deae122996ba9fed1d9ea12f3b7ba193a4b3098615d10f3773e4b",
+      "sha256": "8b8285e04bb68407b41e412957b30e3cdfefb18c41977314dd62875227769590",
       "bytes": 129307,
       "rows": 398,
       "source_full_path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/features.parquet",
-      "source_full_sha256": "08b4aab00960a1594f05c006290c86655e7160c023750a1b05d0e7885b8bd555"
+      "source_full_sha256": "b67f5b563d0d7a1300aa956af2ecae9616f7c5d74550c0ed75ad332809167136"
     },
     {
       "timeframe": "5m",
       "path": "data/audit_lite/v3_6/features/timeframe=5m/sample.parquet",
-      "sha256": "2c2b27ca4f45c191a1828ca0e73b1c635021fa339f6488c84f3443bac594e53a",
+      "sha256": "1bd994751ee3356d8eeda29902c43451e0ae9909bb7fc2f4e5afcbfe32afd4b7",
       "bytes": 132424,
       "rows": 398,
       "source_full_path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/features.parquet",
-      "source_full_sha256": "37cea960703a0fa9237e575f5511d5b6ef3194bf746d2334391a4c1c228d29b3"
+      "source_full_sha256": "89479d3014e538f502ab11fa3c888d116af986e678d389f2f0ed3b18d430fac7"
     },
     {
       "timeframe": "15m",
       "path": "data/audit_lite/v3_6/features/timeframe=15m/sample.parquet",
-      "sha256": "a6803758b73d41714c877c686c04d40e620f2796b061161a347ad69245173150",
+      "sha256": "ea8f4b309b0eaebf1b7c43a1dfefc243c69afbe204991b9042484339079678ec",
       "bytes": 133866,
       "rows": 397,
       "source_full_path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/features.parquet",
-      "source_full_sha256": "7c2c7f0a7ce443001b4afd09c18f2143df05e931ec5186c83edafde77caff3e4"
+      "source_full_sha256": "686a88848abc11697585380cc30cb75a7d919d2e4233d92b7f143e411996a8ca"
     },
     {
       "timeframe": "1h",
       "path": "data/audit_lite/v3_6/features/timeframe=1h/sample.parquet",
-      "sha256": "5a97ac5dacb3a3eab425c2187cadd4324d894c7a3b4247058ec2c1770092309e",
+      "sha256": "748ecb99ee143ba16176b0535791df825bcd9cd83b87e3c2c814c37de04b90b1",
       "bytes": 132246,
       "rows": 390,
       "source_full_path": "data/research/v3_6/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/features.parquet",
-      "source_full_sha256": "77983d288b328363b05f27f82ff5cd3df7d8b17db932267eec9a7a0cbb9405b5"
+      "source_full_sha256": "935054e4ab575c15b9b7105af5c36edb974b191204d2b4b14f1994e5b3ea987e"
     }
   ],
   "notes": [

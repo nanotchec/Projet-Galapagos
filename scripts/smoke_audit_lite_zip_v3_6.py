@@ -112,6 +112,7 @@ def _validate_reports_and_samples(root: Path) -> tuple[list[str], dict[str, int]
     report = _read_json(root / "reports/features/expanded_causal_feature_store_v3_6.json")
     parquet_summary = _read_json(root / "reports/audit_lite/v3_6_parquet_summary.json")
     artifact_inventory = _read_json(root / "reports/audit_lite/v3_6_artifact_inventory.json")
+    attestation = _read_json(root / "reports/audit_lite/v3_6_full_local_validation_attestation.json")
     project_state = _read_json(root / "reports/PROJECT_STATE.json")
     if manifest != report:
         errors.append("V3.6 manifest and report differ in audit-lite smoke")
@@ -123,6 +124,13 @@ def _validate_reports_and_samples(root: Path) -> tuple[list[str], dict[str, int]
         errors.append("audit-lite inventory must not replace full validation")
     if len(artifact_inventory.get("raw_zips_excluded", [])) != 90:
         errors.append("audit-lite inventory must represent 90 raw zips")
+    if attestation.get("validation_scope") != "full_local":
+        errors.append("full local attestation must use validation_scope=full_local")
+    if attestation.get("audit_lite_does_not_replace_full_local_validation") is not True:
+        errors.append("full local attestation must state audit-lite does not replace full validation")
+    for flag in ["tests_passed", "validator_passed", "audit_lite_passed", "smoke_audit_lite_passed", "no_trading", "no_backtest", "no_orders"]:
+        if attestation.get(flag) is not True:
+            errors.append(f"full local attestation flag must be true: {flag}")
     if parquet_summary.get("feature_schema") != "FEATURE_COLUMNS_V3_6":
         errors.append("parquet summary must identify FEATURE_COLUMNS_V3_6")
     for timeframe, summary in parquet_summary.get("features", {}).items():

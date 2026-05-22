@@ -24,6 +24,8 @@ ARTIFACT_INVENTORY_MD = AUDIT_LITE_DIR / "v3_6_artifact_inventory.md"
 PARQUET_SUMMARY_JSON = AUDIT_LITE_DIR / "v3_6_parquet_summary.json"
 ZIP_SIZE_JSON = AUDIT_LITE_DIR / "zip_size_report_v3_6.json"
 ZIP_SIZE_MD = AUDIT_LITE_DIR / "zip_size_report_v3_6.md"
+FULL_LOCAL_ATTESTATION_JSON = AUDIT_LITE_DIR / "v3_6_full_local_validation_attestation.json"
+FULL_LOCAL_ATTESTATION_MD = AUDIT_LITE_DIR / "v3_6_full_local_validation_attestation.md"
 V3_5_MANIFEST = Path("reports/manifests/expanded_public_market_data_v3_5_manifest.json")
 V3_6_MANIFEST = Path("reports/manifests/expanded_causal_feature_store_v3_6_manifest.json")
 V3_6_REPORT = Path("reports/features/expanded_causal_feature_store_v3_6.json")
@@ -287,6 +289,10 @@ def _collect_audit_lite_files(root: Path) -> list[Path]:
         str(ZIP_SIZE_JSON),
         str(ZIP_SIZE_MD),
     ]
+    optional_files = [
+        str(FULL_LOCAL_ATTESTATION_JSON),
+        str(FULL_LOCAL_ATTESTATION_MD),
+    ]
     include_dirs = [
         "src/galapagos/data/public_market",
         "src/galapagos/validation",
@@ -302,6 +308,10 @@ def _collect_audit_lite_files(root: Path) -> list[Path]:
         if not path.exists():
             raise FileNotFoundError(f"missing audit-lite input: {item}")
         if path.is_file() and _allowed(path.relative_to(root)):
+            files.append(path.relative_to(root))
+    for item in optional_files:
+        path = root / item
+        if path.exists() and path.is_file() and _allowed(path.relative_to(root)):
             files.append(path.relative_to(root))
     for item in include_dirs:
         path = root / item
