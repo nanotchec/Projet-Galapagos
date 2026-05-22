@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V3.4.1",
-  "candidate_version": "V3.5.1",
+  "candidate_version": "V3.5.2",
   "candidate_status": "pending_external_audit",
-  "direction": "90-day public market data expansion runtime and ZIP completeness fix",
+  "direction": "90-day public market data expansion raw-to-1m validation runtime fix",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -136,5 +136,8 @@
   "v3_5_1_candidate": true,
   "v3_5_1_validated_by_external_audit": false,
   "backtest_v3_5_created": false,
-  "strategy_v3_5_created": false
+  "strategy_v3_5_created": false,
+  "v3_5_1_refused_reason": "V3.5.1 refused in strict audit because _validate_raw_to_1m recalculated dates inside a 90-date loop and made validation timeout.",
+  "v3_5_2_candidate": true,
+  "v3_5_2_validated_by_external_audit": false
 }

@@ -301,14 +301,25 @@ def _count_binance_kline_zip_rows_fast(path: Path) -> int:
 
 def _validate_raw_to_1m(manifest: dict[str, Any], frame_1m: pd.DataFrame, raw_rows: dict[str, int]) -> list[str]:
     errors: list[str] = []
-    frame = frame_1m.copy()
-    frame["event_ts"] = pd.to_datetime(frame["event_ts"], utc=True)
+    frame = frame_1m[["event_ts", "raw_file_sha256"]].copy()
+    event_ts = pd.to_datetime(frame["event_ts"], utc=True)
+    frame["_date"] = event_ts.dt.date.astype(str)
+    rows_by_date = frame.groupby("_date", sort=True).size().to_dict()
+    sha_by_date = (
+        frame.groupby("_date", sort=True)["raw_file_sha256"]
+        .agg(lambda values: set(values.astype(str).unique()))
+        .to_dict()
+    )
+    expected_dates = set(DATES_V3_5)
+    for observed_date in sorted(set(rows_by_date) - expected_dates):
+        errors.append(f"V3.5 raw-to-1m unexpected date: {observed_date}")
     for current_date in DATES_V3_5:
-        day_rows = frame[frame["event_ts"].dt.strftime("%Y-%m-%d") == current_date]
-        if len(day_rows) != raw_rows.get(current_date):
+        observed_rows = int(rows_by_date.get(current_date, 0))
+        if observed_rows != raw_rows.get(current_date):
             errors.append(f"V3.5 raw-to-1m row mismatch for {current_date}")
         expected_sha = manifest.get("raw_files", {}).get(current_date, {}).get("sha256")
-        if set(day_rows["raw_file_sha256"].astype(str).unique()) != {expected_sha}:
+        observed_sha_set = sha_by_date.get(current_date, set())
+        if observed_sha_set != {expected_sha}:
             errors.append(f"V3.5 raw-to-1m checksum mismatch for {current_date}")
     return errors
 

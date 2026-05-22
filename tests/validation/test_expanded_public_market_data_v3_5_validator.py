@@ -22,6 +22,7 @@ from galapagos.data.public_market.expanded_window_validation import (
     _validate_markdown,
     _validate_ohlcv_frame,
     _validate_output_entry,
+    _validate_raw_to_1m,
     _validate_raw_files,
     _validate_report,
     _validate_safety,
@@ -184,6 +185,25 @@ def test_validator_v3_5_rejects_backtest_report_created(tmp_path: Path) -> None:
     assert _errors_contain(errors, "Forbidden V3.5 artifact detected")
 
 
+def test_validate_raw_to_1m_uses_vectorized_date_grouping(valid_v3_5_template: Path) -> None:
+    source = valid_v3_5_template / "src/galapagos/data/public_market/expanded_window_validation.py"
+    function_source = _extract_function_source(source.read_text(encoding="utf-8"), "_validate_raw_to_1m")
+    assert '.dt.strftime("%Y-%m-%d") == current_date' not in function_source
+    assert 'groupby("_date"' in function_source
+
+
+def test_validate_raw_to_1m_rejects_unexpected_date_fast(
+    valid_v3_5_frames: dict[str, pd.DataFrame],
+    valid_v3_5_manifest_report: tuple[dict[str, Any], dict[str, Any]],
+) -> None:
+    manifest, _report = valid_v3_5_manifest_report
+    frame = valid_v3_5_frames["1m"]
+    frame.loc[0, "event_ts"] = "2024-04-01T00:00:00Z"
+    raw_rows = {current_date: int(payload["rows"]) for current_date, payload in manifest["raw_files"].items()}
+    errors = _validate_raw_to_1m(manifest, frame, raw_rows)
+    assert _errors_contain(errors, "V3.5 raw-to-1m unexpected date")
+
+
 def _copy_minimal_project(source_root: Path, destination: Path) -> None:
     files: list[Path] = [
         source_root / MANIFEST_PATH_V3_5,
@@ -210,3 +230,11 @@ def _load(path: Path) -> dict[str, Any]:
 
 def _errors_contain(errors: list[str], needle: str) -> bool:
     return any(needle in error for error in errors)
+
+
+def _extract_function_source(source: str, function_name: str) -> str:
+    start = source.index(f"def {function_name}")
+    next_function = source.find("\ndef ", start + 1)
+    if next_function == -1:
+        return source[start:]
+    return source[start:next_function]
