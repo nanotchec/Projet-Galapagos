@@ -1,0 +1,234 @@
+from __future__ import annotations
+
+import json
+import shutil
+from copy import deepcopy
+from pathlib import Path
+from typing import Any
+
+import pandas as pd
+import pytest
+
+from galapagos.data.public_market.expanded_window import (
+    DATES_V3_5,
+    MANIFEST_PATH_V3_5,
+    REPORT_JSON_PATH_V3_5,
+    REPORT_MD_PATH_V3_5,
+    output_path,
+    raw_zip_path,
+)
+from galapagos.data.public_market.expanded_window_validation import (
+    _find_forbidden_v3_5_artifacts,
+    _validate_markdown,
+    _validate_ohlcv_frame,
+    _validate_output_entry,
+    _validate_raw_files,
+    _validate_report,
+    _validate_safety,
+    validate_expanded_public_market_data_v3_5,
+)
+from galapagos.data.public_market.provenance import sha256_file
+from galapagos.data.public_market.storage import read_parquet, write_parquet
+
+
+@pytest.fixture(scope="session")
+def valid_v3_5_template() -> Path:
+    return Path(__file__).resolve().parents[2]
+
+
+@pytest.fixture()
+def valid_v3_5_project(tmp_path: Path, valid_v3_5_template: Path) -> Path:
+    destination = tmp_path / "project"
+    _copy_minimal_project(valid_v3_5_template, destination)
+    return destination
+
+
+@pytest.fixture()
+def valid_v3_5_manifest_report(valid_v3_5_template: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+    return deepcopy(_load(valid_v3_5_template / MANIFEST_PATH_V3_5)), deepcopy(_load(valid_v3_5_template / REPORT_JSON_PATH_V3_5))
+
+
+@pytest.fixture(scope="session")
+def valid_v3_5_frame_cache(valid_v3_5_template: Path) -> dict[str, pd.DataFrame]:
+    return {timeframe: read_parquet(output_path(valid_v3_5_template, timeframe)) for timeframe in ["1m", "5m", "15m", "1h"]}
+
+
+@pytest.fixture()
+def valid_v3_5_frames(valid_v3_5_frame_cache: dict[str, pd.DataFrame]) -> dict[str, pd.DataFrame]:
+    return {timeframe: frame.copy(deep=True) for timeframe, frame in valid_v3_5_frame_cache.items()}
+
+
+def test_validator_v3_5_accepts_valid_expanded_data(valid_v3_5_template: Path) -> None:
+    result = validate_expanded_public_market_data_v3_5(valid_v3_5_template)
+    assert result["passed"] is True
+    assert result["errors"] == []
+
+
+def test_validator_v3_5_rejects_missing_raw_zip(valid_v3_5_project: Path) -> None:
+    manifest = _load(valid_v3_5_project / MANIFEST_PATH_V3_5)
+    raw_zip_path(valid_v3_5_project, "2024-01-02").unlink()
+    errors, _raw_rows = _validate_raw_files(valid_v3_5_project, manifest)
+    assert _errors_contain(errors, "missing raw zip")
+
+
+def test_validator_v3_5_rejects_wrong_raw_checksum(valid_v3_5_project: Path) -> None:
+    manifest = _load(valid_v3_5_project / MANIFEST_PATH_V3_5)
+    manifest["raw_files"]["2024-01-02"]["sha256"] = "bad"
+    errors, _raw_rows = _validate_raw_files(valid_v3_5_project, manifest)
+    assert _errors_contain(errors, "V3.5 raw checksum mismatch")
+
+
+def test_validator_v3_5_rejects_deleted_1m_row_even_with_synced_checksum(valid_v3_5_project: Path) -> None:
+    frame = read_parquet(output_path(valid_v3_5_project, "1m")).iloc[:-1].reset_index(drop=True)
+    _write_mutated_output(valid_v3_5_project, "1m", frame)
+    result = validate_expanded_public_market_data_v3_5(valid_v3_5_project)
+    assert _errors_contain(result["errors"], "V3.5 physical quality error for 1m")
+
+
+def test_validator_v3_5_rejects_duplicate_1m_row_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
+    frame = valid_v3_5_frames["1m"]
+    frame = pd.concat([frame, frame.iloc[[0]]], ignore_index=True)
+    errors = _validate_ohlcv_frame("1m", frame)
+    assert _errors_contain(errors, "duplicate")
+
+
+def test_validator_v3_5_rejects_shuffled_1m_parquet_even_with_synced_checksum(valid_v3_5_project: Path) -> None:
+    frame = read_parquet(output_path(valid_v3_5_project, "1m")).sample(frac=1.0, random_state=42).reset_index(drop=True)
+    _write_mutated_output(valid_v3_5_project, "1m", frame)
+    result = validate_expanded_public_market_data_v3_5(valid_v3_5_project)
+    assert _errors_contain(result["errors"], "monotonic")
+
+
+def test_validator_v3_5_rejects_extra_future_return_column_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
+    frame = valid_v3_5_frames["1m"]
+    frame["future_return"] = 0.0
+    errors = _validate_ohlcv_frame("1m", frame)
+    assert _errors_contain(errors, "schema mismatch")
+
+
+def test_validator_v3_5_rejects_extra_signal_column_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
+    frame = valid_v3_5_frames["1m"]
+    frame["signal"] = 0
+    errors = _validate_ohlcv_frame("1m", frame)
+    assert _errors_contain(errors, "schema mismatch")
+
+
+def test_validator_v3_5_rejects_column_order_mismatch_even_with_synced_checksum(valid_v3_5_frames: dict[str, pd.DataFrame]) -> None:
+    frame = valid_v3_5_frames["1m"]
+    columns = list(frame.columns)
+    columns[0], columns[1] = columns[1], columns[0]
+    errors = _validate_ohlcv_frame("1m", frame[columns])
+    assert _errors_contain(errors, "schema mismatch")
+
+
+def test_validator_v3_5_rejects_modified_5m_high_even_with_synced_checksum(valid_v3_5_project: Path) -> None:
+    frame = read_parquet(output_path(valid_v3_5_project, "5m"))
+    frame.loc[0, "high"] = float(frame.loc[0, "high"]) + 100.0
+    _write_mutated_output(valid_v3_5_project, "5m", frame)
+    result = validate_expanded_public_market_data_v3_5(valid_v3_5_project)
+    assert _errors_contain(result["errors"], "parent-child consistency mismatch")
+
+
+def test_validator_v3_5_rejects_manifest_output_rows_lie(
+    valid_v3_5_template: Path,
+    valid_v3_5_manifest_report: tuple[dict[str, Any], dict[str, Any]],
+    valid_v3_5_frames: dict[str, pd.DataFrame],
+) -> None:
+    manifest, _report = valid_v3_5_manifest_report
+    manifest["outputs"]["5m"]["rows"] = 123
+    errors = _validate_output_entry(valid_v3_5_template, manifest, "5m", output_path(valid_v3_5_template, "5m"), valid_v3_5_frames["5m"])
+    assert _errors_contain(errors, "V3.5 manifest output mismatch for 5m.rows")
+
+
+def test_validator_v3_5_rejects_report_output_sha_lie(valid_v3_5_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:
+    manifest, report = valid_v3_5_manifest_report
+    report["outputs"]["5m"]["sha256"] = "bad"
+    errors = _validate_report(manifest, report)
+    assert _errors_contain(errors, "V3.5 quality report mismatch")
+
+
+def test_validator_v3_5_rejects_markdown_strategy_validated_claim(tmp_path: Path, valid_v3_5_template: Path) -> None:
+    path = tmp_path / REPORT_MD_PATH_V3_5
+    path.parent.mkdir(parents=True, exist_ok=True)
+    source_text = (valid_v3_5_template / REPORT_MD_PATH_V3_5).read_text(encoding="utf-8")
+    path.write_text(source_text + "\nStrategy validated.\n", encoding="utf-8")
+    errors = _validate_markdown(tmp_path)
+    assert _errors_contain(errors, "V3.5 Markdown report contains forbidden claim")
+
+
+def test_validator_v3_5_rejects_safety_flag_trading_true(valid_v3_5_manifest_report: tuple[dict[str, Any], dict[str, Any]]) -> None:
+    manifest, _report = valid_v3_5_manifest_report
+    manifest["safety"]["trading_enabled"] = True
+    errors = _validate_safety(manifest["safety"])
+    assert _errors_contain(errors, "V3.5 safety flag trading_enabled must be False")
+
+
+def test_validator_v3_5_rejects_features_v3_5_directory_created(tmp_path: Path) -> None:
+    _touch_forbidden(tmp_path, "data/research/v3_5/features/dummy.txt")
+    errors = _find_forbidden_v3_5_artifacts(tmp_path)
+    assert _errors_contain(errors, "Forbidden V3.5 artifact detected")
+
+
+def test_validator_v3_5_rejects_labels_v3_5_directory_created(tmp_path: Path) -> None:
+    _touch_forbidden(tmp_path, "data/research/v3_5/labels/dummy.txt")
+    errors = _find_forbidden_v3_5_artifacts(tmp_path)
+    assert _errors_contain(errors, "Forbidden V3.5 artifact detected")
+
+
+def test_validator_v3_5_rejects_dataset_ml_v3_5_directory_created(tmp_path: Path) -> None:
+    _touch_forbidden(tmp_path, "data/research/v3_5/datasets/ml/dummy.txt")
+    errors = _find_forbidden_v3_5_artifacts(tmp_path)
+    assert _errors_contain(errors, "Forbidden V3.5 artifact detected")
+
+
+def test_validator_v3_5_rejects_backtest_report_created(tmp_path: Path) -> None:
+    _touch_forbidden(tmp_path, "reports/backtests/backtest.json")
+    errors = _find_forbidden_v3_5_artifacts(tmp_path)
+    assert _errors_contain(errors, "Forbidden V3.5 artifact detected")
+
+
+def _copy_minimal_project(source_root: Path, destination: Path) -> None:
+    files: list[Path] = [
+        source_root / MANIFEST_PATH_V3_5,
+        source_root / REPORT_JSON_PATH_V3_5,
+        source_root / REPORT_MD_PATH_V3_5,
+    ]
+    files.extend(raw_zip_path(source_root, current_date) for current_date in DATES_V3_5)
+    files.extend(output_path(source_root, timeframe) for timeframe in ["1m", "5m", "15m", "1h"])
+    for source in files:
+        target = destination / source.relative_to(source_root)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, target)
+
+
+def _write_mutated_output(root: Path, timeframe: str, frame: pd.DataFrame) -> None:
+    path = output_path(root, timeframe)
+    write_parquet(frame, path)
+    manifest = _load(root / MANIFEST_PATH_V3_5)
+    manifest["outputs"][timeframe]["sha256"] = sha256_file(path)
+    manifest["outputs"][timeframe]["bytes"] = path.stat().st_size
+    manifest["outputs"][timeframe]["rows"] = int(len(frame))
+    _sync_manifest_report(root, manifest)
+
+
+def _sync_manifest_report(root: Path, manifest: dict[str, Any]) -> None:
+    _dump(root / MANIFEST_PATH_V3_5, manifest)
+    _dump(root / REPORT_JSON_PATH_V3_5, deepcopy(manifest))
+
+
+def _touch_forbidden(root: Path, relative: str) -> None:
+    path = root / relative
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("forbidden", encoding="utf-8")
+
+
+def _load(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _dump(path: Path, payload: dict[str, Any]) -> None:
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _errors_contain(errors: list[str], needle: str) -> bool:
+    return any(needle in error for error in errors)

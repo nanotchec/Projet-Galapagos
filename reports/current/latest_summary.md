@@ -1,17 +1,13 @@
 # Latest Summary
 
-V3.3.1 est la dernière version validée par audit externe.
+V3.4.1 est la dernière version validée par audit externe.
 
-V3.4.1 est la candidate courante. Elle audite la robustesse descriptive et la falsification des baselines ML offline V3.3.1, sur BTCUSDT du 2024-01-15 au 2024-01-21.
+V3.5 est la candidate courante. Elle étend uniquement les données marché publiques BTCUSDT sur 90 jours, du 2024-01-01 au 2024-03-30 inclus.
 
-V3.4 a été refusée en strict parce que des métriques impossibles synchronisées entre manifest et report JSON étaient acceptées. V3.4.1 durcit le validateur en bornant les métriques numériques V3.4.
+Les outputs V3.5 sont écrits sous `data/research/v3_5/silver/ohlcv` avec quatre timeframes : 1m `129600` lignes, 5m `25920` lignes, 15m `8640` lignes et 1h `2160` lignes.
 
-Les analyses V3.4 incluent `baseline_delta`, `split_stability`, `timeframe_stability`, `label_shuffle_falsification`, `feature_leakage_scan` et `metric_forbidden_scan`.
+V3.5 vérifie les 90 raw zips publics, les checksums, les timestamps UTC, l'absence de trous et doublons, le schéma `OHLCV_COLUMNS` strict et la cohérence parent-child 1m vers 5m/15m/1h.
 
-Les scores V3.3 sont écrits sous `data/research/v3_3/ml/offline_research` avec quatre timeframes : 1m `40196` lignes, 5m `7940` lignes, 15m `2564` lignes et 1h `548` lignes.
+V3.5 ne produit aucune feature, aucun label, aucun dataset ML, aucun modèle ML, aucun backtest, aucune stratégie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading réel.
 
-V3.4.1 ne revendique aucun edge robuste, ne valide aucun modèle exploitable en trading et ne produit aucun signal actionnable.
-
-V3.4.1 ne produit aucun modèle persistant, aucun backtest, aucune stratégie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading réel.
-
-V3.4.1 reste `pending_external_audit`.
+V3.5 reste `pending_external_audit`.

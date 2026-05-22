@@ -1,20 +1,18 @@
 # Latest Metrics
 
-- Dernière version validée : V3.3.1.
-- Candidate : V3.4.1.
+- Dernière version validée : V3.4.1.
+- Candidate : V3.5.
 - Statut : `pending_external_audit`.
-- Direction : multi-day ML robustness and falsification audit.
-- Fenêtre : 2024-01-15 à 2024-01-21 inclus.
-- Row counts datasets V3.2 : 1m `10080`, 5m `2016`, 15m `672`, 1h `168`.
-- Score rows V3.3 : 1m `40196`, 5m `7940`, 15m `2564`, 1h `548`.
-- Rows utilisées pour ML V3.3 : 1m `10049`, 5m `1985`, 15m `641`, 1h `137`.
-- Target : `up_down_flat_h1`.
-- Modèles : majority baseline, random seeded baseline, logistic regression, decision tree depth 2.
-- Analyses V3.4 : baseline delta, split stability, timeframe stability, label shuffle falsification, feature leakage scan, metric forbidden scan.
-- Correction V3.4.1 : bornes numériques strictes dans le validateur V3.4 pour refuser les métriques impossibles synchronisées manifest/report.
-- Aucun edge robuste revendiqué.
-- Aucun signal actionnable produit.
-- Aucun modèle persistant.
+- Direction : 90-day public market data expansion.
+- Fenêtre V3.5 : 2024-01-01 à 2024-03-30 inclus.
+- Raw zips V3.5 : 90 jours.
+- Row counts OHLCV V3.5 : 1m `129600`, 5m `25920`, 15m `8640`, 1h `2160`.
+- Schéma : `OHLCV_COLUMNS` strict.
+- Parent-child consistency : 1m vers 5m/15m/1h.
+- Aucune feature V3.5.
+- Aucun label V3.5.
+- Aucun dataset ML V3.5.
+- Aucun modèle ML V3.5.
 - Aucun backtest.
 - Aucune stratégie.
 - Aucun signal de trading.
@@ -22,4 +20,4 @@
 - Aucun ordre.
 - Aucun trading réel.
 
-V3.4.1 est un audit research offline descriptif et falsifiable des baselines ML V3.3.1. Il ne valide aucun modèle exploitable en trading.
+V3.5 est une extension data-only des données marché publiques. Elle ne valide aucun modèle ni aucune stratégie.

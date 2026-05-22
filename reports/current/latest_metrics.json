@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V3.3.1",
-  "candidate_version": "V3.4.1",
+  "last_validated_version": "V3.4.1",
+  "candidate_version": "V3.5",
   "candidate_status": "pending_external_audit",
-  "direction": "multi-day ML robustness and falsification audit",
+  "direction": "90-day public market data expansion",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -52,10 +52,26 @@
     "15m": 641,
     "1h": 137
   },
+  "expanded_window_v3_5_start": "2024-01-01",
+  "expanded_window_v3_5_end": "2024-03-30",
+  "expanded_window_v3_5_days": 90,
+  "expanded_ohlcv_rows_v3_5": {
+    "1m": 129600,
+    "5m": 25920,
+    "15m": 8640,
+    "1h": 2160
+  },
+  "raw_zip_days_v3_5": 90,
   "dataset_v3_2_created": true,
   "ml_v3_3_created": true,
   "ml_robustness_v3_4_created": true,
   "ml_robustness_v3_4_1_metric_bounds_hardened": true,
+  "expanded_data_v3_5_created": true,
+  "features_v3_5_created": false,
+  "labels_v3_5_created": false,
+  "dataset_v3_5_created": false,
+  "ml_v3_5_created": false,
+  "model_v3_5_created": false,
   "robust_edge_claimed_v3_4": false,
   "actionable_signal_produced_v3_4": false,
   "persistent_model_v3_3_created": false,
@@ -76,5 +92,6 @@
   "v3_3_1_validated_by_external_audit": true,
   "v3_4_validated_by_external_audit": false,
   "v3_4_refused_by_external_audit": true,
-  "v3_4_1_validated_by_external_audit": false
+  "v3_4_1_validated_by_external_audit": true,
+  "v3_5_validated_by_external_audit": false
 }
