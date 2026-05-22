@@ -1,0 +1,100 @@
+{
+  "version": "V3.8",
+  "zip_name": "projet-galapagos-v3.8-audit-lite.zip",
+  "zip_size_bytes": 728791,
+  "top_20_largest_files_included": [
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=15m/sample.parquet",
+      "bytes": 206501
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=5m/sample.parquet",
+      "bytes": 204566
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=1h/sample.parquet",
+      "bytes": 203761
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=1m/sample.parquet",
+      "bytes": 200507
+    },
+    {
+      "path": "reports/audit_lite/v3_8_artifact_inventory.json",
+      "bytes": 68722
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "reports/manifests/expanded_public_market_data_v3_5_manifest.json",
+      "bytes": 28253
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=15m/splits_sample.parquet",
+      "bytes": 24969
+    },
+    {
+      "path": "reports/audit_lite/v3_8_parquet_summary.json",
+      "bytes": 24785
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=1h/splits_sample.parquet",
+      "bytes": 24663
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=5m/splits_sample.parquet",
+      "bytes": 24473
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=1m/splits_sample.parquet",
+      "bytes": 24077
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v3_8.py",
+      "bytes": 20197
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "reports/datasets/expanded_offline_supervised_dataset_v3_8.json",
+      "bytes": 19635
+    },
+    {
+      "path": "reports/manifests/expanded_offline_supervised_dataset_v3_8_manifest.json",
+      "bytes": 19635
+    },
+    {
+      "path": "src/galapagos/ml/robustness.py",
+      "bytes": 19445
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "bytes": 19186
+    }
+  ],
+  "heavy_files_excluded": [
+    "data/raw/public_market/**/*.zip",
+    "data/research/v3_5/silver/**/*.parquet",
+    "data/research/v3_6/features/**/*.parquet",
+    "data/research/v3_7/labels/**/*.parquet",
+    "data/research/v3_8/datasets/**/*.parquet",
+    "previous release ZIP files"
+  ],
+  "raw_zips_excluded": true,
+  "raw_zips_represented_in_inventory": 90,
+  "full_parquet_excluded_count": 20,
+  "sample_parquet_count": 8,
+  "note": "audit-lite does not replace full local validation"
+}

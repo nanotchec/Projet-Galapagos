@@ -260,6 +260,67 @@ def get_split_v3_2_path(root: Path, timeframe: str) -> Path:
     )
 
 
+VERSION_V3_8 = "V3.8"
+DATASET_SCHEMA_VERSION_V3_8 = "V3.8"
+TIMEFRAMES_V3_8 = ["1m", "5m", "15m", "1h"]
+WINDOW_V3_8 = "2024-01-01_2024-03-30"
+EXPECTED_ROWS_V3_8 = {"1m": 129600, "5m": 25920, "15m": 8640, "1h": 2160}
+EXPECTED_SPLIT_COUNTS_V3_8 = {
+    "1m": {"train": 77760, "validation": 25920, "test": 25920},
+    "5m": {"train": 15552, "validation": 5184, "test": 5184},
+    "15m": {"train": 5184, "validation": 1728, "test": 1728},
+    "1h": {"train": 1296, "validation": 432, "test": 432},
+}
+
+MANIFEST_PATH_V3_8 = Path("reports/manifests/expanded_offline_supervised_dataset_v3_8_manifest.json")
+REPORT_JSON_PATH_V3_8 = Path("reports/datasets/expanded_offline_supervised_dataset_v3_8.json")
+REPORT_MD_PATH_V3_8 = Path("reports/datasets/expanded_offline_supervised_dataset_v3_8.md")
+DATACARD_MD_PATH_V3_8 = Path("reports/datasets/expanded_offline_supervised_dataset_v3_8_datacard.md")
+DOC_PATH_V3_8 = Path("docs/expanded_offline_supervised_dataset_v3_8.md")
+
+DATASET_COLUMNS_V3_8 = DATASET_COLUMNS_V3_2.copy()
+SPLIT_COLUMNS_V3_8 = SPLIT_COLUMNS_V3_2.copy()
+
+SPLIT_POLICY_V3_8 = {
+    "train_ratio": 0.6,
+    "validation_ratio": 0.2,
+    "test_ratio": 0.2,
+    "shuffle": False,
+    "purge_embargo": "none_v3_8_preview",
+}
+
+EXPECTED_LIMITATIONS_V3_8 = [
+    "V3.8 assemble uniquement un dataset supervise offline 90 jours a partir des features V3.6 et labels V3.7 valides.",
+    "V3.8 ne produit aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.",
+]
+
+
+def get_dataset_v3_8_path(root: Path, timeframe: str) -> Path:
+    return (
+        root
+        / "data/research/v3_8/datasets/offline_supervised"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={WINDOW_V3_8}"
+        / "dataset.parquet"
+    )
+
+
+def get_split_v3_8_path(root: Path, timeframe: str) -> Path:
+    return (
+        root
+        / "data/research/v3_8/datasets/offline_supervised"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={WINDOW_V3_8}"
+        / "splits.parquet"
+    )
+
+
 def assert_source_schema_imports() -> None:
     missing_features = [column for column in FEATURE_VALUE_COLUMNS if column not in FEATURE_COLUMNS_V2_5]
     missing_labels = [column for column in LABEL_VALUE_COLUMNS if column not in LABEL_COLUMNS_V2_6]

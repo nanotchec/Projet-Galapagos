@@ -1,0 +1,93 @@
+{
+  "version": "V3.8",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.8-audit-lite.zip",
+  "zip_size_bytes": 728791,
+  "zip_size_mb": 0.695,
+  "entries": 122,
+  "top_20_largest_files": [
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=15m/sample.parquet",
+      "bytes": 206501
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=5m/sample.parquet",
+      "bytes": 204566
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=1h/sample.parquet",
+      "bytes": 203761
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=1m/sample.parquet",
+      "bytes": 200507
+    },
+    {
+      "path": "reports/audit_lite/v3_8_artifact_inventory.json",
+      "bytes": 68722
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "reports/manifests/expanded_public_market_data_v3_5_manifest.json",
+      "bytes": 28253
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=15m/splits_sample.parquet",
+      "bytes": 24969
+    },
+    {
+      "path": "reports/audit_lite/v3_8_parquet_summary.json",
+      "bytes": 24785
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=1h/splits_sample.parquet",
+      "bytes": 24663
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=5m/splits_sample.parquet",
+      "bytes": 24473
+    },
+    {
+      "path": "data/audit_lite/v3_8/datasets/timeframe=1m/splits_sample.parquet",
+      "bytes": 24077
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v3_8.py",
+      "bytes": 20197
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "reports/datasets/expanded_offline_supervised_dataset_v3_8.json",
+      "bytes": 19635
+    },
+    {
+      "path": "reports/manifests/expanded_offline_supervised_dataset_v3_8_manifest.json",
+      "bytes": 19635
+    },
+    {
+      "path": "src/galapagos/ml/robustness.py",
+      "bytes": 19445
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "bytes": 19186
+    }
+  ],
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

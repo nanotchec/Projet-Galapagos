@@ -1,0 +1,137 @@
+{
+  "version": "V3.8",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_expanded_offline_supervised_dataset_v3_8.py",
+    "python scripts/validate_expanded_offline_supervised_dataset_v3_8.py",
+    "python -m pytest -q tests/datasets/test_expanded_offline_supervised_dataset_v3_8.py",
+    "python -m pytest -q tests/validation/test_expanded_offline_supervised_dataset_v3_8_validator.py",
+    "python scripts/release_audit_lite_zip_v3_8.py",
+    "python scripts/audit_audit_lite_zip_v3_8.py --zip projet-galapagos-v3.8-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v3_8.py --zip projet-galapagos-v3.8-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_expanded_offline_supervised_dataset_v3_8.py": 0,
+    "python scripts/validate_expanded_offline_supervised_dataset_v3_8.py": 0,
+    "python -m pytest -q tests/datasets/test_expanded_offline_supervised_dataset_v3_8.py": 0,
+    "python -m pytest -q tests/validation/test_expanded_offline_supervised_dataset_v3_8_validator.py": 0,
+    "python scripts/release_audit_lite_zip_v3_8.py": 0,
+    "python scripts/audit_audit_lite_zip_v3_8.py --zip projet-galapagos-v3.8-audit-lite.zip": 0,
+    "python scripts/smoke_audit_lite_zip_v3_8.py --zip projet-galapagos-v3.8-audit-lite.zip": 0,
+    "python -m pytest --collect-only -q": 0
+  },
+  "command_durations_seconds": {
+    "python scripts/run_expanded_offline_supervised_dataset_v3_8.py": 6.081,
+    "python scripts/validate_expanded_offline_supervised_dataset_v3_8.py": 2.594,
+    "python -m pytest -q tests/datasets/test_expanded_offline_supervised_dataset_v3_8.py": 0.691,
+    "python -m pytest -q tests/validation/test_expanded_offline_supervised_dataset_v3_8_validator.py": 4.809,
+    "python scripts/release_audit_lite_zip_v3_8.py": 0.924,
+    "python scripts/audit_audit_lite_zip_v3_8.py --zip projet-galapagos-v3.8-audit-lite.zip": 0.403,
+    "python scripts/smoke_audit_lite_zip_v3_8.py --zip projet-galapagos-v3.8-audit-lite.zip": 0.389,
+    "python -m pytest --collect-only -q": 2.147
+  },
+  "output_datasets_full": {
+    "1m": {
+      "path": "data/research/v3_8/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/dataset.parquet",
+      "sha256": "59f92e9e88e2a3ead2f69a46564dbbef7395bf9f49dd5a78f83333f630ba8c8f",
+      "bytes": 50430089,
+      "rows": 129600,
+      "columns_count": 76,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:59:00Z"
+    },
+    "5m": {
+      "path": "data/research/v3_8/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/dataset.parquet",
+      "sha256": "4cc18c1d9294c625fd096139fe5015a8ce8670099f9f5fa2d514463630925ffb",
+      "bytes": 10234779,
+      "rows": 25920,
+      "columns_count": 76,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:55:00Z"
+    },
+    "15m": {
+      "path": "data/research/v3_8/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/dataset.parquet",
+      "sha256": "777f3a90ce66df96adc4f32a12073d100ea0ae7ee18d1bd84302ce528dd1b667",
+      "bytes": 3474031,
+      "rows": 8640,
+      "columns_count": 76,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:45:00Z"
+    },
+    "1h": {
+      "path": "data/research/v3_8/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/dataset.parquet",
+      "sha256": "c2a8a08f05606b338119e0ab4f6e3c2e27462e859ada2d37d4ecd48b9d3e644f",
+      "bytes": 890090,
+      "rows": 2160,
+      "columns_count": 76,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:00:00Z"
+    }
+  },
+  "output_splits_full": {
+    "1m": {
+      "path": "data/research/v3_8/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/splits.parquet",
+      "sha256": "5e5d01051da6014e48f46fbc1448cd19f44532bd49ed3f9b31d4776e9fe774d5",
+      "bytes": 5543302,
+      "rows": 129600,
+      "columns_count": 12,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:59:00Z"
+    },
+    "5m": {
+      "path": "data/research/v3_8/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/splits.parquet",
+      "sha256": "630658cddfb0978d07a5b0ed24172378192a668d8493634e415c0ca8b76b89d8",
+      "bytes": 1085413,
+      "rows": 25920,
+      "columns_count": 12,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:55:00Z"
+    },
+    "15m": {
+      "path": "data/research/v3_8/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/splits.parquet",
+      "sha256": "b16d7cac8d1fd260a4b14f4aca24d07802015e1180c5868d09bf3b348c8f2908",
+      "bytes": 369543,
+      "rows": 8640,
+      "columns_count": 12,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:45:00Z"
+    },
+    "1h": {
+      "path": "data/research/v3_8/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/splits.parquet",
+      "sha256": "98211c47a2f5767429e246ad23812fa342a31b37e01b59017df3a85e978649d3",
+      "bytes": 94968,
+      "rows": 2160,
+      "columns_count": 12,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:00:00Z"
+    }
+  },
+  "manifest_sha256": "fc907483191427469c6724fedbdcbcc057d08cae51c6662308897b9985c4140a",
+  "report_sha256": "fc907483191427469c6724fedbdcbcc057d08cae51c6662308897b9985c4140a",
+  "datacard_sha256": "ddf2ad3b38d9d4f89807cab3be7b62cba3f88206e5a18ac268dc549194e020ef",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "errors": [],
+  "warnings": []
+}

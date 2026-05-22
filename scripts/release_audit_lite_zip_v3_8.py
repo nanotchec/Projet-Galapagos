@@ -1,0 +1,480 @@
+from __future__ import annotations
+
+import json
+import zipfile
+from pathlib import Path
+from typing import Any
+
+import _bootstrap
+
+_bootstrap.bootstrap_src_path()
+
+import pandas as pd
+
+from galapagos.data.public_market.provenance import sha256_file
+from galapagos.data.public_market.storage import read_parquet, write_parquet
+from galapagos.datasets.schemas import DATASET_COLUMNS_V3_8, SPLIT_COLUMNS_V3_8
+
+
+VERSION = "V3.8"
+ZIP_NAME = "projet-galapagos-v3.8-audit-lite.zip"
+AUDIT_LITE_DIR = Path("reports/audit_lite")
+ARTIFACT_INVENTORY_JSON = AUDIT_LITE_DIR / "v3_8_artifact_inventory.json"
+ARTIFACT_INVENTORY_MD = AUDIT_LITE_DIR / "v3_8_artifact_inventory.md"
+PARQUET_SUMMARY_JSON = AUDIT_LITE_DIR / "v3_8_parquet_summary.json"
+ZIP_SIZE_JSON = AUDIT_LITE_DIR / "zip_size_report_v3_8.json"
+ZIP_SIZE_MD = AUDIT_LITE_DIR / "zip_size_report_v3_8.md"
+FULL_LOCAL_ATTESTATION_JSON = AUDIT_LITE_DIR / "v3_8_full_local_validation_attestation.json"
+FULL_LOCAL_ATTESTATION_MD = AUDIT_LITE_DIR / "v3_8_full_local_validation_attestation.md"
+V3_5_MANIFEST = Path("reports/manifests/expanded_public_market_data_v3_5_manifest.json")
+V3_6_MANIFEST = Path("reports/manifests/expanded_causal_feature_store_v3_6_manifest.json")
+V3_7_MANIFEST = Path("reports/manifests/expanded_label_factory_v3_7_manifest.json")
+V3_8_MANIFEST = Path("reports/manifests/expanded_offline_supervised_dataset_v3_8_manifest.json")
+V3_8_REPORT = Path("reports/datasets/expanded_offline_supervised_dataset_v3_8.json")
+TIMEFRAMES = ["1m", "5m", "15m", "1h"]
+FORBIDDEN_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", ".ruff_cache", ".mypy_cache"}
+FORBIDDEN_PREFIXES = [
+    "data/raw/public_market/",
+    "reports/backtests/",
+    "reports/strategies/",
+    "reports/signals/",
+    "reports/predictions/",
+    "orders/",
+    "execution/",
+    "models/",
+    "checkpoints/",
+    "data/research/v3_8/ml/",
+    "data/research/v3_8/backtests/",
+]
+FORBIDDEN_SUFFIXES = {".pkl", ".pickle", ".joblib", ".ckpt", ".pt", ".pth", ".onnx"}
+FORBIDDEN_DATASET_COLUMNS = {
+    "prediction",
+    "predicted",
+    "model_score",
+    "score_ml",
+    "alpha",
+    "signal",
+    "strategy",
+    "order",
+    "trade_decision",
+    "position_size",
+    "pnl",
+    "profit",
+    "backtest",
+    "execution",
+    "live",
+    "paper_live",
+}
+
+
+def main() -> None:
+    root = Path(".").resolve()
+    AUDIT_LITE_DIR.mkdir(parents=True, exist_ok=True)
+    manifest_v3_5 = _read_json(root / V3_5_MANIFEST)
+    manifest_v3_6 = _read_json(root / V3_6_MANIFEST)
+    manifest_v3_7 = _read_json(root / V3_7_MANIFEST)
+    manifest_v3_8 = _read_json(root / V3_8_MANIFEST)
+    report_v3_8 = _read_json(root / V3_8_REPORT)
+    if manifest_v3_8 != report_v3_8:
+        raise RuntimeError("V3.8 manifest and report must match before audit-lite release.")
+
+    raw_inventory = _build_raw_inventory(manifest_v3_5)
+    parquet_summary, samples = _build_parquet_summary_and_samples(root, manifest_v3_8)
+    full_parquet_excluded = _build_full_parquet_exclusions(root, manifest_v3_5, manifest_v3_6, manifest_v3_7, manifest_v3_8)
+    artifact_inventory = {
+        "version": VERSION,
+        "audit_lite_does_not_replace_full_validation": True,
+        "raw_zips_excluded": raw_inventory,
+        "full_parquet_excluded": full_parquet_excluded,
+        "sample_parquets_included": samples,
+        "notes": [
+            "audit-lite does not replace full local validation",
+            "Production validators still require full local raw zips and production Parquet outputs.",
+            "V3.8 datasets are offline-only assemblies from V3.6 features and V3.7 labels.",
+        ],
+    }
+    _write_json(root / ARTIFACT_INVENTORY_JSON, artifact_inventory)
+    _write_json(root / PARQUET_SUMMARY_JSON, parquet_summary)
+    _write_text(root / ARTIFACT_INVENTORY_MD, _render_inventory_markdown(artifact_inventory))
+    _write_json(root / ZIP_SIZE_JSON, _empty_size_payload(raw_inventory, full_parquet_excluded, samples))
+    _write_text(root / ZIP_SIZE_MD, "# Rapport de taille ZIP audit-lite V3.8\n\n- Note : `audit-lite does not replace full local validation`\n")
+
+    zip_path = root / ZIP_NAME
+    zip_size_bytes = 0
+    included = _collect_audit_lite_files(root)
+    for _attempt in range(5):
+        _write_size_report(root, zip_size_bytes=zip_size_bytes, included=included, artifact_inventory=artifact_inventory)
+        included = _collect_audit_lite_files(root)
+        _write_zip(root, zip_path, included)
+        current_size = zip_path.stat().st_size
+        if current_size == zip_size_bytes:
+            break
+        zip_size_bytes = current_size
+
+    payload = {
+        "version": VERSION,
+        "status": "PASS",
+        "zip_path": str(zip_path),
+        "zip_size_bytes": zip_path.stat().st_size,
+        "files_included": len(included),
+        "raw_zips_excluded": True,
+        "raw_zip_inventory_count": len(raw_inventory),
+        "full_parquet_excluded_count": len(full_parquet_excluded),
+        "sample_parquet_count": len(samples),
+        "audit_lite_does_not_replace_full_validation": True,
+    }
+    print(json.dumps(payload, indent=2, ensure_ascii=False))
+
+
+def _build_raw_inventory(manifest_v3_5: dict[str, Any]) -> list[dict[str, Any]]:
+    source = manifest_v3_5["source"]
+    return [
+        {
+            "date": current_date,
+            "path": payload["path"],
+            "sha256": payload["sha256"],
+            "bytes": int(payload["bytes"]),
+            "rows": int(payload["rows"]),
+            "source": source["name"],
+            "symbol": source["symbol"],
+            "timeframe": source["source_timeframe"],
+        }
+        for current_date, payload in sorted(manifest_v3_5["raw_files"].items())
+    ]
+
+
+def _build_parquet_summary_and_samples(root: Path, manifest_v3_8: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    dataset_summaries: dict[str, dict[str, Any]] = {}
+    split_summaries: dict[str, dict[str, Any]] = {}
+    samples: list[dict[str, Any]] = []
+    for timeframe in TIMEFRAMES:
+        dataset_payload = manifest_v3_8["outputs"][timeframe]
+        split_payload = manifest_v3_8["splits"][timeframe]
+        dataset_path = root / dataset_payload["path"]
+        split_path = root / split_payload["path"]
+        dataset = read_parquet(dataset_path)
+        splits = read_parquet(split_path)
+        dataset_summaries[timeframe] = _parquet_summary(root, dataset_path, dataset, DATASET_COLUMNS_V3_8)
+        split_summaries[timeframe] = _parquet_summary(root, split_path, splits, SPLIT_COLUMNS_V3_8)
+
+        dataset_sample = _sample_frame(dataset)
+        split_sample = _sample_frame(splits)
+        if list(dataset_sample.columns) != DATASET_COLUMNS_V3_8:
+            raise RuntimeError(f"V3.8 audit-lite dataset sample schema mismatch for {timeframe}")
+        if list(split_sample.columns) != SPLIT_COLUMNS_V3_8:
+            raise RuntimeError(f"V3.8 audit-lite split sample schema mismatch for {timeframe}")
+        dataset_sample_path = root / "data/audit_lite/v3_8/datasets" / f"timeframe={timeframe}" / "sample.parquet"
+        split_sample_path = root / "data/audit_lite/v3_8/datasets" / f"timeframe={timeframe}" / "splits_sample.parquet"
+        write_parquet(dataset_sample[DATASET_COLUMNS_V3_8], dataset_sample_path)
+        write_parquet(split_sample[SPLIT_COLUMNS_V3_8], split_sample_path)
+        samples.extend(
+            [
+                _sample_block(root, dataset_sample_path, dataset_sample, dataset_payload["path"], dataset_payload["sha256"], timeframe, "dataset"),
+                _sample_block(root, split_sample_path, split_sample, split_payload["path"], split_payload["sha256"], timeframe, "splits"),
+            ]
+        )
+    return (
+        {
+            "version": VERSION,
+            "audit_lite_does_not_replace_full_validation": True,
+            "dataset_schema": "DATASET_COLUMNS_V3_8",
+            "split_schema": "SPLIT_COLUMNS_V3_8",
+            "datasets": dataset_summaries,
+            "splits": split_summaries,
+        },
+        samples,
+    )
+
+
+def _parquet_summary(root: Path, path: Path, frame: pd.DataFrame, expected_columns: list[str]) -> dict[str, Any]:
+    summary: dict[str, Any] = {
+        "path": str(path.relative_to(root)),
+        "sha256": sha256_file(path),
+        "bytes": path.stat().st_size,
+        "rows": int(len(frame)),
+        "columns": list(frame.columns),
+        "min_event_ts": _ts_iso(frame["event_ts"].min()),
+        "max_event_ts": _ts_iso(frame["event_ts"].max()),
+        "null_counts_by_column": {column: int(value) for column, value in frame.isna().sum().items()},
+        "forbidden_columns_present": _find_forbidden_columns(frame.columns),
+        "schema_strict": list(frame.columns) == expected_columns,
+    }
+    for column in ["source_features_sha256", "source_labels_sha256"]:
+        if column in frame.columns:
+            summary[f"{column}_distinct"] = sorted(frame[column].astype(str).unique().tolist())
+    return summary
+
+
+def _sample_frame(frame: pd.DataFrame) -> pd.DataFrame:
+    row_count = len(frame)
+    indexes: set[int] = set()
+    indexes.update(range(min(100, row_count)))
+    indexes.update(range(max(0, row_count - 120), row_count))
+    middle = row_count // 2
+    indexes.update(range(max(0, middle - 50), min(row_count, middle + 50)))
+    if row_count:
+        step = max(1, row_count // 100)
+        indexes.update(range(0, row_count, step))
+    return frame.iloc[sorted(index for index in indexes if 0 <= index < row_count)].reset_index(drop=True)
+
+
+def _sample_block(
+    root: Path,
+    path: Path,
+    frame: pd.DataFrame,
+    source_full_path: str,
+    source_full_sha256: str,
+    timeframe: str,
+    artifact_type: str,
+) -> dict[str, Any]:
+    return {
+        "timeframe": timeframe,
+        "artifact_type": artifact_type,
+        "path": str(path.relative_to(root)),
+        "sha256": sha256_file(path),
+        "bytes": path.stat().st_size,
+        "rows": int(len(frame)),
+        "source_full_path": source_full_path,
+        "source_full_sha256": source_full_sha256,
+    }
+
+
+def _build_full_parquet_exclusions(
+    root: Path,
+    manifest_v3_5: dict[str, Any],
+    manifest_v3_6: dict[str, Any],
+    manifest_v3_7: dict[str, Any],
+    manifest_v3_8: dict[str, Any],
+) -> list[dict[str, Any]]:
+    excluded: list[dict[str, Any]] = []
+    for layer, manifest, section, schema in [
+        ("V3.5 OHLCV", manifest_v3_5, "outputs", "OHLCV_COLUMNS"),
+        ("V3.6 features", manifest_v3_6, "outputs", "FEATURE_COLUMNS_V3_6"),
+        ("V3.7 labels", manifest_v3_7, "outputs", "LABEL_COLUMNS_V3_7"),
+        ("V3.8 datasets", manifest_v3_8, "outputs", "DATASET_COLUMNS_V3_8"),
+        ("V3.8 splits", manifest_v3_8, "splits", "SPLIT_COLUMNS_V3_8"),
+    ]:
+        for timeframe, payload in sorted(manifest[section].items()):
+            path = root / payload["path"]
+            excluded.append(
+                {
+                    "layer": layer,
+                    "timeframe": timeframe,
+                    "path": payload["path"],
+                    "sha256": payload["sha256"],
+                    "bytes": int(payload["bytes"]),
+                    "rows": int(payload["rows"]),
+                    "columns": _read_columns(path),
+                    "schema_version": schema,
+                    "reason_excluded": f"full {layer} Parquet is represented by manifest metadata and deterministic samples in audit-lite",
+                }
+            )
+    return excluded
+
+
+def _collect_audit_lite_files(root: Path) -> list[Path]:
+    include_files = [
+        "README.md",
+        "pyproject.toml",
+        "galapagos/__init__.py",
+        "scripts/_bootstrap.py",
+        "scripts/run_expanded_causal_feature_store_v3_6.py",
+        "scripts/validate_expanded_causal_feature_store_v3_6.py",
+        "scripts/run_expanded_label_factory_v3_7.py",
+        "scripts/validate_expanded_label_factory_v3_7.py",
+        "scripts/run_expanded_offline_supervised_dataset_v3_8.py",
+        "scripts/validate_expanded_offline_supervised_dataset_v3_8.py",
+        "scripts/release_audit_lite_zip_v3_8.py",
+        "scripts/audit_audit_lite_zip_v3_8.py",
+        "scripts/smoke_audit_lite_zip_v3_8.py",
+        "tests/datasets/test_expanded_offline_supervised_dataset_v3_8.py",
+        "tests/validation/test_expanded_offline_supervised_dataset_v3_8_validator.py",
+        "reports/manifests/expanded_public_market_data_v3_5_manifest.json",
+        "reports/manifests/expanded_causal_feature_store_v3_6_manifest.json",
+        "reports/manifests/expanded_label_factory_v3_7_manifest.json",
+        "reports/manifests/expanded_offline_supervised_dataset_v3_8_manifest.json",
+        "reports/features/expanded_causal_feature_store_v3_6.json",
+        "reports/labels/expanded_label_factory_v3_7.json",
+        "reports/datasets/expanded_offline_supervised_dataset_v3_8.json",
+        "reports/datasets/expanded_offline_supervised_dataset_v3_8.md",
+        "reports/datasets/expanded_offline_supervised_dataset_v3_8_datacard.md",
+        "reports/PROJECT_STATE.json",
+        "reports/PROJECT_STATE.md",
+        "reports/current/latest_metrics.json",
+        "reports/current/latest_metrics.md",
+        "reports/current/latest_summary.md",
+        "docs/expanded_causal_feature_store_v3_6.md",
+        "docs/expanded_label_factory_v3_7.md",
+        "docs/expanded_offline_supervised_dataset_v3_8.md",
+        str(ARTIFACT_INVENTORY_JSON),
+        str(ARTIFACT_INVENTORY_MD),
+        str(PARQUET_SUMMARY_JSON),
+        str(ZIP_SIZE_JSON),
+        str(ZIP_SIZE_MD),
+    ]
+    optional_files = [str(FULL_LOCAL_ATTESTATION_JSON), str(FULL_LOCAL_ATTESTATION_MD)]
+    include_dirs = [
+        "src/galapagos/data/public_market",
+        "src/galapagos/validation",
+        "src/galapagos/features",
+        "src/galapagos/labels",
+        "src/galapagos/datasets",
+        "src/galapagos/ml",
+        "data/audit_lite/v3_8/datasets",
+    ]
+    files: list[Path] = []
+    for item in [*include_files, *optional_files]:
+        path = root / item
+        if item in optional_files and not path.exists():
+            continue
+        if not path.exists():
+            raise FileNotFoundError(f"missing audit-lite input: {item}")
+        if path.is_file() and _allowed(path.relative_to(root)):
+            files.append(path.relative_to(root))
+    for item in include_dirs:
+        path = root / item
+        if not path.exists():
+            raise FileNotFoundError(f"missing audit-lite directory: {item}")
+        for child in sorted(path.rglob("*")):
+            if child.is_file() and _allowed(child.relative_to(root)):
+                files.append(child.relative_to(root))
+    return sorted(set(files))
+
+
+def _allowed(relative: Path) -> bool:
+    name = relative.as_posix()
+    if any(part in FORBIDDEN_PARTS for part in relative.parts):
+        return False
+    if relative.name in {".DS_Store", ".env"} or relative.name.startswith(".smoke-"):
+        return False
+    if "secret" in name.casefold():
+        return False
+    if relative.suffix.casefold() in FORBIDDEN_SUFFIXES:
+        return False
+    if relative.suffix.casefold() == ".zip":
+        return False
+    if relative.suffix.casefold() == ".parquet" and not name.startswith("data/audit_lite/v3_8/datasets/"):
+        return False
+    return not any(name.startswith(prefix) for prefix in FORBIDDEN_PREFIXES)
+
+
+def _write_size_report(root: Path, *, zip_size_bytes: int, included: list[Path], artifact_inventory: dict[str, Any]) -> None:
+    top_files = sorted(
+        ({"path": path.as_posix(), "bytes": (root / path).stat().st_size} for path in included),
+        key=lambda item: item["bytes"],
+        reverse=True,
+    )[:20]
+    payload = {
+        "version": VERSION,
+        "zip_name": ZIP_NAME,
+        "zip_size_bytes": zip_size_bytes,
+        "top_20_largest_files_included": top_files,
+        "heavy_files_excluded": [
+            "data/raw/public_market/**/*.zip",
+            "data/research/v3_5/silver/**/*.parquet",
+            "data/research/v3_6/features/**/*.parquet",
+            "data/research/v3_7/labels/**/*.parquet",
+            "data/research/v3_8/datasets/**/*.parquet",
+            "previous release ZIP files",
+        ],
+        "raw_zips_excluded": True,
+        "raw_zips_represented_in_inventory": len(artifact_inventory["raw_zips_excluded"]),
+        "full_parquet_excluded_count": len(artifact_inventory["full_parquet_excluded"]),
+        "sample_parquet_count": len(artifact_inventory["sample_parquets_included"]),
+        "note": "audit-lite does not replace full local validation",
+    }
+    _write_json(root / ZIP_SIZE_JSON, payload)
+    rows = "\n".join(f"- `{item['path']}` : {item['bytes']} octets" for item in top_files)
+    _write_text(
+        root / ZIP_SIZE_MD,
+        "# Rapport de taille ZIP audit-lite V3.8\n\n"
+        f"- ZIP : `{ZIP_NAME}`\n"
+        f"- Taille : `{zip_size_bytes}` octets\n"
+        "- Raw zips exclus : `true`\n"
+        f"- Raw zips representes dans l'inventaire : `{payload['raw_zips_represented_in_inventory']}`\n"
+        f"- Parquet complets exclus : `{payload['full_parquet_excluded_count']}`\n"
+        f"- Samples Parquet inclus : `{payload['sample_parquet_count']}`\n"
+        "- Note : `audit-lite does not replace full local validation`\n\n"
+        "## Top 20 fichiers inclus\n\n"
+        f"{rows}\n",
+    )
+
+
+def _empty_size_payload(raw_inventory: list[dict[str, Any]], excluded: list[dict[str, Any]], samples: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        "version": VERSION,
+        "zip_name": ZIP_NAME,
+        "zip_size_bytes": 0,
+        "top_20_largest_files_included": [],
+        "heavy_files_excluded": [],
+        "raw_zips_excluded": True,
+        "raw_zips_represented_in_inventory": len(raw_inventory),
+        "full_parquet_excluded_count": len(excluded),
+        "sample_parquet_count": len(samples),
+        "note": "audit-lite does not replace full local validation",
+    }
+
+
+def _render_inventory_markdown(inventory: dict[str, Any]) -> str:
+    sample_rows = "\n".join(
+        f"- `{item['timeframe']}` `{item['artifact_type']}` : `{item['path']}` ({item['rows']} lignes)"
+        for item in inventory["sample_parquets_included"]
+    )
+    return f"""# Inventaire audit-lite V3.8
+
+Ce rapport decrit les artefacts lourds exclus du ZIP `audit-lite`.
+
+- Raw zips exclus : `{len(inventory['raw_zips_excluded'])}`
+- Parquet complets exclus : `{len(inventory['full_parquet_excluded'])}`
+- Validation full locale remplacee : `false`
+- Note : `audit-lite does not replace full local validation`
+
+## Samples Parquet dataset/splits inclus
+
+{sample_rows}
+
+## Garantie de scope
+
+Les validateurs de production ne sont pas relaches. Le ZIP audit-lite sert a transmettre le code, les rapports, les manifests, les checksums et des samples stricts. Il ne pretend pas revalider physiquement les 90 jours sans les raw zips et Parquet complets locaux.
+"""
+
+
+def _write_zip(root: Path, zip_path: Path, included: list[Path]) -> None:
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for relative in included:
+            archive.write(root / relative, relative.as_posix())
+
+
+def _find_forbidden_columns(columns: pd.Index) -> list[str]:
+    return sorted(str(column) for column in columns if any(term in str(column).casefold() for term in FORBIDDEN_DATASET_COLUMNS))
+
+
+def _read_columns(path: Path) -> list[str]:
+    return [str(column) for column in read_parquet(path).columns]
+
+
+def _ts_iso(value: Any) -> str:
+    timestamp = pd.Timestamp(value)
+    if timestamp.tzinfo is None:
+        timestamp = timestamp.tz_localize("UTC")
+    else:
+        timestamp = timestamp.tz_convert("UTC")
+    return timestamp.isoformat().replace("+00:00", "Z")
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V3.6",
-  "candidate_version": "V3.7",
+  "last_validated_version": "V3.7",
+  "candidate_version": "V3.8",
   "candidate_status": "pending_external_audit",
-  "direction": "90-day clean forward label factory preview",
+  "direction": "90-day offline supervised dataset assembly preview",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -114,7 +114,7 @@
   "v3_5_2_candidate": true,
   "v3_5_2_validated_by_external_audit": true,
   "v3_6_candidate": true,
-  "v3_6_validated_by_external_audit": false,
+  "v3_6_validated_by_external_audit": true,
   "expanded_label_rows_v3_7": {
     "1m": 129600,
     "5m": 25920,
@@ -130,5 +130,47 @@
   "labels_v3_7_created": true,
   "dataset_v3_7_created": false,
   "ml_v3_7_created": false,
-  "model_v3_7_created": false
+  "model_v3_7_created": false,
+  "v3_7_candidate": true,
+  "v3_7_validated_by_external_audit": true,
+  "v3_8_candidate": true,
+  "v3_8_validated_by_external_audit": false,
+  "expanded_dataset_rows_v3_8": {
+    "1m": 129600,
+    "5m": 25920,
+    "15m": 8640,
+    "1h": 2160
+  },
+  "expanded_dataset_split_counts_v3_8": {
+    "1m": {
+      "train": 77760,
+      "validation": 25920,
+      "test": 25920
+    },
+    "5m": {
+      "train": 15552,
+      "validation": 5184,
+      "test": 5184
+    },
+    "15m": {
+      "train": 5184,
+      "validation": 1728,
+      "test": 1728
+    },
+    "1h": {
+      "train": 1296,
+      "validation": 432,
+      "test": 432
+    }
+  },
+  "dataset_v3_8_created": true,
+  "ml_v3_8_created": false,
+  "model_v3_8_created": false,
+  "prediction_v3_8_created": false,
+  "ml_score_v3_8_created": false,
+  "backtest_v3_8_created": false,
+  "strategy_v3_8_created": false,
+  "signal_v3_8_created": false,
+  "orders_v3_8_created": false,
+  "paper_live_v3_8_created": false
 }

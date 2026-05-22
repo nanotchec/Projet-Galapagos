@@ -1,0 +1,27 @@
+{
+  "version": "V3.8",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.8-audit-lite.zip",
+  "zip_size_bytes": 728791,
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "sample_rows": {
+    "1m": {
+      "dataset": 418,
+      "splits": 418
+    },
+    "5m": {
+      "dataset": 418,
+      "splits": 418
+    },
+    "15m": {
+      "dataset": 417,
+      "splits": 417
+    },
+    "1h": {
+      "dataset": 409,
+      "splits": 409
+    }
+  },
+  "smoke_duration_seconds": 0.09
+}
