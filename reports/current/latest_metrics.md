@@ -1,39 +1,25 @@
 # Latest Metrics
 
-- Dernière version validée : `V3.8`
-- Candidate : `V3.9`
+- Dernière version validée : `V3.9`
+- Candidate : `V4.0`
 - Statut : `pending_external_audit`
-- Direction : 90-day offline ML research baselines
+- Direction : 90-day ML robustness and falsification audit
 
-## Row counts V3.9 scores
+## Analyses V4.0
 
-- 1m : `518276`
-- 5m : `103556`
-- 15m : `34436`
-- 1h : `8516`
+- `baseline_delta`
+- `split_stability`
+- `timeframe_stability`
+- `label_shuffle_falsification`
+- `feature_leakage_scan`
+- `metric_forbidden_scan`
 
-## Lignes utilisées pour le ML
+## Findings V4.0
 
-- 1m : `129569`
-- 5m : `25889`
-- 15m : `8609`
-- 1h : `2129`
-
-## Splits ML utilisés
-
-- 1m : train `77730`, validation `25920`, test `25919`
-- 5m : train `15522`, validation `5184`, test `5183`
-- 15m : train `5154`, validation `1728`, test `1727`
-- 1h : train `1266`, validation `432`, test `431`
-
-## Politique ML
-
-- Cible : `up_down_flat_h1`
-- Modèles : `majority_class_baseline`, `random_seeded_baseline`, `logistic_regression`, `decision_tree_depth_2`
-- Features autorisées : `31`
-- Warmup exclu : `true`
-- Labels h1 invalides exclus : `true`
-- Shuffle : `false`
+- robust_edge_claimed : `false`
+- strategy_validated : `false`
+- backtest_performed : `false`
+- actionable_signal_produced : `false`
 
 ## Safety
 

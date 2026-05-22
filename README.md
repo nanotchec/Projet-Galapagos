@@ -2,8 +2,8 @@
 
 ## Etat actuel du projet
 
-- Derniere version validee : V3.8.
-- Candidate : V3.9, baselines ML offline 90 jours.
+- Derniere version validee : V3.9.
+- Candidate : V4.0, audit robustesse et falsification ML 90 jours.
 - Le projet est actuellement data/research/offline only.
 - Aucun trading reel n'est autorise.
 - Aucun paper live n'est autorise.
@@ -19,8 +19,9 @@
 - V3.7 construit uniquement des labels forward 90 jours separes dans `data/research/v3_7/labels/forward_returns`.
 - V3.8 assemble uniquement un dataset supervise offline 90 jours dans `data/research/v3_8/datasets/offline_supervised`.
 - V3.9 entraine uniquement des baselines ML offline simples et produit des scores de recherche `research_*` dans `data/research/v3_9/ml/offline_research`.
-- V3.9 ne produit aucun modele persistant, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
-- V3.9 reste `pending_external_audit` et n'est pas validee avant audit externe.
+- V4.0 audite uniquement la robustesse descriptive et la falsification des resultats ML offline V3.9.
+- V4.0 ne produit aucun modele persistant, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+- V4.0 reste `pending_external_audit` et n'est pas validee avant audit externe.
 - Les anciennes parties paper trading V1 sont legacy et ne sont pas autorisees dans la roadmap actuelle.
 
 Projet Galapagos est une V1 verticale d'agent autonome de trading en paper trading sur BTC.

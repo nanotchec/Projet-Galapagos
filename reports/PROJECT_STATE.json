@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V3.8",
-  "candidate_version": "V3.9",
+  "last_validated_version": "V3.9",
+  "candidate_version": "V4.0",
   "candidate_status": "pending_external_audit",
-  "direction": "90-day offline ML research baselines",
+  "direction": "90-day ML robustness and falsification audit",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -214,7 +214,7 @@
   "orders_v3_8_created": false,
   "paper_live_v3_8_created": false,
   "v3_9_candidate": true,
-  "v3_9_validated_by_external_audit": false,
+  "v3_9_validated_by_external_audit": true,
   "expanded_ml_score_rows_v3_9": {
     "1m": 518276,
     "5m": 103556,
@@ -265,5 +265,25 @@
   "strategy_v3_9_created": false,
   "signal_v3_9_created": false,
   "orders_v3_9_created": false,
-  "paper_live_v3_9_created": false
+  "paper_live_v3_9_created": false,
+  "v4_0_candidate": true,
+  "v4_0_validated_by_external_audit": false,
+  "expanded_ml_robustness_analyses_v4_0": [
+    "baseline_delta",
+    "split_stability",
+    "timeframe_stability",
+    "label_shuffle_falsification",
+    "feature_leakage_scan",
+    "metric_forbidden_scan"
+  ],
+  "robust_edge_claimed_v4_0": false,
+  "strategy_validated_v4_0": false,
+  "backtest_performed_v4_0": false,
+  "actionable_signal_produced_v4_0": false,
+  "backtest_v4_0_created": false,
+  "strategy_v4_0_created": false,
+  "signal_v4_0_created": false,
+  "orders_v4_0_created": false,
+  "paper_live_v4_0_created": false,
+  "persistent_model_v4_0_created": false
 }

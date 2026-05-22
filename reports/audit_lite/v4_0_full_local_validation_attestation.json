@@ -1,0 +1,61 @@
+{
+  "version": "V4.0",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_expanded_ml_robustness_v4_0.py",
+    "python scripts/validate_expanded_ml_robustness_v4_0.py",
+    "python -m pytest -q tests/ml/test_expanded_ml_robustness_v4_0.py",
+    "python -m pytest -q tests/validation/test_expanded_ml_robustness_v4_0_validator.py",
+    "python scripts/release_audit_lite_zip_v4_0.py",
+    "python scripts/audit_audit_lite_zip_v4_0.py --zip projet-galapagos-v4.0-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v4_0.py --zip projet-galapagos-v4.0-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_expanded_ml_robustness_v4_0.py": 0,
+    "python scripts/validate_expanded_ml_robustness_v4_0.py": 0,
+    "python -m pytest -q tests/ml/test_expanded_ml_robustness_v4_0.py": 0,
+    "python -m pytest -q tests/validation/test_expanded_ml_robustness_v4_0_validator.py": 0,
+    "python scripts/release_audit_lite_zip_v4_0.py": 0,
+    "python scripts/audit_audit_lite_zip_v4_0.py --zip projet-galapagos-v4.0-audit-lite.zip": 0,
+    "python scripts/smoke_audit_lite_zip_v4_0.py --zip projet-galapagos-v4.0-audit-lite.zip": 0,
+    "python -m pytest --collect-only -q": 0
+  },
+  "command_durations_seconds": {
+    "python scripts/run_expanded_ml_robustness_v4_0.py": 16.37,
+    "python scripts/validate_expanded_ml_robustness_v4_0.py": 1.83,
+    "python -m pytest -q tests/ml/test_expanded_ml_robustness_v4_0.py": 1.29,
+    "python -m pytest -q tests/validation/test_expanded_ml_robustness_v4_0_validator.py": 1.85,
+    "python scripts/release_audit_lite_zip_v4_0.py": 0.38,
+    "python scripts/audit_audit_lite_zip_v4_0.py --zip projet-galapagos-v4.0-audit-lite.zip": 0.05,
+    "python scripts/smoke_audit_lite_zip_v4_0.py --zip projet-galapagos-v4.0-audit-lite.zip": 1.07,
+    "python -m pytest --collect-only -q": 2.37
+  },
+  "manifest_sha256": "34b3720fae6116c8292c7d5c256059a6ce2d76705eebe4c751f4b21441681a0d",
+  "report_sha256": "34b3720fae6116c8292c7d5c256059a6ce2d76705eebe4c751f4b21441681a0d",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_strategy": true,
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,59 @@
+{
+  "version": "V4.0",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "input_manifests": [
+    {
+      "path": "reports/manifests/expanded_offline_supervised_dataset_v3_8_manifest.json",
+      "sha256": "fc907483191427469c6724fedbdcbcc057d08cae51c6662308897b9985c4140a"
+    },
+    {
+      "path": "reports/manifests/expanded_offline_ml_research_v3_9_manifest.json",
+      "sha256": "520efeae9337e1d1f95ce0b9446a87d15d65a62976254cce328a81c0ec2a3372"
+    }
+  ],
+  "full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "aeb19f7b14c0c58c966f6f358aca5858a8c7d2d0a8e484a5991d2e7c632021a6",
+      "rows": 34436,
+      "reason_excluded": "full V3.9 score Parquet is represented by V4.0 checksums and reports in audit-lite"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "1840b25ed16e218214e3a8264b4c1218e36815787f8beefd0af4ca830c9c00cb",
+      "rows": 8516,
+      "reason_excluded": "full V3.9 score Parquet is represented by V4.0 checksums and reports in audit-lite"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "5e85abab4c5a9fd4eac63ecbb894df62fd297e81bc74e500486373512a91464a",
+      "rows": 518276,
+      "reason_excluded": "full V3.9 score Parquet is represented by V4.0 checksums and reports in audit-lite"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "114862fd5e691d703b541eb2e763650f79481e09e356661a8910ac5ecb89e51a",
+      "rows": 103556,
+      "reason_excluded": "full V3.9 score Parquet is represented by V4.0 checksums and reports in audit-lite"
+    }
+  ],
+  "included_reports": [
+    {
+      "path": "reports/manifests/expanded_ml_robustness_v4_0_manifest.json",
+      "sha256": "34b3720fae6116c8292c7d5c256059a6ce2d76705eebe4c751f4b21441681a0d"
+    },
+    {
+      "path": "reports/ml/expanded_ml_robustness_v4_0.json",
+      "sha256": "34b3720fae6116c8292c7d5c256059a6ce2d76705eebe4c751f4b21441681a0d"
+    }
+  ],
+  "notes": [
+    "audit-lite does not replace full local validation",
+    "V4.0 contains no raw zips, full Parquet data, backtest, strategy, order, execution artifact, or persistent model."
+  ]
+}

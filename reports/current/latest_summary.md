@@ -1,15 +1,13 @@
 # Latest Summary
 
-V3.8 est la dernière version validée par audit externe via audit-lite et attestation full locale.
+V3.9 est la dernière version validée par audit externe via audit-lite et attestation full locale.
 
-V3.9 est la candidate courante. Elle entraîne uniquement des baselines ML offline simples sur le dataset supervisé offline 90 jours V3.8 validé.
+V4.0 est la candidate courante. Elle audite uniquement la robustesse descriptive et la falsification des résultats ML offline V3.9 sur la fenêtre 90 jours.
 
-Les inputs restent BTCUSDT spot Binance public archive, fenêtre 2024-01-01 à 2024-03-30 inclus, avec datasets et splits V3.8 strictement temporels.
+Les inputs restent les datasets V3.8, les scores ML offline V3.9 et les rapports/manifests V3.9. V4.0 ne relance pas toute la chaîne historique par défaut.
 
-Les outputs V3.9 sont des scores de recherche offline dans `data/research/v3_9/ml/offline_research`, avec schéma `ML_SCORE_COLUMNS_V3_9` strict. Les modèles autorisés sont `majority_class_baseline`, `random_seeded_baseline`, `logistic_regression` et `decision_tree_depth_2`.
+Les analyses V4.0 sont `baseline_delta`, `split_stability`, `timeframe_stability`, `label_shuffle_falsification`, `feature_leakage_scan` et `metric_forbidden_scan`.
 
-La cible unique est `up_down_flat_h1`. Les lignes `warmup_row = true` et `label_valid_h1 = false` sont exclues. Aucune feature `future_*`, `label_*`, `direction_*`, `up_down_flat_*`, `split`, `signal`, `order`, `strategy`, `pnl` ou `backtest` n'est utilisée.
+V4.0 ne produit aucun backtest, aucune stratégie, aucun signal de trading, aucun paper live, aucun ordre, aucun trading réel et aucun modèle persistant.
 
-V3.9 ne produit aucun modèle persistant, aucun backtest, aucune stratégie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading réel.
-
-V3.9 reste `pending_external_audit`.
+V4.0 reste `pending_external_audit`.
