@@ -1,0 +1,135 @@
+{
+  "version": "V3.7",
+  "validation_scope": "full_local",
+  "created_at_utc": "2026-05-22T13:24:54.840072Z",
+  "audit_lite_zip_path": "projet-galapagos-v3.7-audit-lite.zip",
+  "audit_lite_zip_sha256": "a480edb08403af6d2dfaf11e7f67777c0a574c525e72a8a55932eaff19e1426b",
+  "audit_lite_zip_bytes": 356290,
+  "full_local_project_path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+  "commands_executed": [
+    "python scripts/run_expanded_label_factory_v3_7.py",
+    "python scripts/validate_expanded_label_factory_v3_7.py",
+    "python -m pytest -q tests/labels/test_expanded_forward_labels_v3_7.py",
+    "python -m pytest -q tests/validation/test_expanded_label_factory_v3_7_validator.py",
+    "python scripts/release_audit_lite_zip_v3_7.py",
+    "python scripts/audit_audit_lite_zip_v3_7.py --zip projet-galapagos-v3.7-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v3_7.py --zip projet-galapagos-v3.7-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_expanded_label_factory_v3_7.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python scripts/validate_expanded_label_factory_v3_7.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python -m pytest -q tests/labels/test_expanded_forward_labels_v3_7.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python -m pytest -q tests/validation/test_expanded_label_factory_v3_7_validator.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python scripts/release_audit_lite_zip_v3_7.py": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python scripts/audit_audit_lite_zip_v3_7.py --zip projet-galapagos-v3.7-audit-lite.zip": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python scripts/smoke_audit_lite_zip_v3_7.py --zip projet-galapagos-v3.7-audit-lite.zip": {
+      "returncode": 0,
+      "passed": true
+    },
+    "python -m pytest --collect-only -q": {
+      "returncode": 0,
+      "passed": true
+    }
+  },
+  "command_durations_seconds": {
+    "python scripts/run_expanded_label_factory_v3_7.py": 4.542,
+    "python scripts/validate_expanded_label_factory_v3_7.py": 4.039,
+    "python -m pytest -q tests/labels/test_expanded_forward_labels_v3_7.py": 0.638,
+    "python -m pytest -q tests/validation/test_expanded_label_factory_v3_7_validator.py": 18.867,
+    "python scripts/release_audit_lite_zip_v3_7.py": 0.74,
+    "python scripts/audit_audit_lite_zip_v3_7.py --zip projet-galapagos-v3.7-audit-lite.zip": 0.371,
+    "python scripts/smoke_audit_lite_zip_v3_7.py --zip projet-galapagos-v3.7-audit-lite.zip": 0.394,
+    "python -m pytest --collect-only -q": 2.203
+  },
+  "feature_output_files": [],
+  "label_output_files": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v3_7/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/labels.parquet",
+      "sha256": "bd378f40cd0cf43286c9470c966b8ce1d828930e667643f51a09c719050d4ece",
+      "bytes": 1339681,
+      "rows": 8640,
+      "columns_count": 37,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v3_7/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/labels.parquet",
+      "sha256": "e953e79d32f4f1197bdc3d78d28519c8cd54283fa823451f27e437f2db07acf1",
+      "bytes": 343079,
+      "rows": 2160,
+      "columns_count": 37,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v3_7/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/labels.parquet",
+      "sha256": "7a10dd6c3042db580d706044a8064535c69edd71d3635363547725184d569a42",
+      "bytes": 19903565,
+      "rows": 129600,
+      "columns_count": 37,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v3_7/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/labels.parquet",
+      "sha256": "c25b7e8efd4c26ed9fe284b08d680f71f214df6db72f2d88d9da4c97989b470c",
+      "bytes": 3962525,
+      "rows": 25920,
+      "columns_count": 37,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-03-30T23:55:00Z"
+    }
+  ],
+  "manifest_path": "reports/manifests/expanded_label_factory_v3_7_manifest.json",
+  "manifest_sha256": "2d6bcd9e77bb4c89c7a12f575d2759f4db27585691450c21cf7c69a526cbbc58",
+  "report_path": "reports/labels/expanded_label_factory_v3_7.json",
+  "report_sha256": "2d6bcd9e77bb4c89c7a12f575d2759f4db27585691450c21cf7c69a526cbbc58",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": true,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "audit_lite_does_not_replace_full_local_validation": true,
+  "errors": [],
+  "warnings": []
+}

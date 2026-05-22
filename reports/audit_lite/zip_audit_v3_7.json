@@ -1,0 +1,93 @@
+{
+  "version": "V3.7",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.7-audit-lite.zip",
+  "zip_size_bytes": 359206,
+  "zip_size_mb": 0.343,
+  "entries_count": 112,
+  "audit_lite_zip_passed": true,
+  "raw_zips_absent": true,
+  "top_20_largest_files": [
+    {
+      "path": "data/audit_lite/v3_7/labels/timeframe=15m/sample.parquet",
+      "bytes": 85022
+    },
+    {
+      "path": "data/audit_lite/v3_7/labels/timeframe=5m/sample.parquet",
+      "bytes": 84140
+    },
+    {
+      "path": "data/audit_lite/v3_7/labels/timeframe=1h/sample.parquet",
+      "bytes": 83975
+    },
+    {
+      "path": "data/audit_lite/v3_7/labels/timeframe=1m/sample.parquet",
+      "bytes": 82892
+    },
+    {
+      "path": "reports/audit_lite/v3_7_artifact_inventory.json",
+      "bytes": 52765
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "reports/data_quality/expanded_public_market_data_v3_5.json",
+      "bytes": 28253
+    },
+    {
+      "path": "reports/manifests/expanded_public_market_data_v3_5_manifest.json",
+      "bytes": 28253
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "src/galapagos/ml/robustness.py",
+      "bytes": 19445
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "src/galapagos/ml/multi_day_validation.py",
+      "bytes": 19166
+    },
+    {
+      "path": "src/galapagos/ml/validation.py",
+      "bytes": 18878
+    },
+    {
+      "path": "src/galapagos/datasets/multi_day_validation.py",
+      "bytes": 18614
+    },
+    {
+      "path": "src/galapagos/datasets/validation.py",
+      "bytes": 18274
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v3_7.py",
+      "bytes": 18064
+    },
+    {
+      "path": "src/galapagos/features/validation.py",
+      "bytes": 17222
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "bytes": 16608
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}
