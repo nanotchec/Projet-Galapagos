@@ -1,0 +1,3252 @@
+{
+  "version": "V3.9",
+  "ml_run_id": "v3_9_20260522T142900Z_101d9653",
+  "outputs": {
+    "1m": {
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "5e85abab4c5a9fd4eac63ecbb894df62fd297e81bc74e500486373512a91464a",
+      "bytes": 12178699,
+      "rows": 518276,
+      "format": "parquet"
+    },
+    "5m": {
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "114862fd5e691d703b541eb2e763650f79481e09e356661a8910ac5ecb89e51a",
+      "bytes": 2346348,
+      "rows": 103556,
+      "format": "parquet"
+    },
+    "15m": {
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "aeb19f7b14c0c58c966f6f358aca5858a8c7d2d0a8e484a5991d2e7c632021a6",
+      "bytes": 790585,
+      "rows": 34436,
+      "format": "parquet"
+    },
+    "1h": {
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "1840b25ed16e218214e3a8264b4c1218e36815787f8beefd0af4ca830c9c00cb",
+      "bytes": 181762,
+      "rows": 8516,
+      "format": "parquet"
+    }
+  },
+  "metrics": {
+    "15m.decision_tree_depth_2.test": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 1727,
+      "class_distribution_true": {
+        "DOWN": 715,
+        "FLAT": 275,
+        "UP": 737
+      },
+      "class_distribution_pred": {
+        "DOWN": 964,
+        "FLAT": 9,
+        "UP": 754
+      },
+      "accuracy": 0.44296467863346844,
+      "balanced_accuracy": 0.35511811571513063,
+      "macro_f1": 0.3277748683884127,
+      "per_class_precision": {
+        "DOWN": 0.4533195020746888,
+        "FLAT": 0.4444444444444444,
+        "UP": 0.4297082228116711
+      },
+      "per_class_recall": {
+        "DOWN": 0.6111888111888112,
+        "FLAT": 0.014545454545454545,
+        "UP": 0.4396200814111262
+      },
+      "confusion_matrix": [
+        [
+          437,
+          4,
+          274
+        ],
+        [
+          115,
+          4,
+          156
+        ],
+        [
+          412,
+          1,
+          324
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.decision_tree_depth_2.train": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 5154,
+      "class_distribution_true": {
+        "DOWN": 2003,
+        "FLAT": 1105,
+        "UP": 2046
+      },
+      "class_distribution_pred": {
+        "DOWN": 2208,
+        "FLAT": 119,
+        "UP": 2827
+      },
+      "accuracy": 0.43131548311990686,
+      "balanced_accuracy": 0.37535140365666875,
+      "macro_f1": 0.35400975390746475,
+      "per_class_precision": {
+        "DOWN": 0.4492753623188406,
+        "FLAT": 0.5882352941176471,
+        "UP": 0.4106827025114963
+      },
+      "per_class_recall": {
+        "DOWN": 0.4952571143285072,
+        "FLAT": 0.06334841628959276,
+        "UP": 0.5674486803519062
+      },
+      "confusion_matrix": [
+        [
+          992,
+          30,
+          981
+        ],
+        [
+          350,
+          70,
+          685
+        ],
+        [
+          866,
+          19,
+          1161
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.decision_tree_depth_2.validation": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 669,
+        "FLAT": 305,
+        "UP": 754
+      },
+      "class_distribution_pred": {
+        "DOWN": 963,
+        "FLAT": 5,
+        "UP": 760
+      },
+      "accuracy": 0.4253472222222222,
+      "balanced_accuracy": 0.35014026980707763,
+      "macro_f1": 0.31559568004130956,
+      "per_class_precision": {
+        "DOWN": 0.42990654205607476,
+        "FLAT": 0.6,
+        "UP": 0.41842105263157897
+      },
+      "per_class_recall": {
+        "DOWN": 0.6188340807174888,
+        "FLAT": 0.009836065573770493,
+        "UP": 0.4217506631299735
+      },
+      "confusion_matrix": [
+        [
+          414,
+          0,
+          255
+        ],
+        [
+          115,
+          3,
+          187
+        ],
+        [
+          434,
+          2,
+          318
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.test": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 1727,
+      "class_distribution_true": {
+        "DOWN": 715,
+        "FLAT": 275,
+        "UP": 737
+      },
+      "class_distribution_pred": {
+        "DOWN": 1138,
+        "FLAT": 6,
+        "UP": 583
+      },
+      "accuracy": 0.4493341053850608,
+      "balanced_accuracy": 0.35862088160595623,
+      "macro_f1": 0.3218762051125843,
+      "per_class_precision": {
+        "DOWN": 0.4349736379613357,
+        "FLAT": 0.16666666666666666,
+        "UP": 0.48027444253859347
+      },
+      "per_class_recall": {
+        "DOWN": 0.6923076923076923,
+        "FLAT": 0.0036363636363636364,
+        "UP": 0.37991858887381275
+      },
+      "confusion_matrix": [
+        [
+          495,
+          1,
+          219
+        ],
+        [
+          190,
+          1,
+          84
+        ],
+        [
+          453,
+          4,
+          280
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.train": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 5154,
+      "class_distribution_true": {
+        "DOWN": 2003,
+        "FLAT": 1105,
+        "UP": 2046
+      },
+      "class_distribution_pred": {
+        "DOWN": 2482,
+        "FLAT": 301,
+        "UP": 2371
+      },
+      "accuracy": 0.4412107101280559,
+      "balanced_accuracy": 0.3928544110390885,
+      "macro_f1": 0.38405568717194954,
+      "per_class_precision": {
+        "DOWN": 0.43593875906526997,
+        "FLAT": 0.44518272425249167,
+        "UP": 0.4462252214255588
+      },
+      "per_class_recall": {
+        "DOWN": 0.5401897154268597,
+        "FLAT": 0.12126696832579185,
+        "UP": 0.5171065493646139
+      },
+      "confusion_matrix": [
+        [
+          1082,
+          78,
+          843
+        ],
+        [
+          501,
+          134,
+          470
+        ],
+        [
+          899,
+          89,
+          1058
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.validation": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 669,
+        "FLAT": 305,
+        "UP": 754
+      },
+      "class_distribution_pred": {
+        "DOWN": 1180,
+        "FLAT": 44,
+        "UP": 504
+      },
+      "accuracy": 0.4340277777777778,
+      "balanced_accuracy": 0.3725303417427619,
+      "macro_f1": 0.344120301813825,
+      "per_class_precision": {
+        "DOWN": 0.411864406779661,
+        "FLAT": 0.4772727272727273,
+        "UP": 0.48214285714285715
+      },
+      "per_class_recall": {
+        "DOWN": 0.726457399103139,
+        "FLAT": 0.06885245901639345,
+        "UP": 0.3222811671087533
+      },
+      "confusion_matrix": [
+        [
+          486,
+          8,
+          175
+        ],
+        [
+          198,
+          21,
+          86
+        ],
+        [
+          496,
+          15,
+          243
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.test": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 1727,
+      "class_distribution_true": {
+        "DOWN": 715,
+        "FLAT": 275,
+        "UP": 737
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 1727
+      },
+      "accuracy": 0.4267515923566879,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1994047619047619,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.4267515923566879
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          715
+        ],
+        [
+          0,
+          0,
+          275
+        ],
+        [
+          0,
+          0,
+          737
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.train": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 5154,
+      "class_distribution_true": {
+        "DOWN": 2003,
+        "FLAT": 1105,
+        "UP": 2046
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 5154
+      },
+      "accuracy": 0.3969732246798603,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.18944444444444444,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.3969732246798603
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2003
+        ],
+        [
+          0,
+          0,
+          1105
+        ],
+        [
+          0,
+          0,
+          2046
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.validation": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 669,
+        "FLAT": 305,
+        "UP": 754
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 1728
+      },
+      "accuracy": 0.4363425925925926,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20252484555466022,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.4363425925925926
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          669
+        ],
+        [
+          0,
+          0,
+          305
+        ],
+        [
+          0,
+          0,
+          754
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.test": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 1727,
+      "class_distribution_true": {
+        "DOWN": 715,
+        "FLAT": 275,
+        "UP": 737
+      },
+      "class_distribution_pred": {
+        "DOWN": 660,
+        "FLAT": 380,
+        "UP": 687
+      },
+      "accuracy": 0.36479444122756227,
+      "balanced_accuracy": 0.34336290575096545,
+      "macro_f1": 0.33897294325881683,
+      "per_class_precision": {
+        "DOWN": 0.40454545454545454,
+        "FLAT": 0.18947368421052632,
+        "UP": 0.42358078602620086
+      },
+      "per_class_recall": {
+        "DOWN": 0.3734265734265734,
+        "FLAT": 0.26181818181818184,
+        "UP": 0.3948439620081411
+      },
+      "confusion_matrix": [
+        [
+          267,
+          166,
+          282
+        ],
+        [
+          89,
+          72,
+          114
+        ],
+        [
+          304,
+          142,
+          291
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.train": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 5154,
+      "class_distribution_true": {
+        "DOWN": 2003,
+        "FLAT": 1105,
+        "UP": 2046
+      },
+      "class_distribution_pred": {
+        "DOWN": 2021,
+        "FLAT": 1142,
+        "UP": 1991
+      },
+      "accuracy": 0.3674815677143966,
+      "balanced_accuracy": 0.3464791985614168,
+      "macro_f1": 0.34648476032607767,
+      "per_class_precision": {
+        "DOWN": 0.39732805541810984,
+        "FLAT": 0.22154115586690018,
+        "UP": 0.42089402310396784
+      },
+      "per_class_recall": {
+        "DOWN": 0.40089865202196706,
+        "FLAT": 0.22895927601809954,
+        "UP": 0.4095796676441838
+      },
+      "confusion_matrix": [
+        [
+          803,
+          455,
+          745
+        ],
+        [
+          444,
+          253,
+          408
+        ],
+        [
+          774,
+          434,
+          838
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.validation": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 669,
+        "FLAT": 305,
+        "UP": 754
+      },
+      "class_distribution_pred": {
+        "DOWN": 660,
+        "FLAT": 380,
+        "UP": 688
+      },
+      "accuracy": 0.36516203703703703,
+      "balanced_accuracy": 0.3390050616207625,
+      "macro_f1": 0.337630355439653,
+      "per_class_precision": {
+        "DOWN": 0.39090909090909093,
+        "FLAT": 0.18421052631578946,
+        "UP": 0.44040697674418605
+      },
+      "per_class_recall": {
+        "DOWN": 0.38565022421524664,
+        "FLAT": 0.22950819672131148,
+        "UP": 0.40185676392572944
+      },
+      "confusion_matrix": [
+        [
+          258,
+          139,
+          272
+        ],
+        [
+          122,
+          70,
+          113
+        ],
+        [
+          280,
+          171,
+          303
+        ]
+      ],
+      "train_rows": 5154,
+      "validation_rows": 1728,
+      "test_rows": 1727,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.test": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 431,
+      "class_distribution_true": {
+        "DOWN": 198,
+        "FLAT": 26,
+        "UP": 207
+      },
+      "class_distribution_pred": {
+        "DOWN": 255,
+        "FLAT": 0,
+        "UP": 176
+      },
+      "accuracy": 0.45243619489559167,
+      "balanced_accuracy": 0.32228077880251793,
+      "macro_f1": 0.3090315602203279,
+      "per_class_precision": {
+        "DOWN": 0.44313725490196076,
+        "FLAT": 0.0,
+        "UP": 0.4659090909090909
+      },
+      "per_class_recall": {
+        "DOWN": 0.5707070707070707,
+        "FLAT": 0.0,
+        "UP": 0.3961352657004831
+      },
+      "confusion_matrix": [
+        [
+          113,
+          0,
+          85
+        ],
+        [
+          17,
+          0,
+          9
+        ],
+        [
+          125,
+          0,
+          82
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.train": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 1266,
+      "class_distribution_true": {
+        "DOWN": 553,
+        "FLAT": 149,
+        "UP": 564
+      },
+      "class_distribution_pred": {
+        "DOWN": 770,
+        "FLAT": 0,
+        "UP": 496
+      },
+      "accuracy": 0.5126382306477093,
+      "balanced_accuracy": 0.3880135858993925,
+      "macro_f1": 0.3609164420485175,
+      "per_class_precision": {
+        "DOWN": 0.4909090909090909,
+        "FLAT": 0.0,
+        "UP": 0.5463709677419355
+      },
+      "per_class_recall": {
+        "DOWN": 0.6835443037974683,
+        "FLAT": 0.0,
+        "UP": 0.4804964539007092
+      },
+      "confusion_matrix": [
+        [
+          378,
+          0,
+          175
+        ],
+        [
+          99,
+          0,
+          50
+        ],
+        [
+          293,
+          0,
+          271
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.validation": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 432,
+      "class_distribution_true": {
+        "DOWN": 169,
+        "FLAT": 48,
+        "UP": 215
+      },
+      "class_distribution_pred": {
+        "DOWN": 353,
+        "FLAT": 0,
+        "UP": 79
+      },
+      "accuracy": 0.4236111111111111,
+      "balanced_accuracy": 0.3428007889546351,
+      "macro_f1": 0.2763051580785571,
+      "per_class_precision": {
+        "DOWN": 0.39660056657223797,
+        "FLAT": 0.0,
+        "UP": 0.5443037974683544
+      },
+      "per_class_recall": {
+        "DOWN": 0.8284023668639053,
+        "FLAT": 0.0,
+        "UP": 0.2
+      },
+      "confusion_matrix": [
+        [
+          140,
+          0,
+          29
+        ],
+        [
+          41,
+          0,
+          7
+        ],
+        [
+          172,
+          0,
+          43
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.test": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 431,
+      "class_distribution_true": {
+        "DOWN": 198,
+        "FLAT": 26,
+        "UP": 207
+      },
+      "class_distribution_pred": {
+        "DOWN": 130,
+        "FLAT": 2,
+        "UP": 299
+      },
+      "accuracy": 0.4965197215777262,
+      "balanced_accuracy": 0.34936319718928416,
+      "macro_f1": 0.32842475657958164,
+      "per_class_precision": {
+        "DOWN": 0.5,
+        "FLAT": 0.0,
+        "UP": 0.4983277591973244
+      },
+      "per_class_recall": {
+        "DOWN": 0.3282828282828283,
+        "FLAT": 0.0,
+        "UP": 0.7198067632850241
+      },
+      "confusion_matrix": [
+        [
+          65,
+          0,
+          133
+        ],
+        [
+          9,
+          0,
+          17
+        ],
+        [
+          56,
+          2,
+          149
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.train": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 1266,
+      "class_distribution_true": {
+        "DOWN": 553,
+        "FLAT": 149,
+        "UP": 564
+      },
+      "class_distribution_pred": {
+        "DOWN": 514,
+        "FLAT": 4,
+        "UP": 748
+      },
+      "accuracy": 0.5039494470774092,
+      "balanced_accuracy": 0.38184182868784583,
+      "macro_f1": 0.35907162174282675,
+      "per_class_precision": {
+        "DOWN": 0.5175097276264592,
+        "FLAT": 0.25,
+        "UP": 0.4959893048128342
+      },
+      "per_class_recall": {
+        "DOWN": 0.4810126582278481,
+        "FLAT": 0.006711409395973154,
+        "UP": 0.6578014184397163
+      },
+      "confusion_matrix": [
+        [
+          266,
+          2,
+          285
+        ],
+        [
+          56,
+          1,
+          92
+        ],
+        [
+          192,
+          1,
+          371
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.validation": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 432,
+      "class_distribution_true": {
+        "DOWN": 169,
+        "FLAT": 48,
+        "UP": 215
+      },
+      "class_distribution_pred": {
+        "DOWN": 182,
+        "FLAT": 3,
+        "UP": 247
+      },
+      "accuracy": 0.4791666666666667,
+      "balanced_accuracy": 0.3534241548552819,
+      "macro_f1": 0.3338390005056672,
+      "per_class_precision": {
+        "DOWN": 0.4230769230769231,
+        "FLAT": 0.0,
+        "UP": 0.5263157894736842
+      },
+      "per_class_recall": {
+        "DOWN": 0.4556213017751479,
+        "FLAT": 0.0,
+        "UP": 0.6046511627906976
+      },
+      "confusion_matrix": [
+        [
+          77,
+          2,
+          90
+        ],
+        [
+          21,
+          0,
+          27
+        ],
+        [
+          84,
+          1,
+          130
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.test": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 431,
+      "class_distribution_true": {
+        "DOWN": 198,
+        "FLAT": 26,
+        "UP": 207
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 431
+      },
+      "accuracy": 0.4802784222737819,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2163009404388715,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.4802784222737819
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          198
+        ],
+        [
+          0,
+          0,
+          26
+        ],
+        [
+          0,
+          0,
+          207
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.train": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 1266,
+      "class_distribution_true": {
+        "DOWN": 553,
+        "FLAT": 149,
+        "UP": 564
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 1266
+      },
+      "accuracy": 0.44549763033175355,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20546448087431693,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.44549763033175355
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          553
+        ],
+        [
+          0,
+          0,
+          149
+        ],
+        [
+          0,
+          0,
+          564
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.validation": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 432,
+      "class_distribution_true": {
+        "DOWN": 169,
+        "FLAT": 48,
+        "UP": 215
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 432
+      },
+      "accuracy": 0.4976851851851852,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.22153529108706851,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.4976851851851852
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          169
+        ],
+        [
+          0,
+          0,
+          48
+        ],
+        [
+          0,
+          0,
+          215
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.test": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 431,
+      "class_distribution_true": {
+        "DOWN": 198,
+        "FLAT": 26,
+        "UP": 207
+      },
+      "class_distribution_pred": {
+        "DOWN": 184,
+        "FLAT": 49,
+        "UP": 198
+      },
+      "accuracy": 0.45707656612529,
+      "balanced_accuracy": 0.3908595430334561,
+      "macro_f1": 0.37635920970417774,
+      "per_class_precision": {
+        "DOWN": 0.47282608695652173,
+        "FLAT": 0.12244897959183673,
+        "UP": 0.5252525252525253
+      },
+      "per_class_recall": {
+        "DOWN": 0.4393939393939394,
+        "FLAT": 0.23076923076923078,
+        "UP": 0.5024154589371981
+      },
+      "confusion_matrix": [
+        [
+          87,
+          25,
+          86
+        ],
+        [
+          12,
+          6,
+          8
+        ],
+        [
+          85,
+          18,
+          104
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.train": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 1266,
+      "class_distribution_true": {
+        "DOWN": 553,
+        "FLAT": 149,
+        "UP": 564
+      },
+      "class_distribution_pred": {
+        "DOWN": 555,
+        "FLAT": 145,
+        "UP": 566
+      },
+      "accuracy": 0.3909952606635071,
+      "balanced_accuracy": 0.32988441820235426,
+      "macro_f1": 0.330017906015478,
+      "per_class_precision": {
+        "DOWN": 0.42342342342342343,
+        "FLAT": 0.14482758620689656,
+        "UP": 0.42226148409893993
+      },
+      "per_class_recall": {
+        "DOWN": 0.42495479204339964,
+        "FLAT": 0.14093959731543623,
+        "UP": 0.4237588652482269
+      },
+      "confusion_matrix": [
+        [
+          235,
+          56,
+          262
+        ],
+        [
+          63,
+          21,
+          65
+        ],
+        [
+          257,
+          68,
+          239
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.validation": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 432,
+      "class_distribution_true": {
+        "DOWN": 169,
+        "FLAT": 48,
+        "UP": 215
+      },
+      "class_distribution_pred": {
+        "DOWN": 184,
+        "FLAT": 49,
+        "UP": 199
+      },
+      "accuracy": 0.3958333333333333,
+      "balanced_accuracy": 0.321626492668532,
+      "macro_f1": 0.32115382200647385,
+      "per_class_precision": {
+        "DOWN": 0.3804347826086957,
+        "FLAT": 0.10204081632653061,
+        "UP": 0.4824120603015075
+      },
+      "per_class_recall": {
+        "DOWN": 0.41420118343195267,
+        "FLAT": 0.10416666666666667,
+        "UP": 0.44651162790697674
+      },
+      "confusion_matrix": [
+        [
+          70,
+          22,
+          77
+        ],
+        [
+          17,
+          5,
+          26
+        ],
+        [
+          97,
+          22,
+          96
+        ]
+      ],
+      "train_rows": 1266,
+      "validation_rows": 432,
+      "test_rows": 431,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.decision_tree_depth_2.test": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 25919,
+      "class_distribution_true": {
+        "DOWN": 6123,
+        "FLAT": 13747,
+        "UP": 6049
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 25919,
+        "UP": 0
+      },
+      "accuracy": 0.5303831166325861,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2310458999310913,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5303831166325861,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          6123,
+          0
+        ],
+        [
+          0,
+          13747,
+          0
+        ],
+        [
+          0,
+          6049,
+          0
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.decision_tree_depth_2.train": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 77730,
+      "class_distribution_true": {
+        "DOWN": 11481,
+        "FLAT": 54492,
+        "UP": 11757
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 77730,
+        "UP": 0
+      },
+      "accuracy": 0.7010420686993439,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27475004159670857,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.7010420686993439,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          11481,
+          0
+        ],
+        [
+          0,
+          54492,
+          0
+        ],
+        [
+          0,
+          11757,
+          0
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.decision_tree_depth_2.validation": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 25920,
+      "class_distribution_true": {
+        "DOWN": 5049,
+        "FLAT": 15404,
+        "UP": 5467
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 25920,
+        "UP": 0
+      },
+      "accuracy": 0.5942901234567901,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2485077275513826,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5942901234567901,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          5049,
+          0
+        ],
+        [
+          0,
+          15404,
+          0
+        ],
+        [
+          0,
+          5467,
+          0
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.test": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 25919,
+      "class_distribution_true": {
+        "DOWN": 6123,
+        "FLAT": 13747,
+        "UP": 6049
+      },
+      "class_distribution_pred": {
+        "DOWN": 3177,
+        "FLAT": 20290,
+        "UP": 2452
+      },
+      "accuracy": 0.5504456190439446,
+      "balanced_accuracy": 0.40926883045767887,
+      "macro_f1": 0.39365003221519496,
+      "per_class_precision": {
+        "DOWN": 0.37614101353478124,
+        "FLAT": 0.6007392804337112,
+        "UP": 0.3601141924959217
+      },
+      "per_class_recall": {
+        "DOWN": 0.19516576841417604,
+        "FLAT": 0.8866661817123737,
+        "UP": 0.145974541246487
+      },
+      "confusion_matrix": [
+        [
+          1195,
+          4035,
+          893
+        ],
+        [
+          882,
+          12189,
+          676
+        ],
+        [
+          1100,
+          4066,
+          883
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.train": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 77730,
+      "class_distribution_true": {
+        "DOWN": 11481,
+        "FLAT": 54492,
+        "UP": 11757
+      },
+      "class_distribution_pred": {
+        "DOWN": 1728,
+        "FLAT": 73785,
+        "UP": 2217
+      },
+      "accuracy": 0.7056220249581886,
+      "balanced_accuracy": 0.3688284057012238,
+      "macro_f1": 0.349674657235739,
+      "per_class_precision": {
+        "DOWN": 0.36689814814814814,
+        "FLAT": 0.7233041946195026,
+        "UP": 0.3811456923770862
+      },
+      "per_class_recall": {
+        "DOWN": 0.05522167058618587,
+        "FLAT": 0.9793914703075681,
+        "UP": 0.0718720762099175
+      },
+      "confusion_matrix": [
+        [
+          634,
+          10083,
+          764
+        ],
+        [
+          515,
+          53369,
+          608
+        ],
+        [
+          579,
+          10333,
+          845
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.validation": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 25920,
+      "class_distribution_true": {
+        "DOWN": 5049,
+        "FLAT": 15404,
+        "UP": 5467
+      },
+      "class_distribution_pred": {
+        "DOWN": 2597,
+        "FLAT": 21246,
+        "UP": 2077
+      },
+      "accuracy": 0.6194444444444445,
+      "balanced_accuracy": 0.4240909292393676,
+      "macro_f1": 0.4193200068347979,
+      "per_class_precision": {
+        "DOWN": 0.35926068540623796,
+        "FLAT": 0.6696319307163702,
+        "UP": 0.431391429947039
+      },
+      "per_class_recall": {
+        "DOWN": 0.18478906714200832,
+        "FLAT": 0.9235912749935081,
+        "UP": 0.16389244558258642
+      },
+      "confusion_matrix": [
+        [
+          933,
+          3423,
+          693
+        ],
+        [
+          689,
+          14227,
+          488
+        ],
+        [
+          975,
+          3596,
+          896
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.test": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 25919,
+      "class_distribution_true": {
+        "DOWN": 6123,
+        "FLAT": 13747,
+        "UP": 6049
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 25919,
+        "UP": 0
+      },
+      "accuracy": 0.5303831166325861,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2310458999310913,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5303831166325861,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          6123,
+          0
+        ],
+        [
+          0,
+          13747,
+          0
+        ],
+        [
+          0,
+          6049,
+          0
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.train": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 77730,
+      "class_distribution_true": {
+        "DOWN": 11481,
+        "FLAT": 54492,
+        "UP": 11757
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 77730,
+        "UP": 0
+      },
+      "accuracy": 0.7010420686993439,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27475004159670857,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.7010420686993439,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          11481,
+          0
+        ],
+        [
+          0,
+          54492,
+          0
+        ],
+        [
+          0,
+          11757,
+          0
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.validation": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 25920,
+      "class_distribution_true": {
+        "DOWN": 5049,
+        "FLAT": 15404,
+        "UP": 5467
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 25920,
+        "UP": 0
+      },
+      "accuracy": 0.5942901234567901,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2485077275513826,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5942901234567901,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          5049,
+          0
+        ],
+        [
+          0,
+          15404,
+          0
+        ],
+        [
+          0,
+          5467,
+          0
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.test": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 25919,
+      "class_distribution_true": {
+        "DOWN": 6123,
+        "FLAT": 13747,
+        "UP": 6049
+      },
+      "class_distribution_pred": {
+        "DOWN": 3832,
+        "FLAT": 18213,
+        "UP": 3874
+      },
+      "accuracy": 0.4367838265365176,
+      "balanced_accuracy": 0.32724927500730355,
+      "macro_f1": 0.3160096866697208,
+      "per_class_precision": {
+        "DOWN": 0.22781837160751567,
+        "FLAT": 0.5267116894525888,
+        "UP": 0.22070211667527104
+      },
+      "per_class_recall": {
+        "DOWN": 0.14257716805487505,
+        "FLAT": 0.6978249799956354,
+        "UP": 0.14134567697140024
+      },
+      "confusion_matrix": [
+        [
+          873,
+          4351,
+          899
+        ],
+        [
+          2034,
+          9593,
+          2120
+        ],
+        [
+          925,
+          4269,
+          855
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.train": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 77730,
+      "class_distribution_true": {
+        "DOWN": 11481,
+        "FLAT": 54492,
+        "UP": 11757
+      },
+      "class_distribution_pred": {
+        "DOWN": 11384,
+        "FLAT": 54623,
+        "UP": 11723
+      },
+      "accuracy": 0.5353788755950084,
+      "balanced_accuracy": 0.3309482315455031,
+      "macro_f1": 0.3309440147884341,
+      "per_class_precision": {
+        "DOWN": 0.14722417427969078,
+        "FLAT": 0.6999066327371254,
+        "UP": 0.1456964940714834
+      },
+      "per_class_recall": {
+        "DOWN": 0.145980315303545,
+        "FLAT": 0.7015892241062909,
+        "UP": 0.14527515522667347
+      },
+      "confusion_matrix": [
+        [
+          1676,
+          8019,
+          1786
+        ],
+        [
+          8032,
+          38231,
+          8229
+        ],
+        [
+          1676,
+          8373,
+          1708
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.validation": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 25920,
+      "class_distribution_true": {
+        "DOWN": 5049,
+        "FLAT": 15404,
+        "UP": 5467
+      },
+      "class_distribution_pred": {
+        "DOWN": 3832,
+        "FLAT": 18214,
+        "UP": 3874
+      },
+      "accuracy": 0.4789351851851852,
+      "balanced_accuracy": 0.3345193658791787,
+      "macro_f1": 0.3303050414307293,
+      "per_class_precision": {
+        "DOWN": 0.19754697286012526,
+        "FLAT": 0.5949269792467333,
+        "UP": 0.21192565823438306
+      },
+      "per_class_recall": {
+        "DOWN": 0.14993067934244406,
+        "FLAT": 0.7034536484030122,
+        "UP": 0.15017376989207976
+      },
+      "confusion_matrix": [
+        [
+          757,
+          3542,
+          750
+        ],
+        [
+          2265,
+          10836,
+          2303
+        ],
+        [
+          810,
+          3836,
+          821
+        ]
+      ],
+      "train_rows": 77730,
+      "validation_rows": 25920,
+      "test_rows": 25919,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.test": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 5183,
+      "class_distribution_true": {
+        "DOWN": 1948,
+        "FLAT": 1341,
+        "UP": 1894
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1469,
+        "UP": 3714
+      },
+      "accuracy": 0.3847192745514181,
+      "balanced_accuracy": 0.39164810260747274,
+      "macro_f1": 0.303447963678392,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.3818924438393465,
+        "UP": 0.3858373721055466
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.41834451901565994,
+        "UP": 0.7565997888067582
+      },
+      "confusion_matrix": [
+        [
+          0,
+          447,
+          1501
+        ],
+        [
+          0,
+          561,
+          780
+        ],
+        [
+          0,
+          461,
+          1433
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.train": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 15522,
+      "class_distribution_true": {
+        "DOWN": 4667,
+        "FLAT": 5993,
+        "UP": 4862
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 7247,
+        "UP": 8275
+      },
+      "accuracy": 0.4347377915217111,
+      "balanced_accuracy": 0.41484078424234094,
+      "macro_f1": 0.34098412569190084,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5097281633779495,
+        "UP": 0.36906344410876135
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.616385783413983,
+        "UP": 0.6281365693130398
+      },
+      "confusion_matrix": [
+        [
+          0,
+          1745,
+          2922
+        ],
+        [
+          0,
+          3694,
+          2299
+        ],
+        [
+          0,
+          1808,
+          3054
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.validation": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 5184,
+      "class_distribution_true": {
+        "DOWN": 1663,
+        "FLAT": 1666,
+        "UP": 1855
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1636,
+        "UP": 3548
+      },
+      "accuracy": 0.4540895061728395,
+      "balanced_accuracy": 0.4411236192590244,
+      "macro_f1": 0.3602509526995923,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.543398533007335,
+        "UP": 0.4129086809470124
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.5336134453781513,
+        "UP": 0.7897574123989218
+      },
+      "confusion_matrix": [
+        [
+          0,
+          357,
+          1306
+        ],
+        [
+          0,
+          889,
+          777
+        ],
+        [
+          0,
+          390,
+          1465
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.test": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 5183,
+      "class_distribution_true": {
+        "DOWN": 1948,
+        "FLAT": 1341,
+        "UP": 1894
+      },
+      "class_distribution_pred": {
+        "DOWN": 1840,
+        "FLAT": 1893,
+        "UP": 1450
+      },
+      "accuracy": 0.4040131198147791,
+      "balanced_accuracy": 0.4151088447151478,
+      "macro_f1": 0.40366972775310145,
+      "per_class_precision": {
+        "DOWN": 0.43043478260869567,
+        "FLAT": 0.36714210248283147,
+        "UP": 0.4186206896551724
+      },
+      "per_class_recall": {
+        "DOWN": 0.406570841889117,
+        "FLAT": 0.5182699478001491,
+        "UP": 0.3204857444561774
+      },
+      "confusion_matrix": [
+        [
+          792,
+          581,
+          575
+        ],
+        [
+          378,
+          695,
+          268
+        ],
+        [
+          670,
+          617,
+          607
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.train": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 15522,
+      "class_distribution_true": {
+        "DOWN": 4667,
+        "FLAT": 5993,
+        "UP": 4862
+      },
+      "class_distribution_pred": {
+        "DOWN": 2000,
+        "FLAT": 10377,
+        "UP": 3145
+      },
+      "accuracy": 0.4459476871537173,
+      "balanced_accuracy": 0.41469696255934524,
+      "macro_f1": 0.3854900932621939,
+      "per_class_precision": {
+        "DOWN": 0.4085,
+        "FLAT": 0.4633323696636793,
+        "UP": 0.4124006359300477
+      },
+      "per_class_recall": {
+        "DOWN": 0.17505892436254553,
+        "FLAT": 0.8022693141998999,
+        "UP": 0.2667626491155903
+      },
+      "confusion_matrix": [
+        [
+          817,
+          2756,
+          1094
+        ],
+        [
+          431,
+          4808,
+          754
+        ],
+        [
+          752,
+          2813,
+          1297
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.validation": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 5184,
+      "class_distribution_true": {
+        "DOWN": 1663,
+        "FLAT": 1666,
+        "UP": 1855
+      },
+      "class_distribution_pred": {
+        "DOWN": 1585,
+        "FLAT": 2406,
+        "UP": 1193
+      },
+      "accuracy": 0.44039351851851855,
+      "balanced_accuracy": 0.4460966360471735,
+      "macro_f1": 0.42853490952679757,
+      "per_class_precision": {
+        "DOWN": 0.38485804416403785,
+        "FLAT": 0.47298420615128844,
+        "UP": 0.4484492875104778
+      },
+      "per_class_recall": {
+        "DOWN": 0.3668069753457607,
+        "FLAT": 0.6830732292917167,
+        "UP": 0.2884097035040431
+      },
+      "confusion_matrix": [
+        [
+          610,
+          616,
+          437
+        ],
+        [
+          307,
+          1138,
+          221
+        ],
+        [
+          668,
+          652,
+          535
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.test": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 5183,
+      "class_distribution_true": {
+        "DOWN": 1948,
+        "FLAT": 1341,
+        "UP": 1894
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 5183,
+        "UP": 0
+      },
+      "accuracy": 0.25873046498167085,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.13703249540159412,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.25873046498167085,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          1948,
+          0
+        ],
+        [
+          0,
+          1341,
+          0
+        ],
+        [
+          0,
+          1894,
+          0
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.train": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 15522,
+      "class_distribution_true": {
+        "DOWN": 4667,
+        "FLAT": 5993,
+        "UP": 4862
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 15522,
+        "UP": 0
+      },
+      "accuracy": 0.3860971524288107,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.18569989929506547,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.3860971524288107,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          4667,
+          0
+        ],
+        [
+          0,
+          5993,
+          0
+        ],
+        [
+          0,
+          4862,
+          0
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.validation": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 5184,
+      "class_distribution_true": {
+        "DOWN": 1663,
+        "FLAT": 1666,
+        "UP": 1855
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 5184,
+        "UP": 0
+      },
+      "accuracy": 0.32137345679012347,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1621411192214112,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.32137345679012347,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          1663,
+          0
+        ],
+        [
+          0,
+          1666,
+          0
+        ],
+        [
+          0,
+          1855,
+          0
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.test": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 5183,
+      "class_distribution_true": {
+        "DOWN": 1948,
+        "FLAT": 1341,
+        "UP": 1894
+      },
+      "class_distribution_pred": {
+        "DOWN": 1602,
+        "FLAT": 2007,
+        "UP": 1574
+      },
+      "accuracy": 0.32375072351919737,
+      "balanced_accuracy": 0.3289405417471578,
+      "macro_f1": 0.3233500133891117,
+      "per_class_precision": {
+        "DOWN": 0.3782771535580524,
+        "FLAT": 0.25112107623318386,
+        "UP": 0.36086404066073696
+      },
+      "per_class_recall": {
+        "DOWN": 0.311088295687885,
+        "FLAT": 0.37583892617449666,
+        "UP": 0.29989440337909185
+      },
+      "confusion_matrix": [
+        [
+          606,
+          738,
+          604
+        ],
+        [
+          435,
+          504,
+          402
+        ],
+        [
+          561,
+          765,
+          568
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.train": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 15522,
+      "class_distribution_true": {
+        "DOWN": 4667,
+        "FLAT": 5993,
+        "UP": 4862
+      },
+      "class_distribution_pred": {
+        "DOWN": 4699,
+        "FLAT": 6010,
+        "UP": 4813
+      },
+      "accuracy": 0.34074217240046384,
+      "balanced_accuracy": 0.3365577471056338,
+      "macro_f1": 0.33655614592407507,
+      "per_class_precision": {
+        "DOWN": 0.30432006809959566,
+        "FLAT": 0.3876871880199667,
+        "UP": 0.3176812798670268
+      },
+      "per_class_recall": {
+        "DOWN": 0.3064066852367688,
+        "FLAT": 0.38878691807108295,
+        "UP": 0.31447963800904977
+      },
+      "confusion_matrix": [
+        [
+          1430,
+          1819,
+          1418
+        ],
+        [
+          1797,
+          2330,
+          1866
+        ],
+        [
+          1472,
+          1861,
+          1529
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.validation": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 5184,
+      "class_distribution_true": {
+        "DOWN": 1663,
+        "FLAT": 1666,
+        "UP": 1855
+      },
+      "class_distribution_pred": {
+        "DOWN": 1602,
+        "FLAT": 2008,
+        "UP": 1574
+      },
+      "accuracy": 0.3271604938271605,
+      "balanced_accuracy": 0.327834221765494,
+      "macro_f1": 0.32647408825842134,
+      "per_class_precision": {
+        "DOWN": 0.31023720349563044,
+        "FLAT": 0.31175298804780877,
+        "UP": 0.3640406607369759
+      },
+      "per_class_recall": {
+        "DOWN": 0.2988574864702345,
+        "FLAT": 0.375750300120048,
+        "UP": 0.30889487870619947
+      },
+      "confusion_matrix": [
+        [
+          497,
+          678,
+          488
+        ],
+        [
+          527,
+          626,
+          513
+        ],
+        [
+          578,
+          704,
+          573
+        ]
+      ],
+      "train_rows": 15522,
+      "validation_rows": 5184,
+      "test_rows": 5183,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    }
+  }
+}

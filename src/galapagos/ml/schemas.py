@@ -349,3 +349,74 @@ def get_feature_columns_sha256_v3_3() -> str:
 
     payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V3_3, separators=(",", ":"), sort_keys=False)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+VERSION_V3_9 = "V3.9"
+ML_SCHEMA_VERSION_V3_9 = "V3.9"
+TARGET_NAME_V3_9 = "up_down_flat_h1"
+RANDOM_SEED_V3_9 = 42
+TARGET_CLASSES_V3_9 = ["DOWN", "FLAT", "UP"]
+MODEL_NAMES_V3_9 = [
+    "majority_class_baseline",
+    "random_seeded_baseline",
+    "logistic_regression",
+    "decision_tree_depth_2",
+]
+TIMEFRAMES_V3_9 = ["1m", "5m", "15m", "1h"]
+EXPECTED_DATASET_ROWS_V3_9 = {"1m": 129600, "5m": 25920, "15m": 8640, "1h": 2160}
+WINDOW_V3_9 = "2024-01-01_2024-03-30"
+
+MANIFEST_PATH_V3_9 = Path("reports/manifests/expanded_offline_ml_research_v3_9_manifest.json")
+REPORT_JSON_PATH_V3_9 = Path("reports/ml/expanded_offline_ml_research_v3_9.json")
+REPORT_MD_PATH_V3_9 = Path("reports/ml/expanded_offline_ml_research_v3_9.md")
+SCORES_JSON_PATH_V3_9 = Path("reports/ml/expanded_offline_research_scores_v3_9.json")
+SCORES_MD_PATH_V3_9 = Path("reports/ml/expanded_offline_research_scores_v3_9.md")
+DOC_PATH_V3_9 = Path("docs/expanded_offline_ml_research_v3_9.md")
+
+ALLOWED_FEATURE_COLUMNS_V3_9 = ALLOWED_FEATURE_COLUMNS_V3_3.copy()
+FORBIDDEN_FEATURE_TERMS_V3_9 = FORBIDDEN_FEATURE_TERMS_V3_3.copy()
+FORBIDDEN_OUTPUT_TERMS_V3_9 = FORBIDDEN_OUTPUT_TERMS_V3_3.copy()
+FORBIDDEN_METRIC_TERMS_V3_9 = FORBIDDEN_METRIC_TERMS_V3_3.copy()
+ML_SCORE_COLUMNS_V3_9 = ML_SCORE_COLUMNS_V3_3.copy()
+
+EXPECTED_LIMITATIONS_V3_9 = [
+    "V3.9 entraine uniquement des baselines ML offline simples sur le dataset 90 jours V3.8 valide.",
+    "V3.9 ne produit aucun backtest, aucune strategie, aucun signal de trading et aucun ordre.",
+]
+
+SAFETY_FLAGS_V3_9 = {
+    "public_read_only": True,
+    "authentication_used": False,
+    "api_key_used": False,
+    "private_endpoint_used": False,
+    "orders_enabled": False,
+    "paper_live_enabled": False,
+    "trading_enabled": False,
+    "ml_enabled": True,
+    "labels_enabled": True,
+    "dataset_enabled": True,
+    "backtest_enabled": False,
+    "strategy_enabled": False,
+    "execution_enabled": False,
+}
+
+
+def get_expanded_ml_score_path_v3_9(root: Path, timeframe: str) -> Path:
+    return (
+        root
+        / "data/research/v3_9/ml/offline_research"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={WINDOW_V3_9}"
+        / "ml-scores.parquet"
+    )
+
+
+def get_feature_columns_sha256_v3_9() -> str:
+    import hashlib
+    import json
+
+    payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V3_9, separators=(",", ":"), sort_keys=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()

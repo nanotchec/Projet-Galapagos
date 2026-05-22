@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V3.7",
-  "candidate_version": "V3.8",
+  "last_validated_version": "V3.8",
+  "candidate_version": "V3.9",
   "candidate_status": "pending_external_audit",
-  "direction": "90-day offline supervised dataset assembly preview",
+  "direction": "90-day offline ML research baselines",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -174,7 +174,7 @@
   "backtest_v3_7_created": false,
   "strategy_v3_7_created": false,
   "v3_8_candidate": true,
-  "v3_8_validated_by_external_audit": false,
+  "v3_8_validated_by_external_audit": true,
   "expanded_dataset_rows_v3_8": {
     "1m": 129600,
     "5m": 25920,
@@ -212,5 +212,58 @@
   "strategy_v3_8_created": false,
   "signal_v3_8_created": false,
   "orders_v3_8_created": false,
-  "paper_live_v3_8_created": false
+  "paper_live_v3_8_created": false,
+  "v3_9_candidate": true,
+  "v3_9_validated_by_external_audit": false,
+  "expanded_ml_score_rows_v3_9": {
+    "1m": 518276,
+    "5m": 103556,
+    "15m": 34436,
+    "1h": 8516
+  },
+  "expanded_ml_rows_used_v3_9": {
+    "1m": 129569,
+    "5m": 25889,
+    "15m": 8609,
+    "1h": 2129
+  },
+  "expanded_ml_split_counts_v3_9": {
+    "1m": {
+      "train": 77730,
+      "validation": 25920,
+      "test": 25919
+    },
+    "5m": {
+      "train": 15522,
+      "validation": 5184,
+      "test": 5183
+    },
+    "15m": {
+      "train": 5154,
+      "validation": 1728,
+      "test": 1727
+    },
+    "1h": {
+      "train": 1266,
+      "validation": 432,
+      "test": 431
+    }
+  },
+  "expanded_ml_target_v3_9": "up_down_flat_h1",
+  "expanded_ml_models_v3_9": [
+    "majority_class_baseline",
+    "random_seeded_baseline",
+    "logistic_regression",
+    "decision_tree_depth_2"
+  ],
+  "expanded_ml_allowed_feature_count_v3_9": 31,
+  "ml_v3_9_created": true,
+  "ml_score_v3_9_created": true,
+  "persistent_model_v3_9_created": false,
+  "model_v3_9_created": false,
+  "backtest_v3_9_created": false,
+  "strategy_v3_9_created": false,
+  "signal_v3_9_created": false,
+  "orders_v3_9_created": false,
+  "paper_live_v3_9_created": false
 }

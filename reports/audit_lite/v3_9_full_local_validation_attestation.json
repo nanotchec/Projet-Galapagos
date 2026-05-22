@@ -1,0 +1,99 @@
+{
+  "version": "V3.9",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_expanded_offline_ml_research_v3_9.py",
+    "python scripts/validate_expanded_offline_ml_research_v3_9.py",
+    "python -m pytest -q tests/ml/test_expanded_offline_ml_research_v3_9.py",
+    "python -m pytest -q tests/validation/test_expanded_offline_ml_research_v3_9_validator.py",
+    "python scripts/release_audit_lite_zip_v3_9.py",
+    "python scripts/audit_audit_lite_zip_v3_9.py --zip projet-galapagos-v3.9-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v3_9.py --zip projet-galapagos-v3.9-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_expanded_offline_ml_research_v3_9.py": 0,
+    "python scripts/validate_expanded_offline_ml_research_v3_9.py": 0,
+    "python -m pytest -q tests/ml/test_expanded_offline_ml_research_v3_9.py": 0,
+    "python -m pytest -q tests/validation/test_expanded_offline_ml_research_v3_9_validator.py": 0,
+    "python scripts/release_audit_lite_zip_v3_9.py": 0,
+    "python scripts/audit_audit_lite_zip_v3_9.py --zip projet-galapagos-v3.9-audit-lite.zip": 0,
+    "python scripts/smoke_audit_lite_zip_v3_9.py --zip projet-galapagos-v3.9-audit-lite.zip": 0,
+    "python -m pytest --collect-only -q": 0
+  },
+  "command_durations_seconds": {
+    "python scripts/run_expanded_offline_ml_research_v3_9.py": 16.77,
+    "python scripts/validate_expanded_offline_ml_research_v3_9.py": 10.3,
+    "python -m pytest -q tests/ml/test_expanded_offline_ml_research_v3_9.py": 1.51,
+    "python -m pytest -q tests/validation/test_expanded_offline_ml_research_v3_9_validator.py": 11.07,
+    "python scripts/release_audit_lite_zip_v3_9.py": 1.09,
+    "python scripts/audit_audit_lite_zip_v3_9.py --zip projet-galapagos-v3.9-audit-lite.zip": 0.4,
+    "python scripts/smoke_audit_lite_zip_v3_9.py --zip projet-galapagos-v3.9-audit-lite.zip": 1.17,
+    "python -m pytest --collect-only -q": 1.98
+  },
+  "output_scores_full": {
+    "1m": {
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "5e85abab4c5a9fd4eac63ecbb894df62fd297e81bc74e500486373512a91464a",
+      "bytes": 12178699,
+      "rows": 518276,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T00:30:00Z",
+      "max_event_ts": "2024-03-30T23:58:00Z"
+    },
+    "5m": {
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "114862fd5e691d703b541eb2e763650f79481e09e356661a8910ac5ecb89e51a",
+      "bytes": 2346348,
+      "rows": 103556,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T02:30:00Z",
+      "max_event_ts": "2024-03-30T23:50:00Z"
+    },
+    "15m": {
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "aeb19f7b14c0c58c966f6f358aca5858a8c7d2d0a8e484a5991d2e7c632021a6",
+      "bytes": 790585,
+      "rows": 34436,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T07:30:00Z",
+      "max_event_ts": "2024-03-30T23:30:00Z"
+    },
+    "1h": {
+      "path": "data/research/v3_9/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-03-30/ml-scores.parquet",
+      "sha256": "1840b25ed16e218214e3a8264b4c1218e36815787f8beefd0af4ca830c9c00cb",
+      "bytes": 181762,
+      "rows": 8516,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-02T06:00:00Z",
+      "max_event_ts": "2024-03-30T22:00:00Z"
+    }
+  },
+  "manifest_sha256": "520efeae9337e1d1f95ce0b9446a87d15d65a62976254cce328a81c0ec2a3372",
+  "report_sha256": "520efeae9337e1d1f95ce0b9446a87d15d65a62976254cce328a81c0ec2a3372",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_persistent_model": true,
+  "errors": [],
+  "warnings": []
+}

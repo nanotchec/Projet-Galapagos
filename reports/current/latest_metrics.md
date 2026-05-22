@@ -1,40 +1,46 @@
 # Latest Metrics
 
-- Dernière version validée : `V3.7`
-- Candidate : `V3.8`
+- Dernière version validée : `V3.8`
+- Candidate : `V3.9`
 - Statut : `pending_external_audit`
-- Direction : 90-day offline supervised dataset assembly preview
+- Direction : 90-day offline ML research baselines
 
-## Row counts V3.8 datasets
+## Row counts V3.9 scores
 
-- 1m : `129600`
-- 5m : `25920`
-- 15m : `8640`
-- 1h : `2160`
+- 1m : `518276`
+- 5m : `103556`
+- 15m : `34436`
+- 1h : `8516`
 
-## Split counts V3.8
+## Lignes utilisées pour le ML
 
-- 1m : train `77760`, validation `25920`, test `25920`
-- 5m : train `15552`, validation `5184`, test `5184`
-- 15m : train `5184`, validation `1728`, test `1728`
-- 1h : train `1296`, validation `432`, test `432`
+- 1m : `129569`
+- 5m : `25889`
+- 15m : `8609`
+- 1h : `2129`
 
-## Dataset policy
+## Splits ML utilisés
 
-- Schéma : `DATASET_COLUMNS_V3_8`
-- Features source : V3.6.
-- Labels source : V3.7.
+- 1m : train `77730`, validation `25920`, test `25919`
+- 5m : train `15522`, validation `5184`, test `5183`
+- 15m : train `5154`, validation `1728`, test `1727`
+- 1h : train `1266`, validation `432`, test `431`
+
+## Politique ML
+
+- Cible : `up_down_flat_h1`
+- Modèles : `majority_class_baseline`, `random_seeded_baseline`, `logistic_regression`, `decision_tree_depth_2`
+- Features autorisées : `31`
+- Warmup exclu : `true`
+- Labels h1 invalides exclus : `true`
 - Shuffle : `false`
-- Purge/embargo : `none_v3_8_preview`
 
 ## Safety
 
-- Aucun ML V3.8.
-- Aucun modèle V3.8.
-- Aucune prédiction V3.8.
-- Aucun score ML V3.8.
+- Aucun modèle persistant.
 - Aucun backtest.
 - Aucune stratégie.
+- Aucun signal de trading.
 - Aucun paper live.
 - Aucun ordre.
 - Aucun trading réel.
