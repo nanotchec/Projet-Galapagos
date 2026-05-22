@@ -1,0 +1,17 @@
+{
+  "version": "V3.6",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v3.6-audit-lite.zip",
+  "smoke_passed": true,
+  "raw_zips_absent": true,
+  "full_validation_replaced": false,
+  "full_validation_note": "audit-lite does not replace full local validation",
+  "sample_rows": {
+    "1m": 398,
+    "5m": 398,
+    "15m": 397,
+    "1h": 390
+  },
+  "smoke_duration_seconds": 0.376,
+  "errors": [],
+  "warnings": []
+}
