@@ -24,6 +24,7 @@ data/bronze/*
 data/silver/*
 data/gold/*
 data/paper/*
+data/research/**/*.parquet
 !data/bronze/.gitkeep
 !data/silver/.gitkeep
 !data/gold/.gitkeep

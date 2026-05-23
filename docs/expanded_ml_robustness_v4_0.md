@@ -5,6 +5,18 @@
 V4.0 audite les resultats ML offline V3.9 avec des analyses descriptives et falsifiables sur 90 jours.
 Cet audit ne transforme pas les scores en decision operationnelle.
 
+## Correction V4.0.1
+
+V4.0.1 corrige uniquement la completude du ZIP audit-lite V4.0. Le package transmissible inclut maintenant les packages source `src/galapagos/features/` et `src/galapagos/labels/`, requis par les imports des schemas dataset et ML pendant l'audit externe.
+
+Cette correction ne recalcule aucun diagnostic V4.0, ne modifie aucune metrique V4.0, ne modifie aucun score V3.9, ne modifie aucun dataset, aucune feature et aucun label.
+
+## Correction V4.0.2
+
+V4.0.2 corrige uniquement l'exclusion des caches Python dans le ZIP audit-lite V4.0. Le release, l'audit et le smoke refusent explicitement `__pycache__`, `*.pyc` et `*.pyo` a tous les niveaux du package.
+
+Cette correction ne recalcule aucun diagnostic V4.0, ne modifie aucune metrique V4.0, ne modifie aucun score V3.9, ne modifie aucun dataset, aucune feature et aucun label.
+
 ## Analyses
 
 - `baseline_delta` compare chaque modele aux baselines majority et random.

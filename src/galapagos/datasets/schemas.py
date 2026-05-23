@@ -294,6 +294,40 @@ EXPECTED_LIMITATIONS_V3_8 = [
     "V3.8 ne produit aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.",
 ]
 
+VERSION_V4_5 = "V4.5"
+DATASET_SCHEMA_VERSION_V4_5 = "V4.5"
+TIMEFRAMES_V4_5 = ["1m", "5m", "15m", "1h"]
+WINDOW_V4_5 = "2024-01-01_2024-12-31"
+EXPECTED_ROWS_V4_5 = {"1m": 527040, "5m": 105408, "15m": 35136, "1h": 8784}
+EXPECTED_SPLIT_COUNTS_V4_5 = {
+    "1m": {"train": 316224, "validation": 105408, "test": 105408},
+    "5m": {"train": 63244, "validation": 21082, "test": 21082},
+    "15m": {"train": 21081, "validation": 7027, "test": 7028},
+    "1h": {"train": 5270, "validation": 1757, "test": 1757},
+}
+
+MANIFEST_PATH_V4_5 = Path("reports/manifests/one_year_offline_supervised_dataset_v4_5_manifest.json")
+REPORT_JSON_PATH_V4_5 = Path("reports/datasets/one_year_offline_supervised_dataset_v4_5.json")
+REPORT_MD_PATH_V4_5 = Path("reports/datasets/one_year_offline_supervised_dataset_v4_5.md")
+DATACARD_MD_PATH_V4_5 = Path("reports/datasets/one_year_offline_supervised_dataset_v4_5_datacard.md")
+DOC_PATH_V4_5 = Path("docs/one_year_offline_supervised_dataset_v4_5.md")
+
+DATASET_COLUMNS_V4_5 = DATASET_COLUMNS_V3_8.copy()
+SPLIT_COLUMNS_V4_5 = SPLIT_COLUMNS_V3_8.copy()
+
+SPLIT_POLICY_V4_5 = {
+    "train_ratio": 0.6,
+    "validation_ratio": 0.2,
+    "test_ratio": 0.2,
+    "shuffle": False,
+    "purge_embargo": "none_v4_5_preview",
+}
+
+EXPECTED_LIMITATIONS_V4_5 = [
+    "V4.5 assemble uniquement un dataset supervise offline 1 an a partir des features V4.3 et labels V4.4 valides.",
+    "V4.5 ne produit aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.",
+]
+
 
 def get_dataset_v3_8_path(root: Path, timeframe: str) -> Path:
     return (
@@ -317,6 +351,32 @@ def get_split_v3_8_path(root: Path, timeframe: str) -> Path:
         / "symbol=BTCUSDT"
         / f"timeframe={timeframe}"
         / f"window={WINDOW_V3_8}"
+        / "splits.parquet"
+    )
+
+
+def get_dataset_v4_5_path(root: Path, timeframe: str) -> Path:
+    return (
+        root
+        / "data/research/v4_5/datasets/offline_supervised"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={WINDOW_V4_5}"
+        / "dataset.parquet"
+    )
+
+
+def get_split_v4_5_path(root: Path, timeframe: str) -> Path:
+    return (
+        root
+        / "data/research/v4_5/datasets/offline_supervised"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={WINDOW_V4_5}"
         / "splits.parquet"
     )
 

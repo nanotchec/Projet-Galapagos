@@ -1,0 +1,106 @@
+{
+  "version": "V4.6",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_one_year_offline_ml_research_v4_6.py",
+    "python scripts/validate_one_year_offline_ml_research_v4_6.py",
+    "python -m pytest -q tests/ml/test_one_year_offline_ml_research_v4_6.py",
+    "python -m pytest -q tests/validation/test_one_year_offline_ml_research_v4_6_validator.py",
+    "python scripts/release_audit_lite_zip_v4_6.py",
+    "python scripts/audit_audit_lite_zip_v4_6.py --zip projet-galapagos-v4.6-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v4_6.py --zip projet-galapagos-v4.6-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_one_year_offline_ml_research_v4_6.py": "PASS",
+    "python scripts/validate_one_year_offline_ml_research_v4_6.py": "PASS",
+    "python -m pytest -q tests/ml/test_one_year_offline_ml_research_v4_6.py": "PASS",
+    "python -m pytest -q tests/validation/test_one_year_offline_ml_research_v4_6_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v4_6.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v4_6.py --zip projet-galapagos-v4.6-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v4_6.py --zip projet-galapagos-v4.6-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_one_year_offline_ml_research_v4_6.py": 58.44,
+    "python scripts/validate_one_year_offline_ml_research_v4_6.py": 33.92,
+    "python -m pytest -q tests/ml/test_one_year_offline_ml_research_v4_6.py": 1.25,
+    "python -m pytest -q tests/validation/test_one_year_offline_ml_research_v4_6_validator.py": 34.05,
+    "python scripts/release_audit_lite_zip_v4_6.py": 2.88,
+    "python scripts/audit_audit_lite_zip_v4_6.py --zip projet-galapagos-v4.6-audit-lite.zip": 0.34,
+    "python scripts/smoke_audit_lite_zip_v4_6.py --zip projet-galapagos-v4.6-audit-lite.zip": 1.25,
+    "python -m pytest --collect-only -q": 1.81
+  },
+  "output_scores_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v4_6/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-12-31/ml-scores.parquet",
+      "sha256": "25c23aac857349d15de194a2556e2d3e16aecde40ece2f30d21b9c62a99f0ab0",
+      "bytes": 3300995,
+      "rows": 140420,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T07:30:00Z",
+      "max_event_ts": "2024-12-31T23:30:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v4_6/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-12-31/ml-scores.parquet",
+      "sha256": "9e4f938b41a11fe9e40e8424749da55fb22156b235507dfdf29773457cd4a6f5",
+      "bytes": 810071,
+      "rows": 35012,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-02T06:00:00Z",
+      "max_event_ts": "2024-12-31T22:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v4_6/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-12-31/ml-scores.parquet",
+      "sha256": "e675b74fd910c8c9180180e1b2f36c2aa5ffa68ee464bd21671eac923bec2b8a",
+      "bytes": 76467458,
+      "rows": 2108036,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T00:30:00Z",
+      "max_event_ts": "2024-12-31T23:58:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v4_6/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-12-31/ml-scores.parquet",
+      "sha256": "d9c7e96bba0f50fd47f95a128fa25aa3e2ab88ac4843c10a328336bc1a6dc1ee",
+      "bytes": 10025196,
+      "rows": 421508,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T02:30:00Z",
+      "max_event_ts": "2024-12-31T23:50:00Z"
+    }
+  ],
+  "manifest_sha256": "7d292ebbf997c70d7a5147a304c889e8cb2e1c691aab75f855f20f3d0ddf3105",
+  "report_sha256": "7d292ebbf997c70d7a5147a304c889e8cb2e1c691aab75f855f20f3d0ddf3105",
+  "scores_report_sha256": "eca76f75f3d0eadc6950de0a8e1719f251d18fdf9ea32ea2579fef7c4da99bd6",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_persistent_model": true,
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ],
+  "errors": []
+}

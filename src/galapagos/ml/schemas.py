@@ -420,3 +420,69 @@ def get_feature_columns_sha256_v3_9() -> str:
 
     payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V3_9, separators=(",", ":"), sort_keys=False)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+VERSION_V4_6 = "V4.6"
+ML_SCHEMA_VERSION_V4_6 = "V4.6"
+TARGET_NAME_V4_6 = "up_down_flat_h1"
+RANDOM_SEED_V4_6 = 42
+TARGET_CLASSES_V4_6 = ["DOWN", "FLAT", "UP"]
+MODEL_NAMES_V4_6 = MODEL_NAMES_V3_9.copy()
+TIMEFRAMES_V4_6 = ["1m", "5m", "15m", "1h"]
+EXPECTED_DATASET_ROWS_V4_6 = {"1m": 527040, "5m": 105408, "15m": 35136, "1h": 8784}
+WINDOW_V4_6 = "2024-01-01_2024-12-31"
+
+MANIFEST_PATH_V4_6 = Path("reports/manifests/one_year_offline_ml_research_v4_6_manifest.json")
+REPORT_JSON_PATH_V4_6 = Path("reports/ml/one_year_offline_ml_research_v4_6.json")
+REPORT_MD_PATH_V4_6 = Path("reports/ml/one_year_offline_ml_research_v4_6.md")
+SCORES_JSON_PATH_V4_6 = Path("reports/ml/one_year_offline_research_scores_v4_6.json")
+SCORES_MD_PATH_V4_6 = Path("reports/ml/one_year_offline_research_scores_v4_6.md")
+DOC_PATH_V4_6 = Path("docs/one_year_offline_ml_research_v4_6.md")
+
+ALLOWED_FEATURE_COLUMNS_V4_6 = ALLOWED_FEATURE_COLUMNS_V3_9.copy()
+FORBIDDEN_FEATURE_TERMS_V4_6 = FORBIDDEN_FEATURE_TERMS_V3_9.copy()
+FORBIDDEN_OUTPUT_TERMS_V4_6 = FORBIDDEN_OUTPUT_TERMS_V3_9.copy()
+FORBIDDEN_METRIC_TERMS_V4_6 = FORBIDDEN_METRIC_TERMS_V3_9.copy()
+ML_SCORE_COLUMNS_V4_6 = ML_SCORE_COLUMNS_V3_9.copy()
+
+EXPECTED_LIMITATIONS_V4_6 = [
+    "V4.6 entraine uniquement des baselines ML offline simples sur le dataset 1 an V4.5 valide.",
+    "V4.6 ne produit aucun backtest, aucune strategie, aucun signal de trading et aucun ordre.",
+]
+
+SAFETY_FLAGS_V4_6 = {
+    "public_read_only": True,
+    "authentication_used": False,
+    "api_key_used": False,
+    "private_endpoint_used": False,
+    "orders_enabled": False,
+    "paper_live_enabled": False,
+    "trading_enabled": False,
+    "ml_enabled": True,
+    "labels_enabled": True,
+    "dataset_enabled": True,
+    "backtest_enabled": False,
+    "strategy_enabled": False,
+    "execution_enabled": False,
+}
+
+
+def get_one_year_ml_score_path_v4_6(root: Path, timeframe: str) -> Path:
+    return (
+        root
+        / "data/research/v4_6/ml/offline_research"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={WINDOW_V4_6}"
+        / "ml-scores.parquet"
+    )
+
+
+def get_feature_columns_sha256_v4_6() -> str:
+    import hashlib
+    import json
+
+    payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V4_6, separators=(",", ":"), sort_keys=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()

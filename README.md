@@ -2,8 +2,8 @@
 
 ## Etat actuel du projet
 
-- Derniere version validee : V3.9.
-- Candidate : V4.0, audit robustesse et falsification ML 90 jours.
+- Derniere version validee : V4.5.
+- Candidate : V4.6, baselines ML offline 1 an sur le dataset V4.5 valide.
 - Le projet est actuellement data/research/offline only.
 - Aucun trading reel n'est autorise.
 - Aucun paper live n'est autorise.
@@ -21,7 +21,30 @@
 - V3.9 entraine uniquement des baselines ML offline simples et produit des scores de recherche `research_*` dans `data/research/v3_9/ml/offline_research`.
 - V4.0 audite uniquement la robustesse descriptive et la falsification des resultats ML offline V3.9.
 - V4.0 ne produit aucun modele persistant, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
-- V4.0 reste `pending_external_audit` et n'est pas validee avant audit externe.
+- V4.0.1 corrige uniquement le packaging audit-lite V4.0 pour inclure les packages source features et labels requis par l'audit.
+- V4.0.2 corrige uniquement le packaging audit-lite V4.0 pour exclure explicitement `__pycache__`, `*.pyc` et `*.pyo`.
+- V4.1 produit uniquement un rapport de decision research et recommande l'extension a 1 an avant toute suite.
+- V4.1 est validee par audit externe.
+- V4.2 etend uniquement les donnees marche publiques BTCUSDT sur la fenetre `2024-01-01` a `2024-12-31` dans `data/research/v4_2/silver/ohlcv`.
+- V4.2 produit les row counts attendus `1m=527040`, `5m=105408`, `15m=35136`, `1h=8784`.
+- V4.2 ne produit aucune feature, aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+- V4.2 est validee par audit externe.
+- V4.3 construit uniquement des features OHLCV causales 1 an dans `data/research/v4_3/features/ohlcv`.
+- V4.3 respecte `FEATURE_COLUMNS_V4_3` avec les row counts `1m=527040`, `5m=105408`, `15m=35136`, `1h=8784`.
+- V4.3 ne produit aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+- V4.3 est validee par audit externe.
+- V4.4 construit uniquement des labels forward 1 an separes dans `data/research/v4_4/labels/forward_returns`.
+- V4.4 respecte `LABEL_COLUMNS_V4_4` avec les row counts `1m=527040`, `5m=105408`, `15m=35136`, `1h=8784`.
+- V4.4 ne produit aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+- V4.4 est validee par audit externe.
+- V4.5 assemble uniquement un dataset supervise offline 1 an dans `data/research/v4_5/datasets/offline_supervised`.
+- V4.5 respecte `DATASET_COLUMNS_V4_5` avec les row counts `1m=527040`, `5m=105408`, `15m=35136`, `1h=8784`.
+- V4.5 ne produit aucun ML, aucun modele ML, aucun score ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+- V4.5 est validee par audit externe.
+- V4.6 entraine uniquement des baselines ML offline simples dans `data/research/v4_6/ml/offline_research`.
+- V4.6 produit uniquement des scores de recherche `research_*` et des metriques descriptives.
+- V4.6 ne produit aucun modele persistant, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+- V4.6 reste `pending_external_audit` et n'est pas validee avant audit externe.
 - Les anciennes parties paper trading V1 sont legacy et ne sont pas autorisees dans la roadmap actuelle.
 
 Projet Galapagos est une V1 verticale d'agent autonome de trading en paper trading sur BTC.

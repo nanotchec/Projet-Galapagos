@@ -1,7 +1,8 @@
-# Inventaire audit-lite V4.0
+# Inventaire audit-lite V4.0.2
 
 Ce rapport decrit les artefacts lourds exclus du ZIP `audit-lite`.
 
+- Correction : exclusion explicite des caches Python `__pycache__`, `*.pyc` et `*.pyo`.
 - Raw zips exclus : `True`
 - Parquet complets exclus : `4`
 - Validation full locale remplacee : `false`

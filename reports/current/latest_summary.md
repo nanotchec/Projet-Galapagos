@@ -1,13 +1,13 @@
-# Latest Summary
+# Latest Summary V4.6
 
-V3.9 est la dernière version validée par audit externe via audit-lite et attestation full locale.
+V4.5 est la dernière version validée par audit externe via audit-lite et attestation full locale.
 
-V4.0 est la candidate courante. Elle audite uniquement la robustesse descriptive et la falsification des résultats ML offline V3.9 sur la fenêtre 90 jours.
+V4.6 est la candidate courante. Elle entraîne uniquement des baselines ML offline simples sur le dataset supervisé 1 an V4.5 validé.
 
-Les inputs restent les datasets V3.8, les scores ML offline V3.9 et les rapports/manifests V3.9. V4.0 ne relance pas toute la chaîne historique par défaut.
+Fenêtre V4.6 : du `2024-01-01` au `2024-12-31` inclus. La cible unique est `up_down_flat_h1` et les modèles autorisés sont `majority_class_baseline, random_seeded_baseline, logistic_regression, decision_tree_depth_2`.
 
-Les analyses V4.0 sont `baseline_delta`, `split_stability`, `timeframe_stability`, `label_shuffle_falsification`, `feature_leakage_scan` et `metric_forbidden_scan`.
+Les fichiers de scores V4.6 produits contiennent `research_predicted_class`, `research_probability_down`, `research_probability_flat` et `research_probability_up`. Row counts scores : `1m=2108036`, `5m=421508`, `15m=140420`, `1h=35012`.
 
-V4.0 ne produit aucun backtest, aucune stratégie, aucun signal de trading, aucun paper live, aucun ordre, aucun trading réel et aucun modèle persistant.
+Les métriques V4.6 sont descriptives et non actionnables. Aucun PnL, Sharpe, drawdown, equity curve, profit factor, backtest, stratégie, signal de trading, ordre ou modèle persistant n'est produit.
 
-V4.0 reste `pending_external_audit`.
+V4.6 reste `pending_external_audit`.

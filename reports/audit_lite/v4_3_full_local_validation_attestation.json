@@ -1,0 +1,104 @@
+{
+  "version": "V4.3",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_one_year_causal_feature_store_v4_3.py",
+    "python scripts/validate_one_year_causal_feature_store_v4_3.py",
+    "python -m pytest -q tests/features/test_one_year_causal_features_v4_3.py",
+    "python -m pytest -q tests/validation/test_one_year_causal_feature_store_v4_3_validator.py",
+    "python scripts/release_audit_lite_zip_v4_3.py",
+    "python scripts/audit_audit_lite_zip_v4_3.py --zip projet-galapagos-v4.3-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v4_3.py --zip projet-galapagos-v4.3-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_one_year_causal_feature_store_v4_3.py": "PASS",
+    "python scripts/validate_one_year_causal_feature_store_v4_3.py": "PASS",
+    "python -m pytest -q tests/features/test_one_year_causal_features_v4_3.py": "PASS",
+    "python -m pytest -q tests/validation/test_one_year_causal_feature_store_v4_3_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v4_3.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v4_3.py --zip projet-galapagos-v4.3-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v4_3.py --zip projet-galapagos-v4.3-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_one_year_causal_feature_store_v4_3.py": 7.41,
+    "python scripts/validate_one_year_causal_feature_store_v4_3.py": 1.5,
+    "python -m pytest -q tests/features/test_one_year_causal_features_v4_3.py": 1.07,
+    "python -m pytest -q tests/validation/test_one_year_causal_feature_store_v4_3_validator.py": 5.96,
+    "python scripts/release_audit_lite_zip_v4_3.py": 1.41,
+    "python scripts/audit_audit_lite_zip_v4_3.py --zip projet-galapagos-v4.3-audit-lite.zip": 0.47,
+    "python scripts/smoke_audit_lite_zip_v4_3.py --zip projet-galapagos-v4.3-audit-lite.zip": 0.88,
+    "python -m pytest --collect-only -q": 3.36
+  },
+  "output_features_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v4_3/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-12-31/features.parquet",
+      "sha256": "88b0c26a3ed045e60bc50e30a1e94bd2ee88130aeab4dd0589993ce0e96f7fb5",
+      "bytes": 9796986,
+      "rows": 35136,
+      "columns_count": 46,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-12-31T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v4_3/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-12-31/features.parquet",
+      "sha256": "197cc03e8bc72dda5c09689472be0f9a456b05d57db794694e0fd2143bab4e14",
+      "bytes": 2461103,
+      "rows": 8784,
+      "columns_count": 46,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-12-31T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v4_3/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-12-31/features.parquet",
+      "sha256": "7dfd42e24c286efcde36f912a532a58a45f6fb8daf040b00edbe3cd071463bd0",
+      "bytes": 117771463,
+      "rows": 527040,
+      "columns_count": 46,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-12-31T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v4_3/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-12-31/features.parquet",
+      "sha256": "025ae8a987aee1af89d45fd774097000b84a79b357d625ad509699bbe7d9a7d9",
+      "bytes": 28795371,
+      "rows": 105408,
+      "columns_count": 46,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-12-31T23:55:00Z"
+    }
+  ],
+  "manifest_sha256": "fb3ea2f2294bae580c1247f6c3529593a67a120ab11bcb8e86f97b390ab24e99",
+  "report_sha256": "fb3ea2f2294bae580c1247f6c3529593a67a120ab11bcb8e86f97b390ab24e99",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": false,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ],
+  "errors": []
+}

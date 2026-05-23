@@ -1,0 +1,93 @@
+{
+  "version": "V4.5",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v4.5-audit-lite.zip",
+  "zip_size_bytes": 593243,
+  "zip_size_mb": 0.566,
+  "entries": 111,
+  "top_20_largest_files": [
+    {
+      "path": "data/audit_lite/v4_5/datasets/timeframe=1h/sample.parquet",
+      "bytes": 162032
+    },
+    {
+      "path": "data/audit_lite/v4_5/datasets/timeframe=15m/sample.parquet",
+      "bytes": 161535
+    },
+    {
+      "path": "data/audit_lite/v4_5/datasets/timeframe=5m/sample.parquet",
+      "bytes": 158676
+    },
+    {
+      "path": "data/audit_lite/v4_5/datasets/timeframe=1m/sample.parquet",
+      "bytes": 155182
+    },
+    {
+      "path": "reports/audit_lite/v4_5_artifact_inventory.json",
+      "bytes": 150417
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "reports/audit_lite/v4_5_parquet_summary.json",
+      "bytes": 22886
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v4_5.py",
+      "bytes": 21184
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "data/audit_lite/v4_5/splits/timeframe=1h/sample.parquet",
+      "bytes": 20053
+    },
+    {
+      "path": "data/audit_lite/v4_5/splits/timeframe=15m/sample.parquet",
+      "bytes": 20047
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "reports/datasets/one_year_offline_supervised_dataset_v4_5.json",
+      "bytes": 19663
+    },
+    {
+      "path": "reports/manifests/one_year_offline_supervised_dataset_v4_5_manifest.json",
+      "bytes": 19663
+    },
+    {
+      "path": "data/audit_lite/v4_5/splits/timeframe=5m/sample.parquet",
+      "bytes": 19187
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "src/galapagos/labels/one_year_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "src/galapagos/datasets/expanded_window_validation.py",
+      "bytes": 19109
+    },
+    {
+      "path": "src/galapagos/datasets/one_year_window_validation.py",
+      "bytes": 19109
+    }
+  ],
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

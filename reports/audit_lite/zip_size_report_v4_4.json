@@ -1,0 +1,100 @@
+{
+  "version": "V4.4",
+  "zip_name": "projet-galapagos-v4.4-audit-lite.zip",
+  "zip_size_bytes": 248662,
+  "top_20_largest_files_included": [
+    {
+      "path": "reports/audit_lite/v4_4_artifact_inventory.json",
+      "bytes": 141670
+    },
+    {
+      "path": "data/audit_lite/v4_4/labels/timeframe=1h/sample.parquet",
+      "bytes": 67817
+    },
+    {
+      "path": "data/audit_lite/v4_4/labels/timeframe=15m/sample.parquet",
+      "bytes": 67738
+    },
+    {
+      "path": "data/audit_lite/v4_4/labels/timeframe=5m/sample.parquet",
+      "bytes": 65921
+    },
+    {
+      "path": "data/audit_lite/v4_4/labels/timeframe=1m/sample.parquet",
+      "bytes": 65199
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "src/galapagos/labels/one_year_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v4_4.py",
+      "bytes": 17784
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 13861
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_validation.py",
+      "bytes": 12633
+    },
+    {
+      "path": "reports/current/latest_metrics.json",
+      "bytes": 12335
+    },
+    {
+      "path": "tests/validation/test_one_year_label_factory_v4_4_validator.py",
+      "bytes": 11260
+    },
+    {
+      "path": "reports/labels/one_year_label_factory_v4_4.json",
+      "bytes": 10977
+    },
+    {
+      "path": "reports/manifests/one_year_label_factory_v4_4_manifest.json",
+      "bytes": 10977
+    }
+  ],
+  "heavy_files_excluded": [
+    "data/raw/public_market/**/*.zip",
+    "data/research/v4_2/**/*.parquet",
+    "data/research/v4_4/labels/**/*.parquet",
+    "previous release ZIP files",
+    "Python caches (__pycache__, *.pyc, *.pyo)",
+    "persistent model files"
+  ],
+  "raw_zips_excluded": true,
+  "raw_zips_represented_in_inventory": 366,
+  "full_parquet_excluded_count": 8,
+  "samples_included": 4,
+  "note": "audit-lite does not replace full local validation"
+}

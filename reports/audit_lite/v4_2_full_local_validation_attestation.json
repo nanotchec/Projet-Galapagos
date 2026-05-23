@@ -1,0 +1,105 @@
+{
+  "version": "V4.2",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_one_year_public_market_data_v4_2.py --no-network --skip-project-state-check",
+    "python scripts/validate_one_year_public_market_data_v4_2.py",
+    "python -m pytest -q tests/data/test_one_year_public_market_data_v4_2.py",
+    "python -m pytest -q tests/validation/test_one_year_public_market_data_v4_2_validator.py",
+    "python scripts/release_audit_lite_zip_v4_2.py",
+    "python scripts/audit_audit_lite_zip_v4_2.py --zip projet-galapagos-v4.2-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v4_2.py --zip projet-galapagos-v4.2-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_one_year_public_market_data_v4_2.py --no-network --skip-project-state-check": "PASS",
+    "python scripts/validate_one_year_public_market_data_v4_2.py": "PASS",
+    "python -m pytest -q tests/data/test_one_year_public_market_data_v4_2.py": "PASS",
+    "python -m pytest -q tests/validation/test_one_year_public_market_data_v4_2_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v4_2.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v4_2.py --zip projet-galapagos-v4.2-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v4_2.py --zip projet-galapagos-v4.2-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_one_year_public_market_data_v4_2.py --no-network --skip-project-state-check": 6.09,
+    "python scripts/validate_one_year_public_market_data_v4_2.py": 5.11,
+    "python -m pytest -q tests/data/test_one_year_public_market_data_v4_2.py": 3.79,
+    "python -m pytest -q tests/validation/test_one_year_public_market_data_v4_2_validator.py": 30.54,
+    "python scripts/release_audit_lite_zip_v4_2.py": 0.8,
+    "python scripts/audit_audit_lite_zip_v4_2.py --zip projet-galapagos-v4.2-audit-lite.zip": 0.6,
+    "python scripts/smoke_audit_lite_zip_v4_2.py --zip projet-galapagos-v4.2-audit-lite.zip": 0.63,
+    "python -m pytest --collect-only -q": 2.3
+  },
+  "output_ohlcv_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v4_2/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2024-01-01_2024-12-31/ohlcv.parquet",
+      "sha256": "92d2eaa6d75b08be0f13cc2b3fd5f1b73a36ba394f5fae16fa5906e37907fdef",
+      "bytes": 4402952,
+      "rows": 35136,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-12-31T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v4_2/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2024-01-01_2024-12-31/ohlcv.parquet",
+      "sha256": "cc2ed4e04ce9efc499831d55584b948a2dd990443d3be9614de27c3a671fd4e0",
+      "bytes": 1128938,
+      "rows": 8784,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-12-31T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v4_2/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2024-01-01_2024-12-31/ohlcv.parquet",
+      "sha256": "9ca673ee5b8f8e496ac76defddbf5f92924087cb9a7d8c11d33753edf052e156",
+      "bytes": 52101608,
+      "rows": 527040,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-12-31T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v4_2/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2024-01-01_2024-12-31/ohlcv.parquet",
+      "sha256": "91914c5d6b7e475d36145d1156c5a3d07fa60e7c5de26d3ce432551d1fff3091",
+      "bytes": 12827964,
+      "rows": 105408,
+      "columns_count": 24,
+      "min_event_ts": "2024-01-01T00:00:00Z",
+      "max_event_ts": "2024-12-31T23:55:00Z"
+    }
+  ],
+  "raw_inventory_count": 366,
+  "manifest_sha256": "1053c97c5e988c749781d09120dd051676485890f76f2ded73916399783b5ceb",
+  "report_sha256": "1053c97c5e988c749781d09120dd051676485890f76f2ded73916399783b5ceb",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": false,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ],
+  "errors": []
+}

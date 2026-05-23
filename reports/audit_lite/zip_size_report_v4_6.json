@@ -1,0 +1,100 @@
+{
+  "version": "V4.6",
+  "zip_name": "projet-galapagos-v4.6-audit-lite.zip",
+  "zip_size_bytes": 376043,
+  "top_20_largest_files_included": [
+    {
+      "path": "reports/audit_lite/v4_6_artifact_inventory.json",
+      "bytes": 154632
+    },
+    {
+      "path": "reports/manifests/one_year_public_market_data_v4_2_manifest.json",
+      "bytes": 99191
+    },
+    {
+      "path": "reports/manifests/one_year_offline_ml_research_v4_6_manifest.json",
+      "bytes": 80517
+    },
+    {
+      "path": "reports/ml/one_year_offline_ml_research_v4_6.json",
+      "bytes": 80517
+    },
+    {
+      "path": "reports/ml/one_year_offline_research_scores_v4_6.json",
+      "bytes": 72499
+    },
+    {
+      "path": "data/audit_lite/v4_6/ml_scores/timeframe=1h/sample.parquet",
+      "bytes": 30346
+    },
+    {
+      "path": "data/audit_lite/v4_6/ml_scores/timeframe=15m/sample.parquet",
+      "bytes": 30222
+    },
+    {
+      "path": "data/audit_lite/v4_6/ml_scores/timeframe=5m/sample.parquet",
+      "bytes": 29720
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "data/audit_lite/v4_6/ml_scores/timeframe=1m/sample.parquet",
+      "bytes": 29397
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v4_6.py",
+      "bytes": 21857
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "reports/datasets/one_year_offline_supervised_dataset_v4_5.json",
+      "bytes": 19663
+    },
+    {
+      "path": "reports/manifests/one_year_offline_supervised_dataset_v4_5_manifest.json",
+      "bytes": 19663
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_robustness.py",
+      "bytes": 19544
+    },
+    {
+      "path": "src/galapagos/ml/robustness.py",
+      "bytes": 19445
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "src/galapagos/labels/one_year_window_validation.py",
+      "bytes": 19186
+    }
+  ],
+  "heavy_files_excluded": [
+    "data/raw/public_market/**/*.zip",
+    "data/research/v4_5/datasets/**/*.parquet",
+    "data/research/v4_6/ml/**/*.parquet",
+    "Python caches (__pycache__, *.pyc, *.pyo)",
+    "persistent model files",
+    "previous release ZIP files"
+  ],
+  "raw_zips_excluded": true,
+  "raw_zips_represented_in_inventory": 366,
+  "full_parquet_excluded_count": 12,
+  "sample_parquet_count": 4,
+  "note": "audit-lite does not replace full local validation"
+}

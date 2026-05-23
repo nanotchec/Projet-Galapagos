@@ -1,0 +1,93 @@
+{
+  "version": "V4.2",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v4.2-audit-lite.zip",
+  "zip_size_bytes": 250486,
+  "zip_size_mb": 0.239,
+  "entries": 56,
+  "top_20_largest_files": [
+    {
+      "path": "reports/audit_lite/v4_2_artifact_inventory.json",
+      "bytes": 137921
+    },
+    {
+      "path": "reports/data_quality/one_year_public_market_data_v4_2.json",
+      "bytes": 99191
+    },
+    {
+      "path": "reports/manifests/one_year_public_market_data_v4_2_manifest.json",
+      "bytes": 99191
+    },
+    {
+      "path": "data/audit_lite/v4_2/ohlcv/timeframe=1h/sample.parquet",
+      "bytes": 52324
+    },
+    {
+      "path": "data/audit_lite/v4_2/ohlcv/timeframe=15m/sample.parquet",
+      "bytes": 51345
+    },
+    {
+      "path": "data/audit_lite/v4_2/ohlcv/timeframe=5m/sample.parquet",
+      "bytes": 50050
+    },
+    {
+      "path": "data/audit_lite/v4_2/ohlcv/timeframe=1m/sample.parquet",
+      "bytes": 49036
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v4_2.py",
+      "bytes": 16682
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_validation.py",
+      "bytes": 12633
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 11659
+    },
+    {
+      "path": "tests/validation/test_one_year_public_market_data_v4_2_validator.py",
+      "bytes": 10254
+    },
+    {
+      "path": "reports/current/latest_metrics.json",
+      "bytes": 10202
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day.py",
+      "bytes": 10069
+    },
+    {
+      "path": "src/galapagos/data/public_market/ingestion.py",
+      "bytes": 9647
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window.py",
+      "bytes": 9585
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window.py",
+      "bytes": 9365
+    }
+  ],
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

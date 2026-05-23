@@ -1,5 +1,6 @@
 {
-  "version": "V4.0",
+  "version": "V4.0.2",
+  "correction_scope": "audit-lite Python cache exclusion fix",
   "audit_lite_does_not_replace_full_validation": true,
   "raw_zips_excluded": true,
   "input_manifests": [

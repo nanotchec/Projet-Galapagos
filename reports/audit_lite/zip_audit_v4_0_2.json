@@ -1,0 +1,93 @@
+{
+  "version": "V4.0.2",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v4.0.2-audit-lite.zip",
+  "zip_size_bytes": 235779,
+  "zip_size_mb": 0.225,
+  "entries": 114,
+  "top_20_largest_files": [
+    {
+      "path": "reports/manifests/expanded_ml_robustness_v4_0_manifest.json",
+      "bytes": 63978
+    },
+    {
+      "path": "reports/ml/expanded_ml_robustness_v4_0.json",
+      "bytes": 63978
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_robustness.py",
+      "bytes": 19544
+    },
+    {
+      "path": "src/galapagos/ml/robustness.py",
+      "bytes": 19445
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_validation.py",
+      "bytes": 19173
+    },
+    {
+      "path": "src/galapagos/ml/multi_day_validation.py",
+      "bytes": 19166
+    },
+    {
+      "path": "src/galapagos/datasets/expanded_window_validation.py",
+      "bytes": 19109
+    },
+    {
+      "path": "src/galapagos/ml/validation.py",
+      "bytes": 18878
+    },
+    {
+      "path": "src/galapagos/datasets/multi_day_validation.py",
+      "bytes": 18614
+    },
+    {
+      "path": "src/galapagos/datasets/validation.py",
+      "bytes": 18274
+    },
+    {
+      "path": "src/galapagos/features/validation.py",
+      "bytes": 17222
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/ml/robustness_validation.py",
+      "bytes": 15747
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_robustness_validation.py",
+      "bytes": 15704
+    },
+    {
+      "path": "src/galapagos/features/expanded_window_validation.py",
+      "bytes": 15137
+    }
+  ],
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}
