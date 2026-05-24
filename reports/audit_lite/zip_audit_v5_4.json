@@ -1,0 +1,93 @@
+{
+  "version": "V5.4",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v5.4-audit-lite.zip",
+  "zip_size_bytes": 2679220,
+  "zip_size_mb": 2.555,
+  "entries": 1848,
+  "top_20_largest_files": [
+    {
+      "path": "scripts/audit_clean_zip.py",
+      "bytes": 392454
+    },
+    {
+      "path": "scripts/make_clean_zip.py",
+      "bytes": 199782
+    },
+    {
+      "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "bytes": 199277
+    },
+    {
+      "path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+      "bytes": 199277
+    },
+    {
+      "path": "reports/ml/max_history_offline_research_scores_v5_4.json",
+      "bytes": 189470
+    },
+    {
+      "path": "scripts/smoke_test_clean_zip.py",
+      "bytes": 151949
+    },
+    {
+      "path": "scripts/release_clean_zip.py",
+      "bytes": 94073
+    },
+    {
+      "path": "scripts/validate_ev_net_research_reports.py",
+      "bytes": 82554
+    },
+    {
+      "path": "scripts/run_ev_net_filter_research.py",
+      "bytes": 60095
+    },
+    {
+      "path": "scripts/run_codex_setup_review.py",
+      "bytes": 59043
+    },
+    {
+      "path": "scripts/run_payoff_objective_research.py",
+      "bytes": 35440
+    },
+    {
+      "path": "src/galapagos/research/trade_ledger/report.py",
+      "bytes": 32773
+    },
+    {
+      "path": "scripts/run_payoff_objective_failure_diagnostic.py",
+      "bytes": 31828
+    },
+    {
+      "path": "tests/validation/test_ohlcv_resampling_v2_4_validator.py",
+      "bytes": 30751
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "src/galapagos/research/payoff_aware_objective/objective_evaluator.py",
+      "bytes": 27509
+    },
+    {
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=1h/sample.parquet",
+      "bytes": 25262
+    },
+    {
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=15m/sample.parquet",
+      "bytes": 25208
+    },
+    {
+      "path": "src/galapagos/datasets/max_history_window_validation.py",
+      "bytes": 25157
+    },
+    {
+      "path": "tests/validation/test_public_market_ingestion_v2_3_validator.py",
+      "bytes": 25131
+    }
+  ],
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

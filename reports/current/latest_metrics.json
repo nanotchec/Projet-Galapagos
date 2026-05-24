@@ -1,54 +1,39 @@
 {
-  "last_validated_version": "V5.2",
-  "candidate_version": "V5.3",
+  "last_validated_version": "V5.3",
+  "candidate_version": "V5.4",
   "candidate_status": "pending_external_audit",
-  "direction": "max historical offline supervised dataset assembly preview",
-  "max_history_dataset_window_start_v5_3": "2023-03-25",
-  "max_history_dataset_window_end_v5_3": "2026-05-23",
-  "max_history_dataset_days_v5_3": 1156,
-  "max_history_dataset_rows_v5_3": {
-    "1m": 1664640,
-    "5m": 332928,
-    "15m": 110976,
-    "1h": 27744
+  "direction": "max historical offline ML research baselines",
+  "max_history_ml_window_start_v5_4": "2023-03-25",
+  "max_history_ml_window_end_v5_4": "2026-05-23",
+  "max_history_ml_days_v5_4": 1156,
+  "max_history_ml_score_rows_v5_4": {
+    "1m": 6658436,
+    "5m": 1331588,
+    "15m": 443780,
+    "1h": 110852
   },
-  "max_history_dataset_split_counts_v5_3": {
-    "1m": {
-      "train": 998784,
-      "validation": 332928,
-      "test": 332928
-    },
-    "5m": {
-      "train": 199756,
-      "validation": 66585,
-      "test": 66587
-    },
-    "15m": {
-      "train": 66585,
-      "validation": 22195,
-      "test": 22196
-    },
-    "1h": {
-      "train": 16646,
-      "validation": 5548,
-      "test": 5550
-    }
-  },
-  "dataset_schema_version_v5_3": "V5.3",
-  "dataset_columns_count_v5_3": 76,
-  "walk_forward_grouping_v5_3": "calendar_quarter",
-  "ml_v5_3_created": false,
-  "model_v5_3_created": false,
-  "backtest_v5_3_created": false,
-  "strategy_v5_3_created": false,
-  "signal_v5_3_created": false,
-  "orders_v5_3_created": false,
-  "paper_live_v5_3_created": false,
+  "max_history_ml_models_v5_4": [
+    "majority_class_baseline",
+    "random_seeded_baseline",
+    "logistic_regression",
+    "decision_tree_depth_2"
+  ],
+  "max_history_ml_target_v5_4": "up_down_flat_h1",
+  "ml_schema_version_v5_4": "V5.4",
+  "ml_score_columns_count_v5_4": 25,
+  "walk_forward_metrics_v5_4": true,
+  "backtest_v5_4_created": false,
+  "strategy_v5_4_created": false,
+  "signal_v5_4_created": false,
+  "orders_v5_4_created": false,
+  "paper_live_v5_4_created": false,
+  "persistent_model_v5_4_created": false,
   "trading_enabled": false,
   "paper_live_enabled": false,
   "orders_enabled": false,
   "backtest_enabled": false,
   "strategy_enabled": false,
+  "execution_enabled": false,
   "api_key_used": false,
   "private_endpoint_used": false,
   "authentication_used": false,

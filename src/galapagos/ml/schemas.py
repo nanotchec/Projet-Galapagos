@@ -486,3 +486,93 @@ def get_feature_columns_sha256_v4_6() -> str:
 
     payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V4_6, separators=(",", ":"), sort_keys=False)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+VERSION_V5_4 = "V5.4"
+ML_SCHEMA_VERSION_V5_4 = "V5.4"
+TARGET_NAME_V5_4 = "up_down_flat_h1"
+RANDOM_SEED_V5_4 = 42
+TARGET_CLASSES_V5_4 = TARGET_CLASSES_V4_6.copy()
+MODEL_NAMES_V5_4 = MODEL_NAMES_V4_6.copy()
+TIMEFRAMES_V5_4 = ["1m", "5m", "15m", "1h"]
+
+MANIFEST_PATH_V5_4 = Path("reports/manifests/max_history_offline_ml_research_v5_4_manifest.json")
+REPORT_JSON_PATH_V5_4 = Path("reports/ml/max_history_offline_ml_research_v5_4.json")
+REPORT_MD_PATH_V5_4 = Path("reports/ml/max_history_offline_ml_research_v5_4.md")
+SCORES_JSON_PATH_V5_4 = Path("reports/ml/max_history_offline_research_scores_v5_4.json")
+SCORES_MD_PATH_V5_4 = Path("reports/ml/max_history_offline_research_scores_v5_4.md")
+DOC_PATH_V5_4 = Path("docs/max_history_offline_ml_research_v5_4.md")
+
+ALLOWED_FEATURE_COLUMNS_V5_4 = ALLOWED_FEATURE_COLUMNS_V4_6.copy()
+FORBIDDEN_FEATURE_TERMS_V5_4 = [*FORBIDDEN_FEATURE_TERMS_V4_6, "walk_forward_group"]
+FORBIDDEN_OUTPUT_TERMS_V5_4 = FORBIDDEN_OUTPUT_TERMS_V4_6.copy()
+FORBIDDEN_METRIC_TERMS_V5_4 = FORBIDDEN_METRIC_TERMS_V4_6.copy()
+ML_SCORE_COLUMNS_V5_4 = [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "decision_ts",
+    "split",
+    "walk_forward_group",
+    "ml_run_id",
+    "model_name",
+    "target_name",
+    "dataset_sha256",
+    "feature_columns_sha256",
+    "ml_schema_version",
+    "target_value",
+    "research_predicted_class",
+    "research_probability_down",
+    "research_probability_flat",
+    "research_probability_up",
+    "prediction_available_ts",
+    "row_valid_for_ml",
+    "ml_null_count",
+    "ml_error_count",
+]
+
+EXPECTED_LIMITATIONS_V5_4 = [
+    "V5.4 entraine uniquement des baselines ML offline simples sur le dataset historique V5.3 valide.",
+    "V5.4 produit des metriques descriptives par split et par groupe walk-forward, mais ne produit aucun backtest, aucune strategie, aucun signal de trading et aucun ordre.",
+]
+
+SAFETY_FLAGS_V5_4 = {
+    "public_read_only": True,
+    "authentication_used": False,
+    "api_key_used": False,
+    "private_endpoint_used": False,
+    "orders_enabled": False,
+    "paper_live_enabled": False,
+    "trading_enabled": False,
+    "ml_enabled": True,
+    "labels_enabled": True,
+    "dataset_enabled": True,
+    "backtest_enabled": False,
+    "strategy_enabled": False,
+    "execution_enabled": False,
+}
+
+
+def get_max_history_ml_score_path_v5_4(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v5_4/ml/offline_research"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "ml-scores.parquet"
+    )
+
+
+def get_feature_columns_sha256_v5_4() -> str:
+    import hashlib
+    import json
+
+    payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V5_4, separators=(",", ":"), sort_keys=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()

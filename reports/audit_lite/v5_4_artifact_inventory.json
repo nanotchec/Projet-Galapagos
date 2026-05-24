@@ -1,0 +1,158 @@
+{
+  "version": "V5.4",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "input_dataset_manifest": {
+    "path": "reports/manifests/max_history_offline_supervised_dataset_v5_3_manifest.json",
+    "sha256": "4a0e4f5c986d7aa335c9437ed632d21718f08307e5288a6232709732936a7e62",
+    "window_start": "2023-03-25",
+    "window_end": "2026-05-23",
+    "total_days": 1156
+  },
+  "input_datasets_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "5bd202626b814ee82542f707d1c820d3e5e26e9ed73cd2ccc3eba9dff408b7fa",
+      "rows": 110976,
+      "reason_excluded": "full V5.3 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "bfea4d768bcfaeefe8d0b5eb3fa9b3265667be5e06e389b192ee8fece19c1a86",
+      "rows": 27744,
+      "reason_excluded": "full V5.3 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "0e1d7acf60a8d5893c68659e2d008a5debdbdbf9017d56236ff3babbc14fb39a",
+      "rows": 1664640,
+      "reason_excluded": "full V5.3 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "f63ca0bc69f066577a706a0dc4edbd01c26f1c011e98979af6d9c1836d1187c5",
+      "rows": 332928,
+      "reason_excluded": "full V5.3 dataset Parquet is represented by source hashes"
+    }
+  ],
+  "input_splits_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "284ed702188966a8e2f0731b0fa23dcd20e03846fa60d90fac544a6e0c832644",
+      "rows": 110976,
+      "reason_excluded": "full V5.3 split Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "d8cf0606093ec789af328db046a9e48b3780c7f68eec37d4a2214ba7b4851ba6",
+      "rows": 27744,
+      "reason_excluded": "full V5.3 split Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "dcac89c0fa6a84fcccb166f51ba88bd2969172502f624ea132184eee843b970e",
+      "rows": 1664640,
+      "reason_excluded": "full V5.3 split Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "f9e93f927e3cd23347f04d8cd07b56b0c577c775ad158343bd6cac5d57276c44",
+      "rows": 332928,
+      "reason_excluded": "full V5.3 split Parquet is represented by source hashes"
+    }
+  ],
+  "full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "6c0801a6a2999fee1ced8756a8901a738bcbe85cf1b07c76eca235b2cff2c4c2",
+      "bytes": 10732320,
+      "rows": 443780,
+      "reason_excluded": "full V5.4 score Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "23cb8c5f0bc43fbf38e96bf82f34a5e43a5269da08eeed5cdd9147eac283ad8f",
+      "bytes": 2587504,
+      "rows": 110852,
+      "reason_excluded": "full V5.4 score Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "ad454da286577b1f78f68349c9afdb2d302bce62ef24d44bf801cd900ca5a679",
+      "bytes": 239108031,
+      "rows": 6658436,
+      "reason_excluded": "full V5.4 score Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "9c9f03e8f0dbcbd21f6ead21229e3366db6dca7c7b581a74a17621b9e8fcf986",
+      "bytes": 49349755,
+      "rows": 1331588,
+      "reason_excluded": "full V5.4 score Parquet is represented by manifest checksums and deterministic samples"
+    }
+  ],
+  "score_samples_included": [
+    {
+      "timeframe": "1m",
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=1m/sample.parquet",
+      "sha256": "c46b2bad5871b2fddfc309990acc2dbe4b643ced7582eabb39bd73d8a549650b",
+      "bytes": 24354,
+      "rows": 300,
+      "source_full_path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "source_full_sha256": "ad454da286577b1f78f68349c9afdb2d302bce62ef24d44bf801cd900ca5a679"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=5m/sample.parquet",
+      "sha256": "8200f0735f966df6baeaba8959adfd058b83d7f674ea2918b7651fbb2ae835e4",
+      "bytes": 24527,
+      "rows": 300,
+      "source_full_path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "source_full_sha256": "9c9f03e8f0dbcbd21f6ead21229e3366db6dca7c7b581a74a17621b9e8fcf986"
+    },
+    {
+      "timeframe": "15m",
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=15m/sample.parquet",
+      "sha256": "1368f4efb40a4164ad7c0cd41668f0ad03367edd522bf98a84e9000c4bef9776",
+      "bytes": 25208,
+      "rows": 300,
+      "source_full_path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "source_full_sha256": "6c0801a6a2999fee1ced8756a8901a738bcbe85cf1b07c76eca235b2cff2c4c2"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=1h/sample.parquet",
+      "sha256": "388974410859b46806405e6b5c86f6432e9dfe30db563e425b446fe86886bf80",
+      "bytes": 25262,
+      "rows": 300,
+      "source_full_path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "source_full_sha256": "23cb8c5f0bc43fbf38e96bf82f34a5e43a5269da08eeed5cdd9147eac283ad8f"
+    }
+  ],
+  "included_reports": [
+    {
+      "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+    },
+    {
+      "path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+      "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+    },
+    {
+      "path": "reports/ml/max_history_offline_research_scores_v5_4.json",
+      "sha256": "b5b84c720780c2a7547c5df3e292562463b6d4750a297c6e4216adcb95cf400e"
+    }
+  ]
+}

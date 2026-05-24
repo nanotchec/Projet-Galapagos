@@ -1,18 +1,20 @@
-# Latest Metrics V5.3
+# Latest Metrics V5.4
 
-- Derniere version validee : V5.2.
-- Candidate : V5.3.
+- Derniere version validee : V5.3.
+- Candidate : V5.4.
 - Statut : `pending_external_audit`.
-- Direction : max historical offline supervised dataset assembly preview.
+- Direction : max historical offline ML research baselines.
 - Fenetre : `2023-03-25` -> `2026-05-23`.
 - Total jours : `1156`.
-- Groupes walk-forward : `calendar_quarter`.
+- Cible : `up_down_flat_h1`.
+- Modeles : `['majority_class_baseline', 'random_seeded_baseline', 'logistic_regression', 'decision_tree_depth_2']`.
+- Metriques walk-forward : descriptives uniquement.
 
-## Row counts datasets
+## Row counts scores
 
-- 1m: `1664640`
-- 5m: `332928`
-- 15m: `110976`
-- 1h: `27744`
+- 1m: `6658436`
+- 5m: `1331588`
+- 15m: `443780`
+- 1h: `110852`
 
-Aucun ML V5.3, aucun modele V5.3, aucun backtest, aucune strategie, aucun ordre et aucun trading reel.
+Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun modele persistant et aucun trading reel.

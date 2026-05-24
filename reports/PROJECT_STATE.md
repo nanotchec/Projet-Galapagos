@@ -1,20 +1,20 @@
-# Etat du Projet : V5.2 validee + candidat V5.3
+# Etat du Projet : V5.3 validee + candidat V5.4
 
-- **Derniere version validee** : V5.2.
-- **Version candidate** : V5.3.
+- **Derniere version validee** : V5.3.
+- **Version candidate** : V5.4.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : max historical offline supervised dataset assembly preview.
+- **Direction suivante** : max historical offline ML research baselines.
 
-## Candidat V5.3
+## Candidat V5.4
 
 - Fenetre V5.0 utilisee : `2023-03-25` -> `2026-05-23`.
 - Nombre de jours : `1156`.
-- Row counts datasets : `{'1m': 1664640, '5m': 332928, '15m': 110976, '1h': 27744}`.
-- Split counts : `{'1m': {'train': 998784, 'validation': 332928, 'test': 332928}, '5m': {'train': 199756, 'validation': 66585, 'test': 66587}, '15m': {'train': 66585, 'validation': 22195, 'test': 22196}, '1h': {'train': 16646, 'validation': 5548, 'test': 5550}}`.
-- Schema : `DATASET_COLUMNS_V5_3`.
-- Groupes walk-forward : `calendar_quarter`.
-- V5.3 ne cree aucun ML et aucun modele.
-- V5.3 reste candidate `pending_external_audit`.
+- Row counts scores : `{'1m': 6658436, '5m': 1331588, '15m': 443780, '1h': 110852}`.
+- Schema : `ML_SCORE_COLUMNS_V5_4`.
+- Cible : `up_down_flat_h1`.
+- Modeles offline autorises : `['majority_class_baseline', 'random_seeded_baseline', 'logistic_regression', 'decision_tree_depth_2']`.
+- Metriques walk-forward : descriptives uniquement, pas un backtest.
+- V5.4 reste candidate `pending_external_audit`.
 
 ## Clause De Securite
 
@@ -24,6 +24,7 @@
 - Aucun backtest.
 - Aucune strategie.
 - Aucun signal de trading.
+- Aucun modele persistant.
 - Aucune API privee.
 - Aucune cle API.
-- V5.3 reste non validee avant audit externe.
+- V5.4 reste non validee avant audit externe.
