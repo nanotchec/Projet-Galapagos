@@ -1,16 +1,17 @@
-# Etat du Projet : V5.3 validee + correctif candidat V5.4.1
+# Etat du Projet : V5.4.1 validee + candidat V5.5
 
-- **Derniere version validee** : V5.3.
-- **Version candidate** : V5.4.1.
+- **Derniere version validee** : V5.4.1.
+- **Version candidate** : V5.5.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : audit-lite pytest collection packaging fix.
+- **Direction** : max historical ML robustness and walk-forward falsification audit.
 
-## Correctif V5.4.1
+## Candidat V5.5
 
-- V5.4.1 corrige uniquement le packaging audit-lite V5.4.
-- Objectif : produire un ZIP auto-testable avec `PYTHONPATH=src python -m pytest --collect-only -q`.
-- Les scores, datasets, features, labels et resultats ML V5.4 ne sont pas modifies.
-- Les scripts historiques collectables par pytest et inutiles au ZIP V5.4 sont exclus.
+- Fenetre : `2023-03-25` -> `2026-05-23`.
+- Nombre de jours : `1156`.
+- Analyses : `['baseline_delta', 'feature_leakage_scan', 'label_shuffle_falsification', 'metric_forbidden_scan', 'split_stability', 'timeframe_stability', 'walk_forward_stability']`.
+- Warnings descriptifs : `7`.
+- V5.5 reste candidate `pending_external_audit`.
 
 ## Clause De Securite
 
@@ -23,4 +24,4 @@
 - Aucun modele persistant.
 - Aucune API privee.
 - Aucune cle API.
-- V5.4.1 reste non validee avant audit externe.
+- V5.5 reste non validee avant audit externe.

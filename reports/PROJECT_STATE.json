@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V5.3",
-  "candidate_version": "V5.4.1",
+  "last_validated_version": "V5.4.1",
+  "candidate_version": "V5.5",
   "candidate_status": "pending_external_audit",
-  "direction": "audit-lite pytest collection packaging fix",
+  "direction": "max historical ML robustness and walk-forward falsification audit",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -784,5 +784,15 @@
   "orders_v5_4_1_created": false,
   "paper_live_v5_4_1_created": false,
   "trading_v5_4_1_created": false,
-  "persistent_model_v5_4_1_created": false
+  "persistent_model_v5_4_1_created": false,
+  "max_history_robustness_window_start_v5_5": "2023-03-25",
+  "max_history_robustness_window_end_v5_5": "2026-05-23",
+  "max_history_robustness_days_v5_5": 1156,
+  "backtest_v5_5_created": false,
+  "strategy_v5_5_created": false,
+  "signal_v5_5_created": false,
+  "orders_v5_5_created": false,
+  "paper_live_v5_5_created": false,
+  "trading_v5_5_created": false,
+  "persistent_model_v5_5_created": false
 }

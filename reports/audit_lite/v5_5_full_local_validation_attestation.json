@@ -1,0 +1,66 @@
+{
+  "version": "V5.5",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_max_history_ml_robustness_v5_5.py",
+    "python scripts/validate_max_history_ml_robustness_v5_5.py",
+    "python -m pytest -q tests/ml/test_max_history_ml_robustness_v5_5.py",
+    "python -m pytest -q tests/validation/test_max_history_ml_robustness_v5_5_validator.py",
+    "python scripts/release_audit_lite_zip_v5_5.py",
+    "python scripts/audit_audit_lite_zip_v5_5.py --zip projet-galapagos-v5.5-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v5_5.py --zip projet-galapagos-v5.5-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_max_history_ml_robustness_v5_5.py": "PASS",
+    "python scripts/validate_max_history_ml_robustness_v5_5.py": "PASS",
+    "python -m pytest -q tests/ml/test_max_history_ml_robustness_v5_5.py": "PASS",
+    "python -m pytest -q tests/validation/test_max_history_ml_robustness_v5_5_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v5_5.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v5_5.py --zip projet-galapagos-v5.5-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v5_5.py --zip projet-galapagos-v5.5-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_max_history_ml_robustness_v5_5.py": 202.0,
+    "python scripts/validate_max_history_ml_robustness_v5_5.py": 3.0,
+    "python -m pytest -q tests/ml/test_max_history_ml_robustness_v5_5.py": 0.94,
+    "python -m pytest -q tests/validation/test_max_history_ml_robustness_v5_5_validator.py": 2.98,
+    "python scripts/release_audit_lite_zip_v5_5.py": 1.0,
+    "python scripts/audit_audit_lite_zip_v5_5.py --zip projet-galapagos-v5.5-audit-lite.zip": 0.0,
+    "python scripts/smoke_audit_lite_zip_v5_5.py --zip projet-galapagos-v5.5-audit-lite.zip": 2.244,
+    "python -m pytest --collect-only -q": 1.71
+  },
+  "manifest_sha256": "4682d3daa665ce0842dcf7c8b685b2caa6d5e93f9e24584155f323d2aab91ba3",
+  "report_sha256": "4682d3daa665ce0842dcf7c8b685b2caa6d5e93f9e24584155f323d2aab91ba3",
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2026-05-23",
+  "input_total_days": 1156,
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_strategy": true,
+  "errors": [],
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ]
+}

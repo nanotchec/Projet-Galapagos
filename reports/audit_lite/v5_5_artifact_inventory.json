@@ -1,0 +1,674 @@
+{
+  "version": "V5.5",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "pytest_collectible_scripts_excluded": true,
+  "input_dataset_manifest": {
+    "path": "reports/manifests/max_history_offline_supervised_dataset_v5_3_manifest.json",
+    "sha256": "4a0e4f5c986d7aa335c9437ed632d21718f08307e5288a6232709732936a7e62",
+    "window_start": "2023-03-25",
+    "window_end": "2026-05-23",
+    "total_days": 1156
+  },
+  "input_ml_manifest": {
+    "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+    "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17",
+    "window_start": "2023-03-25",
+    "window_end": "2026-05-23",
+    "total_days": 1156
+  },
+  "input_score_files_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "6c0801a6a2999fee1ced8756a8901a738bcbe85cf1b07c76eca235b2cff2c4c2",
+      "rows": 443780,
+      "reason_excluded": "full V5.4 score Parquet is represented by V5.5 checksums and reports"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "23cb8c5f0bc43fbf38e96bf82f34a5e43a5269da08eeed5cdd9147eac283ad8f",
+      "rows": 110852,
+      "reason_excluded": "full V5.4 score Parquet is represented by V5.5 checksums and reports"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "ad454da286577b1f78f68349c9afdb2d302bce62ef24d44bf801cd900ca5a679",
+      "rows": 6658436,
+      "reason_excluded": "full V5.4 score Parquet is represented by V5.5 checksums and reports"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "9c9f03e8f0dbcbd21f6ead21229e3366db6dca7c7b581a74a17621b9e8fcf986",
+      "rows": 1331588,
+      "reason_excluded": "full V5.4 score Parquet is represented by V5.5 checksums and reports"
+    }
+  ],
+  "full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "6c0801a6a2999fee1ced8756a8901a738bcbe85cf1b07c76eca235b2cff2c4c2",
+      "rows": 443780,
+      "reason_excluded": "full V5.4 score Parquet is represented by V5.5 checksums and reports"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "23cb8c5f0bc43fbf38e96bf82f34a5e43a5269da08eeed5cdd9147eac283ad8f",
+      "rows": 110852,
+      "reason_excluded": "full V5.4 score Parquet is represented by V5.5 checksums and reports"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "ad454da286577b1f78f68349c9afdb2d302bce62ef24d44bf801cd900ca5a679",
+      "rows": 6658436,
+      "reason_excluded": "full V5.4 score Parquet is represented by V5.5 checksums and reports"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_4/ml/offline_research/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ml-scores.parquet",
+      "sha256": "9c9f03e8f0dbcbd21f6ead21229e3366db6dca7c7b581a74a17621b9e8fcf986",
+      "rows": 1331588,
+      "reason_excluded": "full V5.4 score Parquet is represented by V5.5 checksums and reports"
+    }
+  ],
+  "included_files": [
+    {
+      "path": "README.md",
+      "sha256": "fd8e31dad788c752e0d92ee1c798a8f8b36ee0f8c5a454144abb665fb49af2a5"
+    },
+    {
+      "path": "docs/max_history_ml_robustness_v5_5.md",
+      "sha256": "c08af47fd1dc2291677e6b396f82307312a2e2e473da88e4ad2ee175c8ab23ee"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "b47fadf503105f6801cd91bc3ac563a9f5b632624f139512956891019302c5bf"
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "sha256": "08ab890b22843464b7fda1a2f8adafc0e2a6ec969c6dc8a332798e22cf0bf18e"
+    },
+    {
+      "path": "reports/PROJECT_STATE.md",
+      "sha256": "db87e5f3f5ac66b6bf53d20d977eccfd9269bcc11016675e51904a7120695584"
+    },
+    {
+      "path": "reports/current/latest_metrics.json",
+      "sha256": "20feba0d24a402b17ab71260af1b104d5bb1cda95691b3c17b57b40d24f7dc8f"
+    },
+    {
+      "path": "reports/current/latest_metrics.md",
+      "sha256": "dedd97f067de4fa00eeb4ccca45e3bd3e7a646859a6be69a18f2583300d0960f"
+    },
+    {
+      "path": "reports/current/latest_summary.md",
+      "sha256": "7795ac4e91c9efa1da18b32e4e338f08c0b1d9f615b3b52bb71fe93e4fbd09e8"
+    },
+    {
+      "path": "reports/manifests/max_history_ml_robustness_v5_5_manifest.json",
+      "sha256": "4682d3daa665ce0842dcf7c8b685b2caa6d5e93f9e24584155f323d2aab91ba3"
+    },
+    {
+      "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+    },
+    {
+      "path": "reports/manifests/max_history_offline_supervised_dataset_v5_3_manifest.json",
+      "sha256": "4a0e4f5c986d7aa335c9437ed632d21718f08307e5288a6232709732936a7e62"
+    },
+    {
+      "path": "reports/ml/max_history_ml_robustness_v5_5.json",
+      "sha256": "4682d3daa665ce0842dcf7c8b685b2caa6d5e93f9e24584155f323d2aab91ba3"
+    },
+    {
+      "path": "reports/ml/max_history_ml_robustness_v5_5.md",
+      "sha256": "c08af47fd1dc2291677e6b396f82307312a2e2e473da88e4ad2ee175c8ab23ee"
+    },
+    {
+      "path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+      "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+    },
+    {
+      "path": "reports/ml/max_history_offline_research_scores_v5_4.json",
+      "sha256": "b5b84c720780c2a7547c5df3e292562463b6d4750a297c6e4216adcb95cf400e"
+    },
+    {
+      "path": "scripts/_bootstrap.py",
+      "sha256": "a6e350d600205ec54636d826357351550b78b2a0c0664cff0e5f07be7eaa4dc3"
+    },
+    {
+      "path": "scripts/audit_audit_lite_zip_v5_5.py",
+      "sha256": "22e9d9db1331b6306cee6c82d32454237449d2563cd839778b11de0201c2ef3f"
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v5_5.py",
+      "sha256": "c097ae7d7d8eb5681a1c1b075388146bcb5b2c1d28738540dcef295cbe93441d"
+    },
+    {
+      "path": "scripts/run_max_history_ml_robustness_v5_5.py",
+      "sha256": "58e9c14f046072a720e5f8d23efe12ef4cd6e7c4b4d41d68d1aa08ec477e715a"
+    },
+    {
+      "path": "scripts/smoke_audit_lite_zip_v5_5.py",
+      "sha256": "4dfd55f7903c3f2d3ee9d7f3d7d503f128c3047f21b05662a84c61f777270077"
+    },
+    {
+      "path": "scripts/validate_max_history_ml_robustness_v5_5.py",
+      "sha256": "3e397cae1d9c8ef2bfabf75f8d2f50b88133e6af0ab203a6024d4f10b58b06c2"
+    },
+    {
+      "path": "src/galapagos/__init__.py",
+      "sha256": "cecb2c4707805f51ca16deb3e41228d90fbaba8c835dc7496c8db2439c5a46c9"
+    },
+    {
+      "path": "src/galapagos/data/__init__.py",
+      "sha256": "f5199fbbd57ed1088014ee6d801cc72fc576de1e8e421a8fc5823cfb7678d891"
+    },
+    {
+      "path": "src/galapagos/data/public_market/__init__.py",
+      "sha256": "f419195cb7338bc42d705b0215130ca97909cebb46935683ba5c65993c588c1b"
+    },
+    {
+      "path": "src/galapagos/data/public_market/config.py",
+      "sha256": "b5b63086892a958f8e8c3f9329da21d4ffadb201cf0b46c6772749895a778293"
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window.py",
+      "sha256": "5e6fecedb2f440ed75244c98f6b353fd19dd89d0091e34b00d1dcfc058b1af1c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_quality.py",
+      "sha256": "2d1e3ee3b1a65a14f6ac9b5067d8b1715b8b6167ebffb596967ac792a964d77f"
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "sha256": "bac3c924fbcfe575cc59d952010ca3c3647dbd94cbcaec860deee0907b8f9086"
+    },
+    {
+      "path": "src/galapagos/data/public_market/ingestion.py",
+      "sha256": "2053a0cbee75dbdfc093ebc016d32d2c4e3922a858729b8f5b18a1dfa1207254"
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_discovery.py",
+      "sha256": "9b434cfbc9fd885df2f6d1ff3d3550c286cd2a2cb85a16c30c581b2485a8ac90"
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window.py",
+      "sha256": "39c35d4ef17b9aac04ae0a734e5e3c0fe3c768250fc3a61e66a2d4b3a5d925eb"
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_quality.py",
+      "sha256": "4f6e0ce6aa1e6a0f09a47235a0e0f4838bdbba45cedd74aea258297e13e339ed"
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_validation.py",
+      "sha256": "386dc19abd666b09fe780efc66d617384981ab362220bb0d28653c42758f313c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day.py",
+      "sha256": "192f373b431edcb34c82be25e25508e224fbbe0cab380bc9e6ebd5f30f49da91"
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_quality.py",
+      "sha256": "67751db3b6d22ad8a30d3752e370e0681a0918138f7784c93c67e8ee7c44b07c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_validation.py",
+      "sha256": "1070825adc67dac20503e302320ac9beadd22d069e3fc04210d109e499f7de2e"
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window.py",
+      "sha256": "e34235b9fa116b0eeb1a079a6885dcc0b308601220d02aab896ee92538a2a900"
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_quality.py",
+      "sha256": "154871ba0a7adc20497e6ca28cda127c0d5453c0a85ec5163abe5c15f474c770"
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_validation.py",
+      "sha256": "0765815a37e0665cbc9beceee1c37075ce3f42ea3023e3f665e0978edf382c45"
+    },
+    {
+      "path": "src/galapagos/data/public_market/provenance.py",
+      "sha256": "3940d32753f7f718f8ad0f3587676cf59ab2cbd69ec88d9a3809d1993e5a4e2c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/quality.py",
+      "sha256": "6c4f7a3de96138ffd2eb24a7aafb33452032d814641cc50a4a1636ceb5912c8c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/resampling.py",
+      "sha256": "749226e136b85e938fa029e66d96e353a0b34e132c6c2a9c6c5b778fab0e005c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/schemas.py",
+      "sha256": "78972418df4e9cbe37c20600ca86cb08162df55d3ee6987cfa793b997715b239"
+    },
+    {
+      "path": "src/galapagos/data/public_market/sources/__init__.py",
+      "sha256": "525253c9115a9b6b40b514eecfdea47f26ce7aede2d74f9e1eb4ba67cd8ca806"
+    },
+    {
+      "path": "src/galapagos/data/public_market/sources/binance_archive.py",
+      "sha256": "377c5bbe1256dcba2d8b3f7a70eb842554be150f2b6429fad0027b5a3577c1a7"
+    },
+    {
+      "path": "src/galapagos/data/public_market/storage.py",
+      "sha256": "038d02d3f481f532f2be76a8d271b8e221f10935974dc11f26d0d6ca61d88ca2"
+    },
+    {
+      "path": "src/galapagos/datasets/__init__.py",
+      "sha256": "25e9f817e2f17b71a8ecf0934a008d95005b939859c25a4cee1823e708d006e7"
+    },
+    {
+      "path": "src/galapagos/datasets/assembly.py",
+      "sha256": "495e984dd92497ef309ab857df6afd45df2357357460d54da2e16f179d59899d"
+    },
+    {
+      "path": "src/galapagos/datasets/datacard.py",
+      "sha256": "a178c8a87106d0e9eb434732f597cec72236910d4052481ef0ec77049e258633"
+    },
+    {
+      "path": "src/galapagos/datasets/expanded_window.py",
+      "sha256": "1743a3256ca1ca920f71d8513b74ce648efef17e71b292bf636b4fad35404d82"
+    },
+    {
+      "path": "src/galapagos/datasets/expanded_window_datacard.py",
+      "sha256": "7ab5a07a9de2522ec36188e40fa3c395625f3ada40f64783164e05a4b5e1ea70"
+    },
+    {
+      "path": "src/galapagos/datasets/expanded_window_quality.py",
+      "sha256": "6943e6a6e7b5c9232bee0aebf3a0e8a687c6f016dc6477d4a4e4c432c878ea66"
+    },
+    {
+      "path": "src/galapagos/datasets/expanded_window_validation.py",
+      "sha256": "bb5953c19c45eb7df28d9095f97ef128e921f252fef90603f1f15bf1ac19a3a7"
+    },
+    {
+      "path": "src/galapagos/datasets/max_history_window.py",
+      "sha256": "9ee30e82c3e6cd59a39e5e0f58f0a3f1b06869f8d2594a8ac47784b57e49c8b4"
+    },
+    {
+      "path": "src/galapagos/datasets/max_history_window_datacard.py",
+      "sha256": "cf0ba42a73739eacd1526c37b422519c6a6f3907ea196f1a1882bccfc1398179"
+    },
+    {
+      "path": "src/galapagos/datasets/max_history_window_quality.py",
+      "sha256": "ed536e7d390c01b6ccb75856fe108b8d03d9285ff1ded8204bd3a7e078e17774"
+    },
+    {
+      "path": "src/galapagos/datasets/max_history_window_validation.py",
+      "sha256": "c85598434b0aaf7209ddc8bb47b9bea7fb184c6227c4c5d6f27a7802ff9c8815"
+    },
+    {
+      "path": "src/galapagos/datasets/multi_day.py",
+      "sha256": "9c0b92b17c111b85b512dbe387785f2c93a98d878c0dabb01f6d63e8e3e80be9"
+    },
+    {
+      "path": "src/galapagos/datasets/multi_day_datacard.py",
+      "sha256": "09136439f5d2f9f021d19e17b664904d4133cb09812cb76bb8d999595a06cbc5"
+    },
+    {
+      "path": "src/galapagos/datasets/multi_day_quality.py",
+      "sha256": "e907236442a66b2cd3ee210637fc8ed9305edfc0264da80669682f1abb142e5d"
+    },
+    {
+      "path": "src/galapagos/datasets/multi_day_validation.py",
+      "sha256": "c024d14bf37616a0e2eff91832cd26975bc1126d0170aed8a5c5f292ce30ab93"
+    },
+    {
+      "path": "src/galapagos/datasets/one_year_window.py",
+      "sha256": "74cd3ad003d3654d2a2391af0e8de6e589f56673debd4ec9e53b1ab4c796a241"
+    },
+    {
+      "path": "src/galapagos/datasets/one_year_window_datacard.py",
+      "sha256": "2e0a1b998d9d7c886ebe48bd2fc99eaecdf154f14045a4145a9b940ebd799e75"
+    },
+    {
+      "path": "src/galapagos/datasets/one_year_window_quality.py",
+      "sha256": "f1554c7e637647ce1d503a717f880be1699cbfadbcc99e3b099b986b72512530"
+    },
+    {
+      "path": "src/galapagos/datasets/one_year_window_validation.py",
+      "sha256": "4efbbad06b15a78649cef9b7d59acd73912f91d12a108fb3ed97f49d1a1dc7a3"
+    },
+    {
+      "path": "src/galapagos/datasets/quality.py",
+      "sha256": "3b3e0a427c0366a44df0996f3f242d1d41915e6f04601e503088b31d594d5fad"
+    },
+    {
+      "path": "src/galapagos/datasets/schemas.py",
+      "sha256": "a7f065bb18f93ff57398fd6a81159fb7582b25e1bd886f39b3378014085b99b4"
+    },
+    {
+      "path": "src/galapagos/datasets/splits.py",
+      "sha256": "a4ff8bf568695e99cf0a245c10d2e1b3b9367a98ea40bac13c61ca80dbedb8a9"
+    },
+    {
+      "path": "src/galapagos/datasets/validation.py",
+      "sha256": "d33c1edbd2643a7f44f8cba21252071aa48affd7803a8525b13d6ce07e3cf79d"
+    },
+    {
+      "path": "src/galapagos/features/__init__.py",
+      "sha256": "160ca4baae584818682d987a949cd192642b2abfb2ea4ef9d1016e813274d217"
+    },
+    {
+      "path": "src/galapagos/features/causal_ohlcv.py",
+      "sha256": "8ec185fe315966187249eaf3ab2df5e0222572dbb5ac3b3284c68b6cee2c3996"
+    },
+    {
+      "path": "src/galapagos/features/expanded_window.py",
+      "sha256": "bce67b670bc68198c84b7df930d28f3e01a9d6143c307549dc518c92445d51fa"
+    },
+    {
+      "path": "src/galapagos/features/expanded_window_quality.py",
+      "sha256": "476fb75c55d474d64e5b6e204cecff24cfab7c4edb446a28ada7c248f74e4108"
+    },
+    {
+      "path": "src/galapagos/features/expanded_window_validation.py",
+      "sha256": "72f5ea6045b67331409379932cc3d31da89fda70df87b0d2a4c6a4e78c95dfdc"
+    },
+    {
+      "path": "src/galapagos/features/max_history_window.py",
+      "sha256": "019b4a9072ff78f5e55751711dca4d2d0452e5778f6e6524682cfefd474728cb"
+    },
+    {
+      "path": "src/galapagos/features/max_history_window_quality.py",
+      "sha256": "9d08adc48f4c3312d64dff112246c1e126b657aab60fa9d3216c3eb300190cdd"
+    },
+    {
+      "path": "src/galapagos/features/max_history_window_validation.py",
+      "sha256": "00b2f03bcde246b660e11f8db8efa909225e5c43f61982544f4a3690bfdacfbc"
+    },
+    {
+      "path": "src/galapagos/features/multi_day.py",
+      "sha256": "47a0af013889b3d12c87f1a778542fc54a065be50c439b26d05a6bfce2855c54"
+    },
+    {
+      "path": "src/galapagos/features/multi_day_quality.py",
+      "sha256": "2d7deffa75b96f584a52e4aeaa1edc3cd194d8c697c224b708bfe99d917a8d17"
+    },
+    {
+      "path": "src/galapagos/features/multi_day_validation.py",
+      "sha256": "832ec132775ca6c894503f07ccc9ab8bcd491311fd1959b7e9216cd175be4d74"
+    },
+    {
+      "path": "src/galapagos/features/one_year_window.py",
+      "sha256": "c97301f07d904f38706b1518e5fc7ce89817eaf012034f6ba405bcc402c3e6b9"
+    },
+    {
+      "path": "src/galapagos/features/one_year_window_quality.py",
+      "sha256": "e01a970de58c248be59e2aaa767c8d5e6f9661116611eee078858a22417a98f9"
+    },
+    {
+      "path": "src/galapagos/features/one_year_window_validation.py",
+      "sha256": "5dc7ab90d12752224b4d7ea31eac1305f3315de415b4252905346927a2e3822d"
+    },
+    {
+      "path": "src/galapagos/features/quality.py",
+      "sha256": "493a4288fa93d97fe82ba41a2094290cb47ef7a048e8f73fa3c84856fcaee031"
+    },
+    {
+      "path": "src/galapagos/features/registry.py",
+      "sha256": "c0956dfff7945fd36a3d19510b9ca43dc6a3ec52ef3d58793a0e1b6bfb4d629b"
+    },
+    {
+      "path": "src/galapagos/features/schemas.py",
+      "sha256": "1aeb6986618d972e79e47c1b552bcea76ab65d49f1aeb49e1f88e476dcd2361c"
+    },
+    {
+      "path": "src/galapagos/features/validation.py",
+      "sha256": "503dabb453817acdce4f2ca4636819d1f64059c15f52662b10ae1b06692f56fa"
+    },
+    {
+      "path": "src/galapagos/labels/__init__.py",
+      "sha256": "f23ec816cb9b51142368717c78d3a44e658187f008ff8888eaa930a623a0177f"
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window.py",
+      "sha256": "f0e43b055a246c5b844d8dbe82f0d7623157cb5a9d711e5d157d6d99f45ee89e"
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_quality.py",
+      "sha256": "08c73ebeaa8e5ce1eb76780bab3ac3a922464c292b5da0074513a1d491e739cb"
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "sha256": "28c4f18078ce63bffeaf0e15baba6fa0981a3cf6832504578e27d6112e50039b"
+    },
+    {
+      "path": "src/galapagos/labels/forward_returns.py",
+      "sha256": "4ad8aa47bd841c599beb6e3738cc4f7a3a6a7446392eaa7de16b1b52b39a88b2"
+    },
+    {
+      "path": "src/galapagos/labels/max_history_window.py",
+      "sha256": "704e8e5713b68a2c4554ce87b3539ba543d72d11369c8fb63974a7fd4bc074da"
+    },
+    {
+      "path": "src/galapagos/labels/max_history_window_quality.py",
+      "sha256": "f04e77511566848e1535e04cfbfc38998a9fcad0655bb05281db76b064e3c048"
+    },
+    {
+      "path": "src/galapagos/labels/max_history_window_validation.py",
+      "sha256": "4fd37695da7afc2e3f98b4802076f6fa3d3671340fe4080571ff38300e68e60d"
+    },
+    {
+      "path": "src/galapagos/labels/multi_day.py",
+      "sha256": "b0548683e61af18fb29d24f2ee0132dcae971c9fb5dd4b5e9a158dd1474cfcf1"
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_config.py",
+      "sha256": "2f0f7f5583902f12859d2e68869b99189ce3819f9ecc91ff6c1dc7c17d56d3ae"
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_quality.py",
+      "sha256": "fbe1b8ff226ccc3af1481e8673cbb4e3905a2cff66a4ca6ef799de3aac6c6ecd"
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "sha256": "d1cf844951c16f8d6f0e61af962d21ddb1ae67d4004ccc1b05ddbe6d965d63ec"
+    },
+    {
+      "path": "src/galapagos/labels/one_year_window.py",
+      "sha256": "cb5521a8e5ce7ab688e9898dce1a36f99546fcc0107b14cd921057a2b1f06e13"
+    },
+    {
+      "path": "src/galapagos/labels/one_year_window_quality.py",
+      "sha256": "0c688b19669135ea4fb7ea0e0b767ae8f9466a493c6e92bc1f3d10bdf61eeb7f"
+    },
+    {
+      "path": "src/galapagos/labels/one_year_window_validation.py",
+      "sha256": "8f7794b70c582c88d191d7d393ab183337b3980f1af5b460bb6f7dc3d48522ba"
+    },
+    {
+      "path": "src/galapagos/labels/quality.py",
+      "sha256": "cf88fba6191c048d2d0eb1889a04dad80e83407b6dc10c05babc8d6fef65a6a3"
+    },
+    {
+      "path": "src/galapagos/labels/registry.py",
+      "sha256": "986714846bc142f300c3061ec5aaf7ec2017a1036dbf9b22a184141be9b9357d"
+    },
+    {
+      "path": "src/galapagos/labels/schemas.py",
+      "sha256": "fabe650fd8c72707cff9c596bd759052c1e8fb3cf450e4835ac8fff8de162ef7"
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "sha256": "53a99386b4fb3176f6aaad1f003c6360f4b1ce1a395c835a45e4e04806829191"
+    },
+    {
+      "path": "src/galapagos/ml/__init__.py",
+      "sha256": "68641c3ea28ea913600b2b8f2c72f2c98ec6a473cd4cc438552d35336189d669"
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window.py",
+      "sha256": "3779ce40069bff860b16acff4c55b94ce78d16ffe387d8472739b0f62fba93b6"
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_metrics.py",
+      "sha256": "91642f70b85a66b1370556f03b60ed2e7b0db74515c590320b28683d45d5966e"
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_quality.py",
+      "sha256": "da274d78f6ca852755fda1e27f7acbe0d4034953633caff1ca0fb09fddfc1e2a"
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_robustness.py",
+      "sha256": "9a5b36280416113d0f986226ca89b31db698c2d9d1245003a26bc41f6836f28b"
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_robustness_validation.py",
+      "sha256": "c03e1a444f8b63ed199431df2a39bd9dd8d5aea3ef16d5994c6409fe0ac7498f"
+    },
+    {
+      "path": "src/galapagos/ml/expanded_window_validation.py",
+      "sha256": "3da06bdab2eda63c0ff17d83a4c4904ff6c50cdc0f6a6cde63cab44c3ff0df72"
+    },
+    {
+      "path": "src/galapagos/ml/max_history_robustness.py",
+      "sha256": "5479ec38e81aa3a57438864810dd79041370e94417b4e69e2c2277518ec0f0d9"
+    },
+    {
+      "path": "src/galapagos/ml/max_history_robustness_validation.py",
+      "sha256": "a7d127def5be92591821a1b0172ec74b2460375547640067c0d07d0784db4606"
+    },
+    {
+      "path": "src/galapagos/ml/max_history_window.py",
+      "sha256": "de5c9e0dbf81aadc71afd39ffbb21d963740a3e582bd6ac59ae0b5d5ead92796"
+    },
+    {
+      "path": "src/galapagos/ml/max_history_window_metrics.py",
+      "sha256": "572572be30cef0aacb781e7bf3b53ad76cc0c5bab33722c938d2393bec804ed0"
+    },
+    {
+      "path": "src/galapagos/ml/max_history_window_quality.py",
+      "sha256": "6887a29ce7affea01d914bf1bfbe201b5c6d504b09bcb6df048dca8d8ee4a65b"
+    },
+    {
+      "path": "src/galapagos/ml/max_history_window_validation.py",
+      "sha256": "08a620661e54e0db363148114459c14b3ac07292074c1a237016c37dde4ad66f"
+    },
+    {
+      "path": "src/galapagos/ml/metrics.py",
+      "sha256": "374646f63458d5933a62205966205d6e09ac866fb955a7da83f9ae13b06803ef"
+    },
+    {
+      "path": "src/galapagos/ml/multi_day.py",
+      "sha256": "c20eb7f34707b7f655a8baed36c81a039a83e39ac38a353866f04b4ee910d57d"
+    },
+    {
+      "path": "src/galapagos/ml/multi_day_metrics.py",
+      "sha256": "f44c2d4540596d6814b5ba2fa1bff42f200b16827de86f915651c48ef77ea861"
+    },
+    {
+      "path": "src/galapagos/ml/multi_day_quality.py",
+      "sha256": "8094329a6f331485a4914972211e4d6524df13841066e14d8866a040d9877fbe"
+    },
+    {
+      "path": "src/galapagos/ml/multi_day_validation.py",
+      "sha256": "2ea6f1cbd2fdb2df2f990df9203a5bdd7f862138c9c941b26478eaa6e3e3cbc2"
+    },
+    {
+      "path": "src/galapagos/ml/offline_baselines.py",
+      "sha256": "cac3d17addc94e4bb1d3bdf20b305603ad04c5e71136557a4061bdf1a56a5e0d"
+    },
+    {
+      "path": "src/galapagos/ml/one_year_robustness.py",
+      "sha256": "3ba1dfba8bdb01bdc1fa9eb1828a4afb25640cc1810ab10ada6bc6a1d35cc749"
+    },
+    {
+      "path": "src/galapagos/ml/one_year_robustness_validation.py",
+      "sha256": "3db1599fbdbafe2c25bc7d308865cb023242bc989ee19c5b08c1ef4168db61ba"
+    },
+    {
+      "path": "src/galapagos/ml/one_year_window.py",
+      "sha256": "bc213ac901336dfaa830a5affd365ee1c55165c3027ddc6b2ad97fbc137d1767"
+    },
+    {
+      "path": "src/galapagos/ml/one_year_window_metrics.py",
+      "sha256": "0ffcf8b3ed47553f9154fa995f51b06b9c7168bdf1f7a2fe246ed9f904eacfd7"
+    },
+    {
+      "path": "src/galapagos/ml/one_year_window_quality.py",
+      "sha256": "c4a6469fe0e1b4153facae60536b19828f29d5e15feed23904cec23ad56244ee"
+    },
+    {
+      "path": "src/galapagos/ml/one_year_window_validation.py",
+      "sha256": "05388092d9479ca573f970a2765401b61b23beace03503a731c6ab2635c7e664"
+    },
+    {
+      "path": "src/galapagos/ml/quality.py",
+      "sha256": "c24e36207722e67e639210073310cd18927c335d0cee71bce736c6c7daed75fe"
+    },
+    {
+      "path": "src/galapagos/ml/reports.py",
+      "sha256": "148162cc7c02c5cbfe1c5f49e366cfc6776d92d2ce8d22c7347216704fdb51ec"
+    },
+    {
+      "path": "src/galapagos/ml/robustness.py",
+      "sha256": "75176633184dbbf30ff3bf86b161afc6863819a359ee5bde9c6d200bc74b9880"
+    },
+    {
+      "path": "src/galapagos/ml/robustness_validation.py",
+      "sha256": "38bb755982965aef7531df21500c67745e4bcd5da03870186949bbcd9489529c"
+    },
+    {
+      "path": "src/galapagos/ml/schemas.py",
+      "sha256": "f82db5812af6c662778efa330e39e44eed5f1991098daa47e19eac1fe00131ca"
+    },
+    {
+      "path": "src/galapagos/ml/training.py",
+      "sha256": "6c29e2ddfd3d60ceb016e037f565f34b0da9ee3dbf0c6daaea21ac2e94bfca0a"
+    },
+    {
+      "path": "src/galapagos/ml/validation.py",
+      "sha256": "a790cd6c5077adb280b7c00d146ffb79703ea948a550b5be497af61414717c5f"
+    },
+    {
+      "path": "src/galapagos/validation/__init__.py",
+      "sha256": "3c78788ea0fb8b468bf16f215d385ccca713e31b0d6625da9c1c4e1f920e5b92"
+    },
+    {
+      "path": "src/galapagos/validation/manifests.py",
+      "sha256": "d04ab00b7faf3ed8e3823514b15ce66f05bc9490a106adaf399af105024895e3"
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "sha256": "a281716e19f86c1dd135b9dd7287442f6afd24d2b175937ab3d72dbae594634a"
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "sha256": "5b9f48c8126e2f2b535368860195bb004a12de12fa08e8d78f9a95b3cc933efc"
+    },
+    {
+      "path": "src/galapagos/validation/safety.py",
+      "sha256": "e3a7b62573dd1574d57781535070ab1cd6ed6b5a7ff34ed2fe7cdcc8c66e7a7b"
+    },
+    {
+      "path": "tests/ml/test_max_history_ml_robustness_v5_5.py",
+      "sha256": "ae2d0f6f672817f65880bbad4b8efc3a97cdd2a8fd52b4f3a5e3f1a865858666"
+    },
+    {
+      "path": "tests/validation/test_max_history_ml_robustness_v5_5_validator.py",
+      "sha256": "6c23d5ea439dfae4c59d6f5b7b4a0461e62a4adf96274b96cc017513a4d44f00"
+    }
+  ],
+  "self_describing_reports_excluded_from_sha256": [
+    "reports/audit_lite/v5_5_artifact_inventory.json",
+    "reports/audit_lite/v5_5_artifact_inventory.md",
+    "reports/audit_lite/v5_5_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_5_full_local_validation_attestation.md",
+    "reports/audit_lite/zip_size_report_v5_5.json",
+    "reports/audit_lite/zip_size_report_v5_5.md"
+  ],
+  "notes": [
+    "audit-lite does not replace full local validation",
+    "V5.5 contains no raw zips, full Parquet data, backtest, strategy, order, execution artifact, or persistent model."
+  ]
+}
