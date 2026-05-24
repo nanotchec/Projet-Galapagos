@@ -1,0 +1,235 @@
+{
+  "version": "V5.6",
+  "status": "PASS",
+  "decision_gate_type": "research_only",
+  "created_at_utc": "2026-05-24T00:00:00Z",
+  "inputs": {
+    "window_start": "2023-03-25",
+    "window_end": "2026-05-23",
+    "total_days": 1156,
+    "ml_research_v5_4": {
+      "manifest_path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "manifest_sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17",
+      "report_path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+      "scores_report_path": "reports/ml/max_history_offline_research_scores_v5_4.json",
+      "scores_report_sha256": "b5b84c720780c2a7547c5df3e292562463b6d4750a297c6e4216adcb95cf400e"
+    },
+    "robustness_v5_5": {
+      "manifest_path": "reports/manifests/max_history_ml_robustness_v5_5_manifest.json",
+      "manifest_sha256": "4682d3daa665ce0842dcf7c8b685b2caa6d5e93f9e24584155f323d2aab91ba3",
+      "report_path": "reports/ml/max_history_ml_robustness_v5_5.json",
+      "report_sha256": "4682d3daa665ce0842dcf7c8b685b2caa6d5e93f9e24584155f323d2aab91ba3",
+      "attestation_path": "reports/audit_lite/v5_5_full_local_validation_attestation.json",
+      "attestation_sha256": "6ad76a404e7bbf4ebd3b6a63be93cf93d582d4bdeee4efb05bcfdad310bbdd3a"
+    },
+    "models": [
+      "majority_class_baseline",
+      "random_seeded_baseline",
+      "logistic_regression",
+      "decision_tree_depth_2"
+    ],
+    "target": "up_down_flat_h1",
+    "timeframes": [
+      "1m",
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "walk_forward_grouping": "calendar_quarter"
+  },
+  "summary_verdict": "Mitige et non concluant. Les resultats OHLCV-only contiennent un signal descriptif faible, surtout pour logistic_regression sur 5m et 15m, mais ils ne sont pas assez stables ni assez forts apres falsification pour justifier une conclusion robuste.",
+  "baseline_assessment": {
+    "overall": "Les modeles appris ne battent pas les baselines de facon uniforme. logistic_regression bat les baselines sur plusieurs coupes, surtout en macro_f1 sur 5m et 15m, mais decision_tree_depth_2 reste souvent proche de majority_class_baseline ou de random_seeded_baseline.",
+    "logistic_regression": {
+      "verdict": "resultat mitige",
+      "test_macro_f1_by_timeframe": {
+        "1m": 0.3753,
+        "5m": 0.4133,
+        "15m": 0.4002,
+        "1h": 0.3191
+      },
+      "delta_macro_f1_vs_majority_test": {
+        "1m": 0.0963,
+        "5m": 0.2116,
+        "15m": 0.2187,
+        "1h": 0.1173
+      },
+      "delta_macro_f1_vs_random_test": {
+        "1m": 0.0424,
+        "5m": 0.0802,
+        "15m": 0.069,
+        "1h": -0.0268
+      }
+    },
+    "decision_tree_depth_2": {
+      "verdict": "ne bat pas les baselines de facon fiable",
+      "test_macro_f1_by_timeframe": {
+        "1m": 0.279,
+        "5m": 0.3391,
+        "15m": 0.3065,
+        "1h": 0.3138
+      },
+      "delta_macro_f1_vs_majority_test": {
+        "1m": 0.0,
+        "5m": 0.1374,
+        "15m": 0.125,
+        "1h": 0.112
+      },
+      "delta_macro_f1_vs_random_test": {
+        "1m": -0.0539,
+        "5m": 0.006,
+        "15m": -0.0247,
+        "1h": -0.0321
+      }
+    }
+  },
+  "split_stability_assessment": {
+    "overall": "Les seuils V5.5 ne detectent pas de surapprentissage massif entre train, validation et test pour les modeles appris, mais la stabilite split ne suffit pas a transformer les resultats en conclusion robuste.",
+    "overfit_warning_threshold": 0.1,
+    "learned_models_overfit_warnings": []
+  },
+  "timeframe_stability_assessment": {
+    "overall": "La stabilite entre timeframes est insuffisante. Les performances sont sensibles au timeframe et les avertissements de concentration timeframe sont presents pour tous les modeles.",
+    "single_timeframe_concentration_warnings": [
+      "majority_class_baseline",
+      "random_seeded_baseline",
+      "logistic_regression",
+      "decision_tree_depth_2"
+    ],
+    "learned_models": {
+      "logistic_regression": {
+        "accuracy_range": 0.2981,
+        "macro_f1_range": 0.0942,
+        "best_accuracy_timeframe": "1m"
+      },
+      "decision_tree_depth_2": {
+        "accuracy_range": 0.3126,
+        "macro_f1_range": 0.0601,
+        "best_accuracy_timeframe": "1m"
+      }
+    }
+  },
+  "walk_forward_stability_assessment": {
+    "overall": "Les metriques walk-forward sont descriptives. Aucun groupe faible n'est remonte pour les modeles appris, mais 1m et 5m presentent des groupes instables, ce qui indique une concentration temporelle partielle.",
+    "not_a_backtest": true,
+    "learned_models": {
+      "logistic_regression": {
+        "1m": {
+          "weak_groups": [],
+          "unstable_groups_count": 2,
+          "accuracy_range_by_group": 0.221,
+          "macro_f1_range_by_group": 0.0748
+        },
+        "5m": {
+          "weak_groups": [],
+          "unstable_groups_count": 1,
+          "accuracy_range_by_group": 0.2212,
+          "macro_f1_range_by_group": 0.0749
+        },
+        "15m": {
+          "weak_groups": [],
+          "unstable_groups_count": 0,
+          "accuracy_range_by_group": 0.083,
+          "macro_f1_range_by_group": 0.082
+        },
+        "1h": {
+          "weak_groups": [],
+          "unstable_groups_count": 0,
+          "accuracy_range_by_group": 0.1409,
+          "macro_f1_range_by_group": 0.0804
+        }
+      },
+      "decision_tree_depth_2": {
+        "1m": {
+          "weak_groups": [],
+          "unstable_groups_count": 2,
+          "accuracy_range_by_group": 0.2313,
+          "macro_f1_range_by_group": 0.0498
+        },
+        "5m": {
+          "weak_groups": [],
+          "unstable_groups_count": 1,
+          "accuracy_range_by_group": 0.2319,
+          "macro_f1_range_by_group": 0.0427
+        },
+        "15m": {
+          "weak_groups": [],
+          "unstable_groups_count": 0,
+          "accuracy_range_by_group": 0.064,
+          "macro_f1_range_by_group": 0.1204
+        },
+        "1h": {
+          "weak_groups": [],
+          "unstable_groups_count": 0,
+          "accuracy_range_by_group": 0.1155,
+          "macro_f1_range_by_group": 0.1013
+        }
+      }
+    }
+  },
+  "label_shuffle_assessment": {
+    "overall": "Le label shuffle degrade generalement les modeles appris, surtout sur 5m et 15m. L'alerte reste forte pour decision_tree_depth_2 sur 1m et 1h test, ou l'avantage face aux labels shuffles n'est pas clair.",
+    "seed": 123,
+    "no_clear_edge_vs_shuffled_labels": [
+      "1m.decision_tree_depth_2.validation",
+      "1m.decision_tree_depth_2.test",
+      "1h.decision_tree_depth_2.test"
+    ],
+    "logistic_regression_clear_edge": true,
+    "decision_tree_depth_2_clear_edge": false
+  },
+  "leakage_assessment": {
+    "overall": "Les scans V5.5 ne remontent pas de fuite de features ni de metrique de trading interdite.",
+    "feature_leakage_scan_passed": true,
+    "metric_forbidden_scan_passed": true,
+    "known_anomalies": []
+  },
+  "limitations": [
+    "Les resultats restent OHLCV-only.",
+    "Un seul actif est couvert: BTCUSDT spot.",
+    "Les trades publics historiques ne sont pas encore integres.",
+    "Le funding, l'open interest et l'order book ne sont pas couverts.",
+    "Aucun cout, slippage ou effet d'execution n'est modelise.",
+    "Aucun backtest n'est produit.",
+    "Aucune execution reelle ou simulee live n'est produite.",
+    "La fenetre continue maximum validee ne couvre pas necessairement tous les fragments historiques segmentes de BTCUSDT."
+  ],
+  "recommended_next_step": "A. Ajouter les trades publics historiques.",
+  "secondary_next_step": "D. Preparer une validation walk-forward offline plus stricte.",
+  "roadmap": [
+    {
+      "version": "V6.0",
+      "direction": "Decouverte et ingestion data-only des trades publics historiques BTCUSDT."
+    },
+    {
+      "version": "V6.1",
+      "direction": "Qualite et agregations causales des trades publics, sans labels ni ML."
+    },
+    {
+      "version": "V6.2",
+      "direction": "Assemblage offline OHLCV + trades publics avec features causales separees des labels."
+    },
+    {
+      "version": "V6.3",
+      "direction": "Baselines ML offline et falsification sur dataset OHLCV + trades."
+    },
+    {
+      "version": "V6.4",
+      "direction": "Decision gate walk-forward offline plus stricte avant toute discussion de backtest research borne."
+    }
+  ],
+  "safety": {
+    "trading_enabled": false,
+    "paper_live_enabled": false,
+    "orders_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "claims": {
+    "strategy_validated": false,
+    "model_validated_for_trading": false,
+    "profitability_claimed": false,
+    "real_trading_allowed": false
+  }
+}

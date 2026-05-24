@@ -1,17 +1,18 @@
-# Etat du Projet : V5.4.1 validee + candidat V5.5
+# Etat du Projet : V5.5 validee + candidat V5.6
 
-- **Derniere version validee** : V5.4.1.
-- **Version candidate** : V5.5.
+- **Derniere version validee** : V5.5.
+- **Version candidate** : V5.6.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : max historical ML robustness and walk-forward falsification audit.
+- **Direction** : max historical research decision gate.
 
-## Candidat V5.5
+## Candidat V5.6
 
 - Fenetre : `2023-03-25` -> `2026-05-23`.
 - Nombre de jours : `1156`.
-- Analyses : `['baseline_delta', 'feature_leakage_scan', 'label_shuffle_falsification', 'metric_forbidden_scan', 'split_stability', 'timeframe_stability', 'walk_forward_stability']`.
-- Warnings descriptifs : `7`.
-- V5.5 reste candidate `pending_external_audit`.
+- Verdict research : `mitige_non_concluant`.
+- Recommandation principale : ajouter les trades publics historiques.
+- Recommandation secondaire : preparer une validation walk-forward offline plus stricte.
+- V5.6 reste candidate `pending_external_audit`.
 
 ## Clause De Securite
 
@@ -24,4 +25,4 @@
 - Aucun modele persistant.
 - Aucune API privee.
 - Aucune cle API.
-- V5.5 reste non validee avant audit externe.
+- V5.6 reste non validee avant audit externe.
