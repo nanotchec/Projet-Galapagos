@@ -1,5 +1,6 @@
 {
   "version": "V5.6",
+  "correction_version": "V5.6.1",
   "status": "PASS",
   "decision_gate_type": "research_only",
   "created_at_utc": "2026-05-24T00:00:00Z",
@@ -37,7 +38,7 @@
     ],
     "walk_forward_grouping": "calendar_quarter"
   },
-  "summary_verdict": "Mitige et non concluant. Les resultats OHLCV-only contiennent un signal descriptif faible, surtout pour logistic_regression sur 5m et 15m, mais ils ne sont pas assez stables ni assez forts apres falsification pour justifier une conclusion robuste.",
+  "summary_verdict": "Mitige et non concluant. Les resultats OHLCV-only contiennent un signal descriptif faible, surtout pour logistic_regression sur 5m et 15m, mais les features actuelles restent trop simples et les resultats ne sont pas assez stables apres falsification. La prochaine etape doit enrichir massivement la bibliotheque de features OHLCV avant toute extension aux trades publics.",
   "baseline_assessment": {
     "overall": "Les modeles appris ne battent pas les baselines de facon uniforme. logistic_regression bat les baselines sur plusieurs coupes, surtout en macro_f1 sur 5m et 15m, mais decision_tree_depth_2 reste souvent proche de majority_class_baseline ou de random_seeded_baseline.",
     "logistic_regression": {
@@ -187,35 +188,37 @@
   "limitations": [
     "Les resultats restent OHLCV-only.",
     "Un seul actif est couvert: BTCUSDT spot.",
-    "Les trades publics historiques ne sont pas encore integres.",
+    "Les features OHLCV actuelles restent simples et doivent etre enrichies avant une extension multi-source.",
+    "Les trades publics historiques ne sont pas encore integres et sont repousses a V7.x apres validation ou rejet de la piste Advanced OHLCV.",
     "Le funding, l'open interest et l'order book ne sont pas couverts.",
     "Aucun cout, slippage ou effet d'execution n'est modelise.",
     "Aucun backtest n'est produit.",
     "Aucune execution reelle ou simulee live n'est produite.",
     "La fenetre continue maximum validee ne couvre pas necessairement tous les fragments historiques segmentes de BTCUSDT."
   ],
-  "recommended_next_step": "A. Ajouter les trades publics historiques.",
+  "recommended_next_step": "B. Ameliorer les features OHLCV avant multi-source.",
   "secondary_next_step": "D. Preparer une validation walk-forward offline plus stricte.",
+  "roadmap_correction_note": "Les trades publics historiques sont repoussés à V7.x après validation ou rejet de la piste Advanced OHLCV.",
   "roadmap": [
     {
       "version": "V6.0",
-      "direction": "Decouverte et ingestion data-only des trades publics historiques BTCUSDT."
+      "direction": "Max Historical Advanced OHLCV Feature Expansion"
     },
     {
       "version": "V6.1",
-      "direction": "Qualite et agregations causales des trades publics, sans labels ni ML."
+      "direction": "Max Historical Dataset with Advanced OHLCV Features"
     },
     {
       "version": "V6.2",
-      "direction": "Assemblage offline OHLCV + trades publics avec features causales separees des labels."
+      "direction": "Max Historical Offline ML with Advanced OHLCV Features"
     },
     {
       "version": "V6.3",
-      "direction": "Baselines ML offline et falsification sur dataset OHLCV + trades."
+      "direction": "Advanced OHLCV Robustness / Walk-Forward Falsification"
     },
     {
       "version": "V6.4",
-      "direction": "Decision gate walk-forward offline plus stricte avant toute discussion de backtest research borne."
+      "direction": "Advanced OHLCV Research Decision Gate"
     }
   ],
   "safety": {

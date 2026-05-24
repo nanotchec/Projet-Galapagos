@@ -1,10 +1,14 @@
 # V5.6 - Max Historical Research Decision Gate
 
+Correction V5.6.1 : la recommandation principale est corrigee. Les trades publics historiques ne sont plus la prochaine etape immediate ; ils sont repousses a V7.x apres validation ou rejet de la piste Advanced OHLCV.
+
 ## 1. Executive summary
 
 Verdict research : **mitige et non concluant**.
 
 Les resultats ML OHLCV-only V5.4/V5.5 montrent un interet descriptif faible, surtout pour `logistic_regression` sur `5m` et `15m`. Cet interet ne suffit pas a conclure a une robustesse exploitable : les performances restent sensibles au timeframe, partiellement instables par groupes walk-forward, et la falsification label shuffle signale encore des zones fragiles.
+
+La correction V5.6.1 conclut que les features OHLCV actuelles sont encore trop simples. Avant d'ajouter des trades publics, il faut enrichir massivement la bibliotheque de features et d'indicateurs OHLCV sur la fenetre max historical.
 
 Ce rapport ne contient aucune conclusion trading.
 
@@ -79,7 +83,8 @@ Les scans de metriques interdites ne remontent pas d'anomalie.
 
 - Les donnees restent OHLCV-only.
 - Un seul actif est couvert : BTCUSDT spot.
-- Les trades publics historiques ne sont pas encore integres.
+- Les features OHLCV actuelles restent trop simples pour conclure.
+- Les trades publics historiques ne sont pas encore integres et sont repousses a V7.x apres validation ou rejet de la piste Advanced OHLCV.
 - Le funding, l'open interest et l'order book ne sont pas couverts.
 - Aucun cout, slippage ou effet d'execution n'est modelise.
 - Aucun backtest n'est produit.
@@ -88,9 +93,9 @@ Les scans de metriques interdites ne remontent pas d'anomalie.
 
 ## 10. Decision de direction
 
-Option principale recommandee : **A. Ajouter les trades publics historiques.**
+Option principale recommandee : **B. Ameliorer les features OHLCV avant multi-source.**
 
-Raison : apres avoir pousse OHLCV-only jusqu'a l'historique continu maximum, le signal descriptif reste faible et instable. La prochaine source d'information publique raisonnable est le flux de trades historiques, qui peut apporter de la microstructure sans passer a une source privee.
+Raison : apres avoir pousse les features OHLCV simples jusqu'a l'historique continu maximum, le signal descriptif reste faible et instable. La prochaine etape doit tester si une bibliotheque OHLCV plus riche suffit a ameliorer la stabilite avant de complexifier la source de donnees avec les trades publics.
 
 Option secondaire recommandee : **D. Preparer une validation walk-forward offline plus stricte.**
 
@@ -98,11 +103,13 @@ Raison : avant toute discussion de backtest research borne, il faut renforcer l'
 
 ## 11. Roadmap proposee
 
-- V6.0 : decouverte et ingestion data-only des trades publics historiques BTCUSDT.
-- V6.1 : qualite et agregations causales des trades publics, sans labels ni ML.
-- V6.2 : assemblage offline OHLCV + trades publics avec features causales separees des labels.
-- V6.3 : baselines ML offline et falsification sur dataset OHLCV + trades.
-- V6.4 : decision gate walk-forward offline plus stricte avant toute discussion de backtest research borne.
+- V6.0 : Max Historical Advanced OHLCV Feature Expansion.
+- V6.1 : Max Historical Dataset with Advanced OHLCV Features.
+- V6.2 : Max Historical Offline ML with Advanced OHLCV Features.
+- V6.3 : Advanced OHLCV Robustness / Walk-Forward Falsification.
+- V6.4 : Advanced OHLCV Research Decision Gate.
+
+Les trades publics historiques sont repoussés à V7.x après validation ou rejet de la piste Advanced OHLCV.
 
 ## 12. Interdits maintenus
 
@@ -112,4 +119,6 @@ Raison : avant toute discussion de backtest research borne, il faut renforcer l'
 - Pas de backtest validant une strategie.
 - Pas de claim de rentabilite.
 
-V5.6 ne valide aucune strategie, ne valide aucun modele exploitable en trading, ne produit aucun signal de trading et ne produit aucun ordre.
+V5.6 ne valide aucune strategie, ne valide aucun modele exploitable en trading, ne produit aucun backtest, ne produit aucun signal de trading et ne produit aucun ordre.
+
+V5.6 recommande d'enrichir les features OHLCV avant d'ajouter les trades publics.
