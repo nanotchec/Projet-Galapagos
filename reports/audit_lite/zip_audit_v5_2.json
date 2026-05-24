@@ -1,0 +1,93 @@
+{
+  "version": "V5.2",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v5.2-audit-lite.zip",
+  "zip_size_bytes": 254269,
+  "zip_size_mb": 0.242,
+  "entries": 79,
+  "top_20_largest_files": [
+    {
+      "path": "data/audit_lite/v5_2/labels/timeframe=1h/sample.parquet",
+      "bytes": 67736
+    },
+    {
+      "path": "data/audit_lite/v5_2/labels/timeframe=15m/sample.parquet",
+      "bytes": 67694
+    },
+    {
+      "path": "data/audit_lite/v5_2/labels/timeframe=5m/sample.parquet",
+      "bytes": 65866
+    },
+    {
+      "path": "data/audit_lite/v5_2/labels/timeframe=1m/sample.parquet",
+      "bytes": 65290
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window.py",
+      "bytes": 21723
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 21319
+    },
+    {
+      "path": "src/galapagos/labels/max_history_window_validation.py",
+      "bytes": 20829
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "src/galapagos/labels/expanded_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "src/galapagos/labels/one_year_window_validation.py",
+      "bytes": 19186
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_validation.py",
+      "bytes": 17802
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v5_2.py",
+      "bytes": 17767
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/labels/max_history_window.py",
+      "bytes": 16375
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_discovery.py",
+      "bytes": 14998
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_validation.py",
+      "bytes": 12633
+    }
+  ],
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}
