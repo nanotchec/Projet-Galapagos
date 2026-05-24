@@ -1,0 +1,94 @@
+{
+  "version": "V6.4",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v6.4-audit-lite.zip",
+  "zip_size_bytes": 316620,
+  "zip_size_mb": 0.302,
+  "entries": 62,
+  "top_20_largest_files": [
+    {
+      "path": "reports/manifests/advanced_ohlcv_ml_robustness_v6_3_manifest.json",
+      "bytes": 354210
+    },
+    {
+      "path": "reports/ml/advanced_ohlcv_ml_robustness_v6_3.json",
+      "bytes": 354210
+    },
+    {
+      "path": "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+      "bytes": 217609
+    },
+    {
+      "path": "reports/ml/advanced_ohlcv_offline_ml_research_v6_2.json",
+      "bytes": 217609
+    },
+    {
+      "path": "reports/ml/advanced_ohlcv_offline_research_scores_v6_2.json",
+      "bytes": 204487
+    },
+    {
+      "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "bytes": 199277
+    },
+    {
+      "path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+      "bytes": 199277
+    },
+    {
+      "path": "reports/ml/max_history_offline_research_scores_v5_4.json",
+      "bytes": 189470
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 27503
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window.py",
+      "bytes": 21723
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_validation.py",
+      "bytes": 17802
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "reports/research_decisions/v6_4_research_decision_gate.json",
+      "bytes": 15981
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v6_4.py",
+      "bytes": 15248
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_discovery.py",
+      "bytes": 14998
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_validation.py",
+      "bytes": 12633
+    },
+    {
+      "path": "reports/audit_lite/v6_4_artifact_inventory.json",
+      "bytes": 11615
+    }
+  ],
+  "raw_zips_absent": true,
+  "pytest_collectible_scripts_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,290 @@
+{
+  "version": "V6.4",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "full_parquet_excluded": true,
+  "pytest_collectible_scripts_excluded": true,
+  "decision_gate_type": "research_only",
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2026-05-23",
+  "input_total_days": 1156,
+  "summary_verdict": "Les resultats advanced OHLCV sont interessants mais non concluants: ils ameliorent V5.4 dans une partie des comparaisons, sans amelioration claire et stable entre timeframes, splits et groupes walk-forward. La piste OHLCV-only semble atteindre ses limites avant backtest.",
+  "advanced_vs_simple_assessment": {
+    "available": true,
+    "advanced_better_count": 20,
+    "simple_better_count": 11,
+    "mixed_or_inconclusive_count": 17,
+    "advanced_improvement_consistency": 0.416666666667,
+    "by_model": {
+      "decision_tree_depth_2": {
+        "advanced_better": 5,
+        "simple_better": 3,
+        "mixed_or_inconclusive": 4
+      },
+      "logistic_regression": {
+        "advanced_better": 7,
+        "simple_better": 1,
+        "mixed_or_inconclusive": 4
+      },
+      "majority_class_baseline": {
+        "advanced_better": 1,
+        "simple_better": 3,
+        "mixed_or_inconclusive": 8
+      },
+      "random_seeded_baseline": {
+        "advanced_better": 7,
+        "simple_better": 4,
+        "mixed_or_inconclusive": 1
+      }
+    },
+    "assessment": "mitige_non_concluant",
+    "interpretation": "Advanced OHLCV fait mieux dans plus de cas que simple OHLCV, mais pas de maniere assez stable ou dominante pour conclure."
+  },
+  "recommended_next_step": "A. Ajouter les trades publics historiques.",
+  "secondary_next_step": "D. Préparer une validation walk-forward offline plus stricte.",
+  "roadmap": [
+    "V7.0 — Public Trades Historical Ingestion",
+    "V7.1 — OHLCV + Trades Feature Store",
+    "V7.2 — Multi-source Dataset",
+    "V7.3 — Multi-source ML Offline",
+    "V7.4 — Multi-source Robustness / Walk-forward"
+  ],
+  "included_files": [
+    {
+      "path": "README.md",
+      "sha256": "58704f2f93dbca23ca09fb40b25d0387b18a969bc2d5af3cf6ad069ff393dfb4"
+    },
+    {
+      "path": "docs/research_decision_gate_v6_4.md",
+      "sha256": "d1c6c525b35942f438c075dbf1d9d2bbc92de4876980e536ce3631dfde086cfa"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "b47fadf503105f6801cd91bc3ac563a9f5b632624f139512956891019302c5bf"
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "sha256": "cdc7c121448855c36c4368edef3db61fb3a7fe61e68aada2e2c8b6d5256be371"
+    },
+    {
+      "path": "reports/PROJECT_STATE.md",
+      "sha256": "d9450aa216cd66b63e937dc4a1f90bceea4f49a06b150482f04aff1b855f4a08"
+    },
+    {
+      "path": "reports/audit_lite/v6_3_full_local_validation_attestation.json",
+      "sha256": "781e614097e69b284f53d261ebe19449e0f8ccf67d98ea77c1be7fc8b44bc159"
+    },
+    {
+      "path": "reports/current/latest_metrics.json",
+      "sha256": "5dfcba50f08668ecea88a070ab2c801665dc56a13937ee3e051ec35cda8a728c"
+    },
+    {
+      "path": "reports/current/latest_metrics.md",
+      "sha256": "aece65091396bcfaddbe48bbe450b0d5accdb290e3f32dd074d40e9df83cefd0"
+    },
+    {
+      "path": "reports/current/latest_summary.md",
+      "sha256": "5c79745a3421533b7223b3b2a7e270ec116ca9cddef5cff69dce852f8d6924f3"
+    },
+    {
+      "path": "reports/manifests/advanced_ohlcv_ml_robustness_v6_3_manifest.json",
+      "sha256": "cb021c86da8cc35173aff12b6e49201e170212ed9b7b119f1a58c0f41fa8d979"
+    },
+    {
+      "path": "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+      "sha256": "9b0891e6449d717015adbdb78085b76800134b4b5191d857ce5b2a650444ee67"
+    },
+    {
+      "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+    },
+    {
+      "path": "reports/ml/advanced_ohlcv_ml_robustness_v6_3.json",
+      "sha256": "cb021c86da8cc35173aff12b6e49201e170212ed9b7b119f1a58c0f41fa8d979"
+    },
+    {
+      "path": "reports/ml/advanced_ohlcv_ml_robustness_v6_3.md",
+      "sha256": "816af9a18adf788c7616c518c32d84050cfb33e76a5874302cfc0002a81bbb8a"
+    },
+    {
+      "path": "reports/ml/advanced_ohlcv_offline_ml_research_v6_2.json",
+      "sha256": "9b0891e6449d717015adbdb78085b76800134b4b5191d857ce5b2a650444ee67"
+    },
+    {
+      "path": "reports/ml/advanced_ohlcv_offline_research_scores_v6_2.json",
+      "sha256": "466a072d097dbe757fa1169000501ae0d0514ca39eaac768b2aef9ffd710cd97"
+    },
+    {
+      "path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+      "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+    },
+    {
+      "path": "reports/ml/max_history_offline_research_scores_v5_4.json",
+      "sha256": "b5b84c720780c2a7547c5df3e292562463b6d4750a297c6e4216adcb95cf400e"
+    },
+    {
+      "path": "reports/research_decisions/v6_4_research_decision_gate.json",
+      "sha256": "272b88231e6d24861a42a3f11ac0442e0376b8b425a0bae42389cc91a263d7ea"
+    },
+    {
+      "path": "reports/research_decisions/v6_4_research_decision_gate.md",
+      "sha256": "d1c6c525b35942f438c075dbf1d9d2bbc92de4876980e536ce3631dfde086cfa"
+    },
+    {
+      "path": "scripts/_bootstrap.py",
+      "sha256": "a6e350d600205ec54636d826357351550b78b2a0c0664cff0e5f07be7eaa4dc3"
+    },
+    {
+      "path": "scripts/audit_audit_lite_zip_v6_4.py",
+      "sha256": "b25dc6509985e86bb0987c16206b6f480ad8ae99d201596e770b83b10f72b901"
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v6_4.py",
+      "sha256": "490a79e01bd8fa362f4d07e932285d151911c60f183e70045806984a08bf3622"
+    },
+    {
+      "path": "scripts/smoke_audit_lite_zip_v6_4.py",
+      "sha256": "2af93fda57485047c3c3644480a0ba8aa0db13803e704f9f39fa12df5abe656a"
+    },
+    {
+      "path": "scripts/validate_research_decision_gate_v6_4.py",
+      "sha256": "2e1de55ef91940280b37cab6899810dbe938b78a8c7400220eb873441a0152ec"
+    },
+    {
+      "path": "src/galapagos/__init__.py",
+      "sha256": "cecb2c4707805f51ca16deb3e41228d90fbaba8c835dc7496c8db2439c5a46c9"
+    },
+    {
+      "path": "src/galapagos/data/__init__.py",
+      "sha256": "f5199fbbd57ed1088014ee6d801cc72fc576de1e8e421a8fc5823cfb7678d891"
+    },
+    {
+      "path": "src/galapagos/data/public_market/__init__.py",
+      "sha256": "f419195cb7338bc42d705b0215130ca97909cebb46935683ba5c65993c588c1b"
+    },
+    {
+      "path": "src/galapagos/data/public_market/config.py",
+      "sha256": "b5b63086892a958f8e8c3f9329da21d4ffadb201cf0b46c6772749895a778293"
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window.py",
+      "sha256": "5e6fecedb2f440ed75244c98f6b353fd19dd89d0091e34b00d1dcfc058b1af1c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_quality.py",
+      "sha256": "2d1e3ee3b1a65a14f6ac9b5067d8b1715b8b6167ebffb596967ac792a964d77f"
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "sha256": "bac3c924fbcfe575cc59d952010ca3c3647dbd94cbcaec860deee0907b8f9086"
+    },
+    {
+      "path": "src/galapagos/data/public_market/ingestion.py",
+      "sha256": "2053a0cbee75dbdfc093ebc016d32d2c4e3922a858729b8f5b18a1dfa1207254"
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_discovery.py",
+      "sha256": "9b434cfbc9fd885df2f6d1ff3d3550c286cd2a2cb85a16c30c581b2485a8ac90"
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window.py",
+      "sha256": "39c35d4ef17b9aac04ae0a734e5e3c0fe3c768250fc3a61e66a2d4b3a5d925eb"
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_quality.py",
+      "sha256": "4f6e0ce6aa1e6a0f09a47235a0e0f4838bdbba45cedd74aea258297e13e339ed"
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_validation.py",
+      "sha256": "386dc19abd666b09fe780efc66d617384981ab362220bb0d28653c42758f313c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day.py",
+      "sha256": "192f373b431edcb34c82be25e25508e224fbbe0cab380bc9e6ebd5f30f49da91"
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_quality.py",
+      "sha256": "67751db3b6d22ad8a30d3752e370e0681a0918138f7784c93c67e8ee7c44b07c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_validation.py",
+      "sha256": "1070825adc67dac20503e302320ac9beadd22d069e3fc04210d109e499f7de2e"
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window.py",
+      "sha256": "e34235b9fa116b0eeb1a079a6885dcc0b308601220d02aab896ee92538a2a900"
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_quality.py",
+      "sha256": "154871ba0a7adc20497e6ca28cda127c0d5453c0a85ec5163abe5c15f474c770"
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_validation.py",
+      "sha256": "0765815a37e0665cbc9beceee1c37075ce3f42ea3023e3f665e0978edf382c45"
+    },
+    {
+      "path": "src/galapagos/data/public_market/provenance.py",
+      "sha256": "3940d32753f7f718f8ad0f3587676cf59ab2cbd69ec88d9a3809d1993e5a4e2c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/quality.py",
+      "sha256": "6c4f7a3de96138ffd2eb24a7aafb33452032d814641cc50a4a1636ceb5912c8c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/resampling.py",
+      "sha256": "749226e136b85e938fa029e66d96e353a0b34e132c6c2a9c6c5b778fab0e005c"
+    },
+    {
+      "path": "src/galapagos/data/public_market/schemas.py",
+      "sha256": "78972418df4e9cbe37c20600ca86cb08162df55d3ee6987cfa793b997715b239"
+    },
+    {
+      "path": "src/galapagos/data/public_market/sources/__init__.py",
+      "sha256": "525253c9115a9b6b40b514eecfdea47f26ce7aede2d74f9e1eb4ba67cd8ca806"
+    },
+    {
+      "path": "src/galapagos/data/public_market/sources/binance_archive.py",
+      "sha256": "377c5bbe1256dcba2d8b3f7a70eb842554be150f2b6429fad0027b5a3577c1a7"
+    },
+    {
+      "path": "src/galapagos/data/public_market/storage.py",
+      "sha256": "038d02d3f481f532f2be76a8d271b8e221f10935974dc11f26d0d6ca61d88ca2"
+    },
+    {
+      "path": "src/galapagos/validation/__init__.py",
+      "sha256": "3c78788ea0fb8b468bf16f215d385ccca713e31b0d6625da9c1c4e1f920e5b92"
+    },
+    {
+      "path": "src/galapagos/validation/manifests.py",
+      "sha256": "d04ab00b7faf3ed8e3823514b15ce66f05bc9490a106adaf399af105024895e3"
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "sha256": "a281716e19f86c1dd135b9dd7287442f6afd24d2b175937ab3d72dbae594634a"
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "sha256": "5b9f48c8126e2f2b535368860195bb004a12de12fa08e8d78f9a95b3cc933efc"
+    },
+    {
+      "path": "src/galapagos/validation/safety.py",
+      "sha256": "e3a7b62573dd1574d57781535070ab1cd6ed6b5a7ff34ed2fe7cdcc8c66e7a7b"
+    },
+    {
+      "path": "tests/validation/test_research_decision_gate_v6_4.py",
+      "sha256": "5879a5dc3c8da193b4e199a332703750610ee4882e4fb78c16bdd0ebaf343653"
+    }
+  ],
+  "self_describing_reports_excluded_from_sha256": [
+    "reports/audit_lite/v6_4_artifact_inventory.json",
+    "reports/audit_lite/v6_4_artifact_inventory.md",
+    "reports/audit_lite/v6_4_full_local_validation_attestation.json",
+    "reports/audit_lite/v6_4_full_local_validation_attestation.md",
+    "reports/audit_lite/zip_size_report_v6_4.json",
+    "reports/audit_lite/zip_size_report_v6_4.md"
+  ],
+  "notes": [
+    "audit-lite does not replace full local validation",
+    "V6.4 packages only the research decision gate; it contains no Parquet, model, backtest, strategy, order, or execution artifact."
+  ]
+}

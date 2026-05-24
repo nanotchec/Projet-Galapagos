@@ -1,0 +1,16 @@
+{
+  "version": "V6.4",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v6.4-audit-lite.zip",
+  "zip_size_bytes": 316620,
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "pytest_collect_only": {
+    "executed": true,
+    "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+    "returncode": 0,
+    "stdout_tail": "tests/validation/test_research_decision_gate_v6_4.py::test_validator_v6_4_accepts_valid_research_decision_gate\ntests/validation/test_research_decision_gate_v6_4.py::test_validator_v6_4_rejects_non_research_decision_type\ntests/validation/test_research_decision_gate_v6_4.py::test_validator_v6_4_rejects_missing_advanced_vs_simple_assessment\ntests/validation/test_research_decision_gate_v6_4.py::test_validator_v6_4_rejects_safety_flag_true\ntests/validation/test_research_decision_gate_v6_4.py::test_validator_v6_4_rejects_claim_flag_true\ntests/validation/test_research_decision_gate_v6_4.py::test_validator_v6_4_rejects_empty_roadmap\ntests/validation/test_research_decision_gate_v6_4.py::test_validator_v6_4_rejects_forbidden_markdown_claim\ntests/validation/test_research_decision_gate_v6_4.py::test_validator_v6_4_rejects_forbidden_artifact\n\n8 tests collected in 0.01s\n",
+    "stderr_tail": ""
+  },
+  "smoke_duration_seconds": 0.15
+}
