@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V4.7",
-  "candidate_version": "V4.8",
+  "last_validated_version": "V4.8",
+  "candidate_version": "V5.0",
   "candidate_status": "pending_external_audit",
-  "direction": "1-year research decision gate and next roadmap",
+  "direction": "max historical OHLCV public market data expansion",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -618,5 +618,25 @@
   "v4_8_timeframe_concentration_warnings": [
     "logistic_regression",
     "decision_tree_depth_2"
-  ]
+  ],
+  "max_history_window_start_v5_0": "2023-03-25",
+  "max_history_window_end_v5_0": "2026-05-23",
+  "max_history_days_v5_0": 1156,
+  "max_history_ohlcv_rows_v5_0": {
+    "1m": 1664640,
+    "5m": 332928,
+    "15m": 110976,
+    "1h": 27744
+  },
+  "raw_zip_days_v5_0": 1156,
+  "features_v5_0_created": false,
+  "labels_v5_0_created": false,
+  "dataset_v5_0_created": false,
+  "ml_v5_0_created": false,
+  "model_v5_0_created": false,
+  "backtest_v5_0_created": false,
+  "strategy_v5_0_created": false,
+  "signal_v5_0_created": false,
+  "orders_v5_0_created": false,
+  "paper_live_v5_0_created": false
 }

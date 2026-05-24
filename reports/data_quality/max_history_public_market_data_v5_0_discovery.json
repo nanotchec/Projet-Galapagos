@@ -1,0 +1,101 @@
+{
+  "version": "V5.0",
+  "status": "PASS",
+  "created_at_utc": "2026-05-24T13:15:32.463738Z",
+  "discovery_run_id": "v5_0_discovery_20260524T131532Z_29e74cdc",
+  "discovery_mode": "binance_public_s3_listing",
+  "source": {
+    "name": "binance_public_archive",
+    "venue": "binance",
+    "market_type": "spot",
+    "symbol": "BTCUSDT",
+    "source_timeframe": "1m",
+    "host": "data.binance.vision"
+  },
+  "first_available_date": "2017-08-17",
+  "last_available_date": "2026-05-23",
+  "first_complete_date": "2017-08-18",
+  "last_complete_date": "2026-05-23",
+  "window_start": "2023-03-25",
+  "window_end": "2026-05-23",
+  "total_days": 1156,
+  "expected_raw_files": 1156,
+  "available_zip_dates_count": 3202,
+  "missing_dates": [],
+  "documented_gaps_allowed": false,
+  "retained_dates_preview": {
+    "first_5": [
+      "2023-03-25",
+      "2023-03-26",
+      "2023-03-27",
+      "2023-03-28",
+      "2023-03-29"
+    ],
+    "last_5": [
+      "2026-05-19",
+      "2026-05-20",
+      "2026-05-21",
+      "2026-05-22",
+      "2026-05-23"
+    ]
+  },
+  "safety": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": false,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "limitations": [
+    "V5.0 decouvre uniquement les archives publiques OHLCV BTCUSDT 1m disponibles sur Binance public archive.",
+    "V5.0 ne produit aucune feature, aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie et aucun ordre."
+  ],
+  "errors": [],
+  "warnings": [
+    "V5.0 selected the longest complete contiguous raw window after excluding incomplete daily archives."
+  ],
+  "incomplete_dates_excluded": [
+    "2017-09-06",
+    "2017-12-04",
+    "2017-12-18",
+    "2018-01-04",
+    "2018-02-08",
+    "2018-02-09",
+    "2018-02-10",
+    "2018-02-11",
+    "2018-06-26",
+    "2018-06-27",
+    "2018-07-04",
+    "2018-10-19",
+    "2018-11-14",
+    "2019-03-12",
+    "2019-05-15",
+    "2019-06-07",
+    "2019-08-15",
+    "2019-11-13",
+    "2019-11-25",
+    "2020-02-09",
+    "2020-02-19",
+    "2020-03-04",
+    "2020-04-25",
+    "2020-06-28",
+    "2020-11-30",
+    "2020-12-21",
+    "2020-12-25",
+    "2021-02-11",
+    "2021-03-06",
+    "2021-04-20",
+    "2021-04-25",
+    "2021-08-13",
+    "2021-09-29",
+    "2023-03-24"
+  ]
+}

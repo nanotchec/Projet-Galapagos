@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V4.7",
-  "candidate_version": "V4.8",
+  "last_validated_version": "V4.8",
+  "candidate_version": "V5.0",
   "candidate_status": "pending_external_audit",
-  "direction": "1-year research decision gate and next roadmap",
+  "direction": "max historical OHLCV public market data expansion",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -639,5 +639,28 @@
   "model_v4_8_created": false,
   "api_key_used_v4_8": false,
   "private_endpoint_used_v4_8": false,
-  "authentication_used_v4_8": false
+  "authentication_used_v4_8": false,
+  "v5_0_candidate": true,
+  "max_history_public_market_data_v5_0_created": true,
+  "max_history_window_start_v5_0": "2023-03-25",
+  "max_history_window_end_v5_0": "2026-05-23",
+  "max_history_days_v5_0": 1156,
+  "max_history_ohlcv_rows_v5_0": {
+    "1m": 1664640,
+    "5m": 332928,
+    "15m": 110976,
+    "1h": 27744
+  },
+  "raw_zip_days_v5_0": 1156,
+  "features_v5_0_created": false,
+  "labels_v5_0_created": false,
+  "dataset_v5_0_created": false,
+  "ml_v5_0_created": false,
+  "model_v5_0_created": false,
+  "backtest_v5_0_created": false,
+  "strategy_v5_0_created": false,
+  "signal_v5_0_created": false,
+  "orders_v5_0_created": false,
+  "paper_live_v5_0_created": false,
+  "trading_v5_0_created": false
 }

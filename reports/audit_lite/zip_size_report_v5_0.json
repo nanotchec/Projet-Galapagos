@@ -1,0 +1,99 @@
+{
+  "version": "V5.0",
+  "zip_name": "projet-galapagos-v5.0-audit-lite.zip",
+  "zip_size_bytes": 390846,
+  "top_20_largest_files_included": [
+    {
+      "path": "reports/audit_lite/v5_0_artifact_inventory.json",
+      "bytes": 421217
+    },
+    {
+      "path": "reports/data_quality/max_history_public_market_data_v5_0.json",
+      "bytes": 302478
+    },
+    {
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json",
+      "bytes": 302478
+    },
+    {
+      "path": "data/audit_lite/v5_0/ohlcv/timeframe=1h/sample.parquet",
+      "bytes": 52341
+    },
+    {
+      "path": "data/audit_lite/v5_0/ohlcv/timeframe=15m/sample.parquet",
+      "bytes": 51261
+    },
+    {
+      "path": "data/audit_lite/v5_0/ohlcv/timeframe=5m/sample.parquet",
+      "bytes": 50001
+    },
+    {
+      "path": "data/audit_lite/v5_0/ohlcv/timeframe=1m/sample.parquet",
+      "bytes": 49247
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window.py",
+      "bytes": 21723
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 20015
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v5_0.py",
+      "bytes": 18301
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_validation.py",
+      "bytes": 17802
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_discovery.py",
+      "bytes": 14998
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day_validation.py",
+      "bytes": 12633
+    },
+    {
+      "path": "src/galapagos/data/public_market/multi_day.py",
+      "bytes": 10069
+    },
+    {
+      "path": "src/galapagos/data/public_market/ingestion.py",
+      "bytes": 9647
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window.py",
+      "bytes": 9585
+    }
+  ],
+  "heavy_files_excluded": [
+    "data/raw/public_market/**/*.zip",
+    "data/research/v5_0/**/*.parquet",
+    "previous release ZIP files",
+    "Python caches (__pycache__, *.pyc, *.pyo)",
+    "persistent model files"
+  ],
+  "raw_zips_excluded": true,
+  "raw_zips_represented_in_inventory": 1156,
+  "full_parquet_excluded_count": 4,
+  "samples_included": 4,
+  "note": "audit-lite does not replace full local validation"
+}

@@ -1,0 +1,113 @@
+{
+  "version": "V5.0",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/discover_max_history_public_market_data_v5_0.py",
+    "python scripts/run_max_history_public_market_data_v5_0.py --no-network --skip-project-state-check",
+    "python scripts/validate_max_history_public_market_data_v5_0.py",
+    "python -m pytest -q tests/data/test_max_history_public_market_data_v5_0.py",
+    "python -m pytest -q tests/validation/test_max_history_public_market_data_v5_0_validator.py",
+    "python scripts/release_audit_lite_zip_v5_0.py",
+    "python scripts/audit_audit_lite_zip_v5_0.py --zip projet-galapagos-v5.0-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v5_0.py --zip projet-galapagos-v5.0-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/discover_max_history_public_market_data_v5_0.py": "PASS",
+    "python scripts/run_max_history_public_market_data_v5_0.py --no-network --skip-project-state-check": "PASS",
+    "python scripts/validate_max_history_public_market_data_v5_0.py": "PASS",
+    "python -m pytest -q tests/data/test_max_history_public_market_data_v5_0.py": "PASS",
+    "python -m pytest -q tests/validation/test_max_history_public_market_data_v5_0_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v5_0.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v5_0.py --zip projet-galapagos-v5.0-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v5_0.py --zip projet-galapagos-v5.0-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/discover_max_history_public_market_data_v5_0.py": 18.68,
+    "python scripts/run_max_history_public_market_data_v5_0.py --no-network --skip-project-state-check": 21.56,
+    "python scripts/validate_max_history_public_market_data_v5_0.py": 13.09,
+    "python -m pytest -q tests/data/test_max_history_public_market_data_v5_0.py": 10.09,
+    "python -m pytest -q tests/validation/test_max_history_public_market_data_v5_0_validator.py": 28.31,
+    "python scripts/release_audit_lite_zip_v5_0.py": 1.59,
+    "python scripts/audit_audit_lite_zip_v5_0.py --zip projet-galapagos-v5.0-audit-lite.zip": 0.33,
+    "python scripts/smoke_audit_lite_zip_v5_0.py --zip projet-galapagos-v5.0-audit-lite.zip": 0.62,
+    "python -m pytest --collect-only -q": 3.14
+  },
+  "output_ohlcv_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+      "sha256": "24467f2873703b9ed69212d1dfe7722f1ee35bfcb2377267db95b2fa935428c0",
+      "bytes": 14104034,
+      "rows": 110976,
+      "columns_count": 24,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ohlcv.parquet",
+      "sha256": "20d44dbb8df47f09bed816dba3a5c458971e6ce8ead5f13d8e455053357780b1",
+      "bytes": 3592349,
+      "rows": 27744,
+      "columns_count": 24,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+      "sha256": "aa833956e85e6d92d1881366924c2ede1a935df26dfa3d35a7ec32c7b84682b2",
+      "bytes": 160315157,
+      "rows": 1664640,
+      "columns_count": 24,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+      "sha256": "7eaed34863699dcb73c30fb83722bdc5ac1b15cb6c43b0c2a6027a0826d5e363",
+      "bytes": 35258371,
+      "rows": 332928,
+      "columns_count": 24,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:55:00Z"
+    }
+  ],
+  "raw_inventory_count": 1156,
+  "discovery": {
+    "window_start": "2023-03-25",
+    "window_end": "2026-05-23",
+    "total_days": 1156
+  },
+  "manifest_sha256": "12eb00767fe1a3e6ae45d24d7193da0dc96f8a454507e750554a5fe4b9ab5754",
+  "report_sha256": "12eb00767fe1a3e6ae45d24d7193da0dc96f8a454507e750554a5fe4b9ab5754",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": false,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ],
+  "errors": []
+}

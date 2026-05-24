@@ -1,34 +1,27 @@
-# État du Projet : V4.7 validée + candidat V4.8
+# Etat du Projet : V4.8 validee localement + candidat V5.0
 
-- **Dernière version validée** : V4.7.
-- **Version candidate** : V4.8.
+- **Derniere version validee** : V4.8.
+- **Version candidate** : V5.0.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : research decision gate 1 an et roadmap suivante.
+- **Direction suivante** : max historical OHLCV public market data expansion.
 
-## Dernière Couche Validée
+## Candidat V5.0
 
-- V4.7 est validée par audit externe via audit-lite et attestation full locale.
-- V4.7 audite uniquement la robustesse descriptive et la falsification des résultats ML offline V4.6 sur 1 an.
-- V4.7 ne produit aucun backtest, aucune stratégie, aucun signal de trading, aucun ordre et aucun trading réel.
+- Fenetre historique retenue : `2023-03-25` -> `2026-05-23`.
+- Nombre de jours : `1156`.
+- Row counts OHLCV : `{'1m': 1664640, '5m': 332928, '15m': 110976, '1h': 27744}`.
+- Raw zips representes : `1156`.
+- V5.0 ne cree aucune feature, aucun label, aucun dataset ML et aucun modele ML.
+- V5.0 reste candidate `pending_external_audit`.
 
-## Candidat V4.8
+## Clause De Securite
 
-- V4.8 produit uniquement un rapport de décision research après la chaîne 1 an V4.2 à V4.7.
-- Verdict : mitigé et non concluant, avec un signal descriptif intéressant pour `logistic_regression` mais fragile.
-- Recommandation principale : A. Étendre à l historique max OHLCV.
-- Recommandation secondaire : E. Préparer une validation walk-forward offline.
-- Roadmap proposée : V5.0, V5.1, V5.2, V5.3, V5.4.
-- V4.8 ne crée aucune donnée, aucun modèle, aucun backtest, aucune stratégie, aucun signal, aucun ordre et aucun trading réel.
-- V4.8 reste candidate `pending_external_audit`.
-
-## Clause De Sécurité
-
-- Aucun trading réel.
+- Aucun trading reel.
 - Aucun paper live.
 - Aucun ordre.
 - Aucun backtest.
-- Aucune stratégie.
+- Aucune strategie.
 - Aucun signal de trading.
-- Aucune API privée.
-- Aucune clé API.
-- V4.8 reste non validée avant audit externe.
+- Aucune API privee.
+- Aucune cle API.
+- V5.0 reste non validee avant audit externe.
