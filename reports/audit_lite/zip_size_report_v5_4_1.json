@@ -1,0 +1,9 @@
+{
+  "version": "V5.4.1",
+  "base_version": "V5.4",
+  "zip_name": "projet-galapagos-v5.4.1-audit-lite.zip",
+  "zip_size_bytes": 436518,
+  "files_included": 159,
+  "pytest_collectible_scripts_excluded": true,
+  "raw_zips_excluded": true
+}

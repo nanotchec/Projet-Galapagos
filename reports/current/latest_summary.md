@@ -1,15 +1,13 @@
-# Latest Summary V5.4
+# Latest Summary V5.4.1
 
 V5.3 est la derniere version validee par audit externe.
 
-V5.4 est la candidate courante. Elle entraine uniquement des baselines ML offline simples sur le dataset historique V5.3, produit des scores de recherche `research_*` et calcule des metriques descriptives par split et par groupe walk-forward.
+V5.4.1 est la candidate courante. Elle corrige uniquement le packaging audit-lite V5.4 afin que le ZIP extrait passe `PYTHONPATH=src python -m pytest --collect-only -q`.
 
-Fenetre utilisee : `2023-03-25` -> `2026-05-23`.
+Le correctif exclut les scripts historiques collectables par pytest et inutiles au ZIP V5.4, notamment `scripts/test_llm_provider.py` et `scripts/run_forward_paper_test.py`.
 
-Total jours : `1156`.
+Les scores V5.4, datasets, features, labels, rapports ML et validateurs de production ne sont pas modifies.
 
-Row counts scores : `{'1m': 6658436, '5m': 1331588, '15m': 443780, '1h': 110852}`.
+Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading et aucun claim de rentabilite.
 
-Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading, aucun modele persistant et aucun claim de rentabilite.
-
-V5.4 reste `pending_external_audit`.
+V5.4.1 reste `pending_external_audit`.

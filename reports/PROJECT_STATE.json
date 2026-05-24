@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V5.3",
-  "candidate_version": "V5.4",
+  "candidate_version": "V5.4.1",
   "candidate_status": "pending_external_audit",
-  "direction": "max historical offline ML research baselines",
+  "direction": "audit-lite pytest collection packaging fix",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -770,5 +770,19 @@
   "paper_live_v5_4_created": false,
   "trading_v5_4_created": false,
   "persistent_model_v5_4_created": false,
-  "execution_enabled": false
+  "execution_enabled": false,
+  "correction_version": "V5.4.1",
+  "base_candidate_version": "V5.4",
+  "v5_4_1_candidate": true,
+  "v5_4_1_packaging_only": true,
+  "v5_4_1_pytest_collect_only_fix": true,
+  "v5_4_scores_modified": false,
+  "v5_4_scores_recalculated": false,
+  "backtest_v5_4_1_created": false,
+  "strategy_v5_4_1_created": false,
+  "signal_v5_4_1_created": false,
+  "orders_v5_4_1_created": false,
+  "paper_live_v5_4_1_created": false,
+  "trading_v5_4_1_created": false,
+  "persistent_model_v5_4_1_created": false
 }

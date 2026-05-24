@@ -1,0 +1,96 @@
+{
+  "version": "V5.4.1",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v5.4.1-audit-lite.zip",
+  "zip_size_bytes": 436518,
+  "zip_size_mb": 0.416,
+  "entries": 159,
+  "top_20_largest_files": [
+    {
+      "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "bytes": 199277
+    },
+    {
+      "path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+      "bytes": 199277
+    },
+    {
+      "path": "reports/ml/max_history_offline_research_scores_v5_4.json",
+      "bytes": 189470
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=1h/sample.parquet",
+      "bytes": 25262
+    },
+    {
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=15m/sample.parquet",
+      "bytes": 25208
+    },
+    {
+      "path": "reports/audit_lite/v5_4_1_artifact_inventory.json",
+      "bytes": 25185
+    },
+    {
+      "path": "src/galapagos/datasets/max_history_window_validation.py",
+      "bytes": 25157
+    },
+    {
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=5m/sample.parquet",
+      "bytes": 24527
+    },
+    {
+      "path": "data/audit_lite/v5_4/ml_scores/timeframe=1m/sample.parquet",
+      "bytes": 24354
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 23649
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/ml/max_history_window_validation.py",
+      "bytes": 23006
+    },
+    {
+      "path": "src/galapagos/ml/max_history_window.py",
+      "bytes": 22031
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window.py",
+      "bytes": 21723
+    },
+    {
+      "path": "src/galapagos/labels/max_history_window_validation.py",
+      "bytes": 20829
+    },
+    {
+      "path": "src/galapagos/datasets/max_history_window.py",
+      "bytes": 20710
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/labels/multi_day_validation.py",
+      "bytes": 19813
+    },
+    {
+      "path": "src/galapagos/ml/one_year_robustness.py",
+      "bytes": 19636
+    }
+  ],
+  "pytest_collectible_scripts_absent": true,
+  "test_llm_provider_absent": true,
+  "run_forward_paper_test_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}
