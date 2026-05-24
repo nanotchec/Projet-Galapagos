@@ -810,6 +810,7 @@
   "v5_6_1_secondary_next_step": "D. Preparer une validation walk-forward offline plus stricte.",
   "v5_6_1_trades_publics_deferred_to": "V7.x",
   "audit_lite_zip_v5_6_created": true,
+  "audit_lite_zip_v5_6_1_created": true,
   "backtest_v5_6_created": false,
   "strategy_v5_6_created": false,
   "signal_v5_6_created": false,

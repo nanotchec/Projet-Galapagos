@@ -10,6 +10,6 @@
 - Recommandation principale : ameliorer les features OHLCV avant multi-source.
 - Recommandation secondaire : preparer une validation walk-forward offline plus stricte.
 - Correction : les trades publics historiques sont repousses a V7.x apres validation ou rejet de la piste Advanced OHLCV.
-- ZIP audit-lite : `projet-galapagos-v5.6-audit-lite.zip`.
+- ZIP audit-lite : `projet-galapagos-v5.6.1-audit-lite.zip`.
 
 Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun modele persistant et aucun trading reel.
