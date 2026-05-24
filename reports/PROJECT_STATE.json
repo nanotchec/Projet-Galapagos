@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V4.6",
-  "candidate_version": "V4.7",
+  "last_validated_version": "V4.7",
+  "candidate_version": "V4.8",
   "candidate_status": "pending_external_audit",
-  "direction": "1-year ML robustness and falsification audit",
+  "direction": "1-year research decision gate and next roadmap",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -578,7 +578,7 @@
   "private_endpoint_used_v4_6": false,
   "authentication_used_v4_6": false,
   "v4_7_candidate": true,
-  "v4_7_validated_by_external_audit": false,
+  "v4_7_validated_by_external_audit": true,
   "v4_7_scope": "1-year ML robustness and falsification audit only; no backtest, strategy, signal, order, trading, or persistent model",
   "one_year_ml_robustness_analyses_v4_7": [
     "baseline_delta",
@@ -615,5 +615,29 @@
   "model_v4_7_created": false,
   "api_key_used_v4_7": false,
   "private_endpoint_used_v4_7": false,
-  "authentication_used_v4_7": false
+  "authentication_used_v4_7": false,
+  "v4_8_candidate": true,
+  "v4_8_validated_by_external_audit": false,
+  "v4_8_scope": "research decision gate only; no new model, data, backtest, strategy, signal, order, or trading",
+  "v4_8_summary_verdict": "mitige_non_concluant: V4.6/V4.7 montrent un signal descriptif interessant pour logistic_regression, mais la stabilite par timeframe et la falsification label shuffle empechent toute conclusion robuste ou trading.",
+  "v4_8_recommended_next_step": "A. Étendre à l historique max OHLCV.",
+  "v4_8_secondary_next_step": "E. Préparer une validation walk-forward offline.",
+  "v4_8_roadmap_versions": [
+    "V5.0",
+    "V5.1",
+    "V5.2",
+    "V5.3",
+    "V5.4"
+  ],
+  "v4_8_research_decision_report": "reports/research_decisions/v4_8_research_decision_gate.json",
+  "backtest_v4_8_created": false,
+  "strategy_v4_8_created": false,
+  "signal_v4_8_created": false,
+  "orders_v4_8_created": false,
+  "paper_live_v4_8_created": false,
+  "trading_v4_8_created": false,
+  "model_v4_8_created": false,
+  "api_key_used_v4_8": false,
+  "private_endpoint_used_v4_8": false,
+  "authentication_used_v4_8": false
 }

@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V4.6",
-  "candidate_version": "V4.7",
+  "last_validated_version": "V4.7",
+  "candidate_version": "V4.8",
   "candidate_status": "pending_external_audit",
-  "direction": "1-year ML robustness and falsification audit",
+  "direction": "1-year research decision gate and next roadmap",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -525,7 +525,7 @@
   "private_endpoint_used_v4_6": false,
   "authentication_used_v4_6": false,
   "v4_7_candidate": true,
-  "v4_7_validated_by_external_audit": false,
+  "v4_7_validated_by_external_audit": true,
   "v4_7_scope": "1-year ML robustness and falsification audit only; no backtest, strategy, signal, order, trading, or persistent model",
   "one_year_ml_robustness_analyses_v4_7": [
     "baseline_delta",
@@ -579,5 +579,44 @@
   "v4_7_limitations": [
     "V4.7 audite uniquement la robustesse descriptive des baselines ML offline V4.6 sur une fenetre de 1 an.",
     "V4.7 ne produit aucun backtest, aucune strategie, aucun signal de trading et aucun ordre."
+  ],
+  "v4_8_candidate": true,
+  "v4_8_validated_by_external_audit": false,
+  "v4_8_summary_verdict": "mitige_non_concluant: V4.6/V4.7 montrent un signal descriptif interessant pour logistic_regression, mais la stabilite par timeframe et la falsification label shuffle empechent toute conclusion robuste ou trading.",
+  "v4_8_recommended_next_step": "A. Étendre à l historique max OHLCV.",
+  "v4_8_secondary_next_step": "E. Préparer une validation walk-forward offline.",
+  "v4_8_roadmap_versions": [
+    "V5.0",
+    "V5.1",
+    "V5.2",
+    "V5.3",
+    "V5.4"
+  ],
+  "v4_8_baseline_counts": {
+    "logistic_regression": {
+      "beats_majority_accuracy": 8,
+      "beats_majority_macro_f1": 8,
+      "beats_random_accuracy": 8,
+      "beats_random_macro_f1": 7,
+      "comparisons": 8
+    },
+    "decision_tree_depth_2": {
+      "beats_majority_accuracy": 6,
+      "beats_majority_macro_f1": 6,
+      "beats_random_accuracy": 8,
+      "beats_random_macro_f1": 0,
+      "comparisons": 8
+    }
+  },
+  "v4_8_no_clear_edge_cases": [
+    "15m.logistic_regression.test",
+    "1m.decision_tree_depth_2.test",
+    "15m.decision_tree_depth_2.validation",
+    "15m.decision_tree_depth_2.test",
+    "1h.decision_tree_depth_2.validation"
+  ],
+  "v4_8_timeframe_concentration_warnings": [
+    "logistic_regression",
+    "decision_tree_depth_2"
   ]
 }

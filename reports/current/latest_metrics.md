@@ -1,45 +1,37 @@
 # Latest Metrics
 
-- Dernière version validée : `V4.6`
-- Candidate : `V4.7`
+- Dernière version validée : `V4.7`
+- Candidate : `V4.8`
 - Statut : `pending_external_audit`
-- Direction : 1-year ML robustness and falsification audit
+- Direction : 1-year research decision gate and next roadmap
 
-## Inputs V4.7
+## Verdict V4.8
 
-- Source dataset : dataset supervisé offline V4.5 validé.
-- Source ML : scores et métriques offline V4.6 validés.
-- Fenêtre : `2024-01-01` à `2024-12-31` inclus.
-- Timeframes : `1m`, `5m`, `15m`, `1h`.
+- Verdict : mitigé et non concluant.
+- Recommandation principale : A. Étendre à l historique max OHLCV.
+- Recommandation secondaire : E. Préparer une validation walk-forward offline.
 
-## Analyses
+## Baselines
 
-- baseline_delta : présent.
-- split_stability : présent.
-- timeframe_stability : présent.
-- label_shuffle_falsification : présent, seed `123`, labels train uniquement.
-- feature_leakage_scan : `False`.
-- metric_forbidden_scan : `False`.
+- `logistic_regression` : bat souvent les baselines, mais résultat non concluant.
+- `decision_tree_depth_2` : résultat faible à mitigé.
 
-## Input Scores V4.6
+## Stabilité
 
-- `1m` : `2108036` lignes.
-- `5m` : `421508` lignes.
-- `15m` : `140420` lignes.
-- `1h` : `35012` lignes.
+- Aucun warning overfit train/validation/test pour les modèles appris selon le seuil V4.7.
+- Warnings de concentration timeframe : `logistic_regression, decision_tree_depth_2`.
+- Cas label shuffle sans avantage clair : `5`.
 
-## Findings
+## Roadmap
 
-- robust_edge_claimed : `false`
-- strategy_validated : `false`
-- backtest_performed : `false`
-- actionable_signal_produced : `false`
-- warnings : `8`
+- V5.0 : historique max OHLCV.
+- V5.1 : features causales historique max.
+- V5.2 : labels forward historique max.
+- V5.3 : dataset offline et design walk-forward.
+- V5.4 : ML offline et robustesse walk-forward/falsification.
 
 ## Safety
 
-- Audit de robustesse offline V4.7 uniquement.
-- Aucun modèle persistant.
 - Aucun trading réel.
 - Aucun paper live.
 - Aucun ordre.

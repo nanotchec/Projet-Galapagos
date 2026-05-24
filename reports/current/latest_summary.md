@@ -1,13 +1,17 @@
-# Latest Summary V4.7
+# Latest Summary V4.8
 
-V4.6 est la dernière version validée par audit externe via audit-lite et attestation full locale.
+V4.7 est la dernière version validée par audit externe via audit-lite et attestation full locale.
 
-V4.7 est la candidate courante. Elle audite uniquement la robustesse descriptive et la falsification des résultats ML offline V4.6 sur la fenêtre 1 an `2024-01-01` à `2024-12-31`.
+V4.8 est la candidate courante. Elle produit uniquement un decision gate research après la chaîne complète 1 an V4.2 à V4.7, sans nouvelle donnée, sans nouveau modèle et sans backtest.
 
-Analyses V4.7 produites : `baseline_delta`, `split_stability`, `timeframe_stability`, `label_shuffle_falsification`, `feature_leakage_scan`, `metric_forbidden_scan`.
+Verdict : mitigé et non concluant. `logistic_regression` montre un signal descriptif intéressant, mais la concentration par timeframe et les cas label shuffle sans avantage clair empêchent toute conclusion robuste.
 
-Le rapport V4.7 conserve explicitement `robust_edge_claimed=false`, `strategy_validated=false`, `backtest_performed=false` et `actionable_signal_produced=false`. Warnings descriptifs : `8`.
+Recommandation principale : A. Étendre à l historique max OHLCV.
 
-Aucun backtest, aucune stratégie, aucun signal de trading, aucun ordre, aucun paper live, aucun trading réel et aucun modèle persistant ne sont produits.
+Recommandation secondaire : E. Préparer une validation walk-forward offline.
 
-V4.7 reste `pending_external_audit`.
+Roadmap proposée : V5.0 historique max OHLCV, V5.1 features causales historique max, V5.2 labels forward historique max, V5.3 dataset offline avec design walk-forward, V5.4 ML offline et robustesse walk-forward/falsification.
+
+Aucun trading, aucun paper live, aucun ordre, aucun backtest validant une stratégie et aucun claim de rentabilité.
+
+V4.8 reste `pending_external_audit`.
