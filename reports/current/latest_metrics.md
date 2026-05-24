@@ -9,5 +9,6 @@
 - Verdict research : mitige / non concluant.
 - Recommandation principale : ajouter les trades publics historiques.
 - Recommandation secondaire : preparer une validation walk-forward offline plus stricte.
+- ZIP audit-lite : `projet-galapagos-v5.6-audit-lite.zip`.
 
 Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun modele persistant et aucun trading reel.

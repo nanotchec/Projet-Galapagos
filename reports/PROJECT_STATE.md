@@ -12,6 +12,7 @@
 - Verdict research : `mitige_non_concluant`.
 - Recommandation principale : ajouter les trades publics historiques.
 - Recommandation secondaire : preparer une validation walk-forward offline plus stricte.
+- ZIP audit-lite : `projet-galapagos-v5.6-audit-lite.zip`.
 - V5.6 reste candidate `pending_external_audit`.
 
 ## Clause De Securite

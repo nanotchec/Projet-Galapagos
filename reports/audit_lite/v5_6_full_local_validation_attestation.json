@@ -1,0 +1,53 @@
+{
+  "version": "V5.6",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/validate_research_decision_gate_v5_6.py",
+    "python -m pytest -q tests/validation/test_research_decision_gate_v5_6.py",
+    "python -m pytest --collect-only -q",
+    "python scripts/release_audit_lite_zip_v5_6.py",
+    "python scripts/audit_audit_lite_zip_v5_6.py --zip projet-galapagos-v5.6-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v5_6.py --zip projet-galapagos-v5.6-audit-lite.zip"
+  ],
+  "command_results": {
+    "python scripts/validate_research_decision_gate_v5_6.py": "PASS",
+    "python -m pytest -q tests/validation/test_research_decision_gate_v5_6.py": "PASS",
+    "python -m pytest --collect-only -q": "PASS",
+    "python scripts/release_audit_lite_zip_v5_6.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v5_6.py --zip projet-galapagos-v5.6-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v5_6.py --zip projet-galapagos-v5.6-audit-lite.zip": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/validate_research_decision_gate_v5_6.py": 0.42,
+    "python -m pytest -q tests/validation/test_research_decision_gate_v5_6.py": 1.7,
+    "python -m pytest --collect-only -q": 1.56,
+    "python scripts/release_audit_lite_zip_v5_6.py": 0.5,
+    "python scripts/audit_audit_lite_zip_v5_6.py --zip projet-galapagos-v5.6-audit-lite.zip": 0.5,
+    "python scripts/smoke_audit_lite_zip_v5_6.py --zip projet-galapagos-v5.6-audit-lite.zip": 0.5
+  },
+  "decision_report_sha256": "6bca99ae7514f11711c0108b41b3ea71490e4c08a1234ca547f359247f85b05c",
+  "decision_markdown_sha256": "39e4c03483c9f7f759dfb77789aa99da9abdb130245b9c8943d2e4da0396bdd3",
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2026-05-23",
+  "input_total_days": 1156,
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "trading_enabled": false,
+    "paper_live_enabled": false,
+    "orders_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_strategy": true,
+  "errors": [],
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ]
+}

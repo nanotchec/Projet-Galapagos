@@ -804,6 +804,7 @@
   "research_decision_gate_v5_6_verdict": "mitige_non_concluant",
   "research_decision_gate_v5_6_recommended_next_step": "A. Ajouter les trades publics historiques.",
   "research_decision_gate_v5_6_secondary_next_step": "D. Preparer une validation walk-forward offline plus stricte.",
+  "audit_lite_zip_v5_6_created": true,
   "backtest_v5_6_created": false,
   "strategy_v5_6_created": false,
   "signal_v5_6_created": false,

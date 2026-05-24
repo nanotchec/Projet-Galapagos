@@ -9,6 +9,7 @@
   "summary_verdict": "mitige_non_concluant",
   "recommended_next_step": "A. Ajouter les trades publics historiques.",
   "secondary_next_step": "D. Preparer une validation walk-forward offline plus stricte.",
+  "audit_lite_zip_v5_6_created": true,
   "roadmap": [
     "V6.0 public historical trades data-only",
     "V6.1 public trades quality and causal aggregations",

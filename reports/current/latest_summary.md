@@ -14,6 +14,8 @@ Recommandation principale : ajouter les trades publics historiques.
 
 Recommandation secondaire : preparer une validation walk-forward offline plus stricte.
 
+ZIP audit-lite : `projet-galapagos-v5.6-audit-lite.zip`.
+
 Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading, aucun modele persistant et aucun claim de rentabilite.
 
 V5.6 reste `pending_external_audit`.
