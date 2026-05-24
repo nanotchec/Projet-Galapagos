@@ -1,0 +1,94 @@
+{
+  "version": "V6.0",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v6.0-audit-lite.zip",
+  "zip_size_bytes": 696940,
+  "zip_size_mb": 0.665,
+  "entries": 82,
+  "top_20_largest_files": [
+    {
+      "path": "data/audit_lite/v6_0/features/timeframe=1h/sample.parquet",
+      "bytes": 276854
+    },
+    {
+      "path": "data/audit_lite/v6_0/features/timeframe=15m/sample.parquet",
+      "bytes": 276720
+    },
+    {
+      "path": "data/audit_lite/v6_0/features/timeframe=5m/sample.parquet",
+      "bytes": 274310
+    },
+    {
+      "path": "data/audit_lite/v6_0/features/timeframe=1m/sample.parquet",
+      "bytes": 271873
+    },
+    {
+      "path": "reports/current/latest_metrics.json",
+      "bytes": 53980
+    },
+    {
+      "path": "reports/features/advanced_ohlcv_feature_store_v6_0.json",
+      "bytes": 53980
+    },
+    {
+      "path": "reports/manifests/advanced_ohlcv_feature_store_v6_0_manifest.json",
+      "bytes": 53980
+    },
+    {
+      "path": "src/galapagos/features/advanced_ohlcv.py",
+      "bytes": 27838
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 25524
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window.py",
+      "bytes": 21723
+    },
+    {
+      "path": "reports/audit_lite/v6_0_parquet_summary.json",
+      "bytes": 21669
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_validation.py",
+      "bytes": 17802
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v6_0.py",
+      "bytes": 17620
+    },
+    {
+      "path": "src/galapagos/features/validation.py",
+      "bytes": 17222
+    },
+    {
+      "path": "src/galapagos/features/advanced_ohlcv_validation.py",
+      "bytes": 16854
+    },
+    {
+      "path": "src/galapagos/data/public_market/expanded_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/data/public_market/one_year_window_validation.py",
+      "bytes": 16608
+    },
+    {
+      "path": "src/galapagos/features/max_history_window_validation.py",
+      "bytes": 16531
+    }
+  ],
+  "pytest_collectible_scripts_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

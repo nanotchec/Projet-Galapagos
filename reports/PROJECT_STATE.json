@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V5.5",
-  "candidate_version": "V5.6.1",
+  "last_validated_version": "V5.6.1",
+  "candidate_version": "V6.0",
   "candidate_status": "pending_external_audit",
-  "direction": "research decision gate roadmap correction",
+  "direction": "max historical advanced OHLCV feature expansion",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -817,5 +817,14 @@
   "orders_v5_6_created": false,
   "paper_live_v5_6_created": false,
   "trading_v5_6_created": false,
-  "persistent_model_v5_6_created": false
+  "persistent_model_v5_6_created": false,
+  "v6_0_pending_external_audit": true,
+  "v6_0_no_labels": true,
+  "v6_0_no_dataset_ml": true,
+  "v6_0_no_ml_model": true,
+  "v6_0_no_backtest": true,
+  "v6_0_no_strategy": true,
+  "v6_0_no_paper_live": true,
+  "v6_0_no_orders": true,
+  "v6_0_no_real_trading": true
 }
