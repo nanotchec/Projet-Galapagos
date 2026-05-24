@@ -1,0 +1,243 @@
+{
+  "version": "V5.3",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "input_features_manifest": {
+    "path": "reports/manifests/max_history_causal_feature_store_v5_1_manifest.json",
+    "sha256": "99084a9347db35a2c85da31fb8496773421bd12d69e2a4db0e113684315bc3d3",
+    "window_start": "2023-03-25",
+    "window_end": "2026-05-23",
+    "total_days": 1156
+  },
+  "input_labels_manifest": {
+    "path": "reports/manifests/max_history_label_factory_v5_2_manifest.json",
+    "sha256": "3bf156f709be35feed7d5d7c8aaa55005bdec235f334d3bfa2244be256cf00a5",
+    "window_start": "2023-03-25",
+    "window_end": "2026-05-23",
+    "total_days": 1156
+  },
+  "input_features_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_1/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/features.parquet",
+      "sha256": "d7433a329049b276a8718decd0a66ba091e2387015a2fdf821b9db6d36fb48a0",
+      "rows": 110976,
+      "reason_excluded": "full V5.1 feature Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_1/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/features.parquet",
+      "sha256": "7fcc0f902d25743a6451132d54f91d6a9bea6e33cf53953c728415bcaaea9660",
+      "rows": 27744,
+      "reason_excluded": "full V5.1 feature Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_1/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/features.parquet",
+      "sha256": "3cd1fff75176ea91908f499aa5abf215afe2663fc25c7a0829eab2981ba0f377",
+      "rows": 1664640,
+      "reason_excluded": "full V5.1 feature Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_1/features/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/features.parquet",
+      "sha256": "70160b3d534de5af7274ee8750bbecfac9c2da1c0d5fda4888f449f913036ac9",
+      "rows": 332928,
+      "reason_excluded": "full V5.1 feature Parquet is represented by source hashes"
+    }
+  ],
+  "input_labels_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_2/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/labels.parquet",
+      "sha256": "1a4415aa349c67547d985088fefdf5dcd1dc2f796d1389a71155ba079d2d2666",
+      "rows": 110976,
+      "reason_excluded": "full V5.2 label Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_2/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/labels.parquet",
+      "sha256": "cfe958a39906f89cdba910ec0d820e5357b751385111c9f0e74e49559b2ceceb",
+      "rows": 27744,
+      "reason_excluded": "full V5.2 label Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_2/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/labels.parquet",
+      "sha256": "49b79a14249afc1bd3e543fac7bf6fd1ee0e6cd741f3516af144488d845a12c9",
+      "rows": 1664640,
+      "reason_excluded": "full V5.2 label Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_2/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/labels.parquet",
+      "sha256": "674f7f7b5cd32159d93b897e88d0b8e46bcab2c444e384467d59825e2f96ed04",
+      "rows": 332928,
+      "reason_excluded": "full V5.2 label Parquet is represented by source hashes"
+    }
+  ],
+  "full_parquet_excluded": [
+    {
+      "section": "outputs",
+      "timeframe": "15m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "5bd202626b814ee82542f707d1c820d3e5e26e9ed73cd2ccc3eba9dff408b7fa",
+      "bytes": 45094104,
+      "rows": 110976,
+      "reason_excluded": "full V5.3 dataset Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "section": "outputs",
+      "timeframe": "1h",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "bfea4d768bcfaeefe8d0b5eb3fa9b3265667be5e06e389b192ee8fece19c1a86",
+      "bytes": 11239249,
+      "rows": 27744,
+      "reason_excluded": "full V5.3 dataset Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "section": "outputs",
+      "timeframe": "1m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "0e1d7acf60a8d5893c68659e2d008a5debdbdbf9017d56236ff3babbc14fb39a",
+      "bytes": 526604347,
+      "rows": 1664640,
+      "reason_excluded": "full V5.3 dataset Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "section": "outputs",
+      "timeframe": "5m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "f63ca0bc69f066577a706a0dc4edbd01c26f1c011e98979af6d9c1836d1187c5",
+      "bytes": 115102954,
+      "rows": 332928,
+      "reason_excluded": "full V5.3 dataset Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "section": "splits",
+      "timeframe": "15m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "284ed702188966a8e2f0731b0fa23dcd20e03846fa60d90fac544a6e0c832644",
+      "bytes": 4915910,
+      "rows": 110976,
+      "reason_excluded": "full V5.3 split Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "section": "splits",
+      "timeframe": "1h",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "d8cf0606093ec789af328db046a9e48b3780c7f68eec37d4a2214ba7b4851ba6",
+      "bytes": 1179267,
+      "rows": 27744,
+      "reason_excluded": "full V5.3 split Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "section": "splits",
+      "timeframe": "1m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "dcac89c0fa6a84fcccb166f51ba88bd2969172502f624ea132184eee843b970e",
+      "bytes": 56201132,
+      "rows": 1664640,
+      "reason_excluded": "full V5.3 split Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "section": "splits",
+      "timeframe": "5m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "f9e93f927e3cd23347f04d8cd07b56b0c577c775ad158343bd6cac5d57276c44",
+      "bytes": 12119271,
+      "rows": 332928,
+      "reason_excluded": "full V5.3 split Parquet is represented by manifest checksums and deterministic samples"
+    }
+  ],
+  "dataset_samples_included": [
+    {
+      "timeframe": "1m",
+      "path": "data/audit_lite/v5_3/datasets/timeframe=1m/sample.parquet",
+      "sha256": "5544c639e2beceff2d61e051f5a2c90aeed270f553ba94fd893a7b98a10819ba",
+      "bytes": 155876,
+      "rows": 300,
+      "source_full_path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "source_full_sha256": "0e1d7acf60a8d5893c68659e2d008a5debdbdbf9017d56236ff3babbc14fb39a"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/audit_lite/v5_3/datasets/timeframe=5m/sample.parquet",
+      "sha256": "8764b22beb37c42231edf2aa84974e04ae748c0edea8833c4b3b4ee36cde8f7d",
+      "bytes": 158437,
+      "rows": 300,
+      "source_full_path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "source_full_sha256": "f63ca0bc69f066577a706a0dc4edbd01c26f1c011e98979af6d9c1836d1187c5"
+    },
+    {
+      "timeframe": "15m",
+      "path": "data/audit_lite/v5_3/datasets/timeframe=15m/sample.parquet",
+      "sha256": "9f94dd35d74c154613f64cec68a9ca291c043d1be6f898372bb6357d94bfb5f4",
+      "bytes": 161388,
+      "rows": 300,
+      "source_full_path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "source_full_sha256": "5bd202626b814ee82542f707d1c820d3e5e26e9ed73cd2ccc3eba9dff408b7fa"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/audit_lite/v5_3/datasets/timeframe=1h/sample.parquet",
+      "sha256": "493e3be4d6d6077bd8f8eb2f6415c002d8cc9bef83eb0cfa6f0f961d71ff2c80",
+      "bytes": 161685,
+      "rows": 300,
+      "source_full_path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/dataset.parquet",
+      "source_full_sha256": "bfea4d768bcfaeefe8d0b5eb3fa9b3265667be5e06e389b192ee8fece19c1a86"
+    }
+  ],
+  "split_samples_included": [
+    {
+      "timeframe": "1m",
+      "path": "data/audit_lite/v5_3/splits/timeframe=1m/sample.parquet",
+      "sha256": "4e43e7d6d8416fa108bfc70cdb1227d1c6e3dfa620228ec90d63652e1ee29057",
+      "bytes": 19578,
+      "rows": 300,
+      "source_full_path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/splits.parquet",
+      "source_full_sha256": "dcac89c0fa6a84fcccb166f51ba88bd2969172502f624ea132184eee843b970e"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/audit_lite/v5_3/splits/timeframe=5m/sample.parquet",
+      "sha256": "0cfa2ee6a54e3c3a23bd3f19217d1bd053af84f9a8661f1f80555867cb9b6433",
+      "bytes": 19829,
+      "rows": 300,
+      "source_full_path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/splits.parquet",
+      "source_full_sha256": "f9e93f927e3cd23347f04d8cd07b56b0c577c775ad158343bd6cac5d57276c44"
+    },
+    {
+      "timeframe": "15m",
+      "path": "data/audit_lite/v5_3/splits/timeframe=15m/sample.parquet",
+      "sha256": "adea953dd6da7cd7741e34d4f5e1c159daaa0f9e72fb88ea00dbcb0e4a0eb97b",
+      "bytes": 20694,
+      "rows": 300,
+      "source_full_path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/splits.parquet",
+      "source_full_sha256": "284ed702188966a8e2f0731b0fa23dcd20e03846fa60d90fac544a6e0c832644"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/audit_lite/v5_3/splits/timeframe=1h/sample.parquet",
+      "sha256": "24e8823f3acb2b3f72c86a728a59f53cf23bb3678e02da6cda5e740ea3fc8930",
+      "bytes": 20694,
+      "rows": 300,
+      "source_full_path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/splits.parquet",
+      "source_full_sha256": "d8cf0606093ec789af328db046a9e48b3780c7f68eec37d4a2214ba7b4851ba6"
+    }
+  ],
+  "included_reports": [
+    {
+      "path": "reports/manifests/max_history_offline_supervised_dataset_v5_3_manifest.json",
+      "sha256": "4a0e4f5c986d7aa335c9437ed632d21718f08307e5288a6232709732936a7e62"
+    },
+    {
+      "path": "reports/datasets/max_history_offline_supervised_dataset_v5_3.json",
+      "sha256": "4a0e4f5c986d7aa335c9437ed632d21718f08307e5288a6232709732936a7e62"
+    },
+    {
+      "path": "reports/datasets/max_history_offline_supervised_dataset_v5_3_datacard.md",
+      "sha256": "3e7980d6831fab52026c61b12c6e49068466522b7aad3a7ed5c372ca88900874"
+    }
+  ]
+}

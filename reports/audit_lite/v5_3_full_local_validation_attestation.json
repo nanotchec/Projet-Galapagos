@@ -1,0 +1,142 @@
+{
+  "version": "V5.3",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_max_history_offline_supervised_dataset_v5_3.py",
+    "python scripts/validate_max_history_offline_supervised_dataset_v5_3.py",
+    "python -m pytest -q tests/datasets/test_max_history_offline_supervised_dataset_v5_3.py",
+    "python -m pytest -q tests/validation/test_max_history_offline_supervised_dataset_v5_3_validator.py",
+    "python scripts/release_audit_lite_zip_v5_3.py",
+    "python scripts/audit_audit_lite_zip_v5_3.py --zip projet-galapagos-v5.3-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v5_3.py --zip projet-galapagos-v5.3-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_max_history_offline_supervised_dataset_v5_3.py": "PASS",
+    "python scripts/validate_max_history_offline_supervised_dataset_v5_3.py": "PASS",
+    "python -m pytest -q tests/datasets/test_max_history_offline_supervised_dataset_v5_3.py": "PASS",
+    "python -m pytest -q tests/validation/test_max_history_offline_supervised_dataset_v5_3_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v5_3.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v5_3.py --zip projet-galapagos-v5.3-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v5_3.py --zip projet-galapagos-v5.3-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_max_history_offline_supervised_dataset_v5_3.py": 59.2,
+    "python scripts/validate_max_history_offline_supervised_dataset_v5_3.py": 20.34,
+    "python -m pytest -q tests/datasets/test_max_history_offline_supervised_dataset_v5_3.py": 0.79,
+    "python -m pytest -q tests/validation/test_max_history_offline_supervised_dataset_v5_3_validator.py": 20.93,
+    "python scripts/release_audit_lite_zip_v5_3.py": 3.79,
+    "python scripts/audit_audit_lite_zip_v5_3.py --zip projet-galapagos-v5.3-audit-lite.zip": 0.43,
+    "python scripts/smoke_audit_lite_zip_v5_3.py --zip projet-galapagos-v5.3-audit-lite.zip": 0.8,
+    "python -m pytest --collect-only -q": 2.48
+  },
+  "output_datasets_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "5bd202626b814ee82542f707d1c820d3e5e26e9ed73cd2ccc3eba9dff408b7fa",
+      "bytes": 45094104,
+      "rows": 110976,
+      "columns_count": 76,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "bfea4d768bcfaeefe8d0b5eb3fa9b3265667be5e06e389b192ee8fece19c1a86",
+      "bytes": 11239249,
+      "rows": 27744,
+      "columns_count": 76,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "0e1d7acf60a8d5893c68659e2d008a5debdbdbf9017d56236ff3babbc14fb39a",
+      "bytes": 526604347,
+      "rows": 1664640,
+      "columns_count": 76,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "f63ca0bc69f066577a706a0dc4edbd01c26f1c011e98979af6d9c1836d1187c5",
+      "bytes": 115102954,
+      "rows": 332928,
+      "columns_count": 76,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:55:00Z"
+    }
+  ],
+  "output_splits_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "284ed702188966a8e2f0731b0fa23dcd20e03846fa60d90fac544a6e0c832644",
+      "bytes": 4915910,
+      "rows": 110976,
+      "format": "parquet"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "d8cf0606093ec789af328db046a9e48b3780c7f68eec37d4a2214ba7b4851ba6",
+      "bytes": 1179267,
+      "rows": 27744,
+      "format": "parquet"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "dcac89c0fa6a84fcccb166f51ba88bd2969172502f624ea132184eee843b970e",
+      "bytes": 56201132,
+      "rows": 1664640,
+      "format": "parquet"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v5_3/datasets/offline_supervised/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "f9e93f927e3cd23347f04d8cd07b56b0c577c775ad158343bd6cac5d57276c44",
+      "bytes": 12119271,
+      "rows": 332928,
+      "format": "parquet"
+    }
+  ],
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2026-05-23",
+  "input_total_days": 1156,
+  "manifest_sha256": "4a0e4f5c986d7aa335c9437ed632d21718f08307e5288a6232709732936a7e62",
+  "report_sha256": "4a0e4f5c986d7aa335c9437ed632d21718f08307e5288a6232709732936a7e62",
+  "datacard_sha256": "3e7980d6831fab52026c61b12c6e49068466522b7aad3a7ed5c372ca88900874",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ],
+  "errors": []
+}

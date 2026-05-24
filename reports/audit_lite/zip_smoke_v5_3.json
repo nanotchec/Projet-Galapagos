@@ -1,0 +1,9 @@
+{
+  "version": "V5.3",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v5.3-audit-lite.zip",
+  "zip_size_bytes": 622940,
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "smoke_duration_seconds": 0.418
+}
