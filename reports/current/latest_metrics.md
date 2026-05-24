@@ -1,52 +1,44 @@
 # Latest Metrics
 
-- Dernière version validée : `V4.5`
-- Candidate : `V4.6`
+- Dernière version validée : `V4.6`
+- Candidate : `V4.7`
 - Statut : `pending_external_audit`
-- Direction : 1-year offline ML research baselines
+- Direction : 1-year ML robustness and falsification audit
 
-## Inputs V4.6
+## Inputs V4.7
 
-- Source datasets : dataset supervisé offline V4.5 validé.
-- Source splits : splits temporels V4.5 validés.
+- Source dataset : dataset supervisé offline V4.5 validé.
+- Source ML : scores et métriques offline V4.6 validés.
 - Fenêtre : `2024-01-01` à `2024-12-31` inclus.
 - Timeframes : `1m`, `5m`, `15m`, `1h`.
-- Target : `up_down_flat_h1`.
-- Features autorisées : `31` colonnes causales.
 
-## Row Counts Scores
+## Analyses
 
-- `1m` : `2108036`
-- `5m` : `421508`
-- `15m` : `140420`
-- `1h` : `35012`
+- baseline_delta : présent.
+- split_stability : présent.
+- timeframe_stability : présent.
+- label_shuffle_falsification : présent, seed `123`, labels train uniquement.
+- feature_leakage_scan : `False`.
+- metric_forbidden_scan : `False`.
 
-## Lignes ML Utilisées
+## Input Scores V4.6
 
-- `1m` : `527009`
-- `5m` : `105377`
-- `15m` : `35105`
-- `1h` : `8753`
+- `1m` : `2108036` lignes.
+- `5m` : `421508` lignes.
+- `15m` : `140420` lignes.
+- `1h` : `35012` lignes.
 
-## Splits ML Utilisés
+## Findings
 
-- `1m` : train `316194`, validation `105408`, test `105407`
-- `5m` : train `63214`, validation `21082`, test `21081`
-- `15m` : train `21051`, validation `7027`, test `7027`
-- `1h` : train `5240`, validation `1757`, test `1756`
-
-## Qualité
-
-- Target unique `up_down_flat_h1` : `true`
-- Features interdites présentes : `0`
-- Colonnes de sortie interdites : `0`
-- Splits temporels sans shuffle : `true`
-- `prediction_available_ts >= decision_ts` : `true`
-- Schéma scores strict : `ML_SCORE_COLUMNS_V4_6`
+- robust_edge_claimed : `false`
+- strategy_validated : `false`
+- backtest_performed : `false`
+- actionable_signal_produced : `false`
+- warnings : `8`
 
 ## Safety
 
-- ML offline V4.6 uniquement.
+- Audit de robustesse offline V4.7 uniquement.
 - Aucun modèle persistant.
 - Aucun trading réel.
 - Aucun paper live.

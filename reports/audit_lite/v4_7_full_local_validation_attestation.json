@@ -1,0 +1,63 @@
+{
+  "version": "V4.7",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_one_year_ml_robustness_v4_7.py",
+    "python scripts/validate_one_year_ml_robustness_v4_7.py",
+    "python -m pytest -q tests/ml/test_one_year_ml_robustness_v4_7.py",
+    "python -m pytest -q tests/validation/test_one_year_ml_robustness_v4_7_validator.py",
+    "python scripts/release_audit_lite_zip_v4_7.py",
+    "python scripts/audit_audit_lite_zip_v4_7.py --zip projet-galapagos-v4.7-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v4_7.py --zip projet-galapagos-v4.7-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_one_year_ml_robustness_v4_7.py": "PASS",
+    "python scripts/validate_one_year_ml_robustness_v4_7.py": "PASS",
+    "python -m pytest -q tests/ml/test_one_year_ml_robustness_v4_7.py": "PASS",
+    "python -m pytest -q tests/validation/test_one_year_ml_robustness_v4_7_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v4_7.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v4_7.py --zip projet-galapagos-v4.7-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v4_7.py --zip projet-galapagos-v4.7-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_one_year_ml_robustness_v4_7.py": 50.55,
+    "python scripts/validate_one_year_ml_robustness_v4_7.py": 2.02,
+    "python -m pytest -q tests/ml/test_one_year_ml_robustness_v4_7.py": 1.26,
+    "python -m pytest -q tests/validation/test_one_year_ml_robustness_v4_7_validator.py": 2.13,
+    "python scripts/release_audit_lite_zip_v4_7.py": 0.49,
+    "python scripts/audit_audit_lite_zip_v4_7.py --zip projet-galapagos-v4.7-audit-lite.zip": 0.05,
+    "python scripts/smoke_audit_lite_zip_v4_7.py --zip projet-galapagos-v4.7-audit-lite.zip": 0.98,
+    "python -m pytest --collect-only -q": 3.1
+  },
+  "manifest_sha256": "d237e8887e96e88b95b59138a8451fd4d340c5fa141e09822136eb4a6ec93d3a",
+  "report_sha256": "d237e8887e96e88b95b59138a8451fd4d340c5fa141e09822136eb4a6ec93d3a",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_strategy": true,
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ],
+  "errors": []
+}

@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V4.5",
-  "candidate_version": "V4.6",
+  "last_validated_version": "V4.6",
+  "candidate_version": "V4.7",
   "candidate_status": "pending_external_audit",
-  "direction": "1-year offline ML research baselines",
+  "direction": "1-year ML robustness and falsification audit",
   "multi_day_window_start": "2024-01-15",
   "multi_day_window_end": "2024-01-21",
   "multi_day_days": 7,
@@ -468,7 +468,7 @@
   "paper_live_v4_5_created": false,
   "trading_v4_5_created": false,
   "v4_6_candidate": true,
-  "v4_6_validated_by_external_audit": false,
+  "v4_6_validated_by_external_audit": true,
   "v4_6_scope": "1-year offline ML research baselines only; no backtest, strategy, signal, order, trading, or persistent model",
   "one_year_ml_score_rows_v4_6": {
     "1m": 2108036,
@@ -523,5 +523,61 @@
   "trading_v4_6_created": false,
   "api_key_used_v4_6": false,
   "private_endpoint_used_v4_6": false,
-  "authentication_used_v4_6": false
+  "authentication_used_v4_6": false,
+  "v4_7_candidate": true,
+  "v4_7_validated_by_external_audit": false,
+  "v4_7_scope": "1-year ML robustness and falsification audit only; no backtest, strategy, signal, order, trading, or persistent model",
+  "one_year_ml_robustness_analyses_v4_7": [
+    "baseline_delta",
+    "split_stability",
+    "timeframe_stability",
+    "label_shuffle_falsification",
+    "feature_leakage_scan",
+    "metric_forbidden_scan"
+  ],
+  "one_year_ml_robustness_warning_count_v4_7": 8,
+  "one_year_ml_robustness_no_clear_edge_vs_shuffled_labels_v4_7": [
+    "1m.decision_tree_depth_2.test",
+    "15m.logistic_regression.test",
+    "15m.decision_tree_depth_2.validation",
+    "15m.decision_tree_depth_2.test",
+    "1h.decision_tree_depth_2.validation"
+  ],
+  "one_year_ml_robustness_timeframe_concentration_warnings_v4_7": [
+    "decision_tree_depth_2",
+    "logistic_regression",
+    "majority_class_baseline"
+  ],
+  "robust_edge_claimed_v4_7": false,
+  "strategy_validated_v4_7": false,
+  "backtest_performed_v4_7": false,
+  "actionable_signal_produced_v4_7": false,
+  "backtest_v4_7_created": false,
+  "strategy_v4_7_created": false,
+  "signal_v4_7_created": false,
+  "orders_v4_7_created": false,
+  "paper_live_v4_7_created": false,
+  "trading_v4_7_created": false,
+  "persistent_model_v4_7_created": false,
+  "model_v4_7_created": false,
+  "api_key_used_v4_7": false,
+  "private_endpoint_used_v4_7": false,
+  "authentication_used_v4_7": false,
+  "v4_7_thresholds": {
+    "accuracy_gap_warning_threshold": 0.1,
+    "macro_f1_gap_warning_threshold": 0.1,
+    "random_seed": 123
+  },
+  "v4_7_input_score_rows": {
+    "1m": 2108036,
+    "5m": 421508,
+    "15m": 140420,
+    "1h": 35012
+  },
+  "v4_7_feature_leakage_detected": false,
+  "v4_7_metric_forbidden_terms_detected": false,
+  "v4_7_limitations": [
+    "V4.7 audite uniquement la robustesse descriptive des baselines ML offline V4.6 sur une fenetre de 1 an.",
+    "V4.7 ne produit aucun backtest, aucune strategie, aucun signal de trading et aucun ordre."
+  ]
 }
