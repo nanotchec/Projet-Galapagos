@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V6.1",
-  "candidate_version": "V6.2",
+  "last_validated_version": "V6.2",
+  "candidate_version": "V6.3",
   "candidate_status": "pending_external_audit",
-  "direction": "max historical offline ML with advanced OHLCV features",
+  "direction": "advanced OHLCV robustness and walk-forward falsification audit",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -860,5 +860,16 @@
   "orders_v6_2_created": false,
   "paper_live_v6_2_created": false,
   "trading_v6_2_created": false,
-  "persistent_model_v6_2_created": false
+  "persistent_model_v6_2_created": false,
+  "advanced_ohlcv_robustness_window_start_v6_3": "2023-03-25",
+  "advanced_ohlcv_robustness_window_end_v6_3": "2026-05-23",
+  "advanced_ohlcv_robustness_days_v6_3": 1156,
+  "advanced_feature_columns_count_v6_3": 158,
+  "backtest_v6_3_created": false,
+  "strategy_v6_3_created": false,
+  "signal_v6_3_created": false,
+  "orders_v6_3_created": false,
+  "paper_live_v6_3_created": false,
+  "trading_v6_3_created": false,
+  "persistent_model_v6_3_created": false
 }

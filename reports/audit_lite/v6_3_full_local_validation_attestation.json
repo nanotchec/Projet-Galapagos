@@ -1,0 +1,67 @@
+{
+  "version": "V6.3",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_advanced_ohlcv_ml_robustness_v6_3.py",
+    "python scripts/validate_advanced_ohlcv_ml_robustness_v6_3.py",
+    "python -m pytest -q tests/ml/test_advanced_ohlcv_ml_robustness_v6_3.py",
+    "python -m pytest -q tests/validation/test_advanced_ohlcv_ml_robustness_v6_3_validator.py",
+    "python scripts/release_audit_lite_zip_v6_3.py",
+    "python scripts/audit_audit_lite_zip_v6_3.py --zip projet-galapagos-v6.3-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v6_3.py --zip projet-galapagos-v6.3-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_advanced_ohlcv_ml_robustness_v6_3.py": "PASS",
+    "python scripts/validate_advanced_ohlcv_ml_robustness_v6_3.py": "PASS",
+    "python -m pytest -q tests/ml/test_advanced_ohlcv_ml_robustness_v6_3.py": "PASS",
+    "python -m pytest -q tests/validation/test_advanced_ohlcv_ml_robustness_v6_3_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v6_3.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v6_3.py --zip projet-galapagos-v6.3-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v6_3.py --zip projet-galapagos-v6.3-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_advanced_ohlcv_ml_robustness_v6_3.py": 273.12,
+    "python scripts/validate_advanced_ohlcv_ml_robustness_v6_3.py": 3.11,
+    "python -m pytest -q tests/ml/test_advanced_ohlcv_ml_robustness_v6_3.py": 1.18,
+    "python -m pytest -q tests/validation/test_advanced_ohlcv_ml_robustness_v6_3_validator.py": 3.14,
+    "python scripts/release_audit_lite_zip_v6_3.py": 1.17,
+    "python scripts/audit_audit_lite_zip_v6_3.py --zip projet-galapagos-v6.3-audit-lite.zip": 0.07,
+    "python scripts/smoke_audit_lite_zip_v6_3.py --zip projet-galapagos-v6.3-audit-lite.zip": 2.19,
+    "python -m pytest --collect-only -q": 1.84
+  },
+  "manifest_sha256": "cb021c86da8cc35173aff12b6e49201e170212ed9b7b119f1a58c0f41fa8d979",
+  "report_sha256": "cb021c86da8cc35173aff12b6e49201e170212ed9b7b119f1a58c0f41fa8d979",
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2026-05-23",
+  "input_total_days": 1156,
+  "advanced_feature_columns_count": 158,
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_strategy": true,
+  "errors": [],
+  "warnings": [
+    "audit-lite does not replace full local validation"
+  ]
+}

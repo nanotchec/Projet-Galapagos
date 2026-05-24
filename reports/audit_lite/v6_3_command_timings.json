@@ -1,0 +1,10 @@
+{
+  "python scripts/run_advanced_ohlcv_ml_robustness_v6_3.py": 273.12,
+  "python scripts/validate_advanced_ohlcv_ml_robustness_v6_3.py": 3.11,
+  "python -m pytest -q tests/ml/test_advanced_ohlcv_ml_robustness_v6_3.py": 1.18,
+  "python -m pytest -q tests/validation/test_advanced_ohlcv_ml_robustness_v6_3_validator.py": 3.14,
+  "python scripts/release_audit_lite_zip_v6_3.py": 1.17,
+  "python scripts/audit_audit_lite_zip_v6_3.py --zip projet-galapagos-v6.3-audit-lite.zip": 0.07,
+  "python scripts/smoke_audit_lite_zip_v6_3.py --zip projet-galapagos-v6.3-audit-lite.zip": 2.19,
+  "python -m pytest --collect-only -q": 1.84
+}

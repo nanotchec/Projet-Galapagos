@@ -1,17 +1,17 @@
-# Latest Summary V6.2
+# Latest Summary V6.3
 
-V6.1 est la derniere version validee par audit externe.
+V6.2 est la derniere version validee par audit externe.
 
-V6.2 est la candidate courante. Elle entraine uniquement des baselines ML offline simples sur le dataset V6.1 avec advanced OHLCV features, produit des scores de recherche `research_*`, calcule des metriques descriptives par split et par groupe walk-forward, et compare descriptivement V6.2 a V5.4 si disponible.
+V6.3 est la candidate courante. Elle audite uniquement la robustesse descriptive, les groupes walk-forward et la falsification par label shuffle des resultats ML offline V6.2.
 
 Fenetre utilisee : `2023-03-25` -> `2026-05-23`.
 
 Total jours : `1156`.
 
-Row counts scores : `{'1m': 6657492, '5m': 1330752, '15m': 442944, '1h': 110016}`.
+Advanced feature columns count : `158`.
 
-Advanced feature columns : `158`.
+Analyses produites : `['advanced_vs_simple_comparison', 'baseline_delta', 'feature_leakage_scan', 'label_shuffle_falsification', 'metric_forbidden_scan', 'split_stability', 'timeframe_stability', 'walk_forward_stability']`.
 
 Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading, aucun modele persistant et aucun claim de rentabilite.
 
-V6.2 reste `pending_external_audit`.
+V6.3 reste `pending_external_audit`.

@@ -1,22 +1,18 @@
-# Etat du Projet : V6.1 validee + candidat V6.2
+# Etat du Projet : V6.2 validee + candidat V6.3
 
-- **Derniere version validee** : V6.1.
-- **Version candidate** : V6.2.
+- **Derniere version validee** : V6.2.
+- **Version candidate** : V6.3.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction suivante** : max historical offline ML with advanced OHLCV features.
+- **Direction** : advanced OHLCV robustness and walk-forward falsification audit.
 
-## Candidat V6.2
+## Candidat V6.3
 
-- Fenetre V5.0 utilisee : `2023-03-25` -> `2026-05-23`.
+- Fenetre : `2023-03-25` -> `2026-05-23`.
 - Nombre de jours : `1156`.
-- Row counts scores : `{'1m': 6657492, '5m': 1330752, '15m': 442944, '1h': 110016}`.
-- Schema : `ML_SCORE_COLUMNS_V6_2`.
-- Cible : `up_down_flat_h1`.
-- Advanced feature columns : `158`.
-- Modeles offline autorises : `['majority_class_baseline', 'random_seeded_baseline', 'logistic_regression', 'decision_tree_depth_2']`.
-- Metriques walk-forward : descriptives uniquement, pas un backtest.
-- Comparaison V6.2 vs V5.4 : descriptive uniquement, non actionnable.
-- V6.2 reste candidate `pending_external_audit`.
+- Advanced feature columns count : `158`.
+- Analyses : `['advanced_vs_simple_comparison', 'baseline_delta', 'feature_leakage_scan', 'label_shuffle_falsification', 'metric_forbidden_scan', 'split_stability', 'timeframe_stability', 'walk_forward_stability']`.
+- Warnings descriptifs : `7`.
+- V6.3 reste candidate `pending_external_audit`.
 
 ## Clause De Securite
 
@@ -29,4 +25,4 @@
 - Aucun modele persistant.
 - Aucune API privee.
 - Aucune cle API.
-- V6.2 reste non validee avant audit externe.
+- V6.3 reste non validee avant audit externe.
