@@ -1,0 +1,10 @@
+{
+  "python scripts/run_advanced_ohlcv_offline_supervised_dataset_v6_1.py": 58.76,
+  "python scripts/validate_advanced_ohlcv_offline_supervised_dataset_v6_1.py": 11.0,
+  "python -m pytest -q tests/datasets/test_advanced_ohlcv_offline_supervised_dataset_v6_1.py": 0.69,
+  "python -m pytest -q tests/validation/test_advanced_ohlcv_offline_supervised_dataset_v6_1_validator.py": 11.84,
+  "python scripts/release_audit_lite_zip_v6_1.py": 2.32,
+  "python scripts/audit_audit_lite_zip_v6_1.py --zip projet-galapagos-v6.1-audit-lite.zip": 0.41,
+  "python scripts/smoke_audit_lite_zip_v6_1.py --zip projet-galapagos-v6.1-audit-lite.zip": 0.88,
+  "python -m pytest --collect-only -q": 2.15
+}

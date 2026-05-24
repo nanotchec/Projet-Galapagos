@@ -2,6 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from galapagos.features.advanced_ohlcv_schemas import (
+    ADVANCED_OHLCV_AUDIT_COLUMNS_V6_0,
+    ADVANCED_OHLCV_FEATURE_VALUE_COLUMNS_V6_0,
+)
 from galapagos.features.schemas import FEATURE_COLUMNS_V2_5
 from galapagos.labels.schemas import LABEL_COLUMNS_V2_6
 
@@ -425,6 +429,111 @@ def get_split_v5_3_path(root: Path, timeframe: str, window_start: str, window_en
     return (
         root
         / "data/research/v5_3/datasets/offline_supervised"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "splits.parquet"
+    )
+
+
+VERSION_V6_1 = "V6.1"
+DATASET_SCHEMA_VERSION_V6_1 = "V6.1"
+TIMEFRAMES_V6_1 = ["1m", "5m", "15m", "1h"]
+
+MANIFEST_PATH_V6_1 = Path("reports/manifests/advanced_ohlcv_offline_supervised_dataset_v6_1_manifest.json")
+REPORT_JSON_PATH_V6_1 = Path("reports/datasets/advanced_ohlcv_offline_supervised_dataset_v6_1.json")
+REPORT_MD_PATH_V6_1 = Path("reports/datasets/advanced_ohlcv_offline_supervised_dataset_v6_1.md")
+DATACARD_MD_PATH_V6_1 = Path("reports/datasets/advanced_ohlcv_offline_supervised_dataset_v6_1_datacard.md")
+DOC_PATH_V6_1 = Path("docs/advanced_ohlcv_offline_supervised_dataset_v6_1.md")
+
+ADVANCED_DATASET_FEATURE_COLUMNS_V6_1 = [
+    *ADVANCED_OHLCV_FEATURE_VALUE_COLUMNS_V6_0,
+    *ADVANCED_OHLCV_AUDIT_COLUMNS_V6_0,
+]
+
+DATASET_COLUMNS_V6_1 = [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "available_ts",
+    "decision_ts",
+    "feature_available_ts",
+    "label_available_ts",
+    "dataset_run_id",
+    "dataset_schema_version",
+    "source_features_sha256",
+    "source_labels_sha256",
+    *ADVANCED_DATASET_FEATURE_COLUMNS_V6_1,
+    *LABEL_VALUE_COLUMNS,
+    "split",
+    "split_order",
+    "purge_embargo_group",
+    "walk_forward_group",
+    "dataset_null_count",
+    "dataset_error_count",
+]
+
+SPLIT_COLUMNS_V6_1 = [*JOIN_KEYS, "split", "split_order", "purge_embargo_group", "walk_forward_group"]
+
+SPLIT_POLICY_V6_1 = {
+    "train_ratio": 0.6,
+    "validation_ratio": 0.2,
+    "test_ratio": 0.2,
+    "shuffle": False,
+    "purge_embargo": "none_v6_1_preview",
+    "walk_forward_grouping": "calendar_quarter",
+}
+
+FORBIDDEN_DATASET_COLUMNS_EXACT_V6_1 = [
+    "prediction",
+    "predicted",
+    "model_score",
+    "score_ml",
+    "alpha",
+    "signal",
+    "trading_signal",
+    "strategy_signal",
+    "strategy",
+    "order",
+    "trade_decision",
+    "position_size",
+    "pnl",
+    "profit",
+    "backtest",
+    "execution",
+    "live",
+    "paper_live",
+]
+
+EXPECTED_LIMITATIONS_V6_1 = [
+    "V6.1 assemble uniquement un dataset supervise offline a partir des advanced OHLCV features V6.0 et labels V5.2.",
+    "V6.1 prepare des groupes walk-forward descriptifs mais ne produit aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.",
+]
+
+
+def get_dataset_v6_1_path(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "dataset.parquet"
+    )
+
+
+def get_split_v6_1_path(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv"
         / "source=binance_archive"
         / "market_type=spot"
         / "symbol=BTCUSDT"

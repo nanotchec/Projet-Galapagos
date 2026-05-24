@@ -1,0 +1,91 @@
+{
+  "version": "V6.1",
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2026-05-23",
+  "input_total_days": 1156,
+  "advanced_feature_columns_count": 158,
+  "datasets": {
+    "15m": {
+      "path": "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "6dc8276c2dd048ed35ef59b70805f6368f2f9e24215b226706ab9b63c4838206",
+      "bytes": 97185332,
+      "rows": 110976,
+      "columns_count": 206,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:45:00Z",
+      "schema_strict": true
+    },
+    "1h": {
+      "path": "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "2f9f8160bade7ed02d928de8cd2027362885d29e605b95a1dc626ceb7510c6a4",
+      "bytes": 23713994,
+      "rows": 27744,
+      "columns_count": 206,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:00:00Z",
+      "schema_strict": true
+    },
+    "1m": {
+      "path": "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "c8fe6be68d1190510ca2067b33be704761123f836300693f4cde796e89690c10",
+      "bytes": 1121400523,
+      "rows": 1664640,
+      "columns_count": 206,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:59:00Z",
+      "schema_strict": true
+    },
+    "5m": {
+      "path": "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/dataset.parquet",
+      "sha256": "acfc22e1d2a178afec58ee4c3be39048d1277aa6fb7df14f02e8e5f09d95089a",
+      "bytes": 271776019,
+      "rows": 332928,
+      "columns_count": 206,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:55:00Z",
+      "schema_strict": true
+    }
+  },
+  "splits": {
+    "15m": {
+      "path": "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "e5cf9d57d7b290f72484f32a6f1465650c44180a617ec831475272b0a3965eb4",
+      "bytes": 4915910,
+      "rows": 110976,
+      "columns_count": 13,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:45:00Z",
+      "schema_strict": true
+    },
+    "1h": {
+      "path": "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "52dde880b3c22a437384bd8a926cd14a4a645692ba8cd9254cdd7c190ef6504a",
+      "bytes": 1179267,
+      "rows": 27744,
+      "columns_count": 13,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:00:00Z",
+      "schema_strict": true
+    },
+    "1m": {
+      "path": "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "69242ae552e31418419603df2bee682813be624f2143ed351f6017e64c911061",
+      "bytes": 56201132,
+      "rows": 1664640,
+      "columns_count": 13,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:59:00Z",
+      "schema_strict": true
+    },
+    "5m": {
+      "path": "data/research/v6_1/datasets/offline_supervised_advanced_ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/splits.parquet",
+      "sha256": "2a6901333590bc8ab4b62e91636f6979cddc290a6beb341b833cfcc68aa91419",
+      "bytes": 12119271,
+      "rows": 332928,
+      "columns_count": 13,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2026-05-23T23:55:00Z",
+      "schema_strict": true
+    }
+  }
+}
