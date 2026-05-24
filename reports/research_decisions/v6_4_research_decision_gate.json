@@ -1,0 +1,439 @@
+{
+  "version": "V6.4",
+  "status": "PASS",
+  "decision_gate_type": "research_only",
+  "created_at_utc": "2026-05-24T23:15:01.860849Z",
+  "inputs": {
+    "v6_3_manifest": {
+      "path": "reports/manifests/advanced_ohlcv_ml_robustness_v6_3_manifest.json",
+      "sha256": "cb021c86da8cc35173aff12b6e49201e170212ed9b7b119f1a58c0f41fa8d979"
+    },
+    "v6_3_report": {
+      "path": "reports/ml/advanced_ohlcv_ml_robustness_v6_3.json",
+      "sha256": "cb021c86da8cc35173aff12b6e49201e170212ed9b7b119f1a58c0f41fa8d979"
+    },
+    "v6_3_markdown": {
+      "path": "reports/ml/advanced_ohlcv_ml_robustness_v6_3.md",
+      "sha256": "816af9a18adf788c7616c518c32d84050cfb33e76a5874302cfc0002a81bbb8a"
+    },
+    "v6_2_manifest": {
+      "path": "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+      "sha256": "9b0891e6449d717015adbdb78085b76800134b4b5191d857ce5b2a650444ee67"
+    },
+    "v6_2_report": {
+      "path": "reports/ml/advanced_ohlcv_offline_ml_research_v6_2.json",
+      "sha256": "9b0891e6449d717015adbdb78085b76800134b4b5191d857ce5b2a650444ee67"
+    },
+    "v6_2_scores_report": {
+      "path": "reports/ml/advanced_ohlcv_offline_research_scores_v6_2.json",
+      "sha256": "466a072d097dbe757fa1169000501ae0d0514ca39eaac768b2aef9ffd710cd97"
+    },
+    "v5_4_manifest": {
+      "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17",
+      "available": true
+    },
+    "v5_4_report": {
+      "path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+      "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+    },
+    "v5_4_scores_report": {
+      "path": "reports/ml/max_history_offline_research_scores_v5_4.json",
+      "sha256": "b5b84c720780c2a7547c5df3e292562463b6d4750a297c6e4216adcb95cf400e"
+    },
+    "v6_3_attestation": {
+      "path": "reports/audit_lite/v6_3_full_local_validation_attestation.json",
+      "sha256": "781e614097e69b284f53d261ebe19449e0f8ccf67d98ea77c1be7fc8b44bc159"
+    },
+    "project_state": {
+      "path": "reports/PROJECT_STATE.json",
+      "sha256": "285512bf707fb930791f887629ad321cce993003da6fe349f6fcb21d486512b2"
+    },
+    "latest_summary": {
+      "path": "reports/current/latest_summary.md",
+      "sha256": "85ff17798ddc85b949726506b90ad070c8bfb9411386d3bb66b94985b0f6fbbf"
+    },
+    "window_start": "2023-03-25",
+    "window_end": "2026-05-23",
+    "total_days": 1156,
+    "advanced_feature_columns_count": 158,
+    "models": [
+      "majority_class_baseline",
+      "random_seeded_baseline",
+      "logistic_regression",
+      "decision_tree_depth_2"
+    ],
+    "target": "up_down_flat_h1",
+    "timeframes": [
+      "1m",
+      "5m",
+      "15m",
+      "1h"
+    ]
+  },
+  "summary_verdict": "Les resultats advanced OHLCV sont interessants mais non concluants: ils ameliorent V5.4 dans une partie des comparaisons, sans amelioration claire et stable entre timeframes, splits et groupes walk-forward. La piste OHLCV-only semble atteindre ses limites avant backtest.",
+  "advanced_vs_simple_assessment": {
+    "available": true,
+    "advanced_better_count": 20,
+    "simple_better_count": 11,
+    "mixed_or_inconclusive_count": 17,
+    "advanced_improvement_consistency": 0.416666666667,
+    "by_model": {
+      "decision_tree_depth_2": {
+        "advanced_better": 5,
+        "simple_better": 3,
+        "mixed_or_inconclusive": 4
+      },
+      "logistic_regression": {
+        "advanced_better": 7,
+        "simple_better": 1,
+        "mixed_or_inconclusive": 4
+      },
+      "majority_class_baseline": {
+        "advanced_better": 1,
+        "simple_better": 3,
+        "mixed_or_inconclusive": 8
+      },
+      "random_seeded_baseline": {
+        "advanced_better": 7,
+        "simple_better": 4,
+        "mixed_or_inconclusive": 1
+      }
+    },
+    "assessment": "mitige_non_concluant",
+    "interpretation": "Advanced OHLCV fait mieux dans plus de cas que simple OHLCV, mais pas de maniere assez stable ou dominante pour conclure."
+  },
+  "baseline_assessment": {
+    "by_model": {
+      "logistic_regression": {
+        "entries": 12,
+        "accuracy_gt_majority_count": 12,
+        "macro_f1_gt_majority_count": 12,
+        "accuracy_gt_random_count": 12,
+        "macro_f1_gt_random_count": 10,
+        "test_deltas_by_timeframe": {
+          "15m": {
+            "delta_vs_majority_accuracy": 0.047533228205,
+            "delta_vs_majority_macro_f1": 0.211032013248,
+            "delta_vs_random_accuracy": 0.078441090336,
+            "delta_vs_random_macro_f1": 0.057947883856
+          },
+          "1h": {
+            "delta_vs_majority_accuracy": 0.021805730762,
+            "delta_vs_majority_macro_f1": 0.12601771599,
+            "delta_vs_random_accuracy": 0.068300594702,
+            "delta_vs_random_macro_f1": -0.001585156332
+          },
+          "1m": {
+            "delta_vs_majority_accuracy": 0.002547104921,
+            "delta_vs_majority_macro_f1": 0.095724604933,
+            "delta_vs_random_accuracy": 0.161239551013,
+            "delta_vs_random_macro_f1": 0.040789653407
+          },
+          "5m": {
+            "delta_vs_majority_accuracy": 0.043672844141,
+            "delta_vs_majority_macro_f1": 0.220077312719,
+            "delta_vs_random_accuracy": 0.128915988346,
+            "delta_vs_random_macro_f1": 0.088222920924
+          }
+        }
+      },
+      "decision_tree_depth_2": {
+        "entries": 12,
+        "accuracy_gt_majority_count": 9,
+        "macro_f1_gt_majority_count": 9,
+        "accuracy_gt_random_count": 12,
+        "macro_f1_gt_random_count": 4,
+        "test_deltas_by_timeframe": {
+          "15m": {
+            "delta_vs_majority_accuracy": 0.011759405271,
+            "delta_vs_majority_macro_f1": 0.04740163632,
+            "delta_vs_random_accuracy": 0.042667267403,
+            "delta_vs_random_macro_f1": -0.105682493071
+          },
+          "1h": {
+            "delta_vs_majority_accuracy": 0.014056586772,
+            "delta_vs_majority_macro_f1": 0.128371080322,
+            "delta_vs_random_accuracy": 0.060551450712,
+            "delta_vs_random_macro_f1": 0.000768208001
+          },
+          "1m": {
+            "delta_vs_majority_accuracy": 0.0,
+            "delta_vs_majority_macro_f1": 0.0,
+            "delta_vs_random_accuracy": 0.158692446092,
+            "delta_vs_random_macro_f1": -0.054934951527
+          },
+          "5m": {
+            "delta_vs_majority_accuracy": 0.038161175022,
+            "delta_vs_majority_macro_f1": 0.137391421931,
+            "delta_vs_random_accuracy": 0.123404319226,
+            "delta_vs_random_macro_f1": 0.005537030136
+          }
+        }
+      }
+    },
+    "assessment": "logistic_regression_bat_souvent_les_baselines_decision_tree_plus_mitige",
+    "interpretation": "Les modeles appris battent souvent majority/random en accuracy, mais macro_f1 reste mitigee pour decision_tree_depth_2 contre random."
+  },
+  "split_stability_assessment": {
+    "overfit_warning_count": 1,
+    "overfit_warnings": {
+      "15m.decision_tree_depth_2": {
+        "timeframe": "15m",
+        "model_name": "decision_tree_depth_2",
+        "train_accuracy": 0.41268501492177373,
+        "validation_accuracy": 0.37571525118269883,
+        "test_accuracy": 0.3859427799053841,
+        "train_macro_f1": 0.3198657713810098,
+        "validation_macro_f1": 0.21657700738582586,
+        "test_macro_f1": 0.22893169096453972,
+        "train_validation_accuracy_gap": 0.036969763739,
+        "validation_test_accuracy_gap": -0.010227528723,
+        "train_validation_macro_f1_gap": 0.103288763995,
+        "validation_test_macro_f1_gap": -0.012354683579,
+        "overfit_warning": true
+      }
+    },
+    "assessment": "globalement_acceptable_avec_alerte_15m_decision_tree"
+  },
+  "timeframe_stability_assessment": {
+    "by_model": {
+      "decision_tree_depth_2": {
+        "best_accuracy_timeframe": "1m",
+        "accuracy_range": 0.333704470092,
+        "macro_f1_range": 0.110127375314,
+        "single_timeframe_concentration_warning": true
+      },
+      "logistic_regression": {
+        "best_accuracy_timeframe": "1m",
+        "accuracy_range": 0.30047775208,
+        "macro_f1_range": 0.093917741203,
+        "single_timeframe_concentration_warning": true
+      },
+      "majority_class_baseline": {
+        "best_accuracy_timeframe": "1m",
+        "accuracy_range": 0.345463875364,
+        "macro_f1_range": 0.097460205324,
+        "single_timeframe_concentration_warning": true
+      },
+      "random_seeded_baseline": {
+        "best_accuracy_timeframe": "1m",
+        "accuracy_range": 0.217679291403,
+        "macro_f1_range": 0.00520181184,
+        "single_timeframe_concentration_warning": true
+      }
+    },
+    "assessment": "instable_entre_timeframes",
+    "interpretation": "Les meilleurs scores se concentrent sur 1m avec de larges ecarts entre timeframes."
+  },
+  "walk_forward_stability_assessment": {
+    "groups_with_warnings": {
+      "15m.majority_class_baseline": {
+        "weak_groups": [
+          "wf_2023_Q1",
+          "wf_2023_Q2",
+          "wf_2023_Q3",
+          "wf_2023_Q4",
+          "wf_2024_Q1",
+          "wf_2024_Q2",
+          "wf_2024_Q3",
+          "wf_2024_Q4",
+          "wf_2025_Q1",
+          "wf_2025_Q2",
+          "wf_2025_Q3",
+          "wf_2025_Q4",
+          "wf_2026_Q1",
+          "wf_2026_Q2"
+        ],
+        "unstable_groups": [],
+        "accuracy_range_by_group": 0.123800565377,
+        "macro_f1_range_by_group": 0.04547687618,
+        "concentrated_on_few_groups_warning": false
+      },
+      "15m.random_seeded_baseline": {
+        "weak_groups": [
+          "wf_2023_Q2",
+          "wf_2023_Q3",
+          "wf_2025_Q2",
+          "wf_2025_Q3",
+          "wf_2026_Q2"
+        ],
+        "unstable_groups": [],
+        "accuracy_range_by_group": 0.046734842019,
+        "macro_f1_range_by_group": 0.029636580998,
+        "concentrated_on_few_groups_warning": false
+      },
+      "1h.majority_class_baseline": {
+        "weak_groups": [
+          "wf_2023_Q2",
+          "wf_2023_Q3",
+          "wf_2025_Q3",
+          "wf_2026_Q2"
+        ],
+        "unstable_groups": [],
+        "accuracy_range_by_group": 0.084239130435,
+        "macro_f1_range_by_group": 0.027617118716,
+        "concentrated_on_few_groups_warning": false
+      },
+      "1m.decision_tree_depth_2": {
+        "weak_groups": [],
+        "unstable_groups": [
+          "wf_2023_Q3",
+          "wf_2025_Q3"
+        ],
+        "accuracy_range_by_group": 0.231304911876,
+        "macro_f1_range_by_group": 0.049805205194,
+        "concentrated_on_few_groups_warning": false
+      },
+      "1m.logistic_regression": {
+        "weak_groups": [],
+        "unstable_groups": [
+          "wf_2023_Q3",
+          "wf_2025_Q3"
+        ],
+        "accuracy_range_by_group": 0.220334232495,
+        "macro_f1_range_by_group": 0.068971413967,
+        "concentrated_on_few_groups_warning": false
+      },
+      "1m.majority_class_baseline": {
+        "weak_groups": [],
+        "unstable_groups": [
+          "wf_2023_Q3",
+          "wf_2025_Q3"
+        ],
+        "accuracy_range_by_group": 0.231304911876,
+        "macro_f1_range_by_group": 0.049805205194,
+        "concentrated_on_few_groups_warning": false
+      },
+      "5m.decision_tree_depth_2": {
+        "weak_groups": [],
+        "unstable_groups": [
+          "wf_2023_Q3"
+        ],
+        "accuracy_range_by_group": 0.231248292392,
+        "macro_f1_range_by_group": 0.042677922538,
+        "concentrated_on_few_groups_warning": false
+      },
+      "5m.logistic_regression": {
+        "weak_groups": [],
+        "unstable_groups": [
+          "wf_2023_Q3"
+        ],
+        "accuracy_range_by_group": 0.216931736779,
+        "macro_f1_range_by_group": 0.054073411292,
+        "concentrated_on_few_groups_warning": false
+      },
+      "5m.majority_class_baseline": {
+        "weak_groups": [
+          "wf_2023_Q1",
+          "wf_2024_Q1",
+          "wf_2024_Q2",
+          "wf_2024_Q3",
+          "wf_2024_Q4",
+          "wf_2025_Q1",
+          "wf_2025_Q4",
+          "wf_2026_Q1"
+        ],
+        "unstable_groups": [
+          "wf_2023_Q3",
+          "wf_2025_Q3"
+        ],
+        "accuracy_range_by_group": 0.279789277751,
+        "macro_f1_range_by_group": 0.084814889339,
+        "concentrated_on_few_groups_warning": false
+      },
+      "5m.random_seeded_baseline": {
+        "weak_groups": [
+          "wf_2024_Q1",
+          "wf_2024_Q4",
+          "wf_2025_Q1"
+        ],
+        "unstable_groups": [],
+        "accuracy_range_by_group": 0.040532742888,
+        "macro_f1_range_by_group": 0.028143691093,
+        "concentrated_on_few_groups_warning": false
+      }
+    },
+    "assessment": "instabilite_periodique_presente",
+    "not_a_backtest": true
+  },
+  "label_shuffle_assessment": {
+    "random_seed": 123,
+    "no_clear_edge_cases": {
+      "15m.decision_tree_depth_2.validation": {
+        "timeframe": "15m",
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "random_seed": 123,
+        "shuffle_scope": "train_labels_only",
+        "validation_test_contaminated": false,
+        "original_accuracy": 0.37571525118269883,
+        "original_macro_f1": 0.21657700738582586,
+        "shuffled_accuracy": 0.3652173913043478,
+        "shuffled_macro_f1": 0.279571731421165,
+        "accuracy_delta_original_minus_shuffled": 0.010497859878,
+        "macro_f1_delta_original_minus_shuffled": -0.062994724035,
+        "no_clear_edge_vs_shuffled_labels": true
+      },
+      "15m.decision_tree_depth_2.test": {
+        "timeframe": "15m",
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "random_seed": 123,
+        "shuffle_scope": "train_labels_only",
+        "validation_test_contaminated": false,
+        "original_accuracy": 0.3859427799053841,
+        "original_macro_f1": 0.22893169096453972,
+        "shuffled_accuracy": 0.3752196440639784,
+        "shuffled_macro_f1": 0.23520400458756252,
+        "accuracy_delta_original_minus_shuffled": 0.010723135841,
+        "macro_f1_delta_original_minus_shuffled": -0.006272313623,
+        "no_clear_edge_vs_shuffled_labels": true
+      }
+    },
+    "no_clear_edge_count": 2,
+    "assessment": "majoritairement_detruit_mais_alerte_15m_decision_tree"
+  },
+  "leakage_assessment": {
+    "feature_leakage_detected": false,
+    "forbidden_feature_columns_present": [],
+    "macd_like_signal_allowed_as_technical_feature": true,
+    "metric_forbidden_terms_detected": false,
+    "forbidden_metric_terms_present": [],
+    "assessment": "pas_de_fuite_detectee_par_les_scans_v6_3"
+  },
+  "limitations": [
+    "OHLCV-only, meme avec 158 advanced features.",
+    "Un seul actif: BTCUSDT spot.",
+    "Aucun trade public historique dans les features.",
+    "Pas de funding, open interest ni order book.",
+    "Pas de couts, slippage, backtest ni execution reelle.",
+    "Risque de data mining avec une bibliotheque large de features.",
+    "Risque de colinearite entre indicateurs OHLCV avances.",
+    "Fenetre max continue validee, mais pas necessairement toute l histoire segmentee de BTCUSDT."
+  ],
+  "recommended_next_step": "A. Ajouter les trades publics historiques.",
+  "secondary_next_step": "D. Préparer une validation walk-forward offline plus stricte.",
+  "roadmap": [
+    "V7.0 — Public Trades Historical Ingestion",
+    "V7.1 — OHLCV + Trades Feature Store",
+    "V7.2 — Multi-source Dataset",
+    "V7.3 — Multi-source ML Offline",
+    "V7.4 — Multi-source Robustness / Walk-forward"
+  ],
+  "safety": {
+    "trading_enabled": false,
+    "paper_live_enabled": false,
+    "orders_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "claims": {
+    "strategy_validated": false,
+    "model_validated_for_trading": false,
+    "advanced_features_validated_for_trading": false,
+    "profitability_claimed": false,
+    "real_trading_allowed": false
+  }
+}

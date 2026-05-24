@@ -1,17 +1,17 @@
-# Latest Summary V6.3
+# Latest Summary V6.4
 
-V6.2 est la derniere version validee par audit externe.
+V6.3 est la derniere version validee par audit externe.
 
-V6.3 est la candidate courante. Elle audite uniquement la robustesse descriptive, les groupes walk-forward et la falsification par label shuffle des resultats ML offline V6.2.
+V6.4 est la candidate courante. Elle produit uniquement un rapport de decision research apres la chaine advanced OHLCV.
 
-Fenetre utilisee : `2023-03-25` -> `2026-05-23`.
+Verdict : advanced OHLCV est interessant mais non concluant. Les resultats ne montrent pas une amelioration claire, stable et suffisante par rapport a V5.4 simple OHLCV.
 
-Total jours : `1156`.
+Recommandation principale : A. Ajouter les trades publics historiques.
 
-Advanced feature columns count : `158`.
+Recommandation secondaire : D. Préparer une validation walk-forward offline plus stricte.
 
-Analyses produites : `['advanced_vs_simple_comparison', 'baseline_delta', 'feature_leakage_scan', 'label_shuffle_falsification', 'metric_forbidden_scan', 'split_stability', 'timeframe_stability', 'walk_forward_stability']`.
+Roadmap proposee : `['V7.0 — Public Trades Historical Ingestion', 'V7.1 — OHLCV + Trades Feature Store', 'V7.2 — Multi-source Dataset', 'V7.3 — Multi-source ML Offline', 'V7.4 — Multi-source Robustness / Walk-forward']`.
 
-Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading, aucun modele persistant et aucun claim de rentabilite.
+Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading et aucun claim de rentabilite.
 
-V6.3 reste `pending_external_audit`.
+V6.4 reste `pending_external_audit`.

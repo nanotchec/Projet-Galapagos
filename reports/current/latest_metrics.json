@@ -1,35 +1,50 @@
 {
-  "last_validated_version": "V6.2",
-  "candidate_version": "V6.3",
+  "last_validated_version": "V6.3",
+  "candidate_version": "V6.4",
   "candidate_status": "pending_external_audit",
-  "direction": "advanced OHLCV robustness and walk-forward falsification audit",
+  "direction": "advanced OHLCV research decision gate",
   "input_window_start": "2023-03-25",
   "input_window_end": "2026-05-23",
   "input_total_days": 1156,
   "advanced_feature_columns_count": 158,
-  "analyses": [
-    "advanced_vs_simple_comparison",
-    "baseline_delta",
-    "feature_leakage_scan",
-    "label_shuffle_falsification",
-    "metric_forbidden_scan",
-    "split_stability",
-    "timeframe_stability",
-    "walk_forward_stability"
-  ],
-  "warnings_count": 7,
-  "robust_edge_claimed": false,
-  "strategy_validated": false,
-  "backtest_performed": false,
-  "actionable_signal_produced": false,
+  "advanced_vs_simple": {
+    "available": true,
+    "advanced_better_count": 20,
+    "simple_better_count": 11,
+    "mixed_or_inconclusive_count": 17,
+    "advanced_improvement_consistency": 0.416666666667,
+    "by_model": {
+      "decision_tree_depth_2": {
+        "advanced_better": 5,
+        "simple_better": 3,
+        "mixed_or_inconclusive": 4
+      },
+      "logistic_regression": {
+        "advanced_better": 7,
+        "simple_better": 1,
+        "mixed_or_inconclusive": 4
+      },
+      "majority_class_baseline": {
+        "advanced_better": 1,
+        "simple_better": 3,
+        "mixed_or_inconclusive": 8
+      },
+      "random_seeded_baseline": {
+        "advanced_better": 7,
+        "simple_better": 4,
+        "mixed_or_inconclusive": 1
+      }
+    },
+    "assessment": "mitige_non_concluant",
+    "interpretation": "Advanced OHLCV fait mieux dans plus de cas que simple OHLCV, mais pas de maniere assez stable ou dominante pour conclure."
+  },
+  "recommended_next_step": "A. Ajouter les trades publics historiques.",
+  "secondary_next_step": "D. Préparer une validation walk-forward offline plus stricte.",
   "backtest_enabled": false,
   "strategy_enabled": false,
   "paper_live_enabled": false,
   "orders_enabled": false,
   "trading_enabled": false,
   "execution_enabled": false,
-  "api_key_used": false,
-  "private_endpoint_used": false,
-  "authentication_used": false,
   "external_validation_required": true
 }

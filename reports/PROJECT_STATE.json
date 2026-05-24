@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V6.2",
-  "candidate_version": "V6.3",
+  "last_validated_version": "V6.3",
+  "candidate_version": "V6.4",
   "candidate_status": "pending_external_audit",
-  "direction": "advanced OHLCV robustness and walk-forward falsification audit",
+  "direction": "advanced OHLCV research decision gate",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -871,5 +871,15 @@
   "orders_v6_3_created": false,
   "paper_live_v6_3_created": false,
   "trading_v6_3_created": false,
-  "persistent_model_v6_3_created": false
+  "persistent_model_v6_3_created": false,
+  "v6_4_candidate": true,
+  "v6_4_research_decision_gate_created": true,
+  "v6_4_recommended_next_step": "A. Ajouter les trades publics historiques.",
+  "v6_4_secondary_next_step": "D. Préparer une validation walk-forward offline plus stricte.",
+  "backtest_v6_4_created": false,
+  "strategy_v6_4_created": false,
+  "signal_v6_4_created": false,
+  "orders_v6_4_created": false,
+  "paper_live_v6_4_created": false,
+  "trading_v6_4_created": false
 }
