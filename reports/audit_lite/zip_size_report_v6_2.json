@@ -1,0 +1,8 @@
+{
+  "version": "V6.2",
+  "zip_name": "projet-galapagos-v6.2-audit-lite.zip",
+  "zip_size_bytes": 483587,
+  "files_included": 167,
+  "full_parquet_excluded_count": 4,
+  "raw_zips_excluded": true
+}

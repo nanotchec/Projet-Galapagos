@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from galapagos.datasets.schemas import TARGET_TIMEFRAMES
+from galapagos.features.advanced_ohlcv_schemas import ADVANCED_OHLCV_FEATURE_VALUE_COLUMNS_V6_0
 
 VERSION = "V2.8"
 CORRECTION_VERSION = "V2.8.4"
@@ -575,4 +576,137 @@ def get_feature_columns_sha256_v5_4() -> str:
     import json
 
     payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V5_4, separators=(",", ":"), sort_keys=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+VERSION_V6_2 = "V6.2"
+ML_SCHEMA_VERSION_V6_2 = "V6.2"
+TARGET_NAME_V6_2 = "up_down_flat_h1"
+RANDOM_SEED_V6_2 = 42
+TARGET_CLASSES_V6_2 = TARGET_CLASSES_V5_4.copy()
+MODEL_NAMES_V6_2 = MODEL_NAMES_V5_4.copy()
+TIMEFRAMES_V6_2 = ["1m", "5m", "15m", "1h"]
+
+MANIFEST_PATH_V6_2 = Path("reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json")
+REPORT_JSON_PATH_V6_2 = Path("reports/ml/advanced_ohlcv_offline_ml_research_v6_2.json")
+REPORT_MD_PATH_V6_2 = Path("reports/ml/advanced_ohlcv_offline_ml_research_v6_2.md")
+SCORES_JSON_PATH_V6_2 = Path("reports/ml/advanced_ohlcv_offline_research_scores_v6_2.json")
+SCORES_MD_PATH_V6_2 = Path("reports/ml/advanced_ohlcv_offline_research_scores_v6_2.md")
+DOC_PATH_V6_2 = Path("docs/advanced_ohlcv_offline_ml_research_v6_2.md")
+
+ALLOWED_FEATURE_COLUMNS_V6_2 = ADVANCED_OHLCV_FEATURE_VALUE_COLUMNS_V6_0.copy()
+FORBIDDEN_FEATURE_PREFIXES_V6_2 = [
+    "future_",
+    "label_",
+    "direction_",
+    "up_down_flat_",
+]
+FORBIDDEN_FEATURE_EXACT_V6_2 = [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "available_ts",
+    "decision_ts",
+    "feature_available_ts",
+    "label_available_ts",
+    "dataset_run_id",
+    "dataset_schema_version",
+    "source_features_sha256",
+    "source_labels_sha256",
+    "target",
+    "warmup_row",
+    "tail_row",
+    "split",
+    "split_order",
+    "purge_embargo_group",
+    "walk_forward_group",
+    "dataset_null_count",
+    "dataset_error_count",
+    "advanced_feature_null_count",
+    "advanced_feature_error_count",
+    "signal",
+    "trading_signal",
+    "strategy_signal",
+    "order",
+    "strategy",
+    "trade_decision",
+    "position_size",
+    "pnl",
+    "profit",
+    "backtest",
+    "execution",
+]
+FORBIDDEN_OUTPUT_COLUMNS_EXACT_V6_2 = [
+    "signal",
+    "trading_signal",
+    "strategy_signal",
+    "order",
+    "strategy",
+    "entry",
+    "exit",
+    "position",
+    "position_size",
+    "pnl",
+    "profit",
+    "backtest",
+    "execution",
+    "return_strategy",
+]
+FORBIDDEN_METRIC_TERMS_V6_2 = [
+    "pnl",
+    "sharpe",
+    "drawdown",
+    "equity",
+    "equity_curve",
+    "profit",
+    "profit_factor",
+    "win_rate_trading",
+    "return_strategy",
+]
+ML_SCORE_COLUMNS_V6_2 = ML_SCORE_COLUMNS_V5_4.copy()
+
+EXPECTED_LIMITATIONS_V6_2 = [
+    "V6.2 entraine uniquement des baselines ML offline simples sur le dataset V6.1 avec advanced OHLCV features.",
+    "V6.2 compare descriptivement les resultats aux baselines V5.4 simple OHLCV si disponibles, sans produire de backtest, de strategie, de signal de trading ni d'ordre.",
+]
+
+SAFETY_FLAGS_V6_2 = {
+    "public_read_only": True,
+    "authentication_used": False,
+    "api_key_used": False,
+    "private_endpoint_used": False,
+    "orders_enabled": False,
+    "paper_live_enabled": False,
+    "trading_enabled": False,
+    "ml_enabled": True,
+    "labels_enabled": True,
+    "dataset_enabled": True,
+    "backtest_enabled": False,
+    "strategy_enabled": False,
+    "execution_enabled": False,
+}
+
+
+def get_advanced_ohlcv_ml_score_path_v6_2(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v6_2/ml/offline_research_advanced_ohlcv"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "ml-scores.parquet"
+    )
+
+
+def get_feature_columns_sha256_v6_2() -> str:
+    import hashlib
+    import json
+
+    payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V6_2, separators=(",", ":"), sort_keys=False)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()

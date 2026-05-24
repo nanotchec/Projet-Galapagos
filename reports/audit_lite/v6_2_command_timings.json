@@ -1,0 +1,10 @@
+{
+  "python scripts/run_advanced_ohlcv_offline_ml_research_v6_2.py": 321.51,
+  "python scripts/validate_advanced_ohlcv_offline_ml_research_v6_2.py": 140.56,
+  "python -m pytest -q tests/ml/test_advanced_ohlcv_offline_ml_research_v6_2.py": 1.71,
+  "python -m pytest -q tests/validation/test_advanced_ohlcv_offline_ml_research_v6_2_validator.py": 145.02,
+  "python scripts/release_audit_lite_zip_v6_2.py": 6.69,
+  "python scripts/audit_audit_lite_zip_v6_2.py --zip projet-galapagos-v6.2-audit-lite.zip": 0.04,
+  "python scripts/smoke_audit_lite_zip_v6_2.py --zip projet-galapagos-v6.2-audit-lite.zip": 2.64,
+  "python -m pytest --collect-only -q": 2.26
+}

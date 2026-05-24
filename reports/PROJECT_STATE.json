@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V6.0",
-  "candidate_version": "V6.1",
+  "last_validated_version": "V6.1",
+  "candidate_version": "V6.2",
   "candidate_status": "pending_external_audit",
-  "direction": "max historical offline supervised dataset with advanced OHLCV features",
+  "direction": "max historical offline ML with advanced OHLCV features",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -834,5 +834,31 @@
   "v6_1_no_strategy": true,
   "v6_1_no_paper_live": true,
   "v6_1_no_orders": true,
-  "v6_1_no_real_trading": true
+  "v6_1_no_real_trading": true,
+  "v6_2_candidate": true,
+  "advanced_ohlcv_offline_ml_research_v6_2_created": true,
+  "advanced_ohlcv_ml_window_start_v6_2": "2023-03-25",
+  "advanced_ohlcv_ml_window_end_v6_2": "2026-05-23",
+  "advanced_ohlcv_ml_days_v6_2": 1156,
+  "advanced_ohlcv_ml_score_rows_v6_2": {
+    "1m": 6657492,
+    "5m": 1330752,
+    "15m": 442944,
+    "1h": 110016
+  },
+  "advanced_feature_columns_count_v6_2": 158,
+  "advanced_ohlcv_ml_models_v6_2": [
+    "majority_class_baseline",
+    "random_seeded_baseline",
+    "logistic_regression",
+    "decision_tree_depth_2"
+  ],
+  "advanced_ohlcv_ml_target_v6_2": "up_down_flat_h1",
+  "backtest_v6_2_created": false,
+  "strategy_v6_2_created": false,
+  "signal_v6_2_created": false,
+  "orders_v6_2_created": false,
+  "paper_live_v6_2_created": false,
+  "trading_v6_2_created": false,
+  "persistent_model_v6_2_created": false
 }
