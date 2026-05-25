@@ -1,0 +1,107 @@
+{
+  "version": "V8.5",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_ohlcv_trades_1y_offline_ml_research_v8_5.py",
+    "python scripts/validate_ohlcv_trades_1y_offline_ml_research_v8_5.py",
+    "python -m pytest -q tests/ml/test_ohlcv_trades_1y_offline_ml_research_v8_5.py",
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_offline_ml_research_v8_5_validator.py",
+    "python scripts/release_audit_lite_zip_v8_5.py",
+    "python scripts/audit_audit_lite_zip_v8_5.py --zip projet-galapagos-v8.5-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v8_5.py --zip projet-galapagos-v8.5-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_ohlcv_trades_1y_offline_ml_research_v8_5.py": "PASS",
+    "python scripts/validate_ohlcv_trades_1y_offline_ml_research_v8_5.py": "PASS",
+    "python -m pytest -q tests/ml/test_ohlcv_trades_1y_offline_ml_research_v8_5.py": "PASS",
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_offline_ml_research_v8_5_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v8_5.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v8_5.py --zip projet-galapagos-v8.5-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v8_5.py --zip projet-galapagos-v8.5-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_ohlcv_trades_1y_offline_ml_research_v8_5.py": 73.65,
+    "python scripts/validate_ohlcv_trades_1y_offline_ml_research_v8_5.py": 45.35,
+    "python -m pytest -q tests/ml/test_ohlcv_trades_1y_offline_ml_research_v8_5.py": 1.54,
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_offline_ml_research_v8_5_validator.py": 43.73,
+    "python scripts/release_audit_lite_zip_v8_5.py": 2.92,
+    "python scripts/audit_audit_lite_zip_v8_5.py --zip projet-galapagos-v8.5-audit-lite.zip": 0.04,
+    "python scripts/smoke_audit_lite_zip_v8_5.py --zip projet-galapagos-v8.5-audit-lite.zip": 2.42,
+    "python -m pytest --collect-only -q": 2.12
+  },
+  "output_scores_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "eea371a24f2ae56ba1cd3c6f93eedb4405c5130a6cadb3e90c84fc95898ef535",
+      "bytes": 3333622,
+      "rows": 140304,
+      "columns_count": 25,
+      "min_event_ts": "2023-03-25T15:00:00Z",
+      "max_event_ts": "2024-03-24T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "fc61d8a3fb45eba750c719eb16fa7bfc6df876d9fd41f7050c60ec561f919110",
+      "bytes": 795593,
+      "rows": 34896,
+      "columns_count": 25,
+      "min_event_ts": "2023-03-27T12:00:00Z",
+      "max_event_ts": "2024-03-24T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "da02d99f265de5a95776736d5664109c5d6ff27e435987d4f00951fc011ecd4f",
+      "bytes": 76499510,
+      "rows": 2107920,
+      "columns_count": 25,
+      "min_event_ts": "2023-03-25T01:00:00Z",
+      "max_event_ts": "2024-03-24T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "eabc7f58b7d9351b84347e9c2d09431ee6f70ae3bb0e5abd67e915616d093390",
+      "bytes": 10028141,
+      "rows": 421392,
+      "columns_count": 25,
+      "min_event_ts": "2023-03-25T05:00:00Z",
+      "max_event_ts": "2024-03-24T23:55:00Z"
+    }
+  ],
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2024-03-24",
+  "input_total_days": 366,
+  "feature_columns_count": 71,
+  "manifest_sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e",
+  "report_sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_persistent_model": true,
+  "errors": [],
+  "warnings": []
+}

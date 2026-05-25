@@ -1,0 +1,163 @@
+{
+  "version": "V8.5",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "input_dataset_manifest": {
+    "path": "reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json",
+    "sha256": "8c550c53e0269ab8c1f3a2e12904f40cfd229510b697108ee854a919a540c200",
+    "window_start": "2023-03-25",
+    "window_end": "2024-03-24",
+    "total_days": 366,
+    "feature_columns_count": 74
+  },
+  "input_datasets_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "4d37eeb354eeead86eede52eeb278b4c05dc8f2320dd55b5435e9135c6d9311d",
+      "rows": 35136,
+      "reason_excluded": "full V8.4 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "26e1174948413d422b8170a652fe7e9108c714d6d7b434425a43bbd5a591e690",
+      "rows": 8784,
+      "reason_excluded": "full V8.4 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "efa0782f3b581c9df25319d9497eda607d8429321b6018062a18d2b3a3ce394c",
+      "rows": 527040,
+      "reason_excluded": "full V8.4 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "0755c8818de6782c782d5c89fc1dcde9e56446cd65b4a05dcf2d6dc29cc47be7",
+      "rows": 105408,
+      "reason_excluded": "full V8.4 dataset Parquet is represented by source hashes"
+    }
+  ],
+  "input_splits_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "3766a1e2ca79437ac268918bec8ae09cec8c8f170efb312bef41b56781197b1c",
+      "rows": 35136,
+      "reason_excluded": "full V8.4 split Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "9ca381ce60d492c7616e205fa08a14b2e5a4d7eebe70bafd864ac1af8a8a90de",
+      "rows": 8784,
+      "reason_excluded": "full V8.4 split Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "b0226f505f78844365fda66be70ab58178ea12b78d8763dab6932f5885cff3f4",
+      "rows": 527040,
+      "reason_excluded": "full V8.4 split Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "935e85eac88e781a7effc00911e0ff4289c0da05bd6fd0ee767bbdac10bd1707",
+      "rows": 105408,
+      "reason_excluded": "full V8.4 split Parquet is represented by source hashes"
+    }
+  ],
+  "full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "eea371a24f2ae56ba1cd3c6f93eedb4405c5130a6cadb3e90c84fc95898ef535",
+      "bytes": 3333622,
+      "rows": 140304,
+      "format": "parquet",
+      "reason_excluded": "full V8.5 score Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "fc61d8a3fb45eba750c719eb16fa7bfc6df876d9fd41f7050c60ec561f919110",
+      "bytes": 795593,
+      "rows": 34896,
+      "format": "parquet",
+      "reason_excluded": "full V8.5 score Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "da02d99f265de5a95776736d5664109c5d6ff27e435987d4f00951fc011ecd4f",
+      "bytes": 76499510,
+      "rows": 2107920,
+      "format": "parquet",
+      "reason_excluded": "full V8.5 score Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "eabc7f58b7d9351b84347e9c2d09431ee6f70ae3bb0e5abd67e915616d093390",
+      "bytes": 10028141,
+      "rows": 421392,
+      "format": "parquet",
+      "reason_excluded": "full V8.5 score Parquet is represented by manifest checksums and deterministic samples"
+    }
+  ],
+  "score_samples_included": [
+    {
+      "timeframe": "1m",
+      "path": "data/audit_lite/v8_5/ml_scores/timeframe=1m/sample.parquet",
+      "sha256": "233159d0bd9ae6bd8b57ba9e3894337e76daa5da7a02d351a982a5ea91edafa1",
+      "bytes": 24364,
+      "rows": 300,
+      "source_full_path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "source_full_sha256": "da02d99f265de5a95776736d5664109c5d6ff27e435987d4f00951fc011ecd4f"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/audit_lite/v8_5/ml_scores/timeframe=5m/sample.parquet",
+      "sha256": "55854f4df0abe4be6dacc25de5e7f8fe34471ca91ccfec4efdf8da651c4ddc12",
+      "bytes": 24635,
+      "rows": 300,
+      "source_full_path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "source_full_sha256": "eabc7f58b7d9351b84347e9c2d09431ee6f70ae3bb0e5abd67e915616d093390"
+    },
+    {
+      "timeframe": "15m",
+      "path": "data/audit_lite/v8_5/ml_scores/timeframe=15m/sample.parquet",
+      "sha256": "ef73ac941a2b898b8158a36d73e6c05b62125955cbf0b628105e209884518292",
+      "bytes": 25132,
+      "rows": 300,
+      "source_full_path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "source_full_sha256": "eea371a24f2ae56ba1cd3c6f93eedb4405c5130a6cadb3e90c84fc95898ef535"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/audit_lite/v8_5/ml_scores/timeframe=1h/sample.parquet",
+      "sha256": "4b1119bf37465de80190086bb9aca0824c47cb1a1b6c1d0b979440c6860c7a77",
+      "bytes": 25262,
+      "rows": 300,
+      "source_full_path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "source_full_sha256": "fc61d8a3fb45eba750c719eb16fa7bfc6df876d9fd41f7050c60ec561f919110"
+    }
+  ],
+  "included_reports": [
+    {
+      "path": "reports/manifests/ohlcv_trades_1y_offline_ml_research_v8_5_manifest.json",
+      "sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e"
+    },
+    {
+      "path": "reports/ml/ohlcv_trades_1y_offline_ml_research_v8_5.json",
+      "sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e"
+    },
+    {
+      "path": "reports/ml/ohlcv_trades_1y_offline_research_scores_v8_5.json",
+      "sha256": "990306dc27c29209f107bd0ab35dc759369eeb08036ad23ca8c92bf327b7a923"
+    }
+  ]
+}

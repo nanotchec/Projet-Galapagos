@@ -1,17 +1,32 @@
-# Etat du Projet : V8.3 validee + candidat V8.4
+# Etat du Projet : V8.4 validee + candidat V8.5
 
-- **Derniere version validee** : V8.3.
-- **Version candidate** : V8.4.
+- **Derniere version validee** : V8.4.
+- **Version candidate** : V8.5.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : OHLCV + public trades 1-year offline supervised dataset preview.
+- **Direction suivante** : OHLCV + public trades offline ML research baselines.
 
-## V8.4
+## Candidat V8.5
 
-- Fenetre : `2023-03-25` -> `2024-03-24`.
-- Total jours : `366`.
-- Colonnes features : `74`.
-- Aucun ML V8.4.
-- Aucun modele V8.4.
-- Aucun backtest, aucune strategie, aucun signal, aucun ordre, aucun trading reel.
+- Fenetre V8.4 utilisee : `2023-03-25` -> `2024-03-24`.
+- Nombre de jours : `366`.
+- Row counts scores : `{'1m': 2107920, '5m': 421392, '15m': 140304, '1h': 34896}`.
+- Schema : `ML_SCORE_COLUMNS_V8_5`.
+- Cible : `up_down_flat_h1`.
+- Feature columns ML : `71`.
+- Modeles offline autorises : `['majority_class_baseline', 'random_seeded_baseline', 'logistic_regression', 'decision_tree_depth_2']`.
+- Metriques walk-forward : descriptives uniquement, pas un backtest.
+- Comparaisons V8.5 vs V8.0/V7.4/V6.2/V5.4 : descriptives uniquement, non actionnables et non directement comparables si les fenetres different.
+- V8.5 reste candidate `pending_external_audit`.
 
-V8.4 reste non validee avant audit externe.
+## Clause De Securite
+
+- Aucun trading reel.
+- Aucun paper live.
+- Aucun ordre.
+- Aucun backtest.
+- Aucune strategie.
+- Aucun signal de trading.
+- Aucun modele persistant.
+- Aucune API privee.
+- Aucune cle API.
+- V8.5 reste non validee avant audit externe.
