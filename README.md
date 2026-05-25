@@ -1,27 +1,23 @@
 # Projet Galapagos
 
-- Derniere version validee : V7.3.
-- Candidate : V7.4, OHLCV + public trades offline ML research baselines.
+- Derniere version validee : V7.7.
+- Candidate : V7.8, OHLCV + public trades 90-day feature store preview.
 
-V7.4 entraine uniquement des baselines ML offline simples sur le dataset V7.3 OHLCV + aggTrades, avec scores de recherche `research_*` et metriques descriptives.
+V7.8 produit uniquement des features causales OHLCV + aggTrades Binance publiques sur la fenetre V7.7 de 90 jours.
 
-Fenetre : `2023-03-25` -> `2023-04-23`, `30` jours.
+Aucun label V7.8, aucun dataset ML V7.8, aucun modele ML V7.8, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
 
-Feature columns ML : `71`.
-
-Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live, aucun trading reel et aucun modele persistant.
-
-## Commandes V7.4
+## Commandes V7.8
 
 ```bash
-python scripts/run_ohlcv_trades_offline_ml_research_v7_4.py
-python scripts/validate_ohlcv_trades_offline_ml_research_v7_4.py
-python -m pytest -q tests/ml/test_ohlcv_trades_offline_ml_research_v7_4.py
-python -m pytest -q tests/validation/test_ohlcv_trades_offline_ml_research_v7_4_validator.py
-python scripts/release_audit_lite_zip_v7_4.py
-python scripts/audit_audit_lite_zip_v7_4.py --zip projet-galapagos-v7.4-audit-lite.zip
-python scripts/smoke_audit_lite_zip_v7_4.py --zip projet-galapagos-v7.4-audit-lite.zip
+python scripts/run_ohlcv_trades_90d_feature_store_v7_8.py
+python scripts/validate_ohlcv_trades_90d_feature_store_v7_8.py
+python -m pytest -q tests/features/test_ohlcv_trades_90d_features_v7_8.py
+python -m pytest -q tests/validation/test_ohlcv_trades_90d_feature_store_v7_8_validator.py
+python scripts/release_audit_lite_zip_v7_8.py
+python scripts/audit_audit_lite_zip_v7_8.py --zip projet-galapagos-v7.8-audit-lite.zip
+python scripts/smoke_audit_lite_zip_v7_8.py --zip projet-galapagos-v7.8-audit-lite.zip
 python -m pytest --collect-only -q
 ```
 
-V7.4 reste `pending_external_audit` avant validation externe.
+V7.8 reste `pending_external_audit` avant validation externe.

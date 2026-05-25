@@ -1,0 +1,10 @@
+{
+  "python scripts/run_ohlcv_trades_90d_feature_store_v7_8.py": 117.32,
+  "python scripts/validate_ohlcv_trades_90d_feature_store_v7_8.py": 2.38,
+  "python -m pytest -q tests/features/test_ohlcv_trades_90d_features_v7_8.py": 0.69,
+  "python -m pytest -q tests/validation/test_ohlcv_trades_90d_feature_store_v7_8_validator.py": 2.68,
+  "python scripts/release_audit_lite_zip_v7_8.py": 0.54,
+  "python scripts/audit_audit_lite_zip_v7_8.py --zip projet-galapagos-v7.8-audit-lite.zip": 0.4,
+  "python scripts/smoke_audit_lite_zip_v7_8.py --zip projet-galapagos-v7.8-audit-lite.zip": 0.87,
+  "python -m pytest --collect-only -q": 1.87
+}
