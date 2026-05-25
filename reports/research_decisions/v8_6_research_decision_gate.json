@@ -1,0 +1,264 @@
+{
+  "version": "V8.6",
+  "status": "PASS",
+  "decision_gate_type": "research_only",
+  "created_at_utc": "2026-05-25T23:31:04.514820Z",
+  "inputs": {
+    "robustness_manifest": {
+      "path": "reports/manifests/ohlcv_trades_1y_ml_robustness_v8_6_manifest.json",
+      "sha256": "cfc382383aafb2f9396930a72d23162b99fe6f69b74570aaef458de69abbe1e1"
+    },
+    "robustness_report": {
+      "path": "reports/ml/ohlcv_trades_1y_ml_robustness_v8_6.json",
+      "sha256": "cfc382383aafb2f9396930a72d23162b99fe6f69b74570aaef458de69abbe1e1"
+    },
+    "ml_manifest": {
+      "path": "reports/manifests/ohlcv_trades_1y_offline_ml_research_v8_5_manifest.json",
+      "sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e",
+      "window_start": "2023-03-25",
+      "window_end": "2024-03-24",
+      "total_days": 366,
+      "feature_columns_count": 71
+    },
+    "dataset_manifest": {
+      "path": "reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json",
+      "sha256": "8c550c53e0269ab8c1f3a2e12904f40cfd229510b697108ee854a919a540c200",
+      "window_start": "2023-03-25",
+      "window_end": "2024-03-24",
+      "total_days": 366,
+      "feature_columns_count": 74
+    }
+  },
+  "summary_verdict": "interessant_mais_mitige_non_concluant",
+  "ohlcv_trades_1y_assessment": {
+    "assessment": "interessant_mais_mitige_non_concluant",
+    "window_start": "2023-03-25",
+    "window_end": "2024-03-24",
+    "total_days": 366,
+    "feature_columns_count": 71,
+    "interesting_signal": true,
+    "backtest_recommended": false,
+    "warnings_count": 16,
+    "interpretation": "Les resultats V8.5/V8.6 restent descriptifs, utiles pour orienter la recherche, mais non suffisants pour transformer la piste en strategie."
+  },
+  "comparison_to_references_assessment": {
+    "available_references": [
+      "ohlcv_trades_90d_v8_0",
+      "ohlcv_trades_30d_v7_4",
+      "advanced_ohlcv_v6_2",
+      "simple_ohlcv_v5_4"
+    ],
+    "compared_metrics": [
+      "accuracy",
+      "balanced_accuracy",
+      "macro_f1"
+    ],
+    "descriptive_only": true,
+    "not_directly_comparable": true,
+    "warnings": [
+      "not directly comparable due to different window length/source set"
+    ],
+    "verdict": "comparaison_descriptive_non_directe"
+  },
+  "baseline_assessment": {
+    "learned_models_checked": 16,
+    "learned_models_positive_cases": 9,
+    "learned_models_clear_cases": 6,
+    "learned_models_clear_above_baselines": false,
+    "verdict": "mitige",
+    "research_only": true
+  },
+  "split_stability_assessment": {
+    "groups_checked": 16,
+    "overfit_warning_count": 4,
+    "overfit_warning_groups": [
+      "5m.decision_tree_depth_2",
+      "5m.logistic_regression",
+      "5m.majority_class_baseline",
+      "15m.majority_class_baseline"
+    ],
+    "stable_enough_for_backtest_research": false,
+    "verdict": "instable"
+  },
+  "timeframe_stability_assessment": {
+    "models_checked": 4,
+    "timeframe_concentration_warning_count": 4,
+    "timeframe_concentration_warning_models": [
+      "decision_tree_depth_2",
+      "logistic_regression",
+      "majority_class_baseline",
+      "random_seeded_baseline"
+    ],
+    "stable_across_timeframes": false,
+    "verdict": "concentration_possible"
+  },
+  "walk_forward_stability_assessment": {
+    "groups_checked": 16,
+    "weak_groups_by_model": {
+      "15m.majority_class_baseline": [
+        "wf_2023_03_partial",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03_partial"
+      ],
+      "15m.random_seeded_baseline": [
+        "wf_2023_03_partial",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_09",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03_partial"
+      ],
+      "1h.majority_class_baseline": [
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09"
+      ],
+      "1h.random_seeded_baseline": [
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09"
+      ],
+      "5m.majority_class_baseline": [
+        "wf_2023_03_partial",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03_partial"
+      ],
+      "5m.random_seeded_baseline": [
+        "wf_2023_03_partial",
+        "wf_2024_01",
+        "wf_2024_03_partial"
+      ]
+    },
+    "unstable_groups_by_model": {
+      "15m.decision_tree_depth_2": [
+        "wf_2024_03_partial"
+      ],
+      "15m.logistic_regression": [
+        "wf_2024_03_partial"
+      ],
+      "15m.majority_class_baseline": [
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2024_03_partial"
+      ],
+      "1m.decision_tree_depth_2": [
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2024_03_partial"
+      ],
+      "1m.logistic_regression": [
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2024_03_partial"
+      ],
+      "1m.majority_class_baseline": [
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2024_03_partial"
+      ],
+      "1m.random_seeded_baseline": [
+        "wf_2024_03_partial"
+      ],
+      "5m.decision_tree_depth_2": [
+        "wf_2023_03_partial",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2024_03_partial"
+      ],
+      "5m.logistic_regression": [
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2024_03_partial"
+      ],
+      "5m.majority_class_baseline": [
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2024_01",
+        "wf_2024_03_partial"
+      ]
+    },
+    "concentration_warning_groups": [
+      "5m.decision_tree_depth_2",
+      "5m.majority_class_baseline"
+    ],
+    "stable_across_walk_forward_groups": false,
+    "descriptive_not_backtest": true,
+    "verdict": "instable_ou_concentre"
+  },
+  "label_shuffle_assessment": {
+    "shuffle_seed": 123,
+    "shuffle_scope": "train_labels_only",
+    "cases_checked": 16,
+    "no_clear_edge_vs_shuffled_labels_count": 5,
+    "no_clear_edge_vs_shuffled_labels_cases": [
+      "1m.logistic_regression.validation",
+      "1m.logistic_regression.test",
+      "1m.decision_tree_depth_2.validation",
+      "1m.decision_tree_depth_2.test",
+      "1h.decision_tree_depth_2.test"
+    ],
+    "falsification_clean": false,
+    "verdict": "alerte_si_proche_shuffle"
+  },
+  "leakage_assessment": {
+    "feature_leakage_detected": false,
+    "forbidden_feature_columns_present": [],
+    "metric_forbidden_terms_detected": false,
+    "forbidden_metric_terms_present": [],
+    "leakage_detected": false,
+    "verdict": "pass"
+  },
+  "limitations": [
+    "La fenetre d'environ 1 an reste limitee et ne couvre pas tous les regimes de marche disponibles dans V5.0.",
+    "Les comparaisons avec V8.0/V7.4/V6.2/V5.4 sont descriptives et souvent non directement comparables.",
+    "Aucune metrique de trading interdite ou mesure d'execution n'est calculee.",
+    "Les resultats ne doivent pas etre transformes en strategie ou en signal de trading."
+  ],
+  "recommended_next_step": "D. Preparer une validation walk-forward offline plus stricte.",
+  "secondary_next_step": "B. Ameliorer/refactoriser les features OHLCV + trades.",
+  "roadmap": [
+    "V8.7 - Walk-forward offline stricte OHLCV + trades 1 an",
+    "V8.8 - Diagnostics labels et raffinement features OHLCV + trades",
+    "V8.9 - Dataset raffine OHLCV + trades",
+    "V9.0 - ML offline raffine et falsification",
+    "V9.1 - Research decision gate avant toute consideration de backtest"
+  ],
+  "safety": {
+    "trading_enabled": false,
+    "paper_live_enabled": false,
+    "orders_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "claims": {
+    "strategy_validated": false,
+    "model_validated_for_trading": false,
+    "ohlcv_trades_validated_for_trading": false,
+    "profitability_claimed": false,
+    "real_trading_allowed": false
+  }
+}

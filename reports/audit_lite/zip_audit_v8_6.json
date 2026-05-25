@@ -1,0 +1,12 @@
+{
+  "version": "V8.6",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v8.6-audit-lite.zip",
+  "zip_size_bytes": 699452,
+  "zip_size_mb": 0.667,
+  "entries": 231,
+  "pytest_collectible_scripts_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

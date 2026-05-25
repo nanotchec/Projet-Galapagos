@@ -1,0 +1,100 @@
+{
+  "version": "V8.6",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "input_dataset_manifest": {
+    "path": "reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json",
+    "sha256": "8c550c53e0269ab8c1f3a2e12904f40cfd229510b697108ee854a919a540c200",
+    "window_start": "2023-03-25",
+    "window_end": "2024-03-24",
+    "total_days": 366,
+    "feature_columns_count": 74
+  },
+  "input_ml_manifest": {
+    "path": "reports/manifests/ohlcv_trades_1y_offline_ml_research_v8_5_manifest.json",
+    "sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e",
+    "window_start": "2023-03-25",
+    "window_end": "2024-03-24",
+    "total_days": 366,
+    "feature_columns_count": 71
+  },
+  "input_score_files_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "eea371a24f2ae56ba1cd3c6f93eedb4405c5130a6cadb3e90c84fc95898ef535",
+      "rows": 140304,
+      "reason_excluded": "full V8.5 score Parquet is represented by checksums"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "fc61d8a3fb45eba750c719eb16fa7bfc6df876d9fd41f7050c60ec561f919110",
+      "rows": 34896,
+      "reason_excluded": "full V8.5 score Parquet is represented by checksums"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "da02d99f265de5a95776736d5664109c5d6ff27e435987d4f00951fc011ecd4f",
+      "rows": 2107920,
+      "reason_excluded": "full V8.5 score Parquet is represented by checksums"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "eabc7f58b7d9351b84347e9c2d09431ee6f70ae3bb0e5abd67e915616d093390",
+      "rows": 421392,
+      "reason_excluded": "full V8.5 score Parquet is represented by checksums"
+    }
+  ],
+  "full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "eea371a24f2ae56ba1cd3c6f93eedb4405c5130a6cadb3e90c84fc95898ef535",
+      "rows": 140304,
+      "reason_excluded": "V8.6 does not create new Parquet outputs"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "fc61d8a3fb45eba750c719eb16fa7bfc6df876d9fd41f7050c60ec561f919110",
+      "rows": 34896,
+      "reason_excluded": "V8.6 does not create new Parquet outputs"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "da02d99f265de5a95776736d5664109c5d6ff27e435987d4f00951fc011ecd4f",
+      "rows": 2107920,
+      "reason_excluded": "V8.6 does not create new Parquet outputs"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_5/ml/offline_research_ohlcv_trades_1y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "eabc7f58b7d9351b84347e9c2d09431ee6f70ae3bb0e5abd67e915616d093390",
+      "rows": 421392,
+      "reason_excluded": "V8.6 does not create new Parquet outputs"
+    }
+  ],
+  "included_reports": [
+    {
+      "path": "reports/manifests/ohlcv_trades_1y_ml_robustness_v8_6_manifest.json",
+      "sha256": "cfc382383aafb2f9396930a72d23162b99fe6f69b74570aaef458de69abbe1e1"
+    },
+    {
+      "path": "reports/ml/ohlcv_trades_1y_ml_robustness_v8_6.json",
+      "sha256": "cfc382383aafb2f9396930a72d23162b99fe6f69b74570aaef458de69abbe1e1"
+    },
+    {
+      "path": "reports/research_decisions/v8_6_research_decision_gate.json",
+      "sha256": "43e895ffa63fec84bae3d6f1dc584babe1ec633c2e21c49fb34ecf0cfc027729"
+    }
+  ],
+  "decision_gate": {
+    "summary_verdict": "interessant_mais_mitige_non_concluant",
+    "recommended_next_step": "D. Preparer une validation walk-forward offline plus stricte.",
+    "secondary_next_step": "B. Ameliorer/refactoriser les features OHLCV + trades."
+  }
+}

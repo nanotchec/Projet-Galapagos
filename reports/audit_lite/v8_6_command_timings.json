@@ -1,0 +1,13 @@
+{
+  "python scripts/run_ohlcv_trades_1y_ml_robustness_v8_6.py": 64.1,
+  "python scripts/validate_ohlcv_trades_1y_ml_robustness_v8_6.py": 2.18,
+  "python scripts/run_research_decision_gate_v8_6.py": 1.92,
+  "python scripts/validate_research_decision_gate_v8_6.py": 1.36,
+  "python -m pytest -q tests/ml/test_ohlcv_trades_1y_ml_robustness_v8_6.py": 1.13,
+  "python -m pytest -q tests/validation/test_ohlcv_trades_1y_ml_robustness_v8_6_validator.py": 2.15,
+  "python -m pytest -q tests/validation/test_research_decision_gate_v8_6.py": 1.45,
+  "python scripts/release_audit_lite_zip_v8_6.py": 1.5,
+  "python scripts/audit_audit_lite_zip_v8_6.py --zip projet-galapagos-v8.6-audit-lite.zip": 0.03,
+  "python scripts/smoke_audit_lite_zip_v8_6.py --zip projet-galapagos-v8.6-audit-lite.zip": 2.15,
+  "python -m pytest --collect-only -q": 1.91
+}
