@@ -1,10 +1,12 @@
-# Latest Metrics V7.9
+# Latest Metrics V8.0
 
-- Derniere version validee : V7.8.
-- Candidate : V7.9.
-- Direction : OHLCV + public trades 90-day offline supervised dataset preview.
+- Derniere version validee : V7.9.
+- Candidate : V8.0.
+- Statut : `pending_external_audit`.
+- Direction : OHLCV + public trades 90-day ML offline and robustness.
 - Fenetre : `2023-03-25` -> `2023-06-22`.
 - Total jours : `90`.
-- Colonnes features : `74`.
-- Rows 1m/5m/15m/1h : `129600` / `25920` / `8640` / `2160`.
-- Aucun ML, modele ML, backtest, strategie, signal, ordre ou trading.
+- Feature columns count : `71`.
+- Warnings descriptifs : `8`.
+
+Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun modele persistant et aucun trading reel.

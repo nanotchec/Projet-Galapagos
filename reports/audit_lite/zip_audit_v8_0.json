@@ -1,0 +1,94 @@
+{
+  "version": "V8.0",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v8.0-audit-lite.zip",
+  "zip_size_bytes": 692376,
+  "zip_size_mb": 0.66,
+  "entries": 223,
+  "top_20_largest_files": [
+    {
+      "path": "reports/manifests/ohlcv_trades_90d_ml_robustness_v8_0_manifest.json",
+      "bytes": 260052
+    },
+    {
+      "path": "reports/ml/ohlcv_trades_90d_ml_robustness_v8_0.json",
+      "bytes": 260052
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_90d_offline_ml_research_v8_0_manifest.json",
+      "bytes": 173658
+    },
+    {
+      "path": "reports/ml/ohlcv_trades_90d_offline_ml_research_v8_0.json",
+      "bytes": 173658
+    },
+    {
+      "path": "reports/ml/ohlcv_trades_90d_offline_research_scores_v8_0.json",
+      "bytes": 162880
+    },
+    {
+      "path": "src/galapagos/ml/ohlcv_trades_90d_robustness.py",
+      "bytes": 43314
+    },
+    {
+      "path": "src/galapagos/ml/ohlcv_trades_robustness.py",
+      "bytes": 41005
+    },
+    {
+      "path": "src/galapagos/ml/advanced_ohlcv_robustness.py",
+      "bytes": 38093
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 34062
+    },
+    {
+      "path": "src/galapagos/features/ohlcv_trades_90d.py",
+      "bytes": 31919
+    },
+    {
+      "path": "src/galapagos/features/ohlcv_trades.py",
+      "bytes": 31838
+    },
+    {
+      "path": "src/galapagos/ml/max_history_robustness.py",
+      "bytes": 30053
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "src/galapagos/ml/ohlcv_trades_90d_window.py",
+      "bytes": 28155
+    },
+    {
+      "path": "src/galapagos/ml/ohlcv_trades_window.py",
+      "bytes": 28002
+    },
+    {
+      "path": "src/galapagos/ml/schemas.py",
+      "bytes": 27970
+    },
+    {
+      "path": "src/galapagos/features/advanced_ohlcv.py",
+      "bytes": 27838
+    },
+    {
+      "path": "src/galapagos/ml/ohlcv_trades_90d_window_validation.py",
+      "bytes": 25860
+    },
+    {
+      "path": "src/galapagos/ml/ohlcv_trades_window_validation.py",
+      "bytes": 25828
+    },
+    {
+      "path": "src/galapagos/ml/advanced_ohlcv_window.py",
+      "bytes": 25736
+    }
+  ],
+  "pytest_collectible_scripts_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

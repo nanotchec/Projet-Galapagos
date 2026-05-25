@@ -1,12 +1,17 @@
-# Latest Summary V7.9
+# Latest Summary V8.0
 
-V7.8 est la derniere version validee par audit externe.
+V7.9 est la derniere version validee par audit externe.
 
-V7.9 est la candidate courante. Elle assemble uniquement un dataset supervise offline OHLCV + aggTrades avec labels V5.2 filtres sur la fenetre V7.8 de 90 jours.
+V8.0 est la candidate courante. Elle audite uniquement la robustesse descriptive, les groupes walk-forward et la falsification par label shuffle des resultats ML offline V8.0.
 
-Fenetre : `2023-03-25` -> `2023-06-22`, `90` jours.
-Colonnes features : `74`.
+Fenetre utilisee : `2023-03-25` -> `2023-06-22`.
 
-Aucun ML V7.9, aucun modele V7.9, aucun backtest, aucune strategie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading reel.
+Total jours : `90`.
 
-V7.9 reste `pending_external_audit`.
+Feature columns count : `71`.
+
+Analyses produites : `['baseline_delta', 'feature_leakage_scan', 'label_shuffle_falsification', 'metric_forbidden_scan', 'ohlcv_trades_90d_vs_references_comparison', 'split_stability', 'timeframe_stability', 'walk_forward_stability']`.
+
+Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading, aucun modele persistant et aucun claim de rentabilite.
+
+V8.0 reste `pending_external_audit`.

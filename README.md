@@ -1,23 +1,23 @@
 # Projet Galapagos
 
-- Derniere version validee : V7.8.
-- Candidate : V7.9, OHLCV + public trades 90-day offline supervised dataset preview.
+- Derniere version validee : V7.9.
+- Candidate : V8.0, OHLCV + public trades 90-day ML offline and robustness.
 
-V7.9 assemble uniquement un dataset supervise offline OHLCV + aggTrades Binance publiques avec labels V5.2 filtres sur la fenetre V7.8 de 90 jours.
+V8.0 entraine uniquement des baselines ML offline simples sur le dataset V7.9 OHLCV + aggTrades 90 jours, produit des scores de recherche `research_*`, puis audite la robustesse descriptive et la falsification par label shuffle.
 
-Aucun ML V7.9, aucun modele V7.9, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+Fenetre : `2023-03-25` -> `2023-06-22`, `90` jours.
 
-## Commandes V7.9
+Feature columns ML : `71`.
+
+Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live, aucun trading reel et aucun modele persistant.
+
+## Commandes V8.0
 
 ```bash
-python scripts/run_ohlcv_trades_90d_offline_supervised_dataset_v7_9.py
-python scripts/validate_ohlcv_trades_90d_offline_supervised_dataset_v7_9.py
-python -m pytest -q tests/datasets/test_ohlcv_trades_90d_offline_supervised_dataset_v7_9.py
-python -m pytest -q tests/validation/test_ohlcv_trades_90d_offline_supervised_dataset_v7_9_validator.py
-python scripts/release_audit_lite_zip_v7_9.py
-python scripts/audit_audit_lite_zip_v7_9.py --zip projet-galapagos-v7.9-audit-lite.zip
-python scripts/smoke_audit_lite_zip_v7_9.py --zip projet-galapagos-v7.9-audit-lite.zip
-python -m pytest --collect-only -q
+python scripts/run_ohlcv_trades_90d_offline_ml_research_v8_0.py
+python scripts/validate_ohlcv_trades_90d_offline_ml_research_v8_0.py
+python scripts/run_ohlcv_trades_90d_ml_robustness_v8_0.py
+python scripts/validate_ohlcv_trades_90d_ml_robustness_v8_0.py
 ```
 
-V7.9 reste `pending_external_audit` avant validation externe.
+V8.0 reste `pending_external_audit` avant validation externe.
