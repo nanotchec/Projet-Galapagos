@@ -1,0 +1,9 @@
+{
+  "version": "V7.9",
+  "zip_name": "projet-galapagos-v7.9-audit-lite.zip",
+  "zip_size_bytes": 585008,
+  "files_included": 160,
+  "full_parquet_excluded": true,
+  "raw_zips_excluded": true,
+  "pytest_collectible_scripts_excluded": true
+}

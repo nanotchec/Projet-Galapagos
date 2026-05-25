@@ -1,19 +1,17 @@
-# Etat du Projet : V7.7 validee + candidat V7.8
+# Etat du Projet : V7.8 validee + candidat V7.9
 
-- **Derniere version validee** : V7.7.
-- **Version candidate** : V7.8.
+- **Derniere version validee** : V7.8.
+- **Version candidate** : V7.9.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : OHLCV + public trades 90-day feature store preview.
+- **Direction** : OHLCV + public trades 90-day offline supervised dataset preview.
 
-## V7.8
+## V7.9
 
 - Fenetre : `2023-03-25` -> `2023-06-22`.
 - Total jours : `90`.
-- Source trades : `aggTrades`.
-- Colonnes features : `89`.
-- Aucun label V7.8.
-- Aucun dataset ML V7.8.
-- Aucun modele ML V7.8.
+- Colonnes features : `74`.
+- Aucun ML V7.9.
+- Aucun modele V7.9.
 - Aucun backtest, aucune strategie, aucun signal, aucun ordre, aucun trading reel.
 
-V7.8 reste non validee avant audit externe.
+V7.9 reste non validee avant audit externe.
