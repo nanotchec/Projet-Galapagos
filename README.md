@@ -1,24 +1,29 @@
 # Projet Galapagos
 
-- Derniere version validee : V8.0.
-- Candidate : V8.1, OHLCV + public trades 90-day research decision gate.
+- Derniere version validee : V8.1.
+- Candidate : V8.2, public aggTrades 1-year window expansion.
 
-V8.1 analyse les resultats V8.0 ML offline et robustesse/falsification sur le dataset V7.9 OHLCV + aggTrades 90 jours. Le verdict est research-only : les resultats sont interessants mais mitigés et non concluants.
+V8.2 etend uniquement l'ingestion data-only des aggTrades publics Binance BTCUSDT spot sur une fenetre d'environ 1 an.
 
-Fenetre : `2023-03-25` -> `2023-06-22`, `90` jours.
+Fenetre : `2023-03-25` -> `2024-03-24`, `366` jours.
 
-Feature columns ML V8.0 : `71`.
+Trade source type : `aggTrades`.
 
-Recommendation principale V8.1 : etendre les aggTrades a 1 an. Recommendation secondaire : preparer une validation walk-forward offline plus stricte.
+Raw files V8.2 : `366`.
 
-Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live, aucun trading reel et aucun modele persistant.
+Lignes trades V8.2 : `352055121`.
 
-## Commandes V8.1
+Aucune feature V8.2, aucun label V8.2, aucun dataset ML V8.2, aucun modele ML V8.2, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live et aucun trading reel.
+
+## Commandes V8.2
 
 ```bash
-python scripts/validate_research_decision_gate_v8_1.py
-python -m pytest -q tests/validation/test_research_decision_gate_v8_1.py
+python scripts/discover_public_trades_v8_2.py
+python scripts/run_public_trades_1y_window_v8_2.py --no-network --skip-project-state-check
+python scripts/validate_public_trades_1y_window_v8_2.py
+python -m pytest -q tests/data/test_public_trades_1y_window_v8_2.py
+python -m pytest -q tests/validation/test_public_trades_1y_window_v8_2_validator.py
 python -m pytest --collect-only -q
 ```
 
-V8.1 ne valide aucune strategie, aucun modele exploitable en trading et aucune rentabilite.
+V8.2 reste `pending_external_audit` avant validation externe.

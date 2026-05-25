@@ -1,31 +1,22 @@
-# Etat du Projet : V8.0 validee + candidat V8.1
+# Etat du Projet : V8.1 validee + candidat V8.2
 
-- **Derniere version validee** : V8.0.
-- **Version candidate** : V8.1.
-- **Statut candidate** : `PASS`.
-- **Direction** : OHLCV + public trades 90-day research decision gate.
+- **Derniere version validee** : V8.1.
+- **Version candidate** : V8.2.
+- **Statut candidate** : `pending_external_audit`.
+- **Direction** : public aggTrades 1-year window expansion.
 
-## Candidat V8.1
+## V8.2
 
-- Fenetre analysee : `2023-03-25` -> `2023-06-22`.
-- Nombre de jours : `90`.
-- Feature columns count V8.0 : `71`.
-- Verdict : OHLCV + aggTrades 90 jours est interessant mais mitige et non concluant.
-- Recommendation principale : A. Etendre les aggTrades a 1 an.
-- Recommendation secondaire : D. Preparer une validation walk-forward offline plus stricte.
-- Label shuffle no-clear-edge cases : `3`.
-- Warnings concentration timeframe : `4`.
-- Backtest recommande : `false`.
+- Source trades : `aggTrades`.
+- Fenetre : `2023-03-25` -> `2024-03-24`.
+- Total jours : `366`.
+- Raw files : `366`.
+- Partitions : `366`.
+- Lignes trades : `352055121`.
+- Aucune feature V8.2.
+- Aucun label V8.2.
+- Aucun dataset ML V8.2.
+- Aucun modele ML V8.2.
+- Aucun backtest, aucune strategie, aucun signal, aucun ordre, aucun trading reel.
 
-## Clause De Securite
-
-- Aucun trading reel.
-- Aucun paper live.
-- Aucun ordre.
-- Aucun backtest.
-- Aucune strategie.
-- Aucun signal de trading.
-- Aucun modele persistant.
-- Aucune API privee.
-- Aucune cle API.
-- V8.1 ne valide aucune strategie, aucun modele exploitable en trading et aucune rentabilite.
+V8.2 reste non validee avant audit externe.

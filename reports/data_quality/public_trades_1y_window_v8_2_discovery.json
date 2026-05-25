@@ -1,0 +1,4163 @@
+{
+  "version": "V8.2",
+  "status": "PASS",
+  "created_at_utc": "2026-05-25T20:49:26.913656Z",
+  "source": {
+    "name": "binance_public_archive",
+    "venue": "binance",
+    "market_type": "spot",
+    "symbol": "BTCUSDT",
+    "trade_source_type": "aggTrades",
+    "host": "data.binance.vision"
+  },
+  "first_available_date": "2023-03-25",
+  "last_available_date": "2024-03-24",
+  "available_dates": [
+    "2023-03-25",
+    "2023-03-26",
+    "2023-03-27",
+    "2023-03-28",
+    "2023-03-29",
+    "2023-03-30",
+    "2023-03-31",
+    "2023-04-01",
+    "2023-04-02",
+    "2023-04-03",
+    "2023-04-04",
+    "2023-04-05",
+    "2023-04-06",
+    "2023-04-07",
+    "2023-04-08",
+    "2023-04-09",
+    "2023-04-10",
+    "2023-04-11",
+    "2023-04-12",
+    "2023-04-13",
+    "2023-04-14",
+    "2023-04-15",
+    "2023-04-16",
+    "2023-04-17",
+    "2023-04-18",
+    "2023-04-19",
+    "2023-04-20",
+    "2023-04-21",
+    "2023-04-22",
+    "2023-04-23",
+    "2023-04-24",
+    "2023-04-25",
+    "2023-04-26",
+    "2023-04-27",
+    "2023-04-28",
+    "2023-04-29",
+    "2023-04-30",
+    "2023-05-01",
+    "2023-05-02",
+    "2023-05-03",
+    "2023-05-04",
+    "2023-05-05",
+    "2023-05-06",
+    "2023-05-07",
+    "2023-05-08",
+    "2023-05-09",
+    "2023-05-10",
+    "2023-05-11",
+    "2023-05-12",
+    "2023-05-13",
+    "2023-05-14",
+    "2023-05-15",
+    "2023-05-16",
+    "2023-05-17",
+    "2023-05-18",
+    "2023-05-19",
+    "2023-05-20",
+    "2023-05-21",
+    "2023-05-22",
+    "2023-05-23",
+    "2023-05-24",
+    "2023-05-25",
+    "2023-05-26",
+    "2023-05-27",
+    "2023-05-28",
+    "2023-05-29",
+    "2023-05-30",
+    "2023-05-31",
+    "2023-06-01",
+    "2023-06-02",
+    "2023-06-03",
+    "2023-06-04",
+    "2023-06-05",
+    "2023-06-06",
+    "2023-06-07",
+    "2023-06-08",
+    "2023-06-09",
+    "2023-06-10",
+    "2023-06-11",
+    "2023-06-12",
+    "2023-06-13",
+    "2023-06-14",
+    "2023-06-15",
+    "2023-06-16",
+    "2023-06-17",
+    "2023-06-18",
+    "2023-06-19",
+    "2023-06-20",
+    "2023-06-21",
+    "2023-06-22",
+    "2023-06-23",
+    "2023-06-24",
+    "2023-06-25",
+    "2023-06-26",
+    "2023-06-27",
+    "2023-06-28",
+    "2023-06-29",
+    "2023-06-30",
+    "2023-07-01",
+    "2023-07-02",
+    "2023-07-03",
+    "2023-07-04",
+    "2023-07-05",
+    "2023-07-06",
+    "2023-07-07",
+    "2023-07-08",
+    "2023-07-09",
+    "2023-07-10",
+    "2023-07-11",
+    "2023-07-12",
+    "2023-07-13",
+    "2023-07-14",
+    "2023-07-15",
+    "2023-07-16",
+    "2023-07-17",
+    "2023-07-18",
+    "2023-07-19",
+    "2023-07-20",
+    "2023-07-21",
+    "2023-07-22",
+    "2023-07-23",
+    "2023-07-24",
+    "2023-07-25",
+    "2023-07-26",
+    "2023-07-27",
+    "2023-07-28",
+    "2023-07-29",
+    "2023-07-30",
+    "2023-07-31",
+    "2023-08-01",
+    "2023-08-02",
+    "2023-08-03",
+    "2023-08-04",
+    "2023-08-05",
+    "2023-08-06",
+    "2023-08-07",
+    "2023-08-08",
+    "2023-08-09",
+    "2023-08-10",
+    "2023-08-11",
+    "2023-08-12",
+    "2023-08-13",
+    "2023-08-14",
+    "2023-08-15",
+    "2023-08-16",
+    "2023-08-17",
+    "2023-08-18",
+    "2023-08-19",
+    "2023-08-20",
+    "2023-08-21",
+    "2023-08-22",
+    "2023-08-23",
+    "2023-08-24",
+    "2023-08-25",
+    "2023-08-26",
+    "2023-08-27",
+    "2023-08-28",
+    "2023-08-29",
+    "2023-08-30",
+    "2023-08-31",
+    "2023-09-01",
+    "2023-09-02",
+    "2023-09-03",
+    "2023-09-04",
+    "2023-09-05",
+    "2023-09-06",
+    "2023-09-07",
+    "2023-09-08",
+    "2023-09-09",
+    "2023-09-10",
+    "2023-09-11",
+    "2023-09-12",
+    "2023-09-13",
+    "2023-09-14",
+    "2023-09-15",
+    "2023-09-16",
+    "2023-09-17",
+    "2023-09-18",
+    "2023-09-19",
+    "2023-09-20",
+    "2023-09-21",
+    "2023-09-22",
+    "2023-09-23",
+    "2023-09-24",
+    "2023-09-25",
+    "2023-09-26",
+    "2023-09-27",
+    "2023-09-28",
+    "2023-09-29",
+    "2023-09-30",
+    "2023-10-01",
+    "2023-10-02",
+    "2023-10-03",
+    "2023-10-04",
+    "2023-10-05",
+    "2023-10-06",
+    "2023-10-07",
+    "2023-10-08",
+    "2023-10-09",
+    "2023-10-10",
+    "2023-10-11",
+    "2023-10-12",
+    "2023-10-13",
+    "2023-10-14",
+    "2023-10-15",
+    "2023-10-16",
+    "2023-10-17",
+    "2023-10-18",
+    "2023-10-19",
+    "2023-10-20",
+    "2023-10-21",
+    "2023-10-22",
+    "2023-10-23",
+    "2023-10-24",
+    "2023-10-25",
+    "2023-10-26",
+    "2023-10-27",
+    "2023-10-28",
+    "2023-10-29",
+    "2023-10-30",
+    "2023-10-31",
+    "2023-11-01",
+    "2023-11-02",
+    "2023-11-03",
+    "2023-11-04",
+    "2023-11-05",
+    "2023-11-06",
+    "2023-11-07",
+    "2023-11-08",
+    "2023-11-09",
+    "2023-11-10",
+    "2023-11-11",
+    "2023-11-12",
+    "2023-11-13",
+    "2023-11-14",
+    "2023-11-15",
+    "2023-11-16",
+    "2023-11-17",
+    "2023-11-18",
+    "2023-11-19",
+    "2023-11-20",
+    "2023-11-21",
+    "2023-11-22",
+    "2023-11-23",
+    "2023-11-24",
+    "2023-11-25",
+    "2023-11-26",
+    "2023-11-27",
+    "2023-11-28",
+    "2023-11-29",
+    "2023-11-30",
+    "2023-12-01",
+    "2023-12-02",
+    "2023-12-03",
+    "2023-12-04",
+    "2023-12-05",
+    "2023-12-06",
+    "2023-12-07",
+    "2023-12-08",
+    "2023-12-09",
+    "2023-12-10",
+    "2023-12-11",
+    "2023-12-12",
+    "2023-12-13",
+    "2023-12-14",
+    "2023-12-15",
+    "2023-12-16",
+    "2023-12-17",
+    "2023-12-18",
+    "2023-12-19",
+    "2023-12-20",
+    "2023-12-21",
+    "2023-12-22",
+    "2023-12-23",
+    "2023-12-24",
+    "2023-12-25",
+    "2023-12-26",
+    "2023-12-27",
+    "2023-12-28",
+    "2023-12-29",
+    "2023-12-30",
+    "2023-12-31",
+    "2024-01-01",
+    "2024-01-02",
+    "2024-01-03",
+    "2024-01-04",
+    "2024-01-05",
+    "2024-01-06",
+    "2024-01-07",
+    "2024-01-08",
+    "2024-01-09",
+    "2024-01-10",
+    "2024-01-11",
+    "2024-01-12",
+    "2024-01-13",
+    "2024-01-14",
+    "2024-01-15",
+    "2024-01-16",
+    "2024-01-17",
+    "2024-01-18",
+    "2024-01-19",
+    "2024-01-20",
+    "2024-01-21",
+    "2024-01-22",
+    "2024-01-23",
+    "2024-01-24",
+    "2024-01-25",
+    "2024-01-26",
+    "2024-01-27",
+    "2024-01-28",
+    "2024-01-29",
+    "2024-01-30",
+    "2024-01-31",
+    "2024-02-01",
+    "2024-02-02",
+    "2024-02-03",
+    "2024-02-04",
+    "2024-02-05",
+    "2024-02-06",
+    "2024-02-07",
+    "2024-02-08",
+    "2024-02-09",
+    "2024-02-10",
+    "2024-02-11",
+    "2024-02-12",
+    "2024-02-13",
+    "2024-02-14",
+    "2024-02-15",
+    "2024-02-16",
+    "2024-02-17",
+    "2024-02-18",
+    "2024-02-19",
+    "2024-02-20",
+    "2024-02-21",
+    "2024-02-22",
+    "2024-02-23",
+    "2024-02-24",
+    "2024-02-25",
+    "2024-02-26",
+    "2024-02-27",
+    "2024-02-28",
+    "2024-02-29",
+    "2024-03-01",
+    "2024-03-02",
+    "2024-03-03",
+    "2024-03-04",
+    "2024-03-05",
+    "2024-03-06",
+    "2024-03-07",
+    "2024-03-08",
+    "2024-03-09",
+    "2024-03-10",
+    "2024-03-11",
+    "2024-03-12",
+    "2024-03-13",
+    "2024-03-14",
+    "2024-03-15",
+    "2024-03-16",
+    "2024-03-17",
+    "2024-03-18",
+    "2024-03-19",
+    "2024-03-20",
+    "2024-03-21",
+    "2024-03-22",
+    "2024-03-23",
+    "2024-03-24"
+  ],
+  "missing_dates": [],
+  "total_available_days": 366,
+  "source_type": "aggTrades",
+  "v5_0_window_start": "2023-03-25",
+  "v5_0_window_end": "2026-05-23",
+  "overlap_start": "2023-03-25",
+  "overlap_end": "2024-03-24",
+  "overlap_days": 366,
+  "recommended_window": {
+    "window_start": "2023-03-25",
+    "window_end": "2024-03-24",
+    "total_days": 366,
+    "matches_v5_0_window": false,
+    "reason": "bounded 1-year V8.2 aggTrades expansion after the 90-day V7.7 ingestion window and V8.1 decision gate"
+  },
+  "remote_files": {
+    "2023-07-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-09.zip",
+      "available": true,
+      "content_length": 5271100,
+      "last_modified": "Mon, 10 Jul 2023 03:09:15 GMT"
+    },
+    "2023-07-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-10.zip",
+      "available": true,
+      "content_length": 9038366,
+      "last_modified": "Tue, 11 Jul 2023 02:54:50 GMT"
+    },
+    "2023-07-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-11.zip",
+      "available": true,
+      "content_length": 6930756,
+      "last_modified": "Wed, 12 Jul 2023 02:33:36 GMT"
+    },
+    "2023-07-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-12.zip",
+      "available": true,
+      "content_length": 7828778,
+      "last_modified": "Thu, 13 Jul 2023 03:53:51 GMT"
+    },
+    "2023-07-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-13.zip",
+      "available": true,
+      "content_length": 13338561,
+      "last_modified": "Fri, 14 Jul 2023 02:58:50 GMT"
+    },
+    "2023-07-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-14.zip",
+      "available": true,
+      "content_length": 13413114,
+      "last_modified": "Sat, 15 Jul 2023 03:55:51 GMT"
+    },
+    "2023-07-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-15.zip",
+      "available": true,
+      "content_length": 5672424,
+      "last_modified": "Sun, 16 Jul 2023 03:39:31 GMT"
+    },
+    "2023-07-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-16.zip",
+      "available": true,
+      "content_length": 5382761,
+      "last_modified": "Mon, 17 Jul 2023 03:33:08 GMT"
+    },
+    "2023-07-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-17.zip",
+      "available": true,
+      "content_length": 8504442,
+      "last_modified": "Tue, 18 Jul 2023 02:26:17 GMT"
+    },
+    "2023-07-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-18.zip",
+      "available": true,
+      "content_length": 7765256,
+      "last_modified": "Wed, 19 Jul 2023 04:08:03 GMT"
+    },
+    "2023-07-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-19.zip",
+      "available": true,
+      "content_length": 6269151,
+      "last_modified": "Thu, 20 Jul 2023 02:40:28 GMT"
+    },
+    "2023-07-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-20.zip",
+      "available": true,
+      "content_length": 7721615,
+      "last_modified": "Fri, 21 Jul 2023 03:51:25 GMT"
+    },
+    "2023-07-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-21.zip",
+      "available": true,
+      "content_length": 5966401,
+      "last_modified": "Sat, 22 Jul 2023 02:04:07 GMT"
+    },
+    "2023-07-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-22.zip",
+      "available": true,
+      "content_length": 4661338,
+      "last_modified": "Mon, 24 Jul 2023 06:15:59 GMT"
+    },
+    "2023-07-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-23.zip",
+      "available": true,
+      "content_length": 5374772,
+      "last_modified": "Mon, 24 Jul 2023 06:16:00 GMT"
+    },
+    "2023-07-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-24.zip",
+      "available": true,
+      "content_length": 8736844,
+      "last_modified": "Tue, 25 Jul 2023 02:10:38 GMT"
+    },
+    "2023-07-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-25.zip",
+      "available": true,
+      "content_length": 5795005,
+      "last_modified": "Wed, 26 Jul 2023 03:15:03 GMT"
+    },
+    "2023-07-26": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-26.zip",
+      "available": true,
+      "content_length": 7618583,
+      "last_modified": "Thu, 27 Jul 2023 04:29:14 GMT"
+    },
+    "2023-07-27": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-27.zip",
+      "available": true,
+      "content_length": 6048560,
+      "last_modified": "Fri, 28 Jul 2023 04:44:08 GMT"
+    },
+    "2023-07-28": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-28.zip",
+      "available": true,
+      "content_length": 5673146,
+      "last_modified": "Sat, 29 Jul 2023 04:14:22 GMT"
+    },
+    "2023-07-29": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-29.zip",
+      "available": true,
+      "content_length": 3840524,
+      "last_modified": "Sun, 30 Jul 2023 02:16:01 GMT"
+    },
+    "2023-07-30": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-30.zip",
+      "available": true,
+      "content_length": 4757025,
+      "last_modified": "Tue, 01 Aug 2023 05:59:28 GMT"
+    },
+    "2023-07-31": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-07-31.zip",
+      "available": true,
+      "content_length": 5739928,
+      "last_modified": "Tue, 01 Aug 2023 05:59:27 GMT"
+    },
+    "2023-08-01": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-01.zip",
+      "available": true,
+      "content_length": 8756730,
+      "last_modified": "Wed, 02 Aug 2023 05:10:28 GMT"
+    },
+    "2023-08-02": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-02.zip",
+      "available": true,
+      "content_length": 8973722,
+      "last_modified": "Thu, 03 Aug 2023 02:40:41 GMT"
+    },
+    "2023-08-03": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-03.zip",
+      "available": true,
+      "content_length": 6261791,
+      "last_modified": "Fri, 04 Aug 2023 02:29:30 GMT"
+    },
+    "2023-08-04": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-04.zip",
+      "available": true,
+      "content_length": 5617393,
+      "last_modified": "Sat, 05 Aug 2023 02:54:29 GMT"
+    },
+    "2023-08-05": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-05.zip",
+      "available": true,
+      "content_length": 3787607,
+      "last_modified": "Sun, 06 Aug 2023 02:50:20 GMT"
+    },
+    "2023-08-06": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-06.zip",
+      "available": true,
+      "content_length": 3855916,
+      "last_modified": "Mon, 07 Aug 2023 02:13:05 GMT"
+    },
+    "2023-08-07": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-07.zip",
+      "available": true,
+      "content_length": 7076479,
+      "last_modified": "Tue, 08 Aug 2023 01:54:03 GMT"
+    },
+    "2023-08-08": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-08.zip",
+      "available": true,
+      "content_length": 8904603,
+      "last_modified": "Wed, 09 Aug 2023 02:43:11 GMT"
+    },
+    "2023-08-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-09.zip",
+      "available": true,
+      "content_length": 7622552,
+      "last_modified": "Thu, 10 Aug 2023 02:09:30 GMT"
+    },
+    "2023-08-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-10.zip",
+      "available": true,
+      "content_length": 5515074,
+      "last_modified": "Fri, 11 Aug 2023 01:46:03 GMT"
+    },
+    "2023-08-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-11.zip",
+      "available": true,
+      "content_length": 4763829,
+      "last_modified": "Sat, 12 Aug 2023 01:52:12 GMT"
+    },
+    "2023-08-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-12.zip",
+      "available": true,
+      "content_length": 3577142,
+      "last_modified": "Sun, 13 Aug 2023 02:50:45 GMT"
+    },
+    "2023-08-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-13.zip",
+      "available": true,
+      "content_length": 3839160,
+      "last_modified": "Mon, 14 Aug 2023 01:46:14 GMT"
+    },
+    "2023-08-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-14.zip",
+      "available": true,
+      "content_length": 6934428,
+      "last_modified": "Tue, 15 Aug 2023 02:04:18 GMT"
+    },
+    "2023-08-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-15.zip",
+      "available": true,
+      "content_length": 6717227,
+      "last_modified": "Wed, 16 Aug 2023 02:32:25 GMT"
+    },
+    "2023-08-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-16.zip",
+      "available": true,
+      "content_length": 8158952,
+      "last_modified": "Thu, 17 Aug 2023 02:01:43 GMT"
+    },
+    "2023-08-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-17.zip",
+      "available": true,
+      "content_length": 20287838,
+      "last_modified": "Fri, 18 Aug 2023 03:03:05 GMT"
+    },
+    "2023-08-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-18.zip",
+      "available": true,
+      "content_length": 13437763,
+      "last_modified": "Sat, 19 Aug 2023 02:16:12 GMT"
+    },
+    "2023-08-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-19.zip",
+      "available": true,
+      "content_length": 6748648,
+      "last_modified": "Sun, 20 Aug 2023 01:50:54 GMT"
+    },
+    "2023-08-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-20.zip",
+      "available": true,
+      "content_length": 5015747,
+      "last_modified": "Mon, 21 Aug 2023 02:18:18 GMT"
+    },
+    "2023-08-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-21.zip",
+      "available": true,
+      "content_length": 6116853,
+      "last_modified": "Wed, 23 Aug 2023 10:01:42 GMT"
+    },
+    "2023-08-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-22.zip",
+      "available": true,
+      "content_length": 6547155,
+      "last_modified": "Wed, 23 Aug 2023 10:01:41 GMT"
+    },
+    "2023-08-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-23.zip",
+      "available": true,
+      "content_length": 7145710,
+      "last_modified": "Thu, 24 Aug 2023 01:49:26 GMT"
+    },
+    "2023-08-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-24.zip",
+      "available": true,
+      "content_length": 6291887,
+      "last_modified": "Fri, 25 Aug 2023 02:54:15 GMT"
+    },
+    "2023-08-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-25.zip",
+      "available": true,
+      "content_length": 6451632,
+      "last_modified": "Sat, 26 Aug 2023 02:26:45 GMT"
+    },
+    "2023-08-26": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-26.zip",
+      "available": true,
+      "content_length": 3653806,
+      "last_modified": "Sun, 27 Aug 2023 02:40:26 GMT"
+    },
+    "2023-08-27": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-27.zip",
+      "available": true,
+      "content_length": 3790385,
+      "last_modified": "Mon, 28 Aug 2023 02:50:04 GMT"
+    },
+    "2023-08-28": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-28.zip",
+      "available": true,
+      "content_length": 5537639,
+      "last_modified": "Tue, 29 Aug 2023 02:03:29 GMT"
+    },
+    "2023-08-29": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-29.zip",
+      "available": true,
+      "content_length": 12197253,
+      "last_modified": "Wed, 30 Aug 2023 02:52:00 GMT"
+    },
+    "2023-08-30": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-30.zip",
+      "available": true,
+      "content_length": 7544887,
+      "last_modified": "Thu, 31 Aug 2023 02:37:09 GMT"
+    },
+    "2023-08-31": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-08-31.zip",
+      "available": true,
+      "content_length": 9955323,
+      "last_modified": "Fri, 01 Sep 2023 02:31:25 GMT"
+    },
+    "2023-09-01": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-01.zip",
+      "available": true,
+      "content_length": 9342265,
+      "last_modified": "Sat, 02 Sep 2023 02:24:54 GMT"
+    },
+    "2023-09-02": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-02.zip",
+      "available": true,
+      "content_length": 6099999,
+      "last_modified": "Sun, 03 Sep 2023 02:29:25 GMT"
+    },
+    "2023-09-03": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-03.zip",
+      "available": true,
+      "content_length": 5464155,
+      "last_modified": "Mon, 04 Sep 2023 02:22:22 GMT"
+    },
+    "2023-09-04": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-04.zip",
+      "available": true,
+      "content_length": 6519147,
+      "last_modified": "Tue, 05 Sep 2023 02:20:21 GMT"
+    },
+    "2023-09-05": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-05.zip",
+      "available": true,
+      "content_length": 6224125,
+      "last_modified": "Wed, 06 Sep 2023 02:25:47 GMT"
+    },
+    "2023-09-06": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-06.zip",
+      "available": true,
+      "content_length": 6582077,
+      "last_modified": "Thu, 07 Sep 2023 02:45:09 GMT"
+    },
+    "2023-09-07": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-07.zip",
+      "available": true,
+      "content_length": 6458325,
+      "last_modified": "Fri, 08 Sep 2023 02:01:32 GMT"
+    },
+    "2023-09-08": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-08.zip",
+      "available": true,
+      "content_length": 6913520,
+      "last_modified": "Sat, 09 Sep 2023 01:57:55 GMT"
+    },
+    "2023-09-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-09.zip",
+      "available": true,
+      "content_length": 4248608,
+      "last_modified": "Sun, 10 Sep 2023 02:54:04 GMT"
+    },
+    "2023-09-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-10.zip",
+      "available": true,
+      "content_length": 5496340,
+      "last_modified": "Mon, 11 Sep 2023 02:39:42 GMT"
+    },
+    "2023-09-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-11.zip",
+      "available": true,
+      "content_length": 9197709,
+      "last_modified": "Tue, 12 Sep 2023 02:28:10 GMT"
+    },
+    "2023-09-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-12.zip",
+      "available": true,
+      "content_length": 10797733,
+      "last_modified": "Wed, 13 Sep 2023 02:25:48 GMT"
+    },
+    "2023-09-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-13.zip",
+      "available": true,
+      "content_length": 7543823,
+      "last_modified": "Thu, 14 Sep 2023 02:46:28 GMT"
+    },
+    "2023-09-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-14.zip",
+      "available": true,
+      "content_length": 8332954,
+      "last_modified": "Fri, 15 Sep 2023 01:49:32 GMT"
+    },
+    "2023-09-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-15.zip",
+      "available": true,
+      "content_length": 7133809,
+      "last_modified": "Sat, 16 Sep 2023 02:38:52 GMT"
+    },
+    "2023-09-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-16.zip",
+      "available": true,
+      "content_length": 6014174,
+      "last_modified": "Sun, 17 Sep 2023 02:41:40 GMT"
+    },
+    "2023-09-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-17.zip",
+      "available": true,
+      "content_length": 5482062,
+      "last_modified": "Mon, 18 Sep 2023 02:17:23 GMT"
+    },
+    "2023-09-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-18.zip",
+      "available": true,
+      "content_length": 9877726,
+      "last_modified": "Tue, 19 Sep 2023 02:00:07 GMT"
+    },
+    "2023-09-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-19.zip",
+      "available": true,
+      "content_length": 9527773,
+      "last_modified": "Wed, 20 Sep 2023 02:39:12 GMT"
+    },
+    "2023-09-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-20.zip",
+      "available": true,
+      "content_length": 9246234,
+      "last_modified": "Thu, 21 Sep 2023 02:28:39 GMT"
+    },
+    "2023-09-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-21.zip",
+      "available": true,
+      "content_length": 8891672,
+      "last_modified": "Fri, 22 Sep 2023 03:00:09 GMT"
+    },
+    "2023-09-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-22.zip",
+      "available": true,
+      "content_length": 6358955,
+      "last_modified": "Sat, 23 Sep 2023 02:03:53 GMT"
+    },
+    "2023-09-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-23.zip",
+      "available": true,
+      "content_length": 4934873,
+      "last_modified": "Sun, 24 Sep 2023 03:03:35 GMT"
+    },
+    "2023-09-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-24.zip",
+      "available": true,
+      "content_length": 6024067,
+      "last_modified": "Mon, 25 Sep 2023 03:02:25 GMT"
+    },
+    "2023-09-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-25.zip",
+      "available": true,
+      "content_length": 9211610,
+      "last_modified": "Tue, 26 Sep 2023 02:51:07 GMT"
+    },
+    "2023-09-26": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-26.zip",
+      "available": true,
+      "content_length": 7489180,
+      "last_modified": "Wed, 27 Sep 2023 03:01:55 GMT"
+    },
+    "2023-09-27": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-27.zip",
+      "available": true,
+      "content_length": 9848453,
+      "last_modified": "Thu, 28 Sep 2023 01:54:38 GMT"
+    },
+    "2023-09-28": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-28.zip",
+      "available": true,
+      "content_length": 12305205,
+      "last_modified": "Fri, 29 Sep 2023 03:01:51 GMT"
+    },
+    "2023-09-29": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-29.zip",
+      "available": true,
+      "content_length": 9737206,
+      "last_modified": "Sat, 30 Sep 2023 02:33:27 GMT"
+    },
+    "2023-09-30": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-09-30.zip",
+      "available": true,
+      "content_length": 6137511,
+      "last_modified": "Sun, 01 Oct 2023 03:09:16 GMT"
+    },
+    "2023-10-01": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-01.zip",
+      "available": true,
+      "content_length": 9628700,
+      "last_modified": "Mon, 02 Oct 2023 02:17:36 GMT"
+    },
+    "2023-10-02": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-02.zip",
+      "available": true,
+      "content_length": 15872348,
+      "last_modified": "Tue, 03 Oct 2023 02:45:14 GMT"
+    },
+    "2023-10-03": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-03.zip",
+      "available": true,
+      "content_length": 13179288,
+      "last_modified": "Wed, 04 Oct 2023 03:12:59 GMT"
+    },
+    "2023-10-04": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-04.zip",
+      "available": true,
+      "content_length": 12875012,
+      "last_modified": "Thu, 05 Oct 2023 02:48:30 GMT"
+    },
+    "2023-10-05": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-05.zip",
+      "available": true,
+      "content_length": 12951705,
+      "last_modified": "Fri, 06 Oct 2023 02:40:49 GMT"
+    },
+    "2023-10-06": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-06.zip",
+      "available": true,
+      "content_length": 14022771,
+      "last_modified": "Sat, 07 Oct 2023 02:51:33 GMT"
+    },
+    "2023-10-07": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-07.zip",
+      "available": true,
+      "content_length": 7168670,
+      "last_modified": "Sun, 08 Oct 2023 02:55:38 GMT"
+    },
+    "2023-10-08": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-08.zip",
+      "available": true,
+      "content_length": 8845362,
+      "last_modified": "Mon, 09 Oct 2023 03:09:03 GMT"
+    },
+    "2023-10-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-09.zip",
+      "available": true,
+      "content_length": 12357394,
+      "last_modified": "Tue, 10 Oct 2023 02:06:10 GMT"
+    },
+    "2023-10-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-10.zip",
+      "available": true,
+      "content_length": 10847660,
+      "last_modified": "Wed, 11 Oct 2023 02:07:51 GMT"
+    },
+    "2023-10-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-11.zip",
+      "available": true,
+      "content_length": 13944418,
+      "last_modified": "Thu, 12 Oct 2023 02:01:41 GMT"
+    },
+    "2023-10-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-12.zip",
+      "available": true,
+      "content_length": 11188357,
+      "last_modified": "Fri, 13 Oct 2023 02:41:07 GMT"
+    },
+    "2023-10-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-13.zip",
+      "available": true,
+      "content_length": 11142782,
+      "last_modified": "Sat, 14 Oct 2023 03:14:07 GMT"
+    },
+    "2023-10-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-14.zip",
+      "available": true,
+      "content_length": 5978179,
+      "last_modified": "Sun, 15 Oct 2023 02:45:16 GMT"
+    },
+    "2023-10-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-15.zip",
+      "available": true,
+      "content_length": 7740941,
+      "last_modified": "Mon, 16 Oct 2023 03:13:42 GMT"
+    },
+    "2023-10-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-16.zip",
+      "available": true,
+      "content_length": 24382740,
+      "last_modified": "Tue, 17 Oct 2023 02:22:33 GMT"
+    },
+    "2023-10-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-17.zip",
+      "available": true,
+      "content_length": 14681479,
+      "last_modified": "Wed, 18 Oct 2023 02:56:22 GMT"
+    },
+    "2023-10-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-18.zip",
+      "available": true,
+      "content_length": 13231683,
+      "last_modified": "Thu, 19 Oct 2023 02:56:08 GMT"
+    },
+    "2023-10-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-19.zip",
+      "available": true,
+      "content_length": 14315798,
+      "last_modified": "Fri, 20 Oct 2023 02:56:30 GMT"
+    },
+    "2023-10-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-20.zip",
+      "available": true,
+      "content_length": 20222789,
+      "last_modified": "Sat, 21 Oct 2023 02:35:36 GMT"
+    },
+    "2023-10-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-21.zip",
+      "available": true,
+      "content_length": 12547865,
+      "last_modified": "Sun, 22 Oct 2023 03:02:41 GMT"
+    },
+    "2023-10-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-22.zip",
+      "available": true,
+      "content_length": 11209147,
+      "last_modified": "Mon, 23 Oct 2023 03:07:33 GMT"
+    },
+    "2023-10-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-23.zip",
+      "available": true,
+      "content_length": 30584147,
+      "last_modified": "Tue, 24 Oct 2023 02:07:07 GMT"
+    },
+    "2023-10-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-24.zip",
+      "available": true,
+      "content_length": 30277758,
+      "last_modified": "Wed, 25 Oct 2023 02:12:07 GMT"
+    },
+    "2023-10-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-25.zip",
+      "available": true,
+      "content_length": 17537457,
+      "last_modified": "Thu, 26 Oct 2023 03:02:13 GMT"
+    },
+    "2023-10-26": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-26.zip",
+      "available": true,
+      "content_length": 14907102,
+      "last_modified": "Fri, 27 Oct 2023 02:36:57 GMT"
+    },
+    "2023-10-27": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-27.zip",
+      "available": true,
+      "content_length": 11679138,
+      "last_modified": "Sat, 28 Oct 2023 03:07:00 GMT"
+    },
+    "2023-10-28": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-28.zip",
+      "available": true,
+      "content_length": 6549325,
+      "last_modified": "Sun, 29 Oct 2023 01:59:16 GMT"
+    },
+    "2023-10-29": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-29.zip",
+      "available": true,
+      "content_length": 7686946,
+      "last_modified": "Mon, 30 Oct 2023 02:06:38 GMT"
+    },
+    "2023-10-30": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-30.zip",
+      "available": true,
+      "content_length": 12051368,
+      "last_modified": "Tue, 31 Oct 2023 02:11:17 GMT"
+    },
+    "2023-10-31": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-10-31.zip",
+      "available": true,
+      "content_length": 12812372,
+      "last_modified": "Wed, 01 Nov 2023 02:47:26 GMT"
+    },
+    "2023-11-01": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-01.zip",
+      "available": true,
+      "content_length": 17569435,
+      "last_modified": "Thu, 02 Nov 2023 03:55:34 GMT"
+    },
+    "2023-11-02": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-02.zip",
+      "available": true,
+      "content_length": 15545433,
+      "last_modified": "Sun, 05 Nov 2023 19:19:59 GMT"
+    },
+    "2023-11-03": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-03.zip",
+      "available": true,
+      "content_length": 13020400,
+      "last_modified": "Sun, 05 Nov 2023 19:19:52 GMT"
+    },
+    "2023-11-04": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-04.zip",
+      "available": true,
+      "content_length": 8576935,
+      "last_modified": "Sun, 05 Nov 2023 19:19:55 GMT"
+    },
+    "2023-11-05": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-05.zip",
+      "available": true,
+      "content_length": 10916041,
+      "last_modified": "Mon, 06 Nov 2023 04:09:36 GMT"
+    },
+    "2023-11-06": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-06.zip",
+      "available": true,
+      "content_length": 10749376,
+      "last_modified": "Tue, 07 Nov 2023 02:16:47 GMT"
+    },
+    "2023-11-07": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-07.zip",
+      "available": true,
+      "content_length": 14558924,
+      "last_modified": "Wed, 08 Nov 2023 03:30:47 GMT"
+    },
+    "2023-11-08": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-08.zip",
+      "available": true,
+      "content_length": 12242235,
+      "last_modified": "Thu, 09 Nov 2023 03:05:15 GMT"
+    },
+    "2023-11-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-09.zip",
+      "available": true,
+      "content_length": 23622898,
+      "last_modified": "Fri, 10 Nov 2023 02:52:02 GMT"
+    },
+    "2023-11-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-10.zip",
+      "available": true,
+      "content_length": 14217730,
+      "last_modified": "Sat, 11 Nov 2023 02:19:43 GMT"
+    },
+    "2023-11-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-11.zip",
+      "available": true,
+      "content_length": 10654273,
+      "last_modified": "Sun, 12 Nov 2023 02:55:12 GMT"
+    },
+    "2023-11-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-12.zip",
+      "available": true,
+      "content_length": 9503973,
+      "last_modified": "Mon, 13 Nov 2023 02:26:02 GMT"
+    },
+    "2023-11-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-13.zip",
+      "available": true,
+      "content_length": 13632821,
+      "last_modified": "Tue, 14 Nov 2023 03:37:42 GMT"
+    },
+    "2023-11-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-14.zip",
+      "available": true,
+      "content_length": 15237262,
+      "last_modified": "Wed, 15 Nov 2023 04:02:29 GMT"
+    },
+    "2023-11-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-15.zip",
+      "available": true,
+      "content_length": 16331189,
+      "last_modified": "Thu, 16 Nov 2023 02:07:24 GMT"
+    },
+    "2023-11-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-16.zip",
+      "available": true,
+      "content_length": 16803986,
+      "last_modified": "Fri, 17 Nov 2023 03:13:25 GMT"
+    },
+    "2023-11-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-17.zip",
+      "available": true,
+      "content_length": 14769332,
+      "last_modified": "Sat, 18 Nov 2023 03:02:27 GMT"
+    },
+    "2023-11-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-18.zip",
+      "available": true,
+      "content_length": 8897411,
+      "last_modified": "Sun, 19 Nov 2023 02:50:30 GMT"
+    },
+    "2023-11-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-19.zip",
+      "available": true,
+      "content_length": 9655344,
+      "last_modified": "Mon, 20 Nov 2023 03:49:03 GMT"
+    },
+    "2023-11-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-20.zip",
+      "available": true,
+      "content_length": 15986152,
+      "last_modified": "Tue, 21 Nov 2023 02:37:04 GMT"
+    },
+    "2023-11-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-21.zip",
+      "available": true,
+      "content_length": 20826079,
+      "last_modified": "Wed, 22 Nov 2023 02:46:14 GMT"
+    },
+    "2023-11-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-22.zip",
+      "available": true,
+      "content_length": 17805510,
+      "last_modified": "Thu, 23 Nov 2023 02:20:03 GMT"
+    },
+    "2023-11-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-23.zip",
+      "available": true,
+      "content_length": 11003472,
+      "last_modified": "Fri, 24 Nov 2023 02:41:08 GMT"
+    },
+    "2023-11-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-24.zip",
+      "available": true,
+      "content_length": 14975531,
+      "last_modified": "Sat, 25 Nov 2023 03:39:47 GMT"
+    },
+    "2023-11-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-25.zip",
+      "available": true,
+      "content_length": 6665776,
+      "last_modified": "Sun, 26 Nov 2023 03:11:33 GMT"
+    },
+    "2023-11-26": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-26.zip",
+      "available": true,
+      "content_length": 9564221,
+      "last_modified": "Mon, 27 Nov 2023 02:58:16 GMT"
+    },
+    "2023-11-27": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-27.zip",
+      "available": true,
+      "content_length": 13690975,
+      "last_modified": "Tue, 28 Nov 2023 03:04:42 GMT"
+    },
+    "2023-11-28": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-28.zip",
+      "available": true,
+      "content_length": 13822784,
+      "last_modified": "Wed, 29 Nov 2023 04:47:37 GMT"
+    },
+    "2023-11-29": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-29.zip",
+      "available": true,
+      "content_length": 12411911,
+      "last_modified": "Thu, 30 Nov 2023 03:06:44 GMT"
+    },
+    "2023-11-30": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-11-30.zip",
+      "available": true,
+      "content_length": 10938218,
+      "last_modified": "Fri, 01 Dec 2023 02:30:39 GMT"
+    },
+    "2023-12-01": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-01.zip",
+      "available": true,
+      "content_length": 16398985,
+      "last_modified": "Mon, 04 Dec 2023 08:39:07 GMT"
+    },
+    "2023-12-02": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-02.zip",
+      "available": true,
+      "content_length": 11556190,
+      "last_modified": "Mon, 04 Dec 2023 08:38:58 GMT"
+    },
+    "2023-12-03": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-03.zip",
+      "available": true,
+      "content_length": 12882464,
+      "last_modified": "Mon, 04 Dec 2023 08:39:02 GMT"
+    },
+    "2023-12-04": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-04.zip",
+      "available": true,
+      "content_length": 22933699,
+      "last_modified": "Tue, 05 Dec 2023 02:16:47 GMT"
+    },
+    "2023-12-05": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-05.zip",
+      "available": true,
+      "content_length": 22412488,
+      "last_modified": "Wed, 06 Dec 2023 02:08:12 GMT"
+    },
+    "2023-12-06": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-06.zip",
+      "available": true,
+      "content_length": 20174639,
+      "last_modified": "Thu, 07 Dec 2023 03:41:10 GMT"
+    },
+    "2023-12-07": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-07.zip",
+      "available": true,
+      "content_length": 15422527,
+      "last_modified": "Fri, 08 Dec 2023 03:01:33 GMT"
+    },
+    "2023-12-08": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-08.zip",
+      "available": true,
+      "content_length": 14506152,
+      "last_modified": "Sat, 09 Dec 2023 03:07:25 GMT"
+    },
+    "2023-12-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-09.zip",
+      "available": true,
+      "content_length": 11217514,
+      "last_modified": "Sun, 10 Dec 2023 03:00:45 GMT"
+    },
+    "2023-12-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-10.zip",
+      "available": true,
+      "content_length": 9332806,
+      "last_modified": "Mon, 11 Dec 2023 03:26:58 GMT"
+    },
+    "2023-12-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-11.zip",
+      "available": true,
+      "content_length": 22735928,
+      "last_modified": "Tue, 12 Dec 2023 02:27:10 GMT"
+    },
+    "2023-12-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-12.zip",
+      "available": true,
+      "content_length": 16883036,
+      "last_modified": "Wed, 13 Dec 2023 03:26:09 GMT"
+    },
+    "2023-12-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-13.zip",
+      "available": true,
+      "content_length": 18754156,
+      "last_modified": "Thu, 14 Dec 2023 02:25:09 GMT"
+    },
+    "2023-12-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-14.zip",
+      "available": true,
+      "content_length": 17215641,
+      "last_modified": "Fri, 15 Dec 2023 02:45:23 GMT"
+    },
+    "2023-12-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-15.zip",
+      "available": true,
+      "content_length": 14374974,
+      "last_modified": "Sat, 16 Dec 2023 02:20:41 GMT"
+    },
+    "2023-12-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-16.zip",
+      "available": true,
+      "content_length": 12845186,
+      "last_modified": "Sun, 17 Dec 2023 03:04:42 GMT"
+    },
+    "2023-12-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-17.zip",
+      "available": true,
+      "content_length": 13138472,
+      "last_modified": "Mon, 18 Dec 2023 02:20:50 GMT"
+    },
+    "2023-12-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-18.zip",
+      "available": true,
+      "content_length": 18775660,
+      "last_modified": "Tue, 19 Dec 2023 02:21:48 GMT"
+    },
+    "2023-12-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-19.zip",
+      "available": true,
+      "content_length": 17382216,
+      "last_modified": "Wed, 20 Dec 2023 03:00:00 GMT"
+    },
+    "2023-12-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-20.zip",
+      "available": true,
+      "content_length": 20826274,
+      "last_modified": "Thu, 21 Dec 2023 02:34:02 GMT"
+    },
+    "2023-12-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-21.zip",
+      "available": true,
+      "content_length": 16201407,
+      "last_modified": "Fri, 22 Dec 2023 02:40:18 GMT"
+    },
+    "2023-12-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-22.zip",
+      "available": true,
+      "content_length": 15316457,
+      "last_modified": "Sat, 23 Dec 2023 02:03:04 GMT"
+    },
+    "2023-12-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-23.zip",
+      "available": true,
+      "content_length": 9775349,
+      "last_modified": "Sun, 24 Dec 2023 02:34:41 GMT"
+    },
+    "2023-12-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-24.zip",
+      "available": true,
+      "content_length": 12873995,
+      "last_modified": "Mon, 25 Dec 2023 02:13:32 GMT"
+    },
+    "2023-12-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-25.zip",
+      "available": true,
+      "content_length": 13044541,
+      "last_modified": "Tue, 26 Dec 2023 03:01:14 GMT"
+    },
+    "2023-12-26": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-26.zip",
+      "available": true,
+      "content_length": 16217098,
+      "last_modified": "Wed, 27 Dec 2023 03:11:07 GMT"
+    },
+    "2023-12-27": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-27.zip",
+      "available": true,
+      "content_length": 16043633,
+      "last_modified": "Thu, 28 Dec 2023 02:19:41 GMT"
+    },
+    "2023-12-28": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-28.zip",
+      "available": true,
+      "content_length": 15462480,
+      "last_modified": "Fri, 29 Dec 2023 03:32:43 GMT"
+    },
+    "2023-12-29": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-29.zip",
+      "available": true,
+      "content_length": 17051133,
+      "last_modified": "Sat, 30 Dec 2023 02:47:46 GMT"
+    },
+    "2023-12-30": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-30.zip",
+      "available": true,
+      "content_length": 10335793,
+      "last_modified": "Sun, 31 Dec 2023 03:06:41 GMT"
+    },
+    "2023-12-31": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-12-31.zip",
+      "available": true,
+      "content_length": 11300301,
+      "last_modified": "Mon, 01 Jan 2024 02:10:42 GMT"
+    },
+    "2024-01-01": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-01.zip",
+      "available": true,
+      "content_length": 11902789,
+      "last_modified": "Tue, 02 Jan 2024 02:54:09 GMT"
+    },
+    "2024-01-02": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-02.zip",
+      "available": true,
+      "content_length": 23768802,
+      "last_modified": "Wed, 03 Jan 2024 02:27:59 GMT"
+    },
+    "2024-01-03": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-03.zip",
+      "available": true,
+      "content_length": 28782672,
+      "last_modified": "Thu, 04 Jan 2024 03:32:08 GMT"
+    },
+    "2024-01-04": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-04.zip",
+      "available": true,
+      "content_length": 19496574,
+      "last_modified": "Fri, 05 Jan 2024 02:28:51 GMT"
+    },
+    "2024-01-05": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-05.zip",
+      "available": true,
+      "content_length": 22127639,
+      "last_modified": "Sat, 06 Jan 2024 03:10:20 GMT"
+    },
+    "2024-01-06": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-06.zip",
+      "available": true,
+      "content_length": 10681396,
+      "last_modified": "Sun, 07 Jan 2024 02:50:44 GMT"
+    },
+    "2024-01-07": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-07.zip",
+      "available": true,
+      "content_length": 12061693,
+      "last_modified": "Mon, 08 Jan 2024 03:16:30 GMT"
+    },
+    "2024-01-08": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-08.zip",
+      "available": true,
+      "content_length": 25193351,
+      "last_modified": "Tue, 09 Jan 2024 05:15:57 GMT"
+    },
+    "2024-01-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-09.zip",
+      "available": true,
+      "content_length": 28509575,
+      "last_modified": "Wed, 10 Jan 2024 02:22:02 GMT"
+    },
+    "2024-01-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-10.zip",
+      "available": true,
+      "content_length": 33643897,
+      "last_modified": "Thu, 11 Jan 2024 02:59:42 GMT"
+    },
+    "2024-01-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-11.zip",
+      "available": true,
+      "content_length": 32307816,
+      "last_modified": "Mon, 15 Jan 2024 17:31:37 GMT"
+    },
+    "2024-01-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-12.zip",
+      "available": true,
+      "content_length": 30455114,
+      "last_modified": "Mon, 15 Jan 2024 17:31:51 GMT"
+    },
+    "2024-01-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-13.zip",
+      "available": true,
+      "content_length": 15490445,
+      "last_modified": "Mon, 15 Jan 2024 17:31:41 GMT"
+    },
+    "2024-01-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-14.zip",
+      "available": true,
+      "content_length": 13391740,
+      "last_modified": "Mon, 15 Jan 2024 17:31:45 GMT"
+    },
+    "2024-01-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-15.zip",
+      "available": true,
+      "content_length": 17832264,
+      "last_modified": "Tue, 16 Jan 2024 04:19:58 GMT"
+    },
+    "2024-01-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-16.zip",
+      "available": true,
+      "content_length": 18427206,
+      "last_modified": "Wed, 17 Jan 2024 03:11:51 GMT"
+    },
+    "2024-01-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-17.zip",
+      "available": true,
+      "content_length": 15365806,
+      "last_modified": "Thu, 18 Jan 2024 02:26:09 GMT"
+    },
+    "2024-01-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-18.zip",
+      "available": true,
+      "content_length": 15541069,
+      "last_modified": "Fri, 19 Jan 2024 03:17:03 GMT"
+    },
+    "2024-01-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-19.zip",
+      "available": true,
+      "content_length": 17631773,
+      "last_modified": "Sat, 20 Jan 2024 02:06:29 GMT"
+    },
+    "2024-01-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-20.zip",
+      "available": true,
+      "content_length": 8925303,
+      "last_modified": "Sun, 21 Jan 2024 03:20:11 GMT"
+    },
+    "2024-01-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-21.zip",
+      "available": true,
+      "content_length": 7237784,
+      "last_modified": "Mon, 22 Jan 2024 03:00:55 GMT"
+    },
+    "2024-01-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-22.zip",
+      "available": true,
+      "content_length": 22868229,
+      "last_modified": "Tue, 23 Jan 2024 02:51:24 GMT"
+    },
+    "2024-01-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-23.zip",
+      "available": true,
+      "content_length": 22219675,
+      "last_modified": "Wed, 24 Jan 2024 02:57:16 GMT"
+    },
+    "2024-01-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-24.zip",
+      "available": true,
+      "content_length": 18127193,
+      "last_modified": "Thu, 25 Jan 2024 02:36:34 GMT"
+    },
+    "2024-01-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-25.zip",
+      "available": true,
+      "content_length": 14002327,
+      "last_modified": "Fri, 26 Jan 2024 02:28:28 GMT"
+    },
+    "2024-01-26": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-26.zip",
+      "available": true,
+      "content_length": 17449147,
+      "last_modified": "Sat, 27 Jan 2024 02:07:56 GMT"
+    },
+    "2024-01-27": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-27.zip",
+      "available": true,
+      "content_length": 8378376,
+      "last_modified": "Sun, 28 Jan 2024 03:03:49 GMT"
+    },
+    "2024-01-28": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-28.zip",
+      "available": true,
+      "content_length": 11209752,
+      "last_modified": "Mon, 29 Jan 2024 02:34:04 GMT"
+    },
+    "2024-01-29": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-29.zip",
+      "available": true,
+      "content_length": 12988002,
+      "last_modified": "Tue, 30 Jan 2024 03:21:31 GMT"
+    },
+    "2024-01-30": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-30.zip",
+      "available": true,
+      "content_length": 14396592,
+      "last_modified": "Wed, 31 Jan 2024 02:10:16 GMT"
+    },
+    "2024-01-31": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-01-31.zip",
+      "available": true,
+      "content_length": 16544180,
+      "last_modified": "Thu, 01 Feb 2024 03:09:34 GMT"
+    },
+    "2024-02-01": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-01.zip",
+      "available": true,
+      "content_length": 15180333,
+      "last_modified": "Fri, 02 Feb 2024 03:16:35 GMT"
+    },
+    "2024-02-02": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-02.zip",
+      "available": true,
+      "content_length": 11961739,
+      "last_modified": "Sat, 03 Feb 2024 02:29:08 GMT"
+    },
+    "2024-02-03": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-03.zip",
+      "available": true,
+      "content_length": 6937726,
+      "last_modified": "Sun, 04 Feb 2024 02:13:32 GMT"
+    },
+    "2024-02-04": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-04.zip",
+      "available": true,
+      "content_length": 10072161,
+      "last_modified": "Mon, 05 Feb 2024 02:04:32 GMT"
+    },
+    "2024-02-05": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-05.zip",
+      "available": true,
+      "content_length": 14049128,
+      "last_modified": "Tue, 06 Feb 2024 02:45:28 GMT"
+    },
+    "2024-02-06": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-06.zip",
+      "available": true,
+      "content_length": 12377970,
+      "last_modified": "Wed, 07 Feb 2024 03:20:17 GMT"
+    },
+    "2024-02-07": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-07.zip",
+      "available": true,
+      "content_length": 14928310,
+      "last_modified": "Thu, 08 Feb 2024 02:22:51 GMT"
+    },
+    "2024-02-08": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-08.zip",
+      "available": true,
+      "content_length": 19307047,
+      "last_modified": "Fri, 09 Feb 2024 02:19:30 GMT"
+    },
+    "2024-02-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-09.zip",
+      "available": true,
+      "content_length": 24527227,
+      "last_modified": "Sat, 10 Feb 2024 02:23:25 GMT"
+    },
+    "2024-02-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-10.zip",
+      "available": true,
+      "content_length": 13537391,
+      "last_modified": "Sun, 11 Feb 2024 02:18:25 GMT"
+    },
+    "2024-02-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-11.zip",
+      "available": true,
+      "content_length": 14317396,
+      "last_modified": "Mon, 12 Feb 2024 02:27:07 GMT"
+    },
+    "2024-02-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-12.zip",
+      "available": true,
+      "content_length": 20292971,
+      "last_modified": "Tue, 13 Feb 2024 02:26:06 GMT"
+    },
+    "2024-02-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-13.zip",
+      "available": true,
+      "content_length": 18722751,
+      "last_modified": "Wed, 14 Feb 2024 02:31:16 GMT"
+    },
+    "2024-02-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-14.zip",
+      "available": true,
+      "content_length": 19721306,
+      "last_modified": "Thu, 15 Feb 2024 03:22:50 GMT"
+    },
+    "2024-02-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-15.zip",
+      "available": true,
+      "content_length": 18836568,
+      "last_modified": "Fri, 16 Feb 2024 02:45:42 GMT"
+    },
+    "2024-02-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-16.zip",
+      "available": true,
+      "content_length": 16427970,
+      "last_modified": "Sat, 17 Feb 2024 02:13:44 GMT"
+    },
+    "2024-02-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-17.zip",
+      "available": true,
+      "content_length": 15180678,
+      "last_modified": "Sun, 18 Feb 2024 03:30:09 GMT"
+    },
+    "2024-02-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-18.zip",
+      "available": true,
+      "content_length": 13823031,
+      "last_modified": "Mon, 19 Feb 2024 03:14:36 GMT"
+    },
+    "2024-02-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-19.zip",
+      "available": true,
+      "content_length": 15990271,
+      "last_modified": "Tue, 20 Feb 2024 02:40:07 GMT"
+    },
+    "2024-02-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-20.zip",
+      "available": true,
+      "content_length": 19441739,
+      "last_modified": "Wed, 21 Feb 2024 03:33:12 GMT"
+    },
+    "2024-02-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-21.zip",
+      "available": true,
+      "content_length": 18112905,
+      "last_modified": "Thu, 22 Feb 2024 03:22:48 GMT"
+    },
+    "2024-02-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-22.zip",
+      "available": true,
+      "content_length": 17180253,
+      "last_modified": "Fri, 23 Feb 2024 03:14:15 GMT"
+    },
+    "2024-02-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-23.zip",
+      "available": true,
+      "content_length": 15312535,
+      "last_modified": "Sat, 24 Feb 2024 02:29:03 GMT"
+    },
+    "2024-02-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-24.zip",
+      "available": true,
+      "content_length": 9325304,
+      "last_modified": "Sun, 25 Feb 2024 03:24:33 GMT"
+    },
+    "2024-02-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-25.zip",
+      "available": true,
+      "content_length": 9855116,
+      "last_modified": "Mon, 26 Feb 2024 02:55:24 GMT"
+    },
+    "2024-02-26": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-26.zip",
+      "available": true,
+      "content_length": 19289728,
+      "last_modified": "Tue, 27 Feb 2024 02:39:35 GMT"
+    },
+    "2024-02-27": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-27.zip",
+      "available": true,
+      "content_length": 25865223,
+      "last_modified": "Wed, 28 Feb 2024 04:02:49 GMT"
+    },
+    "2024-02-28": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-28.zip",
+      "available": true,
+      "content_length": 41761355,
+      "last_modified": "Thu, 29 Feb 2024 03:30:57 GMT"
+    },
+    "2024-02-29": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-02-29.zip",
+      "available": true,
+      "content_length": 32595953,
+      "last_modified": "Fri, 01 Mar 2024 03:16:04 GMT"
+    },
+    "2024-03-01": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-01.zip",
+      "available": true,
+      "content_length": 20156459,
+      "last_modified": "Sat, 02 Mar 2024 03:17:41 GMT"
+    },
+    "2024-03-02": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-02.zip",
+      "available": true,
+      "content_length": 17109006,
+      "last_modified": "Sun, 03 Mar 2024 02:34:16 GMT"
+    },
+    "2024-03-03": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-03.zip",
+      "available": true,
+      "content_length": 20845923,
+      "last_modified": "Mon, 04 Mar 2024 02:25:33 GMT"
+    },
+    "2024-03-04": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-04.zip",
+      "available": true,
+      "content_length": 40569706,
+      "last_modified": "Tue, 05 Mar 2024 06:54:53 GMT"
+    },
+    "2024-03-05": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-05.zip",
+      "available": true,
+      "content_length": 55126465,
+      "last_modified": "Wed, 06 Mar 2024 02:45:29 GMT"
+    },
+    "2024-03-06": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-06.zip",
+      "available": true,
+      "content_length": 34827067,
+      "last_modified": "Thu, 07 Mar 2024 02:44:22 GMT"
+    },
+    "2024-03-07": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-07.zip",
+      "available": true,
+      "content_length": 24917506,
+      "last_modified": "Fri, 08 Mar 2024 05:01:23 GMT"
+    },
+    "2024-03-08": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-08.zip",
+      "available": true,
+      "content_length": 30866568,
+      "last_modified": "Sat, 09 Mar 2024 03:01:43 GMT"
+    },
+    "2024-03-09": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-09.zip",
+      "available": true,
+      "content_length": 14881810,
+      "last_modified": "Sun, 10 Mar 2024 02:39:26 GMT"
+    },
+    "2024-03-10": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-10.zip",
+      "available": true,
+      "content_length": 22814715,
+      "last_modified": "Mon, 11 Mar 2024 03:52:56 GMT"
+    },
+    "2024-03-11": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-11.zip",
+      "available": true,
+      "content_length": 31630043,
+      "last_modified": "Tue, 12 Mar 2024 05:57:24 GMT"
+    },
+    "2024-03-12": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-12.zip",
+      "available": true,
+      "content_length": 31475379,
+      "last_modified": "Wed, 13 Mar 2024 03:17:28 GMT"
+    },
+    "2024-03-13": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-13.zip",
+      "available": true,
+      "content_length": 25731548,
+      "last_modified": "Thu, 14 Mar 2024 02:27:00 GMT"
+    },
+    "2024-03-14": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-14.zip",
+      "available": true,
+      "content_length": 29784022,
+      "last_modified": "Fri, 15 Mar 2024 03:14:41 GMT"
+    },
+    "2024-03-15": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-15.zip",
+      "available": true,
+      "content_length": 40035795,
+      "last_modified": "Sat, 16 Mar 2024 02:30:07 GMT"
+    },
+    "2024-03-16": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-16.zip",
+      "available": true,
+      "content_length": 27440412,
+      "last_modified": "Sun, 17 Mar 2024 03:43:29 GMT"
+    },
+    "2024-03-17": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-17.zip",
+      "available": true,
+      "content_length": 24470073,
+      "last_modified": "Mon, 18 Mar 2024 02:46:22 GMT"
+    },
+    "2024-03-18": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-18.zip",
+      "available": true,
+      "content_length": 25291485,
+      "last_modified": "Tue, 19 Mar 2024 03:53:12 GMT"
+    },
+    "2024-03-19": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-19.zip",
+      "available": true,
+      "content_length": 37159502,
+      "last_modified": "Wed, 20 Mar 2024 02:44:40 GMT"
+    },
+    "2024-03-20": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-20.zip",
+      "available": true,
+      "content_length": 36067260,
+      "last_modified": "Thu, 21 Mar 2024 02:58:02 GMT"
+    },
+    "2024-03-21": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-21.zip",
+      "available": true,
+      "content_length": 24281253,
+      "last_modified": "Fri, 22 Mar 2024 03:28:00 GMT"
+    },
+    "2024-03-22": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-22.zip",
+      "available": true,
+      "content_length": 25890867,
+      "last_modified": "Sat, 23 Mar 2024 03:12:24 GMT"
+    },
+    "2024-03-23": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-23.zip",
+      "available": true,
+      "content_length": 17876403,
+      "last_modified": "Sun, 24 Mar 2024 02:39:36 GMT"
+    },
+    "2024-03-24": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-03-24.zip",
+      "available": true,
+      "content_length": 18836604,
+      "last_modified": "Mon, 25 Mar 2024 03:24:32 GMT"
+    }
+  },
+  "raw_files": {
+    "2023-03-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-25.zip",
+      "sha256": "5bba0a4fa33fb258d19fb6e8ab414f15ae15dc5ecb5f3a2a2e0c31a403193a85",
+      "bytes": 11729875,
+      "rows": 817141
+    },
+    "2023-03-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-26.zip",
+      "sha256": "ab177c708ac32b540f8d88c14d1954c6298ceb9cff3a4e5c97251df526f8f7ad",
+      "bytes": 11269189,
+      "rows": 786235
+    },
+    "2023-03-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-27.zip",
+      "sha256": "e90b09c1601e3e497942430ae0bda274d0355c55055afee4217d3141b27d9ce2",
+      "bytes": 16461910,
+      "rows": 1145084
+    },
+    "2023-03-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-28.zip",
+      "sha256": "674588d96bf5bd6c724c547f2033ce865310b16a91be54c73eb55f09c5eca4c3",
+      "bytes": 15965990,
+      "rows": 1117559
+    },
+    "2023-03-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-29.zip",
+      "sha256": "fb50d7b630128bf1325027612f70a26577ea81c633bb022be6a97a1c174be55e",
+      "bytes": 17658734,
+      "rows": 1239862
+    },
+    "2023-03-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-30.zip",
+      "sha256": "7a9534f90815a50d2e1751d964f8c24dd4d6c05f29807971a1c51889f23db8ff",
+      "bytes": 19616032,
+      "rows": 1384715
+    },
+    "2023-03-31": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-31.zip",
+      "sha256": "aa55734db1bbc9c0b7bdd9e3a715d2c83f56dd9834b36c6bcaffb5ff6631fbb1",
+      "bytes": 16787611,
+      "rows": 1185212
+    },
+    "2023-04-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-01.zip",
+      "sha256": "cfb57330d78e1810f572af04fd5a7899d8bec6b65850ddb0880e3d7956c2eb94",
+      "bytes": 9325835,
+      "rows": 651525
+    },
+    "2023-04-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-02.zip",
+      "sha256": "0f4d2cb9ae9ffde947542f875fcdf33904396359ae0a78382d5aed9d656f69bc",
+      "bytes": 10547181,
+      "rows": 741918
+    },
+    "2023-04-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-03.zip",
+      "sha256": "6e210516ec22fd45bcb4ddcfaa3c0a1d9dddd5d1c03fbaddab6486ef670607c4",
+      "bytes": 18252206,
+      "rows": 1287095
+    },
+    "2023-04-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-04.zip",
+      "sha256": "6a3d2b453ba9a546b468fb8a306ba68aa96f04d09e4be542f548a611b5c3419d",
+      "bytes": 12388279,
+      "rows": 862796
+    },
+    "2023-04-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-05.zip",
+      "sha256": "360c3f8de9bb9bd307893a13f0a45c27f083d816634449f4d8eb223a5ac6e38b",
+      "bytes": 14044361,
+      "rows": 981428
+    },
+    "2023-04-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-06.zip",
+      "sha256": "370610301ada89afe96bb553de993ec112908d207636de12ec4f2bad21058f56",
+      "bytes": 10624252,
+      "rows": 741248
+    },
+    "2023-04-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-07.zip",
+      "sha256": "d995d9186ed374b334c31b5eb89fc92285d7fcaa4f6b32541b693f9b1f434b24",
+      "bytes": 7542531,
+      "rows": 524712
+    },
+    "2023-04-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-08.zip",
+      "sha256": "733e3d95b3b2d1444a87f5ce442f21e66c34930ee44bc8de9bb0f11c68951655",
+      "bytes": 7407818,
+      "rows": 518781
+    },
+    "2023-04-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-09.zip",
+      "sha256": "8cc285e350d43f4acee57cffc1beadafeada6f5a6d97d484eaadd7ce514e30bd",
+      "bytes": 8879695,
+      "rows": 621970
+    },
+    "2023-04-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-10.zip",
+      "sha256": "20c4e645ec5641eb380fb30c3a6bf056b6addc7e0ec411b67d29c2404bd060db",
+      "bytes": 14273535,
+      "rows": 999793
+    },
+    "2023-04-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-11.zip",
+      "sha256": "7cbd36ed85445b3c97800d2fc5d0913af5b1a79bdc3bedf53efe504b051b4ad3",
+      "bytes": 15187533,
+      "rows": 1061109
+    },
+    "2023-04-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-12.zip",
+      "sha256": "9b078b720f86210d9a5537980cb21dc63a3837f79ecc793a7e28702925b47f7a",
+      "bytes": 14264037,
+      "rows": 993870
+    },
+    "2023-04-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-13.zip",
+      "sha256": "3389eb98f89c91a3cabafce4f183f5cfdc0f138f9e287cf57f57efc4159d509d",
+      "bytes": 12024296,
+      "rows": 837590
+    },
+    "2023-04-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-14.zip",
+      "sha256": "fadf1ba6b92d4f87693ce65cd1f5ef8cc066a4931d7cc79be5ec43922e4296e4",
+      "bytes": 17137301,
+      "rows": 1193393
+    },
+    "2023-04-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-15.zip",
+      "sha256": "4235dae6028be0b7d8c5d8c137d587dfb2dc1987f90d6819018a5806529c7671",
+      "bytes": 8656948,
+      "rows": 601021
+    },
+    "2023-04-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-16.zip",
+      "sha256": "3200b85d3cf0e44194e0436ef9729166e88c4b53d58073a8703a96d340e46b99",
+      "bytes": 8298230,
+      "rows": 575262
+    },
+    "2023-04-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-17.zip",
+      "sha256": "1e0f719a83587cc39bb51df5b2f13c7293f7479355dce276121841afd4b33281",
+      "bytes": 12602591,
+      "rows": 880114
+    },
+    "2023-04-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-18.zip",
+      "sha256": "7627a9aefbaa6a89cdb0da4ad3c69c2bdcae4c321f1e55e9a932e516b2e02f7f",
+      "bytes": 12924764,
+      "rows": 893647
+    },
+    "2023-04-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-19.zip",
+      "sha256": "156988cefcf5ea416071a7a4d0be63cee5cea8a928ed0ad29cf1c1565ec2b532",
+      "bytes": 19537702,
+      "rows": 1360410
+    },
+    "2023-04-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-20.zip",
+      "sha256": "b79f1966c09773d1e7cd5961ac93c323a2c968ce74559f41bafdd9934eb32a96",
+      "bytes": 16353102,
+      "rows": 1136546
+    },
+    "2023-04-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-21.zip",
+      "sha256": "6d15128a9df62e586474ead21fe7d02a2b8f4ddc16dbb58f9df90d0d8e00f65c",
+      "bytes": 16670447,
+      "rows": 1163429
+    },
+    "2023-04-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-22.zip",
+      "sha256": "b535241a2945c916c811ea3d89861f8e35ecfcf7a85b9aa33de7cbaaf5088e44",
+      "bytes": 9931854,
+      "rows": 695126
+    },
+    "2023-04-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-23.zip",
+      "sha256": "1145b329a4d16c2c7f3a18b856ffe5818af2c16873c7e4754013156b920f62bc",
+      "bytes": 10147911,
+      "rows": 709690
+    },
+    "2023-04-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-24.zip",
+      "sha256": "4fd08008d722d4b4d0fdfc1237dc37053de9422d3bdf032a0165a33a1ce9f989",
+      "bytes": 13790146,
+      "rows": 964211
+    },
+    "2023-04-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-25.zip",
+      "sha256": "00763a0f2e8b6708dab40a5741b0be3bbe1649670df701045025dd3e5129607e",
+      "bytes": 12465250,
+      "rows": 869887
+    },
+    "2023-04-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-26.zip",
+      "sha256": "d3caf6215b5237a30161089158e2caf06441d4d8057420d51ec5a78c65f22543",
+      "bytes": 25771501,
+      "rows": 1806038
+    },
+    "2023-04-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-27.zip",
+      "sha256": "e0fff55072f82bc02e2436115c82345754cd240276fa38154f734b5b01122858",
+      "bytes": 22646038,
+      "rows": 1587774
+    },
+    "2023-04-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-28.zip",
+      "sha256": "5bcad564645e4656e89b20e900fadfe908a7cc037edd6ceb6e56ec99cf1a75ab",
+      "bytes": 12760277,
+      "rows": 890853
+    },
+    "2023-04-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-29.zip",
+      "sha256": "42dcc17e0ca89c4b3375bb8e798cbc3ebc0087b7ac43980f987a51693cad043e",
+      "bytes": 7229002,
+      "rows": 501597
+    },
+    "2023-04-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-04-30.zip",
+      "sha256": "8d37aa613e3a21858cdf58524e7b42802debbbd0775a77705eff53e4b1f785ae",
+      "bytes": 10910164,
+      "rows": 761291
+    },
+    "2023-05-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-01.zip",
+      "sha256": "e9131ac7e0d7eed8d2f6bc20025b7e8e4d9877eb5ddf7c24d90511bec2aef4d4",
+      "bytes": 15127538,
+      "rows": 1061375
+    },
+    "2023-05-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-02.zip",
+      "sha256": "c6def8bdb0f365c9a883b594eeffc08b50774ee29e2f310bc6d307bb6c75e3ec",
+      "bytes": 12882271,
+      "rows": 898518
+    },
+    "2023-05-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-03.zip",
+      "sha256": "8a1f4e40eaf3a0ae0cead47e4518d00fb570ae9ddfde89ad771008e11866a410",
+      "bytes": 16909727,
+      "rows": 1183358
+    },
+    "2023-05-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-04.zip",
+      "sha256": "4e3f5d538c68f43a9b11c3c605566cdfdf0432cd421aac142f503130b8ec405a",
+      "bytes": 10814552,
+      "rows": 750657
+    },
+    "2023-05-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-05.zip",
+      "sha256": "03f7f62edd975236bd37a3acc47eb245a7b975bc099a396bf93d35e5e4ee15c2",
+      "bytes": 14299408,
+      "rows": 996866
+    },
+    "2023-05-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-06.zip",
+      "sha256": "eb041e2664fa61402d93eaf9c11ddcf8095d020bb16e6a6605505a081145d6a2",
+      "bytes": 13608386,
+      "rows": 954813
+    },
+    "2023-05-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-07.zip",
+      "sha256": "be26a9e836a2f61b000e60945e2ea77bbb2f2946443ae1c8a3477eae109364a9",
+      "bytes": 9524876,
+      "rows": 665516
+    },
+    "2023-05-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-08.zip",
+      "sha256": "5a4dc915948a96e62157827d6c2472e775d22f7907d7767e0f095456c1da796e",
+      "bytes": 17272373,
+      "rows": 1208202
+    },
+    "2023-05-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-09.zip",
+      "sha256": "b111e6fa12c1b822d8bef0330b8fd5d35a525493fc1b4161bb8a650d4a113875",
+      "bytes": 10726131,
+      "rows": 743776
+    },
+    "2023-05-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-10.zip",
+      "sha256": "55ff6407ba9c921e2dfca2ba55ed96b4bdf60284fbde8579561572840994969d",
+      "bytes": 16828574,
+      "rows": 1173713
+    },
+    "2023-05-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-11.zip",
+      "sha256": "cc15c43006910d8e635dfe304b9867a8745a51b8feb221a2c3680a008e52571f",
+      "bytes": 13796858,
+      "rows": 965862
+    },
+    "2023-05-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-12.zip",
+      "sha256": "dcfda6d429b06146d08e0c350889481efcde54346edce588de0d803ae8851206",
+      "bytes": 14839988,
+      "rows": 1024511
+    },
+    "2023-05-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-13.zip",
+      "sha256": "b2715f0e5e87eb0d64041620d218437811a2770b34d5b25cea426ab86ca1100e",
+      "bytes": 6773951,
+      "rows": 462038
+    },
+    "2023-05-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-14.zip",
+      "sha256": "6189173c4cb011b1b68095f43982b138751aeefe580e73db60849b102b5ab701",
+      "bytes": 7028486,
+      "rows": 485791
+    },
+    "2023-05-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-15.zip",
+      "sha256": "431d6e6d33772fb8305208d81889814a72a52021065e0347c465cd50bd3a2fc8",
+      "bytes": 10275553,
+      "rows": 721934
+    },
+    "2023-05-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-16.zip",
+      "sha256": "c2738de5e4fb9148cd005355b9e7fef05859604eeb941f0ab13c53d417428af0",
+      "bytes": 8826891,
+      "rows": 617457
+    },
+    "2023-05-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-17.zip",
+      "sha256": "3d8a3ca33e0ec03dd4af8d3e5235869aae45dce25f3e5f6ec28bcdfedc917d52",
+      "bytes": 10866494,
+      "rows": 768095
+    },
+    "2023-05-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-18.zip",
+      "sha256": "3c91abab35e8e1119f090eabd7853b34ddc61daeda7b79e6ce93a7772fc2a231",
+      "bytes": 11575037,
+      "rows": 813533
+    },
+    "2023-05-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-19.zip",
+      "sha256": "27cf6e54b7f13236bedc97a48a34d5bfbd360b2551afd0bec42b373a63787289",
+      "bytes": 8693905,
+      "rows": 603933
+    },
+    "2023-05-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-20.zip",
+      "sha256": "101d64139a4ee0199a1e81a7c4014d7da068f78af2ab4154f19e4a607c90913a",
+      "bytes": 5628067,
+      "rows": 391975
+    },
+    "2023-05-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-21.zip",
+      "sha256": "6cd14cbc1919cdae0aebe6af10e0a573075a1604e549a13fb973f1175f5dc879",
+      "bytes": 6454684,
+      "rows": 447857
+    },
+    "2023-05-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-22.zip",
+      "sha256": "1bfa706c026940824de4488b493adb47bbde8ab91e1807501553673f3cc6f3a0",
+      "bytes": 7736100,
+      "rows": 536526
+    },
+    "2023-05-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-23.zip",
+      "sha256": "f806567c92d726b81a2e30a99fb3676c1e3003efe35fb095c00796e2137640fb",
+      "bytes": 8777932,
+      "rows": 607062
+    },
+    "2023-05-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-24.zip",
+      "sha256": "afffdab8a07411faf8d9e7f07b1b868ae355fb4c6d6864670a3345ad96588ba8",
+      "bytes": 11331802,
+      "rows": 784912
+    },
+    "2023-05-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-25.zip",
+      "sha256": "88e23c803e37940fa9802025c175fe90e5626cceef6f6d37c73bd9d66691db42",
+      "bytes": 8541110,
+      "rows": 586231
+    },
+    "2023-05-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-26.zip",
+      "sha256": "9833743e5d98a7da55dd28fc76c2f12164ec705853140acea2002cadd42b589d",
+      "bytes": 7400702,
+      "rows": 506909
+    },
+    "2023-05-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-27.zip",
+      "sha256": "d686a1994a1a1058ac9240a6e433e2d19e6df1f6b234db2d0a3890c3ba0bfd8c",
+      "bytes": 4784716,
+      "rows": 327636
+    },
+    "2023-05-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-28.zip",
+      "sha256": "0da2f9311f7a068aaf0a42cd1589cff2b31b93cd49b567537b725eb94d10d077",
+      "bytes": 9197686,
+      "rows": 632934
+    },
+    "2023-05-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-29.zip",
+      "sha256": "8a63e882f0e97610d452a709b8bd7349a71d293bd2964a9c8bf608e5b5996b1a",
+      "bytes": 8938934,
+      "rows": 622753
+    },
+    "2023-05-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-30.zip",
+      "sha256": "f1ab5cd886bbc83319d487dd5e38a1ba48e5fa13b4b743c93ea5067c3afaee85",
+      "bytes": 8278589,
+      "rows": 580233
+    },
+    "2023-05-31": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-05-31.zip",
+      "sha256": "bdd5ff1e392e71f43ec62beffbbaecc4f81f9c89a6d5a9b2c5ccd4d1aac85c5d",
+      "bytes": 10082725,
+      "rows": 710719
+    },
+    "2023-06-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-01.zip",
+      "sha256": "b209a79e0dfcbc599e9da01eeccfb683ef8a90a0db4336771418910727da3a35",
+      "bytes": 8927371,
+      "rows": 627613
+    },
+    "2023-06-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-02.zip",
+      "sha256": "1435eaadc2b3dd30b0f57b2183df3ff2786433df1046b8c19e4f19b87ea55061",
+      "bytes": 8962722,
+      "rows": 628271
+    },
+    "2023-06-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-03.zip",
+      "sha256": "c0d90bae75202208268a61612f0123ab03dd6a9274bd7837886e07aace6a562d",
+      "bytes": 5271031,
+      "rows": 368778
+    },
+    "2023-06-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-04.zip",
+      "sha256": "bac9190b5d3b7c8a8d52969da365897d8290760602d2537dfce66fb9a133f4c0",
+      "bytes": 5506668,
+      "rows": 387272
+    },
+    "2023-06-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-05.zip",
+      "sha256": "4aa2f7a1ee5a695a06204fcac11cd744e8d8aec6e77b8403d105b5d334b0f156",
+      "bytes": 15345503,
+      "rows": 1077982
+    },
+    "2023-06-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-06.zip",
+      "sha256": "92bfb414a768d65121c991e4c30adf71c595b0ddc1b132efbe1a729d74bc8eef",
+      "bytes": 14365113,
+      "rows": 1013521
+    },
+    "2023-06-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-07.zip",
+      "sha256": "9185304c5895f4a046c293a62a70913a442b7428e77482bb7848b928923f6fbc",
+      "bytes": 14092292,
+      "rows": 1003088
+    },
+    "2023-06-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-08.zip",
+      "sha256": "9c78e033bedf3a42f464e66840a05c46a67994fc0285bda7c8561925683b71ec",
+      "bytes": 9180773,
+      "rows": 654984
+    },
+    "2023-06-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-09.zip",
+      "sha256": "236f5a1295047393fbff0dc8a2cffba1c54e3dc50b066d171508f64ec6f72993",
+      "bytes": 8246466,
+      "rows": 589219
+    },
+    "2023-06-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-10.zip",
+      "sha256": "7bd18ba7d8f742cd6be5625b1c1d9da7401dd80d0d2f2d7bdd73d604db67e40e",
+      "bytes": 18716651,
+      "rows": 1328512
+    },
+    "2023-06-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-11.zip",
+      "sha256": "86fcaa4bf53d3ccdb1b3d479af8fac054ec1e6f07dc720dd66709307d6018506",
+      "bytes": 8859647,
+      "rows": 631628
+    },
+    "2023-06-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-12.zip",
+      "sha256": "8d0b96da316a2ad135792cdd32d22b38e675102cc9f54b9476f1a79fb385f564",
+      "bytes": 9391405,
+      "rows": 665480
+    },
+    "2023-06-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-13.zip",
+      "sha256": "185bdca3bb5c5d67539da7788854ce5750b7ea0b8b4c934962b1d8403b1dbdf4",
+      "bytes": 11014175,
+      "rows": 781671
+    },
+    "2023-06-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-14.zip",
+      "sha256": "48beb7a04e931517ee9a9b75c8c4412b1b2db6d0749492fe52ec3852cb99c4e7",
+      "bytes": 10223381,
+      "rows": 713396
+    },
+    "2023-06-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-15.zip",
+      "sha256": "2fc298b1dbe2b9762c58581511a3c1681471e3d09622b4fd33eb105457d39f34",
+      "bytes": 9850786,
+      "rows": 683170
+    },
+    "2023-06-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-16.zip",
+      "sha256": "367da37aa8436edcf2c1e901d653d897b05450e1d7228a02312d5db8a4d35dec",
+      "bytes": 9870043,
+      "rows": 688842
+    },
+    "2023-06-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-17.zip",
+      "sha256": "38db80fc574d4de784eb856dfd32161d1c1931c00ec2e130f9dc05c0da1a76bb",
+      "bytes": 7242849,
+      "rows": 506817
+    },
+    "2023-06-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-18.zip",
+      "sha256": "020b34c2b6e698822362a3e4ee81508ba5627caec6df5f584d5dca0fafedaeec",
+      "bytes": 6133431,
+      "rows": 430860
+    },
+    "2023-06-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-19.zip",
+      "sha256": "79b866ae0dc5085283dcc38908fdf5ed2b043ea1d3738ae620a63a7b22566b2c",
+      "bytes": 7971034,
+      "rows": 558362
+    },
+    "2023-06-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-20.zip",
+      "sha256": "fd02485ffeff4211a97b42673066e0b42ca6682d15f852e36d0fb8d395fa1dad",
+      "bytes": 12341445,
+      "rows": 859875
+    },
+    "2023-06-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-21.zip",
+      "sha256": "db9fe25bfeda045454bea7eda48d82a3c04c80972b857916ad08867c4c214c9a",
+      "bytes": 19668555,
+      "rows": 1371327
+    },
+    "2023-06-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-22.zip",
+      "sha256": "6cc63bccc5d42d2362257cf40e52740b7ec0afa84b22c5a3e6dfc48c388b9bc0",
+      "bytes": 12430125,
+      "rows": 866275
+    },
+    "2023-06-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-23.zip",
+      "sha256": "6bc19582c3e67838afc6340a3c915cb74171cd70efa8ba4875a460c8aac6add9",
+      "bytes": 14047418,
+      "rows": 975614
+    },
+    "2023-06-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-24.zip",
+      "sha256": "f0366d8175852785a9b174c9840ca1447ad7ab721c6f7892006a69d00a448514",
+      "bytes": 8475547,
+      "rows": 592038
+    },
+    "2023-06-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-25.zip",
+      "sha256": "ecb2ffd072793d50670b1b2f0c772c79c3200fc455d7714a7d96cba22eb42514",
+      "bytes": 8647657,
+      "rows": 603905
+    },
+    "2023-06-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-26.zip",
+      "sha256": "745d5c8a14d291678f4cd50c1a36edc738f64c07d8003f410b521cd9b3fdb03a",
+      "bytes": 10253888,
+      "rows": 716090
+    },
+    "2023-06-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-27.zip",
+      "sha256": "f5af1d18f47141d9fe8b835a75c0b498a68b84838021ab1fac7d4eaa78b37dce",
+      "bytes": 8755252,
+      "rows": 607101
+    },
+    "2023-06-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-28.zip",
+      "sha256": "7f91c8bb0af2f45d94d70672cda47973f10f513dc07f27aca282441319257440",
+      "bytes": 9595187,
+      "rows": 678701
+    },
+    "2023-06-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-29.zip",
+      "sha256": "c1c90675da950d50c57f501c76f4f263af0d02b8f9e3dbc02e6b437f80d08419",
+      "bytes": 8125751,
+      "rows": 567035
+    },
+    "2023-06-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-06-30.zip",
+      "sha256": "5e83d015fd49f675efc39fb2735b726e96bd4fc659376b8351b6309085790384",
+      "bytes": 16383742,
+      "rows": 1144264
+    },
+    "2023-07-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-01.zip",
+      "sha256": "e1cd42e94ae8335332ef713842f4559556e1d7f732a22225118a0ce000755485",
+      "bytes": 6349111,
+      "rows": 448858
+    },
+    "2023-07-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-02.zip",
+      "sha256": "4e945c9928acdc5ff00909b8c107aea8e5c27c99bb8921ce5752deddc6b4c397",
+      "bytes": 6467480,
+      "rows": 451715
+    },
+    "2023-07-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-03.zip",
+      "sha256": "071144488f73599f9d2d665a3de1de5cafa7e95e6795b7cd772fb6a2a529283e",
+      "bytes": 8480767,
+      "rows": 586890
+    },
+    "2023-07-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-04.zip",
+      "sha256": "704a7c77d28663b33345d1175e6b643e781da8cf923ed4c585b6271095dc8b72",
+      "bytes": 8353503,
+      "rows": 590489
+    },
+    "2023-07-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-05.zip",
+      "sha256": "9101c559966c05d0dc15796253900e8652c46420e959a0919d03101e19ce7d82",
+      "bytes": 9144571,
+      "rows": 653549
+    },
+    "2023-07-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-06.zip",
+      "sha256": "57784ca5ac4635ed2b625fca3c2104ef48183f560aecbe86aba86b84d4882b5a",
+      "bytes": 14772748,
+      "rows": 1060082
+    },
+    "2023-07-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-07.zip",
+      "sha256": "ce44bed9ea5eb642348ef91e6a15da2428029efe7c32bd676c0e607f5970d80e",
+      "bytes": 9900271,
+      "rows": 713168
+    },
+    "2023-07-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-08.zip",
+      "sha256": "f96ff6a11999d64dce1e6768b5b61c797c95b4176065495446fe0a0fb4b4f027",
+      "bytes": 5386415,
+      "rows": 382968
+    },
+    "2023-07-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-09.zip",
+      "sha256": "edeeae15cfaa71289c0425e83c32230a5233808a10faf4d02890a0ac3dfa8dc9",
+      "bytes": 5271100,
+      "rows": 375943
+    },
+    "2023-07-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-10.zip",
+      "sha256": "1cf39ab4e467a568663416a1eba97615f5f11ad5a8035d0f56ea951ae9486d86",
+      "bytes": 9038366,
+      "rows": 637391
+    },
+    "2023-07-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-11.zip",
+      "sha256": "472fc964c10ccc001f715e258c759690a0bf77dc923cbab46c1cea3c30c9231f",
+      "bytes": 6930756,
+      "rows": 479815
+    },
+    "2023-07-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-12.zip",
+      "sha256": "a232be30e0dd5c848a8c7951eeacbc748acd16ae010e0964a6239adf2697a1e1",
+      "bytes": 7828778,
+      "rows": 542192
+    },
+    "2023-07-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-13.zip",
+      "sha256": "ea860bc53be05244830f0f719f6119d90dbd1d6ab9b197df8ea5473fc7fa19ba",
+      "bytes": 13338561,
+      "rows": 932892
+    },
+    "2023-07-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-14.zip",
+      "sha256": "f5b981231a4b33c5a8a64af049b0c1a88bcf85d2ce825bd052fe855924f6d9c7",
+      "bytes": 13413114,
+      "rows": 937830
+    },
+    "2023-07-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-15.zip",
+      "sha256": "c768747b812a5208882febfeb98aeb3e70349c16c61a790f74f6fd809106c06b",
+      "bytes": 5672424,
+      "rows": 399858
+    },
+    "2023-07-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-16.zip",
+      "sha256": "fbb2bf5765e351aa15c6904aca81f99aab65b6d95b4872b56804e34f30895266",
+      "bytes": 5382761,
+      "rows": 379011
+    },
+    "2023-07-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-17.zip",
+      "sha256": "b6a8eb76cdb71f5087ae2d9fc651e6548c68a26cd5c275a4488390773fffabf1",
+      "bytes": 8504442,
+      "rows": 602598
+    },
+    "2023-07-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-18.zip",
+      "sha256": "bb3ff0ce6b8a398197225c4080f37bafa9eaf716b3ffd0c70e6dc5d655664294",
+      "bytes": 7765256,
+      "rows": 544270
+    },
+    "2023-07-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-19.zip",
+      "sha256": "9af3335a82c000305f8c6cf517d6f28159f168285ad0a887b4fcbc54f3e50d8f",
+      "bytes": 6269151,
+      "rows": 435000
+    },
+    "2023-07-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-20.zip",
+      "sha256": "bb836b1a292f1e3d3cebe98210b31b8d510cd56ab9882686df5868376882b561",
+      "bytes": 7721615,
+      "rows": 536434
+    },
+    "2023-07-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-21.zip",
+      "sha256": "fe75a8cc2b62cfe8fc5f6b3fdeeed906ba9369163d870a50f54e988c8d5c2761",
+      "bytes": 5966401,
+      "rows": 417847
+    },
+    "2023-07-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-22.zip",
+      "sha256": "44b4737c69558972c5eef723052e97372aab173eb2c51c108b3bec18154c2119",
+      "bytes": 4661338,
+      "rows": 327793
+    },
+    "2023-07-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-23.zip",
+      "sha256": "7181f1a437d6683a54350f300a5795f42c0a42df90a080a81ea55df2ffd19d0f",
+      "bytes": 5374772,
+      "rows": 379263
+    },
+    "2023-07-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-24.zip",
+      "sha256": "a60f4fd501ff27a3a7c12fe8c9e7eab287b25ac7a979a74782c08a52558a36cf",
+      "bytes": 8736844,
+      "rows": 613183
+    },
+    "2023-07-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-25.zip",
+      "sha256": "c3b7a8f0e9f2045bf8e09a123a62c1046a99121cee0f60ce459b27ef7282c726",
+      "bytes": 5795005,
+      "rows": 406852
+    },
+    "2023-07-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-26.zip",
+      "sha256": "d99b35cacf5390ffa2ffa2da0c8442f8d37a7a11191e031a4a0961effc6203c5",
+      "bytes": 7618583,
+      "rows": 537059
+    },
+    "2023-07-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-27.zip",
+      "sha256": "16881b9e6ed1cb5dea9eed5fd9547d01f3f6e1e102fe0f069220b2aabc9e9f96",
+      "bytes": 6048560,
+      "rows": 422518
+    },
+    "2023-07-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-28.zip",
+      "sha256": "d4bbee8f72793f28535df0cc2f8ee95d015cd0e47e60fe7b8b8d32ccafd45b05",
+      "bytes": 5673146,
+      "rows": 396913
+    },
+    "2023-07-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-29.zip",
+      "sha256": "516961441e0a87f38d056d5da32cc7966ea18d5d23db8b5c3120303e807ed922",
+      "bytes": 3840524,
+      "rows": 270098
+    },
+    "2023-07-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-30.zip",
+      "sha256": "d15a2df7640cb27b4bcad1fc2938da0edc3cda658229ebfa9e49efa206de1968",
+      "bytes": 4757025,
+      "rows": 334570
+    },
+    "2023-07-31": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-07-31.zip",
+      "sha256": "dd17f5ea4f1151b2774a92cfbca5e9b7e5c475ec6b8b295ef8abf824af3645fc",
+      "bytes": 5739928,
+      "rows": 400283
+    },
+    "2023-08-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-01.zip",
+      "sha256": "ae2908c329a71816b057b68f6be46f4944ab241cbd00436981549187004561f6",
+      "bytes": 8756730,
+      "rows": 613670
+    },
+    "2023-08-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-02.zip",
+      "sha256": "329367a5eda27f70bab5cc99db7df7d0df327c428ef18e801d8bc7c15b6a48db",
+      "bytes": 8973722,
+      "rows": 627482
+    },
+    "2023-08-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-03.zip",
+      "sha256": "28e556061e7d2b3706dc5ab7279dab4f43a64f9f3c0a30fe4843f866c7155c01",
+      "bytes": 6261791,
+      "rows": 435358
+    },
+    "2023-08-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-04.zip",
+      "sha256": "66b8f762ea3274731f21090d4f1e211ef9f9d14ce7bd9228ea8eb82bf67aa598",
+      "bytes": 5617393,
+      "rows": 388889
+    },
+    "2023-08-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-05.zip",
+      "sha256": "dacbe991eaaaf8f2c5b53617ea7f37d990e2b5e30f2e48fd0d419f1ba8cb4a96",
+      "bytes": 3787607,
+      "rows": 262831
+    },
+    "2023-08-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-06.zip",
+      "sha256": "f1501d28b7cd4cb2fff6cc3147b8aa258d4b7a31519b1b9d5ab7186e0dca407f",
+      "bytes": 3855916,
+      "rows": 269225
+    },
+    "2023-08-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-07.zip",
+      "sha256": "3d679ca6f4afd22bd16bc6b27d7cdd17e79e7c376c58623eb52fffd14bad857c",
+      "bytes": 7076479,
+      "rows": 495710
+    },
+    "2023-08-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-08.zip",
+      "sha256": "4de909921ced9f43ce801e475c25d5286404e114a19fd1a6fa80aaccb0e7f68d",
+      "bytes": 8904603,
+      "rows": 621988
+    },
+    "2023-08-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-09.zip",
+      "sha256": "74d767f4c84a892d0df8dd21fa29616f26d7970cc7e7be35e4c5834934adc462",
+      "bytes": 7622552,
+      "rows": 530044
+    },
+    "2023-08-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-10.zip",
+      "sha256": "1daf225bb4ccfbb5608de23cd216459630a3ae79a400584b2765cb7baf64c69d",
+      "bytes": 5515074,
+      "rows": 382071
+    },
+    "2023-08-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-11.zip",
+      "sha256": "d1ae7f7c836ea0e586a19fd10f61f940cba466c375ded1c276fb472bbf0f0bf7",
+      "bytes": 4763829,
+      "rows": 329462
+    },
+    "2023-08-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-12.zip",
+      "sha256": "0abfecc8c67edff2600cce41182d8c74ef5be6f5d1064cc5bcb62d510b9f33cd",
+      "bytes": 3577142,
+      "rows": 252321
+    },
+    "2023-08-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-13.zip",
+      "sha256": "a69c148c51e277727ed3618f767d83267d2fa28e694de9d8b789617816467285",
+      "bytes": 3839160,
+      "rows": 272439
+    },
+    "2023-08-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-14.zip",
+      "sha256": "0345c2e92fb0c359d789b83700b5f867ea4cdb6883dafe5aa787e1fb1f6a047a",
+      "bytes": 6934428,
+      "rows": 487440
+    },
+    "2023-08-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-15.zip",
+      "sha256": "73e3b8fe6c8f261fff28c8269f25038737b5f42bb53c7ae243443162aeb1487e",
+      "bytes": 6717227,
+      "rows": 471986
+    },
+    "2023-08-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-16.zip",
+      "sha256": "7308a544c838410683a9c7dd15debc3e4fad9322af7b719b74fd1e974d339117",
+      "bytes": 8158952,
+      "rows": 573279
+    },
+    "2023-08-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-17.zip",
+      "sha256": "183ba094d5ff2480027640a0c43471584f3b9aaef977e45df3f6c3fab6544575",
+      "bytes": 20287838,
+      "rows": 1424879
+    },
+    "2023-08-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-18.zip",
+      "sha256": "43da62eb98b1605140888f399a82392c5ed51dbe2b7390bc4fff0771d5be2192",
+      "bytes": 13437763,
+      "rows": 939519
+    },
+    "2023-08-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-19.zip",
+      "sha256": "c648772e3df471c9ed5fdd84386fcbdfc5fd7116179a01d9f4ee549755035c3f",
+      "bytes": 6748648,
+      "rows": 464961
+    },
+    "2023-08-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-20.zip",
+      "sha256": "cd14bdf601acdc3ef6267ab6c70f3ad8e2fb1ccbb9226af751225b47c45d4b95",
+      "bytes": 5015747,
+      "rows": 343363
+    },
+    "2023-08-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-21.zip",
+      "sha256": "b3283441636dec24e0be34d42b0c2bf5fae3478c4771326be5012acfdce07711",
+      "bytes": 6116853,
+      "rows": 417665
+    },
+    "2023-08-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-22.zip",
+      "sha256": "efa1839cfd63283222cea05680f8f203384f676b58f8b91d5e2900849a28b882",
+      "bytes": 6547155,
+      "rows": 446720
+    },
+    "2023-08-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-23.zip",
+      "sha256": "bb83162cc97fff39c76de33d1b7559455c5ce90c5dc77026ba69b02aebe1f149",
+      "bytes": 7145710,
+      "rows": 485195
+    },
+    "2023-08-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-24.zip",
+      "sha256": "20a5c79359da3ecd1321cb1c7909071430f1b53883ca539f70c13f5959fd0e24",
+      "bytes": 6291887,
+      "rows": 433411
+    },
+    "2023-08-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-25.zip",
+      "sha256": "dc9d6bd2723183acc2777678062f3e313343005a7bf57e8154a883ff155aa5a2",
+      "bytes": 6451632,
+      "rows": 444973
+    },
+    "2023-08-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-26.zip",
+      "sha256": "587bfb155bbfca06064f6369f2a293481c56c4a1dbb9a5f48e41b0d3f0ba3d48",
+      "bytes": 3653806,
+      "rows": 255436
+    },
+    "2023-08-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-27.zip",
+      "sha256": "b1f5c74caffc4b08c19e02c92c5b38b78de156ec8eae30d9b9e1d946e3b642e3",
+      "bytes": 3790385,
+      "rows": 266112
+    },
+    "2023-08-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-28.zip",
+      "sha256": "30fa668294d60b9bd9b92109b3e9250593de76cf291802456bc19847e999cb31",
+      "bytes": 5537639,
+      "rows": 384070
+    },
+    "2023-08-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-29.zip",
+      "sha256": "da1d73aa4b7729c7a10b530f042732b450d5fc478aacb40a16e447a2bf10b1be",
+      "bytes": 12197253,
+      "rows": 836132
+    },
+    "2023-08-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-30.zip",
+      "sha256": "014c10879b70a9e25a1b2f77c70b66c4b391d47641e47195eab60645ca8ef9a6",
+      "bytes": 7544887,
+      "rows": 525805
+    },
+    "2023-08-31": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-08-31.zip",
+      "sha256": "b224abab43b5d6ef65720e2d0f05a9658eadfbdf2fa301ddccf1d569ad4089a4",
+      "bytes": 9955323,
+      "rows": 687168
+    },
+    "2023-09-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-01.zip",
+      "sha256": "e796982fc816a3c2cff9ec43fa1a5127d61ca3c76be3d1f4c23186c34b5a61db",
+      "bytes": 9342265,
+      "rows": 655281
+    },
+    "2023-09-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-02.zip",
+      "sha256": "30bebf29876986c56ae513327c4f8fea3932b51cf1b9b62383a73761067680f2",
+      "bytes": 6099999,
+      "rows": 432618
+    },
+    "2023-09-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-03.zip",
+      "sha256": "212b3b8a7862fb5a4aa4076a74309b32a0ad133b25f2fdc1c673b77f8dcbebaa",
+      "bytes": 5464155,
+      "rows": 388294
+    },
+    "2023-09-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-04.zip",
+      "sha256": "747e619c0b6a6e787582833e7d496dcada4f9ff39c943f90fec429593e4d51aa",
+      "bytes": 6519147,
+      "rows": 458678
+    },
+    "2023-09-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-05.zip",
+      "sha256": "a704f47392fd09767fd9c220f5c9eef4130f29e0c6019e55b6c0da387860a0f6",
+      "bytes": 6224125,
+      "rows": 433969
+    },
+    "2023-09-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-06.zip",
+      "sha256": "cac701c9a1238788088218f2d90426639f9a907ca03ac35a998530f677acabd8",
+      "bytes": 6582077,
+      "rows": 454477
+    },
+    "2023-09-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-07.zip",
+      "sha256": "fd6f0a59d16bf20d67bbe41401526d30a96c4a20203356ac000426f3c56b9abf",
+      "bytes": 6458325,
+      "rows": 447458
+    },
+    "2023-09-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-08.zip",
+      "sha256": "257d3cc05ccc9dd94e204fcef42f74d6051feb945b96c2562e99f6e98f25819f",
+      "bytes": 6913520,
+      "rows": 481913
+    },
+    "2023-09-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-09.zip",
+      "sha256": "b0875a7d0638faa82094338566a9260a197b8787a052b3c970d2edd5ec069a74",
+      "bytes": 4248608,
+      "rows": 300291
+    },
+    "2023-09-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-10.zip",
+      "sha256": "c78647de8873dec6905a9ea98e3218f85fef0664b9ba835b4d776b0b3992e9c4",
+      "bytes": 5496340,
+      "rows": 386307
+    },
+    "2023-09-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-11.zip",
+      "sha256": "4cb95f540bc0fa313cbd3db25d6c7dd6beca9a4e0f893a6db715b6fa8c181e66",
+      "bytes": 9197709,
+      "rows": 634122
+    },
+    "2023-09-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-12.zip",
+      "sha256": "1982057db47abce6f4eef9c5db11fb1a02a7ddb41e423e4f10cc3b14bf1035dc",
+      "bytes": 10797733,
+      "rows": 743870
+    },
+    "2023-09-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-13.zip",
+      "sha256": "c880fdc1d434199b022e129d98cadfc67b1087e3d458ea1f0da7048136a18663",
+      "bytes": 7543823,
+      "rows": 519039
+    },
+    "2023-09-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-14.zip",
+      "sha256": "31338d64067d24232ffd08452bcfddfa62c46f32d5e5234cd7448ed945c80610",
+      "bytes": 8332954,
+      "rows": 577245
+    },
+    "2023-09-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-15.zip",
+      "sha256": "e11a85f857627dc513e522e649667f8bab54db4c54e9d5b77d06258ee2811599",
+      "bytes": 7133809,
+      "rows": 493232
+    },
+    "2023-09-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-16.zip",
+      "sha256": "c66fd2a2768633f6a5ab1556b54ecd42ddfab3ca5c9fb471cec842225b3a461d",
+      "bytes": 6014174,
+      "rows": 422474
+    },
+    "2023-09-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-17.zip",
+      "sha256": "5eedc77aea0b0fb315de26c5d3711f6866246338bd09a2bf21c58a5120ac2758",
+      "bytes": 5482062,
+      "rows": 387444
+    },
+    "2023-09-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-18.zip",
+      "sha256": "625e95fff095d006e4b0cc17150fa48fc67c06faa85c2856c82b16d6390b639d",
+      "bytes": 9877726,
+      "rows": 684928
+    },
+    "2023-09-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-19.zip",
+      "sha256": "4f2f1137ed97d4b9a412482e9483292c51e9558aa9a93134e03262c13bd76828",
+      "bytes": 9527773,
+      "rows": 667636
+    },
+    "2023-09-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-20.zip",
+      "sha256": "d6a59207d4ae31d2e12a397bc5418c880e1c2aa1825551d87693a2ae1c9189c3",
+      "bytes": 9246234,
+      "rows": 651898
+    },
+    "2023-09-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-21.zip",
+      "sha256": "6109f9bb6dc6de3042c649d510bb15d0e71822ca8d1065dec85f9eda1d972c8b",
+      "bytes": 8891672,
+      "rows": 626258
+    },
+    "2023-09-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-22.zip",
+      "sha256": "e05bcb6d471a7a3c3b45f187e5ac32eb6c4262f62e1e1227da961626a4d2381c",
+      "bytes": 6358955,
+      "rows": 443614
+    },
+    "2023-09-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-23.zip",
+      "sha256": "b3e92c00f5f9a91da1322fa3c25d8d604cd425ea577b163335ad453ddc5aec09",
+      "bytes": 4934873,
+      "rows": 352622
+    },
+    "2023-09-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-24.zip",
+      "sha256": "c5b2d2ccb288704aada13cab37670821080accf160dd6def49ba8badfff3912a",
+      "bytes": 6024067,
+      "rows": 434775
+    },
+    "2023-09-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-25.zip",
+      "sha256": "b0d0539e7bfe9393f06a0002b5cf5a82849db38ec565088dc76785a634d7ae4b",
+      "bytes": 9211610,
+      "rows": 669395
+    },
+    "2023-09-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-26.zip",
+      "sha256": "852716363957710baf6141324349b7956f5f196fc67a44e4b59363bbbbc32bf5",
+      "bytes": 7489180,
+      "rows": 544135
+    },
+    "2023-09-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-27.zip",
+      "sha256": "6612a87e1d8c21912b708fc6edb99690499e02fa1a6bb9b8c9dcb953ef59d6a7",
+      "bytes": 9848453,
+      "rows": 710917
+    },
+    "2023-09-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-28.zip",
+      "sha256": "38ff80114c9013d488f5d75bdcfc4a43c3a90ea7d4762efedcdb0915723a827f",
+      "bytes": 12305205,
+      "rows": 888946
+    },
+    "2023-09-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-29.zip",
+      "sha256": "6922777366f7ffc9e1ff2dc404ebd19cd9a9caa09b44bcc0080de9aa25e1a6a1",
+      "bytes": 9737206,
+      "rows": 704479
+    },
+    "2023-09-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-09-30.zip",
+      "sha256": "4bd60b59083208bbf6677c9926adc2f8b233b7824fcfd8fa43b11824d85637a0",
+      "bytes": 6137511,
+      "rows": 442196
+    },
+    "2023-10-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-01.zip",
+      "sha256": "9aeac531dbee30fb6ed93eb7b14f0562e7cb3735df827362e0b574c5c3867a68",
+      "bytes": 9628700,
+      "rows": 697515
+    },
+    "2023-10-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-02.zip",
+      "sha256": "19ebee2c3e0ffb7661bdd487c7a682fe19b166274c6b17698d30a9b6eed281c8",
+      "bytes": 15872348,
+      "rows": 1138891
+    },
+    "2023-10-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-03.zip",
+      "sha256": "20c0219f9e9dd518d3bbbd9dd1c615c2ac9d714bad7c1ad1c3810cf47912017a",
+      "bytes": 13179288,
+      "rows": 986378
+    },
+    "2023-10-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-04.zip",
+      "sha256": "b80b727e7b5f809190c3a00de4d4ad3f6abc556c318584ce96e35716915416ab",
+      "bytes": 12875012,
+      "rows": 963620
+    },
+    "2023-10-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-05.zip",
+      "sha256": "710dbb3a1d758de8d3adbb67e486c8be053563a57292faf003e46b0f079fdf97",
+      "bytes": 12951705,
+      "rows": 964579
+    },
+    "2023-10-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-06.zip",
+      "sha256": "b1ed01df4ae132a8ce769aa26aed64d2ef05b21fb7104f464210a656faf3d9a7",
+      "bytes": 14022771,
+      "rows": 1039581
+    },
+    "2023-10-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-07.zip",
+      "sha256": "92c83287a7d9923b26ca18dccd40dc0763440f6cb270a46ddd466e2026568723",
+      "bytes": 7168670,
+      "rows": 524620
+    },
+    "2023-10-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-08.zip",
+      "sha256": "27b477b840c4c5e1eac48faa671faffb8f26c9530027a98a6a133f0874d7210c",
+      "bytes": 8845362,
+      "rows": 656735
+    },
+    "2023-10-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-09.zip",
+      "sha256": "2c7763b70352a769b31739251680d7d046fee8b8186ae0aaab3e7b0f1aca389d",
+      "bytes": 12357394,
+      "rows": 918272
+    },
+    "2023-10-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-10.zip",
+      "sha256": "aae1daf5f90be1e57fea9a883366b5a014f56830383edaa84d81294e1918a9dc",
+      "bytes": 10847660,
+      "rows": 809584
+    },
+    "2023-10-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-11.zip",
+      "sha256": "8d9e938969d32e414fe3904956f64887c6042a023404b23fda64d10a19acc1aa",
+      "bytes": 13944418,
+      "rows": 1040050
+    },
+    "2023-10-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-12.zip",
+      "sha256": "643f31373cd8c5d64c0f10dce1ab115c971a9528ad390d4262d238023d5e9c42",
+      "bytes": 11188357,
+      "rows": 839391
+    },
+    "2023-10-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-13.zip",
+      "sha256": "49116629e5694c59197a96f115696df663adbe4f36f0c88c58247244eb6a257a",
+      "bytes": 11142782,
+      "rows": 832770
+    },
+    "2023-10-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-14.zip",
+      "sha256": "f83965826603630f6baf55f580b77a710e84b27be181b080c56408f00b70eecc",
+      "bytes": 5978179,
+      "rows": 436081
+    },
+    "2023-10-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-15.zip",
+      "sha256": "b3975f80e284b32f56705954f0eaeb97d5da9efbc67d25ba97e5d404cb77c21e",
+      "bytes": 7740941,
+      "rows": 572047
+    },
+    "2023-10-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-16.zip",
+      "sha256": "3573f10fb4a82a11972afa957d15c7b3b98f8e4be89af441363c3ffda601581e",
+      "bytes": 24382740,
+      "rows": 1789829
+    },
+    "2023-10-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-17.zip",
+      "sha256": "1d65f47f5f5d055f956d99ad9b0c129df950a5db27cda57c8420d91a8e6cb658",
+      "bytes": 14681479,
+      "rows": 1095393
+    },
+    "2023-10-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-18.zip",
+      "sha256": "a51dabc847277cea3c75d6fea1540d1b8a6169ed9c482862e003ea8138a109ff",
+      "bytes": 13231683,
+      "rows": 986142
+    },
+    "2023-10-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-19.zip",
+      "sha256": "3aab850618e1d9de7e358b88a04f0af8c09e7653208371c829eb119e94c54324",
+      "bytes": 14315798,
+      "rows": 1063793
+    },
+    "2023-10-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-20.zip",
+      "sha256": "4cd532a8739a5fc09c6b30e5a8c0b382c48505a50dfabc176dbe5139399a071a",
+      "bytes": 20222789,
+      "rows": 1483907
+    },
+    "2023-10-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-21.zip",
+      "sha256": "483c4f3994628cd16d7a7a948a58a881273335d08ebf6038ac4e92a23e16d30c",
+      "bytes": 12547865,
+      "rows": 928461
+    },
+    "2023-10-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-22.zip",
+      "sha256": "a14a00d94006fb416baee2e697ed2ad131a14ddeb6613ebceca12dbf2c98c3a0",
+      "bytes": 11209147,
+      "rows": 829457
+    },
+    "2023-10-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-23.zip",
+      "sha256": "ec6dee4a60ffbac809dec0991a101747531af4d693845bf7e13c8d279165a568",
+      "bytes": 30584147,
+      "rows": 2200561
+    },
+    "2023-10-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-24.zip",
+      "sha256": "1e44924e3a2f3422303226ad1f0e65bb97ae455ba4008807fc38aae43d62e92f",
+      "bytes": 30277758,
+      "rows": 2117457
+    },
+    "2023-10-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-25.zip",
+      "sha256": "c94dd1864293f7b5a888f5529663bb0d424ca896edadc9ab86dcd18ff1feb90d",
+      "bytes": 17537457,
+      "rows": 1243078
+    },
+    "2023-10-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-26.zip",
+      "sha256": "bbd00dbbde0b857b20c0757647ccbfed1ddd0a4d90a7acc53dc75ec42b51a324",
+      "bytes": 14907102,
+      "rows": 1056580
+    },
+    "2023-10-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-27.zip",
+      "sha256": "88eefd244820887cb49605c95e5a882625233e9092feaab47a1838ce9b52174b",
+      "bytes": 11679138,
+      "rows": 829054
+    },
+    "2023-10-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-28.zip",
+      "sha256": "7afdd55488eafadcd7229b89289742b37b2ad012777c39e0c3a339bdb4611781",
+      "bytes": 6549325,
+      "rows": 461243
+    },
+    "2023-10-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-29.zip",
+      "sha256": "d58bcaf73a7312d2c3cb8e367182dd017411bdeccc0ad99f58da683230ab2cf6",
+      "bytes": 7686946,
+      "rows": 548541
+    },
+    "2023-10-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-30.zip",
+      "sha256": "d39eb2e7b8e497b49ba1fb488aa7f82bb3ce8fcb7456cb46d88db43b612e81ee",
+      "bytes": 12051368,
+      "rows": 865553
+    },
+    "2023-10-31": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-10-31.zip",
+      "sha256": "7ba3c67a4b59b27a8cc844bb422c2d5e4fe34a2c0cbf953988727837fcbf6003",
+      "bytes": 12812372,
+      "rows": 916111
+    },
+    "2023-11-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-01.zip",
+      "sha256": "780726cf66ae61e75b81599ed39ef5458963e06e9753d7be9e1c6f244dcd0f28",
+      "bytes": 17569435,
+      "rows": 1254166
+    },
+    "2023-11-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-02.zip",
+      "sha256": "df869dfd2ba476f68f23bdb48f6b5fb8ec7f6e5978718d14670b57bfe3fb9fc2",
+      "bytes": 15545433,
+      "rows": 1097350
+    },
+    "2023-11-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-03.zip",
+      "sha256": "d64f2d2e7ab7ac02ab4eb1b815d8765dc378e49612ce496ed7d0b11e061e18a2",
+      "bytes": 13020400,
+      "rows": 922212
+    },
+    "2023-11-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-04.zip",
+      "sha256": "cf47268ac34c4cc3fe1493df196824cbb339c4278f40fc1cc5f82f3b8301b52d",
+      "bytes": 8576935,
+      "rows": 607465
+    },
+    "2023-11-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-05.zip",
+      "sha256": "67b3d90d8404a39f52d73291e4f995ede992a44c09d3e96e0bd36da17743ac8e",
+      "bytes": 10916041,
+      "rows": 774277
+    },
+    "2023-11-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-06.zip",
+      "sha256": "61fea7021f577977a7a18da5b8a3738d8c2e239b1b6eb52c4fac220f0b9b670d",
+      "bytes": 10749376,
+      "rows": 761605
+    },
+    "2023-11-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-07.zip",
+      "sha256": "0298d09da8babf57e7e2e10a9809509c28d13419e44f839f343387fba60e8c06",
+      "bytes": 14558924,
+      "rows": 1040534
+    },
+    "2023-11-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-08.zip",
+      "sha256": "567c3f78c2e836a4e2a7f6f7668c230d1f18c4b7abf1f44b7d8aeae978f7bfee",
+      "bytes": 12242235,
+      "rows": 872302
+    },
+    "2023-11-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-09.zip",
+      "sha256": "8fb3f1d2e886b357ce9116c78fe644b287a74565c9996978449143242eb8d1fb",
+      "bytes": 23622898,
+      "rows": 1651770
+    },
+    "2023-11-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-10.zip",
+      "sha256": "8712ad7f66e58ecd3924f4b613fdce19244f68e76b8c15a32bf1f59676bbf071",
+      "bytes": 14217730,
+      "rows": 980330
+    },
+    "2023-11-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-11.zip",
+      "sha256": "27289f94a98759e7f5fd2f514bdfbd2ecee215a74ac6b682224ab68038d2bb34",
+      "bytes": 10654273,
+      "rows": 742556
+    },
+    "2023-11-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-12.zip",
+      "sha256": "ba6029aaadd75c3fcd925c082f7481c90ce6ce3ed2e2eaf378af5f587df6a1ad",
+      "bytes": 9503973,
+      "rows": 672029
+    },
+    "2023-11-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-13.zip",
+      "sha256": "a4aa4034f0379f5cb408ea8c59135b9db1ed8ede51fc88339d826cddc92339a3",
+      "bytes": 13632821,
+      "rows": 968839
+    },
+    "2023-11-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-14.zip",
+      "sha256": "f78bcfc4f73fbe08edad1ce3ae72fb601da3b9bd1de2a43fec8375ac9d52cf11",
+      "bytes": 15237262,
+      "rows": 1068841
+    },
+    "2023-11-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-15.zip",
+      "sha256": "ded5ea674d93d64121b6ed876b0466cf48cf4f26c27d8e4780e6071d907e0724",
+      "bytes": 16331189,
+      "rows": 1139692
+    },
+    "2023-11-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-16.zip",
+      "sha256": "a7c8b625ee351ffa3f200577d5534de942135b9ccfe0eedb0e7420390dbeb551",
+      "bytes": 16803986,
+      "rows": 1186037
+    },
+    "2023-11-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-17.zip",
+      "sha256": "bcbef9ea1fc5be256516364b19dd7ec734a6f3dd4f5044def80abb844f2434c1",
+      "bytes": 14769332,
+      "rows": 1057646
+    },
+    "2023-11-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-18.zip",
+      "sha256": "8a25c834256ffa09d8618c7704bfc435addfb9762e10de4e24444e053d378faf",
+      "bytes": 8897411,
+      "rows": 644382
+    },
+    "2023-11-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-19.zip",
+      "sha256": "d50e8d0e0912d2b84848ccfa59707ec8e6f3cdd08bf9c3a031c54b51b27fd405",
+      "bytes": 9655344,
+      "rows": 706048
+    },
+    "2023-11-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-20.zip",
+      "sha256": "03a5c8698adfe2295f11ef7a28f835ae02c9e881cc91fd0a7880160c82b3a3b3",
+      "bytes": 15986152,
+      "rows": 1167097
+    },
+    "2023-11-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-21.zip",
+      "sha256": "d01f31736e349f18f0ee7a043dbd244083353add93b398c2710abf773de88578",
+      "bytes": 20826079,
+      "rows": 1511667
+    },
+    "2023-11-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-22.zip",
+      "sha256": "91df5bb9ba34edffa9f7068ed18d2066bae10aa4c77e5b4d5926ba4becce0ac9",
+      "bytes": 17805510,
+      "rows": 1297839
+    },
+    "2023-11-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-23.zip",
+      "sha256": "c3cfe546c1d25af270c7d0d8eb4976b2f13dba001cd56e5d526d66fcfb3796df",
+      "bytes": 11003472,
+      "rows": 797895
+    },
+    "2023-11-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-24.zip",
+      "sha256": "90fb040014b94fc40f0970ced5b5d0067d5bedbaf8e28d55ec03f9b9f616e4bc",
+      "bytes": 14975531,
+      "rows": 1079354
+    },
+    "2023-11-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-25.zip",
+      "sha256": "c9bdfe00122daf034e94344c367e2e6d608a96fe94b3a50c44776d6677b38c62",
+      "bytes": 6665776,
+      "rows": 475388
+    },
+    "2023-11-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-26.zip",
+      "sha256": "b2dab1061168467078c267c5762869db034c045eade76e97d0609f999809a423",
+      "bytes": 9564221,
+      "rows": 690901
+    },
+    "2023-11-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-27.zip",
+      "sha256": "fda0c633cf6074972cd528727e8225105bbabf017a9a04a83dc5d412dbd99043",
+      "bytes": 13690975,
+      "rows": 991805
+    },
+    "2023-11-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-28.zip",
+      "sha256": "832148dce3b9a9dd340996af728ce55ace911f3bc2fa9090f10a9fe70a55a1ec",
+      "bytes": 13822784,
+      "rows": 989249
+    },
+    "2023-11-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-29.zip",
+      "sha256": "07c8b1947ff805ea53820337cc1e199d7e3746522230684f422c71e89b6248e7",
+      "bytes": 12411911,
+      "rows": 895056
+    },
+    "2023-11-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-11-30.zip",
+      "sha256": "a142ae65c004cb466c30e03d0df041cbb0a82b3a734806e899bb769bc36be36e",
+      "bytes": 10938218,
+      "rows": 791210
+    },
+    "2023-12-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-01.zip",
+      "sha256": "8a9fe3ce8db63ea10d91cb17d3579aa47db437e89989545778fbac4ae3cacddc",
+      "bytes": 16398985,
+      "rows": 1202041
+    },
+    "2023-12-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-02.zip",
+      "sha256": "282b2167900b0987f79f1391771c6b986e20d7d8614990a45a03e301a7e75f37",
+      "bytes": 11556190,
+      "rows": 835574
+    },
+    "2023-12-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-03.zip",
+      "sha256": "9dfc56491eeced0f558b2e7adfe21549fec2f1d1349362886b289d1fd13bcc11",
+      "bytes": 12882464,
+      "rows": 943954
+    },
+    "2023-12-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-04.zip",
+      "sha256": "0ede8e878a0e49d969e11ebbc58b8a118dbdc01f0d7e1d4d851421407aab42a2",
+      "bytes": 22933699,
+      "rows": 1647922
+    },
+    "2023-12-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-05.zip",
+      "sha256": "f5c63ac392adf40e41128f3c43d02ad770877791d087fa6439a034eec9ebf144",
+      "bytes": 22412488,
+      "rows": 1608695
+    },
+    "2023-12-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-06.zip",
+      "sha256": "66b7aa2711026387226fd1e6288caff73b9f9f7f328e4c35c9c6744644bdfd6e",
+      "bytes": 20174639,
+      "rows": 1454054
+    },
+    "2023-12-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-07.zip",
+      "sha256": "6dbe0407e6cd224b506b96715285ea207f5b2f1b86e09d03fdbd2f8b63f9d8b1",
+      "bytes": 15422527,
+      "rows": 1095267
+    },
+    "2023-12-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-08.zip",
+      "sha256": "bb03bbff1dd8e546c24636625d7af51711ddd71a5884f951d74e8a009e27cf4a",
+      "bytes": 14506152,
+      "rows": 1052353
+    },
+    "2023-12-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-09.zip",
+      "sha256": "8ffac09dd9d619d56e904509dc8053654999831e2c47c766f301c3f0c429392b",
+      "bytes": 11217514,
+      "rows": 812508
+    },
+    "2023-12-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-10.zip",
+      "sha256": "fde88d10f2431ea19bfc3e14d3a4515d988e90c073e2e2f5d98c7f15e19fae7d",
+      "bytes": 9332806,
+      "rows": 693516
+    },
+    "2023-12-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-11.zip",
+      "sha256": "29d8ad4bf19dbdbdb5ba8de21e58fa0d3573f0cf80393859ffad91ecf5dcaf8c",
+      "bytes": 22735928,
+      "rows": 1618983
+    },
+    "2023-12-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-12.zip",
+      "sha256": "925db98672a0e053cdd92432f9c2965634afd06b60e556807eae4eab2f545254",
+      "bytes": 16883036,
+      "rows": 1227093
+    },
+    "2023-12-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-13.zip",
+      "sha256": "3bc9d17f40583a70ea5a664f686f54eb2adba0c174b895a0b80e59e94b1ecb01",
+      "bytes": 18754156,
+      "rows": 1401431
+    },
+    "2023-12-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-14.zip",
+      "sha256": "5017cb079a76a4566d03534296c45195e23627c02645286a7a210fe5844caa42",
+      "bytes": 17215641,
+      "rows": 1268507
+    },
+    "2023-12-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-15.zip",
+      "sha256": "f587973d53ec42e7de2bfba5980783f2884a44e8aa687143dff9773780be1f2f",
+      "bytes": 14374974,
+      "rows": 1064713
+    },
+    "2023-12-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-16.zip",
+      "sha256": "9bf6e314489460750a631f5ab06c2ee0e68c3ec427f225292e67b40656badf70",
+      "bytes": 12845186,
+      "rows": 980137
+    },
+    "2023-12-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-17.zip",
+      "sha256": "d3c992393f184df71bddc62bd8d6e40ad442b330b3640ad588ad43c49303e815",
+      "bytes": 13138472,
+      "rows": 990206
+    },
+    "2023-12-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-18.zip",
+      "sha256": "16f0c0887542570d38b49f1efe2e32ce4acdface79bd83e95925cbdaf24f3e2b",
+      "bytes": 18775660,
+      "rows": 1390856
+    },
+    "2023-12-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-19.zip",
+      "sha256": "deb9b57e3b625b397fa00c0ae499e927347bcb7a06d28f2fd364c90fac560b20",
+      "bytes": 17382216,
+      "rows": 1281823
+    },
+    "2023-12-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-20.zip",
+      "sha256": "aa644eaf061f5a245a5d64a81dbc5f37e9f22f91211c34f18201197ec6e6c464",
+      "bytes": 20826274,
+      "rows": 1559618
+    },
+    "2023-12-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-21.zip",
+      "sha256": "d310d7bf738c5220a1a16e15cdafd5600b03f915dd974f4edc82b7c905c9c992",
+      "bytes": 16201407,
+      "rows": 1198710
+    },
+    "2023-12-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-22.zip",
+      "sha256": "980f1d29635880f0533f63398ad199f625081deba061cffdbfe624a14f2f9f83",
+      "bytes": 15316457,
+      "rows": 1130028
+    },
+    "2023-12-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-23.zip",
+      "sha256": "f516e8e0e9e45086728398f3c396044fcbff79a64d99aa9d504e434365a1c220",
+      "bytes": 9775349,
+      "rows": 709440
+    },
+    "2023-12-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-24.zip",
+      "sha256": "f9fb12e29c39fd1178de04b0a6b3d08129b3df548d03fb1b79926abf43e330af",
+      "bytes": 12873995,
+      "rows": 940988
+    },
+    "2023-12-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-25.zip",
+      "sha256": "c75571f64d75d44f9f2473691fe9e414ab82537ba33347211c3c9ab24b2cbf1a",
+      "bytes": 13044541,
+      "rows": 960061
+    },
+    "2023-12-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-26.zip",
+      "sha256": "5abe846978b05080f5d3dc9c36ad66d37ad8fbffd631e47be89789d827d627ad",
+      "bytes": 16217098,
+      "rows": 1175037
+    },
+    "2023-12-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-27.zip",
+      "sha256": "a977e49b620227276042725340c81f72fb2ef5510d7fac003f40197b73d52a11",
+      "bytes": 16043633,
+      "rows": 1178164
+    },
+    "2023-12-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-28.zip",
+      "sha256": "2c9b66ff5ae1c3dce91810dc6a72eedc431941cc639705cb55841f4c0a87d48c",
+      "bytes": 15462480,
+      "rows": 1134811
+    },
+    "2023-12-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-29.zip",
+      "sha256": "2a06d7c257f465c9625147c27d41f8fff4be0c8de2d82c62ece14666afba850e",
+      "bytes": 17051133,
+      "rows": 1244581
+    },
+    "2023-12-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-30.zip",
+      "sha256": "2cb2e4e57e74482458419378e4b04fdebb56be6069977cff6f9c7e94b18f5688",
+      "bytes": 10335793,
+      "rows": 746697
+    },
+    "2023-12-31": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-12-31.zip",
+      "sha256": "c7beb95acd8dd584d66e27f0a0dc64944a0caabdf233f16b0305d3a11d497517",
+      "bytes": 11300301,
+      "rows": 822744
+    },
+    "2024-01-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-01.zip",
+      "sha256": "9572fa650e2a7850e528fc6d0c3ec7874211af47947416f75004f0f95751dca3",
+      "bytes": 11902789,
+      "rows": 863403
+    },
+    "2024-01-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-02.zip",
+      "sha256": "97337ca2765f4597647f7c4ec1efa0cad29b440b523a45fc0c7f3754dc081a76",
+      "bytes": 23768802,
+      "rows": 1735137
+    },
+    "2024-01-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-03.zip",
+      "sha256": "d892320f4e9b1329ee0274f6656d638ea5306db7d83c4e5a8d1884579a62f74a",
+      "bytes": 28782672,
+      "rows": 2071461
+    },
+    "2024-01-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-04.zip",
+      "sha256": "63f8c567664c4520fc9236d568e52ef146c20ac4431632755a96adaf7bef26b1",
+      "bytes": 19496574,
+      "rows": 1423548
+    },
+    "2024-01-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-05.zip",
+      "sha256": "9dc4fbf6222ab97f037f993fa7f4ae4eda979ab29f4ffd45ff6b4d1c1b4fc4e5",
+      "bytes": 22127639,
+      "rows": 1642400
+    },
+    "2024-01-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-06.zip",
+      "sha256": "24dea14d3b5f5032d4e103c711219aede203d4ee57baae490022f47126998ac9",
+      "bytes": 10681396,
+      "rows": 780511
+    },
+    "2024-01-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-07.zip",
+      "sha256": "541874247f8fc572074bc99cb20b0681a661a63625a985ab692c9248e85db064",
+      "bytes": 12061693,
+      "rows": 895889
+    },
+    "2024-01-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-08.zip",
+      "sha256": "61651eaa5dd673618372a590cd22b4bb5590e510920a064321a3b62cb3e586ed",
+      "bytes": 25193351,
+      "rows": 1850031
+    },
+    "2024-01-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-09.zip",
+      "sha256": "f68bb03c36b12650e1b16715a04816666717ce1e30ad4b1fd0917dd14244f727",
+      "bytes": 28509575,
+      "rows": 2103320
+    },
+    "2024-01-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-10.zip",
+      "sha256": "263e7a08c6051d6f9771ac1f993a4f00c0507c65ef6071f216eb0a6df2d13d9d",
+      "bytes": 33643897,
+      "rows": 2478061
+    },
+    "2024-01-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-11.zip",
+      "sha256": "e1ccb8ff0e3c799f8e4a5e758b202f54eed0f14b4a1bafe246b49f476d4d3446",
+      "bytes": 32307816,
+      "rows": 2350010
+    },
+    "2024-01-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-12.zip",
+      "sha256": "4b881d781d49077b9865a3c0a12577199e408ffdc10763c23ce22c320980558c",
+      "bytes": 30455114,
+      "rows": 2206787
+    },
+    "2024-01-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-13.zip",
+      "sha256": "aef59819efd4cb64bf1c9d078458e017afd00b2f79710fcac0929fd0500a657b",
+      "bytes": 15490445,
+      "rows": 1135285
+    },
+    "2024-01-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-14.zip",
+      "sha256": "a2f5882cf6324106cb3bca4d0724e25222e38b563d6094eb60f4f35ddedbbaae",
+      "bytes": 13391740,
+      "rows": 991178
+    },
+    "2024-01-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-15.zip",
+      "sha256": "4b4ee84e3dec847499fd4bd9d3ea34aa5fff6ff9db825da4c8507b1107718a2b",
+      "bytes": 17832264,
+      "rows": 1364603
+    },
+    "2024-01-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-16.zip",
+      "sha256": "b01212c3c3f6309e0c20972c317ac1b2d0c7571791644df7e471fdf2fa129d06",
+      "bytes": 18427206,
+      "rows": 1399037
+    },
+    "2024-01-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-17.zip",
+      "sha256": "a90e72c46822056d49df2e14c1d2cc1353d1c85704bec35142abf23b7cd30fcd",
+      "bytes": 15365806,
+      "rows": 1173602
+    },
+    "2024-01-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-18.zip",
+      "sha256": "4532fff7a068c1bfa1242f5727c9f7fe3332f38770702e9c3c9aa24cd9dcaa1b",
+      "bytes": 15541069,
+      "rows": 1140680
+    },
+    "2024-01-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-19.zip",
+      "sha256": "2dc1afb18a70ba06b82eebba7f845518c1ebbdceb2e5627ff0f82142de22379d",
+      "bytes": 17631773,
+      "rows": 1291258
+    },
+    "2024-01-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-20.zip",
+      "sha256": "47538ab04eb9fe3fe6cb2100f8b3dcef57aa16bca9a58f51c2e03c988ebe4d20",
+      "bytes": 8925303,
+      "rows": 654431
+    },
+    "2024-01-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-21.zip",
+      "sha256": "74af83c7aef99cbc0443bb898fd3b6de9fef6fcfd8623a1d1042e1ec04c1922a",
+      "bytes": 7237784,
+      "rows": 530291
+    },
+    "2024-01-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-22.zip",
+      "sha256": "6d00ecf88855924c4a590b065366d595a7246f222c464f886a7ec43a9639cb2e",
+      "bytes": 22868229,
+      "rows": 1735250
+    },
+    "2024-01-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-23.zip",
+      "sha256": "21b21606b15df9cbaa2a3a0d08681799ea7f8912c22ea300d760db8ef11aafac",
+      "bytes": 22219675,
+      "rows": 1677893
+    },
+    "2024-01-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-24.zip",
+      "sha256": "819980a60edf99389a8087636c82107d0db8af87f094d678103d17d3ffbbf69a",
+      "bytes": 18127193,
+      "rows": 1399264
+    },
+    "2024-01-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-25.zip",
+      "sha256": "dafb03a8502dde09e6c47e7dcb01b4fe2d5cf500e655cbbad691016eeaf649e4",
+      "bytes": 14002327,
+      "rows": 1069973
+    },
+    "2024-01-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-26.zip",
+      "sha256": "5701b9de29bba451df6e2c97d51f5d7be779dc5dc95e558a41f69d0efa41c51a",
+      "bytes": 17449147,
+      "rows": 1314312
+    },
+    "2024-01-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-27.zip",
+      "sha256": "2a6905037957715d3fc81aa2a6d454b04087d13bc52899c6d47bb66990907a91",
+      "bytes": 8378376,
+      "rows": 614228
+    },
+    "2024-01-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-28.zip",
+      "sha256": "ec7442f3c645d8a57b23657bf8456b98e97fabbd90910ebc8e37a69c2fc474d5",
+      "bytes": 11209752,
+      "rows": 836861
+    },
+    "2024-01-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-29.zip",
+      "sha256": "0e9571bfed26882ef7fa02abe370ae69ab00a5738b9cd2313a90944acfe43288",
+      "bytes": 12988002,
+      "rows": 955526
+    },
+    "2024-01-30": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-30.zip",
+      "sha256": "ceda7cc3daf2bb7e6daf27c03559044b418abc4d1d7ba230191f95fd79ca89bd",
+      "bytes": 14396592,
+      "rows": 1057948
+    },
+    "2024-01-31": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-01-31.zip",
+      "sha256": "d2a48a02515f2c1fbf1b24015df7e42b8241cb10bab703e5f1e1d9d49b74064a",
+      "bytes": 16544180,
+      "rows": 1220286
+    },
+    "2024-02-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-01.zip",
+      "sha256": "8920a847af936c022806d4be15e1806e0310ba602ff473c356ae2f1c48393fa9",
+      "bytes": 15180333,
+      "rows": 1131448
+    },
+    "2024-02-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-02.zip",
+      "sha256": "79bd9f5ebfcd9f51553635525d06bf2a325cb58898827ba028941b161cec39fe",
+      "bytes": 11961739,
+      "rows": 894309
+    },
+    "2024-02-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-03.zip",
+      "sha256": "b0674e1f599ed1c5b60512731c55c8fb61d26f3ff7ae7c201f35896cf26a7748",
+      "bytes": 6937726,
+      "rows": 509267
+    },
+    "2024-02-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-04.zip",
+      "sha256": "0a8e8c80c9bb003b9e6390ac322b062433fbd90c12555d75fdae37de1f174dc2",
+      "bytes": 10072161,
+      "rows": 780116
+    },
+    "2024-02-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-05.zip",
+      "sha256": "f41af125c377478917614c0bffdede33cd7bf4577fc41a02333435428330a088",
+      "bytes": 14049128,
+      "rows": 1058593
+    },
+    "2024-02-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-06.zip",
+      "sha256": "122a34a180e4d2ef1731f1e5bf81b03e64a4e9c4fbb8cc42723064e4a14b1b66",
+      "bytes": 12377970,
+      "rows": 929166
+    },
+    "2024-02-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-07.zip",
+      "sha256": "5addec9ece88e259f699accf28a104f1b4b05b8e27696e2c4f65d072fa8d4775",
+      "bytes": 14928310,
+      "rows": 1125516
+    },
+    "2024-02-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-08.zip",
+      "sha256": "b26a1a3d26fce391efc5d9b41aca380bd407981991ec492decaa66ce28f8298b",
+      "bytes": 19307047,
+      "rows": 1471735
+    },
+    "2024-02-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-09.zip",
+      "sha256": "169ee79f492e72c3ff41b02a096779c22779ad414fc9f5db33b3274f20388d41",
+      "bytes": 24527227,
+      "rows": 1822683
+    },
+    "2024-02-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-10.zip",
+      "sha256": "d3976ba3ae700691e598ae002f88308ef4275295a9200a344b7d97ab4e75e59b",
+      "bytes": 13537391,
+      "rows": 1016517
+    },
+    "2024-02-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-11.zip",
+      "sha256": "5c6c74341548619d28d7f00e0f579ea3fd450aba82c94026e2fb256abd43cd58",
+      "bytes": 14317396,
+      "rows": 1071770
+    },
+    "2024-02-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-12.zip",
+      "sha256": "165ae6d1a4a099621e98c654e54ada2bf5f9fafc4b33afb351692c0750666479",
+      "bytes": 20292971,
+      "rows": 1476004
+    },
+    "2024-02-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-13.zip",
+      "sha256": "a22439ca2a2aa119c152ded9d498efd98f4ea4fc824ea1cd332f294552fae294",
+      "bytes": 18722751,
+      "rows": 1356819
+    },
+    "2024-02-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-14.zip",
+      "sha256": "0a115ae9367b804e4f5eb0fcfe3abad2cc58afd6588e1d79ca37feb9bebcc7d4",
+      "bytes": 19721306,
+      "rows": 1434712
+    },
+    "2024-02-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-15.zip",
+      "sha256": "3f8ddab2ac5979108f04c0985e9662797b0a227544a1eade63d3906b094206c1",
+      "bytes": 18836568,
+      "rows": 1379815
+    },
+    "2024-02-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-16.zip",
+      "sha256": "caeaf05120943788af60d62cb7d95a5b62e3407704c1aeb9a0639c0927aaee56",
+      "bytes": 16427970,
+      "rows": 1224229
+    },
+    "2024-02-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-17.zip",
+      "sha256": "142947e054c40ffed14cfc12a4c98494e65c9a87d890715a466cb3fb6b2d6333",
+      "bytes": 15180678,
+      "rows": 1149427
+    },
+    "2024-02-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-18.zip",
+      "sha256": "cb6c69e5afa48c5e71ca00810ee2fa0ef6dc15a215cddfd5e79782766da864b5",
+      "bytes": 13823031,
+      "rows": 1048533
+    },
+    "2024-02-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-19.zip",
+      "sha256": "c53c45616cd31eb129cff4ad85e4d01bf3d6cdca330e56b9dc93e81da24dd82e",
+      "bytes": 15990271,
+      "rows": 1206185
+    },
+    "2024-02-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-20.zip",
+      "sha256": "9d3971d28b2a791860c0699502520e8c1ff2c9eebc7d290b92b38bd6aa9c719f",
+      "bytes": 19441739,
+      "rows": 1442565
+    },
+    "2024-02-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-21.zip",
+      "sha256": "312822dd5964b0755755a612add66fabfbb5c3a99cf555dd4ba560cc31f7402a",
+      "bytes": 18112905,
+      "rows": 1371336
+    },
+    "2024-02-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-22.zip",
+      "sha256": "445eba3e88453ce27a813e1efc2d4c5a9a5440b11a2f0bd1bdefbf5ad8e107dc",
+      "bytes": 17180253,
+      "rows": 1312697
+    },
+    "2024-02-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-23.zip",
+      "sha256": "8de13f359bdefde582bfa18e78a18ce04abfaf27aa53ff24fac87ed74f4a2feb",
+      "bytes": 15312535,
+      "rows": 1167470
+    },
+    "2024-02-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-24.zip",
+      "sha256": "18bdbc3df4b0d16c15d5096a4279bf64e5358f1256d55aa9efc4caae2ec2531d",
+      "bytes": 9325304,
+      "rows": 683840
+    },
+    "2024-02-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-25.zip",
+      "sha256": "c6fd26999f0a6989b9b030724d82a02169cd0e079521212860855913736f8906",
+      "bytes": 9855116,
+      "rows": 732589
+    },
+    "2024-02-26": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-26.zip",
+      "sha256": "7c8718577712fc85923f5868791aee80ced7a459f66434a50fe6152ca7770e47",
+      "bytes": 19289728,
+      "rows": 1430074
+    },
+    "2024-02-27": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-27.zip",
+      "sha256": "2a49b89042aa2e3acb932dde98853bc150780e78efc8f392d65f1b096343581b",
+      "bytes": 25865223,
+      "rows": 1884571
+    },
+    "2024-02-28": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-28.zip",
+      "sha256": "f362df436c7fe75338edde13c4a6bd37efbda4e19116c720ff7f33b6a445319e",
+      "bytes": 41761355,
+      "rows": 2996868
+    },
+    "2024-02-29": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-02-29.zip",
+      "sha256": "5c75367592709a4e2e7ed366f27441316a8c94da2b876638e9a25351551feaa4",
+      "bytes": 32595953,
+      "rows": 2383906
+    },
+    "2024-03-01": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-01.zip",
+      "sha256": "f242976262e170493f0c782f9a8e757ee80cbff2d68ede055420d862fd1aaa08",
+      "bytes": 20156459,
+      "rows": 1495998
+    },
+    "2024-03-02": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-02.zip",
+      "sha256": "b32b64d99468cabc941044eb7c998514ea0e3319b8daff1c0f5b8316f239c80e",
+      "bytes": 17109006,
+      "rows": 1310755
+    },
+    "2024-03-03": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-03.zip",
+      "sha256": "9d1beb759627e8d1cc050b55cd6c5c2e0f9b31b8a807ae7640bf1d49ceddb42c",
+      "bytes": 20845923,
+      "rows": 1608757
+    },
+    "2024-03-04": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-04.zip",
+      "sha256": "bcbc9640bee28c79f70e743f4b82699ddd3b601e428cc730cbf8ec20e7247e3a",
+      "bytes": 40569706,
+      "rows": 3045224
+    },
+    "2024-03-05": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-05.zip",
+      "sha256": "eca910765ee3c5d14130988395efbae187c5d7cac2a4dab8470e5cb4aa8149b0",
+      "bytes": 55126465,
+      "rows": 3977387
+    },
+    "2024-03-06": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-06.zip",
+      "sha256": "12bf08ed1754b7dc9e07624bd75b4d44e86039d38e977a75d41b24d46e7264de",
+      "bytes": 34827067,
+      "rows": 2530997
+    },
+    "2024-03-07": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-07.zip",
+      "sha256": "fae41f617bff3518289d0084a0322ff11d64984f983d537fa4853695bdfb4226",
+      "bytes": 24917506,
+      "rows": 1851853
+    },
+    "2024-03-08": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-08.zip",
+      "sha256": "81a6d0bd1aa88176360e5e9212df6c49b24f6902ed14412d67b808dcea36db50",
+      "bytes": 30866568,
+      "rows": 2238341
+    },
+    "2024-03-09": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-09.zip",
+      "sha256": "7a7ed27ec0f8159d5238fd1fca0560631c1a2ddaa9809c67d5605b8825f019f2",
+      "bytes": 14881810,
+      "rows": 1109659
+    },
+    "2024-03-10": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-10.zip",
+      "sha256": "21b259ba5f8a286750ef4f906d3d27343cf63b32d3a7823a2c674898a68b8609",
+      "bytes": 22814715,
+      "rows": 1716558
+    },
+    "2024-03-11": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-11.zip",
+      "sha256": "5946ca1e92307cb32d43cbe863d33acc5172f4d4e569019fcd06edd672f6c369",
+      "bytes": 31630043,
+      "rows": 2305548
+    },
+    "2024-03-12": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-12.zip",
+      "sha256": "fa072d4b5a669224f0ea666ba2d182713f1f380369fcd8f3d89e70992be03380",
+      "bytes": 31475379,
+      "rows": 2319342
+    },
+    "2024-03-13": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-13.zip",
+      "sha256": "f0345d304ef1d4e3e3b8a5daa33513a1ee9ee60133a7cba3e2c9602b75aa3883",
+      "bytes": 25731548,
+      "rows": 1911991
+    },
+    "2024-03-14": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-14.zip",
+      "sha256": "c3d06d43500dd942dbf9821ba2da8f6c813fcc85fb9e77048d4b15092d5cdc1e",
+      "bytes": 29784022,
+      "rows": 2151695
+    },
+    "2024-03-15": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-15.zip",
+      "sha256": "8766965c619305ac49fc28a1d1c17b30e422a73fe60f8911931dc0d87a06c8fc",
+      "bytes": 40035795,
+      "rows": 2834058
+    },
+    "2024-03-16": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-16.zip",
+      "sha256": "30893b7d4b054464b49f434e61f4e961862cc3dba989a579d9a7b3686d3ccf0e",
+      "bytes": 27440412,
+      "rows": 2017917
+    },
+    "2024-03-17": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-17.zip",
+      "sha256": "c0085c58550526abb63d0f1344154b9242be0b38bacca5c7cc6aec1c4e57469e",
+      "bytes": 24470073,
+      "rows": 1796479
+    },
+    "2024-03-18": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-18.zip",
+      "sha256": "3a9e46a39c906c369147f01d61b1f8a40146212b9264fd6f2074b75f06552d09",
+      "bytes": 25291485,
+      "rows": 1830868
+    },
+    "2024-03-19": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-19.zip",
+      "sha256": "1908baee73a754e99cd8582858372cb24486bac6174357f3e0a852a789ccdb68",
+      "bytes": 37159502,
+      "rows": 2666989
+    },
+    "2024-03-20": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-20.zip",
+      "sha256": "c83050a350b8098cd773d0ef096cfb800e8d54c3cc2e8d6ab433fa1e4afdbaae",
+      "bytes": 36067260,
+      "rows": 2584624
+    },
+    "2024-03-21": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-21.zip",
+      "sha256": "9d66ef292ce52c646ecd4a5b470ee1885053de91f269a3ba3154eca5702d98ef",
+      "bytes": 24281253,
+      "rows": 1750322
+    },
+    "2024-03-22": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-22.zip",
+      "sha256": "8101e3608d033d8420e934f4d4d917caa276e7534349e928bbd7ac92437cd8f3",
+      "bytes": 25890867,
+      "rows": 1900735
+    },
+    "2024-03-23": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-23.zip",
+      "sha256": "46b1d1944ffb94a3b55480a054ff934cbfd16c205ddaef0a12b850f5e612eaf2",
+      "bytes": 17876403,
+      "rows": 1328965
+    },
+    "2024-03-24": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-03-24.zip",
+      "sha256": "60860f6892f008bc93f2d960a08bfb1ce3a8a88460c968a04223a4f99de0b294",
+      "bytes": 18836604,
+      "rows": 1420742
+    }
+  },
+  "documented_gaps_allowed": false,
+  "errors": [],
+  "warnings": [
+    "bounded 1-year V8.2 aggTrades expansion after the 90-day V7.7 ingestion window and V8.1 decision gate"
+  ]
+}

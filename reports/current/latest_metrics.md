@@ -1,17 +1,11 @@
-# Latest Metrics V8.1
+# Latest Metrics V8.2
 
-- Derniere version validee : V8.0.
-- Candidate : V8.1.
-- Statut : `PASS`.
-- Direction : OHLCV + public trades 90-day research decision gate.
-- Fenetre : `2023-03-25` -> `2023-06-22`.
-- Total jours : `90`.
-- Feature columns count : `71`.
-- Verdict : interessant mais mitige et non concluant.
-- Recommendation principale : A. Etendre les aggTrades a 1 an.
-- Recommendation secondaire : D. Preparer une validation walk-forward offline plus stricte.
-- Label shuffle no-clear-edge cases : `3`.
-- Timeframe concentration warnings : `4`.
-- Backtest recommande : `false`.
-
-Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun modele persistant et aucun trading reel.
+- Derniere version validee : V8.1.
+- Candidate : V8.2.
+- Source trades : `aggTrades`.
+- Fenetre : `2023-03-25` -> `2024-03-24`.
+- Total jours : `366`.
+- Raw files : `366`.
+- Partitions : `366`.
+- Lignes trades : `352055121`.
+- Aucun feature, label, dataset ML, modele ML, backtest, strategie, ordre ou trading.

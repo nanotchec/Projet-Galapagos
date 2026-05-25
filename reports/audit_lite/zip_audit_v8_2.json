@@ -1,0 +1,94 @@
+{
+  "version": "V8.2",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v8.2-audit-lite.zip",
+  "zip_size_bytes": 475399,
+  "zip_size_mb": 0.453,
+  "entries": 50,
+  "top_20_largest_files": [
+    {
+      "path": "reports/audit_lite/v8_2_artifact_inventory.json",
+      "bytes": 304927
+    },
+    {
+      "path": "reports/data_quality/public_trades_1y_window_v8_2.json",
+      "bytes": 299330
+    },
+    {
+      "path": "reports/manifests/public_trades_1y_window_v8_2_manifest.json",
+      "bytes": 299330
+    },
+    {
+      "path": "reports/audit_lite/v8_2_full_local_validation_attestation.json",
+      "bytes": 201731
+    },
+    {
+      "path": "reports/audit_lite/v8_2_parquet_summary.json",
+      "bytes": 199379
+    },
+    {
+      "path": "reports/data_quality/public_trades_1y_window_v8_2_discovery.json",
+      "bytes": 171603
+    },
+    {
+      "path": "docs/public_trades_1y_window_v8_2.md",
+      "bytes": 146767
+    },
+    {
+      "path": "reports/data_quality/public_trades_1y_window_v8_2.md",
+      "bytes": 146767
+    },
+    {
+      "path": "reports/data_quality/public_trades_1y_window_v8_2_discovery.md",
+      "bytes": 55829
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 35444
+    },
+    {
+      "path": "data/audit_lite/v8_2/trades/sample.parquet",
+      "bytes": 25746
+    },
+    {
+      "path": "src/galapagos/data/public_trades/one_year_window.py",
+      "bytes": 23439
+    },
+    {
+      "path": "src/galapagos/data/public_trades/expanded_window.py",
+      "bytes": 21826
+    },
+    {
+      "path": "src/galapagos/data/public_trades/ninety_day_window.py",
+      "bytes": 21802
+    },
+    {
+      "path": "src/galapagos/data/public_trades/ingestion.py",
+      "bytes": 19039
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v8_2.py",
+      "bytes": 16988
+    },
+    {
+      "path": "tests/validation/test_public_trades_1y_window_v8_2_validator.py",
+      "bytes": 15581
+    },
+    {
+      "path": "src/galapagos/data/public_trades/ninety_day_window_validation.py",
+      "bytes": 11767
+    },
+    {
+      "path": "src/galapagos/data/public_trades/expanded_window_validation.py",
+      "bytes": 11766
+    },
+    {
+      "path": "src/galapagos/data/public_trades/one_year_window_validation.py",
+      "bytes": 11762
+    }
+  ],
+  "pytest_collectible_scripts_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}
