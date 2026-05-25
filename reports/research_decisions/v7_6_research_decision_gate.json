@@ -1,0 +1,465 @@
+{
+  "version": "V7.6",
+  "status": "PASS",
+  "decision_gate_type": "research_only",
+  "created_at_utc": "2026-05-25T14:34:14.315364Z",
+  "inputs": {
+    "v7_1_manifest": {
+      "path": "reports/manifests/public_trades_expanded_window_v7_1_manifest.json",
+      "sha256": "0abcb3bd5e62c08aa2c70b59cd1941cc29d53df4d6d570304a915f456070d33a",
+      "version": "V7.1"
+    },
+    "v7_2_manifest": {
+      "path": "reports/manifests/ohlcv_trades_feature_store_v7_2_manifest.json",
+      "sha256": "3f6f9b6dc01c845eeed2b3e6d65f478bf65353e8a5bd0857c6e41f6f8b93187c",
+      "version": "V7.2"
+    },
+    "v7_3_manifest": {
+      "path": "reports/manifests/ohlcv_trades_offline_supervised_dataset_v7_3_manifest.json",
+      "sha256": "f0fdb8c87880767a6d96b15328c181fbf9e974060ecf34d937cf6d4bb30c3bf3",
+      "version": "V7.3"
+    },
+    "v7_4_manifest": {
+      "path": "reports/manifests/ohlcv_trades_offline_ml_research_v7_4_manifest.json",
+      "sha256": "3eed88d68a01336b14232347f295fcd35ca989382d52879c3b5863e8e516bc97",
+      "version": "V7.4"
+    },
+    "v7_4_report": {
+      "path": "reports/ml/ohlcv_trades_offline_ml_research_v7_4.json",
+      "sha256": "3eed88d68a01336b14232347f295fcd35ca989382d52879c3b5863e8e516bc97"
+    },
+    "v7_4_scores_report": {
+      "path": "reports/ml/ohlcv_trades_offline_research_scores_v7_4.json",
+      "sha256": "851ddc6492425468c7370cccf29a89ffdb6c552103ad3d3517df0793bd1668d5"
+    },
+    "v7_5_manifest": {
+      "path": "reports/manifests/ohlcv_trades_ml_robustness_v7_5_manifest.json",
+      "sha256": "35bd1f3e739ee2ab08e86594fa505c5d168dd449e6e34991f75f85249026f5ab",
+      "version": "V7.5"
+    },
+    "v7_5_report": {
+      "path": "reports/ml/ohlcv_trades_ml_robustness_v7_5.json",
+      "sha256": "35bd1f3e739ee2ab08e86594fa505c5d168dd449e6e34991f75f85249026f5ab"
+    },
+    "v7_5_markdown": {
+      "path": "reports/ml/ohlcv_trades_ml_robustness_v7_5.md",
+      "sha256": "4a32e0b1f2abbda7d3e3f1638c11a9a5b1e4eb90cc639f80a5d2601a295c41d5"
+    },
+    "v7_5_attestation": {
+      "path": "reports/audit_lite/v7_5_full_local_validation_attestation.json",
+      "sha256": "a838267c9e7eb55f91e4244187c886d964d5692a1c8191e4047ae56c41c8354d"
+    },
+    "references": {
+      "v6_2_available": true,
+      "v6_2_manifest": {
+        "path": "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+        "sha256": "9b0891e6449d717015adbdb78085b76800134b4b5191d857ce5b2a650444ee67"
+      },
+      "v6_2_report": {
+        "path": "reports/ml/advanced_ohlcv_offline_ml_research_v6_2.json",
+        "sha256": "9b0891e6449d717015adbdb78085b76800134b4b5191d857ce5b2a650444ee67"
+      },
+      "v5_4_available": true,
+      "v5_4_manifest": {
+        "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+        "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+      },
+      "v5_4_report": {
+        "path": "reports/ml/max_history_offline_ml_research_v5_4.json",
+        "sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17"
+      }
+    },
+    "window_start": "2023-03-25",
+    "window_end": "2023-04-23",
+    "total_days": 30,
+    "trade_source_type": "aggTrades",
+    "models": [
+      "majority_class_baseline",
+      "random_seeded_baseline",
+      "logistic_regression",
+      "decision_tree_depth_2"
+    ],
+    "target_name": "up_down_flat_h1",
+    "timeframes": [
+      "1m",
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "walk_forward_group_present": true
+  },
+  "summary_verdict": "OHLCV + aggTrades montre des resultats descriptifs interessants sur 30 jours, notamment des gains partiels contre les references et les baselines, mais le signal reste instable, non directement comparable aux historiques OHLCV-only et trop court pour conclure. V7.6 recommande une extension controlee a 90 jours avant tout backtest.",
+  "ohlcv_trades_assessment": {
+    "assessment": "interessant_mais_non_concluant_sur_30_jours",
+    "window_too_short_for_robust_conclusion": true,
+    "technical_chain_validated_through_v7_5": true,
+    "research_interest": "mitige_et_instable",
+    "reason": "les gains descriptifs existent, mais les alertes split/timeframe/walk-forward et label shuffle empechent toute conclusion robuste"
+  },
+  "comparison_to_references_assessment": {
+    "references_available": [
+      "advanced_ohlcv_v6_2",
+      "simple_ohlcv_v5_4"
+    ],
+    "not_directly_comparable_due_to_window_difference": true,
+    "by_reference": {
+      "advanced_ohlcv_v6_2": {
+        "available": true,
+        "reference_label": "V6.2 advanced OHLCV",
+        "not_directly_comparable": true,
+        "window_warning": "not directly comparable due to different window length/source set",
+        "ohlcv_trades_better_count": 22,
+        "reference_better_count": 14,
+        "mixed_or_inconclusive_count": 12,
+        "compared_metrics": [
+          "accuracy",
+          "balanced_accuracy",
+          "macro_f1"
+        ]
+      },
+      "simple_ohlcv_v5_4": {
+        "available": true,
+        "reference_label": "V5.4 simple OHLCV",
+        "not_directly_comparable": true,
+        "window_warning": "not directly comparable due to different window length/source set",
+        "ohlcv_trades_better_count": 23,
+        "reference_better_count": 14,
+        "mixed_or_inconclusive_count": 11,
+        "compared_metrics": [
+          "accuracy",
+          "balanced_accuracy",
+          "macro_f1"
+        ]
+      }
+    },
+    "assessment": "gain_descriptif_partiel_non_actionnable"
+  },
+  "baseline_assessment": {
+    "by_model": {
+      "logistic_regression": {
+        "entries": 12,
+        "accuracy_gt_majority_count": 11,
+        "macro_f1_gt_majority_count": 12,
+        "accuracy_gt_random_count": 12,
+        "macro_f1_gt_random_count": 12,
+        "test_deltas_by_timeframe": {
+          "15m": {
+            "delta_vs_majority_accuracy": 0.005208333333,
+            "delta_vs_majority_macro_f1": 0.199594921741,
+            "delta_vs_random_accuracy": 0.048611111111,
+            "delta_vs_random_macro_f1": 0.050993929599
+          },
+          "1h": {
+            "delta_vs_majority_accuracy": -0.020833333333,
+            "delta_vs_majority_macro_f1": 0.145405430759,
+            "delta_vs_random_accuracy": 0.013888888889,
+            "delta_vs_random_macro_f1": 0.012620199024
+          },
+          "1m": {
+            "delta_vs_majority_accuracy": 0.000462962963,
+            "delta_vs_majority_macro_f1": 0.059001065769,
+            "delta_vs_random_accuracy": 0.156018518519,
+            "delta_vs_random_macro_f1": 0.015974473562
+          },
+          "5m": {
+            "delta_vs_majority_accuracy": 0.034722222222,
+            "delta_vs_majority_macro_f1": 0.168863825527,
+            "delta_vs_random_accuracy": 0.119212962963,
+            "delta_vs_random_macro_f1": 0.052766128081
+          }
+        }
+      },
+      "decision_tree_depth_2": {
+        "entries": 12,
+        "accuracy_gt_majority_count": 9,
+        "macro_f1_gt_majority_count": 9,
+        "accuracy_gt_random_count": 12,
+        "macro_f1_gt_random_count": 5,
+        "test_deltas_by_timeframe": {
+          "15m": {
+            "delta_vs_majority_accuracy": 0.019097222222,
+            "delta_vs_majority_macro_f1": 0.199246213354,
+            "delta_vs_random_accuracy": 0.0625,
+            "delta_vs_random_macro_f1": 0.050645221213
+          },
+          "1h": {
+            "delta_vs_majority_accuracy": 0.013888888889,
+            "delta_vs_majority_macro_f1": 0.039749705083,
+            "delta_vs_random_accuracy": 0.048611111111,
+            "delta_vs_random_macro_f1": -0.093035526652
+          },
+          "1m": {
+            "delta_vs_majority_accuracy": 0.0,
+            "delta_vs_majority_macro_f1": 0.0,
+            "delta_vs_random_accuracy": 0.155555555556,
+            "delta_vs_random_macro_f1": -0.043026592207
+          },
+          "5m": {
+            "delta_vs_majority_accuracy": 0.03125,
+            "delta_vs_majority_macro_f1": 0.12254562756,
+            "delta_vs_random_accuracy": 0.115740740741,
+            "delta_vs_random_macro_f1": 0.006447930114
+          }
+        }
+      }
+    },
+    "assessment": "logistic_regression bat souvent les baselines, decision_tree_depth_2 reste plus mitige; aucune conclusion actionnable"
+  },
+  "split_stability_assessment": {
+    "overfit_warning_count": 4,
+    "overfit_warnings": {
+      "15m.logistic_regression": {
+        "timeframe": "15m",
+        "model_name": "logistic_regression",
+        "train_accuracy": 0.454436450839,
+        "validation_accuracy": 0.390625,
+        "test_accuracy": 0.392361111111,
+        "train_macro_f1": 0.451222748854,
+        "validation_macro_f1": 0.349066957926,
+        "test_macro_f1": 0.385660837469,
+        "train_validation_accuracy_gap": 0.063811450839,
+        "validation_test_accuracy_gap": -0.001736111111,
+        "train_validation_macro_f1_gap": 0.102155790929,
+        "validation_test_macro_f1_gap": -0.036593879543,
+        "overfit_warning": true
+      },
+      "1h.decision_tree_depth_2": {
+        "timeframe": "1h",
+        "model_name": "decision_tree_depth_2",
+        "train_accuracy": 0.556451612903,
+        "validation_accuracy": 0.451388888889,
+        "test_accuracy": 0.409722222222,
+        "train_macro_f1": 0.380389992642,
+        "validation_macro_f1": 0.279662641365,
+        "test_macro_f1": 0.228804431451,
+        "train_validation_accuracy_gap": 0.105062724014,
+        "validation_test_accuracy_gap": 0.041666666667,
+        "train_validation_macro_f1_gap": 0.100727351277,
+        "validation_test_macro_f1_gap": 0.050858209914,
+        "overfit_warning": true
+      },
+      "1h.logistic_regression": {
+        "timeframe": "1h",
+        "model_name": "logistic_regression",
+        "train_accuracy": 0.567204301075,
+        "validation_accuracy": 0.451388888889,
+        "test_accuracy": 0.375,
+        "train_macro_f1": 0.507565713345,
+        "validation_macro_f1": 0.341237544493,
+        "test_macro_f1": 0.334460157127,
+        "train_validation_accuracy_gap": 0.115815412186,
+        "validation_test_accuracy_gap": 0.076388888889,
+        "train_validation_macro_f1_gap": 0.166328168852,
+        "validation_test_macro_f1_gap": 0.006777387366,
+        "overfit_warning": true
+      },
+      "1h.random_seeded_baseline": {
+        "timeframe": "1h",
+        "model_name": "random_seeded_baseline",
+        "train_accuracy": 0.459677419355,
+        "validation_accuracy": 0.347222222222,
+        "test_accuracy": 0.361111111111,
+        "train_macro_f1": 0.408403314187,
+        "validation_macro_f1": 0.312124267889,
+        "test_macro_f1": 0.321839958103,
+        "train_validation_accuracy_gap": 0.112455197133,
+        "validation_test_accuracy_gap": -0.013888888889,
+        "train_validation_macro_f1_gap": 0.096279046298,
+        "validation_test_macro_f1_gap": -0.009715690214,
+        "overfit_warning": true
+      }
+    },
+    "assessment": "instable"
+  },
+  "timeframe_stability_assessment": {
+    "timeframe_concentration_warning_count": 4,
+    "timeframe_concentration_warnings": {
+      "decision_tree_depth_2": {
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "accuracy_by_timeframe": {
+          "1m": 0.750115740741,
+          "5m": 0.443865740741,
+          "15m": 0.40625,
+          "1h": 0.409722222222
+        },
+        "macro_f1_by_timeframe": {
+          "1m": 0.285739479311,
+          "5m": 0.317274563788,
+          "15m": 0.385312129082,
+          "1h": 0.228804431451
+        },
+        "best_accuracy_timeframe": "1m",
+        "accuracy_range": 0.343865740741,
+        "macro_f1_range": 0.156507697631,
+        "single_timeframe_concentration_warning": true
+      },
+      "logistic_regression": {
+        "model_name": "logistic_regression",
+        "split": "test",
+        "accuracy_by_timeframe": {
+          "1m": 0.750578703704,
+          "5m": 0.447337962963,
+          "15m": 0.392361111111,
+          "1h": 0.375
+        },
+        "macro_f1_by_timeframe": {
+          "1m": 0.344740545081,
+          "5m": 0.363592761755,
+          "15m": 0.385660837469,
+          "1h": 0.334460157127
+        },
+        "best_accuracy_timeframe": "1m",
+        "accuracy_range": 0.375578703704,
+        "macro_f1_range": 0.051200680342,
+        "single_timeframe_concentration_warning": true
+      },
+      "majority_class_baseline": {
+        "model_name": "majority_class_baseline",
+        "split": "test",
+        "accuracy_by_timeframe": {
+          "1m": 0.750115740741,
+          "5m": 0.412615740741,
+          "15m": 0.387152777778,
+          "1h": 0.395833333333
+        },
+        "macro_f1_by_timeframe": {
+          "1m": 0.285739479311,
+          "5m": 0.194728936228,
+          "15m": 0.186065915728,
+          "1h": 0.189054726368
+        },
+        "best_accuracy_timeframe": "1m",
+        "accuracy_range": 0.362962962963,
+        "macro_f1_range": 0.099673563583,
+        "single_timeframe_concentration_warning": true
+      },
+      "random_seeded_baseline": {
+        "model_name": "random_seeded_baseline",
+        "split": "test",
+        "accuracy_by_timeframe": {
+          "1m": 0.594560185185,
+          "5m": 0.328125,
+          "15m": 0.34375,
+          "1h": 0.361111111111
+        },
+        "macro_f1_by_timeframe": {
+          "1m": 0.328766071518,
+          "5m": 0.310826633674,
+          "15m": 0.33466690787,
+          "1h": 0.321839958103
+        },
+        "best_accuracy_timeframe": "1m",
+        "accuracy_range": 0.266435185185,
+        "macro_f1_range": 0.023840274196,
+        "single_timeframe_concentration_warning": true
+      }
+    },
+    "assessment": "instable_entre_timeframes"
+  },
+  "walk_forward_stability_assessment": {
+    "weak_groups_by_model": {
+      "15m.majority_class_baseline": [
+        "wf_window_01",
+        "wf_window_02",
+        "wf_window_03",
+        "wf_window_04",
+        "wf_window_05_partial"
+      ],
+      "15m.random_seeded_baseline": [
+        "wf_window_01",
+        "wf_window_02",
+        "wf_window_03",
+        "wf_window_05_partial"
+      ],
+      "1h.majority_class_baseline": [
+        "wf_window_02",
+        "wf_window_04"
+      ],
+      "1h.random_seeded_baseline": [
+        "wf_window_04"
+      ],
+      "5m.majority_class_baseline": [
+        "wf_window_01"
+      ],
+      "5m.random_seeded_baseline": [
+        "wf_window_01"
+      ]
+    },
+    "unstable_groups_by_model": {
+      "1h.decision_tree_depth_2": [
+        "wf_window_01",
+        "wf_window_04",
+        "wf_window_05_partial"
+      ],
+      "1h.logistic_regression": [
+        "wf_window_01",
+        "wf_window_03",
+        "wf_window_05_partial"
+      ],
+      "1h.random_seeded_baseline": [
+        "wf_window_04"
+      ],
+      "5m.majority_class_baseline": [
+        "wf_window_01"
+      ]
+    },
+    "concentrated_on_few_groups": [
+      "1h.decision_tree_depth_2",
+      "1h.logistic_regression"
+    ],
+    "assessment": "instable_sur_certains_groupes_walk_forward",
+    "not_a_backtest": true
+  },
+  "label_shuffle_assessment": {
+    "random_seed": 123,
+    "no_clear_edge_cases_count": 5,
+    "no_clear_edge_cases": [
+      "1h.decision_tree_depth_2.test",
+      "1h.decision_tree_depth_2.validation",
+      "1h.logistic_regression.test",
+      "1m.decision_tree_depth_2.test",
+      "1m.decision_tree_depth_2.validation"
+    ],
+    "assessment": "alerte_forte",
+    "validation_test_contaminated": false
+  },
+  "leakage_assessment": {
+    "feature_leakage_detected": false,
+    "forbidden_feature_columns_present": [],
+    "metric_forbidden_terms_detected": false,
+    "forbidden_metric_terms_present": [],
+    "assessment": "pas_d_anomalie_detectee_par_les_scans_v7_5"
+  },
+  "limitations": [
+    "Fenetre de 30 jours trop courte pour conclure statistiquement.",
+    "Un seul actif: BTCUSDT spot.",
+    "Comparaison V7.4/V7.5 avec V6.2/V5.4 non directe car les fenetres different.",
+    "Risque de surinterpretation de resultats concentres sur un timeframe ou quelques groupes walk-forward.",
+    "Pas de couts, slippage, backtest ni execution reelle.",
+    "Trades publics aggTrades disponibles uniquement sur une fenetre courte dans cette branche."
+  ],
+  "recommended_next_step": "A. Étendre les aggTrades à 90 jours.",
+  "secondary_next_step": "E. Préparer une validation walk-forward offline plus stricte.",
+  "roadmap": [
+    "V7.7 — Public Trades 90-Day Window Expansion",
+    "V7.8 — OHLCV + Trades 90-Day Feature Store",
+    "V7.9 — OHLCV + Trades 90-Day Dataset",
+    "V8.0 — OHLCV + Trades 90-Day ML Offline / Robustness"
+  ],
+  "safety": {
+    "trading_enabled": false,
+    "paper_live_enabled": false,
+    "orders_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "claims": {
+    "strategy_validated": false,
+    "model_validated_for_trading": false,
+    "ohlcv_trades_validated_for_trading": false,
+    "profitability_claimed": false,
+    "real_trading_allowed": false
+  }
+}

@@ -1,18 +1,19 @@
-# Etat du Projet : V7.4 validee + candidat V7.5
+# Etat du Projet : V7.5 validee + candidat V7.6
 
-- **Derniere version validee** : V7.4.
-- **Version candidate** : V7.5.
+- **Derniere version validee** : V7.5.
+- **Version candidate** : V7.6.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : OHLCV + trades robustness and walk-forward falsification audit.
+- **Direction** : OHLCV + trades research decision gate.
 
-## Candidat V7.5
+## Candidat V7.6
 
 - Fenetre : `2023-03-25` -> `2023-04-23`.
 - Nombre de jours : `30`.
-- Feature columns count : `71`.
-- Analyses : `['baseline_delta', 'feature_leakage_scan', 'label_shuffle_falsification', 'metric_forbidden_scan', 'ohlcv_trades_vs_references_comparison', 'split_stability', 'timeframe_stability', 'walk_forward_stability']`.
-- Warnings descriptifs : `16`.
-- V7.5 reste candidate `pending_external_audit`.
+- Trade source type : `aggTrades`.
+- Verdict : OHLCV + aggTrades interessant mais non concluant sur 30 jours.
+- Recommandation principale : A. Étendre les aggTrades à 90 jours.
+- Recommandation secondaire : E. Préparer une validation walk-forward offline plus stricte.
+- V7.6 reste candidate `pending_external_audit`.
 
 ## Clause De Securite
 
@@ -25,4 +26,4 @@
 - Aucun modele persistant.
 - Aucune API privee.
 - Aucune cle API.
-- V7.5 reste non validee avant audit externe.
+- V7.6 reste non validee avant audit externe.
