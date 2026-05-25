@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V7.9",
-  "candidate_version": "V8.0",
-  "candidate_status": "pending_external_audit",
-  "direction": "OHLCV + public trades 90-day ML offline and robustness",
+  "last_validated_version": "V8.0",
+  "candidate_version": "V8.1",
+  "candidate_status": "PASS",
+  "direction": "OHLCV + public trades 90-day research decision gate",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -1075,5 +1075,18 @@
   "persistent_model_v8_0_created": false,
   "ohlcv_trades_90d_robustness_window_start_v8_0": "2023-03-25",
   "ohlcv_trades_90d_robustness_window_end_v8_0": "2023-06-22",
-  "ohlcv_trades_90d_robustness_days_v8_0": 90
+  "ohlcv_trades_90d_robustness_days_v8_0": 90,
+  "research_decision_gate_v8_1_created": true,
+  "research_decision_gate_v8_1_status": "PASS",
+  "research_decision_gate_v8_1_window_start": "2023-03-25",
+  "research_decision_gate_v8_1_window_end": "2023-06-22",
+  "research_decision_gate_v8_1_days": 90,
+  "research_decision_gate_v8_1_feature_columns_count": 71,
+  "research_decision_gate_v8_1_verdict": "interessant_mais_mitige_non_concluant",
+  "research_decision_gate_v8_1_recommended_next_step": "A. Étendre les aggTrades à 1 an.",
+  "research_decision_gate_v8_1_secondary_next_step": "D. Préparer une validation walk-forward offline plus stricte.",
+  "research_decision_gate_v8_1_backtest_recommended": false,
+  "research_decision_gate_v8_1_strategy_validated": false,
+  "research_decision_gate_v8_1_trading_enabled": false,
+  "research_decision_gate_v8_1_orders_enabled": false
 }
