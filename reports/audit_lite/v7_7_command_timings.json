@@ -1,0 +1,11 @@
+{
+  "python scripts/discover_public_trades_v7_7.py": 239.62,
+  "python scripts/run_public_trades_90d_window_v7_7.py --no-network --skip-project-state-check": 172.12,
+  "python scripts/validate_public_trades_90d_window_v7_7.py": 58.8,
+  "python -m pytest -q tests/data/test_public_trades_90d_window_v7_7.py": 47.84,
+  "python -m pytest -q tests/validation/test_public_trades_90d_window_v7_7_validator.py": 17.56,
+  "python scripts/release_audit_lite_zip_v7_7.py": 0.65,
+  "python scripts/audit_audit_lite_zip_v7_7.py --zip projet-galapagos-v7.7-audit-lite.zip": 0.38,
+  "python scripts/smoke_audit_lite_zip_v7_7.py --zip projet-galapagos-v7.7-audit-lite.zip": 0.84,
+  "python -m pytest --collect-only -q": 2.52
+}

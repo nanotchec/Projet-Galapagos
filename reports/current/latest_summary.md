@@ -1,19 +1,13 @@
-# Latest Summary V7.6
+# Latest Summary V7.7
 
-V7.5 est la derniere version validee par audit externe.
+V7.6 est la derniere version validee localement.
 
-V7.6 est la candidate courante. Elle produit uniquement une decision gate research apres la chaine OHLCV + aggTrades 30 jours.
+V7.7 est la candidate courante. Elle etend uniquement l'ingestion data-only de trades publics Binance aggTrades sur une fenetre bornee de 90 jours.
 
-Verdict : OHLCV + aggTrades est interessant mais non concluant sur 30 jours. Les resultats montrent des gains descriptifs partiels, mais restent trop instables pour recommander un backtest.
+Source : `aggTrades`.
+Fenetre : `2023-03-25` -> `2023-06-22`, `90` jours.
+Lignes trades : `74362570`.
 
-Fenetre utilisee : `2023-03-25` -> `2023-04-23`.
+Aucune feature V7.7, aucun label V7.7, aucun dataset ML V7.7, aucun modele ML V7.7, aucun backtest, aucune strategie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading reel.
 
-Total jours : `30`.
-
-Recommandation principale : A. Étendre les aggTrades à 90 jours.
-
-Recommandation secondaire : E. Préparer une validation walk-forward offline plus stricte.
-
-Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading, aucun modele persistant et aucun claim de rentabilite.
-
-V7.6 reste `pending_external_audit`.
+V7.7 reste `pending_external_audit`.

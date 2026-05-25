@@ -1,29 +1,22 @@
-# Etat du Projet : V7.5 validee + candidat V7.6
+# Etat du Projet : V7.6 validee + candidat V7.7
 
-- **Derniere version validee** : V7.5.
-- **Version candidate** : V7.6.
+- **Derniere version validee** : V7.6.
+- **Version candidate** : V7.7.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : OHLCV + trades research decision gate.
+- **Direction** : public aggTrades 90-day window expansion.
 
-## Candidat V7.6
+## V7.7
 
-- Fenetre : `2023-03-25` -> `2023-04-23`.
-- Nombre de jours : `30`.
-- Trade source type : `aggTrades`.
-- Verdict : OHLCV + aggTrades interessant mais non concluant sur 30 jours.
-- Recommandation principale : A. Étendre les aggTrades à 90 jours.
-- Recommandation secondaire : E. Préparer une validation walk-forward offline plus stricte.
-- V7.6 reste candidate `pending_external_audit`.
+- Source trades : `aggTrades`.
+- Fenetre : `2023-03-25` -> `2023-06-22`.
+- Total jours : `90`.
+- Raw files : `90`.
+- Partitions : `90`.
+- Lignes trades : `74362570`.
+- Aucune feature V7.7.
+- Aucun label V7.7.
+- Aucun dataset ML V7.7.
+- Aucun modele ML V7.7.
+- Aucun backtest, aucune strategie, aucun signal, aucun ordre, aucun trading reel.
 
-## Clause De Securite
-
-- Aucun trading reel.
-- Aucun paper live.
-- Aucun ordre.
-- Aucun backtest.
-- Aucune strategie.
-- Aucun signal de trading.
-- Aucun modele persistant.
-- Aucune API privee.
-- Aucune cle API.
-- V7.6 reste non validee avant audit externe.
+V7.7 reste non validee avant audit externe.
