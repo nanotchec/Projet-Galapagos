@@ -1,0 +1,10 @@
+{
+  "python scripts/run_ohlcv_trades_ml_robustness_v7_5.py": 9.84,
+  "python scripts/validate_ohlcv_trades_ml_robustness_v7_5.py": 1.55,
+  "python -m pytest -q tests/ml/test_ohlcv_trades_ml_robustness_v7_5.py": 1.36,
+  "python -m pytest -q tests/validation/test_ohlcv_trades_ml_robustness_v7_5_validator.py": 1.88,
+  "python scripts/release_audit_lite_zip_v7_5.py": 1.50,
+  "python scripts/audit_audit_lite_zip_v7_5.py --zip projet-galapagos-v7.5-audit-lite.zip": 0.08,
+  "python scripts/smoke_audit_lite_zip_v7_5.py --zip projet-galapagos-v7.5-audit-lite.zip": 2.46,
+  "python -m pytest --collect-only -q": 2.14
+}
