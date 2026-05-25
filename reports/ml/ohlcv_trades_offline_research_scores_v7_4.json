@@ -1,0 +1,5586 @@
+{
+  "version": "V7.4",
+  "ml_run_id": "v7_4_20260525T125612Z_687b8ed6",
+  "outputs": {
+    "1m": {
+      "path": "data/research/v7_4/ml/offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2023-04-23/ml-scores.parquet",
+      "sha256": "676ec4c9dd7576b09d11feee398f73c42a6b89413c1e5f356abdd401e7440f48",
+      "bytes": 3952241,
+      "rows": 172560,
+      "format": "parquet"
+    },
+    "5m": {
+      "path": "data/research/v7_4/ml/offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2023-04-23/ml-scores.parquet",
+      "sha256": "cb1ebebb2aea137a07719540d42ccc7140cf5f6a0fab5551b4d01e7568e8e9e4",
+      "bytes": 687555,
+      "rows": 34320,
+      "format": "parquet"
+    },
+    "15m": {
+      "path": "data/research/v7_4/ml/offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2023-04-23/ml-scores.parquet",
+      "sha256": "9288b213cfc5ef78796795db73b7ec7a6370c61ed2942826bf18fb4c7164d1d4",
+      "bytes": 227446,
+      "rows": 11280,
+      "format": "parquet"
+    },
+    "1h": {
+      "path": "data/research/v7_4/ml/offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2023-04-23/ml-scores.parquet",
+      "sha256": "451dd9c26591696020da8aec6a8a3eb8d0380da90173ae451140d54012702dee",
+      "bytes": 61843,
+      "rows": 2640,
+      "format": "parquet"
+    }
+  },
+  "metrics": {
+    "1m.decision_tree_depth_2.test": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 1097,
+        "FLAT": 6481,
+        "UP": 1062
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8640,
+        "UP": 0
+      },
+      "accuracy": 0.7501157407407407,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.28573947931133303,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.7501157407407407,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          1097,
+          0
+        ],
+        [
+          0,
+          6481,
+          0
+        ],
+        [
+          0,
+          1062,
+          0
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.decision_tree_depth_2.train": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 25860,
+      "class_distribution_true": {
+        "DOWN": 3039,
+        "FLAT": 19747,
+        "UP": 3074
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 25860,
+        "UP": 0
+      },
+      "accuracy": 0.7636117556071153,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2886545194085703,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.7636117556071153,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          3039,
+          0
+        ],
+        [
+          0,
+          19747,
+          0
+        ],
+        [
+          0,
+          3074,
+          0
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.decision_tree_depth_2.validation": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 711,
+        "FLAT": 7251,
+        "UP": 678
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8640,
+        "UP": 0
+      },
+      "accuracy": 0.8392361111111111,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3041973444087848,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.8392361111111111,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          711,
+          0
+        ],
+        [
+          0,
+          7251,
+          0
+        ],
+        [
+          0,
+          678,
+          0
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.test": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 1097,
+        "FLAT": 6481,
+        "UP": 1062
+      },
+      "class_distribution_pred": {
+        "DOWN": 97,
+        "FLAT": 8338,
+        "UP": 205
+      },
+      "accuracy": 0.7505787037037037,
+      "balanced_accuracy": 0.36156221569163716,
+      "macro_f1": 0.3447405450806978,
+      "per_class_precision": {
+        "DOWN": 0.32989690721649484,
+        "FLAT": 0.7648117054449508,
+        "UP": 0.37073170731707317
+      },
+      "per_class_recall": {
+        "DOWN": 0.02917046490428441,
+        "FLAT": 0.983953093658386,
+        "UP": 0.07156308851224105
+      },
+      "confusion_matrix": [
+        [
+          32,
+          999,
+          66
+        ],
+        [
+          41,
+          6377,
+          63
+        ],
+        [
+          24,
+          962,
+          76
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.train": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 25860,
+      "class_distribution_true": {
+        "DOWN": 3039,
+        "FLAT": 19747,
+        "UP": 3074
+      },
+      "class_distribution_pred": {
+        "DOWN": 250,
+        "FLAT": 25070,
+        "UP": 540
+      },
+      "accuracy": 0.7653518948182522,
+      "balanced_accuracy": 0.3620496476746447,
+      "macro_f1": 0.34777278785667565,
+      "per_class_precision": {
+        "DOWN": 0.396,
+        "FLAT": 0.7773434383725568,
+        "UP": 0.37962962962962965
+      },
+      "per_class_recall": {
+        "DOWN": 0.03257650542941757,
+        "FLAT": 0.9868840836582772,
+        "UP": 0.06668835393623943
+      },
+      "confusion_matrix": [
+        [
+          99,
+          2787,
+          153
+        ],
+        [
+          77,
+          19488,
+          182
+        ],
+        [
+          74,
+          2795,
+          205
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.validation": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 711,
+        "FLAT": 7251,
+        "UP": 678
+      },
+      "class_distribution_pred": {
+        "DOWN": 48,
+        "FLAT": 8522,
+        "UP": 70
+      },
+      "accuracy": 0.8402777777777778,
+      "balanced_accuracy": 0.35256865770137136,
+      "macro_f1": 0.34316669932454813,
+      "per_class_precision": {
+        "DOWN": 0.3125,
+        "FLAT": 0.8468669326449191,
+        "UP": 0.4
+      },
+      "per_class_recall": {
+        "DOWN": 0.02109704641350211,
+        "FLAT": 0.9953109915873672,
+        "UP": 0.04129793510324484
+      },
+      "confusion_matrix": [
+        [
+          15,
+          674,
+          22
+        ],
+        [
+          14,
+          7217,
+          20
+        ],
+        [
+          19,
+          631,
+          28
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.test": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 1097,
+        "FLAT": 6481,
+        "UP": 1062
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8640,
+        "UP": 0
+      },
+      "accuracy": 0.7501157407407407,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.28573947931133303,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.7501157407407407,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          1097,
+          0
+        ],
+        [
+          0,
+          6481,
+          0
+        ],
+        [
+          0,
+          1062,
+          0
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.train": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 25860,
+      "class_distribution_true": {
+        "DOWN": 3039,
+        "FLAT": 19747,
+        "UP": 3074
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 25860,
+        "UP": 0
+      },
+      "accuracy": 0.7636117556071153,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2886545194085703,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.7636117556071153,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          3039,
+          0
+        ],
+        [
+          0,
+          19747,
+          0
+        ],
+        [
+          0,
+          3074,
+          0
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.validation": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 711,
+        "FLAT": 7251,
+        "UP": 678
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8640,
+        "UP": 0
+      },
+      "accuracy": 0.8392361111111111,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3041973444087848,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.8392361111111111,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          711,
+          0
+        ],
+        [
+          0,
+          7251,
+          0
+        ],
+        [
+          0,
+          678,
+          0
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.test": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 1097,
+        "FLAT": 6481,
+        "UP": 1062
+      },
+      "class_distribution_pred": {
+        "DOWN": 1054,
+        "FLAT": 6522,
+        "UP": 1064
+      },
+      "accuracy": 0.5945601851851852,
+      "balanced_accuracy": 0.3288490950489868,
+      "macro_f1": 0.3287660715182579,
+      "per_class_precision": {
+        "DOWN": 0.11669829222011385,
+        "FLAT": 0.7491567003986507,
+        "UP": 0.12030075187969924
+      },
+      "per_class_recall": {
+        "DOWN": 0.11212397447584321,
+        "FLAT": 0.7538960037031323,
+        "UP": 0.12052730696798493
+      },
+      "confusion_matrix": [
+        [
+          123,
+          847,
+          127
+        ],
+        [
+          786,
+          4886,
+          809
+        ],
+        [
+          145,
+          789,
+          128
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.train": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 25860,
+      "class_distribution_true": {
+        "DOWN": 3039,
+        "FLAT": 19747,
+        "UP": 3074
+      },
+      "class_distribution_pred": {
+        "DOWN": 3036,
+        "FLAT": 19804,
+        "UP": 3020
+      },
+      "accuracy": 0.6106728538283063,
+      "balanced_accuracy": 0.33249186354634336,
+      "macro_f1": 0.3324802493369908,
+      "per_class_precision": {
+        "DOWN": 0.12055335968379446,
+        "FLAT": 0.7613108462936781,
+        "UP": 0.11556291390728476
+      },
+      "per_class_recall": {
+        "DOWN": 0.12043435340572557,
+        "FLAT": 0.7635083810199017,
+        "UP": 0.11353285621340273
+      },
+      "confusion_matrix": [
+        [
+          366,
+          2337,
+          336
+        ],
+        [
+          2335,
+          15077,
+          2335
+        ],
+        [
+          335,
+          2390,
+          349
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.validation": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 711,
+        "FLAT": 7251,
+        "UP": 678
+      },
+      "class_distribution_pred": {
+        "DOWN": 978,
+        "FLAT": 6661,
+        "UP": 1001
+      },
+      "accuracy": 0.6663194444444445,
+      "balanced_accuracy": 0.33557547422267464,
+      "macro_f1": 0.33291281134902634,
+      "per_class_precision": {
+        "DOWN": 0.09713701431492842,
+        "FLAT": 0.8396637141570334,
+        "UP": 0.06893106893106893
+      },
+      "per_class_recall": {
+        "DOWN": 0.13361462728551335,
+        "FLAT": 0.7713418838780858,
+        "UP": 0.10176991150442478
+      },
+      "confusion_matrix": [
+        [
+          95,
+          526,
+          90
+        ],
+        [
+          816,
+          5593,
+          842
+        ],
+        [
+          67,
+          542,
+          69
+        ]
+      ],
+      "train_rows": 25860,
+      "validation_rows": 8640,
+      "test_rows": 8640,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.test": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 519,
+        "FLAT": 713,
+        "UP": 496
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1301,
+        "UP": 427
+      },
+      "accuracy": 0.44386574074074076,
+      "balanced_accuracy": 0.391713417484806,
+      "macro_f1": 0.3172745637884036,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.4650269023827825,
+        "UP": 0.3793911007025761
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.8485273492286115,
+        "UP": 0.32661290322580644
+      },
+      "confusion_matrix": [
+        [
+          0,
+          362,
+          157
+        ],
+        [
+          0,
+          605,
+          108
+        ],
+        [
+          0,
+          334,
+          162
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.train": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 5124,
+      "class_distribution_true": {
+        "DOWN": 1362,
+        "FLAT": 2318,
+        "UP": 1444
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 3847,
+        "UP": 1277
+      },
+      "accuracy": 0.49043715846994534,
+      "balanced_accuracy": 0.40576419478376696,
+      "macro_f1": 0.34155314183964025,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.520665453600208,
+        "UP": 0.39937353171495693
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.864106988783434,
+        "UP": 0.35318559556786705
+      },
+      "confusion_matrix": [
+        [
+          0,
+          910,
+          452
+        ],
+        [
+          0,
+          2003,
+          315
+        ],
+        [
+          0,
+          934,
+          510
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.validation": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 396,
+        "FLAT": 938,
+        "UP": 394
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1429,
+        "UP": 299
+      },
+      "accuracy": 0.5474537037037037,
+      "balanced_accuracy": 0.38573268537659783,
+      "macro_f1": 0.33515674580313365,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5913226032190343,
+        "UP": 0.3377926421404682
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.9008528784648188,
+        "UP": 0.2563451776649746
+      },
+      "confusion_matrix": [
+        [
+          0,
+          291,
+          105
+        ],
+        [
+          0,
+          845,
+          93
+        ],
+        [
+          0,
+          293,
+          101
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.test": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 519,
+        "FLAT": 713,
+        "UP": 496
+      },
+      "class_distribution_pred": {
+        "DOWN": 163,
+        "FLAT": 1248,
+        "UP": 317
+      },
+      "accuracy": 0.44733796296296297,
+      "balanced_accuracy": 0.3978409611932178,
+      "macro_f1": 0.3635927617551548,
+      "per_class_precision": {
+        "DOWN": 0.4110429447852761,
+        "FLAT": 0.46875,
+        "UP": 0.38170347003154576
+      },
+      "per_class_recall": {
+        "DOWN": 0.12909441233140656,
+        "FLAT": 0.820476858345021,
+        "UP": 0.2439516129032258
+      },
+      "confusion_matrix": [
+        [
+          67,
+          337,
+          115
+        ],
+        [
+          47,
+          585,
+          81
+        ],
+        [
+          49,
+          326,
+          121
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.train": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 5124,
+      "class_distribution_true": {
+        "DOWN": 1362,
+        "FLAT": 2318,
+        "UP": 1444
+      },
+      "class_distribution_pred": {
+        "DOWN": 564,
+        "FLAT": 3592,
+        "UP": 968
+      },
+      "accuracy": 0.5015612802498048,
+      "balanced_accuracy": 0.43046695870757284,
+      "macro_f1": 0.4149170782445181,
+      "per_class_precision": {
+        "DOWN": 0.42907801418439717,
+        "FLAT": 0.5314587973273942,
+        "UP": 0.43285123966942146
+      },
+      "per_class_recall": {
+        "DOWN": 0.1776798825256975,
+        "FLAT": 0.8235547886108714,
+        "UP": 0.2901662049861496
+      },
+      "confusion_matrix": [
+        [
+          242,
+          841,
+          279
+        ],
+        [
+          139,
+          1909,
+          270
+        ],
+        [
+          183,
+          842,
+          419
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.validation": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 396,
+        "FLAT": 938,
+        "UP": 394
+      },
+      "class_distribution_pred": {
+        "DOWN": 169,
+        "FLAT": 1388,
+        "UP": 171
+      },
+      "accuracy": 0.5630787037037037,
+      "balanced_accuracy": 0.4131742566093653,
+      "macro_f1": 0.40215544682783055,
+      "per_class_precision": {
+        "DOWN": 0.4260355029585799,
+        "FLAT": 0.6015850144092219,
+        "UP": 0.38596491228070173
+      },
+      "per_class_recall": {
+        "DOWN": 0.18181818181818182,
+        "FLAT": 0.8901918976545842,
+        "UP": 0.16751269035532995
+      },
+      "confusion_matrix": [
+        [
+          72,
+          270,
+          54
+        ],
+        [
+          52,
+          835,
+          51
+        ],
+        [
+          45,
+          283,
+          66
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.test": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 519,
+        "FLAT": 713,
+        "UP": 496
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1728,
+        "UP": 0
+      },
+      "accuracy": 0.41261574074074076,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19472893622832174,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.41261574074074076,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          519,
+          0
+        ],
+        [
+          0,
+          713,
+          0
+        ],
+        [
+          0,
+          496,
+          0
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.train": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 5124,
+      "class_distribution_true": {
+        "DOWN": 1362,
+        "FLAT": 2318,
+        "UP": 1444
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 5124,
+        "UP": 0
+      },
+      "accuracy": 0.4523809523809524,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20765027322404372,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.4523809523809524,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          1362,
+          0
+        ],
+        [
+          0,
+          2318,
+          0
+        ],
+        [
+          0,
+          1444,
+          0
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.validation": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 396,
+        "FLAT": 938,
+        "UP": 394
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1728,
+        "UP": 0
+      },
+      "accuracy": 0.5428240740740741,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.23455863965991497,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5428240740740741,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          396,
+          0
+        ],
+        [
+          0,
+          938,
+          0
+        ],
+        [
+          0,
+          394,
+          0
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.test": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 519,
+        "FLAT": 713,
+        "UP": 496
+      },
+      "class_distribution_pred": {
+        "DOWN": 442,
+        "FLAT": 798,
+        "UP": 488
+      },
+      "accuracy": 0.328125,
+      "balanced_accuracy": 0.31201943041469504,
+      "macro_f1": 0.3108266336741853,
+      "per_class_precision": {
+        "DOWN": 0.2873303167420814,
+        "FLAT": 0.39974937343358397,
+        "UP": 0.24795081967213115
+      },
+      "per_class_recall": {
+        "DOWN": 0.24470134874759153,
+        "FLAT": 0.4474053295932679,
+        "UP": 0.2439516129032258
+      },
+      "confusion_matrix": [
+        [
+          127,
+          235,
+          157
+        ],
+        [
+          184,
+          319,
+          210
+        ],
+        [
+          131,
+          244,
+          121
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.train": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 5124,
+      "class_distribution_true": {
+        "DOWN": 1362,
+        "FLAT": 2318,
+        "UP": 1444
+      },
+      "class_distribution_pred": {
+        "DOWN": 1391,
+        "FLAT": 2316,
+        "UP": 1417
+      },
+      "accuracy": 0.3546057767369243,
+      "balanced_accuracy": 0.3321342209655568,
+      "macro_f1": 0.33212038443800407,
+      "per_class_precision": {
+        "DOWN": 0.2609633357296909,
+        "FLAT": 0.4581174438687392,
+        "UP": 0.2773465067043049
+      },
+      "per_class_recall": {
+        "DOWN": 0.2665198237885463,
+        "FLAT": 0.45772217428817946,
+        "UP": 0.2721606648199446
+      },
+      "confusion_matrix": [
+        [
+          363,
+          599,
+          400
+        ],
+        [
+          633,
+          1061,
+          624
+        ],
+        [
+          395,
+          656,
+          393
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.validation": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 1728,
+      "class_distribution_true": {
+        "DOWN": 396,
+        "FLAT": 938,
+        "UP": 394
+      },
+      "class_distribution_pred": {
+        "DOWN": 478,
+        "FLAT": 779,
+        "UP": 471
+      },
+      "accuracy": 0.39351851851851855,
+      "balanced_accuracy": 0.3603787870588386,
+      "macro_f1": 0.35603046895669926,
+      "per_class_precision": {
+        "DOWN": 0.24476987447698745,
+        "FLAT": 0.5609756097560976,
+        "UP": 0.267515923566879
+      },
+      "per_class_recall": {
+        "DOWN": 0.29545454545454547,
+        "FLAT": 0.46588486140724944,
+        "UP": 0.3197969543147208
+      },
+      "confusion_matrix": [
+        [
+          117,
+          174,
+          105
+        ],
+        [
+          261,
+          437,
+          240
+        ],
+        [
+          100,
+          168,
+          126
+        ]
+      ],
+      "train_rows": 5124,
+      "validation_rows": 1728,
+      "test_rows": 1728,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.decision_tree_depth_2.test": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 218,
+        "FLAT": 135,
+        "UP": 223
+      },
+      "class_distribution_pred": {
+        "DOWN": 304,
+        "FLAT": 108,
+        "UP": 164
+      },
+      "accuracy": 0.40625,
+      "balanced_accuracy": 0.39115577639322513,
+      "macro_f1": 0.38531212908236284,
+      "per_class_precision": {
+        "DOWN": 0.41776315789473684,
+        "FLAT": 0.35185185185185186,
+        "UP": 0.42073170731707316
+      },
+      "per_class_recall": {
+        "DOWN": 0.5825688073394495,
+        "FLAT": 0.2814814814814815,
+        "UP": 0.3094170403587444
+      },
+      "confusion_matrix": [
+        [
+          127,
+          34,
+          57
+        ],
+        [
+          59,
+          38,
+          38
+        ],
+        [
+          118,
+          36,
+          69
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.decision_tree_depth_2.train": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 1668,
+      "class_distribution_true": {
+        "DOWN": 603,
+        "FLAT": 459,
+        "UP": 606
+      },
+      "class_distribution_pred": {
+        "DOWN": 892,
+        "FLAT": 411,
+        "UP": 365
+      },
+      "accuracy": 0.4460431654676259,
+      "balanced_accuracy": 0.4435561788546429,
+      "macro_f1": 0.43611689362480294,
+      "per_class_precision": {
+        "DOWN": 0.41816143497757846,
+        "FLAT": 0.45985401459854014,
+        "UP": 0.4986301369863014
+      },
+      "per_class_recall": {
+        "DOWN": 0.6185737976782753,
+        "FLAT": 0.4117647058823529,
+        "UP": 0.30033003300330036
+      },
+      "confusion_matrix": [
+        [
+          373,
+          125,
+          105
+        ],
+        [
+          192,
+          189,
+          78
+        ],
+        [
+          327,
+          97,
+          182
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.decision_tree_depth_2.validation": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 183,
+        "FLAT": 221,
+        "UP": 172
+      },
+      "class_distribution_pred": {
+        "DOWN": 258,
+        "FLAT": 176,
+        "UP": 142
+      },
+      "accuracy": 0.3836805555555556,
+      "balanced_accuracy": 0.3801944817732757,
+      "macro_f1": 0.37434554576999163,
+      "per_class_precision": {
+        "DOWN": 0.35658914728682173,
+        "FLAT": 0.4943181818181818,
+        "UP": 0.29577464788732394
+      },
+      "per_class_recall": {
+        "DOWN": 0.5027322404371585,
+        "FLAT": 0.3936651583710407,
+        "UP": 0.2441860465116279
+      },
+      "confusion_matrix": [
+        [
+          92,
+          46,
+          45
+        ],
+        [
+          79,
+          87,
+          55
+        ],
+        [
+          87,
+          43,
+          42
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.test": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 218,
+        "FLAT": 135,
+        "UP": 223
+      },
+      "class_distribution_pred": {
+        "DOWN": 248,
+        "FLAT": 172,
+        "UP": 156
+      },
+      "accuracy": 0.3923611111111111,
+      "balanced_accuracy": 0.3939989852031651,
+      "macro_f1": 0.38566083746900787,
+      "per_class_precision": {
+        "DOWN": 0.41935483870967744,
+        "FLAT": 0.313953488372093,
+        "UP": 0.4358974358974359
+      },
+      "per_class_recall": {
+        "DOWN": 0.47706422018348627,
+        "FLAT": 0.4,
+        "UP": 0.30493273542600896
+      },
+      "confusion_matrix": [
+        [
+          104,
+          54,
+          60
+        ],
+        [
+          53,
+          54,
+          28
+        ],
+        [
+          91,
+          64,
+          68
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.train": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 1668,
+      "class_distribution_true": {
+        "DOWN": 603,
+        "FLAT": 459,
+        "UP": 606
+      },
+      "class_distribution_pred": {
+        "DOWN": 634,
+        "FLAT": 402,
+        "UP": 632
+      },
+      "accuracy": 0.45443645083932854,
+      "balanced_accuracy": 0.44978026238874014,
+      "macro_f1": 0.4512227488544836,
+      "per_class_precision": {
+        "DOWN": 0.4479495268138801,
+        "FLAT": 0.4527363184079602,
+        "UP": 0.4620253164556962
+      },
+      "per_class_recall": {
+        "DOWN": 0.4709784411276949,
+        "FLAT": 0.39651416122004357,
+        "UP": 0.48184818481848185
+      },
+      "confusion_matrix": [
+        [
+          284,
+          112,
+          207
+        ],
+        [
+          144,
+          182,
+          133
+        ],
+        [
+          206,
+          108,
+          292
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.validation": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 183,
+        "FLAT": 221,
+        "UP": 172
+      },
+      "class_distribution_pred": {
+        "DOWN": 398,
+        "FLAT": 119,
+        "UP": 59
+      },
+      "accuracy": 0.390625,
+      "balanced_accuracy": 0.39055522108156054,
+      "macro_f1": 0.3490669579259232,
+      "per_class_precision": {
+        "DOWN": 0.3417085427135678,
+        "FLAT": 0.5798319327731093,
+        "UP": 0.3389830508474576
+      },
+      "per_class_recall": {
+        "DOWN": 0.7431693989071039,
+        "FLAT": 0.31221719457013575,
+        "UP": 0.11627906976744186
+      },
+      "confusion_matrix": [
+        [
+          136,
+          26,
+          21
+        ],
+        [
+          134,
+          69,
+          18
+        ],
+        [
+          128,
+          24,
+          20
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.test": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 218,
+        "FLAT": 135,
+        "UP": 223
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 576
+      },
+      "accuracy": 0.3871527777777778,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.18606591572799333,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.3871527777777778
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          218
+        ],
+        [
+          0,
+          0,
+          135
+        ],
+        [
+          0,
+          0,
+          223
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.train": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 1668,
+      "class_distribution_true": {
+        "DOWN": 603,
+        "FLAT": 459,
+        "UP": 606
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 1668
+      },
+      "accuracy": 0.36330935251798563,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.17766051011433595,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.36330935251798563
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          603
+        ],
+        [
+          0,
+          0,
+          459
+        ],
+        [
+          0,
+          0,
+          606
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.validation": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 183,
+        "FLAT": 221,
+        "UP": 172
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 576
+      },
+      "accuracy": 0.2986111111111111,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1532976827094474,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.2986111111111111
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          183
+        ],
+        [
+          0,
+          0,
+          221
+        ],
+        [
+          0,
+          0,
+          172
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.test": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 218,
+        "FLAT": 135,
+        "UP": 223
+      },
+      "class_distribution_pred": {
+        "DOWN": 195,
+        "FLAT": 169,
+        "UP": 212
+      },
+      "accuracy": 0.34375,
+      "balanced_accuracy": 0.3355613660038997,
+      "macro_f1": 0.33466690786971326,
+      "per_class_precision": {
+        "DOWN": 0.38461538461538464,
+        "FLAT": 0.22485207100591717,
+        "UP": 0.4009433962264151
+      },
+      "per_class_recall": {
+        "DOWN": 0.3440366972477064,
+        "FLAT": 0.2814814814814815,
+        "UP": 0.3811659192825112
+      },
+      "confusion_matrix": [
+        [
+          75,
+          67,
+          76
+        ],
+        [
+          46,
+          38,
+          51
+        ],
+        [
+          74,
+          64,
+          85
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.train": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 1668,
+      "class_distribution_true": {
+        "DOWN": 603,
+        "FLAT": 459,
+        "UP": 606
+      },
+      "class_distribution_pred": {
+        "DOWN": 598,
+        "FLAT": 464,
+        "UP": 606
+      },
+      "accuracy": 0.33992805755395683,
+      "balanced_accuracy": 0.33676888320965553,
+      "macro_f1": 0.33671158248710703,
+      "per_class_precision": {
+        "DOWN": 0.3528428093645485,
+        "FLAT": 0.2974137931034483,
+        "UP": 0.35973597359735976
+      },
+      "per_class_recall": {
+        "DOWN": 0.34991708126036486,
+        "FLAT": 0.3006535947712418,
+        "UP": 0.35973597359735976
+      },
+      "confusion_matrix": [
+        [
+          211,
+          170,
+          222
+        ],
+        [
+          155,
+          138,
+          166
+        ],
+        [
+          232,
+          156,
+          218
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.validation": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 183,
+        "FLAT": 221,
+        "UP": 172
+      },
+      "class_distribution_pred": {
+        "DOWN": 217,
+        "FLAT": 155,
+        "UP": 204
+      },
+      "accuracy": 0.3211805555555556,
+      "balanced_accuracy": 0.326033270674566,
+      "macro_f1": 0.3210992907801418,
+      "per_class_precision": {
+        "DOWN": 0.2995391705069124,
+        "FLAT": 0.3741935483870968,
+        "UP": 0.30392156862745096
+      },
+      "per_class_recall": {
+        "DOWN": 0.3551912568306011,
+        "FLAT": 0.26244343891402716,
+        "UP": 0.36046511627906974
+      },
+      "confusion_matrix": [
+        [
+          65,
+          53,
+          65
+        ],
+        [
+          86,
+          58,
+          77
+        ],
+        [
+          66,
+          44,
+          62
+        ]
+      ],
+      "train_rows": 1668,
+      "validation_rows": 576,
+      "test_rows": 576,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.test": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 144,
+      "class_distribution_true": {
+        "DOWN": 60,
+        "FLAT": 27,
+        "UP": 57
+      },
+      "class_distribution_pred": {
+        "DOWN": 7,
+        "FLAT": 0,
+        "UP": 137
+      },
+      "accuracy": 0.4097222222222222,
+      "balanced_accuracy": 0.34385964912280703,
+      "macro_f1": 0.22880443145099247,
+      "per_class_precision": {
+        "DOWN": 0.5714285714285714,
+        "FLAT": 0.0,
+        "UP": 0.40145985401459855
+      },
+      "per_class_recall": {
+        "DOWN": 0.06666666666666667,
+        "FLAT": 0.0,
+        "UP": 0.9649122807017544
+      },
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          56
+        ],
+        [
+          1,
+          0,
+          26
+        ],
+        [
+          2,
+          0,
+          55
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.train": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 372,
+      "class_distribution_true": {
+        "DOWN": 156,
+        "FLAT": 51,
+        "UP": 165
+      },
+      "class_distribution_pred": {
+        "DOWN": 84,
+        "FLAT": 0,
+        "UP": 288
+      },
+      "accuracy": 0.5564516129032258,
+      "balanced_accuracy": 0.42494172494172494,
+      "macro_f1": 0.3803899926416483,
+      "per_class_precision": {
+        "DOWN": 0.6904761904761905,
+        "FLAT": 0.0,
+        "UP": 0.5173611111111112
+      },
+      "per_class_recall": {
+        "DOWN": 0.3717948717948718,
+        "FLAT": 0.0,
+        "UP": 0.9030303030303031
+      },
+      "confusion_matrix": [
+        [
+          58,
+          0,
+          98
+        ],
+        [
+          10,
+          0,
+          41
+        ],
+        [
+          16,
+          0,
+          149
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.validation": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 144,
+      "class_distribution_true": {
+        "DOWN": 60,
+        "FLAT": 26,
+        "UP": 58
+      },
+      "class_distribution_pred": {
+        "DOWN": 14,
+        "FLAT": 0,
+        "UP": 130
+      },
+      "accuracy": 0.4513888888888889,
+      "balanced_accuracy": 0.37183908045977015,
+      "macro_f1": 0.279662641364769,
+      "per_class_precision": {
+        "DOWN": 0.6428571428571429,
+        "FLAT": 0.0,
+        "UP": 0.4307692307692308
+      },
+      "per_class_recall": {
+        "DOWN": 0.15,
+        "FLAT": 0.0,
+        "UP": 0.9655172413793104
+      },
+      "confusion_matrix": [
+        [
+          9,
+          0,
+          51
+        ],
+        [
+          3,
+          0,
+          23
+        ],
+        [
+          2,
+          0,
+          56
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.test": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 144,
+      "class_distribution_true": {
+        "DOWN": 60,
+        "FLAT": 27,
+        "UP": 57
+      },
+      "class_distribution_pred": {
+        "DOWN": 48,
+        "FLAT": 28,
+        "UP": 68
+      },
+      "accuracy": 0.375,
+      "balanced_accuracy": 0.33505523066926574,
+      "macro_f1": 0.33446015712682375,
+      "per_class_precision": {
+        "DOWN": 0.4791666666666667,
+        "FLAT": 0.14285714285714285,
+        "UP": 0.39705882352941174
+      },
+      "per_class_recall": {
+        "DOWN": 0.38333333333333336,
+        "FLAT": 0.14814814814814814,
+        "UP": 0.47368421052631576
+      },
+      "confusion_matrix": [
+        [
+          23,
+          12,
+          25
+        ],
+        [
+          7,
+          4,
+          16
+        ],
+        [
+          18,
+          12,
+          27
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.train": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 372,
+      "class_distribution_true": {
+        "DOWN": 156,
+        "FLAT": 51,
+        "UP": 165
+      },
+      "class_distribution_pred": {
+        "DOWN": 167,
+        "FLAT": 19,
+        "UP": 186
+      },
+      "accuracy": 0.5672043010752689,
+      "balanced_accuracy": 0.4912907354083824,
+      "macro_f1": 0.5075657133448671,
+      "per_class_precision": {
+        "DOWN": 0.5568862275449101,
+        "FLAT": 0.631578947368421,
+        "UP": 0.5698924731182796
+      },
+      "per_class_recall": {
+        "DOWN": 0.5961538461538461,
+        "FLAT": 0.23529411764705882,
+        "UP": 0.6424242424242425
+      },
+      "confusion_matrix": [
+        [
+          93,
+          3,
+          60
+        ],
+        [
+          19,
+          12,
+          20
+        ],
+        [
+          55,
+          4,
+          106
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.validation": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 144,
+      "class_distribution_true": {
+        "DOWN": 60,
+        "FLAT": 26,
+        "UP": 58
+      },
+      "class_distribution_pred": {
+        "DOWN": 101,
+        "FLAT": 3,
+        "UP": 40
+      },
+      "accuracy": 0.4513888888888889,
+      "balanced_accuracy": 0.37220748600058945,
+      "macro_f1": 0.3412375444930596,
+      "per_class_precision": {
+        "DOWN": 0.43564356435643564,
+        "FLAT": 0.3333333333333333,
+        "UP": 0.5
+      },
+      "per_class_recall": {
+        "DOWN": 0.7333333333333333,
+        "FLAT": 0.038461538461538464,
+        "UP": 0.3448275862068966
+      },
+      "confusion_matrix": [
+        [
+          44,
+          2,
+          14
+        ],
+        [
+          19,
+          1,
+          6
+        ],
+        [
+          38,
+          0,
+          20
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.test": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 144,
+      "class_distribution_true": {
+        "DOWN": 60,
+        "FLAT": 27,
+        "UP": 57
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 144
+      },
+      "accuracy": 0.3958333333333333,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1890547263681592,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.3958333333333333
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          60
+        ],
+        [
+          0,
+          0,
+          27
+        ],
+        [
+          0,
+          0,
+          57
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.train": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 372,
+      "class_distribution_true": {
+        "DOWN": 156,
+        "FLAT": 51,
+        "UP": 165
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 372
+      },
+      "accuracy": 0.4435483870967742,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2048417132216015,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.4435483870967742
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          156
+        ],
+        [
+          0,
+          0,
+          51
+        ],
+        [
+          0,
+          0,
+          165
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.validation": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 144,
+      "class_distribution_true": {
+        "DOWN": 60,
+        "FLAT": 26,
+        "UP": 58
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 144
+      },
+      "accuracy": 0.4027777777777778,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1914191419141914,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.4027777777777778
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          60
+        ],
+        [
+          0,
+          0,
+          26
+        ],
+        [
+          0,
+          0,
+          58
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.test": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 144,
+      "class_distribution_true": {
+        "DOWN": 60,
+        "FLAT": 27,
+        "UP": 57
+      },
+      "class_distribution_pred": {
+        "DOWN": 55,
+        "FLAT": 20,
+        "UP": 69
+      },
+      "accuracy": 0.3611111111111111,
+      "balanced_accuracy": 0.32365172189733593,
+      "macro_f1": 0.3218399581026778,
+      "per_class_precision": {
+        "DOWN": 0.4,
+        "FLAT": 0.2,
+        "UP": 0.37681159420289856
+      },
+      "per_class_recall": {
+        "DOWN": 0.36666666666666664,
+        "FLAT": 0.14814814814814814,
+        "UP": 0.45614035087719296
+      },
+      "confusion_matrix": [
+        [
+          22,
+          9,
+          29
+        ],
+        [
+          9,
+          4,
+          14
+        ],
+        [
+          24,
+          7,
+          26
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.train": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 372,
+      "class_distribution_true": {
+        "DOWN": 156,
+        "FLAT": 51,
+        "UP": 165
+      },
+      "class_distribution_pred": {
+        "DOWN": 156,
+        "FLAT": 50,
+        "UP": 166
+      },
+      "accuracy": 0.4596774193548387,
+      "balanced_accuracy": 0.40815165226929934,
+      "macro_f1": 0.40840331418686837,
+      "per_class_precision": {
+        "DOWN": 0.46794871794871795,
+        "FLAT": 0.24,
+        "UP": 0.5180722891566265
+      },
+      "per_class_recall": {
+        "DOWN": 0.46794871794871795,
+        "FLAT": 0.23529411764705882,
+        "UP": 0.5212121212121212
+      },
+      "confusion_matrix": [
+        [
+          73,
+          20,
+          63
+        ],
+        [
+          22,
+          12,
+          17
+        ],
+        [
+          61,
+          18,
+          86
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.validation": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 144,
+      "class_distribution_true": {
+        "DOWN": 60,
+        "FLAT": 26,
+        "UP": 58
+      },
+      "class_distribution_pred": {
+        "DOWN": 59,
+        "FLAT": 18,
+        "UP": 67
+      },
+      "accuracy": 0.3472222222222222,
+      "balanced_accuracy": 0.3112437371058061,
+      "macro_f1": 0.3121242678889738,
+      "per_class_precision": {
+        "DOWN": 0.3898305084745763,
+        "FLAT": 0.2222222222222222,
+        "UP": 0.34328358208955223
+      },
+      "per_class_recall": {
+        "DOWN": 0.38333333333333336,
+        "FLAT": 0.15384615384615385,
+        "UP": 0.39655172413793105
+      },
+      "confusion_matrix": [
+        [
+          23,
+          6,
+          31
+        ],
+        [
+          9,
+          4,
+          13
+        ],
+        [
+          27,
+          8,
+          23
+        ]
+      ],
+      "train_rows": 372,
+      "validation_rows": 144,
+      "test_rows": 144,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    }
+  },
+  "walk_forward_metrics": {
+    "1m.decision_tree_depth_2.wf_window_01": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_01",
+      "rows": 10020,
+      "class_distribution_true": {
+        "DOWN": 1554,
+        "FLAT": 6899,
+        "UP": 1567
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10020,
+        "UP": 0
+      },
+      "accuracy": 0.6885229540918164,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27184427763658214
+    },
+    "1m.decision_tree_depth_2.wf_window_02": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_02",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 1074,
+        "FLAT": 7932,
+        "UP": 1074
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10080,
+        "UP": 0
+      },
+      "accuracy": 0.7869047619047619,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2935820564068399
+    },
+    "1m.decision_tree_depth_2.wf_window_03": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_03",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 902,
+        "FLAT": 8266,
+        "UP": 912
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10080,
+        "UP": 0
+      },
+      "accuracy": 0.8200396825396825,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.30037428685635376
+    },
+    "1m.decision_tree_depth_2.wf_window_04": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_04",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 1087,
+        "FLAT": 7986,
+        "UP": 1007
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10080,
+        "UP": 0
+      },
+      "accuracy": 0.7922619047619047,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29469722129967896
+    },
+    "1m.decision_tree_depth_2.wf_window_05_partial": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 230,
+        "FLAT": 2396,
+        "UP": 254
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2880,
+        "UP": 0
+      },
+      "accuracy": 0.8319444444444445,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3027546120798585
+    },
+    "1m.logistic_regression.wf_window_01": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_01",
+      "rows": 10020,
+      "class_distribution_true": {
+        "DOWN": 1554,
+        "FLAT": 6899,
+        "UP": 1567
+      },
+      "class_distribution_pred": {
+        "DOWN": 115,
+        "FLAT": 9578,
+        "UP": 327
+      },
+      "accuracy": 0.6907185628742515,
+      "balanced_accuracy": 0.3629183489500547,
+      "macro_f1": 0.3360564412888225
+    },
+    "1m.logistic_regression.wf_window_02": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_02",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 1074,
+        "FLAT": 7932,
+        "UP": 1074
+      },
+      "class_distribution_pred": {
+        "DOWN": 61,
+        "FLAT": 9875,
+        "UP": 144
+      },
+      "accuracy": 0.7879960317460317,
+      "balanced_accuracy": 0.35365293073057674,
+      "macro_f1": 0.33606743096066655
+    },
+    "1m.logistic_regression.wf_window_03": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_03",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 902,
+        "FLAT": 8266,
+        "UP": 912
+      },
+      "class_distribution_pred": {
+        "DOWN": 114,
+        "FLAT": 9844,
+        "UP": 122
+      },
+      "accuracy": 0.8218253968253968,
+      "balanced_accuracy": 0.3631736781582788,
+      "macro_f1": 0.35954845745794456
+    },
+    "1m.logistic_regression.wf_window_04": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_04",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 1087,
+        "FLAT": 7986,
+        "UP": 1007
+      },
+      "class_distribution_pred": {
+        "DOWN": 102,
+        "FLAT": 9762,
+        "UP": 216
+      },
+      "accuracy": 0.7929563492063492,
+      "balanced_accuracy": 0.3663776462759199,
+      "macro_f1": 0.3596299835269567
+    },
+    "1m.logistic_regression.wf_window_05_partial": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 230,
+        "FLAT": 2396,
+        "UP": 254
+      },
+      "class_distribution_pred": {
+        "DOWN": 3,
+        "FLAT": 2871,
+        "UP": 6
+      },
+      "accuracy": 0.8319444444444445,
+      "balanced_accuracy": 0.33698991834121195,
+      "macro_f1": 0.31088165746851176
+    },
+    "1m.majority_class_baseline.wf_window_01": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_01",
+      "rows": 10020,
+      "class_distribution_true": {
+        "DOWN": 1554,
+        "FLAT": 6899,
+        "UP": 1567
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10020,
+        "UP": 0
+      },
+      "accuracy": 0.6885229540918164,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27184427763658214
+    },
+    "1m.majority_class_baseline.wf_window_02": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_02",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 1074,
+        "FLAT": 7932,
+        "UP": 1074
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10080,
+        "UP": 0
+      },
+      "accuracy": 0.7869047619047619,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2935820564068399
+    },
+    "1m.majority_class_baseline.wf_window_03": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_03",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 902,
+        "FLAT": 8266,
+        "UP": 912
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10080,
+        "UP": 0
+      },
+      "accuracy": 0.8200396825396825,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.30037428685635376
+    },
+    "1m.majority_class_baseline.wf_window_04": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_04",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 1087,
+        "FLAT": 7986,
+        "UP": 1007
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10080,
+        "UP": 0
+      },
+      "accuracy": 0.7922619047619047,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29469722129967896
+    },
+    "1m.majority_class_baseline.wf_window_05_partial": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 230,
+        "FLAT": 2396,
+        "UP": 254
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2880,
+        "UP": 0
+      },
+      "accuracy": 0.8319444444444445,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3027546120798585
+    },
+    "1m.random_seeded_baseline.wf_window_01": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_01",
+      "rows": 10020,
+      "class_distribution_true": {
+        "DOWN": 1554,
+        "FLAT": 6899,
+        "UP": 1567
+      },
+      "class_distribution_pred": {
+        "DOWN": 1170,
+        "FLAT": 7690,
+        "UP": 1160
+      },
+      "accuracy": 0.5701596806387226,
+      "balanced_accuracy": 0.340666632404436,
+      "macro_f1": 0.3388378442392111
+    },
+    "1m.random_seeded_baseline.wf_window_02": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_02",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 1074,
+        "FLAT": 7932,
+        "UP": 1074
+      },
+      "class_distribution_pred": {
+        "DOWN": 1166,
+        "FLAT": 7705,
+        "UP": 1209
+      },
+      "accuracy": 0.6211309523809524,
+      "balanced_accuracy": 0.32536687542434717,
+      "macro_f1": 0.3254148719171324
+    },
+    "1m.random_seeded_baseline.wf_window_03": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_03",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 902,
+        "FLAT": 8266,
+        "UP": 912
+      },
+      "class_distribution_pred": {
+        "DOWN": 1168,
+        "FLAT": 7754,
+        "UP": 1158
+      },
+      "accuracy": 0.6499007936507937,
+      "balanced_accuracy": 0.3349139759334389,
+      "macro_f1": 0.3331940147279669
+    },
+    "1m.random_seeded_baseline.wf_window_04": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_04",
+      "rows": 10080,
+      "class_distribution_true": {
+        "DOWN": 1087,
+        "FLAT": 7986,
+        "UP": 1007
+      },
+      "class_distribution_pred": {
+        "DOWN": 1197,
+        "FLAT": 7675,
+        "UP": 1208
+      },
+      "accuracy": 0.6259920634920635,
+      "balanced_accuracy": 0.3300967122334478,
+      "macro_f1": 0.32976611602322636
+    },
+    "1m.random_seeded_baseline.wf_window_05_partial": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 230,
+        "FLAT": 2396,
+        "UP": 254
+      },
+      "class_distribution_pred": {
+        "DOWN": 367,
+        "FLAT": 2163,
+        "UP": 350
+      },
+      "accuracy": 0.6427083333333333,
+      "balanced_accuracy": 0.31973370543968355,
+      "macro_f1": 0.31888597376853667
+    },
+    "5m.decision_tree_depth_2.wf_window_01": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_01",
+      "rows": 1956,
+      "class_distribution_true": {
+        "DOWN": 596,
+        "FLAT": 716,
+        "UP": 644
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1211,
+        "UP": 745
+      },
+      "accuracy": 0.42024539877300615,
+      "balanced_accuracy": 0.39787987091849125,
+      "macro_f1": 0.3235080684982669
+    },
+    "5m.decision_tree_depth_2.wf_window_02": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_02",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 536,
+        "FLAT": 937,
+        "UP": 543
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1642,
+        "UP": 374
+      },
+      "accuracy": 0.4930555555555556,
+      "balanced_accuracy": 0.3923300530080131,
+      "macro_f1": 0.3272236723393897
+    },
+    "5m.decision_tree_depth_2.wf_window_03": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_03",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 467,
+        "FLAT": 1056,
+        "UP": 493
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1630,
+        "UP": 386
+      },
+      "accuracy": 0.5381944444444444,
+      "balanced_accuracy": 0.393674959534493,
+      "macro_f1": 0.3417512567446875
+    },
+    "5m.decision_tree_depth_2.wf_window_04": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_04",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 541,
+        "FLAT": 963,
+        "UP": 512
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1563,
+        "UP": 453
+      },
+      "accuracy": 0.5059523809523809,
+      "balanced_accuracy": 0.4048965364312911,
+      "macro_f1": 0.34177746599441794
+    },
+    "5m.decision_tree_depth_2.wf_window_05_partial": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 137,
+        "FLAT": 297,
+        "UP": 142
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 531,
+        "UP": 45
+      },
+      "accuracy": 0.5295138888888888,
+      "balanced_accuracy": 0.36558859328812376,
+      "macro_f1": 0.29800993739612663
+    },
+    "5m.logistic_regression.wf_window_01": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_01",
+      "rows": 1956,
+      "class_distribution_true": {
+        "DOWN": 596,
+        "FLAT": 716,
+        "UP": 644
+      },
+      "class_distribution_pred": {
+        "DOWN": 302,
+        "FLAT": 1099,
+        "UP": 555
+      },
+      "accuracy": 0.42995910020449896,
+      "balanced_accuracy": 0.4156524681198932,
+      "macro_f1": 0.40088692839407525
+    },
+    "5m.logistic_regression.wf_window_02": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_02",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 536,
+        "FLAT": 937,
+        "UP": 543
+      },
+      "class_distribution_pred": {
+        "DOWN": 166,
+        "FLAT": 1547,
+        "UP": 303
+      },
+      "accuracy": 0.5099206349206349,
+      "balanced_accuracy": 0.42049031246064533,
+      "macro_f1": 0.3966614922519949
+    },
+    "5m.logistic_regression.wf_window_03": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_03",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 467,
+        "FLAT": 1056,
+        "UP": 493
+      },
+      "class_distribution_pred": {
+        "DOWN": 231,
+        "FLAT": 1554,
+        "UP": 231
+      },
+      "accuracy": 0.5550595238095238,
+      "balanced_accuracy": 0.42731448704417163,
+      "macro_f1": 0.41903758870035973
+    },
+    "5m.logistic_regression.wf_window_04": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_04",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 541,
+        "FLAT": 963,
+        "UP": 512
+      },
+      "class_distribution_pred": {
+        "DOWN": 188,
+        "FLAT": 1485,
+        "UP": 343
+      },
+      "accuracy": 0.5069444444444444,
+      "balanced_accuracy": 0.4129982520722845,
+      "macro_f1": 0.3915661571826767
+    },
+    "5m.logistic_regression.wf_window_05_partial": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 137,
+        "FLAT": 297,
+        "UP": 142
+      },
+      "class_distribution_pred": {
+        "DOWN": 9,
+        "FLAT": 543,
+        "UP": 24
+      },
+      "accuracy": 0.53125,
+      "balanced_accuracy": 0.3658285330949051,
+      "macro_f1": 0.30306116835247054
+    },
+    "5m.majority_class_baseline.wf_window_01": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_01",
+      "rows": 1956,
+      "class_distribution_true": {
+        "DOWN": 596,
+        "FLAT": 716,
+        "UP": 644
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1956,
+        "UP": 0
+      },
+      "accuracy": 0.3660531697341513,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.17864271457085826
+    },
+    "5m.majority_class_baseline.wf_window_02": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_02",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 536,
+        "FLAT": 937,
+        "UP": 543
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2016,
+        "UP": 0
+      },
+      "accuracy": 0.46478174603174605,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.21153629077774017
+    },
+    "5m.majority_class_baseline.wf_window_03": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_03",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 467,
+        "FLAT": 1056,
+        "UP": 493
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2016,
+        "UP": 0
+      },
+      "accuracy": 0.5238095238095238,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.22916666666666666
+    },
+    "5m.majority_class_baseline.wf_window_04": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_04",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 541,
+        "FLAT": 963,
+        "UP": 512
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2016,
+        "UP": 0
+      },
+      "accuracy": 0.47767857142857145,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.21550855991943604
+    },
+    "5m.majority_class_baseline.wf_window_05_partial": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 137,
+        "FLAT": 297,
+        "UP": 142
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 576,
+        "UP": 0
+      },
+      "accuracy": 0.515625,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2268041237113402
+    },
+    "5m.random_seeded_baseline.wf_window_01": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_01",
+      "rows": 1956,
+      "class_distribution_true": {
+        "DOWN": 596,
+        "FLAT": 716,
+        "UP": 644
+      },
+      "class_distribution_pred": {
+        "DOWN": 528,
+        "FLAT": 852,
+        "UP": 576
+      },
+      "accuracy": 0.3379345603271984,
+      "balanced_accuracy": 0.33178174152290313,
+      "macro_f1": 0.3295152560178147
+    },
+    "5m.random_seeded_baseline.wf_window_02": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_02",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 536,
+        "FLAT": 937,
+        "UP": 543
+      },
+      "class_distribution_pred": {
+        "DOWN": 544,
+        "FLAT": 922,
+        "UP": 550
+      },
+      "accuracy": 0.36061507936507936,
+      "balanced_accuracy": 0.33593712437476525,
+      "macro_f1": 0.33591948224106244
+    },
+    "5m.random_seeded_baseline.wf_window_03": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_03",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 467,
+        "FLAT": 1056,
+        "UP": 493
+      },
+      "class_distribution_pred": {
+        "DOWN": 564,
+        "FLAT": 927,
+        "UP": 525
+      },
+      "accuracy": 0.3725198412698413,
+      "balanced_accuracy": 0.33673520734708745,
+      "macro_f1": 0.3348278509827805
+    },
+    "5m.random_seeded_baseline.wf_window_04": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_04",
+      "rows": 2016,
+      "class_distribution_true": {
+        "DOWN": 541,
+        "FLAT": 963,
+        "UP": 512
+      },
+      "class_distribution_pred": {
+        "DOWN": 533,
+        "FLAT": 928,
+        "UP": 555
+      },
+      "accuracy": 0.36061507936507936,
+      "balanced_accuracy": 0.33256597259211595,
+      "macro_f1": 0.3324879410372207
+    },
+    "5m.random_seeded_baseline.wf_window_05_partial": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 137,
+        "FLAT": 297,
+        "UP": 142
+      },
+      "class_distribution_pred": {
+        "DOWN": 142,
+        "FLAT": 264,
+        "UP": 170
+      },
+      "accuracy": 0.34375,
+      "balanced_accuracy": 0.30547654676368563,
+      "macro_f1": 0.3049649415873325
+    },
+    "15m.decision_tree_depth_2.wf_window_01": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_01",
+      "rows": 612,
+      "class_distribution_true": {
+        "DOWN": 231,
+        "FLAT": 137,
+        "UP": 244
+      },
+      "class_distribution_pred": {
+        "DOWN": 442,
+        "FLAT": 36,
+        "UP": 134
+      },
+      "accuracy": 0.42320261437908496,
+      "balanced_accuracy": 0.3805442759014615,
+      "macro_f1": 0.341941572494098
+    },
+    "15m.decision_tree_depth_2.wf_window_02": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_02",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 257,
+        "FLAT": 178,
+        "UP": 237
+      },
+      "class_distribution_pred": {
+        "DOWN": 313,
+        "FLAT": 199,
+        "UP": 160
+      },
+      "accuracy": 0.4583333333333333,
+      "balanced_accuracy": 0.457385927788265,
+      "macro_f1": 0.45292115361464885
+    },
+    "15m.decision_tree_depth_2.wf_window_03": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_03",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 215,
+        "FLAT": 229,
+        "UP": 228
+      },
+      "class_distribution_pred": {
+        "DOWN": 322,
+        "FLAT": 215,
+        "UP": 135
+      },
+      "accuracy": 0.41517857142857145,
+      "balanced_accuracy": 0.41757349434654306,
+      "macro_f1": 0.4079272956875801
+    },
+    "15m.decision_tree_depth_2.wf_window_04": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_04",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 236,
+        "FLAT": 217,
+        "UP": 219
+      },
+      "class_distribution_pred": {
+        "DOWN": 314,
+        "FLAT": 163,
+        "UP": 195
+      },
+      "accuracy": 0.41517857142857145,
+      "balanced_accuracy": 0.4116642123094485,
+      "macro_f1": 0.40972409063942244
+    },
+    "15m.decision_tree_depth_2.wf_window_05_partial": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 192,
+      "class_distribution_true": {
+        "DOWN": 65,
+        "FLAT": 54,
+        "UP": 73
+      },
+      "class_distribution_pred": {
+        "DOWN": 63,
+        "FLAT": 82,
+        "UP": 47
+      },
+      "accuracy": 0.3854166666666667,
+      "balanced_accuracy": 0.40119293863586103,
+      "macro_f1": 0.382516339869281
+    },
+    "15m.logistic_regression.wf_window_01": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_01",
+      "rows": 612,
+      "class_distribution_true": {
+        "DOWN": 231,
+        "FLAT": 137,
+        "UP": 244
+      },
+      "class_distribution_pred": {
+        "DOWN": 245,
+        "FLAT": 70,
+        "UP": 297
+      },
+      "accuracy": 0.4395424836601307,
+      "balanced_accuracy": 0.40269439985247085,
+      "macro_f1": 0.3998715061939837
+    },
+    "15m.logistic_regression.wf_window_02": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_02",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 257,
+        "FLAT": 178,
+        "UP": 237
+      },
+      "class_distribution_pred": {
+        "DOWN": 246,
+        "FLAT": 142,
+        "UP": 284
+      },
+      "accuracy": 0.45982142857142855,
+      "balanced_accuracy": 0.4506685327771159,
+      "macro_f1": 0.4495961133391589
+    },
+    "15m.logistic_regression.wf_window_03": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_03",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 215,
+        "FLAT": 229,
+        "UP": 228
+      },
+      "class_distribution_pred": {
+        "DOWN": 381,
+        "FLAT": 206,
+        "UP": 85
+      },
+      "accuracy": 0.4166666666666667,
+      "balanced_accuracy": 0.421245464970778,
+      "macro_f1": 0.39064112760681935
+    },
+    "15m.logistic_regression.wf_window_04": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_04",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 236,
+        "FLAT": 217,
+        "UP": 219
+      },
+      "class_distribution_pred": {
+        "DOWN": 406,
+        "FLAT": 129,
+        "UP": 137
+      },
+      "accuracy": 0.41964285714285715,
+      "balanced_accuracy": 0.4130877573285656,
+      "macro_f1": 0.40168331938272556
+    },
+    "15m.logistic_regression.wf_window_05_partial": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 192,
+      "class_distribution_true": {
+        "DOWN": 65,
+        "FLAT": 54,
+        "UP": 73
+      },
+      "class_distribution_pred": {
+        "DOWN": 2,
+        "FLAT": 146,
+        "UP": 44
+      },
+      "accuracy": 0.359375,
+      "balanced_accuracy": 0.390097438499265,
+      "macro_f1": 0.2928919505038908
+    },
+    "15m.majority_class_baseline.wf_window_01": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_01",
+      "rows": 612,
+      "class_distribution_true": {
+        "DOWN": 231,
+        "FLAT": 137,
+        "UP": 244
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 612
+      },
+      "accuracy": 0.39869281045751637,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19003115264797507
+    },
+    "15m.majority_class_baseline.wf_window_02": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_02",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 257,
+        "FLAT": 178,
+        "UP": 237
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 672
+      },
+      "accuracy": 0.35267857142857145,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.17381738173817382
+    },
+    "15m.majority_class_baseline.wf_window_03": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_03",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 215,
+        "FLAT": 229,
+        "UP": 228
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 672
+      },
+      "accuracy": 0.3392857142857143,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1688888888888889
+    },
+    "15m.majority_class_baseline.wf_window_04": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_04",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 236,
+        "FLAT": 217,
+        "UP": 219
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 672
+      },
+      "accuracy": 0.32589285714285715,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1638608305274972
+    },
+    "15m.majority_class_baseline.wf_window_05_partial": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 192,
+      "class_distribution_true": {
+        "DOWN": 65,
+        "FLAT": 54,
+        "UP": 73
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 192
+      },
+      "accuracy": 0.3802083333333333,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.18364779874213835
+    },
+    "15m.random_seeded_baseline.wf_window_01": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_01",
+      "rows": 612,
+      "class_distribution_true": {
+        "DOWN": 231,
+        "FLAT": 137,
+        "UP": 244
+      },
+      "class_distribution_pred": {
+        "DOWN": 215,
+        "FLAT": 172,
+        "UP": 225
+      },
+      "accuracy": 0.3382352941176471,
+      "balanced_accuracy": 0.3326831452354966,
+      "macro_f1": 0.33028476759189734
+    },
+    "15m.random_seeded_baseline.wf_window_02": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_02",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 257,
+        "FLAT": 178,
+        "UP": 237
+      },
+      "class_distribution_pred": {
+        "DOWN": 251,
+        "FLAT": 180,
+        "UP": 241
+      },
+      "accuracy": 0.3318452380952381,
+      "balanced_accuracy": 0.32605963473599686,
+      "macro_f1": 0.32596285875429404
+    },
+    "15m.random_seeded_baseline.wf_window_03": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_03",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 215,
+        "FLAT": 229,
+        "UP": 228
+      },
+      "class_distribution_pred": {
+        "DOWN": 233,
+        "FLAT": 188,
+        "UP": 251
+      },
+      "accuracy": 0.3333333333333333,
+      "balanced_accuracy": 0.3333148339180099,
+      "macro_f1": 0.3330836747244018
+    },
+    "15m.random_seeded_baseline.wf_window_04": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_04",
+      "rows": 672,
+      "class_distribution_true": {
+        "DOWN": 236,
+        "FLAT": 217,
+        "UP": 219
+      },
+      "class_distribution_pred": {
+        "DOWN": 247,
+        "FLAT": 197,
+        "UP": 228
+      },
+      "accuracy": 0.3541666666666667,
+      "balanced_accuracy": 0.3528302263631847,
+      "macro_f1": 0.3519992959736175
+    },
+    "15m.random_seeded_baseline.wf_window_05_partial": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 192,
+      "class_distribution_true": {
+        "DOWN": 65,
+        "FLAT": 54,
+        "UP": 73
+      },
+      "class_distribution_pred": {
+        "DOWN": 64,
+        "FLAT": 51,
+        "UP": 77
+      },
+      "accuracy": 0.3020833333333333,
+      "balanced_accuracy": 0.2925496624126761,
+      "macro_f1": 0.29148763381321524
+    },
+    "1h.decision_tree_depth_2.wf_window_01": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_01",
+      "rows": 108,
+      "class_distribution_true": {
+        "DOWN": 48,
+        "FLAT": 8,
+        "UP": 52
+      },
+      "class_distribution_pred": {
+        "DOWN": 39,
+        "FLAT": 0,
+        "UP": 69
+      },
+      "accuracy": 0.6203703703703703,
+      "balanced_accuracy": 0.4428418803418803,
+      "macro_f1": 0.42297583990373955
+    },
+    "1h.decision_tree_depth_2.wf_window_02": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_02",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 75,
+        "FLAT": 23,
+        "UP": 70
+      },
+      "class_distribution_pred": {
+        "DOWN": 27,
+        "FLAT": 0,
+        "UP": 141
+      },
+      "accuracy": 0.5297619047619048,
+      "balanced_accuracy": 0.4171428571428571,
+      "macro_f1": 0.3521048229718427
+    },
+    "1h.decision_tree_depth_2.wf_window_03": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_03",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 61,
+        "FLAT": 31,
+        "UP": 76
+      },
+      "class_distribution_pred": {
+        "DOWN": 26,
+        "FLAT": 0,
+        "UP": 142
+      },
+      "accuracy": 0.5238095238095238,
+      "balanced_accuracy": 0.4042996836353178,
+      "macro_f1": 0.34739358149671345
+    },
+    "1h.decision_tree_depth_2.wf_window_04": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_04",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 75,
+        "FLAT": 33,
+        "UP": 60
+      },
+      "class_distribution_pred": {
+        "DOWN": 13,
+        "FLAT": 0,
+        "UP": 155
+      },
+      "accuracy": 0.3869047619047619,
+      "balanced_accuracy": 0.3522222222222222,
+      "macro_f1": 0.23735024665257223
+    },
+    "1h.decision_tree_depth_2.wf_window_05_partial": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 48,
+      "class_distribution_true": {
+        "DOWN": 17,
+        "FLAT": 9,
+        "UP": 22
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 48
+      },
+      "accuracy": 0.4583333333333333,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20952380952380953
+    },
+    "1h.logistic_regression.wf_window_01": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_01",
+      "rows": 108,
+      "class_distribution_true": {
+        "DOWN": 48,
+        "FLAT": 8,
+        "UP": 52
+      },
+      "class_distribution_pred": {
+        "DOWN": 48,
+        "FLAT": 1,
+        "UP": 59
+      },
+      "accuracy": 0.5925925925925926,
+      "balanced_accuracy": 0.4257478632478633,
+      "macro_f1": 0.41159909909909914
+    },
+    "1h.logistic_regression.wf_window_02": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_02",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 75,
+        "FLAT": 23,
+        "UP": 70
+      },
+      "class_distribution_pred": {
+        "DOWN": 88,
+        "FLAT": 1,
+        "UP": 79
+      },
+      "accuracy": 0.5357142857142857,
+      "balanced_accuracy": 0.4233816425120773,
+      "macro_f1": 0.4079262797198318
+    },
+    "1h.logistic_regression.wf_window_03": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_03",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 61,
+        "FLAT": 31,
+        "UP": 76
+      },
+      "class_distribution_pred": {
+        "DOWN": 73,
+        "FLAT": 18,
+        "UP": 77
+      },
+      "accuracy": 0.5416666666666666,
+      "balanced_accuracy": 0.5069048215461976,
+      "macro_f1": 0.5198676485519581
+    },
+    "1h.logistic_regression.wf_window_04": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_04",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 75,
+        "FLAT": 33,
+        "UP": 60
+      },
+      "class_distribution_pred": {
+        "DOWN": 101,
+        "FLAT": 12,
+        "UP": 55
+      },
+      "accuracy": 0.40476190476190477,
+      "balanced_accuracy": 0.3357575757575757,
+      "macro_f1": 0.31981408285756113
+    },
+    "1h.logistic_regression.wf_window_05_partial": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 48,
+      "class_distribution_true": {
+        "DOWN": 17,
+        "FLAT": 9,
+        "UP": 22
+      },
+      "class_distribution_pred": {
+        "DOWN": 6,
+        "FLAT": 18,
+        "UP": 24
+      },
+      "accuracy": 0.3541666666666667,
+      "balanced_accuracy": 0.33660130718954245,
+      "macro_f1": 0.320450885668277
+    },
+    "1h.majority_class_baseline.wf_window_01": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_01",
+      "rows": 108,
+      "class_distribution_true": {
+        "DOWN": 48,
+        "FLAT": 8,
+        "UP": 52
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 108
+      },
+      "accuracy": 0.48148148148148145,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.21666666666666667
+    },
+    "1h.majority_class_baseline.wf_window_02": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_02",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 75,
+        "FLAT": 23,
+        "UP": 70
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 168
+      },
+      "accuracy": 0.4166666666666667,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19607843137254902
+    },
+    "1h.majority_class_baseline.wf_window_03": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_03",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 61,
+        "FLAT": 31,
+        "UP": 76
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 168
+      },
+      "accuracy": 0.4523809523809524,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20765027322404372
+    },
+    "1h.majority_class_baseline.wf_window_04": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_04",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 75,
+        "FLAT": 33,
+        "UP": 60
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 168
+      },
+      "accuracy": 0.35714285714285715,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.17543859649122806
+    },
+    "1h.majority_class_baseline.wf_window_05_partial": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 48,
+      "class_distribution_true": {
+        "DOWN": 17,
+        "FLAT": 9,
+        "UP": 22
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 48
+      },
+      "accuracy": 0.4583333333333333,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20952380952380953
+    },
+    "1h.random_seeded_baseline.wf_window_01": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_01",
+      "rows": 108,
+      "class_distribution_true": {
+        "DOWN": 48,
+        "FLAT": 8,
+        "UP": 52
+      },
+      "class_distribution_pred": {
+        "DOWN": 43,
+        "FLAT": 16,
+        "UP": 49
+      },
+      "accuracy": 0.5,
+      "balanced_accuracy": 0.46367521367521364,
+      "macro_f1": 0.435924636419686
+    },
+    "1h.random_seeded_baseline.wf_window_02": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_02",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 75,
+        "FLAT": 23,
+        "UP": 70
+      },
+      "class_distribution_pred": {
+        "DOWN": 75,
+        "FLAT": 22,
+        "UP": 71
+      },
+      "accuracy": 0.44047619047619047,
+      "balanced_accuracy": 0.3993374741200828,
+      "macro_f1": 0.40018912529550826
+    },
+    "1h.random_seeded_baseline.wf_window_03": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_03",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 61,
+        "FLAT": 31,
+        "UP": 76
+      },
+      "class_distribution_pred": {
+        "DOWN": 67,
+        "FLAT": 19,
+        "UP": 82
+      },
+      "accuracy": 0.43452380952380953,
+      "balanced_accuracy": 0.38220750183231744,
+      "macro_f1": 0.3812763713080169
+    },
+    "1h.random_seeded_baseline.wf_window_04": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_04",
+      "rows": 168,
+      "class_distribution_true": {
+        "DOWN": 75,
+        "FLAT": 33,
+        "UP": 60
+      },
+      "class_distribution_pred": {
+        "DOWN": 66,
+        "FLAT": 27,
+        "UP": 75
+      },
+      "accuracy": 0.31547619047619047,
+      "balanced_accuracy": 0.29050505050505054,
+      "macro_f1": 0.2875492513790386
+    },
+    "1h.random_seeded_baseline.wf_window_05_partial": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_window_05_partial",
+      "rows": 48,
+      "class_distribution_true": {
+        "DOWN": 17,
+        "FLAT": 9,
+        "UP": 22
+      },
+      "class_distribution_pred": {
+        "DOWN": 19,
+        "FLAT": 4,
+        "UP": 25
+      },
+      "accuracy": 0.3958333333333333,
+      "balanced_accuracy": 0.34541493365022774,
+      "macro_f1": 0.3412741710614051
+    }
+  },
+  "comparison_to_references": {
+    "advanced_ohlcv_v6_2": {
+      "status": "PASS",
+      "source_manifest_path": "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+      "source_manifest_sha256": "9b0891e6449d717015adbdb78085b76800134b4b5191d857ce5b2a650444ee67",
+      "source_window_start": "2023-03-25",
+      "source_window_end": "2026-05-23",
+      "source_total_days": 1156,
+      "compared_metrics": [
+        "accuracy",
+        "balanced_accuracy",
+        "macro_f1"
+      ],
+      "comparisons": {
+        "15m.decision_tree_depth_2.test": {
+          "timeframe": "15m",
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.020307220094615885,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.038902952381527356,
+          "macro_f1_delta_v7_4_minus_reference": 0.15638043811782312
+        },
+        "15m.decision_tree_depth_2.train": {
+          "timeframe": "15m",
+          "model_name": "decision_tree_depth_2",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.03335815054585217,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.03629766650147137,
+          "macro_f1_delta_v7_4_minus_reference": 0.11625112224379314
+        },
+        "15m.decision_tree_depth_2.validation": {
+          "timeframe": "15m",
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.007965304372856752,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.03137350304751063,
+          "macro_f1_delta_v7_4_minus_reference": 0.15776853838416577
+        },
+        "15m.logistic_regression.test": {
+          "timeframe": "15m",
+          "model_name": "logistic_regression",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.029355491727366012,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.003055774763772501,
+          "macro_f1_delta_v7_4_minus_reference": -0.00690123042339863
+        },
+        "15m.logistic_regression.train": {
+          "timeframe": "15m",
+          "model_name": "logistic_regression",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.007144978859103646,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0075815038722904515,
+          "macro_f1_delta_v7_4_minus_reference": 0.006595152088796907
+        },
+        "15m.logistic_regression.validation": {
+          "timeframe": "15m",
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.017620100247803583,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0012052861924037872,
+          "macro_f1_delta_v7_4_minus_reference": -0.0298920984566331
+        },
+        "15m.majority_class_baseline.test": {
+          "timeframe": "15m",
+          "model_name": "majority_class_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.012969403143851255,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.0045358610831845725
+        },
+        "15m.majority_class_baseline.train": {
+          "timeframe": "15m",
+          "model_name": "majority_class_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": -0.013774420429893686,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.004891333792089614
+        },
+        "15m.majority_class_baseline.validation": {
+          "timeframe": "15m",
+          "model_name": "majority_class_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.06561506595579586,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.024691462682848664
+        },
+        "15m.random_seeded_baseline.test": {
+          "timeframe": "15m",
+          "model_name": "random_seeded_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.0004744874971840396,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0009478014316200989,
+          "macro_f1_delta_v7_4_minus_reference": 5.272383367510569e-05
+        },
+        "15m.random_seeded_baseline.train": {
+          "timeframe": "15m",
+          "model_name": "random_seeded_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": -0.0038002757291348277,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.002119093688338791,
+          "macro_f1_delta_v7_4_minus_reference": 0.002059999017095082
+        },
+        "15m.random_seeded_baseline.validation": {
+          "timeframe": "15m",
+          "model_name": "random_seeded_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.01461579497384291,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.003741847844280888,
+          "macro_f1_delta_v7_4_minus_reference": -0.008578722400505057
+        },
+        "1h.decision_tree_depth_2.test": {
+          "timeframe": "1h",
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.038466640635950455,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.007136148412812016,
+          "macro_f1_delta_v7_4_minus_reference": -0.10137614874576847
+        },
+        "1h.decision_tree_depth_2.train": {
+          "timeframe": "1h",
+          "model_name": "decision_tree_depth_2",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.08214186706303561,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.04393752256785005,
+          "macro_f1_delta_v7_4_minus_reference": 0.010219378057132966
+        },
+        "1h.decision_tree_depth_2.validation": {
+          "timeframe": "1h",
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.005101938636545733,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.01449608010122716,
+          "macro_f1_delta_v7_4_minus_reference": -0.05683637889817317
+        },
+        "1h.logistic_regression.test": {
+          "timeframe": "1h",
+          "model_name": "logistic_regression",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.08093800684808072,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.01708759076413946,
+          "macro_f1_delta_v7_4_minus_reference": 0.006632941262744885
+        },
+        "1h.logistic_regression.train": {
+          "timeframe": "1h",
+          "model_name": "logistic_regression",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.07911994683622453,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0959063251102033,
+          "macro_f1_delta_v7_4_minus_reference": 0.11817060256909889
+        },
+        "1h.logistic_regression.validation": {
+          "timeframe": "1h",
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.001206641031803235,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.01622451751213616,
+          "macro_f1_delta_v7_4_minus_reference": 0.014853348056386939
+        },
+        "1h.majority_class_baseline.test": {
+          "timeframe": "1h",
+          "model_name": "majority_class_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.038298942752447884,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.012754773506181066
+        },
+        "1h.majority_class_baseline.train": {
+          "timeframe": "1h",
+          "model_name": "majority_class_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.003979910227145389,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.0012767866794108906
+        },
+        "1h.majority_class_baseline.validation": {
+          "timeframe": "1h",
+          "model_name": "majority_class_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.027106865336858132,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.009009447522339536
+        },
+        "1h.random_seeded_baseline.test": {
+          "timeframe": "1h",
+          "model_name": "random_seeded_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.026526301035221578,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.005711536599727118,
+          "macro_f1_delta_v7_4_minus_reference": -0.007572414092925472
+        },
+        "1h.random_seeded_baseline.train": {
+          "timeframe": "1h",
+          "model_name": "random_seeded_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.07081900526329238,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.07440220163773625,
+          "macro_f1_delta_v7_4_minus_reference": 0.07465216516212586
+        },
+        "1h.random_seeded_baseline.validation": {
+          "timeframe": "1h",
+          "model_name": "random_seeded_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.0390430986141152,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.026207206711038322,
+          "macro_f1_delta_v7_4_minus_reference": -0.025360403758260097
+        },
+        "1m.decision_tree_depth_2.test": {
+          "timeframe": "1m",
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.030468490742993515,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.006749219342342294
+        },
+        "1m.decision_tree_depth_2.train": {
+          "timeframe": "1m",
+          "model_name": "decision_tree_depth_2",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.037797098284963804,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.008278850931185133
+        },
+        "1m.decision_tree_depth_2.validation": {
+          "timeframe": "1m",
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.06244653498654362,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.01273924246184266
+        },
+        "1m.logistic_regression.test": {
+          "timeframe": "1m",
+          "model_name": "logistic_regression",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.02838434878505791,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.019670108606562653,
+          "macro_f1_delta_v7_4_minus_reference": -0.029974319821680973
+        },
+        "1m.logistic_regression.train": {
+          "timeframe": "1m",
+          "model_name": "logistic_regression",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.03399602541980362,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.018899834129653736,
+          "macro_f1_delta_v7_4_minus_reference": -0.026701859077294665
+        },
+        "1m.logistic_regression.validation": {
+          "timeframe": "1m",
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.05941825259515576,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.024862506126048123,
+          "macro_f1_delta_v7_4_minus_reference": -0.033299426908426966
+        },
+        "1m.majority_class_baseline.test": {
+          "timeframe": "1m",
+          "model_name": "majority_class_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.030468490742993515,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.006749219342342294
+        },
+        "1m.majority_class_baseline.train": {
+          "timeframe": "1m",
+          "model_name": "majority_class_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.037797098284963804,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.008278850931185133
+        },
+        "1m.majority_class_baseline.validation": {
+          "timeframe": "1m",
+          "model_name": "majority_class_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.06244653498654362,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.01273924246184266
+        },
+        "1m.random_seeded_baseline.test": {
+          "timeframe": "1m",
+          "model_name": "random_seeded_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.033605381279223745,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.005090894018419445,
+          "macro_f1_delta_v7_4_minus_reference": -0.005159139977574778
+        },
+        "1m.random_seeded_baseline.train": {
+          "timeframe": "1m",
+          "model_name": "random_seeded_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.046669000117106285,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.0004172933450745653,
+          "macro_f1_delta_v7_4_minus_reference": -0.00042888106120964054
+        },
+        "1m.random_seeded_baseline.validation": {
+          "timeframe": "1m",
+          "model_name": "random_seeded_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.07123281910803536,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.002425615616757415,
+          "macro_f1_delta_v7_4_minus_reference": 0.0008556164310155601
+        },
+        "5m.decision_tree_depth_2.test": {
+          "timeframe": "5m",
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.027990204953549314,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.016313564710253137,
+          "macro_f1_delta_v7_4_minus_reference": -0.02178450249009689
+        },
+        "5m.decision_tree_depth_2.train": {
+          "timeframe": "5m",
+          "model_name": "decision_tree_depth_2",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.017675438917225506,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.002174328067434894,
+          "macro_f1_delta_v7_4_minus_reference": 0.0034737186328182568
+        },
+        "5m.decision_tree_depth_2.validation": {
+          "timeframe": "5m",
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.0459293363537,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.005944628941925378,
+          "macro_f1_delta_v7_4_minus_reference": 0.008693328511480358
+        },
+        "5m.logistic_regression.test": {
+          "timeframe": "5m",
+          "model_name": "logistic_regression",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.030029651850961903,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.03284237383786037,
+          "macro_f1_delta_v7_4_minus_reference": -0.05815219531184079
+        },
+        "5m.logistic_regression.train": {
+          "timeframe": "5m",
+          "model_name": "logistic_regression",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.012510221943996314,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.003126748190824591,
+          "macro_f1_delta_v7_4_minus_reference": -0.0012526238808403534
+        },
+        "5m.logistic_regression.validation": {
+          "timeframe": "5m",
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.060382901345815254,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.006969635786870432,
+          "macro_f1_delta_v7_4_minus_reference": -0.005758703630653617
+        },
+        "5m.majority_class_baseline.test": {
+          "timeframe": "5m",
+          "model_name": "majority_class_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.021079029931772963,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.006938708119285708
+        },
+        "5m.majority_class_baseline.train": {
+          "timeframe": "5m",
+          "model_name": "majority_class_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.023224539644193132,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.007459256615886117
+        },
+        "5m.majority_class_baseline.validation": {
+          "timeframe": "5m",
+          "model_name": "majority_class_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.069549312491135,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.020398649989721213
+        },
+        "5m.random_seeded_baseline.test": {
+          "timeframe": "5m",
+          "model_name": "random_seeded_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.0203266264680263,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.02152144432344749,
+          "macro_f1_delta_v7_4_minus_reference": -0.02269540246878926
+        },
+        "5m.random_seeded_baseline.train": {
+          "timeframe": "5m",
+          "model_name": "random_seeded_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.006740682534425224,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.0019123070842729795,
+          "macro_f1_delta_v7_4_minus_reference": -0.0019255462589145012
+        },
+        "5m.random_seeded_baseline.validation": {
+          "timeframe": "5m",
+          "model_name": "random_seeded_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.04244845769400851,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.028322545455724435,
+          "macro_f1_delta_v7_4_minus_reference": 0.024790605252068776
+        }
+      },
+      "descriptive_only": true,
+      "non_actionable": true,
+      "not_directly_comparable": true,
+      "warnings": [
+        "not directly comparable due to different window length/source set"
+      ]
+    },
+    "simple_ohlcv_v5_4": {
+      "status": "PASS",
+      "source_manifest_path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "source_manifest_sha256": "0b318226a40ea6b08fd8430de55a15ea99d7afd5ce4e8680ded4bace0861be17",
+      "source_window_start": "2023-03-25",
+      "source_window_end": "2026-05-23",
+      "source_total_days": 1156,
+      "compared_metrics": [
+        "accuracy",
+        "balanced_accuracy",
+        "macro_f1"
+      ],
+      "comparisons": {
+        "15m.decision_tree_depth_2.test": {
+          "timeframe": "15m",
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.0007786100473079482,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.00476909156207822,
+          "macro_f1_delta_v7_4_minus_reference": 0.07882347234525494
+        },
+        "15m.decision_tree_depth_2.train": {
+          "timeframe": "15m",
+          "model_name": "decision_tree_depth_2",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.033632377397608604,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.03941155670141938,
+          "macro_f1_delta_v7_4_minus_reference": 0.11929097567090235
+        },
+        "15m.decision_tree_depth_2.validation": {
+          "timeframe": "15m",
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.01929308715676703,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.022294521407488055,
+          "macro_f1_delta_v7_4_minus_reference": 0.057964842103520264
+        },
+        "15m.logistic_regression.test": {
+          "timeframe": "15m",
+          "model_name": "logistic_regression",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.03160825135791345,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.007949516948192181,
+          "macro_f1_delta_v7_4_minus_reference": -0.014583153678330074
+        },
+        "15m.logistic_regression.train": {
+          "timeframe": "15m",
+          "model_name": "logistic_regression",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.020539673737683284,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.019817548949921326,
+          "macro_f1_delta_v7_4_minus_reference": 0.01957123269653771
+        },
+        "15m.logistic_regression.validation": {
+          "timeframe": "15m",
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.009420055192610965,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.012327326965659358,
+          "macro_f1_delta_v7_4_minus_reference": -0.010929468123211383
+        },
+        "15m.majority_class_baseline.test": {
+          "timeframe": "15m",
+          "model_name": "majority_class_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.012969403143851255,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.0045358610831845725
+        },
+        "15m.majority_class_baseline.train": {
+          "timeframe": "15m",
+          "model_name": "majority_class_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": -0.013792292737817846,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.004897616733666843
+        },
+        "15m.majority_class_baseline.validation": {
+          "timeframe": "15m",
+          "model_name": "majority_class_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.06561506595579586,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.024691462682848664
+        },
+        "15m.random_seeded_baseline.test": {
+          "timeframe": "15m",
+          "model_name": "random_seeded_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.00286241270556431,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.00432895746904316,
+          "macro_f1_delta_v7_4_minus_reference": 0.0034483578553021754
+        },
+        "15m.random_seeded_baseline.train": {
+          "timeframe": "15m",
+          "model_name": "random_seeded_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": -0.003021382758566671,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0031504216074262348,
+          "macro_f1_delta_v7_4_minus_reference": 0.00309915725473614
+        },
+        "15m.random_seeded_baseline.validation": {
+          "timeframe": "15m",
+          "model_name": "random_seeded_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.018580651923606417,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.00691271882381822,
+          "macro_f1_delta_v7_4_minus_reference": -0.011598323470553396
+        },
+        "1h.decision_tree_depth_2.test": {
+          "timeframe": "1h",
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.03792600268316615,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.0005278649596324181,
+          "macro_f1_delta_v7_4_minus_reference": -0.08496789592077156
+        },
+        "1h.decision_tree_depth_2.train": {
+          "timeframe": "1h",
+          "model_name": "decision_tree_depth_2",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.08220991815117956,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.04543923371231473,
+          "macro_f1_delta_v7_4_minus_reference": 0.013091310922141053
+        },
+        "1h.decision_tree_depth_2.validation": {
+          "timeframe": "1h",
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.005462428903308503,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.02272993035603177,
+          "macro_f1_delta_v7_4_minus_reference": -0.035250182836621735
+        },
+        "1h.logistic_regression.test": {
+          "timeframe": "1h",
+          "model_name": "logistic_regression",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.07300865020724456,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.009759174502584511,
+          "macro_f1_delta_v7_4_minus_reference": 0.0153719212016446
+        },
+        "1h.logistic_regression.train": {
+          "timeframe": "1h",
+          "model_name": "logistic_regression",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.0942866313593324,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.12373648153032951,
+          "macro_f1_delta_v7_4_minus_reference": 0.1664538724784877
+        },
+        "1h.logistic_regression.validation": {
+          "timeframe": "1h",
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.00023532003524795453,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.017930377240520323,
+          "macro_f1_delta_v7_4_minus_reference": 0.016109933073166882
+        },
+        "1h.majority_class_baseline.test": {
+          "timeframe": "1h",
+          "model_name": "majority_class_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.038298942752447884,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.012754773506181066
+        },
+        "1h.majority_class_baseline.train": {
+          "timeframe": "1h",
+          "model_name": "majority_class_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.003610977371208468,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.0011581332946043743
+        },
+        "1h.majority_class_baseline.validation": {
+          "timeframe": "1h",
+          "model_name": "majority_class_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.027106865336858132,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.009009447522339536
+        },
+        "1h.random_seeded_baseline.test": {
+          "timeframe": "1h",
+          "model_name": "random_seeded_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.03878076129833202,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.022559261631551863,
+          "macro_f1_delta_v7_4_minus_reference": -0.024020509499481757
+        },
+        "1h.random_seeded_baseline.train": {
+          "timeframe": "1h",
+          "model_name": "random_seeded_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.073302840635532,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.07610975982544155,
+          "macro_f1_delta_v7_4_minus_reference": 0.07635439950516226
+        },
+        "1h.random_seeded_baseline.validation": {
+          "timeframe": "1h",
+          "model_name": "random_seeded_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": -0.03615917648001282,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.021522648913331166,
+          "macro_f1_delta_v7_4_minus_reference": -0.020650216827179158
+        },
+        "1m.decision_tree_depth_2.test": {
+          "timeframe": "1m",
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.030468490742993515,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.006749219342342294
+        },
+        "1m.decision_tree_depth_2.train": {
+          "timeframe": "1m",
+          "model_name": "decision_tree_depth_2",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.0377753634625031,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.008273986063169758
+        },
+        "1m.decision_tree_depth_2.validation": {
+          "timeframe": "1m",
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.06244653498654362,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.01273924246184266
+        },
+        "1m.logistic_regression.test": {
+          "timeframe": "1m",
+          "model_name": "logistic_regression",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.02848046595188425,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.019874036462588007,
+          "macro_f1_delta_v7_4_minus_reference": -0.030527627274949898
+        },
+        "1m.logistic_regression.train": {
+          "timeframe": "1m",
+          "model_name": "logistic_regression",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.0347645830277612,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.017369577855305796,
+          "macro_f1_delta_v7_4_minus_reference": -0.02428594460307787
+        },
+        "1m.logistic_regression.validation": {
+          "timeframe": "1m",
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.060454512687427964,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.029077058761183217,
+          "macro_f1_delta_v7_4_minus_reference": -0.04027401674256731
+        },
+        "1m.majority_class_baseline.test": {
+          "timeframe": "1m",
+          "model_name": "majority_class_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.030468490742993515,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.006749219342342294
+        },
+        "1m.majority_class_baseline.train": {
+          "timeframe": "1m",
+          "model_name": "majority_class_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.0377753634625031,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.008273986063169758
+        },
+        "1m.majority_class_baseline.validation": {
+          "timeframe": "1m",
+          "model_name": "majority_class_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.06244653498654362,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.01273924246184266
+        },
+        "1m.random_seeded_baseline.test": {
+          "timeframe": "1m",
+          "model_name": "random_seeded_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": 0.03344919088313092,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.004020642492764681,
+          "macro_f1_delta_v7_4_minus_reference": -0.0040743314474020464
+        },
+        "1m.random_seeded_baseline.train": {
+          "timeframe": "1m",
+          "model_name": "random_seeded_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.04599726804842452,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.0011426984588306377,
+          "macro_f1_delta_v7_4_minus_reference": -0.0011543892981781823
+        },
+        "1m.random_seeded_baseline.validation": {
+          "timeframe": "1m",
+          "model_name": "random_seeded_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.0718275422914264,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0027555303453741242,
+          "macro_f1_delta_v7_4_minus_reference": 0.0011805558045367426
+        },
+        "5m.decision_tree_depth_2.test": {
+          "timeframe": "5m",
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.027990204953549314,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.016313564710253137,
+          "macro_f1_delta_v7_4_minus_reference": -0.02178450249009689
+        },
+        "5m.decision_tree_depth_2.train": {
+          "timeframe": "5m",
+          "model_name": "decision_tree_depth_2",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.01775458334202007,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.002106618595974774,
+          "macro_f1_delta_v7_4_minus_reference": 0.003547844377906506
+        },
+        "5m.decision_tree_depth_2.validation": {
+          "timeframe": "5m",
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.0459293363537,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.005944628941925378,
+          "macro_f1_delta_v7_4_minus_reference": 0.008693328511480358
+        },
+        "5m.logistic_regression.test": {
+          "timeframe": "5m",
+          "model_name": "logistic_regression",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.03318346796846405,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.0294150838578483,
+          "macro_f1_delta_v7_4_minus_reference": -0.04968946591039558
+        },
+        "5m.logistic_regression.train": {
+          "timeframe": "5m",
+          "model_name": "logistic_regression",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.01998151597274528,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.010726544982438857,
+          "macro_f1_delta_v7_4_minus_reference": 0.02108897629722306
+        },
+        "5m.logistic_regression.validation": {
+          "timeframe": "5m",
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.05850560165369245,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.00680854339706094,
+          "macro_f1_delta_v7_4_minus_reference": -0.004460806679704499
+        },
+        "5m.majority_class_baseline.test": {
+          "timeframe": "5m",
+          "model_name": "majority_class_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.021079029931772963,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": -0.006938708119285708
+        },
+        "5m.majority_class_baseline.train": {
+          "timeframe": "5m",
+          "model_name": "majority_class_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.023263060869581798,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.007471830255724371
+        },
+        "5m.majority_class_baseline.validation": {
+          "timeframe": "5m",
+          "model_name": "majority_class_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.069549312491135,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.0,
+          "macro_f1_delta_v7_4_minus_reference": 0.020398649989721213
+        },
+        "5m.random_seeded_baseline.test": {
+          "timeframe": "5m",
+          "model_name": "random_seeded_baseline",
+          "split": "test",
+          "accuracy_delta_v7_4_minus_reference": -0.0192302999128946,
+          "balanced_accuracy_delta_v7_4_minus_reference": -0.02108343783455896,
+          "macro_f1_delta_v7_4_minus_reference": -0.022262812752757433
+        },
+        "5m.random_seeded_baseline.train": {
+          "timeframe": "5m",
+          "model_name": "random_seeded_baseline",
+          "split": "train",
+          "accuracy_delta_v7_4_minus_reference": 0.009202574349653714,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.000441659988725418,
+          "macro_f1_delta_v7_4_minus_reference": 0.00042704421256684055
+        },
+        "5m.random_seeded_baseline.validation": {
+          "timeframe": "5m",
+          "model_name": "random_seeded_baseline",
+          "split": "validation",
+          "accuracy_delta_v7_4_minus_reference": 0.03976016453488862,
+          "balanced_accuracy_delta_v7_4_minus_reference": 0.026005379356772496,
+          "macro_f1_delta_v7_4_minus_reference": 0.022429930439018086
+        }
+      },
+      "descriptive_only": true,
+      "non_actionable": true,
+      "not_directly_comparable": true,
+      "warnings": [
+        "not directly comparable due to different window length/source set"
+      ]
+    }
+  }
+}

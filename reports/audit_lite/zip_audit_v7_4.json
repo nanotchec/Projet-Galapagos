@@ -1,0 +1,94 @@
+{
+  "version": "V7.4",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v7.4-audit-lite.zip",
+  "zip_size_bytes": 542836,
+  "zip_size_mb": 0.518,
+  "entries": 192,
+  "top_20_largest_files": [
+    {
+      "path": "reports/manifests/ohlcv_trades_offline_ml_research_v7_4_manifest.json",
+      "bytes": 162109
+    },
+    {
+      "path": "reports/ml/ohlcv_trades_offline_ml_research_v7_4.json",
+      "bytes": 162109
+    },
+    {
+      "path": "reports/ml/ohlcv_trades_offline_research_scores_v7_4.json",
+      "bytes": 151378
+    },
+    {
+      "path": "src/galapagos/ml/advanced_ohlcv_robustness.py",
+      "bytes": 38093
+    },
+    {
+      "path": "src/galapagos/features/ohlcv_trades.py",
+      "bytes": 31838
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 30412
+    },
+    {
+      "path": "src/galapagos/ml/max_history_robustness.py",
+      "bytes": 30053
+    },
+    {
+      "path": "src/galapagos/labels/validation.py",
+      "bytes": 29670
+    },
+    {
+      "path": "src/galapagos/ml/ohlcv_trades_window.py",
+      "bytes": 28002
+    },
+    {
+      "path": "src/galapagos/features/advanced_ohlcv.py",
+      "bytes": 27838
+    },
+    {
+      "path": "src/galapagos/ml/ohlcv_trades_window_validation.py",
+      "bytes": 25828
+    },
+    {
+      "path": "src/galapagos/ml/advanced_ohlcv_window.py",
+      "bytes": 25736
+    },
+    {
+      "path": "src/galapagos/ml/advanced_ohlcv_window_validation.py",
+      "bytes": 25643
+    },
+    {
+      "path": "data/audit_lite/v7_4/ml_scores/timeframe=15m/sample.parquet",
+      "bytes": 25314
+    },
+    {
+      "path": "data/audit_lite/v7_4/ml_scores/timeframe=1h/sample.parquet",
+      "bytes": 25293
+    },
+    {
+      "path": "src/galapagos/datasets/max_history_window_validation.py",
+      "bytes": 25157
+    },
+    {
+      "path": "data/audit_lite/v7_4/ml_scores/timeframe=5m/sample.parquet",
+      "bytes": 24589
+    },
+    {
+      "path": "data/audit_lite/v7_4/ml_scores/timeframe=1m/sample.parquet",
+      "bytes": 24359
+    },
+    {
+      "path": "src/galapagos/ml/schemas.py",
+      "bytes": 23834
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    }
+  ],
+  "pytest_collectible_scripts_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

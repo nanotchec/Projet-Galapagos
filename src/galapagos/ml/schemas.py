@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from galapagos.datasets.schemas import TARGET_TIMEFRAMES
+from galapagos.datasets.schemas import OHLCV_TRADES_DATASET_FEATURE_COLUMNS_V7_3, TARGET_TIMEFRAMES
 from galapagos.features.advanced_ohlcv_schemas import ADVANCED_OHLCV_FEATURE_VALUE_COLUMNS_V6_0
 
 VERSION = "V2.8"
@@ -709,4 +709,142 @@ def get_feature_columns_sha256_v6_2() -> str:
     import json
 
     payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V6_2, separators=(",", ":"), sort_keys=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+VERSION_V7_4 = "V7.4"
+ML_SCHEMA_VERSION_V7_4 = "V7.4"
+TARGET_NAME_V7_4 = "up_down_flat_h1"
+RANDOM_SEED_V7_4 = 42
+TARGET_CLASSES_V7_4 = TARGET_CLASSES_V5_4.copy()
+MODEL_NAMES_V7_4 = MODEL_NAMES_V5_4.copy()
+TIMEFRAMES_V7_4 = ["1m", "5m", "15m", "1h"]
+
+MANIFEST_PATH_V7_4 = Path("reports/manifests/ohlcv_trades_offline_ml_research_v7_4_manifest.json")
+REPORT_JSON_PATH_V7_4 = Path("reports/ml/ohlcv_trades_offline_ml_research_v7_4.json")
+REPORT_MD_PATH_V7_4 = Path("reports/ml/ohlcv_trades_offline_ml_research_v7_4.md")
+SCORES_JSON_PATH_V7_4 = Path("reports/ml/ohlcv_trades_offline_research_scores_v7_4.json")
+SCORES_MD_PATH_V7_4 = Path("reports/ml/ohlcv_trades_offline_research_scores_v7_4.md")
+DOC_PATH_V7_4 = Path("docs/ohlcv_trades_offline_ml_research_v7_4.md")
+
+ALLOWED_FEATURE_COLUMNS_V7_4 = [
+    column
+    for column in OHLCV_TRADES_DATASET_FEATURE_COLUMNS_V7_3
+    if column not in {"warmup_row", "trades_feature_null_count", "trades_feature_error_count"}
+]
+FORBIDDEN_FEATURE_PREFIXES_V7_4 = [
+    "future_",
+    "label_",
+    "direction_",
+    "up_down_flat_",
+]
+FORBIDDEN_FEATURE_EXACT_V7_4 = [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "available_ts",
+    "decision_ts",
+    "feature_available_ts",
+    "label_available_ts",
+    "dataset_run_id",
+    "dataset_schema_version",
+    "source_features_sha256",
+    "source_labels_sha256",
+    "target",
+    "warmup_row",
+    "tail_row",
+    "split",
+    "split_order",
+    "purge_embargo_group",
+    "walk_forward_group",
+    "dataset_null_count",
+    "dataset_error_count",
+    "trades_feature_null_count",
+    "trades_feature_error_count",
+    "signal",
+    "trading_signal",
+    "strategy_signal",
+    "order",
+    "strategy",
+    "trade_decision",
+    "position_size",
+    "pnl",
+    "profit",
+    "backtest",
+    "execution",
+]
+FORBIDDEN_OUTPUT_COLUMNS_EXACT_V7_4 = FORBIDDEN_OUTPUT_COLUMNS_EXACT_V6_2.copy()
+FORBIDDEN_METRIC_TERMS_V7_4 = FORBIDDEN_METRIC_TERMS_V6_2.copy()
+ML_SCORE_COLUMNS_V7_4 = [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "decision_ts",
+    "split",
+    "walk_forward_group",
+    "ml_run_id",
+    "model_name",
+    "target_name",
+    "dataset_sha256",
+    "feature_columns_sha256",
+    "ml_schema_version",
+    "target_value",
+    "research_predicted_class",
+    "research_probability_down",
+    "research_probability_flat",
+    "research_probability_up",
+    "prediction_available_ts",
+    "row_valid_for_ml",
+    "ml_null_count",
+    "ml_error_count",
+]
+
+EXPECTED_LIMITATIONS_V7_4 = [
+    "V7.4 entraine uniquement des baselines ML offline simples sur le dataset OHLCV + aggTrades V7.3.",
+    "V7.4 utilise une fenetre bornee de 30 jours et ne produit aucun backtest, aucune strategie, aucun signal de trading et aucun ordre.",
+]
+
+SAFETY_FLAGS_V7_4 = {
+    "public_read_only": True,
+    "authentication_used": False,
+    "api_key_used": False,
+    "private_endpoint_used": False,
+    "orders_enabled": False,
+    "paper_live_enabled": False,
+    "trading_enabled": False,
+    "ml_enabled": True,
+    "labels_enabled": True,
+    "dataset_enabled": True,
+    "backtest_enabled": False,
+    "strategy_enabled": False,
+    "execution_enabled": False,
+}
+
+
+def get_ohlcv_trades_ml_score_path_v7_4(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v7_4/ml/offline_research_ohlcv_trades"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "ml-scores.parquet"
+    )
+
+
+def get_feature_columns_sha256_v7_4() -> str:
+    import hashlib
+    import json
+
+    payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V7_4, separators=(",", ":"), sort_keys=False)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
