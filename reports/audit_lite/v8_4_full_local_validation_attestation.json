@@ -1,0 +1,126 @@
+{
+  "version": "V8.4",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py",
+    "python scripts/validate_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py",
+    "python -m pytest -q tests/datasets/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py",
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4_validator.py",
+    "python scripts/release_audit_lite_zip_v8_4.py",
+    "python scripts/audit_audit_lite_zip_v8_4.py --zip projet-galapagos-v8.4-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v8_4.py --zip projet-galapagos-v8.4-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": "PASS",
+    "python scripts/validate_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": "PASS",
+    "python -m pytest -q tests/datasets/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": "PASS",
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v8_4.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v8_4.py --zip projet-galapagos-v8.4-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v8_4.py --zip projet-galapagos-v8.4-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": 67.21,
+    "python scripts/validate_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": 5.87,
+    "python -m pytest -q tests/datasets/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": 1.63,
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4_validator.py": 7.83,
+    "python scripts/release_audit_lite_zip_v8_4.py": 1.06,
+    "python scripts/audit_audit_lite_zip_v8_4.py --zip projet-galapagos-v8.4-audit-lite.zip": 0.52,
+    "python scripts/smoke_audit_lite_zip_v8_4.py --zip projet-galapagos-v8.4-audit-lite.zip": 1.22,
+    "python -m pytest --collect-only -q": 3.25
+  },
+  "output_datasets_full": {
+    "1m": {
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "efa0782f3b581c9df25319d9497eda607d8429321b6018062a18d2b3a3ce394c",
+      "bytes": 301266890,
+      "rows": 527040,
+      "columns_count": 119,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:59:00Z"
+    },
+    "5m": {
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "0755c8818de6782c782d5c89fc1dcde9e56446cd65b4a05dcf2d6dc29cc47be7",
+      "bytes": 75573124,
+      "rows": 105408,
+      "columns_count": 119,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:55:00Z"
+    },
+    "15m": {
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "4d37eeb354eeead86eede52eeb278b4c05dc8f2320dd55b5435e9135c6d9311d",
+      "bytes": 25917882,
+      "rows": 35136,
+      "columns_count": 119,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:45:00Z"
+    },
+    "1h": {
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "26e1174948413d422b8170a652fe7e9108c714d6d7b434425a43bbd5a591e690",
+      "bytes": 6560054,
+      "rows": 8784,
+      "columns_count": 119,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:00:00Z"
+    }
+  },
+  "output_splits_full": {
+    "1m": {
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "b0226f505f78844365fda66be70ab58178ea12b78d8763dab6932f5885cff3f4",
+      "bytes": 18310308,
+      "rows": 527040
+    },
+    "5m": {
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "935e85eac88e781a7effc00911e0ff4289c0da05bd6fd0ee767bbdac10bd1707",
+      "bytes": 4522268,
+      "rows": 105408
+    },
+    "15m": {
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "3766a1e2ca79437ac268918bec8ae09cec8c8f170efb312bef41b56781197b1c",
+      "bytes": 1543542,
+      "rows": 35136
+    },
+    "1h": {
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "9ca381ce60d492c7616e205fa08a14b2e5a4d7eebe70bafd864ac1af8a8a90de",
+      "bytes": 374957,
+      "rows": 8784
+    }
+  },
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2024-03-24",
+  "input_total_days": 366,
+  "manifest_sha256": "8c550c53e0269ab8c1f3a2e12904f40cfd229510b697108ee854a919a540c200",
+  "report_sha256": "8c550c53e0269ab8c1f3a2e12904f40cfd229510b697108ee854a919a540c200",
+  "datacard_sha256": "7929ac5fb15d6765fa703fcc8b76023ce1fbedf445d1cd58b6bdfc53a9abf4d2",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true
+}

@@ -14,6 +14,10 @@ from galapagos.features.ohlcv_trades_90d_schemas import (
     OHLCV_TRADES_FEATURE_COLUMNS_V7_8,
     OHLCV_TRADES_METADATA_COLUMNS_V7_8,
 )
+from galapagos.features.ohlcv_trades_1y_schemas import (
+    OHLCV_TRADES_FEATURE_COLUMNS_V8_3,
+    OHLCV_TRADES_METADATA_COLUMNS_V8_3,
+)
 from galapagos.features.schemas import FEATURE_COLUMNS_V2_5
 from galapagos.labels.schemas import LABEL_COLUMNS_V2_6
 
@@ -764,6 +768,116 @@ def get_split_v7_9_path(root: Path, timeframe: str, window_start: str, window_en
     return (
         root
         / "data/research/v7_9/datasets/offline_supervised_ohlcv_trades"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "splits.parquet"
+    )
+
+
+VERSION_V8_4 = "V8.4"
+DATASET_SCHEMA_VERSION_V8_4 = "DATASET_COLUMNS_V8_4"
+TIMEFRAMES_V8_4 = ["1m", "5m", "15m", "1h"]
+EXPECTED_ROWS_V8_4 = {"1m": 527040, "5m": 105408, "15m": 35136, "1h": 8784}
+EXPECTED_SPLIT_COUNTS_V8_4 = {
+    "1m": {"train": 316224, "validation": 105408, "test": 105408},
+    "5m": {"train": 63244, "validation": 21082, "test": 21082},
+    "15m": {"train": 21081, "validation": 7027, "test": 7028},
+    "1h": {"train": 5270, "validation": 1757, "test": 1757},
+}
+
+MANIFEST_PATH_V8_4 = Path("reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json")
+REPORT_JSON_PATH_V8_4 = Path("reports/datasets/ohlcv_trades_1y_offline_supervised_dataset_v8_4.json")
+REPORT_MD_PATH_V8_4 = Path("reports/datasets/ohlcv_trades_1y_offline_supervised_dataset_v8_4.md")
+DATACARD_MD_PATH_V8_4 = Path("reports/datasets/ohlcv_trades_1y_offline_supervised_dataset_v8_4_datacard.md")
+DOC_PATH_V8_4 = Path("docs/ohlcv_trades_1y_offline_supervised_dataset_v8_4.md")
+
+OHLCV_TRADES_DATASET_FEATURE_COLUMNS_V8_4 = [
+    column for column in OHLCV_TRADES_FEATURE_COLUMNS_V8_3 if column not in OHLCV_TRADES_METADATA_COLUMNS_V8_3
+]
+
+DATASET_COLUMNS_V8_4 = [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "available_ts",
+    "decision_ts",
+    "feature_available_ts",
+    "label_available_ts",
+    "dataset_run_id",
+    "dataset_schema_version",
+    "source_features_sha256",
+    "source_labels_sha256",
+    *OHLCV_TRADES_DATASET_FEATURE_COLUMNS_V8_4,
+    *LABEL_VALUE_COLUMNS,
+    "split",
+    "split_order",
+    "purge_embargo_group",
+    "walk_forward_group",
+    "dataset_null_count",
+    "dataset_error_count",
+]
+
+SPLIT_COLUMNS_V8_4 = [*JOIN_KEYS, "split", "split_order", "purge_embargo_group", "walk_forward_group"]
+
+SPLIT_POLICY_V8_4 = {
+    "train_ratio": 0.6,
+    "validation_ratio": 0.2,
+    "test_ratio": 0.2,
+    "shuffle": False,
+    "purge_embargo": "none_v8_4_preview",
+    "walk_forward_grouping": "calendar_month",
+}
+
+FORBIDDEN_DATASET_COLUMNS_EXACT_V8_4 = [
+    "prediction",
+    "predicted",
+    "model_score",
+    "score_ml",
+    "alpha",
+    "signal",
+    "trading_signal",
+    "strategy",
+    "order",
+    "trade_decision",
+    "position_size",
+    "pnl",
+    "profit",
+    "backtest",
+    "execution",
+    "live",
+    "paper_live",
+]
+
+EXPECTED_LIMITATIONS_V8_4 = [
+    "V8.4 assemble uniquement un dataset supervise offline OHLCV + aggTrades sur une fenetre d'environ 1 an.",
+    "V8.4 ne produit aucun modele ML, aucun backtest, aucun signal de trading et aucun ordre.",
+]
+
+
+def get_dataset_v8_4_path(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v8_4/datasets/offline_supervised_ohlcv_trades"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "dataset.parquet"
+    )
+
+
+def get_split_v8_4_path(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v8_4/datasets/offline_supervised_ohlcv_trades"
         / "source=binance_archive"
         / "market_type=spot"
         / "symbol=BTCUSDT"

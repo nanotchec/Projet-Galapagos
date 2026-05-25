@@ -1,0 +1,116 @@
+{
+  "version": "V8.4",
+  "window_start": "2023-03-25",
+  "window_end": "2024-03-24",
+  "total_days": 366,
+  "outputs": {
+    "1m": {
+      "dataset": {
+        "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "sha256": "efa0782f3b581c9df25319d9497eda607d8429321b6018062a18d2b3a3ce394c",
+        "bytes": 301266890,
+        "rows": 527040,
+        "format": "parquet"
+      },
+      "splits": {
+        "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/splits.parquet",
+        "sha256": "b0226f505f78844365fda66be70ab58178ea12b78d8763dab6932f5885cff3f4",
+        "bytes": 18310308,
+        "rows": 527040,
+        "format": "parquet"
+      },
+      "dataset_columns_count": 119,
+      "split_columns_count": 13,
+      "sample": {
+        "path": "data/audit_lite/v8_4/datasets/timeframe=1m/sample.parquet",
+        "sha256": "e6bf98eef1ca29feea1e35dbe63e153336211d7f99665280c32cf2303254dc08",
+        "bytes": 142095,
+        "rows": 100,
+        "columns_count": 119,
+        "source_full_path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "source_full_rows": 527040
+      }
+    },
+    "5m": {
+      "dataset": {
+        "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "sha256": "0755c8818de6782c782d5c89fc1dcde9e56446cd65b4a05dcf2d6dc29cc47be7",
+        "bytes": 75573124,
+        "rows": 105408,
+        "format": "parquet"
+      },
+      "splits": {
+        "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/splits.parquet",
+        "sha256": "935e85eac88e781a7effc00911e0ff4289c0da05bd6fd0ee767bbdac10bd1707",
+        "bytes": 4522268,
+        "rows": 105408,
+        "format": "parquet"
+      },
+      "dataset_columns_count": 119,
+      "split_columns_count": 13,
+      "sample": {
+        "path": "data/audit_lite/v8_4/datasets/timeframe=5m/sample.parquet",
+        "sha256": "50e8034cb9a862bd4a8335da9de5fe030e9349d1a6c8dd0ce824740b9d528023",
+        "bytes": 143075,
+        "rows": 100,
+        "columns_count": 119,
+        "source_full_path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "source_full_rows": 105408
+      }
+    },
+    "15m": {
+      "dataset": {
+        "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "sha256": "4d37eeb354eeead86eede52eeb278b4c05dc8f2320dd55b5435e9135c6d9311d",
+        "bytes": 25917882,
+        "rows": 35136,
+        "format": "parquet"
+      },
+      "splits": {
+        "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/splits.parquet",
+        "sha256": "3766a1e2ca79437ac268918bec8ae09cec8c8f170efb312bef41b56781197b1c",
+        "bytes": 1543542,
+        "rows": 35136,
+        "format": "parquet"
+      },
+      "dataset_columns_count": 119,
+      "split_columns_count": 13,
+      "sample": {
+        "path": "data/audit_lite/v8_4/datasets/timeframe=15m/sample.parquet",
+        "sha256": "8907d629abc35bcf166ac5b8d497511e6853f33b6870e1a8ca3f136774571059",
+        "bytes": 144436,
+        "rows": 100,
+        "columns_count": 119,
+        "source_full_path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "source_full_rows": 35136
+      }
+    },
+    "1h": {
+      "dataset": {
+        "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+        "sha256": "26e1174948413d422b8170a652fe7e9108c714d6d7b434425a43bbd5a591e690",
+        "bytes": 6560054,
+        "rows": 8784,
+        "format": "parquet"
+      },
+      "splits": {
+        "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/splits.parquet",
+        "sha256": "9ca381ce60d492c7616e205fa08a14b2e5a4d7eebe70bafd864ac1af8a8a90de",
+        "bytes": 374957,
+        "rows": 8784,
+        "format": "parquet"
+      },
+      "dataset_columns_count": 119,
+      "split_columns_count": 13,
+      "sample": {
+        "path": "data/audit_lite/v8_4/datasets/timeframe=1h/sample.parquet",
+        "sha256": "4703f348a2eed5a5869be587f1aeabd8bdccb2fa2ed37a7d18562a2fe42f4486",
+        "bytes": 144696,
+        "rows": 100,
+        "columns_count": 119,
+        "source_full_path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+        "source_full_rows": 8784
+      }
+    }
+  }
+}

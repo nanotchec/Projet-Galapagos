@@ -1,0 +1,10 @@
+{
+  "python scripts/run_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": 67.21,
+  "python scripts/validate_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": 5.87,
+  "python -m pytest -q tests/datasets/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py": 1.63,
+  "python -m pytest -q tests/validation/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4_validator.py": 7.83,
+  "python scripts/release_audit_lite_zip_v8_4.py": 1.06,
+  "python scripts/audit_audit_lite_zip_v8_4.py --zip projet-galapagos-v8.4-audit-lite.zip": 0.52,
+  "python scripts/smoke_audit_lite_zip_v8_4.py --zip projet-galapagos-v8.4-audit-lite.zip": 1.22,
+  "python -m pytest --collect-only -q": 3.25
+}

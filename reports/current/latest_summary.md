@@ -1,13 +1,12 @@
-# Latest Summary V8.3
+# Latest Summary V8.4
 
-V8.2 est la derniere version validee par audit externe.
+V8.3 est la derniere version validee par audit externe.
 
-V8.3 est la candidate courante. Elle produit uniquement des features causales OHLCV + aggTrades sur la fenetre V8.2 de 366 jours.
+V8.4 est la candidate courante. Elle assemble uniquement un dataset supervise offline OHLCV + aggTrades avec labels V5.2 filtres sur la fenetre V8.3 d'environ 1 an.
 
 Fenetre : `2023-03-25` -> `2024-03-24`, `366` jours.
-Source trades : `aggTrades`.
-Colonnes features : `89`.
+Colonnes features : `74`.
 
-Aucun label V8.3, aucun dataset ML V8.3, aucun modele ML V8.3, aucun backtest, aucune strategie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading reel.
+Aucun ML V8.4, aucun modele V8.4, aucun backtest, aucune strategie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading reel.
 
-V8.3 reste `pending_external_audit`.
+V8.4 reste `pending_external_audit`.
