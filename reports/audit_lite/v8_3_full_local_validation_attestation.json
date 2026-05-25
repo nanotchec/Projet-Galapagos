@@ -1,0 +1,99 @@
+{
+  "version": "V8.3",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_ohlcv_trades_1y_feature_store_v8_3.py",
+    "python scripts/validate_ohlcv_trades_1y_feature_store_v8_3.py",
+    "python -m pytest -q tests/features/test_ohlcv_trades_1y_features_v8_3.py",
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_feature_store_v8_3_validator.py",
+    "python scripts/release_audit_lite_zip_v8_3.py",
+    "python scripts/audit_audit_lite_zip_v8_3.py --zip projet-galapagos-v8.3-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v8_3.py --zip projet-galapagos-v8.3-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_ohlcv_trades_1y_feature_store_v8_3.py": "PASS",
+    "python scripts/validate_ohlcv_trades_1y_feature_store_v8_3.py": "PASS",
+    "python -m pytest -q tests/features/test_ohlcv_trades_1y_features_v8_3.py": "PASS",
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_feature_store_v8_3_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v8_3.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v8_3.py --zip projet-galapagos-v8.3-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v8_3.py --zip projet-galapagos-v8.3-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "python scripts/run_ohlcv_trades_1y_feature_store_v8_3.py": 492.2,
+    "python scripts/validate_ohlcv_trades_1y_feature_store_v8_3.py": 6.29,
+    "python -m pytest -q tests/features/test_ohlcv_trades_1y_features_v8_3.py": 1.18,
+    "python -m pytest -q tests/validation/test_ohlcv_trades_1y_feature_store_v8_3_validator.py": 6.1,
+    "python scripts/release_audit_lite_zip_v8_3.py": 0.74,
+    "python scripts/audit_audit_lite_zip_v8_3.py --zip projet-galapagos-v8.3-audit-lite.zip": 0.42,
+    "python scripts/smoke_audit_lite_zip_v8_3.py --zip projet-galapagos-v8.3-audit-lite.zip": 0.93,
+    "python -m pytest --collect-only -q": 3.19
+  },
+  "output_features_full": {
+    "1m": {
+      "path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/features.parquet",
+      "sha256": "3f2b83a9650e639da3d6fc21eab7b943fea25c57f423f966c7a1f98369de6fbe",
+      "bytes": 247737280,
+      "rows": 527040,
+      "columns_count": 89,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:59:00Z"
+    },
+    "5m": {
+      "path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/features.parquet",
+      "sha256": "1b2a6e5b1da051bb7bd366c42de7e7bfecbbd767b068190aeb99672bd9c0db95",
+      "bytes": 62411891,
+      "rows": 105408,
+      "columns_count": 89,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:55:00Z"
+    },
+    "15m": {
+      "path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/features.parquet",
+      "sha256": "e852aa57bc5dafeff062b94b2e89e0ee8dcf1e4a18395015d90e90b427bddcae",
+      "bytes": 21486913,
+      "rows": 35136,
+      "columns_count": 89,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:45:00Z"
+    },
+    "1h": {
+      "path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/features.parquet",
+      "sha256": "7cc77b76aaeefa0777dea8994d964f5699dbf87159693015d9f21de43d71d7a9",
+      "bytes": 5470996,
+      "rows": 8784,
+      "columns_count": 89,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:00:00Z"
+    }
+  },
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2024-03-24",
+  "input_total_days": 366,
+  "manifest_sha256": "59ab0fc74d31494e82f5bea5592e64a8387a3403e67b21abc6545bbcb7abbe5e",
+  "report_sha256": "59ab0fc74d31494e82f5bea5592e64a8387a3403e67b21abc6545bbcb7abbe5e",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": false,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true
+}

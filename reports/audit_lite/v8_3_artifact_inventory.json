@@ -1,0 +1,98 @@
+{
+  "version": "V8.3",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "full_parquet_excluded": true,
+  "window_start": "2023-03-25",
+  "window_end": "2024-03-24",
+  "total_days": 366,
+  "trade_source_type": "aggTrades",
+  "full_parquet_excluded_artifacts": [
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/features.parquet",
+      "sha256": "3f2b83a9650e639da3d6fc21eab7b943fea25c57f423f966c7a1f98369de6fbe",
+      "rows": 527040,
+      "bytes": 247737280,
+      "reason_excluded": "full V8.3 feature parquet is represented by manifest checksums and audit-lite sample"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/features.parquet",
+      "sha256": "1b2a6e5b1da051bb7bd366c42de7e7bfecbbd767b068190aeb99672bd9c0db95",
+      "rows": 105408,
+      "bytes": 62411891,
+      "reason_excluded": "full V8.3 feature parquet is represented by manifest checksums and audit-lite sample"
+    },
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/features.parquet",
+      "sha256": "e852aa57bc5dafeff062b94b2e89e0ee8dcf1e4a18395015d90e90b427bddcae",
+      "rows": 35136,
+      "bytes": 21486913,
+      "reason_excluded": "full V8.3 feature parquet is represented by manifest checksums and audit-lite sample"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/features.parquet",
+      "sha256": "7cc77b76aaeefa0777dea8994d964f5699dbf87159693015d9f21de43d71d7a9",
+      "rows": 8784,
+      "bytes": 5470996,
+      "reason_excluded": "full V8.3 feature parquet is represented by manifest checksums and audit-lite sample"
+    }
+  ],
+  "parquet_samples_included": {
+    "1m": {
+      "path": "data/audit_lite/v8_3/features/timeframe=1m/sample.parquet",
+      "sha256": "8c4b15448e4044a8935d94800b9bfb7eff4a4ede60171a26c6766541c8b5255b",
+      "bytes": 112586,
+      "rows": 100,
+      "columns_count": 89,
+      "source_full_path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/features.parquet",
+      "source_full_rows": 527040
+    },
+    "5m": {
+      "path": "data/audit_lite/v8_3/features/timeframe=5m/sample.parquet",
+      "sha256": "16965694b926c7d5235638c6f9b9b20a6bee7e95a6c624d90e7584fe0cdac10b",
+      "bytes": 113485,
+      "rows": 100,
+      "columns_count": 89,
+      "source_full_path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/features.parquet",
+      "source_full_rows": 105408
+    },
+    "15m": {
+      "path": "data/audit_lite/v8_3/features/timeframe=15m/sample.parquet",
+      "sha256": "12e8697c5b8698c0de6c0d3c22df1729dbaf788a221e7fa485881b760b331459",
+      "bytes": 114517,
+      "rows": 100,
+      "columns_count": 89,
+      "source_full_path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/features.parquet",
+      "source_full_rows": 35136
+    },
+    "1h": {
+      "path": "data/audit_lite/v8_3/features/timeframe=1h/sample.parquet",
+      "sha256": "521eb7fc958fb2fc3a35cab866ea6a1f4c5a0ca2f0ad27ead5480c7e2d3e584a",
+      "bytes": 114769,
+      "rows": 100,
+      "columns_count": 89,
+      "source_full_path": "data/research/v8_3/features/ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/features.parquet",
+      "source_full_rows": 8784
+    }
+  },
+  "included_reports": [
+    {
+      "path": "reports/manifests/ohlcv_trades_1y_feature_store_v8_3_manifest.json",
+      "sha256": "59ab0fc74d31494e82f5bea5592e64a8387a3403e67b21abc6545bbcb7abbe5e"
+    },
+    {
+      "path": "reports/features/ohlcv_trades_1y_feature_store_v8_3.json",
+      "sha256": "59ab0fc74d31494e82f5bea5592e64a8387a3403e67b21abc6545bbcb7abbe5e"
+    }
+  ],
+  "no_labels_v8_3": true,
+  "no_dataset_ml_v8_3": true,
+  "no_ml_model_v8_3": true,
+  "no_backtest_v8_3": true,
+  "no_strategy_v8_3": true,
+  "no_orders_v8_3": true
+}

@@ -1,0 +1,94 @@
+{
+  "version": "V8.3",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v8.3-audit-lite.zip",
+  "zip_size_bytes": 538279,
+  "zip_size_mb": 0.513,
+  "entries": 112,
+  "top_20_largest_files": [
+    {
+      "path": "reports/features/ohlcv_trades_1y_feature_store_v8_3.json",
+      "bytes": 262910
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_1y_feature_store_v8_3_manifest.json",
+      "bytes": 262910
+    },
+    {
+      "path": "data/audit_lite/v8_3/features/timeframe=1h/sample.parquet",
+      "bytes": 114769
+    },
+    {
+      "path": "data/audit_lite/v8_3/features/timeframe=15m/sample.parquet",
+      "bytes": 114517
+    },
+    {
+      "path": "data/audit_lite/v8_3/features/timeframe=5m/sample.parquet",
+      "bytes": 113485
+    },
+    {
+      "path": "data/audit_lite/v8_3/features/timeframe=1m/sample.parquet",
+      "bytes": 112586
+    },
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 36000
+    },
+    {
+      "path": "src/galapagos/features/ohlcv_trades_1y.py",
+      "bytes": 31940
+    },
+    {
+      "path": "src/galapagos/features/ohlcv_trades_90d.py",
+      "bytes": 31919
+    },
+    {
+      "path": "src/galapagos/features/ohlcv_trades.py",
+      "bytes": 31838
+    },
+    {
+      "path": "src/galapagos/features/advanced_ohlcv.py",
+      "bytes": 27838
+    },
+    {
+      "path": "src/galapagos/data/public_trades/one_year_window.py",
+      "bytes": 23439
+    },
+    {
+      "path": "src/galapagos/validation/resampling.py",
+      "bytes": 23404
+    },
+    {
+      "path": "src/galapagos/data/public_trades/expanded_window.py",
+      "bytes": 21826
+    },
+    {
+      "path": "src/galapagos/data/public_trades/ninety_day_window.py",
+      "bytes": 21802
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window.py",
+      "bytes": 21723
+    },
+    {
+      "path": "src/galapagos/validation/market_data.py",
+      "bytes": 20115
+    },
+    {
+      "path": "src/galapagos/data/public_trades/ingestion.py",
+      "bytes": 19039
+    },
+    {
+      "path": "src/galapagos/data/public_market/max_history_window_validation.py",
+      "bytes": 17802
+    },
+    {
+      "path": "src/galapagos/features/validation.py",
+      "bytes": 17222
+    }
+  ],
+  "pytest_collectible_scripts_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

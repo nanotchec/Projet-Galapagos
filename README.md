@@ -1,29 +1,23 @@
 # Projet Galapagos
 
-- Derniere version validee : V8.1.
-- Candidate : V8.2, public aggTrades 1-year window expansion.
+- Derniere version validee : V8.2.
+- Candidate : V8.3, OHLCV + public trades 1-year feature store preview.
 
-V8.2 etend uniquement l'ingestion data-only des aggTrades publics Binance BTCUSDT spot sur une fenetre d'environ 1 an.
+V8.3 produit uniquement des features causales OHLCV + aggTrades Binance publiques sur la fenetre V8.2 de 366 jours.
 
-Fenetre : `2023-03-25` -> `2024-03-24`, `366` jours.
+Aucun label V8.3, aucun dataset ML V8.3, aucun modele ML V8.3, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
 
-Trade source type : `aggTrades`.
-
-Raw files V8.2 : `366`.
-
-Lignes trades V8.2 : `352055121`.
-
-Aucune feature V8.2, aucun label V8.2, aucun dataset ML V8.2, aucun modele ML V8.2, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live et aucun trading reel.
-
-## Commandes V8.2
+## Commandes V8.3
 
 ```bash
-python scripts/discover_public_trades_v8_2.py
-python scripts/run_public_trades_1y_window_v8_2.py --no-network --skip-project-state-check
-python scripts/validate_public_trades_1y_window_v8_2.py
-python -m pytest -q tests/data/test_public_trades_1y_window_v8_2.py
-python -m pytest -q tests/validation/test_public_trades_1y_window_v8_2_validator.py
+python scripts/run_ohlcv_trades_1y_feature_store_v8_3.py
+python scripts/validate_ohlcv_trades_1y_feature_store_v8_3.py
+python -m pytest -q tests/features/test_ohlcv_trades_1y_features_v8_3.py
+python -m pytest -q tests/validation/test_ohlcv_trades_1y_feature_store_v8_3_validator.py
+python scripts/release_audit_lite_zip_v8_3.py
+python scripts/audit_audit_lite_zip_v8_3.py --zip projet-galapagos-v8.3-audit-lite.zip
+python scripts/smoke_audit_lite_zip_v8_3.py --zip projet-galapagos-v8.3-audit-lite.zip
 python -m pytest --collect-only -q
 ```
 
-V8.2 reste `pending_external_audit` avant validation externe.
+V8.3 reste `pending_external_audit` avant validation externe.
