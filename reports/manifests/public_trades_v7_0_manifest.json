@@ -1,0 +1,100 @@
+{
+  "version": "V7.0",
+  "status": "PASS",
+  "created_at_utc": "2026-05-25T09:16:58.674020Z",
+  "ingestion_run_id": "v7_0_20260525T091658Z_fbea2905",
+  "source": {
+    "name": "binance_public_archive",
+    "venue": "binance",
+    "market_type": "spot",
+    "symbol": "BTCUSDT",
+    "trade_source_type": "aggTrades"
+  },
+  "discovery": {
+    "first_available_date": "2023-03-25",
+    "last_available_date": "2023-03-25",
+    "window_start": "2023-03-25",
+    "window_end": "2023-03-25",
+    "total_days": 1,
+    "matches_v5_0_window": false,
+    "v5_0_window_start": "2023-03-25",
+    "v5_0_window_end": "2026-05-23",
+    "missing_dates": [],
+    "documented_gaps_allowed": false,
+    "window_selection_reason": "bounded V7.0 preview window selected because full V5.0 aggTrades history is too large for the first auditable ingestion layer"
+  },
+  "raw_files": {
+    "2023-03-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-25.zip",
+      "sha256": "5bba0a4fa33fb258d19fb6e8ab414f15ae15dc5ecb5f3a2a2e0c31a403193a85",
+      "bytes": 11729875,
+      "rows": 817141
+    }
+  },
+  "outputs": {
+    "path": "data/research/v7_0/trades/aggTrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/window=2023-03-25_2023-03-25/agg_trades.parquet",
+    "sha256": "ceb1577c8b1a26da39edcd44eae9499158405e6f16fc10e91dc3613819654e65",
+    "bytes": 31079697,
+    "rows": 817141,
+    "format": "parquet"
+  },
+  "schema_version": "AGG_TRADE_COLUMNS_V7_0",
+  "trade_columns": [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "trade_source_type",
+    "aggregate_trade_id",
+    "price",
+    "quantity",
+    "first_trade_id",
+    "last_trade_id",
+    "event_ts",
+    "trade_ts",
+    "available_ts",
+    "decision_ts",
+    "is_buyer_maker",
+    "is_best_match",
+    "raw_file_sha256",
+    "ingestion_run_id",
+    "schema_version"
+  ],
+  "quality": {
+    "rows": 817141,
+    "duplicate_aggregate_trade_ids": 0,
+    "missing_dates": [],
+    "non_monotonic_trade_ids": 0,
+    "non_monotonic_event_ts": 0,
+    "price_non_positive_rows": 0,
+    "quantity_non_positive_rows": 0,
+    "trade_id_range_violations": 0,
+    "null_critical_rows": 0,
+    "min_event_ts": "2023-03-25T00:00:00Z",
+    "max_event_ts": "2023-03-25T23:59:59.998000Z",
+    "timestamps_utc": true,
+    "timestamp_order_valid": true,
+    "forbidden_columns_present": [],
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": false,
+    "labels_enabled": false,
+    "dataset_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "limitations": [
+    "V7.0 ingere uniquement des trades publics historiques en lecture seule.",
+    "V7.0 ne produit aucune feature, aucun label, aucun dataset ML, aucun modele ML, aucun backtest, aucune strategie et aucun ordre."
+  ]
+}

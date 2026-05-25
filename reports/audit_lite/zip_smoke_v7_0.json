@@ -1,0 +1,16 @@
+{
+  "version": "V7.0",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v7.0-audit-lite.zip",
+  "zip_size_bytes": 59017,
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "pytest_collect_only": {
+    "executed": true,
+    "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+    "returncode": 0,
+    "stdout_tail": "tests/data/test_public_trades_v7_0.py::test_public_trades_discovery_has_window\ntests/data/test_public_trades_v7_0.py::test_public_trades_schema_strict\ntests/data/test_public_trades_v7_0.py::test_public_trades_price_quantity_positive\ntests/data/test_public_trades_v7_0.py::test_public_trades_trade_ids_monotonic\ntests/data/test_public_trades_v7_0.py::test_public_trades_no_duplicate_aggregate_trade_ids\ntests/data/test_public_trades_v7_0.py::test_public_trades_timestamps_utc\ntests/data/test_public_trades_v7_0.py::test_public_trades_no_forbidden_columns\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_accepts_valid_public_trades\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_missing_raw_zip\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_wrong_raw_checksum\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_duplicate_aggregate_trade_id_even_with_synced_checksum\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_non_monotonic_aggregate_trade_id_even_with_synced_checksum\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_non_positive_price_even_with_synced_checksum\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_non_positive_quantity_even_with_synced_checksum\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_extra_signal_column_even_with_synced_checksum\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_extra_order_column_even_with_synced_checksum\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_extra_pnl_column_even_with_synced_checksum\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_report_json_lie\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_manifest_unexpected_key\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_report_unexpected_key\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_markdown_strategy_validated_claim\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_safety_flag_trading_true\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_features_v7_0_directory_created\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_labels_v7_0_directory_created\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_dataset_ml_v7_0_directory_created\ntests/validation/test_public_trades_v7_0_validator.py::test_validator_v7_0_rejects_backtest_report_created\n\n26 tests collected in 0.25s\n",
+    "stderr_tail": ""
+  },
+  "smoke_duration_seconds": 0.499
+}

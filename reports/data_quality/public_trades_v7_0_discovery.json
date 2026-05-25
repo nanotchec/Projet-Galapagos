@@ -1,0 +1,54 @@
+{
+  "version": "V7.0",
+  "status": "PASS",
+  "created_at_utc": "2026-05-25T09:16:43.362557Z",
+  "source": {
+    "name": "binance_public_archive",
+    "venue": "binance",
+    "market_type": "spot",
+    "symbol": "BTCUSDT",
+    "trade_source_type": "aggTrades",
+    "host": "data.binance.vision"
+  },
+  "first_available_date": "2023-03-25",
+  "last_available_date": "2023-03-25",
+  "available_dates": [
+    "2023-03-25"
+  ],
+  "missing_dates": [],
+  "total_available_days": 1,
+  "source_type": "aggTrades",
+  "v5_0_window_start": "2023-03-25",
+  "v5_0_window_end": "2026-05-23",
+  "overlap_start": "2023-03-25",
+  "overlap_end": "2023-03-25",
+  "overlap_days": 1,
+  "recommended_window": {
+    "window_start": "2023-03-25",
+    "window_end": "2023-03-25",
+    "total_days": 1,
+    "matches_v5_0_window": false,
+    "reason": "bounded V7.0 preview window selected because full V5.0 aggTrades history is too large for the first auditable ingestion layer"
+  },
+  "remote_files": {
+    "2023-03-25": {
+      "url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2023-03-25.zip",
+      "available": true,
+      "content_length": 11729875,
+      "last_modified": "Mon, 27 Mar 2023 09:02:04 GMT"
+    }
+  },
+  "raw_files": {
+    "2023-03-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-25.zip",
+      "sha256": "5bba0a4fa33fb258d19fb6e8ab414f15ae15dc5ecb5f3a2a2e0c31a403193a85",
+      "bytes": 11729875,
+      "rows": 817141
+    }
+  },
+  "documented_gaps_allowed": false,
+  "errors": [],
+  "warnings": [
+    "bounded V7.0 preview window selected because full V5.0 aggTrades history is too large for the first auditable ingestion layer"
+  ]
+}

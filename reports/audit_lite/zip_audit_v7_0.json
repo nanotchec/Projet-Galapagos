@@ -1,0 +1,94 @@
+{
+  "version": "V7.0",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v7.0-audit-lite.zip",
+  "zip_size_bytes": 59017,
+  "zip_size_mb": 0.056,
+  "entries": 40,
+  "top_20_largest_files": [
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 28060
+    },
+    {
+      "path": "data/audit_lite/v7_0/trades/sample.parquet",
+      "bytes": 24906
+    },
+    {
+      "path": "src/galapagos/data/public_trades/ingestion.py",
+      "bytes": 18929
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v7_0.py",
+      "bytes": 16841
+    },
+    {
+      "path": "tests/validation/test_public_trades_v7_0_validator.py",
+      "bytes": 13009
+    },
+    {
+      "path": "src/galapagos/data/public_trades/validation.py",
+      "bytes": 10059
+    },
+    {
+      "path": "src/galapagos/data/public_trades/discovery.py",
+      "bytes": 10025
+    },
+    {
+      "path": "scripts/audit_audit_lite_zip_v7_0.py",
+      "bytes": 7937
+    },
+    {
+      "path": "scripts/smoke_audit_lite_zip_v7_0.py",
+      "bytes": 7674
+    },
+    {
+      "path": "src/galapagos/data/public_trades/quality.py",
+      "bytes": 4946
+    },
+    {
+      "path": "reports/audit_lite/v7_0_full_local_validation_attestation.json",
+      "bytes": 3560
+    },
+    {
+      "path": "reports/data_quality/public_trades_v7_0.json",
+      "bytes": 3088
+    },
+    {
+      "path": "reports/manifests/public_trades_v7_0_manifest.json",
+      "bytes": 3088
+    },
+    {
+      "path": "README.md",
+      "bytes": 3055
+    },
+    {
+      "path": "reports/audit_lite/v7_0_artifact_inventory.json",
+      "bytes": 2242
+    },
+    {
+      "path": "src/galapagos/data/public_trades/config.py",
+      "bytes": 2007
+    },
+    {
+      "path": "tests/data/test_public_trades_v7_0.py",
+      "bytes": 1984
+    },
+    {
+      "path": "reports/data_quality/public_trades_v7_0_discovery.json",
+      "bytes": 1728
+    },
+    {
+      "path": "docs/public_trades_ingestion_v7_0.md",
+      "bytes": 1589
+    },
+    {
+      "path": "reports/data_quality/public_trades_v7_0.md",
+      "bytes": 1589
+    }
+  ],
+  "pytest_collectible_scripts_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

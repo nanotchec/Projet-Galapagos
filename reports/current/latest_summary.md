@@ -1,17 +1,13 @@
-# Latest Summary V6.4
+# Latest Summary V7.0
 
-V6.3 est la derniere version validee par audit externe.
+V6.4 est la derniere version validee par audit externe.
 
-V6.4 est la candidate courante. Elle produit uniquement un rapport de decision research apres la chaine advanced OHLCV.
+V7.0 est la candidate courante. Elle produit uniquement une ingestion preview data-only de trades publics historiques Binance.
 
-Verdict : advanced OHLCV est interessant mais non concluant. Les resultats ne montrent pas une amelioration claire, stable et suffisante par rapport a V5.4 simple OHLCV.
+Source : `aggTrades`.
+Fenetre : `2023-03-25` -> `2023-03-25`, `1` jour(s).
+Lignes trades : `817141`.
 
-Recommandation principale : A. Ajouter les trades publics historiques.
+Aucune feature V7.0, aucun label V7.0, aucun dataset ML V7.0, aucun modele ML V7.0, aucun backtest, aucune strategie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading reel.
 
-Recommandation secondaire : D. Préparer une validation walk-forward offline plus stricte.
-
-Roadmap proposee : `['V7.0 — Public Trades Historical Ingestion', 'V7.1 — OHLCV + Trades Feature Store', 'V7.2 — Multi-source Dataset', 'V7.3 — Multi-source ML Offline', 'V7.4 — Multi-source Robustness / Walk-forward']`.
-
-Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading et aucun claim de rentabilite.
-
-V6.4 reste `pending_external_audit`.
+V7.0 reste `pending_external_audit`.

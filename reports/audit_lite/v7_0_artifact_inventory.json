@@ -1,0 +1,59 @@
+{
+  "version": "V7.0",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "full_parquet_excluded": true,
+  "trade_source_type": "aggTrades",
+  "window_start": "2023-03-25",
+  "window_end": "2023-03-25",
+  "total_days": 1,
+  "raw_inventory": {
+    "2023-03-25": {
+      "path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2023-03-25.zip",
+      "sha256": "5bba0a4fa33fb258d19fb6e8ab414f15ae15dc5ecb5f3a2a2e0c31a403193a85",
+      "bytes": 11729875,
+      "rows": 817141
+    }
+  },
+  "full_parquet_excluded_artifacts": [
+    {
+      "path": "data/research/v7_0/trades/aggTrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/window=2023-03-25_2023-03-25/agg_trades.parquet",
+      "sha256": "ceb1577c8b1a26da39edcd44eae9499158405e6f16fc10e91dc3613819654e65",
+      "bytes": 31079697,
+      "rows": 817141,
+      "reason_excluded": "full V7.0 trades Parquet is represented by manifest checksums and audit-lite sample"
+    }
+  ],
+  "parquet_samples_included": [
+    {
+      "path": "data/audit_lite/v7_0/trades/sample.parquet",
+      "sha256": "e891d04957f1c15c6b3ed8030e882158aae16fc381f15595fee77c246ef41d8c",
+      "bytes": 24906,
+      "rows": 300,
+      "columns_count": 19,
+      "source_full_path": "data/research/v7_0/trades/aggTrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/window=2023-03-25_2023-03-25/agg_trades.parquet",
+      "source_full_sha256": "ceb1577c8b1a26da39edcd44eae9499158405e6f16fc10e91dc3613819654e65"
+    }
+  ],
+  "included_reports": [
+    {
+      "path": "reports/manifests/public_trades_v7_0_manifest.json",
+      "sha256": "fd2a4c38314e20b54ba4ac497e38eb487a9da3127380b0c2fa7382f24ab37bce"
+    },
+    {
+      "path": "reports/data_quality/public_trades_v7_0.json",
+      "sha256": "fd2a4c38314e20b54ba4ac497e38eb487a9da3127380b0c2fa7382f24ab37bce"
+    },
+    {
+      "path": "reports/data_quality/public_trades_v7_0_discovery.json",
+      "sha256": "77a2ec703ce69dc3e6f2da2e14e51baa3e031babd29f41bd602b6c4cd525d42c"
+    }
+  ],
+  "no_features_v7_0": true,
+  "no_labels_v7_0": true,
+  "no_dataset_ml_v7_0": true,
+  "no_ml_model_v7_0": true,
+  "no_backtest_v7_0": true,
+  "no_strategy_v7_0": true,
+  "no_orders_v7_0": true
+}

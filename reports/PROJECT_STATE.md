@@ -1,25 +1,21 @@
-# Etat du Projet : V6.3 validee + candidat V6.4
+# Etat du Projet : V6.4 validee + candidat V7.0
 
-- **Derniere version validee** : V6.3.
-- **Version candidate** : V6.4.
+- **Derniere version validee** : V6.4.
+- **Version candidate** : V7.0.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : advanced OHLCV research decision gate.
+- **Direction** : public trades historical ingestion preview.
 
-## Decision V6.4
+## V7.0
 
-- Verdict : advanced OHLCV interessant mais non concluant.
-- Recommandation principale : A. Ajouter les trades publics historiques.
-- Recommandation secondaire : D. Préparer une validation walk-forward offline plus stricte.
-- Roadmap : `['V7.0 — Public Trades Historical Ingestion', 'V7.1 — OHLCV + Trades Feature Store', 'V7.2 — Multi-source Dataset', 'V7.3 — Multi-source ML Offline', 'V7.4 — Multi-source Robustness / Walk-forward']`.
-- V6.4 reste candidate `pending_external_audit`.
+- Source trades : `aggTrades`.
+- Fenetre : `2023-03-25` -> `2023-03-25`.
+- Total jours : `1`.
+- Raw files : `1`.
+- Lignes trades : `817141`.
+- Aucune feature V7.0.
+- Aucun label V7.0.
+- Aucun dataset ML V7.0.
+- Aucun modele ML V7.0.
+- Aucun backtest, aucune strategie, aucun signal, aucun ordre, aucun trading reel.
 
-## Clause De Securite
-
-- Aucun trading reel.
-- Aucun paper live.
-- Aucun ordre.
-- Aucun backtest.
-- Aucune strategie.
-- Aucun signal de trading.
-- Aucun modele persistant.
-- V6.4 reste non validee avant audit externe.
+V7.0 reste non validee avant audit externe.

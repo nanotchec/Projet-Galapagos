@@ -1,0 +1,47 @@
+{
+  "version": "V7.0",
+  "trade_source_type": "aggTrades",
+  "window_start": "2023-03-25",
+  "window_end": "2023-03-25",
+  "total_days": 1,
+  "outputs": {
+    "path": "data/research/v7_0/trades/aggTrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/window=2023-03-25_2023-03-25/agg_trades.parquet",
+    "sha256": "ceb1577c8b1a26da39edcd44eae9499158405e6f16fc10e91dc3613819654e65",
+    "bytes": 31079697,
+    "rows": 817141,
+    "columns": [
+      "source",
+      "venue",
+      "market_type",
+      "symbol",
+      "trade_source_type",
+      "aggregate_trade_id",
+      "price",
+      "quantity",
+      "first_trade_id",
+      "last_trade_id",
+      "event_ts",
+      "trade_ts",
+      "available_ts",
+      "decision_ts",
+      "is_buyer_maker",
+      "is_best_match",
+      "raw_file_sha256",
+      "ingestion_run_id",
+      "schema_version"
+    ],
+    "columns_count": 19,
+    "min_event_ts": "2023-03-25T00:00:00Z",
+    "max_event_ts": "2023-03-25T23:59:59.998000Z",
+    "schema_strict": true
+  },
+  "sample": {
+    "path": "data/audit_lite/v7_0/trades/sample.parquet",
+    "sha256": "e891d04957f1c15c6b3ed8030e882158aae16fc381f15595fee77c246ef41d8c",
+    "bytes": 24906,
+    "rows": 300,
+    "columns_count": 19,
+    "source_full_path": "data/research/v7_0/trades/aggTrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/window=2023-03-25_2023-03-25/agg_trades.parquet",
+    "source_full_sha256": "ceb1577c8b1a26da39edcd44eae9499158405e6f16fc10e91dc3613819654e65"
+  }
+}
