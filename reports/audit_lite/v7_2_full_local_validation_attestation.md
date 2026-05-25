@@ -1,0 +1,7 @@
+# Attestation full locale V7.2
+
+- Scope : `full_local`.
+- Fenetre : `2023-03-25` -> `2023-04-23`.
+- Total jours : `30`.
+- Outputs full : `4` timeframes.
+- Aucun trading, aucun backtest, aucun ordre.

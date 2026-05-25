@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V7.0",
-  "candidate_version": "V7.1",
+  "last_validated_version": "V7.1",
+  "candidate_version": "V7.2",
   "candidate_status": "pending_external_audit",
-  "direction": "public aggTrades expanded 30-day window",
+  "direction": "OHLCV + public trades feature store preview",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -911,5 +911,24 @@
   "public_trades_window_start_v7_1": "2023-03-25",
   "public_trades_window_end_v7_1": "2023-04-23",
   "public_trades_total_days_v7_1": 30,
-  "public_trades_rows_v7_1": 27708281
+  "public_trades_rows_v7_1": 27708281,
+  "ohlcv_trades_features_v7_2_created": true,
+  "labels_v7_2_created": false,
+  "dataset_v7_2_created": false,
+  "ml_v7_2_created": false,
+  "model_v7_2_created": false,
+  "backtest_v7_2_created": false,
+  "strategy_v7_2_created": false,
+  "orders_v7_2_created": false,
+  "window_start_v7_2": "2023-03-25",
+  "window_end_v7_2": "2023-04-23",
+  "total_days_v7_2": 30,
+  "trade_source_type_v7_2": "aggTrades",
+  "feature_columns_v7_2_count": 89,
+  "output_rows_v7_2": {
+    "1m": 43200,
+    "5m": 8640,
+    "15m": 2880,
+    "1h": 720
+  }
 }

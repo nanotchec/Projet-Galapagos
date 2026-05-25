@@ -1,22 +1,19 @@
-# Etat du Projet : V7.0 validee + candidat V7.1
+# Etat du Projet : V7.1 validee + candidat V7.2
 
-- **Derniere version validee** : V7.0.
-- **Version candidate** : V7.1.
+- **Derniere version validee** : V7.1.
+- **Version candidate** : V7.2.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : public aggTrades expanded 30-day window.
+- **Direction** : OHLCV + public trades feature store preview.
 
-## V7.1
+## V7.2
 
-- Source trades : `aggTrades`.
 - Fenetre : `2023-03-25` -> `2023-04-23`.
 - Total jours : `30`.
-- Raw files : `30`.
-- Partitions : `30`.
-- Lignes trades : `27708281`.
-- Aucune feature V7.1.
-- Aucun label V7.1.
-- Aucun dataset ML V7.1.
-- Aucun modele ML V7.1.
+- Source trades : `aggTrades`.
+- Colonnes features : `89`.
+- Aucun label V7.2.
+- Aucun dataset ML V7.2.
+- Aucun modele ML V7.2.
 - Aucun backtest, aucune strategie, aucun signal, aucun ordre, aucun trading reel.
 
-V7.1 reste non validee avant audit externe.
+V7.2 reste non validee avant audit externe.
