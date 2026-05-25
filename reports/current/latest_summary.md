@@ -1,13 +1,13 @@
-# Latest Summary V7.0
+# Latest Summary V7.1
 
-V6.4 est la derniere version validee par audit externe.
+V7.0 est la derniere version validee par audit externe.
 
-V7.0 est la candidate courante. Elle produit uniquement une ingestion preview data-only de trades publics historiques Binance.
+V7.1 est la candidate courante. Elle etend uniquement l'ingestion data-only de trades publics Binance aggTrades sur une fenetre bornee de 30 jours.
 
 Source : `aggTrades`.
-Fenetre : `2023-03-25` -> `2023-03-25`, `1` jour(s).
-Lignes trades : `817141`.
+Fenetre : `2023-03-25` -> `2023-04-23`, `30` jours.
+Lignes trades : `27708281`.
 
-Aucune feature V7.0, aucun label V7.0, aucun dataset ML V7.0, aucun modele ML V7.0, aucun backtest, aucune strategie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading reel.
+Aucune feature V7.1, aucun label V7.1, aucun dataset ML V7.1, aucun modele ML V7.1, aucun backtest, aucune strategie, aucun signal de trading, aucun paper live, aucun ordre et aucun trading reel.
 
-V7.0 reste `pending_external_audit`.
+V7.1 reste `pending_external_audit`.

@@ -1,0 +1,94 @@
+{
+  "version": "V7.1",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v7.1-audit-lite.zip",
+  "zip_size_bytes": 99877,
+  "zip_size_mb": 0.095,
+  "entries": 43,
+  "top_20_largest_files": [
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "bytes": 28612
+    },
+    {
+      "path": "data/audit_lite/v7_1/trades/sample.parquet",
+      "bytes": 27021
+    },
+    {
+      "path": "reports/data_quality/public_trades_expanded_window_v7_1.json",
+      "bytes": 26887
+    },
+    {
+      "path": "reports/manifests/public_trades_expanded_window_v7_1_manifest.json",
+      "bytes": 26887
+    },
+    {
+      "path": "reports/audit_lite/v7_1_artifact_inventory.json",
+      "bytes": 26479
+    },
+    {
+      "path": "src/galapagos/data/public_trades/expanded_window.py",
+      "bytes": 21826
+    },
+    {
+      "path": "reports/audit_lite/v7_1_full_local_validation_attestation.json",
+      "bytes": 19758
+    },
+    {
+      "path": "src/galapagos/data/public_trades/ingestion.py",
+      "bytes": 19039
+    },
+    {
+      "path": "reports/audit_lite/v7_1_parquet_summary.json",
+      "bytes": 17333
+    },
+    {
+      "path": "reports/data_quality/public_trades_expanded_window_v7_1_discovery.json",
+      "bytes": 17017
+    },
+    {
+      "path": "scripts/release_audit_lite_zip_v7_1.py",
+      "bytes": 16742
+    },
+    {
+      "path": "tests/validation/test_public_trades_expanded_window_v7_1_validator.py",
+      "bytes": 15697
+    },
+    {
+      "path": "docs/public_trades_expanded_window_v7_1.md",
+      "bytes": 13234
+    },
+    {
+      "path": "reports/data_quality/public_trades_expanded_window_v7_1.md",
+      "bytes": 13234
+    },
+    {
+      "path": "src/galapagos/data/public_trades/expanded_window_validation.py",
+      "bytes": 11766
+    },
+    {
+      "path": "src/galapagos/data/public_trades/validation.py",
+      "bytes": 10059
+    },
+    {
+      "path": "src/galapagos/data/public_trades/discovery.py",
+      "bytes": 10025
+    },
+    {
+      "path": "scripts/audit_audit_lite_zip_v7_1.py",
+      "bytes": 8109
+    },
+    {
+      "path": "scripts/smoke_audit_lite_zip_v7_1.py",
+      "bytes": 7909
+    },
+    {
+      "path": "reports/data_quality/public_trades_expanded_window_v7_1_discovery.md",
+      "bytes": 5396
+    }
+  ],
+  "pytest_collectible_scripts_absent": true,
+  "raw_zips_absent": true,
+  "passed": true,
+  "errors": [],
+  "warnings": []
+}

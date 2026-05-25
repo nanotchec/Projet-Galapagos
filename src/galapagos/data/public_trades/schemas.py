@@ -23,6 +23,8 @@ AGG_TRADE_COLUMNS_V7_0 = [
     "schema_version",
 ]
 
+AGG_TRADE_COLUMNS_V7_1 = list(AGG_TRADE_COLUMNS_V7_0)
+
 BINANCE_AGG_TRADE_RAW_COLUMNS = [
     "aggregate_trade_id",
     "price",
@@ -48,3 +50,5 @@ FORBIDDEN_TRADE_COLUMNS_V7_0 = {
     "position_size",
     "profit",
 }
+
+FORBIDDEN_TRADE_COLUMNS_V7_1 = set(FORBIDDEN_TRADE_COLUMNS_V7_0)

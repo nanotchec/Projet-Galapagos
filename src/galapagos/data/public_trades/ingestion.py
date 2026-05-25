@@ -174,7 +174,14 @@ def parse_binance_agg_trades_csv(content: bytes | str) -> pd.DataFrame:
     return frame[BINANCE_AGG_TRADE_RAW_COLUMNS].copy()
 
 
-def normalize_agg_trades(raw_frame: pd.DataFrame, *, raw_sha: str, ingestion_run_id: str) -> pd.DataFrame:
+def normalize_agg_trades(
+    raw_frame: pd.DataFrame,
+    *,
+    raw_sha: str,
+    ingestion_run_id: str,
+    schema_version: str = SCHEMA_VERSION_V7_0,
+    columns: list[str] | None = None,
+) -> pd.DataFrame:
     frame = raw_frame.copy()
     integer_columns = ["aggregate_trade_id", "first_trade_id", "last_trade_id", "trade_time"]
     for column in integer_columns:
@@ -205,10 +212,10 @@ def normalize_agg_trades(raw_frame: pd.DataFrame, *, raw_sha: str, ingestion_run
             "is_best_match": frame["is_best_match"].astype("bool"),
             "raw_file_sha256": raw_sha,
             "ingestion_run_id": ingestion_run_id,
-            "schema_version": SCHEMA_VERSION_V7_0,
+            "schema_version": schema_version,
         }
     )
-    return normalized[AGG_TRADE_COLUMNS_V7_0]
+    return normalized[columns or AGG_TRADE_COLUMNS_V7_0]
 
 
 def project_report_v7_0(manifest: dict[str, Any]) -> dict[str, Any]:
