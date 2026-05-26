@@ -1,0 +1,9 @@
+{
+  "version": "V8.9",
+  "zip_size_bytes": 664863,
+  "zip_size_mb": 0.634,
+  "included_files": 231,
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "full_parquet_excluded": true
+}

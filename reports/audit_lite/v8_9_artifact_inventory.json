@@ -1,0 +1,44 @@
+{
+  "version": "V8.9",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "full_parquet_excluded": true,
+  "new_datasets_excluded_because_none_created": true,
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2024-03-24",
+  "input_total_days": 366,
+  "original_feature_columns_count": 71,
+  "selected_features_count": 18,
+  "dropped_features_count": 27,
+  "review_features_count": 29,
+  "included_reports": [
+    {
+      "path": "reports/manifests/ohlcv_trades_feature_audit_v8_9_manifest.json",
+      "sha256": "ebcb8808ceb78cd4640f611850a6528e02de67e17aa8725a8d6bbcc08b6e0a53"
+    },
+    {
+      "path": "reports/features/ohlcv_trades_feature_audit_v8_9.json",
+      "sha256": "ebcb8808ceb78cd4640f611850a6528e02de67e17aa8725a8d6bbcc08b6e0a53"
+    },
+    {
+      "path": "reports/features/ohlcv_trades_feature_audit_v8_9.md",
+      "sha256": "bab33d36b155529d9eb6bc51653e76b5153ee27ebaa8ea0d3b08ee804141650f"
+    },
+    {
+      "path": "reports/features/ohlcv_trades_feature_selection_v8_9.json",
+      "sha256": "3f56df349c7b2d21bf90edeb12401cbdffd122dc2c51383a809d20e3a837d887"
+    },
+    {
+      "path": "reports/features/ohlcv_trades_feature_selection_v8_9.md",
+      "sha256": "8df0b279945825d8d9725f735f0aaa2ef3b938aea656fb4560aa5ee73de93d53"
+    },
+    {
+      "path": "docs/ohlcv_trades_feature_audit_v8_9.md",
+      "sha256": "bab33d36b155529d9eb6bc51653e76b5153ee27ebaa8ea0d3b08ee804141650f"
+    }
+  ],
+  "excluded_full_data": [
+    "data/research/v8_4/datasets full parquet represented by V8.4 checksums",
+    "data/research/v8_3/features full parquet represented by V8.3 checksums"
+  ]
+}

@@ -1,28 +1,37 @@
 {
-  "last_validated_version": "V8.7",
-  "candidate_version": "V8.8",
+  "last_validated_version": "V8.8",
+  "candidate_version": "V8.9",
   "candidate_status": "pending_external_audit",
-  "direction": "strict walk-forward research decision gate",
+  "direction": "OHLCV + trades feature audit / selection",
   "window_start": "2023-03-25",
   "window_end": "2024-03-24",
   "total_days": 366,
-  "feature_columns_count": 71,
-  "summary_verdict": "interessant_mais_instable_non_concluant",
-  "recommended_next_step": "A. Ameliorer/refactoriser les features OHLCV + trades.",
-  "secondary_next_step": "B. Revoir les labels.",
-  "folds_count_by_timeframe": {
-    "1m": 5,
-    "5m": 5,
-    "15m": 5,
-    "1h": 5
+  "original_feature_columns_count": 71,
+  "selected_features_count": 18,
+  "dropped_features_count": 27,
+  "review_features_count": 29,
+  "selected_count_by_family": {
+    "microstructure_proxy": 1,
+    "ohlcv_base": 7,
+    "taker_flow": 3,
+    "temporal": 2,
+    "trade_aggregation": 4,
+    "trade_intensity": 1
   },
-  "no_clear_edge_vs_shuffled_labels_cases": 18,
+  "review_count_by_family": {
+    "microstructure_proxy": 2,
+    "rolling_trade": 13,
+    "temporal": 1,
+    "trade_aggregation": 8,
+    "trade_intensity": 5
+  },
+  "new_dataset_created": false,
+  "model_created": false,
   "backtest_enabled": false,
   "strategy_enabled": false,
   "signal_created": false,
   "orders_enabled": false,
   "trading_enabled": false,
   "paper_live_enabled": false,
-  "persistent_model_created": false,
   "external_validation_required": true
 }

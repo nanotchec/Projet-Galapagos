@@ -1,22 +1,16 @@
-# Latest Metrics V8.8
+# Latest Metrics V8.9
 
-- Derniere version validee : V8.7.
-- Candidate : V8.8.
+- Derniere version validee : V8.8.
+- Candidate : V8.9.
 - Statut : `pending_external_audit`.
-- Direction : strict walk-forward research decision gate.
+- Direction : OHLCV + trades feature audit / selection.
 - Fenetre : `2023-03-25` -> `2024-03-24`.
 - Total jours : `366`.
-- Feature columns : `71`.
-- Verdict : `interessant_mais_instable_non_concluant`.
-- Recommandation principale : A. Ameliorer/refactoriser les features OHLCV + trades.
-- Recommandation secondaire : B. Revoir les labels.
-- Cas trop proches des labels melanges : `18`.
+- Feature columns originales : `71`.
+- Selected features : `18`.
+- Dropped features : `27`.
+- Review features : `29`.
+- Families retenues : `{'microstructure_proxy': 1, 'ohlcv_base': 7, 'taker_flow': 3, 'temporal': 2, 'trade_aggregation': 4, 'trade_intensity': 1}`.
+- Families a revoir : `{'microstructure_proxy': 2, 'rolling_trade': 13, 'temporal': 1, 'trade_aggregation': 8, 'trade_intensity': 5}`.
 
-## Folds
-
-- 1m: `5`
-- 5m: `5`
-- 15m: `5`
-- 1h: `5`
-
-Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun modele persistant et aucun trading reel.
+Aucun nouveau dataset, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.

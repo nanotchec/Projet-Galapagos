@@ -1,21 +1,21 @@
-# Latest Summary V8.8
+# Latest Summary V8.9
 
-V8.7 est la derniere version validee par audit externe.
+V8.8 est la derniere version validee localement.
 
-V8.8 est la candidate courante. Elle produit une decision gate research apres la validation walk-forward offline stricte V8.7, sans entrainer de nouveau modele et sans modifier donnees, features, labels, datasets ou scores.
+V8.9 est la candidate courante. Elle produit un audit et une selection/refactorisation de features OHLCV + aggTrades a partir des artefacts V8.3/V8.4/V8.5/V8.7/V8.8, sans recalculer les features et sans entrainer de modele.
 
 Fenetre : `2023-03-25` -> `2024-03-24`.
 
 Total jours : `366`.
 
-Feature columns : `71`.
+Feature columns originales : `71`.
 
-Verdict : `interessant_mais_instable_non_concluant`.
+Selected features : `18`.
 
-Recommandation principale : A. Ameliorer/refactoriser les features OHLCV + trades.
+Dropped features : `27`.
 
-Recommandation secondaire : B. Revoir les labels.
+Review features : `29`.
 
-Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucune strategie, aucun signal de trading, aucun modele persistant et aucun claim de rentabilite.
+Aucun nouveau dataset, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live et aucun trading reel.
 
-V8.8 reste `pending_external_audit`.
+V8.9 reste `pending_external_audit`.

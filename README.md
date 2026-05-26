@@ -1,27 +1,27 @@
 # Projet Galapagos
 
-- Derniere version validee : V8.7.
-- Candidate : V8.8, strict walk-forward research decision gate.
+- Derniere version validee : V8.8.
+- Candidate : V8.9, OHLCV + trades feature audit / selection.
 
-V8.8 analyse la validation walk-forward offline stricte V8.7 et produit une decision research sans modifier les donnees, les features, les labels, les datasets ou les scores.
+V8.9 audite et propose une selection/refactorisation des features OHLCV + aggTrades existantes sans recalculer les features, sans creer de dataset et sans entrainer de modele.
 
 Fenetre : `2023-03-25` -> `2024-03-24`, `366` jours.
 
-Feature columns : `71`.
+Feature columns originales : `71`.
 
-Verdict : `interessant_mais_instable_non_concluant`.
+Selected / dropped / review : `18` / `27` / `29`.
 
-Recommandation principale : A. Ameliorer/refactoriser les features OHLCV + trades.
+Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live, aucun trading reel et aucun modele ML.
 
-Recommandation secondaire : B. Revoir les labels.
-
-Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live, aucun trading reel et aucun modele persistant.
-
-## Commandes V8.8
+## Commandes V8.9
 
 ```bash
-python scripts/run_research_decision_gate_v8_8.py
-python scripts/validate_research_decision_gate_v8_8.py
-python -m pytest -q tests/validation/test_research_decision_gate_v8_8.py
+python scripts/run_ohlcv_trades_feature_audit_v8_9.py
+python scripts/validate_ohlcv_trades_feature_audit_v8_9.py
+python -m pytest -q tests/features/test_ohlcv_trades_feature_audit_v8_9.py
+python -m pytest -q tests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py
+python scripts/release_audit_lite_zip_v8_9.py
+python scripts/audit_audit_lite_zip_v8_9.py --zip projet-galapagos-v8.9-audit-lite.zip
+python scripts/smoke_audit_lite_zip_v8_9.py --zip projet-galapagos-v8.9-audit-lite.zip
 python -m pytest --collect-only -q
 ```

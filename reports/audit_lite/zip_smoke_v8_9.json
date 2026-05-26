@@ -1,0 +1,16 @@
+{
+  "version": "V8.9",
+  "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v8.9-audit-lite.zip",
+  "zip_size_bytes": 664863,
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "pytest_collect_only": {
+    "executed": true,
+    "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+    "returncode": 0,
+    "stdout_tail": "tests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_feature_inventory_non_empty_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_feature_inventory_has_expected_families_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_missingness_summary_contains_all_timeframes_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_collinearity_clusters_have_representatives_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_candidate_refined_feature_set_non_empty_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_candidate_refined_feature_set_excludes_forbidden_columns_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_leakage_guard_passes_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_feature_set_not_validated_for_trading_v8_9\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_accepts_valid_feature_audit\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_forbidden_future_feature_selected\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_forbidden_label_feature_selected\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_forbidden_signal_feature_selected\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_feature_set_validated_for_trading_true\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_strategy_validated_true\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_backtest_performed_true\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_actionable_signal_produced_true\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_dataset_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_ml_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_backtest_report_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_orders_directory_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_model_pickle_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_markdown_strategy_validated_claim\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_markdown_tradable_edge_confirmed_claim\n\n23 tests collected in 0.28s\n",
+    "stderr_tail": ""
+  },
+  "smoke_duration_seconds": 1.671
+}
