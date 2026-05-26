@@ -1,0 +1,25 @@
+{
+  "version": "V8.9.1",
+  "zip_size_bytes": 955480,
+  "zip_size_mb": 0.911,
+  "included_files": 244,
+  "lightweight_inputs_included": [
+    "reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json",
+    "reports/datasets/ohlcv_trades_1y_offline_supervised_dataset_v8_4.json",
+    "reports/manifests/ohlcv_trades_1y_feature_store_v8_3_manifest.json",
+    "reports/features/ohlcv_trades_1y_feature_store_v8_3.json",
+    "reports/manifests/ohlcv_trades_1y_offline_ml_research_v8_5_manifest.json",
+    "reports/ml/ohlcv_trades_1y_offline_ml_research_v8_5.json",
+    "reports/manifests/strict_walk_forward_validation_v8_7_manifest.json",
+    "reports/ml/strict_walk_forward_validation_v8_7.json",
+    "reports/research_decisions/v8_8_research_decision_gate.json",
+    "reports/research_decisions/v8_8_research_decision_gate.md"
+  ],
+  "v8_9_manifest_sha256": "ebcb8808ceb78cd4640f611850a6528e02de67e17aa8725a8d6bbcc08b6e0a53",
+  "v8_9_report_sha256": "ebcb8808ceb78cd4640f611850a6528e02de67e17aa8725a8d6bbcc08b6e0a53",
+  "v8_9_selection_sha256": "3f56df349c7b2d21bf90edeb12401cbdffd122dc2c51383a809d20e3a837d887",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "full_parquet_excluded": true,
+  "functional_v8_9_results_unchanged": true
+}

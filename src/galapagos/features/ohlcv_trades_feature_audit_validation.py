@@ -102,10 +102,16 @@ def validate_ohlcv_trades_feature_audit_v8_9(project_root: Path = Path(".")) -> 
             errors.append(f"missing V8.9 output: {relative}")
     if errors:
         return _result(errors, warnings)
-    dataset_result = validate_ohlcv_trades_1y_offline_supervised_dataset_v8_4(root)
-    if not dataset_result["passed"]:
-        errors.append(f"V8.4 dataset validation failed before V8.9 validation: {dataset_result['errors']}")
-        return _result(errors, warnings)
+    if _v8_4_full_dataset_files_available(root):
+        dataset_result = validate_ohlcv_trades_1y_offline_supervised_dataset_v8_4(root)
+        if not dataset_result["passed"]:
+            errors.append(f"V8.4 dataset validation failed before V8.9 validation: {dataset_result['errors']}")
+            return _result(errors, warnings)
+    else:
+        warnings.append("V8.4 full Parquet artifacts absent; using V8.9 audit-lite input manifest validation.")
+        errors.extend(_validate_audit_lite_input_files_v8_9(root))
+        if errors:
+            return _result(errors, warnings)
 
     manifest = _load_json(root / MANIFEST_PATH_V8_9)
     report = _load_json(root / REPORT_JSON_PATH_V8_9)
@@ -118,6 +124,68 @@ def validate_ohlcv_trades_feature_audit_v8_9(project_root: Path = Path(".")) -> 
         errors.extend(validate_feature_audit_markdown_v8_9((root / relative).read_text(encoding="utf-8"), str(relative)))
     errors.extend(find_forbidden_v8_9_artifacts(root))
     return _result(errors, warnings, manifest)
+
+
+def _v8_4_full_dataset_files_available(root: Path) -> bool:
+    dataset_manifest_path = root / INPUT_DATASET_MANIFEST_PATH_V8_9
+    if not dataset_manifest_path.exists():
+        return False
+    try:
+        dataset_manifest = _load_json(dataset_manifest_path)
+    except json.JSONDecodeError:
+        return False
+    paths: list[str] = []
+    for block_name in ["outputs", "splits"]:
+        block = dataset_manifest.get(block_name, {})
+        if not isinstance(block, dict):
+            return False
+        for item in block.values():
+            if not isinstance(item, dict) or not item.get("path"):
+                return False
+            paths.append(str(item["path"]))
+    return bool(paths) and all((root / path).exists() for path in paths)
+
+
+def _validate_audit_lite_input_files_v8_9(root: Path) -> list[str]:
+    errors: list[str] = []
+    manifest = _load_json(root / MANIFEST_PATH_V8_9)
+    required = [
+        INPUT_DATASET_MANIFEST_PATH_V8_9,
+        INPUT_FEATURE_MANIFEST_PATH_V8_9,
+        INPUT_FEATURE_REPORT_PATH_V8_9,
+        INPUT_ML_MANIFEST_PATH_V8_9,
+        INPUT_ML_REPORT_PATH_V8_9,
+        INPUT_DECISION_JSON_PATH_V8_9,
+    ]
+    if manifest.get("input_walk_forward_manifest", {}).get("available") is True:
+        required.append(INPUT_WALK_FORWARD_MANIFEST_PATH_V8_9)
+        required.append(INPUT_WALK_FORWARD_REPORT_PATH_V8_9)
+    for relative in required:
+        if not (root / relative).exists():
+            errors.append(f"missing V8.9 audit-lite input: {relative}")
+    if errors:
+        return errors
+    expected_hashes = [
+        (manifest.get("input_dataset_manifest", {}).get("sha256"), INPUT_DATASET_MANIFEST_PATH_V8_9, "input_dataset_manifest"),
+        (manifest.get("input_feature_manifest", {}).get("sha256"), INPUT_FEATURE_MANIFEST_PATH_V8_9, "input_feature_manifest"),
+        (manifest.get("input_feature_report", {}).get("sha256"), INPUT_FEATURE_REPORT_PATH_V8_9, "input_feature_report"),
+        (manifest.get("input_ml_manifest", {}).get("sha256"), INPUT_ML_MANIFEST_PATH_V8_9, "input_ml_manifest"),
+        (manifest.get("input_decision_gate_v8_8", {}).get("sha256"), INPUT_DECISION_JSON_PATH_V8_9, "input_decision_gate_v8_8"),
+    ]
+    if manifest.get("input_walk_forward_manifest", {}).get("available") is True:
+        expected_hashes.append((manifest.get("input_walk_forward_manifest", {}).get("sha256"), INPUT_WALK_FORWARD_MANIFEST_PATH_V8_9, "input_walk_forward_manifest"))
+    for expected, relative, label in expected_hashes:
+        if expected != sha256_file(root / relative):
+            errors.append(f"V8.9 audit-lite {label}.sha256 mismatch")
+    for relative, version in [
+        (INPUT_DATASET_MANIFEST_PATH_V8_9, "V8.4"),
+        (INPUT_FEATURE_MANIFEST_PATH_V8_9, "V8.3"),
+        (INPUT_ML_MANIFEST_PATH_V8_9, "V8.5"),
+    ]:
+        payload = _load_json(root / relative)
+        if payload.get("version") != version or payload.get("status") != "PASS":
+            errors.append(f"V8.9 audit-lite input {relative} must be {version} PASS")
+    return errors
 
 
 def validate_feature_audit_manifest_payload_v8_9(payload: dict[str, Any], root: Path | None = None) -> list[str]:

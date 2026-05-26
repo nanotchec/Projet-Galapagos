@@ -1,8 +1,10 @@
 {
   "last_validated_version": "V8.8",
-  "candidate_version": "V8.9",
+  "candidate_version": "V8.9.1",
   "candidate_status": "pending_external_audit",
-  "direction": "OHLCV + trades feature audit / selection",
+  "direction": "feature audit audit-lite self-contained inputs fix",
+  "scope": "packaging_audit_lite_only",
+  "functional_v8_9_results_unchanged": true,
   "window_start": "2023-03-25",
   "window_end": "2024-03-24",
   "total_days": 366,

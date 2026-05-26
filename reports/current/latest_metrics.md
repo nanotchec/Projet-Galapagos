@@ -1,9 +1,10 @@
-# Latest Metrics V8.9
+# Latest Metrics V8.9.1
 
 - Derniere version validee : V8.8.
-- Candidate : V8.9.
+- Candidate : V8.9.1.
 - Statut : `pending_external_audit`.
-- Direction : OHLCV + trades feature audit / selection.
+- Direction : correctif packaging audit-lite V8.9 autoporteur.
+- Changement fonctionnel V8.9 : `false`.
 - Fenetre : `2023-03-25` -> `2024-03-24`.
 - Total jours : `366`.
 - Feature columns originales : `71`.

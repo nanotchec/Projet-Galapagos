@@ -1,18 +1,15 @@
-# Etat du Projet : V8.8 validee + candidat V8.9
+# Etat du Projet : V8.8 validee + candidat V8.9.1
 
 - **Derniere version validee** : V8.8.
-- **Version candidate** : V8.9.
+- **Version candidate** : V8.9.1.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : OHLCV + trades feature audit / selection.
+- **Direction** : correctif packaging audit-lite V8.9 autoporteur.
 
-## Candidat V8.9
+## Candidat V8.9.1
 
-- Fenetre : `2023-03-25` -> `2024-03-24`.
-- Nombre de jours : `366`.
-- Feature columns originales : `71`.
-- Selected features : `18`.
-- Dropped features : `27`.
-- Review features : `29`.
+- V8.9.1 corrige uniquement le ZIP audit-lite V8.9 pour inclure les petits manifests/reports d'entree necessaires aux tests et validateurs nominaux.
+- Les rapports metier restent en version V8.9.
+- Resultats V8.9 inchanges : selected/dropped/review = `18` / `27` / `29`.
 - Aucun nouveau dataset, aucun modele ML et aucun backtest.
 
 ## Clause De Securite
@@ -26,4 +23,4 @@
 - Aucun modele ML.
 - Aucune API privee.
 - Aucune cle API.
-- V8.9 reste non validee avant audit externe.
+- V8.9.1 reste non validee avant audit externe.
