@@ -1,0 +1,10 @@
+{
+  "version_scope": "V9.0_to_V9.3.1",
+  "source_version_scope": "V9.0_to_V9.3",
+  "packaging_fix_only": true,
+  "zip_name": "projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+  "zip_bytes": 2318053,
+  "zip_sha256": "9bed32a8da8d4b57ca2995f8e16755823c012b181221504c3588ec8bef66430e",
+  "included_files": 1364,
+  "created_at_utc": "2026-05-26T19:18:43Z"
+}
