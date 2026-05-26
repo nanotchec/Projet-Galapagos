@@ -1,0 +1,7479 @@
+{
+  "version": "V9.2",
+  "status": "PASS",
+  "created_at_utc": "2026-05-26T18:03:10.606675Z",
+  "ml_run_id": "v9_2_20260526T180310Z_613c9a90",
+  "input_dataset_manifest": {
+    "path": "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+    "sha256": "9624672783b1ae9d3e78c5fab72e6e4e790c8161439982a20ac52bf1cea1ee8a",
+    "window_start": "2023-03-25",
+    "window_end": "2024-03-24",
+    "total_days": 366,
+    "feature_columns_count": 21
+  },
+  "input_datasets": {
+    "1m": {
+      "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "f6bae86263864ec6e3dc5fb454c6109bfe4a0b20b8d315f7b1aee3706839669d",
+      "rows": 527040
+    },
+    "5m": {
+      "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "f61d51e755daaacf3699b136abde74c30824727b97414b8b131099b5b3eb458b",
+      "rows": 105408
+    },
+    "15m": {
+      "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "4e65988c1bcf7e8aa09918a14b2ca8ab8b10d8754107dc9a9e943309c5f785f0",
+      "rows": 35136
+    },
+    "1h": {
+      "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "651f6a09c7fa1bc102a82b6eaa99d99c59ae1b287aa883d2cf927424406945b3",
+      "rows": 8784
+    }
+  },
+  "input_splits": {
+    "1m": {
+      "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "e2fca405a2e56dcefa13234874185b377f96ec3c7f22d82ef58135f73794891b",
+      "rows": 527040
+    },
+    "5m": {
+      "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "fda6c3ee71f88062bbe01061b2c90b2058d4e2a10359c84def0c40ee32d4139d",
+      "rows": 105408
+    },
+    "15m": {
+      "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "378b39a460320b4ce11ffecf7390c4af4964c8d7ef0fce52bbafc1053686259b",
+      "rows": 35136
+    },
+    "1h": {
+      "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/splits.parquet",
+      "sha256": "9e4197ab301e55f60218714a218257a47aa33433e78c4f9f4b9d5d7805577e2f",
+      "rows": 8784
+    }
+  },
+  "outputs": {
+    "1m": {
+      "path": "data/research/v9_2/ml/refined_offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "2be3968f68f5306781bec34d067d91eb9d222b6c1e5dc637a37cf0b3c57566af",
+      "bytes": 77404029,
+      "rows": 2107920,
+      "format": "parquet"
+    },
+    "5m": {
+      "path": "data/research/v9_2/ml/refined_offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "f39849a1a2fc865ea79682da4f0013e6bd4ed3480dfd1b76dd4c5d09a677dcff",
+      "bytes": 10158802,
+      "rows": 421392,
+      "format": "parquet"
+    },
+    "15m": {
+      "path": "data/research/v9_2/ml/refined_offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "a2b94d258ec4fc308e7e5558eee3f495039694684eb4960a3bed983c55af32a2",
+      "bytes": 3332614,
+      "rows": 140304,
+      "format": "parquet"
+    },
+    "1h": {
+      "path": "data/research/v9_2/ml/refined_offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/ml-scores.parquet",
+      "sha256": "2d015180d2beeb1ce6f76a3da9d5c800091cbe43fcc986fc326386bc90775998",
+      "bytes": 816115,
+      "rows": 34896,
+      "format": "parquet"
+    }
+  },
+  "target_name": "up_down_flat_h1",
+  "feature_columns": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "quote_volume",
+    "trade_count_ohlcv",
+    "agg_trade_count",
+    "agg_trade_quantity_sum",
+    "agg_trade_quote_quantity_sum",
+    "agg_trade_vwap",
+    "taker_buy_ratio_count",
+    "taker_buy_ratio_quantity",
+    "taker_imbalance_quantity",
+    "agg_trades_per_minute",
+    "trade_flow_pressure",
+    "hour_utc",
+    "day_of_week_utc"
+  ],
+  "feature_columns_count": 18,
+  "models": [
+    "majority_class_baseline",
+    "random_seeded_baseline",
+    "logistic_regression",
+    "decision_tree_depth_2"
+  ],
+  "metrics": {
+    "1m.decision_tree_depth_2.test": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 105408,
+      "class_distribution_true": {
+        "DOWN": 18320,
+        "FLAT": 68365,
+        "UP": 18723
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 105408,
+        "UP": 0
+      },
+      "accuracy": 0.6485750607164542,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2622770319132815,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6485750607164542,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          18320,
+          0
+        ],
+        [
+          0,
+          68365,
+          0
+        ],
+        [
+          0,
+          18723,
+          0
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.decision_tree_depth_2.train": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 316164,
+      "class_distribution_true": {
+        "DOWN": 27846,
+        "FLAT": 260079,
+        "UP": 28239
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 316164,
+        "UP": 0
+      },
+      "accuracy": 0.8226078870459634,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3008904229639232,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.8226078870459634,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          27846,
+          0
+        ],
+        [
+          0,
+          260079,
+          0
+        ],
+        [
+          0,
+          28239,
+          0
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.decision_tree_depth_2.validation": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 105408,
+      "class_distribution_true": {
+        "DOWN": 14237,
+        "FLAT": 76546,
+        "UP": 14625
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 105408,
+        "UP": 0
+      },
+      "accuracy": 0.726187765634487,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2804591636714041,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.726187765634487,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          14237,
+          0
+        ],
+        [
+          0,
+          76546,
+          0
+        ],
+        [
+          0,
+          14625,
+          0
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.test": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 105408,
+      "class_distribution_true": {
+        "DOWN": 18320,
+        "FLAT": 68365,
+        "UP": 18723
+      },
+      "class_distribution_pred": {
+        "DOWN": 23119,
+        "FLAT": 76517,
+        "UP": 5772
+      },
+      "accuracy": 0.6092516697024893,
+      "balanced_accuracy": 0.42313385909346946,
+      "macro_f1": 0.41513314782140354,
+      "per_class_precision": {
+        "DOWN": 0.2666205285695748,
+        "FLAT": 0.7305174013617889,
+        "UP": 0.37404712404712404
+      },
+      "per_class_recall": {
+        "DOWN": 0.3364628820960699,
+        "FLAT": 0.817625978205222,
+        "UP": 0.11531271697911659
+      },
+      "confusion_matrix": [
+        [
+          6164,
+          10227,
+          1929
+        ],
+        [
+          10784,
+          55897,
+          1684
+        ],
+        [
+          6171,
+          10393,
+          2159
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.train": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 316164,
+      "class_distribution_true": {
+        "DOWN": 27846,
+        "FLAT": 260079,
+        "UP": 28239
+      },
+      "class_distribution_pred": {
+        "DOWN": 2913,
+        "FLAT": 309005,
+        "UP": 4246
+      },
+      "accuracy": 0.8242652547412103,
+      "balanced_accuracy": 0.36262391047103487,
+      "macro_f1": 0.3588188304522925,
+      "per_class_precision": {
+        "DOWN": 0.3649158942670786,
+        "FLAT": 0.8346143266290189,
+        "UP": 0.3862458784738578
+      },
+      "per_class_recall": {
+        "DOWN": 0.038174244056597,
+        "FLAT": 0.9916217764602294,
+        "UP": 0.0580757108962782
+      },
+      "confusion_matrix": [
+        [
+          1063,
+          25466,
+          1317
+        ],
+        [
+          890,
+          257900,
+          1289
+        ],
+        [
+          960,
+          25639,
+          1640
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.logistic_regression.validation": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 105408,
+      "class_distribution_true": {
+        "DOWN": 14237,
+        "FLAT": 76546,
+        "UP": 14625
+      },
+      "class_distribution_pred": {
+        "DOWN": 3709,
+        "FLAT": 98981,
+        "UP": 2718
+      },
+      "accuracy": 0.7246983151183971,
+      "balanced_accuracy": 0.37216588099313364,
+      "macro_f1": 0.3615861648433436,
+      "per_class_precision": {
+        "DOWN": 0.306282016716096,
+        "FLAT": 0.7504874672917025,
+        "UP": 0.3565121412803532
+      },
+      "per_class_recall": {
+        "DOWN": 0.07979209103041371,
+        "FLAT": 0.970449141692577,
+        "UP": 0.06625641025641026
+      },
+      "confusion_matrix": [
+        [
+          1136,
+          12212,
+          889
+        ],
+        [
+          1402,
+          74284,
+          860
+        ],
+        [
+          1171,
+          12485,
+          969
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.test": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 105408,
+      "class_distribution_true": {
+        "DOWN": 18320,
+        "FLAT": 68365,
+        "UP": 18723
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 105408,
+        "UP": 0
+      },
+      "accuracy": 0.6485750607164542,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2622770319132815,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6485750607164542,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          18320,
+          0
+        ],
+        [
+          0,
+          68365,
+          0
+        ],
+        [
+          0,
+          18723,
+          0
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.train": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 316164,
+      "class_distribution_true": {
+        "DOWN": 27846,
+        "FLAT": 260079,
+        "UP": 28239
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 316164,
+        "UP": 0
+      },
+      "accuracy": 0.8226078870459634,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3008904229639232,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.8226078870459634,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          27846,
+          0
+        ],
+        [
+          0,
+          260079,
+          0
+        ],
+        [
+          0,
+          28239,
+          0
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.majority_class_baseline.validation": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 105408,
+      "class_distribution_true": {
+        "DOWN": 14237,
+        "FLAT": 76546,
+        "UP": 14625
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 105408,
+        "UP": 0
+      },
+      "accuracy": 0.726187765634487,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2804591636714041,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.726187765634487,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          14237,
+          0
+        ],
+        [
+          0,
+          76546,
+          0
+        ],
+        [
+          0,
+          14625,
+          0
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.test": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 105408,
+      "class_distribution_true": {
+        "DOWN": 18320,
+        "FLAT": 68365,
+        "UP": 18723
+      },
+      "class_distribution_pred": {
+        "DOWN": 9394,
+        "FLAT": 86702,
+        "UP": 9312
+      },
+      "accuracy": 0.5655168488160291,
+      "balanced_accuracy": 0.33368286041463485,
+      "macro_f1": 0.32061882819703996,
+      "per_class_precision": {
+        "DOWN": 0.17245050031935277,
+        "FLAT": 0.6496966621300547,
+        "UP": 0.17826460481099657
+      },
+      "per_class_recall": {
+        "DOWN": 0.08842794759825327,
+        "FLAT": 0.8239596284648577,
+        "UP": 0.08866100518079367
+      },
+      "confusion_matrix": [
+        [
+          1620,
+          15016,
+          1684
+        ],
+        [
+          6067,
+          56330,
+          5968
+        ],
+        [
+          1707,
+          15356,
+          1660
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.train": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 316164,
+      "class_distribution_true": {
+        "DOWN": 27846,
+        "FLAT": 260079,
+        "UP": 28239
+      },
+      "class_distribution_pred": {
+        "DOWN": 27632,
+        "FLAT": 260223,
+        "UP": 28309
+      },
+      "accuracy": 0.692729089965967,
+      "balanced_accuracy": 0.3337497060000027,
+      "macro_f1": 0.3337512117332965,
+      "per_class_precision": {
+        "DOWN": 0.08960625361899248,
+        "FLAT": 0.8224253813075708,
+        "UP": 0.08922957363382669
+      },
+      "per_class_recall": {
+        "DOWN": 0.08891761832938304,
+        "FLAT": 0.822880740082821,
+        "UP": 0.0894507595878041
+      },
+      "confusion_matrix": [
+        [
+          2476,
+          22908,
+          2462
+        ],
+        [
+          22744,
+          214014,
+          23321
+        ],
+        [
+          2412,
+          23301,
+          2526
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1m.random_seeded_baseline.validation": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 105408,
+      "class_distribution_true": {
+        "DOWN": 14237,
+        "FLAT": 76546,
+        "UP": 14625
+      },
+      "class_distribution_pred": {
+        "DOWN": 9318,
+        "FLAT": 86725,
+        "UP": 9365
+      },
+      "accuracy": 0.6216511080752884,
+      "balanced_accuracy": 0.3335066139514247,
+      "macro_f1": 0.32911471897877553,
+      "per_class_precision": {
+        "DOWN": 0.1368319381841597,
+        "FLAT": 0.7259498414528682,
+        "UP": 0.13817405232247731
+      },
+      "per_class_recall": {
+        "DOWN": 0.08955538385895905,
+        "FLAT": 0.8224858255166828,
+        "UP": 0.08847863247863248
+      },
+      "confusion_matrix": [
+        [
+          1275,
+          11682,
+          1280
+        ],
+        [
+          6797,
+          62958,
+          6791
+        ],
+        [
+          1246,
+          12085,
+          1294
+        ]
+      ],
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.test": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 21082,
+      "class_distribution_true": {
+        "DOWN": 6702,
+        "FLAT": 7436,
+        "UP": 6944
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8684,
+        "UP": 12398
+      },
+      "accuracy": 0.426240394649464,
+      "balanced_accuracy": 0.4178444590975608,
+      "macro_f1": 0.3390298214054639,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.48986642100414557,
+        "UP": 0.38167446362316504
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.5720817643894567,
+        "UP": 0.6814516129032258
+      },
+      "confusion_matrix": [
+        [
+          0,
+          2218,
+          4484
+        ],
+        [
+          0,
+          4254,
+          3182
+        ],
+        [
+          0,
+          2212,
+          4732
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.train": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 63184,
+      "class_distribution_true": {
+        "DOWN": 14388,
+        "FLAT": 34097,
+        "UP": 14699
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 51786,
+        "UP": 11398
+      },
+      "accuracy": 0.5588440111420613,
+      "balanced_accuracy": 0.40047350894124656,
+      "macro_f1": 0.3502949309911682,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5991001428957633,
+        "UP": 0.37594314792068784
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.9099040971346453,
+        "UP": 0.29151642968909447
+      },
+      "confusion_matrix": [
+        [
+          0,
+          10347,
+          4041
+        ],
+        [
+          0,
+          31025,
+          3072
+        ],
+        [
+          0,
+          10414,
+          4285
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.decision_tree_depth_2.validation": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 21082,
+      "class_distribution_true": {
+        "DOWN": 6135,
+        "FLAT": 8579,
+        "UP": 6368
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 12668,
+        "UP": 8414
+      },
+      "accuracy": 0.4447395882743573,
+      "balanced_accuracy": 0.40617490842329923,
+      "macro_f1": 0.33678648849645604,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.49510577833912217,
+        "UP": 0.3689089612550511
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.7310875393402494,
+        "UP": 0.48743718592964824
+      },
+      "confusion_matrix": [
+        [
+          0,
+          3132,
+          3003
+        ],
+        [
+          0,
+          6272,
+          2307
+        ],
+        [
+          0,
+          3264,
+          3104
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.test": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 21082,
+      "class_distribution_true": {
+        "DOWN": 6702,
+        "FLAT": 7436,
+        "UP": 6944
+      },
+      "class_distribution_pred": {
+        "DOWN": 4089,
+        "FLAT": 12280,
+        "UP": 4713
+      },
+      "accuracy": 0.40764633336495587,
+      "balanced_accuracy": 0.39858051633579455,
+      "macro_f1": 0.3762876302920692,
+      "per_class_precision": {
+        "DOWN": 0.3734409391049156,
+        "FLAT": 0.4257328990228013,
+        "UP": 0.3901973265436028
+      },
+      "per_class_recall": {
+        "DOWN": 0.2278424350940018,
+        "FLAT": 0.7030661646046261,
+        "UP": 0.2648329493087558
+      },
+      "confusion_matrix": [
+        [
+          1527,
+          3496,
+          1679
+        ],
+        [
+          1013,
+          5228,
+          1195
+        ],
+        [
+          1549,
+          3556,
+          1839
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.train": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 63184,
+      "class_distribution_true": {
+        "DOWN": 14388,
+        "FLAT": 34097,
+        "UP": 14699
+      },
+      "class_distribution_pred": {
+        "DOWN": 3617,
+        "FLAT": 55477,
+        "UP": 4090
+      },
+      "accuracy": 0.5636711825778679,
+      "balanced_accuracy": 0.3924926361158636,
+      "macro_f1": 0.36213973548482964,
+      "per_class_precision": {
+        "DOWN": 0.43129665468620404,
+        "FLAT": 0.5811237089244191,
+        "UP": 0.44400977995110025
+      },
+      "per_class_recall": {
+        "DOWN": 0.10842368640533778,
+        "FLAT": 0.9455084024987536,
+        "UP": 0.12354581944349956
+      },
+      "confusion_matrix": [
+        [
+          1560,
+          11541,
+          1287
+        ],
+        [
+          871,
+          32239,
+          987
+        ],
+        [
+          1186,
+          11697,
+          1816
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.logistic_regression.validation": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 21082,
+      "class_distribution_true": {
+        "DOWN": 6135,
+        "FLAT": 8579,
+        "UP": 6368
+      },
+      "class_distribution_pred": {
+        "DOWN": 2516,
+        "FLAT": 15863,
+        "UP": 2703
+      },
+      "accuracy": 0.44644720614742434,
+      "balanced_accuracy": 0.3960683455544643,
+      "macro_f1": 0.35756801357349993,
+      "per_class_precision": {
+        "DOWN": 0.3914944356120827,
+        "FLAT": 0.46056861879846184,
+        "UP": 0.414724380318165
+      },
+      "per_class_recall": {
+        "DOWN": 0.16055419722901385,
+        "FLAT": 0.851614407273575,
+        "UP": 0.17603643216080403
+      },
+      "confusion_matrix": [
+        [
+          985,
+          4216,
+          934
+        ],
+        [
+          625,
+          7306,
+          648
+        ],
+        [
+          906,
+          4341,
+          1121
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.test": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 21082,
+      "class_distribution_true": {
+        "DOWN": 6702,
+        "FLAT": 7436,
+        "UP": 6944
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 21082,
+        "UP": 0
+      },
+      "accuracy": 0.3527179584479651,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.17383173200551696,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.3527179584479651,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          6702,
+          0
+        ],
+        [
+          0,
+          7436,
+          0
+        ],
+        [
+          0,
+          6944,
+          0
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.train": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 63184,
+      "class_distribution_true": {
+        "DOWN": 14388,
+        "FLAT": 34097,
+        "UP": 14699
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 63184,
+        "UP": 0
+      },
+      "accuracy": 0.5396461129399848,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2336667317701641,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5396461129399848,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          14388,
+          0
+        ],
+        [
+          0,
+          34097,
+          0
+        ],
+        [
+          0,
+          14699,
+          0
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.majority_class_baseline.validation": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 21082,
+      "class_distribution_true": {
+        "DOWN": 6135,
+        "FLAT": 8579,
+        "UP": 6368
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 21082,
+        "UP": 0
+      },
+      "accuracy": 0.40693482591784463,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19282334828000855,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.40693482591784463,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          6135,
+          0
+        ],
+        [
+          0,
+          8579,
+          0
+        ],
+        [
+          0,
+          6368,
+          0
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.test": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 21082,
+      "class_distribution_true": {
+        "DOWN": 6702,
+        "FLAT": 7436,
+        "UP": 6944
+      },
+      "class_distribution_pred": {
+        "DOWN": 4821,
+        "FLAT": 11311,
+        "UP": 4950
+      },
+      "accuracy": 0.33919931695285077,
+      "balanced_accuracy": 0.33338241602808666,
+      "macro_f1": 0.3226009767738944,
+      "per_class_precision": {
+        "DOWN": 0.31922837585563163,
+        "FLAT": 0.34948280434974804,
+        "UP": 0.33515151515151514
+      },
+      "per_class_recall": {
+        "DOWN": 0.229632945389436,
+        "FLAT": 0.5316030123722432,
+        "UP": 0.23891129032258066
+      },
+      "confusion_matrix": [
+        [
+          1539,
+          3627,
+          1536
+        ],
+        [
+          1728,
+          3953,
+          1755
+        ],
+        [
+          1554,
+          3731,
+          1659
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.train": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 63184,
+      "class_distribution_true": {
+        "DOWN": 14388,
+        "FLAT": 34097,
+        "UP": 14699
+      },
+      "class_distribution_pred": {
+        "DOWN": 14353,
+        "FLAT": 34084,
+        "UP": 14747
+      },
+      "accuracy": 0.39824955684983543,
+      "balanced_accuracy": 0.3345038739402963,
+      "macro_f1": 0.3345028733627243,
+      "per_class_precision": {
+        "DOWN": 0.22838430990036926,
+        "FLAT": 0.5406349020068068,
+        "UP": 0.23448837051603716
+      },
+      "per_class_recall": {
+        "DOWN": 0.22782874617737003,
+        "FLAT": 0.540428776725225,
+        "UP": 0.23525409891829377
+      },
+      "confusion_matrix": [
+        [
+          3278,
+          7823,
+          3287
+        ],
+        [
+          7668,
+          18427,
+          8002
+        ],
+        [
+          3407,
+          7834,
+          3458
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m.random_seeded_baseline.validation": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 21082,
+      "class_distribution_true": {
+        "DOWN": 6135,
+        "FLAT": 8579,
+        "UP": 6368
+      },
+      "class_distribution_pred": {
+        "DOWN": 4710,
+        "FLAT": 11516,
+        "UP": 4856
+      },
+      "accuracy": 0.35333459823546154,
+      "balanced_accuracy": 0.32969129759390253,
+      "macro_f1": 0.32293818689786397,
+      "per_class_precision": {
+        "DOWN": 0.29044585987261146,
+        "FLAT": 0.40517540812782216,
+        "UP": 0.29139209225700163
+      },
+      "per_class_recall": {
+        "DOWN": 0.22298288508557457,
+        "FLAT": 0.5438862338267864,
+        "UP": 0.22220477386934673
+      },
+      "confusion_matrix": [
+        [
+          1368,
+          3329,
+          1438
+        ],
+        [
+          1910,
+          4666,
+          2003
+        ],
+        [
+          1432,
+          3521,
+          1415
+        ]
+      ],
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.decision_tree_depth_2.test": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 7028,
+      "class_distribution_true": {
+        "DOWN": 2765,
+        "FLAT": 1399,
+        "UP": 2864
+      },
+      "class_distribution_pred": {
+        "DOWN": 1544,
+        "FLAT": 242,
+        "UP": 5242
+      },
+      "accuracy": 0.41050085372794537,
+      "balanced_accuracy": 0.35046349536289867,
+      "macro_f1": 0.3095290924462648,
+      "per_class_precision": {
+        "DOWN": 0.35038860103626945,
+        "FLAT": 0.4214876033057851,
+        "UP": 0.42769935139259824
+      },
+      "per_class_recall": {
+        "DOWN": 0.1956600361663653,
+        "FLAT": 0.07290922087205147,
+        "UP": 0.7828212290502793
+      },
+      "confusion_matrix": [
+        [
+          541,
+          67,
+          2157
+        ],
+        [
+          454,
+          102,
+          843
+        ],
+        [
+          549,
+          73,
+          2242
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.decision_tree_depth_2.train": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 21021,
+      "class_distribution_true": {
+        "DOWN": 6723,
+        "FLAT": 7410,
+        "UP": 6888
+      },
+      "class_distribution_pred": {
+        "DOWN": 7671,
+        "FLAT": 7649,
+        "UP": 5701
+      },
+      "accuracy": 0.42262499405356546,
+      "balanced_accuracy": 0.4197329705295673,
+      "macro_f1": 0.41930008256090096,
+      "per_class_precision": {
+        "DOWN": 0.33972102724546993,
+        "FLAT": 0.5096090992286574,
+        "UP": 0.41747061918961587
+      },
+      "per_class_recall": {
+        "DOWN": 0.3876245723635282,
+        "FLAT": 0.5260458839406208,
+        "UP": 0.34552845528455284
+      },
+      "confusion_matrix": [
+        [
+          2606,
+          1819,
+          2298
+        ],
+        [
+          2489,
+          3898,
+          1023
+        ],
+        [
+          2576,
+          1932,
+          2380
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.decision_tree_depth_2.validation": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 7027,
+      "class_distribution_true": {
+        "DOWN": 2654,
+        "FLAT": 1570,
+        "UP": 2803
+      },
+      "class_distribution_pred": {
+        "DOWN": 2649,
+        "FLAT": 328,
+        "UP": 4050
+      },
+      "accuracy": 0.3977515298135762,
+      "balanced_accuracy": 0.3516194325978836,
+      "macro_f1": 0.33370020383826865,
+      "per_class_precision": {
+        "DOWN": 0.3484333710834277,
+        "FLAT": 0.4268292682926829,
+        "UP": 0.4276543209876543
+      },
+      "per_class_recall": {
+        "DOWN": 0.3477769404672193,
+        "FLAT": 0.08917197452229299,
+        "UP": 0.6179093828041384
+      },
+      "confusion_matrix": [
+        [
+          923,
+          87,
+          1644
+        ],
+        [
+          756,
+          140,
+          674
+        ],
+        [
+          970,
+          101,
+          1732
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.test": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 7028,
+      "class_distribution_true": {
+        "DOWN": 2765,
+        "FLAT": 1399,
+        "UP": 2864
+      },
+      "class_distribution_pred": {
+        "DOWN": 5270,
+        "FLAT": 702,
+        "UP": 1056
+      },
+      "accuracy": 0.40936254980079684,
+      "balanced_accuracy": 0.3684960954926106,
+      "macro_f1": 0.3302877424969953,
+      "per_class_precision": {
+        "DOWN": 0.4111954459203036,
+        "FLAT": 0.28774928774928776,
+        "UP": 0.4810606060606061
+      },
+      "per_class_recall": {
+        "DOWN": 0.7837251356238698,
+        "FLAT": 0.14438884917798428,
+        "UP": 0.17737430167597765
+      },
+      "confusion_matrix": [
+        [
+          2167,
+          239,
+          359
+        ],
+        [
+          1008,
+          202,
+          189
+        ],
+        [
+          2095,
+          261,
+          508
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.train": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 21021,
+      "class_distribution_true": {
+        "DOWN": 6723,
+        "FLAT": 7410,
+        "UP": 6888
+      },
+      "class_distribution_pred": {
+        "DOWN": 4393,
+        "FLAT": 11931,
+        "UP": 4697
+      },
+      "accuracy": 0.4411302982731554,
+      "balanced_accuracy": 0.4324896845589372,
+      "macro_f1": 0.4131554500955171,
+      "per_class_precision": {
+        "DOWN": 0.4213521511495561,
+        "FLAT": 0.45385969323610764,
+        "UP": 0.42729401745795187
+      },
+      "per_class_recall": {
+        "DOWN": 0.27532351628737173,
+        "FLAT": 0.7307692307692307,
+        "UP": 0.2913763066202091
+      },
+      "confusion_matrix": [
+        [
+          1851,
+          3198,
+          1674
+        ],
+        [
+          979,
+          5415,
+          1016
+        ],
+        [
+          1563,
+          3318,
+          2007
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.logistic_regression.validation": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 7027,
+      "class_distribution_true": {
+        "DOWN": 2654,
+        "FLAT": 1570,
+        "UP": 2803
+      },
+      "class_distribution_pred": {
+        "DOWN": 4079,
+        "FLAT": 1301,
+        "UP": 1647
+      },
+      "accuracy": 0.41198235377828374,
+      "balanced_accuracy": 0.3997456469326739,
+      "macro_f1": 0.3883174448411886,
+      "per_class_precision": {
+        "DOWN": 0.40794312331453786,
+        "FLAT": 0.36510376633358954,
+        "UP": 0.45901639344262296
+      },
+      "per_class_recall": {
+        "DOWN": 0.6269781461944235,
+        "FLAT": 0.30254777070063693,
+        "UP": 0.2697110239029611
+      },
+      "confusion_matrix": [
+        [
+          1664,
+          413,
+          577
+        ],
+        [
+          781,
+          475,
+          314
+        ],
+        [
+          1634,
+          413,
+          756
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.test": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 7028,
+      "class_distribution_true": {
+        "DOWN": 2765,
+        "FLAT": 1399,
+        "UP": 2864
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 7028,
+        "UP": 0
+      },
+      "accuracy": 0.19906089926010245,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.11067600174043747,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.19906089926010245,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          2765,
+          0
+        ],
+        [
+          0,
+          1399,
+          0
+        ],
+        [
+          0,
+          2864,
+          0
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.train": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 21021,
+      "class_distribution_true": {
+        "DOWN": 6723,
+        "FLAT": 7410,
+        "UP": 6888
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 21021,
+        "UP": 0
+      },
+      "accuracy": 0.3525046382189239,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.17375400091449475,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.3525046382189239,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          6723,
+          0
+        ],
+        [
+          0,
+          7410,
+          0
+        ],
+        [
+          0,
+          6888,
+          0
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.majority_class_baseline.validation": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 7027,
+      "class_distribution_true": {
+        "DOWN": 2654,
+        "FLAT": 1570,
+        "UP": 2803
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 7027,
+        "UP": 0
+      },
+      "accuracy": 0.22342393624590864,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.12174789655306113,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.22342393624590864,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          2654,
+          0
+        ],
+        [
+          0,
+          1570,
+          0
+        ],
+        [
+          0,
+          2803,
+          0
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.test": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 7028,
+      "class_distribution_true": {
+        "DOWN": 2765,
+        "FLAT": 1399,
+        "UP": 2864
+      },
+      "class_distribution_pred": {
+        "DOWN": 2273,
+        "FLAT": 2475,
+        "UP": 2280
+      },
+      "accuracy": 0.33039271485486627,
+      "balanced_accuracy": 0.3339159031597661,
+      "macro_f1": 0.3242579393802584,
+      "per_class_precision": {
+        "DOWN": 0.3906731192256929,
+        "FLAT": 0.1987878787878788,
+        "UP": 0.4131578947368421
+      },
+      "per_class_recall": {
+        "DOWN": 0.32115732368896927,
+        "FLAT": 0.3516797712651894,
+        "UP": 0.32891061452513964
+      },
+      "confusion_matrix": [
+        [
+          888,
+          996,
+          881
+        ],
+        [
+          450,
+          492,
+          457
+        ],
+        [
+          935,
+          987,
+          942
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.train": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 21021,
+      "class_distribution_true": {
+        "DOWN": 6723,
+        "FLAT": 7410,
+        "UP": 6888
+      },
+      "class_distribution_pred": {
+        "DOWN": 6740,
+        "FLAT": 7366,
+        "UP": 6915
+      },
+      "accuracy": 0.3379001950430522,
+      "balanced_accuracy": 0.3373857800015576,
+      "macro_f1": 0.3373819936699371,
+      "per_class_precision": {
+        "DOWN": 0.32225519287833826,
+        "FLAT": 0.35568829758349174,
+        "UP": 0.33420101229211857
+      },
+      "per_class_recall": {
+        "DOWN": 0.32307005800981703,
+        "FLAT": 0.3535762483130904,
+        "UP": 0.3355110336817654
+      },
+      "confusion_matrix": [
+        [
+          2172,
+          2355,
+          2196
+        ],
+        [
+          2382,
+          2620,
+          2408
+        ],
+        [
+          2186,
+          2391,
+          2311
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m.random_seeded_baseline.validation": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 7027,
+      "class_distribution_true": {
+        "DOWN": 2654,
+        "FLAT": 1570,
+        "UP": 2803
+      },
+      "class_distribution_pred": {
+        "DOWN": 2246,
+        "FLAT": 2431,
+        "UP": 2350
+      },
+      "accuracy": 0.3367012950049808,
+      "balanced_accuracy": 0.339140712268809,
+      "macro_f1": 0.3326066696373982,
+      "per_class_precision": {
+        "DOWN": 0.383793410507569,
+        "FLAT": 0.22912381735911147,
+        "UP": 0.40297872340425533
+      },
+      "per_class_recall": {
+        "DOWN": 0.32479276563677467,
+        "FLAT": 0.35477707006369424,
+        "UP": 0.3378523011059579
+      },
+      "confusion_matrix": [
+        [
+          862,
+          902,
+          890
+        ],
+        [
+          500,
+          557,
+          513
+        ],
+        [
+          884,
+          972,
+          947
+        ]
+      ],
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.test": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "test",
+      "rows": 1757,
+      "class_distribution_true": {
+        "DOWN": 756,
+        "FLAT": 193,
+        "UP": 808
+      },
+      "class_distribution_pred": {
+        "DOWN": 734,
+        "FLAT": 2,
+        "UP": 1021
+      },
+      "accuracy": 0.46727376209447924,
+      "balanced_accuracy": 0.3483157839593483,
+      "macro_f1": 0.3273658421430519,
+      "per_class_precision": {
+        "DOWN": 0.46185286103542234,
+        "FLAT": 0.0,
+        "UP": 0.4720861900097943
+      },
+      "per_class_recall": {
+        "DOWN": 0.44841269841269843,
+        "FLAT": 0.0,
+        "UP": 0.5965346534653465
+      },
+      "confusion_matrix": [
+        [
+          339,
+          2,
+          415
+        ],
+        [
+          69,
+          0,
+          124
+        ],
+        [
+          326,
+          0,
+          482
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.train": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "train",
+      "rows": 5210,
+      "class_distribution_true": {
+        "DOWN": 2064,
+        "FLAT": 1009,
+        "UP": 2137
+      },
+      "class_distribution_pred": {
+        "DOWN": 1262,
+        "FLAT": 340,
+        "UP": 3608
+      },
+      "accuracy": 0.45201535508637236,
+      "balanced_accuracy": 0.3974266349636597,
+      "macro_f1": 0.3832960941084303,
+      "per_class_precision": {
+        "DOWN": 0.4896988906497623,
+        "FLAT": 0.45,
+        "UP": 0.43902439024390244
+      },
+      "per_class_recall": {
+        "DOWN": 0.29941860465116277,
+        "FLAT": 0.15163528245787908,
+        "UP": 0.7412260177819373
+      },
+      "confusion_matrix": [
+        [
+          618,
+          83,
+          1363
+        ],
+        [
+          195,
+          153,
+          661
+        ],
+        [
+          449,
+          104,
+          1584
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.decision_tree_depth_2.validation": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "split": "validation",
+      "rows": 1757,
+      "class_distribution_true": {
+        "DOWN": 743,
+        "FLAT": 219,
+        "UP": 795
+      },
+      "class_distribution_pred": {
+        "DOWN": 527,
+        "FLAT": 7,
+        "UP": 1223
+      },
+      "accuracy": 0.47979510529311326,
+      "balanced_accuracy": 0.36338227851937094,
+      "macro_f1": 0.33490558126237885,
+      "per_class_precision": {
+        "DOWN": 0.4990512333965844,
+        "FLAT": 0.2857142857142857,
+        "UP": 0.47260834014717906
+      },
+      "per_class_recall": {
+        "DOWN": 0.35397039030955585,
+        "FLAT": 0.0091324200913242,
+        "UP": 0.7270440251572327
+      },
+      "confusion_matrix": [
+        [
+          263,
+          3,
+          477
+        ],
+        [
+          49,
+          2,
+          168
+        ],
+        [
+          215,
+          2,
+          578
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.test": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "test",
+      "rows": 1757,
+      "class_distribution_true": {
+        "DOWN": 756,
+        "FLAT": 193,
+        "UP": 808
+      },
+      "class_distribution_pred": {
+        "DOWN": 1137,
+        "FLAT": 0,
+        "UP": 620
+      },
+      "accuracy": 0.4593056346044394,
+      "balanced_accuracy": 0.34708034295493045,
+      "macro_f1": 0.3195260143148649,
+      "per_class_precision": {
+        "DOWN": 0.4388742304309587,
+        "FLAT": 0.0,
+        "UP": 0.4967741935483871
+      },
+      "per_class_recall": {
+        "DOWN": 0.66005291005291,
+        "FLAT": 0.0,
+        "UP": 0.3811881188118812
+      },
+      "confusion_matrix": [
+        [
+          499,
+          0,
+          257
+        ],
+        [
+          138,
+          0,
+          55
+        ],
+        [
+          500,
+          0,
+          308
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.train": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "train",
+      "rows": 5210,
+      "class_distribution_true": {
+        "DOWN": 2064,
+        "FLAT": 1009,
+        "UP": 2137
+      },
+      "class_distribution_pred": {
+        "DOWN": 2209,
+        "FLAT": 92,
+        "UP": 2909
+      },
+      "accuracy": 0.4449136276391555,
+      "balanced_accuracy": 0.3746727484216897,
+      "macro_f1": 0.3506204877982948,
+      "per_class_precision": {
+        "DOWN": 0.44590312358533274,
+        "FLAT": 0.4782608695652174,
+        "UP": 0.44310759711240977
+      },
+      "per_class_recall": {
+        "DOWN": 0.47722868217054265,
+        "FLAT": 0.04360753221010902,
+        "UP": 0.6031820308844174
+      },
+      "confusion_matrix": [
+        [
+          985,
+          18,
+          1061
+        ],
+        [
+          406,
+          44,
+          559
+        ],
+        [
+          818,
+          30,
+          1289
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.logistic_regression.validation": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "split": "validation",
+      "rows": 1757,
+      "class_distribution_true": {
+        "DOWN": 743,
+        "FLAT": 219,
+        "UP": 795
+      },
+      "class_distribution_pred": {
+        "DOWN": 1111,
+        "FLAT": 0,
+        "UP": 646
+      },
+      "accuracy": 0.4877632327831531,
+      "balanced_accuracy": 0.37450022713741954,
+      "macro_f1": 0.34320252351824276,
+      "per_class_precision": {
+        "DOWN": 0.46534653465346537,
+        "FLAT": 0.0,
+        "UP": 0.5263157894736842
+      },
+      "per_class_recall": {
+        "DOWN": 0.6958277254374159,
+        "FLAT": 0.0,
+        "UP": 0.4276729559748428
+      },
+      "confusion_matrix": [
+        [
+          517,
+          0,
+          226
+        ],
+        [
+          139,
+          0,
+          80
+        ],
+        [
+          455,
+          0,
+          340
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.test": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "test",
+      "rows": 1757,
+      "class_distribution_true": {
+        "DOWN": 756,
+        "FLAT": 193,
+        "UP": 808
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 1757
+      },
+      "accuracy": 0.45987478656801367,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.21000649772579597,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.45987478656801367
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          756
+        ],
+        [
+          0,
+          0,
+          193
+        ],
+        [
+          0,
+          0,
+          808
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.train": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "train",
+      "rows": 5210,
+      "class_distribution_true": {
+        "DOWN": 2064,
+        "FLAT": 1009,
+        "UP": 2137
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 5210
+      },
+      "accuracy": 0.4101727447216891,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19391134703507099,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.4101727447216891
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2064
+        ],
+        [
+          0,
+          0,
+          1009
+        ],
+        [
+          0,
+          0,
+          2137
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.majority_class_baseline.validation": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "split": "validation",
+      "rows": 1757,
+      "class_distribution_true": {
+        "DOWN": 743,
+        "FLAT": 219,
+        "UP": 795
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 1757
+      },
+      "accuracy": 0.4524758110415481,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20768025078369903,
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 0.4524758110415481
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.0,
+        "UP": 1.0
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          743
+        ],
+        [
+          0,
+          0,
+          219
+        ],
+        [
+          0,
+          0,
+          795
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.test": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "test",
+      "rows": 1757,
+      "class_distribution_true": {
+        "DOWN": 756,
+        "FLAT": 193,
+        "UP": 808
+      },
+      "class_distribution_pred": {
+        "DOWN": 699,
+        "FLAT": 330,
+        "UP": 728
+      },
+      "accuracy": 0.3841775754126352,
+      "balanced_accuracy": 0.34587857070927913,
+      "macro_f1": 0.3378301266730402,
+      "per_class_precision": {
+        "DOWN": 0.41630901287553645,
+        "FLAT": 0.13636363636363635,
+        "UP": 0.46565934065934067
+      },
+      "per_class_recall": {
+        "DOWN": 0.38492063492063494,
+        "FLAT": 0.23316062176165803,
+        "UP": 0.41955445544554454
+      },
+      "confusion_matrix": [
+        [
+          291,
+          146,
+          319
+        ],
+        [
+          78,
+          45,
+          70
+        ],
+        [
+          330,
+          139,
+          339
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.train": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "train",
+      "rows": 5210,
+      "class_distribution_true": {
+        "DOWN": 2064,
+        "FLAT": 1009,
+        "UP": 2137
+      },
+      "class_distribution_pred": {
+        "DOWN": 2092,
+        "FLAT": 1033,
+        "UP": 2085
+      },
+      "accuracy": 0.3692898272552783,
+      "balanced_accuracy": 0.3430623675330155,
+      "macro_f1": 0.34297812746140854,
+      "per_class_precision": {
+        "DOWN": 0.3977055449330784,
+        "FLAT": 0.21297192642787996,
+        "UP": 0.41822541966426857
+      },
+      "per_class_recall": {
+        "DOWN": 0.40310077519379844,
+        "FLAT": 0.2180376610505451,
+        "UP": 0.4080486663547028
+      },
+      "confusion_matrix": [
+        [
+          832,
+          410,
+          822
+        ],
+        [
+          398,
+          220,
+          391
+        ],
+        [
+          862,
+          403,
+          872
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h.random_seeded_baseline.validation": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "split": "validation",
+      "rows": 1757,
+      "class_distribution_true": {
+        "DOWN": 743,
+        "FLAT": 219,
+        "UP": 795
+      },
+      "class_distribution_pred": {
+        "DOWN": 709,
+        "FLAT": 329,
+        "UP": 719
+      },
+      "accuracy": 0.385885031303358,
+      "balanced_accuracy": 0.34598429816199383,
+      "macro_f1": 0.3414268411787695,
+      "per_class_precision": {
+        "DOWN": 0.4217207334273625,
+        "FLAT": 0.1458966565349544,
+        "UP": 0.4603616133518776
+      },
+      "per_class_recall": {
+        "DOWN": 0.40242261103633914,
+        "FLAT": 0.2191780821917808,
+        "UP": 0.41635220125786165
+      },
+      "confusion_matrix": [
+        [
+          299,
+          137,
+          307
+        ],
+        [
+          90,
+          48,
+          81
+        ],
+        [
+          320,
+          144,
+          331
+        ]
+      ],
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_validation": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "target_classes_seen_test": [
+        "DOWN",
+        "FLAT",
+        "UP"
+      ],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    }
+  },
+  "walk_forward_metrics": {
+    "1m.decision_tree_depth_2.wf_2023_03_partial": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 10020,
+      "class_distribution_true": {
+        "DOWN": 1554,
+        "FLAT": 6899,
+        "UP": 1567
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10020,
+        "UP": 0
+      },
+      "accuracy": 0.6885229540918164,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27184427763658214
+    },
+    "1m.decision_tree_depth_2.wf_2023_04": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 4650,
+        "FLAT": 33916,
+        "UP": 4634
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 43200,
+        "UP": 0
+      },
+      "accuracy": 0.7850925925925926,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29320331275826894
+    },
+    "1m.decision_tree_depth_2.wf_2023_05": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 4391,
+        "FLAT": 35721,
+        "UP": 4528
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.8002016129032258,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29633777578676224
+    },
+    "1m.decision_tree_depth_2.wf_2023_06": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 4683,
+        "FLAT": 33753,
+        "UP": 4764
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 43200,
+        "UP": 0
+      },
+      "accuracy": 0.7813194444444445,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29241225163411433
+    },
+    "1m.decision_tree_depth_2.wf_2023_07": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 2603,
+        "FLAT": 39401,
+        "UP": 2636
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.8826388888888889,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.31255379318824544
+    },
+    "1m.decision_tree_depth_2.wf_2023_08": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 2579,
+        "FLAT": 39576,
+        "UP": 2485
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.8865591397849463,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.31328963617364874
+    },
+    "1m.decision_tree_depth_2.wf_2023_09": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 2826,
+        "FLAT": 37477,
+        "UP": 2897
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 43200,
+        "UP": 0
+      },
+      "accuracy": 0.8675231481481481,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3096876020013965
+    },
+    "1m.decision_tree_depth_2.wf_2023_10": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 4775,
+        "FLAT": 34913,
+        "UP": 4952
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.7821012544802868,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29257643751126083
+    },
+    "1m.decision_tree_depth_2.wf_2023_11": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 5027,
+        "FLAT": 33092,
+        "UP": 5081
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 43200,
+        "UP": 0
+      },
+      "accuracy": 0.7660185185185185,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2891696813995351
+    },
+    "1m.decision_tree_depth_2.wf_2023_12": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 6059,
+        "FLAT": 32393,
+        "UP": 6188
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.7256496415770609,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2803387292891791
+    },
+    "1m.decision_tree_depth_2.wf_2024_01": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 7382,
+        "FLAT": 29785,
+        "UP": 7473
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.6672267025089605,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26680103011980744
+    },
+    "1m.decision_tree_depth_2.wf_2024_02": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 41760,
+      "class_distribution_true": {
+        "DOWN": 5547,
+        "FLAT": 30316,
+        "UP": 5897
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 41760,
+        "UP": 0
+      },
+      "accuracy": 0.7259578544061303,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.28040771777938106
+    },
+    "1m.decision_tree_depth_2.wf_2024_03_partial": {
+      "timeframe": "1m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 34560,
+      "class_distribution_true": {
+        "DOWN": 8327,
+        "FLAT": 17748,
+        "UP": 8485
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 34560,
+        "UP": 0
+      },
+      "accuracy": 0.5135416666666667,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.22619866941959166
+    },
+    "1m.logistic_regression.wf_2023_03_partial": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 10020,
+      "class_distribution_true": {
+        "DOWN": 1554,
+        "FLAT": 6899,
+        "UP": 1567
+      },
+      "class_distribution_pred": {
+        "DOWN": 189,
+        "FLAT": 9558,
+        "UP": 273
+      },
+      "accuracy": 0.6920159680638722,
+      "balanced_accuracy": 0.3639179767401137,
+      "macro_f1": 0.3386015366129375
+    },
+    "1m.logistic_regression.wf_2023_04": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 4650,
+        "FLAT": 33916,
+        "UP": 4634
+      },
+      "class_distribution_pred": {
+        "DOWN": 550,
+        "FLAT": 41799,
+        "UP": 851
+      },
+      "accuracy": 0.7862268518518518,
+      "balanced_accuracy": 0.3643838704581263,
+      "macro_f1": 0.355939226131321
+    },
+    "1m.logistic_regression.wf_2023_05": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 4391,
+        "FLAT": 35721,
+        "UP": 4528
+      },
+      "class_distribution_pred": {
+        "DOWN": 413,
+        "FLAT": 43629,
+        "UP": 598
+      },
+      "accuracy": 0.8006720430107527,
+      "balanced_accuracy": 0.35706212959224876,
+      "macro_f1": 0.34544492689496176
+    },
+    "1m.logistic_regression.wf_2023_06": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 4683,
+        "FLAT": 33753,
+        "UP": 4764
+      },
+      "class_distribution_pred": {
+        "DOWN": 417,
+        "FLAT": 42120,
+        "UP": 663
+      },
+      "accuracy": 0.7843055555555556,
+      "balanced_accuracy": 0.35990914200723173,
+      "macro_f1": 0.3465727381710109
+    },
+    "1m.logistic_regression.wf_2023_07": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 2603,
+        "FLAT": 39401,
+        "UP": 2636
+      },
+      "class_distribution_pred": {
+        "DOWN": 181,
+        "FLAT": 44122,
+        "UP": 337
+      },
+      "accuracy": 0.8831765232974911,
+      "balanced_accuracy": 0.3568854360407303,
+      "macro_f1": 0.3582762235590989
+    },
+    "1m.logistic_regression.wf_2023_08": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 2579,
+        "FLAT": 39576,
+        "UP": 2485
+      },
+      "class_distribution_pred": {
+        "DOWN": 207,
+        "FLAT": 44086,
+        "UP": 347
+      },
+      "accuracy": 0.8884632616487456,
+      "balanced_accuracy": 0.36319150337304335,
+      "macro_f1": 0.3698077860601921
+    },
+    "1m.logistic_regression.wf_2023_09": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 2826,
+        "FLAT": 37477,
+        "UP": 2897
+      },
+      "class_distribution_pred": {
+        "DOWN": 178,
+        "FLAT": 42764,
+        "UP": 258
+      },
+      "accuracy": 0.8675231481481481,
+      "balanced_accuracy": 0.34902453864998284,
+      "macro_f1": 0.34170883947216907
+    },
+    "1m.logistic_regression.wf_2023_10": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 4775,
+        "FLAT": 34913,
+        "UP": 4952
+      },
+      "class_distribution_pred": {
+        "DOWN": 799,
+        "FLAT": 42896,
+        "UP": 945
+      },
+      "accuracy": 0.7860215053763441,
+      "balanced_accuracy": 0.37578407295867206,
+      "macro_f1": 0.37500623268539374
+    },
+    "1m.logistic_regression.wf_2023_11": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 5027,
+        "FLAT": 33092,
+        "UP": 5081
+      },
+      "class_distribution_pred": {
+        "DOWN": 769,
+        "FLAT": 41662,
+        "UP": 769
+      },
+      "accuracy": 0.7670601851851852,
+      "balanced_accuracy": 0.3637765750022767,
+      "macro_f1": 0.3521838372762272
+    },
+    "1m.logistic_regression.wf_2023_12": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 6059,
+        "FLAT": 32393,
+        "UP": 6188
+      },
+      "class_distribution_pred": {
+        "DOWN": 1451,
+        "FLAT": 42249,
+        "UP": 940
+      },
+      "accuracy": 0.7213037634408602,
+      "balanced_accuracy": 0.3640373227771147,
+      "macro_f1": 0.3480428500936798
+    },
+    "1m.logistic_regression.wf_2024_01": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 7382,
+        "FLAT": 29785,
+        "UP": 7473
+      },
+      "class_distribution_pred": {
+        "DOWN": 3045,
+        "FLAT": 39828,
+        "UP": 1767
+      },
+      "accuracy": 0.6635304659498208,
+      "balanced_accuracy": 0.3843256495931477,
+      "macro_f1": 0.37399011324240267
+    },
+    "1m.logistic_regression.wf_2024_02": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 41760,
+      "class_distribution_true": {
+        "DOWN": 5547,
+        "FLAT": 30316,
+        "UP": 5897
+      },
+      "class_distribution_pred": {
+        "DOWN": 4044,
+        "FLAT": 36454,
+        "UP": 1262
+      },
+      "accuracy": 0.7058189655172413,
+      "balanced_accuracy": 0.3958665941463906,
+      "macro_f1": 0.39439438122732423
+    },
+    "1m.logistic_regression.wf_2024_03_partial": {
+      "timeframe": "1m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 34560,
+      "class_distribution_true": {
+        "DOWN": 8327,
+        "FLAT": 17748,
+        "UP": 8485
+      },
+      "class_distribution_pred": {
+        "DOWN": 17498,
+        "FLAT": 13336,
+        "UP": 3726
+      },
+      "accuracy": 0.42265625,
+      "balanced_accuracy": 0.40237198169992555,
+      "macro_f1": 0.3805952142473272
+    },
+    "1m.majority_class_baseline.wf_2023_03_partial": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 10020,
+      "class_distribution_true": {
+        "DOWN": 1554,
+        "FLAT": 6899,
+        "UP": 1567
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 10020,
+        "UP": 0
+      },
+      "accuracy": 0.6885229540918164,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27184427763658214
+    },
+    "1m.majority_class_baseline.wf_2023_04": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 4650,
+        "FLAT": 33916,
+        "UP": 4634
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 43200,
+        "UP": 0
+      },
+      "accuracy": 0.7850925925925926,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29320331275826894
+    },
+    "1m.majority_class_baseline.wf_2023_05": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 4391,
+        "FLAT": 35721,
+        "UP": 4528
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.8002016129032258,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29633777578676224
+    },
+    "1m.majority_class_baseline.wf_2023_06": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 4683,
+        "FLAT": 33753,
+        "UP": 4764
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 43200,
+        "UP": 0
+      },
+      "accuracy": 0.7813194444444445,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29241225163411433
+    },
+    "1m.majority_class_baseline.wf_2023_07": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 2603,
+        "FLAT": 39401,
+        "UP": 2636
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.8826388888888889,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.31255379318824544
+    },
+    "1m.majority_class_baseline.wf_2023_08": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 2579,
+        "FLAT": 39576,
+        "UP": 2485
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.8865591397849463,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.31328963617364874
+    },
+    "1m.majority_class_baseline.wf_2023_09": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 2826,
+        "FLAT": 37477,
+        "UP": 2897
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 43200,
+        "UP": 0
+      },
+      "accuracy": 0.8675231481481481,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3096876020013965
+    },
+    "1m.majority_class_baseline.wf_2023_10": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 4775,
+        "FLAT": 34913,
+        "UP": 4952
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.7821012544802868,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.29257643751126083
+    },
+    "1m.majority_class_baseline.wf_2023_11": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 5027,
+        "FLAT": 33092,
+        "UP": 5081
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 43200,
+        "UP": 0
+      },
+      "accuracy": 0.7660185185185185,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2891696813995351
+    },
+    "1m.majority_class_baseline.wf_2023_12": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 6059,
+        "FLAT": 32393,
+        "UP": 6188
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.7256496415770609,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2803387292891791
+    },
+    "1m.majority_class_baseline.wf_2024_01": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 7382,
+        "FLAT": 29785,
+        "UP": 7473
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 44640,
+        "UP": 0
+      },
+      "accuracy": 0.6672267025089605,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26680103011980744
+    },
+    "1m.majority_class_baseline.wf_2024_02": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 41760,
+      "class_distribution_true": {
+        "DOWN": 5547,
+        "FLAT": 30316,
+        "UP": 5897
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 41760,
+        "UP": 0
+      },
+      "accuracy": 0.7259578544061303,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.28040771777938106
+    },
+    "1m.majority_class_baseline.wf_2024_03_partial": {
+      "timeframe": "1m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 34560,
+      "class_distribution_true": {
+        "DOWN": 8327,
+        "FLAT": 17748,
+        "UP": 8485
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 34560,
+        "UP": 0
+      },
+      "accuracy": 0.5135416666666667,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.22619866941959166
+    },
+    "1m.random_seeded_baseline.wf_2023_03_partial": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 10020,
+      "class_distribution_true": {
+        "DOWN": 1554,
+        "FLAT": 6899,
+        "UP": 1567
+      },
+      "class_distribution_pred": {
+        "DOWN": 870,
+        "FLAT": 8266,
+        "UP": 884
+      },
+      "accuracy": 0.599500998003992,
+      "balanced_accuracy": 0.33850656665895,
+      "macro_f1": 0.3311111863486324
+    },
+    "1m.random_seeded_baseline.wf_2023_04": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 4650,
+        "FLAT": 33916,
+        "UP": 4634
+      },
+      "class_distribution_pred": {
+        "DOWN": 3762,
+        "FLAT": 35599,
+        "UP": 3839
+      },
+      "accuracy": 0.664375,
+      "balanced_accuracy": 0.3319709151519524,
+      "macro_f1": 0.33110330849593145
+    },
+    "1m.random_seeded_baseline.wf_2023_05": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 4391,
+        "FLAT": 35721,
+        "UP": 4528
+      },
+      "class_distribution_pred": {
+        "DOWN": 3950,
+        "FLAT": 36647,
+        "UP": 4043
+      },
+      "accuracy": 0.6743951612903226,
+      "balanced_accuracy": 0.3320176139933883,
+      "macro_f1": 0.33171104425732334
+    },
+    "1m.random_seeded_baseline.wf_2023_06": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 4683,
+        "FLAT": 33753,
+        "UP": 4764
+      },
+      "class_distribution_pred": {
+        "DOWN": 3751,
+        "FLAT": 35612,
+        "UP": 3837
+      },
+      "accuracy": 0.6638194444444444,
+      "balanced_accuracy": 0.3349112452427537,
+      "macro_f1": 0.3341078356554154
+    },
+    "1m.random_seeded_baseline.wf_2023_07": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 2603,
+        "FLAT": 39401,
+        "UP": 2636
+      },
+      "class_distribution_pred": {
+        "DOWN": 3976,
+        "FLAT": 36592,
+        "UP": 4072
+      },
+      "accuracy": 0.7341845878136201,
+      "balanced_accuracy": 0.33226399586669464,
+      "macro_f1": 0.3299129965855678
+    },
+    "1m.random_seeded_baseline.wf_2023_08": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 2579,
+        "FLAT": 39576,
+        "UP": 2485
+      },
+      "class_distribution_pred": {
+        "DOWN": 3817,
+        "FLAT": 36843,
+        "UP": 3980
+      },
+      "accuracy": 0.7427643369175627,
+      "balanced_accuracy": 0.33757820764211766,
+      "macro_f1": 0.33416778484154747
+    },
+    "1m.random_seeded_baseline.wf_2023_09": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 2826,
+        "FLAT": 37477,
+        "UP": 2897
+      },
+      "class_distribution_pred": {
+        "DOWN": 3814,
+        "FLAT": 35502,
+        "UP": 3884
+      },
+      "accuracy": 0.7235648148148148,
+      "balanced_accuracy": 0.3320293737715396,
+      "macro_f1": 0.33082678118199355
+    },
+    "1m.random_seeded_baseline.wf_2023_10": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 4775,
+        "FLAT": 34913,
+        "UP": 4952
+      },
+      "class_distribution_pred": {
+        "DOWN": 3875,
+        "FLAT": 36830,
+        "UP": 3935
+      },
+      "accuracy": 0.6646953405017921,
+      "balanced_accuracy": 0.33488729422934777,
+      "macro_f1": 0.33409624628786916
+    },
+    "1m.random_seeded_baseline.wf_2023_11": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 43200,
+      "class_distribution_true": {
+        "DOWN": 5027,
+        "FLAT": 33092,
+        "UP": 5081
+      },
+      "class_distribution_pred": {
+        "DOWN": 3890,
+        "FLAT": 35462,
+        "UP": 3848
+      },
+      "accuracy": 0.6494907407407408,
+      "balanced_accuracy": 0.3347129860079243,
+      "macro_f1": 0.3334253652073403
+    },
+    "1m.random_seeded_baseline.wf_2023_12": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 6059,
+        "FLAT": 32393,
+        "UP": 6188
+      },
+      "class_distribution_pred": {
+        "DOWN": 3878,
+        "FLAT": 36845,
+        "UP": 3917
+      },
+      "accuracy": 0.6239471326164875,
+      "balanced_accuracy": 0.33437517285749085,
+      "macro_f1": 0.3297439674260461
+    },
+    "1m.random_seeded_baseline.wf_2024_01": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 44640,
+      "class_distribution_true": {
+        "DOWN": 7382,
+        "FLAT": 29785,
+        "UP": 7473
+      },
+      "class_distribution_pred": {
+        "DOWN": 3978,
+        "FLAT": 36655,
+        "UP": 4007
+      },
+      "accuracy": 0.5771505376344086,
+      "balanced_accuracy": 0.33203243854766773,
+      "macro_f1": 0.321227753445978
+    },
+    "1m.random_seeded_baseline.wf_2024_02": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 41760,
+      "class_distribution_true": {
+        "DOWN": 5547,
+        "FLAT": 30316,
+        "UP": 5897
+      },
+      "class_distribution_pred": {
+        "DOWN": 3839,
+        "FLAT": 34234,
+        "UP": 3687
+      },
+      "accuracy": 0.6217672413793104,
+      "balanced_accuracy": 0.3351090779282651,
+      "macro_f1": 0.3310621165046282
+    },
+    "1m.random_seeded_baseline.wf_2024_03_partial": {
+      "timeframe": "1m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 34560,
+      "class_distribution_true": {
+        "DOWN": 8327,
+        "FLAT": 17748,
+        "UP": 8485
+      },
+      "class_distribution_pred": {
+        "DOWN": 2944,
+        "FLAT": 28563,
+        "UP": 3053
+      },
+      "accuracy": 0.467650462962963,
+      "balanced_accuracy": 0.33375389099192576,
+      "macro_f1": 0.2964325529444897
+    },
+    "5m.decision_tree_depth_2.wf_2023_03_partial": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 1956,
+      "class_distribution_true": {
+        "DOWN": 596,
+        "FLAT": 716,
+        "UP": 644
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1129,
+        "UP": 827
+      },
+      "accuracy": 0.4120654396728016,
+      "balanced_accuracy": 0.3916282082422476,
+      "macro_f1": 0.3201764680234611
+    },
+    "5m.decision_tree_depth_2.wf_2023_04": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2255,
+        "FLAT": 4093,
+        "UP": 2292
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 6452,
+        "UP": 2188
+      },
+      "accuracy": 0.5023148148148148,
+      "balanced_accuracy": 0.4068835795218983,
+      "macro_f1": 0.34584596344464763
+    },
+    "5m.decision_tree_depth_2.wf_2023_05": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2343,
+        "FLAT": 4272,
+        "UP": 2313
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 7333,
+        "UP": 1595
+      },
+      "accuracy": 0.49574372759856633,
+      "balanced_accuracy": 0.3832165653827657,
+      "macro_f1": 0.319089584646202
+    },
+    "5m.decision_tree_depth_2.wf_2023_06": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2245,
+        "FLAT": 4076,
+        "UP": 2319
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 7063,
+        "UP": 1577
+      },
+      "accuracy": 0.5050925925925925,
+      "balanced_accuracy": 0.39629277449883854,
+      "macro_f1": 0.33194953766661695
+    },
+    "5m.decision_tree_depth_2.wf_2023_07": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 1671,
+        "FLAT": 5623,
+        "UP": 1634
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8108,
+        "UP": 820
+      },
+      "accuracy": 0.638328853046595,
+      "balanced_accuracy": 0.38110933028239136,
+      "macro_f1": 0.3434083947488645
+    },
+    "5m.decision_tree_depth_2.wf_2023_08": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 1581,
+        "FLAT": 5779,
+        "UP": 1568
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8122,
+        "UP": 806
+      },
+      "accuracy": 0.6587141577060932,
+      "balanced_accuracy": 0.3880117564416319,
+      "macro_f1": 0.3553935307081138
+    },
+    "5m.decision_tree_depth_2.wf_2023_09": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 1646,
+        "FLAT": 5276,
+        "UP": 1718
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 7839,
+        "UP": 801
+      },
+      "accuracy": 0.6210648148148148,
+      "balanced_accuracy": 0.378534613803863,
+      "macro_f1": 0.3373410699852805
+    },
+    "5m.decision_tree_depth_2.wf_2023_10": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2156,
+        "FLAT": 4451,
+        "UP": 2321
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 6031,
+        "UP": 2897
+      },
+      "accuracy": 0.5178091397849462,
+      "balanced_accuracy": 0.4185835694160678,
+      "macro_f1": 0.36159020969273364
+    },
+    "5m.decision_tree_depth_2.wf_2023_11": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2372,
+        "FLAT": 3848,
+        "UP": 2420
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 5955,
+        "UP": 2685
+      },
+      "accuracy": 0.4721064814814815,
+      "balanced_accuracy": 0.4033351374260465,
+      "macro_f1": 0.3386057470597143
+    },
+    "5m.decision_tree_depth_2.wf_2023_12": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2632,
+        "FLAT": 3575,
+        "UP": 2721
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 5122,
+        "UP": 3806
+      },
+      "accuracy": 0.4286514336917563,
+      "balanced_accuracy": 0.39683357191626206,
+      "macro_f1": 0.3281959183564176
+    },
+    "5m.decision_tree_depth_2.wf_2024_01": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2822,
+        "FLAT": 3208,
+        "UP": 2898
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 4816,
+        "UP": 4112
+      },
+      "accuracy": 0.42473118279569894,
+      "balanced_accuracy": 0.41165439575664015,
+      "macro_f1": 0.3341276455938888
+    },
+    "5m.decision_tree_depth_2.wf_2024_02": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 8352,
+      "class_distribution_true": {
+        "DOWN": 2324,
+        "FLAT": 3474,
+        "UP": 2554
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 4237,
+        "UP": 4115
+      },
+      "accuracy": 0.45090996168582376,
+      "balanced_accuracy": 0.4144057349919535,
+      "macro_f1": 0.3463309174949188
+    },
+    "5m.decision_tree_depth_2.wf_2024_03_partial": {
+      "timeframe": "5m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 6912,
+      "class_distribution_true": {
+        "DOWN": 2582,
+        "FLAT": 1721,
+        "UP": 2609
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 931,
+        "UP": 5981
+      },
+      "accuracy": 0.3910590277777778,
+      "balanced_accuracy": 0.3701960027963811,
+      "macro_f1": 0.2752912263081406
+    },
+    "5m.logistic_regression.wf_2023_03_partial": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 1956,
+      "class_distribution_true": {
+        "DOWN": 596,
+        "FLAT": 716,
+        "UP": 644
+      },
+      "class_distribution_pred": {
+        "DOWN": 242,
+        "FLAT": 1417,
+        "UP": 297
+      },
+      "accuracy": 0.4161554192229039,
+      "balanced_accuracy": 0.39567002039187266,
+      "macro_f1": 0.3562421568869123
+    },
+    "5m.logistic_regression.wf_2023_04": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2255,
+        "FLAT": 4093,
+        "UP": 2292
+      },
+      "class_distribution_pred": {
+        "DOWN": 656,
+        "FLAT": 7235,
+        "UP": 749
+      },
+      "accuracy": 0.506712962962963,
+      "balanced_accuracy": 0.3964494295968328,
+      "macro_f1": 0.35874090651093
+    },
+    "5m.logistic_regression.wf_2023_05": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2343,
+        "FLAT": 4272,
+        "UP": 2313
+      },
+      "class_distribution_pred": {
+        "DOWN": 486,
+        "FLAT": 7834,
+        "UP": 608
+      },
+      "accuracy": 0.5047043010752689,
+      "balanced_accuracy": 0.38353449823705366,
+      "macro_f1": 0.3347578807894696
+    },
+    "5m.logistic_regression.wf_2023_06": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2245,
+        "FLAT": 4076,
+        "UP": 2319
+      },
+      "class_distribution_pred": {
+        "DOWN": 544,
+        "FLAT": 7526,
+        "UP": 570
+      },
+      "accuracy": 0.5083333333333333,
+      "balanced_accuracy": 0.3944906031178559,
+      "macro_f1": 0.3498442298789571
+    },
+    "5m.logistic_regression.wf_2023_07": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 1671,
+        "FLAT": 5623,
+        "UP": 1634
+      },
+      "class_distribution_pred": {
+        "DOWN": 249,
+        "FLAT": 8377,
+        "UP": 302
+      },
+      "accuracy": 0.642921146953405,
+      "balanced_accuracy": 0.3763633374030608,
+      "macro_f1": 0.3487369309982946
+    },
+    "5m.logistic_regression.wf_2023_08": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 1581,
+        "FLAT": 5779,
+        "UP": 1568
+      },
+      "class_distribution_pred": {
+        "DOWN": 253,
+        "FLAT": 8358,
+        "UP": 317
+      },
+      "accuracy": 0.6583781362007168,
+      "balanced_accuracy": 0.3765072641904168,
+      "macro_f1": 0.35267774703691007
+    },
+    "5m.logistic_regression.wf_2023_09": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 1646,
+        "FLAT": 5276,
+        "UP": 1718
+      },
+      "class_distribution_pred": {
+        "DOWN": 279,
+        "FLAT": 8062,
+        "UP": 299
+      },
+      "accuracy": 0.6207175925925926,
+      "balanced_accuracy": 0.3699886682980296,
+      "macro_f1": 0.33459884904013326
+    },
+    "5m.logistic_regression.wf_2023_10": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2156,
+        "FLAT": 4451,
+        "UP": 2321
+      },
+      "class_distribution_pred": {
+        "DOWN": 945,
+        "FLAT": 6989,
+        "UP": 994
+      },
+      "accuracy": 0.5303539426523297,
+      "balanced_accuracy": 0.4128693968898227,
+      "macro_f1": 0.3938981101077768
+    },
+    "5m.logistic_regression.wf_2023_11": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2372,
+        "FLAT": 3848,
+        "UP": 2420
+      },
+      "class_distribution_pred": {
+        "DOWN": 770,
+        "FLAT": 7011,
+        "UP": 859
+      },
+      "accuracy": 0.4704861111111111,
+      "balanced_accuracy": 0.3856590949148055,
+      "macro_f1": 0.34298061967563537
+    },
+    "5m.logistic_regression.wf_2023_12": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2632,
+        "FLAT": 3575,
+        "UP": 2721
+      },
+      "class_distribution_pred": {
+        "DOWN": 1047,
+        "FLAT": 6752,
+        "UP": 1129
+      },
+      "accuracy": 0.4350358422939068,
+      "balanced_accuracy": 0.3891854422368861,
+      "macro_f1": 0.34808567908475146
+    },
+    "5m.logistic_regression.wf_2024_01": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2822,
+        "FLAT": 3208,
+        "UP": 2898
+      },
+      "class_distribution_pred": {
+        "DOWN": 1318,
+        "FLAT": 6007,
+        "UP": 1603
+      },
+      "accuracy": 0.41778673835125446,
+      "balanced_accuracy": 0.40238190075409114,
+      "macro_f1": 0.36655411178853187
+    },
+    "5m.logistic_regression.wf_2024_02": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 8352,
+      "class_distribution_true": {
+        "DOWN": 2324,
+        "FLAT": 3474,
+        "UP": 2554
+      },
+      "class_distribution_pred": {
+        "DOWN": 1198,
+        "FLAT": 5826,
+        "UP": 1328
+      },
+      "accuracy": 0.4341475095785441,
+      "balanced_accuracy": 0.3840403697173602,
+      "macro_f1": 0.3565753880071363
+    },
+    "5m.logistic_regression.wf_2024_03_partial": {
+      "timeframe": "5m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 6912,
+      "class_distribution_true": {
+        "DOWN": 2582,
+        "FLAT": 1721,
+        "UP": 2609
+      },
+      "class_distribution_pred": {
+        "DOWN": 2235,
+        "FLAT": 2226,
+        "UP": 2451
+      },
+      "accuracy": 0.36313657407407407,
+      "balanced_accuracy": 0.3651772395207682,
+      "macro_f1": 0.36098281585390035
+    },
+    "5m.majority_class_baseline.wf_2023_03_partial": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 1956,
+      "class_distribution_true": {
+        "DOWN": 596,
+        "FLAT": 716,
+        "UP": 644
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 1956,
+        "UP": 0
+      },
+      "accuracy": 0.3660531697341513,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.17864271457085826
+    },
+    "5m.majority_class_baseline.wf_2023_04": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2255,
+        "FLAT": 4093,
+        "UP": 2292
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8640,
+        "UP": 0
+      },
+      "accuracy": 0.47372685185185187,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.21429880363360299
+    },
+    "5m.majority_class_baseline.wf_2023_05": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2343,
+        "FLAT": 4272,
+        "UP": 2313
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8928,
+        "UP": 0
+      },
+      "accuracy": 0.478494623655914,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.21575757575757573
+    },
+    "5m.majority_class_baseline.wf_2023_06": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2245,
+        "FLAT": 4076,
+        "UP": 2319
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8640,
+        "UP": 0
+      },
+      "accuracy": 0.47175925925925927,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.21369403376323792
+    },
+    "5m.majority_class_baseline.wf_2023_07": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 1671,
+        "FLAT": 5623,
+        "UP": 1634
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8928,
+        "UP": 0
+      },
+      "accuracy": 0.6298163082437276,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2576226147114746
+    },
+    "5m.majority_class_baseline.wf_2023_08": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 1581,
+        "FLAT": 5779,
+        "UP": 1568
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8928,
+        "UP": 0
+      },
+      "accuracy": 0.6472894265232975,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26196142426508917
+    },
+    "5m.majority_class_baseline.wf_2023_09": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 1646,
+        "FLAT": 5276,
+        "UP": 1718
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8640,
+        "UP": 0
+      },
+      "accuracy": 0.6106481481481482,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2527546229759509
+    },
+    "5m.majority_class_baseline.wf_2023_10": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2156,
+        "FLAT": 4451,
+        "UP": 2321
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8928,
+        "UP": 0
+      },
+      "accuracy": 0.49854390681003585,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2217903679896355
+    },
+    "5m.majority_class_baseline.wf_2023_11": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2372,
+        "FLAT": 3848,
+        "UP": 2420
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8640,
+        "UP": 0
+      },
+      "accuracy": 0.44537037037037036,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20542387358530856
+    },
+    "5m.majority_class_baseline.wf_2023_12": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2632,
+        "FLAT": 3575,
+        "UP": 2721
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8928,
+        "UP": 0
+      },
+      "accuracy": 0.40042562724014336,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19062091764643152
+    },
+    "5m.majority_class_baseline.wf_2024_01": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2822,
+        "FLAT": 3208,
+        "UP": 2898
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8928,
+        "UP": 0
+      },
+      "accuracy": 0.3593189964157706,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1762250054932982
+    },
+    "5m.majority_class_baseline.wf_2024_02": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 8352,
+      "class_distribution_true": {
+        "DOWN": 2324,
+        "FLAT": 3474,
+        "UP": 2554
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 8352,
+        "UP": 0
+      },
+      "accuracy": 0.41594827586206895,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19583967529173008
+    },
+    "5m.majority_class_baseline.wf_2024_03_partial": {
+      "timeframe": "5m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 6912,
+      "class_distribution_true": {
+        "DOWN": 2582,
+        "FLAT": 1721,
+        "UP": 2609
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 6912,
+        "UP": 0
+      },
+      "accuracy": 0.24898726851851852,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.13290088420402332
+    },
+    "5m.random_seeded_baseline.wf_2023_03_partial": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 1956,
+      "class_distribution_true": {
+        "DOWN": 596,
+        "FLAT": 716,
+        "UP": 644
+      },
+      "class_distribution_pred": {
+        "DOWN": 456,
+        "FLAT": 1020,
+        "UP": 480
+      },
+      "accuracy": 0.3323108384458078,
+      "balanced_accuracy": 0.3222457328944916,
+      "macro_f1": 0.3127780752505053
+    },
+    "5m.random_seeded_baseline.wf_2023_04": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2255,
+        "FLAT": 4093,
+        "UP": 2292
+      },
+      "class_distribution_pred": {
+        "DOWN": 2003,
+        "FLAT": 4695,
+        "UP": 1942
+      },
+      "accuracy": 0.3768518518518518,
+      "balanced_accuracy": 0.33278464616922004,
+      "macro_f1": 0.33115016243223416
+    },
+    "5m.random_seeded_baseline.wf_2023_05": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2343,
+        "FLAT": 4272,
+        "UP": 2313
+      },
+      "class_distribution_pred": {
+        "DOWN": 2013,
+        "FLAT": 4810,
+        "UP": 2105
+      },
+      "accuracy": 0.3863127240143369,
+      "balanced_accuracy": 0.34068589152105266,
+      "macro_f1": 0.339417119435861
+    },
+    "5m.random_seeded_baseline.wf_2023_06": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2245,
+        "FLAT": 4076,
+        "UP": 2319
+      },
+      "class_distribution_pred": {
+        "DOWN": 1925,
+        "FLAT": 4655,
+        "UP": 2060
+      },
+      "accuracy": 0.37581018518518516,
+      "balanced_accuracy": 0.3335754884533113,
+      "macro_f1": 0.33219066584609275
+    },
+    "5m.random_seeded_baseline.wf_2023_07": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 1671,
+        "FLAT": 5623,
+        "UP": 1634
+      },
+      "class_distribution_pred": {
+        "DOWN": 2062,
+        "FLAT": 4814,
+        "UP": 2052
+      },
+      "accuracy": 0.4273073476702509,
+      "balanced_accuracy": 0.33568101301527925,
+      "macro_f1": 0.3327609442754349
+    },
+    "5m.random_seeded_baseline.wf_2023_08": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 1581,
+        "FLAT": 5779,
+        "UP": 1568
+      },
+      "class_distribution_pred": {
+        "DOWN": 2007,
+        "FLAT": 4794,
+        "UP": 2127
+      },
+      "accuracy": 0.4320116487455197,
+      "balanced_accuracy": 0.3380285733329255,
+      "macro_f1": 0.3331412840556623
+    },
+    "5m.random_seeded_baseline.wf_2023_09": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 1646,
+        "FLAT": 5276,
+        "UP": 1718
+      },
+      "class_distribution_pred": {
+        "DOWN": 1973,
+        "FLAT": 4686,
+        "UP": 1981
+      },
+      "accuracy": 0.41863425925925923,
+      "balanced_accuracy": 0.3329721354067583,
+      "macro_f1": 0.3311939439685921
+    },
+    "5m.random_seeded_baseline.wf_2023_10": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2156,
+        "FLAT": 4451,
+        "UP": 2321
+      },
+      "class_distribution_pred": {
+        "DOWN": 2003,
+        "FLAT": 4829,
+        "UP": 2096
+      },
+      "accuracy": 0.38306451612903225,
+      "balanced_accuracy": 0.33143600703141307,
+      "macro_f1": 0.33082538604186523
+    },
+    "5m.random_seeded_baseline.wf_2023_11": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 8640,
+      "class_distribution_true": {
+        "DOWN": 2372,
+        "FLAT": 3848,
+        "UP": 2420
+      },
+      "class_distribution_pred": {
+        "DOWN": 1984,
+        "FLAT": 4686,
+        "UP": 1970
+      },
+      "accuracy": 0.37256944444444445,
+      "balanced_accuracy": 0.33677681893993405,
+      "macro_f1": 0.3334605216188746
+    },
+    "5m.random_seeded_baseline.wf_2023_12": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2632,
+        "FLAT": 3575,
+        "UP": 2721
+      },
+      "class_distribution_pred": {
+        "DOWN": 1944,
+        "FLAT": 4896,
+        "UP": 2088
+      },
+      "accuracy": 0.34610215053763443,
+      "balanced_accuracy": 0.32451578919359064,
+      "macro_f1": 0.31693874994386784
+    },
+    "5m.random_seeded_baseline.wf_2024_01": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 8928,
+      "class_distribution_true": {
+        "DOWN": 2822,
+        "FLAT": 3208,
+        "UP": 2898
+      },
+      "class_distribution_pred": {
+        "DOWN": 2071,
+        "FLAT": 4847,
+        "UP": 2010
+      },
+      "accuracy": 0.3359094982078853,
+      "balanced_accuracy": 0.32781169165163343,
+      "macro_f1": 0.3162474734702471
+    },
+    "5m.random_seeded_baseline.wf_2024_02": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 8352,
+      "class_distribution_true": {
+        "DOWN": 2324,
+        "FLAT": 3474,
+        "UP": 2554
+      },
+      "class_distribution_pred": {
+        "DOWN": 1923,
+        "FLAT": 4462,
+        "UP": 1967
+      },
+      "accuracy": 0.3600335249042146,
+      "balanced_accuracy": 0.33573064715407286,
+      "macro_f1": 0.3314884110114567
+    },
+    "5m.random_seeded_baseline.wf_2024_03_partial": {
+      "timeframe": "5m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 6912,
+      "class_distribution_true": {
+        "DOWN": 2582,
+        "FLAT": 1721,
+        "UP": 2609
+      },
+      "class_distribution_pred": {
+        "DOWN": 1520,
+        "FLAT": 3717,
+        "UP": 1675
+      },
+      "accuracy": 0.3091724537037037,
+      "balanced_accuracy": 0.3338519569972449,
+      "macro_f1": 0.3064338512903302
+    },
+    "15m.decision_tree_depth_2.wf_2023_03_partial": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 612,
+      "class_distribution_true": {
+        "DOWN": 231,
+        "FLAT": 137,
+        "UP": 244
+      },
+      "class_distribution_pred": {
+        "DOWN": 201,
+        "FLAT": 14,
+        "UP": 397
+      },
+      "accuracy": 0.3660130718954248,
+      "balanced_accuracy": 0.3133727918339621,
+      "macro_f1": 0.2739347003362597
+    },
+    "15m.decision_tree_depth_2.wf_2023_04": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 998,
+        "FLAT": 863,
+        "UP": 1019
+      },
+      "class_distribution_pred": {
+        "DOWN": 1321,
+        "FLAT": 450,
+        "UP": 1109
+      },
+      "accuracy": 0.3923611111111111,
+      "balanced_accuracy": 0.3851350344092321,
+      "macro_f1": 0.3837393566111527
+    },
+    "15m.decision_tree_depth_2.wf_2023_05": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1021,
+        "FLAT": 925,
+        "UP": 1030
+      },
+      "class_distribution_pred": {
+        "DOWN": 1335,
+        "FLAT": 796,
+        "UP": 845
+      },
+      "accuracy": 0.3958333333333333,
+      "balanced_accuracy": 0.3957248057562807,
+      "macro_f1": 0.39604469168710676
+    },
+    "15m.decision_tree_depth_2.wf_2023_06": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 1002,
+        "FLAT": 845,
+        "UP": 1033
+      },
+      "class_distribution_pred": {
+        "DOWN": 1228,
+        "FLAT": 841,
+        "UP": 811
+      },
+      "accuracy": 0.39444444444444443,
+      "balanced_accuracy": 0.39679975128247547,
+      "macro_f1": 0.39589793424437186
+    },
+    "15m.decision_tree_depth_2.wf_2023_07": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 867,
+        "FLAT": 1255,
+        "UP": 854
+      },
+      "class_distribution_pred": {
+        "DOWN": 878,
+        "FLAT": 1679,
+        "UP": 419
+      },
+      "accuracy": 0.43985215053763443,
+      "balanced_accuracy": 0.40148896511660337,
+      "macro_f1": 0.38856814826458264
+    },
+    "15m.decision_tree_depth_2.wf_2023_08": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 850,
+        "FLAT": 1321,
+        "UP": 805
+      },
+      "class_distribution_pred": {
+        "DOWN": 702,
+        "FLAT": 1857,
+        "UP": 417
+      },
+      "accuracy": 0.48823924731182794,
+      "balanced_accuracy": 0.4294254868125706,
+      "macro_f1": 0.41702591572976727
+    },
+    "15m.decision_tree_depth_2.wf_2023_09": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 839,
+        "FLAT": 1168,
+        "UP": 873
+      },
+      "class_distribution_pred": {
+        "DOWN": 958,
+        "FLAT": 1503,
+        "UP": 419
+      },
+      "accuracy": 0.45381944444444444,
+      "balanced_accuracy": 0.42758063368033494,
+      "macro_f1": 0.41503147139460816
+    },
+    "15m.decision_tree_depth_2.wf_2023_10": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 961,
+        "FLAT": 930,
+        "UP": 1085
+      },
+      "class_distribution_pred": {
+        "DOWN": 1110,
+        "FLAT": 512,
+        "UP": 1354
+      },
+      "accuracy": 0.4008736559139785,
+      "balanced_accuracy": 0.3942371537584857,
+      "macro_f1": 0.3952817817604423
+    },
+    "15m.decision_tree_depth_2.wf_2023_11": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 1068,
+        "FLAT": 709,
+        "UP": 1103
+      },
+      "class_distribution_pred": {
+        "DOWN": 1261,
+        "FLAT": 251,
+        "UP": 1368
+      },
+      "accuracy": 0.39305555555555555,
+      "balanced_accuracy": 0.3657581188462691,
+      "macro_f1": 0.3614653183116605
+    },
+    "15m.decision_tree_depth_2.wf_2023_12": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1128,
+        "FLAT": 657,
+        "UP": 1191
+      },
+      "class_distribution_pred": {
+        "DOWN": 1060,
+        "FLAT": 63,
+        "UP": 1853
+      },
+      "accuracy": 0.39381720430107525,
+      "balanced_accuracy": 0.3385451118499991,
+      "macro_f1": 0.3030560847298061
+    },
+    "15m.decision_tree_depth_2.wf_2024_01": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1169,
+        "FLAT": 600,
+        "UP": 1207
+      },
+      "class_distribution_pred": {
+        "DOWN": 971,
+        "FLAT": 115,
+        "UP": 1890
+      },
+      "accuracy": 0.4092741935483871,
+      "balanced_accuracy": 0.3520856795109036,
+      "macro_f1": 0.3281530030147172
+    },
+    "15m.decision_tree_depth_2.wf_2024_02": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 2784,
+      "class_distribution_true": {
+        "DOWN": 1032,
+        "FLAT": 640,
+        "UP": 1112
+      },
+      "class_distribution_pred": {
+        "DOWN": 773,
+        "FLAT": 138,
+        "UP": 1873
+      },
+      "accuracy": 0.39798850574712646,
+      "balanced_accuracy": 0.3515565454613054,
+      "macro_f1": 0.32416452322879047
+    },
+    "15m.decision_tree_depth_2.wf_2024_03_partial": {
+      "timeframe": "15m",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 2304,
+      "class_distribution_true": {
+        "DOWN": 976,
+        "FLAT": 329,
+        "UP": 999
+      },
+      "class_distribution_pred": {
+        "DOWN": 66,
+        "FLAT": 0,
+        "UP": 2238
+      },
+      "accuracy": 0.4357638888888889,
+      "balanced_accuracy": 0.3351982446927802,
+      "macro_f1": 0.21762190254200522
+    },
+    "15m.logistic_regression.wf_2023_03_partial": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 612,
+      "class_distribution_true": {
+        "DOWN": 231,
+        "FLAT": 137,
+        "UP": 244
+      },
+      "class_distribution_pred": {
+        "DOWN": 233,
+        "FLAT": 125,
+        "UP": 254
+      },
+      "accuracy": 0.35947712418300654,
+      "balanced_accuracy": 0.34457905781347203,
+      "macro_f1": 0.3452499565692797
+    },
+    "15m.logistic_regression.wf_2023_04": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 998,
+        "FLAT": 863,
+        "UP": 1019
+      },
+      "class_distribution_pred": {
+        "DOWN": 781,
+        "FLAT": 1379,
+        "UP": 720
+      },
+      "accuracy": 0.42465277777777777,
+      "balanced_accuracy": 0.43558658915843357,
+      "macro_f1": 0.41763623741293837
+    },
+    "15m.logistic_regression.wf_2023_05": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1021,
+        "FLAT": 925,
+        "UP": 1030
+      },
+      "class_distribution_pred": {
+        "DOWN": 663,
+        "FLAT": 1503,
+        "UP": 810
+      },
+      "accuracy": 0.40961021505376344,
+      "balanced_accuracy": 0.41692629879672854,
+      "macro_f1": 0.3998064949395565
+    },
+    "15m.logistic_regression.wf_2023_06": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 1002,
+        "FLAT": 845,
+        "UP": 1033
+      },
+      "class_distribution_pred": {
+        "DOWN": 586,
+        "FLAT": 1592,
+        "UP": 702
+      },
+      "accuracy": 0.4065972222222222,
+      "balanced_accuracy": 0.42320410017132143,
+      "macro_f1": 0.39380849332514906
+    },
+    "15m.logistic_regression.wf_2023_07": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 867,
+        "FLAT": 1255,
+        "UP": 854
+      },
+      "class_distribution_pred": {
+        "DOWN": 452,
+        "FLAT": 2050,
+        "UP": 474
+      },
+      "accuracy": 0.46841397849462363,
+      "balanced_accuracy": 0.417500812155649,
+      "macro_f1": 0.39837192630596086
+    },
+    "15m.logistic_regression.wf_2023_08": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 850,
+        "FLAT": 1321,
+        "UP": 805
+      },
+      "class_distribution_pred": {
+        "DOWN": 396,
+        "FLAT": 2127,
+        "UP": 453
+      },
+      "accuracy": 0.4956317204301075,
+      "balanced_accuracy": 0.4265323810464185,
+      "macro_f1": 0.40689397610006783
+    },
+    "15m.logistic_regression.wf_2023_09": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 839,
+        "FLAT": 1168,
+        "UP": 873
+      },
+      "class_distribution_pred": {
+        "DOWN": 392,
+        "FLAT": 1987,
+        "UP": 501
+      },
+      "accuracy": 0.46493055555555557,
+      "balanced_accuracy": 0.4199182390699325,
+      "macro_f1": 0.3923221267686161
+    },
+    "15m.logistic_regression.wf_2023_10": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 961,
+        "FLAT": 930,
+        "UP": 1085
+      },
+      "class_distribution_pred": {
+        "DOWN": 963,
+        "FLAT": 1169,
+        "UP": 844
+      },
+      "accuracy": 0.43111559139784944,
+      "balanced_accuracy": 0.43658721900137093,
+      "macro_f1": 0.4286565793889507
+    },
+    "15m.logistic_regression.wf_2023_11": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 1068,
+        "FLAT": 709,
+        "UP": 1103
+      },
+      "class_distribution_pred": {
+        "DOWN": 1362,
+        "FLAT": 757,
+        "UP": 761
+      },
+      "accuracy": 0.4059027777777778,
+      "balanced_accuracy": 0.4077247632220367,
+      "macro_f1": 0.4009652742884651
+    },
+    "15m.logistic_regression.wf_2023_12": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1128,
+        "FLAT": 657,
+        "UP": 1191
+      },
+      "class_distribution_pred": {
+        "DOWN": 1859,
+        "FLAT": 497,
+        "UP": 620
+      },
+      "accuracy": 0.4075940860215054,
+      "balanced_accuracy": 0.38908525881566547,
+      "macro_f1": 0.3716076980855237
+    },
+    "15m.logistic_regression.wf_2024_01": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1169,
+        "FLAT": 600,
+        "UP": 1207
+      },
+      "class_distribution_pred": {
+        "DOWN": 2007,
+        "FLAT": 369,
+        "UP": 600
+      },
+      "accuracy": 0.44086021505376344,
+      "balanced_accuracy": 0.4076150070947386,
+      "macro_f1": 0.38780696909080775
+    },
+    "15m.logistic_regression.wf_2024_02": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 2784,
+      "class_distribution_true": {
+        "DOWN": 1032,
+        "FLAT": 640,
+        "UP": 1112
+      },
+      "class_distribution_pred": {
+        "DOWN": 2133,
+        "FLAT": 258,
+        "UP": 393
+      },
+      "accuracy": 0.3850574712643678,
+      "balanced_accuracy": 0.3578974030078263,
+      "macro_f1": 0.3101628471602331
+    },
+    "15m.logistic_regression.wf_2024_03_partial": {
+      "timeframe": "15m",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 2304,
+      "class_distribution_true": {
+        "DOWN": 976,
+        "FLAT": 329,
+        "UP": 999
+      },
+      "class_distribution_pred": {
+        "DOWN": 1915,
+        "FLAT": 121,
+        "UP": 268
+      },
+      "accuracy": 0.4144965277777778,
+      "balanced_accuracy": 0.32846575876456124,
+      "macro_f1": 0.26608535185047166
+    },
+    "15m.majority_class_baseline.wf_2023_03_partial": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 612,
+      "class_distribution_true": {
+        "DOWN": 231,
+        "FLAT": 137,
+        "UP": 244
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 612,
+        "UP": 0
+      },
+      "accuracy": 0.2238562091503268,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.12194036493101913
+    },
+    "15m.majority_class_baseline.wf_2023_04": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 998,
+        "FLAT": 863,
+        "UP": 1019
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2880,
+        "UP": 0
+      },
+      "accuracy": 0.29965277777777777,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.15370914596135007
+    },
+    "15m.majority_class_baseline.wf_2023_05": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1021,
+        "FLAT": 925,
+        "UP": 1030
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2976,
+        "UP": 0
+      },
+      "accuracy": 0.31081989247311825,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.15807912501068103
+    },
+    "15m.majority_class_baseline.wf_2023_06": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 1002,
+        "FLAT": 845,
+        "UP": 1033
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2880,
+        "UP": 0
+      },
+      "accuracy": 0.2934027777777778,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1512304250559284
+    },
+    "15m.majority_class_baseline.wf_2023_07": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 867,
+        "FLAT": 1255,
+        "UP": 854
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2976,
+        "UP": 0
+      },
+      "accuracy": 0.4217069892473118,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.1977467895690538
+    },
+    "15m.majority_class_baseline.wf_2023_08": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 850,
+        "FLAT": 1321,
+        "UP": 805
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2976,
+        "UP": 0
+      },
+      "accuracy": 0.44388440860215056,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20494918935691567
+    },
+    "15m.majority_class_baseline.wf_2023_09": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 839,
+        "FLAT": 1168,
+        "UP": 873
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2880,
+        "UP": 0
+      },
+      "accuracy": 0.40555555555555556,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19235836627140976
+    },
+    "15m.majority_class_baseline.wf_2023_10": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 961,
+        "FLAT": 930,
+        "UP": 1085
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2976,
+        "UP": 0
+      },
+      "accuracy": 0.3125,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.15873015873015872
+    },
+    "15m.majority_class_baseline.wf_2023_11": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 1068,
+        "FLAT": 709,
+        "UP": 1103
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2880,
+        "UP": 0
+      },
+      "accuracy": 0.24618055555555557,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.13169870901829664
+    },
+    "15m.majority_class_baseline.wf_2023_12": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1128,
+        "FLAT": 657,
+        "UP": 1191
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2976,
+        "UP": 0
+      },
+      "accuracy": 0.22076612903225806,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.12056151940545005
+    },
+    "15m.majority_class_baseline.wf_2024_01": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1169,
+        "FLAT": 600,
+        "UP": 1207
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2976,
+        "UP": 0
+      },
+      "accuracy": 0.20161290322580644,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.11185682326621925
+    },
+    "15m.majority_class_baseline.wf_2024_02": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 2784,
+      "class_distribution_true": {
+        "DOWN": 1032,
+        "FLAT": 640,
+        "UP": 1112
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2784,
+        "UP": 0
+      },
+      "accuracy": 0.22988505747126436,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.12461059190031153
+    },
+    "15m.majority_class_baseline.wf_2024_03_partial": {
+      "timeframe": "15m",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 2304,
+      "class_distribution_true": {
+        "DOWN": 976,
+        "FLAT": 329,
+        "UP": 999
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 2304,
+        "UP": 0
+      },
+      "accuracy": 0.1427951388888889,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.08330168375743764
+    },
+    "15m.random_seeded_baseline.wf_2023_03_partial": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 612,
+      "class_distribution_true": {
+        "DOWN": 231,
+        "FLAT": 137,
+        "UP": 244
+      },
+      "class_distribution_pred": {
+        "DOWN": 202,
+        "FLAT": 214,
+        "UP": 196
+      },
+      "accuracy": 0.3382352941176471,
+      "balanced_accuracy": 0.34624622781257935,
+      "macro_f1": 0.3362438562207615
+    },
+    "15m.random_seeded_baseline.wf_2023_04": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 998,
+        "FLAT": 863,
+        "UP": 1019
+      },
+      "class_distribution_pred": {
+        "DOWN": 932,
+        "FLAT": 1006,
+        "UP": 942
+      },
+      "accuracy": 0.33055555555555555,
+      "balanced_accuracy": 0.33172829116025665,
+      "macro_f1": 0.3304640531768514
+    },
+    "15m.random_seeded_baseline.wf_2023_05": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1021,
+        "FLAT": 925,
+        "UP": 1030
+      },
+      "class_distribution_pred": {
+        "DOWN": 1000,
+        "FLAT": 1055,
+        "UP": 921
+      },
+      "accuracy": 0.33568548387096775,
+      "balanced_accuracy": 0.33562259462851873,
+      "macro_f1": 0.3356440349919632
+    },
+    "15m.random_seeded_baseline.wf_2023_06": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 1002,
+        "FLAT": 845,
+        "UP": 1033
+      },
+      "class_distribution_pred": {
+        "DOWN": 883,
+        "FLAT": 1050,
+        "UP": 947
+      },
+      "accuracy": 0.33055555555555555,
+      "balanced_accuracy": 0.3330527478850685,
+      "macro_f1": 0.3303792858610437
+    },
+    "15m.random_seeded_baseline.wf_2023_07": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 867,
+        "FLAT": 1255,
+        "UP": 854
+      },
+      "class_distribution_pred": {
+        "DOWN": 961,
+        "FLAT": 1035,
+        "UP": 980
+      },
+      "accuracy": 0.3444220430107527,
+      "balanced_accuracy": 0.341861151134625,
+      "macro_f1": 0.3401528979450578
+    },
+    "15m.random_seeded_baseline.wf_2023_08": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 850,
+        "FLAT": 1321,
+        "UP": 805
+      },
+      "class_distribution_pred": {
+        "DOWN": 945,
+        "FLAT": 1059,
+        "UP": 972
+      },
+      "accuracy": 0.34408602150537637,
+      "balanced_accuracy": 0.3391882383733864,
+      "macro_f1": 0.3367706512209096
+    },
+    "15m.random_seeded_baseline.wf_2023_09": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 839,
+        "FLAT": 1168,
+        "UP": 873
+      },
+      "class_distribution_pred": {
+        "DOWN": 921,
+        "FLAT": 979,
+        "UP": 980
+      },
+      "accuracy": 0.3385416666666667,
+      "balanced_accuracy": 0.34023618680268813,
+      "macro_f1": 0.33757802891808636
+    },
+    "15m.random_seeded_baseline.wf_2023_10": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 961,
+        "FLAT": 930,
+        "UP": 1085
+      },
+      "class_distribution_pred": {
+        "DOWN": 936,
+        "FLAT": 1019,
+        "UP": 1021
+      },
+      "accuracy": 0.34173387096774194,
+      "balanced_accuracy": 0.34133260657714354,
+      "macro_f1": 0.3410015339188761
+    },
+    "15m.random_seeded_baseline.wf_2023_11": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 2880,
+      "class_distribution_true": {
+        "DOWN": 1068,
+        "FLAT": 709,
+        "UP": 1103
+      },
+      "class_distribution_pred": {
+        "DOWN": 902,
+        "FLAT": 1035,
+        "UP": 943
+      },
+      "accuracy": 0.34131944444444445,
+      "balanced_accuracy": 0.34461433203036035,
+      "macro_f1": 0.33958306730783194
+    },
+    "15m.random_seeded_baseline.wf_2023_12": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1128,
+        "FLAT": 657,
+        "UP": 1191
+      },
+      "class_distribution_pred": {
+        "DOWN": 990,
+        "FLAT": 970,
+        "UP": 1016
+      },
+      "accuracy": 0.33635752688172044,
+      "balanced_accuracy": 0.3355465881031971,
+      "macro_f1": 0.33055529090866176
+    },
+    "15m.random_seeded_baseline.wf_2024_01": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 2976,
+      "class_distribution_true": {
+        "DOWN": 1169,
+        "FLAT": 600,
+        "UP": 1207
+      },
+      "class_distribution_pred": {
+        "DOWN": 932,
+        "FLAT": 1065,
+        "UP": 979
+      },
+      "accuracy": 0.33602150537634407,
+      "balanced_accuracy": 0.34509983662296273,
+      "macro_f1": 0.3319003697040035
+    },
+    "15m.random_seeded_baseline.wf_2024_02": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 2784,
+      "class_distribution_true": {
+        "DOWN": 1032,
+        "FLAT": 640,
+        "UP": 1112
+      },
+      "class_distribution_pred": {
+        "DOWN": 900,
+        "FLAT": 979,
+        "UP": 905
+      },
+      "accuracy": 0.3250718390804598,
+      "balanced_accuracy": 0.32676146873199113,
+      "macro_f1": 0.32145296228289716
+    },
+    "15m.random_seeded_baseline.wf_2024_03_partial": {
+      "timeframe": "15m",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 2304,
+      "class_distribution_true": {
+        "DOWN": 976,
+        "FLAT": 329,
+        "UP": 999
+      },
+      "class_distribution_pred": {
+        "DOWN": 755,
+        "FLAT": 806,
+        "UP": 743
+      },
+      "accuracy": 0.3259548611111111,
+      "balanced_accuracy": 0.3237528079842927,
+      "macro_f1": 0.3094681134661111
+    },
+    "1h.decision_tree_depth_2.wf_2023_03_partial": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 108,
+      "class_distribution_true": {
+        "DOWN": 48,
+        "FLAT": 8,
+        "UP": 52
+      },
+      "class_distribution_pred": {
+        "DOWN": 44,
+        "FLAT": 0,
+        "UP": 64
+      },
+      "accuracy": 0.5925925925925926,
+      "balanced_accuracy": 0.42414529914529914,
+      "macro_f1": 0.40679660169915044
+    },
+    "1h.decision_tree_depth_2.wf_2023_04": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 300,
+        "FLAT": 119,
+        "UP": 301
+      },
+      "class_distribution_pred": {
+        "DOWN": 261,
+        "FLAT": 0,
+        "UP": 459
+      },
+      "accuracy": 0.4638888888888889,
+      "balanced_accuracy": 0.37032115171650054,
+      "macro_f1": 0.330321793789286
+    },
+    "1h.decision_tree_depth_2.wf_2023_05": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 319,
+        "FLAT": 120,
+        "UP": 305
+      },
+      "class_distribution_pred": {
+        "DOWN": 181,
+        "FLAT": 18,
+        "UP": 545
+      },
+      "accuracy": 0.4422043010752688,
+      "balanced_accuracy": 0.3600608972711856,
+      "macro_f1": 0.3223358908780904
+    },
+    "1h.decision_tree_depth_2.wf_2023_06": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 293,
+        "FLAT": 112,
+        "UP": 315
+      },
+      "class_distribution_pred": {
+        "DOWN": 170,
+        "FLAT": 15,
+        "UP": 535
+      },
+      "accuracy": 0.4583333333333333,
+      "balanced_accuracy": 0.3637909240298319,
+      "macro_f1": 0.3337183341219687
+    },
+    "1h.decision_tree_depth_2.wf_2023_07": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 290,
+        "FLAT": 167,
+        "UP": 287
+      },
+      "class_distribution_pred": {
+        "DOWN": 133,
+        "FLAT": 60,
+        "UP": 551
+      },
+      "accuracy": 0.43413978494623656,
+      "balanced_accuracy": 0.3952284065774494,
+      "macro_f1": 0.36122628041199256
+    },
+    "1h.decision_tree_depth_2.wf_2023_08": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 280,
+        "FLAT": 189,
+        "UP": 275
+      },
+      "class_distribution_pred": {
+        "DOWN": 143,
+        "FLAT": 73,
+        "UP": 528
+      },
+      "accuracy": 0.40860215053763443,
+      "balanced_accuracy": 0.38686868686868686,
+      "macro_f1": 0.3648180558835766
+    },
+    "1h.decision_tree_depth_2.wf_2023_09": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 259,
+        "FLAT": 174,
+        "UP": 287
+      },
+      "class_distribution_pred": {
+        "DOWN": 147,
+        "FLAT": 114,
+        "UP": 459
+      },
+      "accuracy": 0.45694444444444443,
+      "balanced_accuracy": 0.4362856789265536,
+      "macro_f1": 0.42934802679302075
+    },
+    "1h.decision_tree_depth_2.wf_2023_10": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 289,
+        "FLAT": 124,
+        "UP": 331
+      },
+      "class_distribution_pred": {
+        "DOWN": 192,
+        "FLAT": 60,
+        "UP": 492
+      },
+      "accuracy": 0.48118279569892475,
+      "balanced_accuracy": 0.41492051684034026,
+      "macro_f1": 0.4128032582784551
+    },
+    "1h.decision_tree_depth_2.wf_2023_11": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 297,
+        "FLAT": 105,
+        "UP": 318
+      },
+      "class_distribution_pred": {
+        "DOWN": 186,
+        "FLAT": 7,
+        "UP": 527
+      },
+      "accuracy": 0.44722222222222224,
+      "balanced_accuracy": 0.34807887197824305,
+      "macro_f1": 0.3146313923905897
+    },
+    "1h.decision_tree_depth_2.wf_2023_12": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 320,
+        "FLAT": 89,
+        "UP": 335
+      },
+      "class_distribution_pred": {
+        "DOWN": 232,
+        "FLAT": 0,
+        "UP": 512
+      },
+      "accuracy": 0.4946236559139785,
+      "balanced_accuracy": 0.3718594527363184,
+      "macro_f1": 0.34096755243000304
+    },
+    "1h.decision_tree_depth_2.wf_2024_01": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 339,
+        "FLAT": 74,
+        "UP": 331
+      },
+      "class_distribution_pred": {
+        "DOWN": 279,
+        "FLAT": 1,
+        "UP": 464
+      },
+      "accuracy": 0.4717741935483871,
+      "balanced_accuracy": 0.3501947259132512,
+      "macro_f1": 0.3274836661171155
+    },
+    "1h.decision_tree_depth_2.wf_2024_02": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 696,
+      "class_distribution_true": {
+        "DOWN": 279,
+        "FLAT": 96,
+        "UP": 321
+      },
+      "class_distribution_pred": {
+        "DOWN": 296,
+        "FLAT": 1,
+        "UP": 399
+      },
+      "accuracy": 0.47270114942528735,
+      "balanced_accuracy": 0.3625877912884244,
+      "macro_f1": 0.3359178743961353
+    },
+    "1h.decision_tree_depth_2.wf_2024_03_partial": {
+      "timeframe": "1h",
+      "model_name": "decision_tree_depth_2",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 250,
+        "FLAT": 44,
+        "UP": 282
+      },
+      "class_distribution_pred": {
+        "DOWN": 259,
+        "FLAT": 0,
+        "UP": 317
+      },
+      "accuracy": 0.4826388888888889,
+      "balanced_accuracy": 0.3466099290780142,
+      "macro_f1": 0.3328227683554669
+    },
+    "1h.logistic_regression.wf_2023_03_partial": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 108,
+      "class_distribution_true": {
+        "DOWN": 48,
+        "FLAT": 8,
+        "UP": 52
+      },
+      "class_distribution_pred": {
+        "DOWN": 56,
+        "FLAT": 0,
+        "UP": 52
+      },
+      "accuracy": 0.5092592592592593,
+      "balanced_accuracy": 0.36698717948717946,
+      "macro_f1": 0.3525641025641026
+    },
+    "1h.logistic_regression.wf_2023_04": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 300,
+        "FLAT": 119,
+        "UP": 301
+      },
+      "class_distribution_pred": {
+        "DOWN": 396,
+        "FLAT": 2,
+        "UP": 322
+      },
+      "accuracy": 0.46805555555555556,
+      "balanced_accuracy": 0.3772522962673442,
+      "macro_f1": 0.3492971752983729
+    },
+    "1h.logistic_regression.wf_2023_05": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 319,
+        "FLAT": 120,
+        "UP": 305
+      },
+      "class_distribution_pred": {
+        "DOWN": 307,
+        "FLAT": 9,
+        "UP": 428
+      },
+      "accuracy": 0.4596774193548387,
+      "balanced_accuracy": 0.3700415688827221,
+      "macro_f1": 0.34257523027367914
+    },
+    "1h.logistic_regression.wf_2023_06": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 293,
+        "FLAT": 112,
+        "UP": 315
+      },
+      "class_distribution_pred": {
+        "DOWN": 289,
+        "FLAT": 8,
+        "UP": 423
+      },
+      "accuracy": 0.4513888888888889,
+      "balanced_accuracy": 0.35616253137584203,
+      "macro_f1": 0.3297157731027482
+    },
+    "1h.logistic_regression.wf_2023_07": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 290,
+        "FLAT": 167,
+        "UP": 287
+      },
+      "class_distribution_pred": {
+        "DOWN": 289,
+        "FLAT": 8,
+        "UP": 447
+      },
+      "accuracy": 0.41935483870967744,
+      "balanced_accuracy": 0.3642658213550072,
+      "macro_f1": 0.3241612127054942
+    },
+    "1h.logistic_regression.wf_2023_08": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 280,
+        "FLAT": 189,
+        "UP": 275
+      },
+      "class_distribution_pred": {
+        "DOWN": 275,
+        "FLAT": 27,
+        "UP": 442
+      },
+      "accuracy": 0.41397849462365593,
+      "balanced_accuracy": 0.3772246272246272,
+      "macro_f1": 0.34645440419498996
+    },
+    "1h.logistic_regression.wf_2023_09": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 259,
+        "FLAT": 174,
+        "UP": 287
+      },
+      "class_distribution_pred": {
+        "DOWN": 275,
+        "FLAT": 27,
+        "UP": 418
+      },
+      "accuracy": 0.4388888888888889,
+      "balanced_accuracy": 0.39364848448111694,
+      "macro_f1": 0.37188224151376353
+    },
+    "1h.logistic_regression.wf_2023_10": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 289,
+        "FLAT": 124,
+        "UP": 331
+      },
+      "class_distribution_pred": {
+        "DOWN": 339,
+        "FLAT": 11,
+        "UP": 394
+      },
+      "accuracy": 0.46236559139784944,
+      "balanced_accuracy": 0.37985310613292933,
+      "macro_f1": 0.36547353122212184
+    },
+    "1h.logistic_regression.wf_2023_11": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 297,
+        "FLAT": 105,
+        "UP": 318
+      },
+      "class_distribution_pred": {
+        "DOWN": 440,
+        "FLAT": 0,
+        "UP": 280
+      },
+      "accuracy": 0.49166666666666664,
+      "balanced_accuracy": 0.3862630497850623,
+      "macro_f1": 0.35154570715894534
+    },
+    "1h.logistic_regression.wf_2023_12": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 320,
+        "FLAT": 89,
+        "UP": 335
+      },
+      "class_distribution_pred": {
+        "DOWN": 487,
+        "FLAT": 0,
+        "UP": 257
+      },
+      "accuracy": 0.4825268817204301,
+      "balanced_accuracy": 0.3678482587064677,
+      "macro_f1": 0.33587444321645066
+    },
+    "1h.logistic_regression.wf_2024_01": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 339,
+        "FLAT": 74,
+        "UP": 331
+      },
+      "class_distribution_pred": {
+        "DOWN": 449,
+        "FLAT": 0,
+        "UP": 295
+      },
+      "accuracy": 0.4543010752688172,
+      "balanced_accuracy": 0.33555834796377,
+      "macro_f1": 0.3155127768497646
+    },
+    "1h.logistic_regression.wf_2024_02": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 696,
+      "class_distribution_true": {
+        "DOWN": 279,
+        "FLAT": 96,
+        "UP": 321
+      },
+      "class_distribution_pred": {
+        "DOWN": 481,
+        "FLAT": 0,
+        "UP": 215
+      },
+      "accuracy": 0.4525862068965517,
+      "balanced_accuracy": 0.3585234314809232,
+      "macro_f1": 0.3181068342498036
+    },
+    "1h.logistic_regression.wf_2024_03_partial": {
+      "timeframe": "1h",
+      "model_name": "logistic_regression",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 250,
+        "FLAT": 44,
+        "UP": 282
+      },
+      "class_distribution_pred": {
+        "DOWN": 374,
+        "FLAT": 0,
+        "UP": 202
+      },
+      "accuracy": 0.4809027777777778,
+      "balanced_accuracy": 0.35299290780141845,
+      "macro_f1": 0.3293158861340679
+    },
+    "1h.majority_class_baseline.wf_2023_03_partial": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 108,
+      "class_distribution_true": {
+        "DOWN": 48,
+        "FLAT": 8,
+        "UP": 52
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 108
+      },
+      "accuracy": 0.48148148148148145,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.21666666666666667
+    },
+    "1h.majority_class_baseline.wf_2023_04": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 300,
+        "FLAT": 119,
+        "UP": 301
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 720
+      },
+      "accuracy": 0.41805555555555557,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19653934051583413
+    },
+    "1h.majority_class_baseline.wf_2023_05": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 319,
+        "FLAT": 120,
+        "UP": 305
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 744
+      },
+      "accuracy": 0.4099462365591398,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19383539879250078
+    },
+    "1h.majority_class_baseline.wf_2023_06": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 293,
+        "FLAT": 112,
+        "UP": 315
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 720
+      },
+      "accuracy": 0.4375,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2028985507246377
+    },
+    "1h.majority_class_baseline.wf_2023_07": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 290,
+        "FLAT": 167,
+        "UP": 287
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 744
+      },
+      "accuracy": 0.385752688172043,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.18558034270934368
+    },
+    "1h.majority_class_baseline.wf_2023_08": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 280,
+        "FLAT": 189,
+        "UP": 275
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 744
+      },
+      "accuracy": 0.3696236559139785,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.17991494929669613
+    },
+    "1h.majority_class_baseline.wf_2023_09": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 259,
+        "FLAT": 174,
+        "UP": 287
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 720
+      },
+      "accuracy": 0.39861111111111114,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.19000331016219796
+    },
+    "1h.majority_class_baseline.wf_2023_10": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 289,
+        "FLAT": 124,
+        "UP": 331
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 744
+      },
+      "accuracy": 0.44489247311827956,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20527131782945737
+    },
+    "1h.majority_class_baseline.wf_2023_11": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 297,
+        "FLAT": 105,
+        "UP": 318
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 720
+      },
+      "accuracy": 0.44166666666666665,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20423892100192678
+    },
+    "1h.majority_class_baseline.wf_2023_12": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 320,
+        "FLAT": 89,
+        "UP": 335
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 744
+      },
+      "accuracy": 0.45026881720430106,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2069817732468335
+    },
+    "1h.majority_class_baseline.wf_2024_01": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 339,
+        "FLAT": 74,
+        "UP": 331
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 744
+      },
+      "accuracy": 0.44489247311827956,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.20527131782945737
+    },
+    "1h.majority_class_baseline.wf_2024_02": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 696,
+      "class_distribution_true": {
+        "DOWN": 279,
+        "FLAT": 96,
+        "UP": 321
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 696
+      },
+      "accuracy": 0.46120689655172414,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2104228121927237
+    },
+    "1h.majority_class_baseline.wf_2024_03_partial": {
+      "timeframe": "1h",
+      "model_name": "majority_class_baseline",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 250,
+        "FLAT": 44,
+        "UP": 282
+      },
+      "class_distribution_pred": {
+        "DOWN": 0,
+        "FLAT": 0,
+        "UP": 576
+      },
+      "accuracy": 0.4895833333333333,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.2191142191142191
+    },
+    "1h.random_seeded_baseline.wf_2023_03_partial": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_03_partial",
+      "rows": 108,
+      "class_distribution_true": {
+        "DOWN": 48,
+        "FLAT": 8,
+        "UP": 52
+      },
+      "class_distribution_pred": {
+        "DOWN": 41,
+        "FLAT": 22,
+        "UP": 45
+      },
+      "accuracy": 0.4722222222222222,
+      "balanced_accuracy": 0.4791666666666667,
+      "macro_f1": 0.42488641775100716
+    },
+    "1h.random_seeded_baseline.wf_2023_04": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_04",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 300,
+        "FLAT": 119,
+        "UP": 301
+      },
+      "class_distribution_pred": {
+        "DOWN": 290,
+        "FLAT": 131,
+        "UP": 299
+      },
+      "accuracy": 0.37777777777777777,
+      "balanced_accuracy": 0.34401103076889666,
+      "macro_f1": 0.3434086629001883
+    },
+    "1h.random_seeded_baseline.wf_2023_05": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_05",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 319,
+        "FLAT": 120,
+        "UP": 305
+      },
+      "class_distribution_pred": {
+        "DOWN": 287,
+        "FLAT": 159,
+        "UP": 298
+      },
+      "accuracy": 0.40053763440860213,
+      "balanced_accuracy": 0.3717749855822213,
+      "macro_f1": 0.3685642196060402
+    },
+    "1h.random_seeded_baseline.wf_2023_06": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_06",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 293,
+        "FLAT": 112,
+        "UP": 315
+      },
+      "class_distribution_pred": {
+        "DOWN": 289,
+        "FLAT": 140,
+        "UP": 291
+      },
+      "accuracy": 0.4097222222222222,
+      "balanced_accuracy": 0.3687686223522401,
+      "macro_f1": 0.36765546952338823
+    },
+    "1h.random_seeded_baseline.wf_2023_07": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_07",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 290,
+        "FLAT": 167,
+        "UP": 287
+      },
+      "class_distribution_pred": {
+        "DOWN": 293,
+        "FLAT": 149,
+        "UP": 302
+      },
+      "accuracy": 0.3333333333333333,
+      "balanced_accuracy": 0.3109059785031643,
+      "macro_f1": 0.3103521952860779
+    },
+    "1h.random_seeded_baseline.wf_2023_08": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_08",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 280,
+        "FLAT": 189,
+        "UP": 275
+      },
+      "class_distribution_pred": {
+        "DOWN": 298,
+        "FLAT": 131,
+        "UP": 315
+      },
+      "accuracy": 0.33602150537634407,
+      "balanced_accuracy": 0.31726070226070224,
+      "macro_f1": 0.3135976873301664
+    },
+    "1h.random_seeded_baseline.wf_2023_09": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_09",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 259,
+        "FLAT": 174,
+        "UP": 287
+      },
+      "class_distribution_pred": {
+        "DOWN": 294,
+        "FLAT": 155,
+        "UP": 271
+      },
+      "accuracy": 0.33194444444444443,
+      "balanced_accuracy": 0.3237066214358056,
+      "macro_f1": 0.3247801934195859
+    },
+    "1h.random_seeded_baseline.wf_2023_10": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_10",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 289,
+        "FLAT": 124,
+        "UP": 331
+      },
+      "class_distribution_pred": {
+        "DOWN": 318,
+        "FLAT": 156,
+        "UP": 270
+      },
+      "accuracy": 0.3790322580645161,
+      "balanced_accuracy": 0.3563706971234179,
+      "macro_f1": 0.35211354418716123
+    },
+    "1h.random_seeded_baseline.wf_2023_11": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_11",
+      "rows": 720,
+      "class_distribution_true": {
+        "DOWN": 297,
+        "FLAT": 105,
+        "UP": 318
+      },
+      "class_distribution_pred": {
+        "DOWN": 294,
+        "FLAT": 118,
+        "UP": 308
+      },
+      "accuracy": 0.3875,
+      "balanced_accuracy": 0.3418222355329273,
+      "macro_f1": 0.34132283654199486
+    },
+    "1h.random_seeded_baseline.wf_2023_12": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2023_12",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 320,
+        "FLAT": 89,
+        "UP": 335
+      },
+      "class_distribution_pred": {
+        "DOWN": 300,
+        "FLAT": 149,
+        "UP": 295
+      },
+      "accuracy": 0.385752688172043,
+      "balanced_accuracy": 0.35214202862094024,
+      "macro_f1": 0.344266738953646
+    },
+    "1h.random_seeded_baseline.wf_2024_01": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_01",
+      "rows": 744,
+      "class_distribution_true": {
+        "DOWN": 339,
+        "FLAT": 74,
+        "UP": 331
+      },
+      "class_distribution_pred": {
+        "DOWN": 300,
+        "FLAT": 137,
+        "UP": 307
+      },
+      "accuracy": 0.3897849462365591,
+      "balanced_accuracy": 0.3518852649403675,
+      "macro_f1": 0.34087934426294053
+    },
+    "1h.random_seeded_baseline.wf_2024_02": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_02",
+      "rows": 696,
+      "class_distribution_true": {
+        "DOWN": 279,
+        "FLAT": 96,
+        "UP": 321
+      },
+      "class_distribution_pred": {
+        "DOWN": 270,
+        "FLAT": 134,
+        "UP": 292
+      },
+      "accuracy": 0.34913793103448276,
+      "balanced_accuracy": 0.3160193280407329,
+      "macro_f1": 0.31266514916442417
+    },
+    "1h.random_seeded_baseline.wf_2024_03_partial": {
+      "timeframe": "1h",
+      "model_name": "random_seeded_baseline",
+      "walk_forward_group": "wf_2024_03_partial",
+      "rows": 576,
+      "class_distribution_true": {
+        "DOWN": 250,
+        "FLAT": 44,
+        "UP": 282
+      },
+      "class_distribution_pred": {
+        "DOWN": 226,
+        "FLAT": 111,
+        "UP": 239
+      },
+      "accuracy": 0.421875,
+      "balanced_accuracy": 0.3860876853642811,
+      "macro_f1": 0.36280064870973466
+    }
+  },
+  "sanity_checks": {
+    "1m": {
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "target_classes_seen_train": [],
+      "target_classes_seen_validation": [],
+      "target_classes_seen_test": [],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "5m": {
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "target_classes_seen_train": [],
+      "target_classes_seen_validation": [],
+      "target_classes_seen_test": [],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "15m": {
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "target_classes_seen_train": [],
+      "target_classes_seen_validation": [],
+      "target_classes_seen_test": [],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    },
+    "1h": {
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "target_classes_seen_train": [],
+      "target_classes_seen_validation": [],
+      "target_classes_seen_test": [],
+      "no_shuffle_confirmed": true,
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": []
+    }
+  },
+  "quality": {
+    "1m": {
+      "rows_total": 527040,
+      "rows_used_for_ml": 526980,
+      "rows_excluded_warmup": 60,
+      "rows_excluded_invalid_label": 0,
+      "train_rows": 316164,
+      "validation_rows": 105408,
+      "test_rows": 105408,
+      "walk_forward_groups": [
+        "wf_2023_03_partial",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03_partial"
+      ],
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": [],
+      "target_name_valid": true,
+      "split_temporal_order_valid": true,
+      "no_shuffle_confirmed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "5m": {
+      "rows_total": 105408,
+      "rows_used_for_ml": 105348,
+      "rows_excluded_warmup": 60,
+      "rows_excluded_invalid_label": 0,
+      "train_rows": 63184,
+      "validation_rows": 21082,
+      "test_rows": 21082,
+      "walk_forward_groups": [
+        "wf_2023_03_partial",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03_partial"
+      ],
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": [],
+      "target_name_valid": true,
+      "split_temporal_order_valid": true,
+      "no_shuffle_confirmed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "15m": {
+      "rows_total": 35136,
+      "rows_used_for_ml": 35076,
+      "rows_excluded_warmup": 60,
+      "rows_excluded_invalid_label": 0,
+      "train_rows": 21021,
+      "validation_rows": 7027,
+      "test_rows": 7028,
+      "walk_forward_groups": [
+        "wf_2023_03_partial",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03_partial"
+      ],
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": [],
+      "target_name_valid": true,
+      "split_temporal_order_valid": true,
+      "no_shuffle_confirmed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "1h": {
+      "rows_total": 8784,
+      "rows_used_for_ml": 8724,
+      "rows_excluded_warmup": 60,
+      "rows_excluded_invalid_label": 0,
+      "train_rows": 5210,
+      "validation_rows": 1757,
+      "test_rows": 1757,
+      "walk_forward_groups": [
+        "wf_2023_03_partial",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03_partial"
+      ],
+      "forbidden_feature_columns_present": [],
+      "forbidden_output_columns_present": [],
+      "target_name_valid": true,
+      "split_temporal_order_valid": true,
+      "no_shuffle_confirmed": true,
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "safety": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "limitations": [
+    "V9.2 entraine uniquement des baselines ML offline simples sur le dataset raffine V9.1.",
+    "V9.2 produit des metriques descriptives et non actionnables, sans backtest, sans strategie, sans signal de trading et sans ordre."
+  ]
+}

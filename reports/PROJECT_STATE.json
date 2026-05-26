@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V8.8",
-  "candidate_version": "V8.9.1",
+  "last_validated_version": "V8.9.1",
+  "candidate_version": "V9.0_to_V9.3",
   "candidate_status": "pending_external_audit",
-  "direction": "feature audit audit-lite self-contained inputs fix",
+  "direction": "refined OHLCV + trades feature/dataset/ML/walk-forward pipeline",
   "v8_9_1_scope": "packaging_audit_lite_only",
   "v8_9_1_functional_v8_9_results_unchanged": true,
   "v8_9_1_new_dataset_created": false,
@@ -1249,5 +1249,35 @@
   "signal_v8_9_created": false,
   "orders_v8_9_created": false,
   "paper_live_v8_9_created": false,
-  "trading_v8_9_created": false
+  "trading_v8_9_created": false,
+  "window_start": "2023-03-25",
+  "window_end": "2024-03-24",
+  "total_days": 366,
+  "selected_features_count": 18,
+  "dataset_row_counts": {
+    "1m": 527040,
+    "5m": 105408,
+    "15m": 35136,
+    "1h": 8784
+  },
+  "score_row_counts_v9_2": {
+    "1m": 2107920,
+    "5m": 421392,
+    "15m": 140304,
+    "1h": 34896
+  },
+  "score_row_counts_v9_3": {
+    "1m": 8805440,
+    "5m": 1759808,
+    "15m": 585536,
+    "1h": 145184
+  },
+  "folds_count": {
+    "1m": 5,
+    "5m": 5,
+    "15m": 5,
+    "1h": 5
+  },
+  "signal_created": false,
+  "persistent_model_created": false
 }

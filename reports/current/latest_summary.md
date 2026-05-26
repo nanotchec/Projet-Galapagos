@@ -1,23 +1,9 @@
-# Latest Summary V8.9.1
+# Latest Summary V9.0 -> V9.3
 
-V8.8 est la derniere version validee localement.
+V8.9.1 est la derniere version validee par audit externe.
 
-V8.9.1 est la candidate courante. Elle corrige uniquement le packaging audit-lite V8.9 pour rendre le ZIP autoporteur lors des tests et validateurs nominaux.
+V9.0_to_V9.3 est la candidate courante. Elle rejoue une chaine raffinee OHLCV + trades : feature store V9.0, dataset supervise V9.1, ML offline V9.2 et validation walk-forward stricte V9.3.
 
-Les rapports metier restent en version V8.9. Les resultats V8.9 ne sont pas modifies.
+Fenetre : `2023-03-25` -> `2024-03-24`, `366` jours.
 
-Fenetre V8.9 : `2023-03-25` -> `2024-03-24`.
-
-Total jours : `366`.
-
-Feature columns originales : `71`.
-
-Selected features : `18`.
-
-Dropped features : `27`.
-
-Review features : `29`.
-
-Aucun nouveau dataset, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live et aucun trading reel.
-
-V8.9.1 reste `pending_external_audit`.
+La candidate reste `pending_external_audit`. Aucun trading, paper live, ordre, backtest, strategie, signal ou modele persistant n'est produit.

@@ -1,39 +1,42 @@
 {
-  "last_validated_version": "V8.8",
-  "candidate_version": "V8.9.1",
+  "last_validated_version": "V8.9.1",
+  "candidate_version": "V9.0_to_V9.3",
   "candidate_status": "pending_external_audit",
-  "direction": "feature audit audit-lite self-contained inputs fix",
-  "scope": "packaging_audit_lite_only",
-  "functional_v8_9_results_unchanged": true,
+  "direction": "refined OHLCV + trades feature/dataset/ML/walk-forward pipeline",
   "window_start": "2023-03-25",
   "window_end": "2024-03-24",
   "total_days": 366,
-  "original_feature_columns_count": 71,
   "selected_features_count": 18,
-  "dropped_features_count": 27,
-  "review_features_count": 29,
-  "selected_count_by_family": {
-    "microstructure_proxy": 1,
-    "ohlcv_base": 7,
-    "taker_flow": 3,
-    "temporal": 2,
-    "trade_aggregation": 4,
-    "trade_intensity": 1
+  "dataset_row_counts": {
+    "1m": 527040,
+    "5m": 105408,
+    "15m": 35136,
+    "1h": 8784
   },
-  "review_count_by_family": {
-    "microstructure_proxy": 2,
-    "rolling_trade": 13,
-    "temporal": 1,
-    "trade_aggregation": 8,
-    "trade_intensity": 5
+  "score_row_counts_v9_2": {
+    "1m": 2107920,
+    "5m": 421392,
+    "15m": 140304,
+    "1h": 34896
   },
-  "new_dataset_created": false,
-  "model_created": false,
+  "score_row_counts_v9_3": {
+    "1m": 8805440,
+    "5m": 1759808,
+    "15m": 585536,
+    "1h": 145184
+  },
+  "folds_count": {
+    "1m": 5,
+    "5m": 5,
+    "15m": 5,
+    "1h": 5
+  },
   "backtest_enabled": false,
   "strategy_enabled": false,
   "signal_created": false,
   "orders_enabled": false,
   "trading_enabled": false,
   "paper_live_enabled": false,
+  "persistent_model_created": false,
   "external_validation_required": true
 }

@@ -1,0 +1,308 @@
+{
+  "version_scope": "V9.0_to_V9.3",
+  "created_at_utc": "2026-05-26T18:51:48Z",
+  "full_outputs": {
+    "v9_0_features": {
+      "1m": {
+        "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/features.parquet",
+        "sha256": "2cb272ca799c378a85257681ce10b34d9bb57e91a66f652916d84c465c6b5e6f",
+        "bytes": 71539161,
+        "rows": 527040,
+        "format": "parquet"
+      },
+      "5m": {
+        "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/features.parquet",
+        "sha256": "759c9720d5721163b41ba2be0970faa1068f88a9e296121bbbbfcf1ac89f96ac",
+        "bytes": 17805752,
+        "rows": 105408,
+        "format": "parquet"
+      },
+      "15m": {
+        "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/features.parquet",
+        "sha256": "5f5db8d7ebc25e9a9afa1fe8b4ea3cff75b798ccbfabff7faac6e6343fd2e6a7",
+        "bytes": 6174329,
+        "rows": 35136,
+        "format": "parquet"
+      },
+      "1h": {
+        "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/features.parquet",
+        "sha256": "34bc29a6a6f2afed5702636f577d6a184ef90ff8392a2124e0536530a5a02c60",
+        "bytes": 1581648,
+        "rows": 8784,
+        "format": "parquet"
+      }
+    },
+    "v9_1_datasets": {
+      "1m": {
+        "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "sha256": "f6bae86263864ec6e3dc5fb454c6109bfe4a0b20b8d315f7b1aee3706839669d",
+        "bytes": 125066694,
+        "rows": 527040,
+        "format": "parquet"
+      },
+      "5m": {
+        "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "sha256": "f61d51e755daaacf3699b136abde74c30824727b97414b8b131099b5b3eb458b",
+        "bytes": 30964965,
+        "rows": 105408,
+        "format": "parquet"
+      },
+      "15m": {
+        "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+        "sha256": "4e65988c1bcf7e8aa09918a14b2ca8ab8b10d8754107dc9a9e943309c5f785f0",
+        "bytes": 10603278,
+        "rows": 35136,
+        "format": "parquet"
+      },
+      "1h": {
+        "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+        "sha256": "651f6a09c7fa1bc102a82b6eaa99d99c59ae1b287aa883d2cf927424406945b3",
+        "bytes": 2668690,
+        "rows": 8784,
+        "format": "parquet"
+      }
+    },
+    "v9_1_splits": {
+      "1m": {
+        "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/splits.parquet",
+        "sha256": "e2fca405a2e56dcefa13234874185b377f96ec3c7f22d82ef58135f73794891b",
+        "bytes": 18310308,
+        "rows": 527040,
+        "format": "parquet"
+      },
+      "5m": {
+        "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/splits.parquet",
+        "sha256": "fda6c3ee71f88062bbe01061b2c90b2058d4e2a10359c84def0c40ee32d4139d",
+        "bytes": 4522268,
+        "rows": 105408,
+        "format": "parquet"
+      },
+      "15m": {
+        "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/splits.parquet",
+        "sha256": "378b39a460320b4ce11ffecf7390c4af4964c8d7ef0fce52bbafc1053686259b",
+        "bytes": 1543542,
+        "rows": 35136,
+        "format": "parquet"
+      },
+      "1h": {
+        "path": "data/research/v9_1/datasets/refined_offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/splits.parquet",
+        "sha256": "9e4197ab301e55f60218714a218257a47aa33433e78c4f9f4b9d5d7805577e2f",
+        "bytes": 374957,
+        "rows": 8784,
+        "format": "parquet"
+      }
+    },
+    "v9_2_scores": {
+      "1m": {
+        "path": "data/research/v9_2/ml/refined_offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+        "sha256": "2be3968f68f5306781bec34d067d91eb9d222b6c1e5dc637a37cf0b3c57566af",
+        "bytes": 77404029,
+        "rows": 2107920,
+        "format": "parquet"
+      },
+      "5m": {
+        "path": "data/research/v9_2/ml/refined_offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+        "sha256": "f39849a1a2fc865ea79682da4f0013e6bd4ed3480dfd1b76dd4c5d09a677dcff",
+        "bytes": 10158802,
+        "rows": 421392,
+        "format": "parquet"
+      },
+      "15m": {
+        "path": "data/research/v9_2/ml/refined_offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/ml-scores.parquet",
+        "sha256": "a2b94d258ec4fc308e7e5558eee3f495039694684eb4960a3bed983c55af32a2",
+        "bytes": 3332614,
+        "rows": 140304,
+        "format": "parquet"
+      },
+      "1h": {
+        "path": "data/research/v9_2/ml/refined_offline_research_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/ml-scores.parquet",
+        "sha256": "2d015180d2beeb1ce6f76a3da9d5c800091cbe43fcc986fc326386bc90775998",
+        "bytes": 816115,
+        "rows": 34896,
+        "format": "parquet"
+      }
+    },
+    "v9_3_scores": {
+      "1m": {
+        "path": "data/research/v9_3/ml/refined_strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+        "sha256": "d43caa5e96df01f3fb4bab3b4e302c15a0c75d87c68d09b04ab3e1371b64ab9f",
+        "bytes": 321927762,
+        "rows": 8805440,
+        "format": "parquet"
+      },
+      "5m": {
+        "path": "data/research/v9_3/ml/refined_strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+        "sha256": "734c2dd1afeeb51e48607c3aa406c2b6e9d23ce1254202f32f7a5c0ad05dad6a",
+        "bytes": 35150004,
+        "rows": 1759808,
+        "format": "parquet"
+      },
+      "15m": {
+        "path": "data/research/v9_3/ml/refined_strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+        "sha256": "781f46f0d67de618caa14b29dc2ec6264d9cc3c4ce68ea1ba7d5862585e6cc8d",
+        "bytes": 10752646,
+        "rows": 585536,
+        "format": "parquet"
+      },
+      "1h": {
+        "path": "data/research/v9_3/ml/refined_strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+        "sha256": "7693148596984024c6349c25869a6afc382fc7f618ec82800a88e816fe9081d4",
+        "bytes": 2150042,
+        "rows": 145184,
+        "format": "parquet"
+      }
+    },
+    "v9_3_folds": {
+      "1m": {
+        "path": "data/research/v9_3/ml/refined_strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/folds.parquet",
+        "sha256": "673482f4c7ab3a26f0d3a214265303afadf5ca509b9c1de1109dfadb56ad6f40",
+        "bytes": 16273146,
+        "rows": 2201760,
+        "format": "parquet"
+      },
+      "5m": {
+        "path": "data/research/v9_3/ml/refined_strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/folds.parquet",
+        "sha256": "ba71d90c82a71338cfe865dae676865749c4b205a204c3f200fd69fdf13699f1",
+        "bytes": 1692139,
+        "rows": 440352,
+        "format": "parquet"
+      },
+      "15m": {
+        "path": "data/research/v9_3/ml/refined_strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/folds.parquet",
+        "sha256": "f0453c9d89d6b3f32febd3d4044ebee4bff00c0595d7dda2622f0c1441f44783",
+        "bytes": 563801,
+        "rows": 146784,
+        "format": "parquet"
+      },
+      "1h": {
+        "path": "data/research/v9_3/ml/refined_strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/folds.parquet",
+        "sha256": "6431a66b9849ac18a16685323a1fd28e8e8ce94434699c3b7e8377c030f29c13",
+        "bytes": 135834,
+        "rows": 36696,
+        "format": "parquet"
+      }
+    }
+  },
+  "samples": [
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/features/timeframe=1m/features_sample.parquet",
+      "sha256": "d62e1c491d1ab799d9920639e906070de726db8941fd5ba77b13b50c54db2ee2",
+      "bytes": 41274,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/features/timeframe=5m/features_sample.parquet",
+      "sha256": "ce73249214241c4dd8b040060d3326bbbe8b4aa6ea05c830ef8980eac419455d",
+      "bytes": 41603,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/features/timeframe=15m/features_sample.parquet",
+      "sha256": "df5bc1ee295061535f7c9029af168fc14fa67d8045d763a9f6bf155effabcac7",
+      "bytes": 42243,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/features/timeframe=1h/features_sample.parquet",
+      "sha256": "515ebc7a372228d4af8300bd119c952f842e9f43e898ced0900e069755f4a968",
+      "bytes": 42359,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/datasets/timeframe=1m/dataset_sample.parquet",
+      "sha256": "64b8ad1720955ed01e017b2099d5ea4efda7f2b61707e9f8b5b232160bf007b0",
+      "bytes": 68698,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/datasets/timeframe=5m/dataset_sample.parquet",
+      "sha256": "8048bdb0840554e8be7fe2c08cd0574a5186aedd390c3b999054e2be03cfb80f",
+      "bytes": 69068,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/datasets/timeframe=15m/dataset_sample.parquet",
+      "sha256": "e340f1f2eb609688a5b2c7a7192c72ba2286e5423fae11ae938ceeafaaf6e195",
+      "bytes": 70033,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/datasets/timeframe=1h/dataset_sample.parquet",
+      "sha256": "69d3bba03da280a2d570d11c4945a559cede9bb86562f9d80d112016a53bbf19",
+      "bytes": 70200,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/ml_scores/timeframe=1m/ml-scores_sample.parquet",
+      "sha256": "126f1b91b7b5d722b63337db108b882e77a6fe50002e6a1658472443d9bb4af2",
+      "bytes": 19357,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/ml_scores/timeframe=5m/ml-scores_sample.parquet",
+      "sha256": "e24b9caf9b138b4c9a9b9bba265032e0a4a401636acdbe27fd89a250d4427ad4",
+      "bytes": 19437,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/ml_scores/timeframe=15m/ml-scores_sample.parquet",
+      "sha256": "8e61e5825a71d06772fd16543338cf76dc703d1d13ba058a2242f9c2b3d260fa",
+      "bytes": 19729,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/ml_scores/timeframe=1h/ml-scores_sample.parquet",
+      "sha256": "e6f5b7a59a716d6198e39f27d9ef5bfb86d5f66b435cf65995721edd858216b6",
+      "bytes": 19716,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/walk_forward_scores/timeframe=1m/walk_forward_scores_sample.parquet",
+      "sha256": "424aeaaa88c598670c5b572d1fe1b70e92c899cdcc04a89f57473f5cdf0c2144",
+      "bytes": 19809,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/walk_forward_scores/timeframe=5m/walk_forward_scores_sample.parquet",
+      "sha256": "fda896bdda77945bc86a047c10fae407c85412756f4b8dba05e9df15379ff41b",
+      "bytes": 19890,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/walk_forward_scores/timeframe=15m/walk_forward_scores_sample.parquet",
+      "sha256": "4c05b11298151faeafecfa1f90306e4720c2cbaed7ced7a01d1dcc1397b9f7e7",
+      "bytes": 20183,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/walk_forward_scores/timeframe=1h/walk_forward_scores_sample.parquet",
+      "sha256": "f266870529732f76d5cad169e1c819020694019cc7d122ffbffdeb305fca278c",
+      "bytes": 20170,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/folds/timeframe=1m/folds_sample.parquet",
+      "sha256": "d7befbb35772b9994cc84bbc1edab3a1094b4ed728439e00d10d35ec4dd615e9",
+      "bytes": 8046,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/folds/timeframe=5m/folds_sample.parquet",
+      "sha256": "1203eb2c729364daa6dad380dee4295cb6ce3a738887b79d67e112d33b8d0477",
+      "bytes": 8067,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/folds/timeframe=15m/folds_sample.parquet",
+      "sha256": "0606f5466ddf93dc5df439f7f0a52df4a7d433d592ed2254c6ae2334b53de760",
+      "bytes": 8145,
+      "rows": 100
+    },
+    {
+      "path": "data/audit_lite/v9_0_to_v9_3/folds/timeframe=1h/folds_sample.parquet",
+      "sha256": "c10aed44803a713485fd46afee7376a87c4e7e6771e439b1053a7b7fe62204f3",
+      "bytes": 8140,
+      "rows": 100
+    }
+  ]
+}

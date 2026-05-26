@@ -9,6 +9,7 @@ from galapagos.datasets.schemas import (
     TARGET_TIMEFRAMES,
 )
 from galapagos.features.advanced_ohlcv_schemas import ADVANCED_OHLCV_FEATURE_VALUE_COLUMNS_V6_0
+from galapagos.features.refined_ohlcv_trades_schemas import REFINED_OHLCV_TRADES_SELECTED_FEATURES_V9_0
 
 VERSION = "V2.8"
 CORRECTION_VERSION = "V2.8.4"
@@ -1257,4 +1258,133 @@ def get_feature_columns_sha256_v8_7() -> str:
     import json
 
     payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V8_7, separators=(",", ":"), sort_keys=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+VERSION_V9_2 = "V9.2"
+ML_SCHEMA_VERSION_V9_2 = "V9.2"
+TARGET_NAME_V9_2 = TARGET_NAME_V8_5
+RANDOM_SEED_V9_2 = RANDOM_SEED_V8_5
+TARGET_CLASSES_V9_2 = TARGET_CLASSES_V8_5.copy()
+MODEL_NAMES_V9_2 = MODEL_NAMES_V8_5.copy()
+TIMEFRAMES_V9_2 = TIMEFRAMES_V8_5.copy()
+
+MANIFEST_PATH_V9_2 = Path("reports/manifests/refined_ohlcv_trades_offline_ml_research_v9_2_manifest.json")
+REPORT_JSON_PATH_V9_2 = Path("reports/ml/refined_ohlcv_trades_offline_ml_research_v9_2.json")
+REPORT_MD_PATH_V9_2 = Path("reports/ml/refined_ohlcv_trades_offline_ml_research_v9_2.md")
+SCORES_JSON_PATH_V9_2 = Path("reports/ml/refined_ohlcv_trades_offline_research_scores_v9_2.json")
+SCORES_MD_PATH_V9_2 = Path("reports/ml/refined_ohlcv_trades_offline_research_scores_v9_2.md")
+DOC_PATH_V9_2 = Path("docs/refined_ohlcv_trades_offline_ml_research_v9_2.md")
+
+ALLOWED_FEATURE_COLUMNS_V9_2 = REFINED_OHLCV_TRADES_SELECTED_FEATURES_V9_0.copy()
+FORBIDDEN_FEATURE_PREFIXES_V9_2 = FORBIDDEN_FEATURE_PREFIXES_V8_5.copy()
+FORBIDDEN_FEATURE_EXACT_V9_2 = [
+    *FORBIDDEN_FEATURE_EXACT_V8_5,
+    "refined_feature_null_count",
+    "refined_feature_error_count",
+]
+FORBIDDEN_OUTPUT_COLUMNS_EXACT_V9_2 = FORBIDDEN_OUTPUT_COLUMNS_EXACT_V8_5.copy()
+FORBIDDEN_METRIC_TERMS_V9_2 = FORBIDDEN_METRIC_TERMS_V8_5.copy()
+ML_SCORE_COLUMNS_V9_2 = ML_SCORE_COLUMNS_V8_5.copy()
+
+EXPECTED_LIMITATIONS_V9_2 = [
+    "V9.2 entraine uniquement des baselines ML offline simples sur le dataset raffine V9.1.",
+    "V9.2 produit des metriques descriptives et non actionnables, sans backtest, sans strategie, sans signal de trading et sans ordre.",
+]
+
+SAFETY_FLAGS_V9_2 = SAFETY_FLAGS_V8_5.copy()
+
+
+def get_refined_ohlcv_trades_ml_score_path_v9_2(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v9_2/ml/refined_offline_research_ohlcv_trades"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "ml-scores.parquet"
+    )
+
+
+def get_feature_columns_sha256_v9_2() -> str:
+    import hashlib
+    import json
+
+    payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V9_2, separators=(",", ":"), sort_keys=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+VERSION_V9_3 = "V9.3"
+ML_SCHEMA_VERSION_V9_3 = "V9.3"
+TARGET_NAME_V9_3 = TARGET_NAME_V9_2
+RANDOM_SEED_V9_3 = RANDOM_SEED_V9_2
+LABEL_SHUFFLE_RANDOM_SEED_V9_3 = 123
+TARGET_CLASSES_V9_3 = TARGET_CLASSES_V9_2.copy()
+MODEL_NAMES_V9_3 = MODEL_NAMES_V9_2.copy()
+TIMEFRAMES_V9_3 = TIMEFRAMES_V9_2.copy()
+
+MANIFEST_PATH_V9_3 = Path("reports/manifests/refined_strict_walk_forward_validation_v9_3_manifest.json")
+REPORT_JSON_PATH_V9_3 = Path("reports/ml/refined_strict_walk_forward_validation_v9_3.json")
+REPORT_MD_PATH_V9_3 = Path("reports/ml/refined_strict_walk_forward_validation_v9_3.md")
+SCORES_JSON_PATH_V9_3 = Path("reports/ml/refined_strict_walk_forward_scores_v9_3.json")
+SCORES_MD_PATH_V9_3 = Path("reports/ml/refined_strict_walk_forward_scores_v9_3.md")
+DOC_PATH_V9_3 = Path("docs/refined_strict_walk_forward_validation_v9_3.md")
+
+ALLOWED_FEATURE_COLUMNS_V9_3 = ALLOWED_FEATURE_COLUMNS_V9_2.copy()
+FORBIDDEN_FEATURE_PREFIXES_V9_3 = FORBIDDEN_FEATURE_PREFIXES_V9_2.copy()
+FORBIDDEN_FEATURE_EXACT_V9_3 = [
+    *FORBIDDEN_FEATURE_EXACT_V9_2,
+    "fold_id",
+    "fold_role",
+    "fold_order",
+    "is_embargoed",
+    "is_purged",
+]
+FORBIDDEN_OUTPUT_COLUMNS_EXACT_V9_3 = FORBIDDEN_OUTPUT_COLUMNS_EXACT_V9_2.copy()
+FORBIDDEN_METRIC_TERMS_V9_3 = FORBIDDEN_METRIC_TERMS_V9_2.copy()
+ML_SCORE_COLUMNS_V9_3 = ML_SCORE_COLUMNS_V8_7.copy()
+WALK_FORWARD_FOLD_COLUMNS_V9_3 = WALK_FORWARD_FOLD_COLUMNS_V8_7.copy()
+
+EXPECTED_LIMITATIONS_V9_3 = [
+    "V9.3 produit une validation walk-forward offline stricte des baselines ML raffinees sur le dataset V9.1.",
+    "V9.3 ne produit aucun backtest, aucune strategie, aucun signal de trading et aucun ordre.",
+    "Les resultats restent descriptifs et ne valident pas une exploitation trading.",
+]
+
+SAFETY_FLAGS_V9_3 = SAFETY_FLAGS_V8_7.copy()
+
+
+def get_refined_strict_walk_forward_score_path_v9_3(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v9_3/ml/refined_strict_walk_forward"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "walk_forward_scores.parquet"
+    )
+
+
+def get_refined_strict_walk_forward_folds_path_v9_3(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v9_3/ml/refined_strict_walk_forward"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "folds.parquet"
+    )
+
+
+def get_feature_columns_sha256_v9_3() -> str:
+    import hashlib
+    import json
+
+    payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V9_3, separators=(",", ":"), sort_keys=False)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()

@@ -1,17 +1,12 @@
-# Latest Metrics V8.9.1
+# Latest Metrics V9.0 -> V9.3
 
-- Derniere version validee : V8.8.
-- Candidate : V8.9.1.
-- Statut : `pending_external_audit`.
-- Direction : correctif packaging audit-lite V8.9 autoporteur.
-- Changement fonctionnel V8.9 : `false`.
-- Fenetre : `2023-03-25` -> `2024-03-24`.
-- Total jours : `366`.
-- Feature columns originales : `71`.
+- Derniere version validee : V8.9.1.
+- Candidate : `V9.0_to_V9.3`.
+- Fenetre : `2023-03-25` -> `2024-03-24` (`366` jours).
 - Selected features : `18`.
-- Dropped features : `27`.
-- Review features : `29`.
-- Families retenues : `{'microstructure_proxy': 1, 'ohlcv_base': 7, 'taker_flow': 3, 'temporal': 2, 'trade_aggregation': 4, 'trade_intensity': 1}`.
-- Families a revoir : `{'microstructure_proxy': 2, 'rolling_trade': 13, 'temporal': 1, 'trade_aggregation': 8, 'trade_intensity': 5}`.
+- Dataset rows : `{'1m': 527040, '5m': 105408, '15m': 35136, '1h': 8784}`.
+- Scores V9.2 : `{'1m': 2107920, '5m': 421392, '15m': 140304, '1h': 34896}`.
+- Scores V9.3 : `{'1m': 8805440, '5m': 1759808, '15m': 585536, '1h': 145184}`.
+- Folds : `{'1m': 5, '5m': 5, '15m': 5, '1h': 5}`.
 
-Aucun nouveau dataset, aucun modele ML, aucun backtest, aucune strategie, aucun signal de trading, aucun ordre et aucun trading reel.
+Aucun backtest, aucune strategie, aucun signal, aucun ordre, aucun trading reel.
