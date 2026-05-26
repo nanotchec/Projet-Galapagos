@@ -1130,3 +1130,131 @@ def get_feature_columns_sha256_v8_5() -> str:
 
     payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V8_5, separators=(",", ":"), sort_keys=False)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+VERSION_V8_7 = "V8.7"
+ML_SCHEMA_VERSION_V8_7 = "V8.7"
+TARGET_NAME_V8_7 = TARGET_NAME_V8_5
+RANDOM_SEED_V8_7 = RANDOM_SEED_V8_5
+LABEL_SHUFFLE_RANDOM_SEED_V8_7 = 123
+TARGET_CLASSES_V8_7 = TARGET_CLASSES_V8_5.copy()
+MODEL_NAMES_V8_7 = MODEL_NAMES_V8_5.copy()
+TIMEFRAMES_V8_7 = TIMEFRAMES_V8_5.copy()
+
+MANIFEST_PATH_V8_7 = Path("reports/manifests/strict_walk_forward_validation_v8_7_manifest.json")
+REPORT_JSON_PATH_V8_7 = Path("reports/ml/strict_walk_forward_validation_v8_7.json")
+REPORT_MD_PATH_V8_7 = Path("reports/ml/strict_walk_forward_validation_v8_7.md")
+SCORES_JSON_PATH_V8_7 = Path("reports/ml/strict_walk_forward_scores_v8_7.json")
+SCORES_MD_PATH_V8_7 = Path("reports/ml/strict_walk_forward_scores_v8_7.md")
+DOC_PATH_V8_7 = Path("docs/strict_walk_forward_validation_v8_7.md")
+
+ALLOWED_FEATURE_COLUMNS_V8_7 = ALLOWED_FEATURE_COLUMNS_V8_5.copy()
+FORBIDDEN_FEATURE_PREFIXES_V8_7 = FORBIDDEN_FEATURE_PREFIXES_V8_5.copy()
+FORBIDDEN_FEATURE_EXACT_V8_7 = [
+    *FORBIDDEN_FEATURE_EXACT_V8_5,
+    "fold_id",
+    "fold_role",
+    "fold_order",
+    "is_embargoed",
+    "is_purged",
+]
+FORBIDDEN_OUTPUT_COLUMNS_EXACT_V8_7 = FORBIDDEN_OUTPUT_COLUMNS_EXACT_V8_5.copy()
+FORBIDDEN_METRIC_TERMS_V8_7 = FORBIDDEN_METRIC_TERMS_V8_5.copy()
+ML_SCORE_COLUMNS_V8_7 = [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "decision_ts",
+    "fold_id",
+    "fold_role",
+    "fold_order",
+    "ml_run_id",
+    "model_name",
+    "target_name",
+    "dataset_sha256",
+    "feature_columns_sha256",
+    "ml_schema_version",
+    "target_value",
+    "research_predicted_class",
+    "research_probability_down",
+    "research_probability_flat",
+    "research_probability_up",
+    "prediction_available_ts",
+    "row_valid_for_ml",
+    "ml_null_count",
+    "ml_error_count",
+]
+WALK_FORWARD_FOLD_COLUMNS_V8_7 = [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "fold_id",
+    "fold_role",
+    "fold_order",
+    "is_embargoed",
+    "is_purged",
+    "walk_forward_policy_version",
+]
+
+EXPECTED_LIMITATIONS_V8_7 = [
+    "V8.7 produit une validation walk-forward offline stricte des baselines ML sur le dataset OHLCV + aggTrades 1 an V8.4.",
+    "V8.7 ne produit aucun backtest, aucune strategie, aucun signal de trading et aucun ordre.",
+    "Les resultats restent descriptifs et ne valident pas une exploitation trading.",
+]
+
+SAFETY_FLAGS_V8_7 = {
+    "public_read_only": True,
+    "authentication_used": False,
+    "api_key_used": False,
+    "private_endpoint_used": False,
+    "orders_enabled": False,
+    "paper_live_enabled": False,
+    "trading_enabled": False,
+    "ml_enabled": True,
+    "labels_enabled": True,
+    "dataset_enabled": True,
+    "backtest_enabled": False,
+    "strategy_enabled": False,
+    "execution_enabled": False,
+}
+
+
+def get_strict_walk_forward_score_path_v8_7(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v8_7/ml/strict_walk_forward"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "walk_forward_scores.parquet"
+    )
+
+
+def get_strict_walk_forward_folds_path_v8_7(root: Path, timeframe: str, window_start: str, window_end: str) -> Path:
+    return (
+        root
+        / "data/research/v8_7/ml/strict_walk_forward"
+        / "source=binance_archive"
+        / "market_type=spot"
+        / "symbol=BTCUSDT"
+        / f"timeframe={timeframe}"
+        / f"window={window_start}_{window_end}"
+        / "folds.parquet"
+    )
+
+
+def get_feature_columns_sha256_v8_7() -> str:
+    import hashlib
+    import json
+
+    payload = json.dumps(ALLOWED_FEATURE_COLUMNS_V8_7, separators=(",", ":"), sort_keys=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()

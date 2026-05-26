@@ -1,0 +1,10 @@
+{
+  "run_strict_walk_forward_validation_v8_7.py": 363.94,
+  "validate_strict_walk_forward_validation_v8_7.py": 115.0,
+  "pytest_tests_ml_strict_walk_forward_validation_v8_7": 1.42,
+  "pytest_tests_validation_strict_walk_forward_validation_v8_7_validator": 118.46,
+  "release_audit_lite_zip_v8_7.py": 7.46,
+  "audit_audit_lite_zip_v8_7.py": 0.04,
+  "smoke_audit_lite_zip_v8_7.py": 2.24,
+  "pytest_collect_only": 2.03
+}

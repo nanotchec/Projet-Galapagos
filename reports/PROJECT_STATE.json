@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V8.5",
-  "candidate_version": "V8.6",
+  "last_validated_version": "V8.6",
+  "candidate_version": "V8.7",
   "candidate_status": "pending_external_audit",
-  "direction": "OHLCV + public trades 1-year robustness and research decision gate",
+  "direction": "strict walk-forward offline validation",
   "public_market_ingestion_v2_3_validated": true,
   "ohlcv_resampling_v2_4_validated": true,
   "causal_feature_store_v2_5_validated": true,
@@ -1183,5 +1183,29 @@
   "research_decision_gate_v8_6_secondary_next_step": "B. Ameliorer/refactoriser les features OHLCV + trades.",
   "research_decision_gate_v8_6_window_start": "2023-03-25",
   "research_decision_gate_v8_6_window_end": "2024-03-24",
-  "research_decision_gate_v8_6_days": 366
+  "research_decision_gate_v8_6_days": 366,
+  "strict_walk_forward_validation_v8_7_created": true,
+  "strict_walk_forward_window_start_v8_7": "2023-03-25",
+  "strict_walk_forward_window_end_v8_7": "2024-03-24",
+  "strict_walk_forward_total_days_v8_7": 366,
+  "strict_walk_forward_feature_columns_count_v8_7": 71,
+  "strict_walk_forward_score_rows_v8_7": {
+    "1m": 8805440,
+    "5m": 1759808,
+    "15m": 585536,
+    "1h": 145184
+  },
+  "strict_walk_forward_folds_count_v8_7": {
+    "1m": 5,
+    "5m": 5,
+    "15m": 5,
+    "1h": 5
+  },
+  "backtest_v8_7_created": false,
+  "strategy_v8_7_created": false,
+  "signal_v8_7_created": false,
+  "orders_v8_7_created": false,
+  "paper_live_v8_7_created": false,
+  "trading_v8_7_created": false,
+  "persistent_model_v8_7_created": false
 }

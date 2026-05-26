@@ -1,19 +1,18 @@
-# Etat du Projet : V8.5 validee + candidat V8.6
+# Etat du Projet : V8.6 validee + candidat V8.7
 
-- **Derniere version validee** : V8.5.
-- **Version candidate** : V8.6.
+- **Derniere version validee** : V8.6.
+- **Version candidate** : V8.7.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : OHLCV + public trades 1-year robustness and research decision gate.
-- **Verdict research** : `interessant_mais_mitige_non_concluant`.
-- **Recommandation principale** : D. Preparer une validation walk-forward offline plus stricte.
-- **Recommandation secondaire** : B. Ameliorer/refactoriser les features OHLCV + trades.
+- **Direction** : strict walk-forward offline validation.
 
-## Candidat V8.6
+## Candidat V8.7
 
 - Fenetre : `2023-03-25` -> `2024-03-24`.
-- Total jours : `366`.
-- Feature columns count : `71`.
-- V8.6 reste candidate `pending_external_audit`.
+- Nombre de jours : `366`.
+- Feature columns : `71`.
+- Folds par timeframe : `{'1m': 5, '5m': 5, '15m': 5, '1h': 5}`.
+- Scores par timeframe : `{'1m': 8805440, '5m': 1759808, '15m': 585536, '1h': 145184}`.
+- Validation offline uniquement, sans backtest.
 
 ## Clause De Securite
 
@@ -26,4 +25,4 @@
 - Aucun modele persistant.
 - Aucune API privee.
 - Aucune cle API.
-- V8.6 reste non validee avant audit externe.
+- V8.7 reste non validee avant audit externe.

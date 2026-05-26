@@ -1,0 +1,149 @@
+{
+  "version": "V8.7",
+  "validation_scope": "full_local",
+  "commands_executed": [
+    "python scripts/run_strict_walk_forward_validation_v8_7.py",
+    "python scripts/validate_strict_walk_forward_validation_v8_7.py",
+    "python -m pytest -q tests/ml/test_strict_walk_forward_validation_v8_7.py",
+    "python -m pytest -q tests/validation/test_strict_walk_forward_validation_v8_7_validator.py",
+    "python scripts/release_audit_lite_zip_v8_7.py",
+    "python scripts/audit_audit_lite_zip_v8_7.py --zip projet-galapagos-v8.7-audit-lite.zip",
+    "python scripts/smoke_audit_lite_zip_v8_7.py --zip projet-galapagos-v8.7-audit-lite.zip",
+    "python -m pytest --collect-only -q"
+  ],
+  "command_results": {
+    "python scripts/run_strict_walk_forward_validation_v8_7.py": "PASS",
+    "python scripts/validate_strict_walk_forward_validation_v8_7.py": "PASS",
+    "python -m pytest -q tests/ml/test_strict_walk_forward_validation_v8_7.py": "PASS",
+    "python -m pytest -q tests/validation/test_strict_walk_forward_validation_v8_7_validator.py": "PASS",
+    "python scripts/release_audit_lite_zip_v8_7.py": "PASS",
+    "python scripts/audit_audit_lite_zip_v8_7.py --zip projet-galapagos-v8.7-audit-lite.zip": "PASS",
+    "python scripts/smoke_audit_lite_zip_v8_7.py --zip projet-galapagos-v8.7-audit-lite.zip": "PASS",
+    "python -m pytest --collect-only -q": "PASS"
+  },
+  "command_durations_seconds": {
+    "run_strict_walk_forward_validation_v8_7.py": 363.94,
+    "validate_strict_walk_forward_validation_v8_7.py": 115.0,
+    "pytest_tests_ml_strict_walk_forward_validation_v8_7": 1.42,
+    "pytest_tests_validation_strict_walk_forward_validation_v8_7_validator": 118.46,
+    "release_audit_lite_zip_v8_7.py": 7.46,
+    "audit_audit_lite_zip_v8_7.py": 0.04,
+    "smoke_audit_lite_zip_v8_7.py": 2.24,
+    "pytest_collect_only": 2.03
+  },
+  "output_scores_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "sha256": "2d1b9878dae9466068124fec97e450abc3ad8b0c4bcb61fa2b9ddda7b5f610b5",
+      "bytes": 10681492,
+      "rows": 585536,
+      "columns_count": 26,
+      "min_event_ts": "2023-03-25T15:00:00Z",
+      "max_event_ts": "2024-03-24T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "sha256": "b3a8cd2eb2003f7ef438ea1e07abe65e62b1ed7f53e654a5f659559d94853a5a",
+      "bytes": 2097466,
+      "rows": 145184,
+      "columns_count": 26,
+      "min_event_ts": "2023-03-27T12:00:00Z",
+      "max_event_ts": "2024-03-24T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "sha256": "f25bc3beec54201d18f4aec5cad414eae268659e7f8dda5f559fb653fe386c3d",
+      "bytes": 319649744,
+      "rows": 8805440,
+      "columns_count": 26,
+      "min_event_ts": "2023-03-25T01:00:00Z",
+      "max_event_ts": "2024-03-24T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "sha256": "4f8e6ea87609fdd04e95ba6f9adfd9fd90627fb238be04fada0005374180d4f7",
+      "bytes": 34809974,
+      "rows": 1759808,
+      "columns_count": 26,
+      "min_event_ts": "2023-03-25T05:00:00Z",
+      "max_event_ts": "2024-03-24T23:55:00Z"
+    }
+  ],
+  "output_folds_full": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/folds.parquet",
+      "sha256": "e1fd1cdfdc2e4f02f16c4f31bb04fe489ba048caf2cd678063d463a014a7d855",
+      "bytes": 563761,
+      "rows": 146784,
+      "columns_count": 12,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:45:00Z"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/folds.parquet",
+      "sha256": "348d584c40c9e3e1c740e848c408bc96454bdd7ae8c12added3c4f752874e706",
+      "bytes": 135794,
+      "rows": 36696,
+      "columns_count": 12,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:00:00Z"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/folds.parquet",
+      "sha256": "440ab06c0418887770f44047d8e1caddd5e8e4006dbe0179ff202dcc857d1173",
+      "bytes": 16273026,
+      "rows": 2201760,
+      "columns_count": 12,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:59:00Z"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/folds.parquet",
+      "sha256": "5da776e94412d26f2f90afc0db78ee0147ab5cd877658be8f2d6ed1fa5624930",
+      "bytes": 1692099,
+      "rows": 440352,
+      "columns_count": 12,
+      "min_event_ts": "2023-03-25T00:00:00Z",
+      "max_event_ts": "2024-03-24T23:55:00Z"
+    }
+  ],
+  "input_window_start": "2023-03-25",
+  "input_window_end": "2024-03-24",
+  "input_total_days": 366,
+  "feature_columns_count": 71,
+  "manifest_sha256": "f9d748917133663b0abfe61f3295490cdbc6d35ee6409bc9bae5e879297efd28",
+  "report_sha256": "f9d748917133663b0abfe61f3295490cdbc6d35ee6409bc9bae5e879297efd28",
+  "tests_passed": true,
+  "validator_passed": true,
+  "audit_lite_passed": true,
+  "smoke_audit_lite_passed": true,
+  "safety_flags": {
+    "public_read_only": true,
+    "authentication_used": false,
+    "api_key_used": false,
+    "private_endpoint_used": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "trading_enabled": false,
+    "ml_enabled": true,
+    "labels_enabled": true,
+    "dataset_enabled": true,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "no_trading": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_persistent_model": true,
+  "errors": [],
+  "warnings": []
+}

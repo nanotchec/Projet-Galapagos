@@ -1,0 +1,221 @@
+{
+  "version": "V8.7",
+  "audit_lite_does_not_replace_full_validation": true,
+  "raw_zips_excluded": true,
+  "input_dataset_manifest": {
+    "path": "reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json",
+    "sha256": "8c550c53e0269ab8c1f3a2e12904f40cfd229510b697108ee854a919a540c200",
+    "window_start": "2023-03-25",
+    "window_end": "2024-03-24",
+    "total_days": 366,
+    "feature_columns_count": 74
+  },
+  "input_datasets_full_parquet_excluded": [
+    {
+      "timeframe": "15m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "4d37eeb354eeead86eede52eeb278b4c05dc8f2320dd55b5435e9135c6d9311d",
+      "rows": 35136,
+      "reason_excluded": "full V8.4 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1h",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "26e1174948413d422b8170a652fe7e9108c714d6d7b434425a43bbd5a591e690",
+      "rows": 8784,
+      "reason_excluded": "full V8.4 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "1m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "efa0782f3b581c9df25319d9497eda607d8429321b6018062a18d2b3a3ce394c",
+      "rows": 527040,
+      "reason_excluded": "full V8.4 dataset Parquet is represented by source hashes"
+    },
+    {
+      "timeframe": "5m",
+      "path": "data/research/v8_4/datasets/offline_supervised_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "sha256": "0755c8818de6782c782d5c89fc1dcde9e56446cd65b4a05dcf2d6dc29cc47be7",
+      "rows": 105408,
+      "reason_excluded": "full V8.4 dataset Parquet is represented by source hashes"
+    }
+  ],
+  "full_parquet_excluded": [
+    {
+      "artifact_type": "scores",
+      "timeframe": "15m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "sha256": "2d1b9878dae9466068124fec97e450abc3ad8b0c4bcb61fa2b9ddda7b5f610b5",
+      "bytes": 10681492,
+      "rows": 585536,
+      "format": "parquet",
+      "reason_excluded": "full V8.7 Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "artifact_type": "scores",
+      "timeframe": "1h",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "sha256": "b3a8cd2eb2003f7ef438ea1e07abe65e62b1ed7f53e654a5f659559d94853a5a",
+      "bytes": 2097466,
+      "rows": 145184,
+      "format": "parquet",
+      "reason_excluded": "full V8.7 Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "artifact_type": "scores",
+      "timeframe": "1m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "sha256": "f25bc3beec54201d18f4aec5cad414eae268659e7f8dda5f559fb653fe386c3d",
+      "bytes": 319649744,
+      "rows": 8805440,
+      "format": "parquet",
+      "reason_excluded": "full V8.7 Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "artifact_type": "scores",
+      "timeframe": "5m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "sha256": "4f8e6ea87609fdd04e95ba6f9adfd9fd90627fb238be04fada0005374180d4f7",
+      "bytes": 34809974,
+      "rows": 1759808,
+      "format": "parquet",
+      "reason_excluded": "full V8.7 Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "artifact_type": "folds",
+      "timeframe": "15m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/folds.parquet",
+      "sha256": "e1fd1cdfdc2e4f02f16c4f31bb04fe489ba048caf2cd678063d463a014a7d855",
+      "bytes": 563761,
+      "rows": 146784,
+      "format": "parquet",
+      "reason_excluded": "full V8.7 Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "artifact_type": "folds",
+      "timeframe": "1h",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/folds.parquet",
+      "sha256": "348d584c40c9e3e1c740e848c408bc96454bdd7ae8c12added3c4f752874e706",
+      "bytes": 135794,
+      "rows": 36696,
+      "format": "parquet",
+      "reason_excluded": "full V8.7 Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "artifact_type": "folds",
+      "timeframe": "1m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/folds.parquet",
+      "sha256": "440ab06c0418887770f44047d8e1caddd5e8e4006dbe0179ff202dcc857d1173",
+      "bytes": 16273026,
+      "rows": 2201760,
+      "format": "parquet",
+      "reason_excluded": "full V8.7 Parquet is represented by manifest checksums and deterministic samples"
+    },
+    {
+      "artifact_type": "folds",
+      "timeframe": "5m",
+      "path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/folds.parquet",
+      "sha256": "5da776e94412d26f2f90afc0db78ee0147ab5cd877658be8f2d6ed1fa5624930",
+      "bytes": 1692099,
+      "rows": 440352,
+      "format": "parquet",
+      "reason_excluded": "full V8.7 Parquet is represented by manifest checksums and deterministic samples"
+    }
+  ],
+  "samples_included": [
+    {
+      "artifact_type": "score",
+      "timeframe": "1m",
+      "path": "data/audit_lite/v8_7/walk_forward_scores/timeframe=1m/sample.parquet",
+      "sha256": "997301c9f3d2784cffb61cd1aed6f54bea6454d2ddae90773eca910508a156c3",
+      "bytes": 26868,
+      "rows": 300,
+      "source_full_path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "source_full_sha256": "f25bc3beec54201d18f4aec5cad414eae268659e7f8dda5f559fb653fe386c3d"
+    },
+    {
+      "artifact_type": "fold",
+      "timeframe": "1m",
+      "path": "data/audit_lite/v8_7/folds/timeframe=1m/sample.parquet",
+      "sha256": "4630e4d28f67521e794e0e0ffb71450bb793ab6961e1e004be70423aea29a691",
+      "bytes": 9705,
+      "rows": 300,
+      "source_full_path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/folds.parquet",
+      "source_full_sha256": "440ab06c0418887770f44047d8e1caddd5e8e4006dbe0179ff202dcc857d1173"
+    },
+    {
+      "artifact_type": "score",
+      "timeframe": "5m",
+      "path": "data/audit_lite/v8_7/walk_forward_scores/timeframe=5m/sample.parquet",
+      "sha256": "5c6256eca4590af4f605c3ae9780aba3e2c8b908fbd4b166229e99b63e2d8fcd",
+      "bytes": 27286,
+      "rows": 300,
+      "source_full_path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "source_full_sha256": "4f8e6ea87609fdd04e95ba6f9adfd9fd90627fb238be04fada0005374180d4f7"
+    },
+    {
+      "artifact_type": "fold",
+      "timeframe": "5m",
+      "path": "data/audit_lite/v8_7/folds/timeframe=5m/sample.parquet",
+      "sha256": "bd7f18d0a8ce70e624e57f32405f58f670ae1d0b8bc344eb8a64c5085754963d",
+      "bytes": 9769,
+      "rows": 300,
+      "source_full_path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/folds.parquet",
+      "source_full_sha256": "5da776e94412d26f2f90afc0db78ee0147ab5cd877658be8f2d6ed1fa5624930"
+    },
+    {
+      "artifact_type": "score",
+      "timeframe": "15m",
+      "path": "data/audit_lite/v8_7/walk_forward_scores/timeframe=15m/sample.parquet",
+      "sha256": "17a8f62f1cf619684bcd86789def4a4989a6837e5cad7cfa32558502cc021998",
+      "bytes": 28214,
+      "rows": 300,
+      "source_full_path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "source_full_sha256": "2d1b9878dae9466068124fec97e450abc3ad8b0c4bcb61fa2b9ddda7b5f610b5"
+    },
+    {
+      "artifact_type": "fold",
+      "timeframe": "15m",
+      "path": "data/audit_lite/v8_7/folds/timeframe=15m/sample.parquet",
+      "sha256": "ca4c2a911ff08fd05081b13e32655900ddcd41a6f047c9df5272cbc1c6340a47",
+      "bytes": 10038,
+      "rows": 300,
+      "source_full_path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/folds.parquet",
+      "source_full_sha256": "e1fd1cdfdc2e4f02f16c4f31bb04fe489ba048caf2cd678063d463a014a7d855"
+    },
+    {
+      "artifact_type": "score",
+      "timeframe": "1h",
+      "path": "data/audit_lite/v8_7/walk_forward_scores/timeframe=1h/sample.parquet",
+      "sha256": "82489d61c708dfe37dd05b5720778e8a32dfdc18f09d6acf62de02f06fa51935",
+      "bytes": 28136,
+      "rows": 300,
+      "source_full_path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/walk_forward_scores.parquet",
+      "source_full_sha256": "b3a8cd2eb2003f7ef438ea1e07abe65e62b1ed7f53e654a5f659559d94853a5a"
+    },
+    {
+      "artifact_type": "fold",
+      "timeframe": "1h",
+      "path": "data/audit_lite/v8_7/folds/timeframe=1h/sample.parquet",
+      "sha256": "7ebb71b6522aca3a650f9002bc6e64b332ada900409153f3d1ceed612ac0f9b3",
+      "bytes": 10035,
+      "rows": 300,
+      "source_full_path": "data/research/v8_7/ml/strict_walk_forward/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/folds.parquet",
+      "source_full_sha256": "348d584c40c9e3e1c740e848c408bc96454bdd7ae8c12added3c4f752874e706"
+    }
+  ],
+  "included_reports": [
+    {
+      "path": "reports/manifests/strict_walk_forward_validation_v8_7_manifest.json",
+      "sha256": "f9d748917133663b0abfe61f3295490cdbc6d35ee6409bc9bae5e879297efd28"
+    },
+    {
+      "path": "reports/ml/strict_walk_forward_validation_v8_7.json",
+      "sha256": "f9d748917133663b0abfe61f3295490cdbc6d35ee6409bc9bae5e879297efd28"
+    },
+    {
+      "path": "reports/ml/strict_walk_forward_scores_v8_7.json",
+      "sha256": "e052c0d549174840e1ff5447066c75d91ab5f769bbea9b01b5918c47684590dc"
+    }
+  ]
+}
