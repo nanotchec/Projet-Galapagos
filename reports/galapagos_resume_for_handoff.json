@@ -1,0 +1,2223 @@
+{
+  "generated_at_utc": "2026-05-26T22:40:29Z",
+  "current_version": "V9.0_to_V9.3.1",
+  "last_validated_version": "V8.9.1",
+  "candidate_version": "V9.0_to_V9.3.1",
+  "candidate_status": "pending_external_audit",
+  "git": {
+    "branch": "main",
+    "status": "## main...origin/main [ahead 2]",
+    "recent_commits": [
+      "56b0f33d V9.0-to-V9.3.1 fix grouped audit-lite packaging",
+      "5054a177 V9.0-V9.3 add refined OHLCV trades research pipeline",
+      "3a561a6e V8.9.1 fix feature audit audit-lite inputs",
+      "535eb079 V8.9 add OHLCV trades feature audit selection",
+      "8d380f09 V8.8 add strict walk-forward research decision gate"
+    ],
+    "head_commit": "56b0f33d"
+  },
+  "latest_audit_lite_archive": {
+    "path": "projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+    "bytes": 2318053,
+    "human_size": "2.2M",
+    "sha256": "9bed32a8da8d4b57ca2995f8e16755823c012b181221504c3588ec8bef66430e"
+  },
+  "pending_external_audit_versions": [
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "version": "V9.0_to_V9.3.1"
+    },
+    {
+      "path": "reports/current/latest_metrics.json",
+      "version": "V9.0_to_V9.3.1"
+    }
+  ],
+  "recent_versions": [
+    {
+      "version": "V1.x",
+      "objective": "Socle agent, paper broker, risk engine, journaux, backtests historiques et nombreux audits de securite/recherche.",
+      "key_artifacts": [
+        {
+          "path": "reports/REPORT_INDEX.md",
+          "exists": true,
+          "bytes": 131235,
+          "sha256": "7567132a1f077ca618f82ae071c060d8fa6db4843b868de2a0c6a8c58072e7bc"
+        },
+        {
+          "path": "src/galapagos/execution/paper_broker.py",
+          "exists": true,
+          "bytes": 8575,
+          "sha256": "05784008c49daffaba1a1f908851d04a6cf17d4fdf611f95641d12015f96aa24"
+        },
+        {
+          "path": "src/galapagos/risk/risk_engine.py",
+          "exists": true,
+          "bytes": 7884,
+          "sha256": "708c6e06def78d5623bda135cc0e96d04902c16af708723baa3570eae2ef98c5"
+        }
+      ],
+      "scripts_added_or_relevant": [],
+      "tests": [
+        {
+          "path": "tests/test_no_real_trading.py",
+          "exists": true,
+          "bytes": 942,
+          "sha256": "c961ba4833392b8183fa7001eff2a96d656351246cd99462f42fb75f490e24b5"
+        }
+      ],
+      "reports_manifests": [
+        "reports/REPORT_INDEX.md"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Historique tres volumineux; plusieurs rapports backtest anciens sont references mais non actifs dans le scope courant.",
+      "repo_status": "present",
+      "reservations": "Historique tres volumineux; plusieurs rapports backtest anciens sont references mais non actifs dans le scope courant."
+    },
+    {
+      "version": "V1.8C.1",
+      "objective": "Ajout/diagnostic provider Codex CLI local et analyses de decisions; pas d ordre reel.",
+      "key_artifacts": [
+        {
+          "path": "reports/diagnostics/codex_cli_decisions_v1_8C_1.json",
+          "exists": true,
+          "bytes": 19378,
+          "sha256": "54197aa62ed195231e5cc6f12c4f69b7cf493e2c83b763daf849671eec0f7f1e"
+        },
+        {
+          "path": "reports/diagnostics/codex_cli_decisions_v1_8C_1.md",
+          "exists": true,
+          "bytes": 3594,
+          "sha256": "6b182df333351cfd83a49756dd2a0780b3b7e905a6438b4f7c0cad0665e794e6"
+        },
+        {
+          "path": "src/galapagos/reports/codex_cli_report.py",
+          "exists": true,
+          "bytes": 13994,
+          "sha256": "8a1f2fe9e7a2c328685a1f5fcdb433ff59c078565d9f8b1bfa62e8ac97c14416"
+        }
+      ],
+      "scripts_added_or_relevant": [],
+      "tests": [
+        {
+          "path": "tests/test_llm_provider_and_parser_v13.py",
+          "exists": true,
+          "bytes": 23855,
+          "sha256": "7e64c54dbddf51502081108ba4d732475c2afa26bdaf96020ab4ba3b4fe5e0c7"
+        }
+      ],
+      "reports_manifests": [
+        "reports/diagnostics/codex_cli_decisions_v1_8C_1.json",
+        "reports/diagnostics/codex_cli_decisions_v1_8C_1.md"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Traces surtout diagnostiques; versions V1.8C multiples presentes.",
+      "repo_status": "present",
+      "reservations": "Traces surtout diagnostiques; versions V1.8C multiples presentes."
+    },
+    {
+      "version": "V2.3",
+      "objective": "Ingestion OHLCV publique Binance BTCUSDT de base.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/public_market_ingestion_v2_3_manifest.json",
+          "exists": true,
+          "bytes": 2034,
+          "sha256": "92687a66fe2487a230ee7a0d95d2f1c7aa353a9b8d19aeda0ea3d2c0673c050b"
+        },
+        {
+          "path": "docs/public_market_ingestion_v2_3.md",
+          "exists": true,
+          "bytes": 3096,
+          "sha256": "f78e074b5b95da3c31cf2071542e8599ca45f11b61e037b79c5a7e6f590e5bf3"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_clean_zip_v2_3.py",
+        "scripts/audit_clean_zip_v2_3_1.py",
+        "scripts/release_clean_zip_v2_3.py",
+        "scripts/release_clean_zip_v2_3_1.py",
+        "scripts/run_public_market_ingestion_preview_v2_3.py",
+        "scripts/smoke_test_clean_zip_v2_3.py",
+        "scripts/smoke_test_clean_zip_v2_3_1.py",
+        "scripts/validate_public_market_ingestion_v2_3.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/data/test_public_market_ingestion_v2_3.py",
+          "exists": true,
+          "bytes": 8302,
+          "sha256": "9f7fd9224add4756a548348d4ea647e4b63e68193530c6bf995ef623eef37b78"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/public_market_ingestion_v2_3_manifest.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Ancien socle public read-only.",
+      "repo_status": "present",
+      "reservations": "Ancien socle public read-only."
+    },
+    {
+      "version": "V5.x / V5.6.1",
+      "objective": "Fenetre OHLCV historique maximale, labels V5.2, dataset/ML/robustesse et gate V5.6.1.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json",
+          "exists": true,
+          "bytes": 302478,
+          "sha256": "12eb00767fe1a3e6ae45d24d7193da0dc96f8a454507e750554a5fe4b9ab5754"
+        },
+        {
+          "path": "reports/manifests/max_history_label_factory_v5_2_manifest.json",
+          "exists": true,
+          "bytes": 11249,
+          "sha256": "3bf156f709be35feed7d5d7c8aaa55005bdec235f334d3bfa2244be256cf00a5"
+        },
+        {
+          "path": "reports/research_decisions/v5_6_research_decision_gate.json",
+          "exists": true,
+          "bytes": 9047,
+          "sha256": "b631c68d03ddc6aa24edccd74e5e3392f238fb66460fba7e2171f17ebf32b4f6"
+        },
+        {
+          "path": "reports/audit_lite/v5_6_1_full_local_validation_attestation.json",
+          "exists": true,
+          "bytes": 2345,
+          "sha256": "7126e6a3488b4af228c449ea952f00d3a53ba50c6812cb615b9ea706951c85d2"
+        }
+      ],
+      "scripts_added_or_relevant": [],
+      "tests": [
+        {
+          "path": "tests/validation/test_max_history_label_factory_v5_2_validator.py",
+          "exists": true,
+          "bytes": 12312,
+          "sha256": "84a1a57ef12ac98549995bb712a9c5f9c89930e73dd6fa3a20509d713f2ec552"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/max_history_public_market_data_v5_0_manifest.json",
+        "reports/manifests/max_history_label_factory_v5_2_manifest.json",
+        "reports/research_decisions/v5_6_research_decision_gate.json",
+        "reports/audit_lite/v5_6_1_full_local_validation_attestation.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "V5.0/V5.2 restent des sources d entree majeures pour V8/V9.",
+      "repo_status": "present",
+      "reservations": "V5.0/V5.2 restent des sources d entree majeures pour V8/V9."
+    },
+    {
+      "version": "V6.x",
+      "objective": "Feature set OHLCV avance, dataset, ML offline, robustesse et decision gate.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/advanced_ohlcv_feature_store_v6_0_manifest.json",
+          "exists": true,
+          "bytes": 53980,
+          "sha256": "ee8569c04db1f59ba300284344ab0e809672c0314c2074a4ea4c3e355a646451"
+        },
+        {
+          "path": "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+          "exists": true,
+          "bytes": 217609,
+          "sha256": "9b0891e6449d717015adbdb78085b76800134b4b5191d857ce5b2a650444ee67"
+        },
+        {
+          "path": "reports/research_decisions/v6_4_research_decision_gate.json",
+          "exists": true,
+          "bytes": 15981,
+          "sha256": "272b88231e6d24861a42a3f11ac0442e0376b8b425a0bae42389cc91a263d7ea"
+        }
+      ],
+      "scripts_added_or_relevant": [],
+      "tests": [
+        {
+          "path": "tests/validation/test_research_decision_gate_v6_4.py",
+          "exists": true,
+          "bytes": 3466,
+          "sha256": "5879a5dc3c8da193b4e199a332703750610ee4882e4fb78c16bdd0ebaf343653"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/advanced_ohlcv_feature_store_v6_0_manifest.json",
+        "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+        "reports/research_decisions/v6_4_research_decision_gate.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Reference descriptive; non directement comparable aux fenetres trades.",
+      "repo_status": "present",
+      "reservations": "Reference descriptive; non directement comparable aux fenetres trades."
+    },
+    {
+      "version": "V7.x",
+      "objective": "Introduction trades publics aggTrades 30/90 jours, features OHLCV+trades, dataset, ML et robustesse 90 jours.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/public_trades_90d_window_v7_7_manifest.json",
+          "exists": true,
+          "bytes": 75607,
+          "sha256": "bcaf4a0e5a69d0e316682f4168ba542eaffea672f43c8c3810cd60cdd505a213"
+        },
+        {
+          "path": "reports/manifests/ohlcv_trades_90d_feature_store_v7_8_manifest.json",
+          "exists": true,
+          "bytes": 89146,
+          "sha256": "cb8b476573d62a17c59d36dc8453ce07c1e169d4c58213dbfdacd5d2d581cf80"
+        },
+        {
+          "path": "reports/manifests/ohlcv_trades_90d_offline_supervised_dataset_v7_9_manifest.json",
+          "exists": true,
+          "bytes": 29776,
+          "sha256": "28f278ead4cd2b17cb577521770280541aca14b9d790dbfee63b2249d00810e8"
+        }
+      ],
+      "scripts_added_or_relevant": [],
+      "tests": [
+        {
+          "path": "tests/data/test_public_trades_90d_window_v7_7.py",
+          "exists": true,
+          "bytes": 3126,
+          "sha256": "b214b45e279a2fdd698465f7e73df865af471df10f1862f14e022cc3c0037528"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/public_trades_90d_window_v7_7_manifest.json",
+        "reports/manifests/ohlcv_trades_90d_feature_store_v7_8_manifest.json",
+        "reports/manifests/ohlcv_trades_90d_offline_supervised_dataset_v7_9_manifest.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "A conduit a la decision d etendre les aggTrades a un an.",
+      "repo_status": "present",
+      "reservations": "A conduit a la decision d etendre les aggTrades a un an."
+    },
+    {
+      "version": "V8.2",
+      "objective": "Ingestion Binance public archive aggTrades BTCUSDT spot sur 366 jours.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/public_trades_1y_window_v8_2_manifest.json",
+          "exists": true,
+          "bytes": 299330,
+          "sha256": "11c7124108169b2afa488db0cec7e048f5ac987e7cf7e7f219eea80be62c4cd5"
+        },
+        {
+          "path": "reports/audit_lite/v8_2_full_local_validation_attestation.json",
+          "exists": true,
+          "bytes": 201731,
+          "sha256": "3f9947f0f172c74efa2c6cadbff0a63a7acf6749986e196b3e07d9b3c7f964cf"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v8_2.py",
+        "scripts/discover_public_trades_v8_2.py",
+        "scripts/release_audit_lite_zip_v8_2.py",
+        "scripts/run_public_trades_1y_window_v8_2.py",
+        "scripts/smoke_audit_lite_zip_v8_2.py",
+        "scripts/validate_public_trades_1y_window_v8_2.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/data/test_public_trades_1y_window_v8_2.py",
+          "exists": true,
+          "bytes": 2917,
+          "sha256": "19da489d3c3536d5f59856473289d66a84e26f15e70eef71bf66e96e35d2d96e"
+        },
+        {
+          "path": "tests/validation/test_public_trades_1y_window_v8_2_validator.py",
+          "exists": true,
+          "bytes": 15581,
+          "sha256": "452a35aa45c34c68305604af2a869b0eb1dd829dbc75574ae6a024abda6e523c"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/public_trades_1y_window_v8_2_manifest.json",
+        "reports/audit_lite/v8_2_full_local_validation_attestation.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Data-only; aucun feature/label/ML/backtest.",
+      "repo_status": "present",
+      "reservations": "Data-only; aucun feature/label/ML/backtest."
+    },
+    {
+      "version": "V8.3",
+      "objective": "Feature store causale OHLCV V5.0 + aggTrades V8.2 sur un an.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/ohlcv_trades_1y_feature_store_v8_3_manifest.json",
+          "exists": true,
+          "bytes": 262910,
+          "sha256": "59ab0fc74d31494e82f5bea5592e64a8387a3403e67b21abc6545bbcb7abbe5e"
+        },
+        {
+          "path": "reports/features/ohlcv_trades_1y_feature_store_v8_3.json",
+          "exists": true,
+          "bytes": 262910,
+          "sha256": "59ab0fc74d31494e82f5bea5592e64a8387a3403e67b21abc6545bbcb7abbe5e"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v8_3.py",
+        "scripts/release_audit_lite_zip_v8_3.py",
+        "scripts/run_ohlcv_trades_1y_feature_store_v8_3.py",
+        "scripts/smoke_audit_lite_zip_v8_3.py",
+        "scripts/validate_ohlcv_trades_1y_feature_store_v8_3.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/features/test_ohlcv_trades_1y_features_v8_3.py",
+          "exists": true,
+          "bytes": 5034,
+          "sha256": "a123ae838f680a7de0de247855fcf6ab5d60f44a331bad2204149e10e4f1782f"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/ohlcv_trades_1y_feature_store_v8_3_manifest.json",
+        "reports/features/ohlcv_trades_1y_feature_store_v8_3.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Features uniquement; aucun label/ML/backtest.",
+      "repo_status": "present",
+      "reservations": "Features uniquement; aucun label/ML/backtest."
+    },
+    {
+      "version": "V8.4",
+      "objective": "Dataset supervise offline multi-source OHLCV+trades avec labels V5.2 filtres.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json",
+          "exists": true,
+          "bytes": 30811,
+          "sha256": "8c550c53e0269ab8c1f3a2e12904f40cfd229510b697108ee854a919a540c200"
+        },
+        {
+          "path": "reports/datasets/ohlcv_trades_1y_offline_supervised_dataset_v8_4.json",
+          "exists": true,
+          "bytes": 30811,
+          "sha256": "8c550c53e0269ab8c1f3a2e12904f40cfd229510b697108ee854a919a540c200"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v8_4.py",
+        "scripts/release_audit_lite_zip_v8_4.py",
+        "scripts/run_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py",
+        "scripts/smoke_audit_lite_zip_v8_4.py",
+        "scripts/validate_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/datasets/test_ohlcv_trades_1y_offline_supervised_dataset_v8_4.py",
+          "exists": true,
+          "bytes": 7170,
+          "sha256": "ccdd4c4f2b5f799238a1a975307a339ac3ccde6c53648691b315b83c94b2d445"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json",
+        "reports/datasets/ohlcv_trades_1y_offline_supervised_dataset_v8_4.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Dataset offline; pas de modele ni backtest.",
+      "repo_status": "present",
+      "reservations": "Dataset offline; pas de modele ni backtest."
+    },
+    {
+      "version": "V8.5",
+      "objective": "Baselines ML offline static split sur dataset V8.4.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/ohlcv_trades_1y_offline_ml_research_v8_5_manifest.json",
+          "exists": true,
+          "bytes": 268567,
+          "sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e"
+        },
+        {
+          "path": "reports/ml/ohlcv_trades_1y_offline_ml_research_v8_5.json",
+          "exists": true,
+          "bytes": 268567,
+          "sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v8_5.py",
+        "scripts/release_audit_lite_zip_v8_5.py",
+        "scripts/run_ohlcv_trades_1y_offline_ml_research_v8_5.py",
+        "scripts/smoke_audit_lite_zip_v8_5.py",
+        "scripts/validate_ohlcv_trades_1y_offline_ml_research_v8_5.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/ml/test_ohlcv_trades_1y_offline_ml_research_v8_5.py",
+          "exists": true,
+          "bytes": 7337,
+          "sha256": "a0ffe5c8dc653dc7366a2df023432f7f5360cc15e7c0ae7a1ca55cccc3eb6d7e"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/ohlcv_trades_1y_offline_ml_research_v8_5_manifest.json",
+        "reports/ml/ohlcv_trades_1y_offline_ml_research_v8_5.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Metriques descriptives seulement; pas de modele persistant.",
+      "repo_status": "present",
+      "reservations": "Metriques descriptives seulement; pas de modele persistant."
+    },
+    {
+      "version": "V8.7",
+      "objective": "Validation walk-forward offline stricte sur V8.4.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/strict_walk_forward_validation_v8_7_manifest.json",
+          "exists": true,
+          "bytes": 461095,
+          "sha256": "f9d748917133663b0abfe61f3295490cdbc6d35ee6409bc9bae5e879297efd28"
+        },
+        {
+          "path": "reports/ml/strict_walk_forward_validation_v8_7.json",
+          "exists": true,
+          "bytes": 461095,
+          "sha256": "f9d748917133663b0abfe61f3295490cdbc6d35ee6409bc9bae5e879297efd28"
+        },
+        {
+          "path": "reports/audit_lite/v8_7_full_local_validation_attestation.json",
+          "exists": true,
+          "bytes": 6585,
+          "sha256": "5daa8cb2745559d4d057824f35011a10536e095438dc302f7edfdf2ae000fc8a"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v8_7.py",
+        "scripts/release_audit_lite_zip_v8_7.py",
+        "scripts/run_strict_walk_forward_validation_v8_7.py",
+        "scripts/smoke_audit_lite_zip_v8_7.py",
+        "scripts/validate_strict_walk_forward_validation_v8_7.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/ml/test_strict_walk_forward_validation_v8_7.py",
+          "exists": true,
+          "bytes": 7862,
+          "sha256": "1ced5198f6c945e69323a8b57ee9087bbc2085a8669147dcc6ed644a6f8ea1a6"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/strict_walk_forward_validation_v8_7_manifest.json",
+        "reports/ml/strict_walk_forward_validation_v8_7.json",
+        "reports/audit_lite/v8_7_full_local_validation_attestation.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "5 folds/timeframe; edge non valide trading.",
+      "repo_status": "present",
+      "reservations": "5 folds/timeframe; edge non valide trading."
+    },
+    {
+      "version": "V8.8",
+      "objective": "Decision gate research apres V8.7.",
+      "key_artifacts": [
+        {
+          "path": "reports/research_decisions/v8_8_research_decision_gate.json",
+          "exists": true,
+          "bytes": 38611,
+          "sha256": "003acca839d042cedd5faeb5cc206468313650328bc3474e8cc2a8c73ff474d9"
+        },
+        {
+          "path": "reports/research_decisions/v8_8_research_decision_gate.md",
+          "exists": true,
+          "bytes": 8553,
+          "sha256": "09e860ddd686af765f16ec649ae4bce6658fd47bc21d5e918c14e8927fc702fb"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/run_research_decision_gate_v8_8.py",
+        "scripts/validate_research_decision_gate_v8_8.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/validation/test_research_decision_gate_v8_8.py",
+          "exists": true,
+          "bytes": 3451,
+          "sha256": "0913c4bbf3967c7ed737b1c7155b46291818684b4cb79b4739ba775313f847a5"
+        }
+      ],
+      "reports_manifests": [
+        "reports/research_decisions/v8_8_research_decision_gate.json",
+        "reports/research_decisions/v8_8_research_decision_gate.md"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Decision: pas de backtest; recommander feature audit/selection.",
+      "repo_status": "present",
+      "reservations": "Decision: pas de backtest; recommander feature audit/selection."
+    },
+    {
+      "version": "V8.9",
+      "objective": "Audit/sélection des features OHLCV+trades.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/ohlcv_trades_feature_audit_v8_9_manifest.json",
+          "exists": true,
+          "bytes": 230834,
+          "sha256": "ebcb8808ceb78cd4640f611850a6528e02de67e17aa8725a8d6bbcc08b6e0a53"
+        },
+        {
+          "path": "reports/features/ohlcv_trades_feature_selection_v8_9.json",
+          "exists": true,
+          "bytes": 21753,
+          "sha256": "3f56df349c7b2d21bf90edeb12401cbdffd122dc2c51383a809d20e3a837d887"
+        },
+        {
+          "path": "reports/audit_lite/v8_9_full_local_validation_attestation.json",
+          "exists": true,
+          "bytes": 3191,
+          "sha256": "e0147cfa41ca103737825a504be4a4b889976812dbd483c3ef5acbba04e5646b"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v8_9.py",
+        "scripts/audit_audit_lite_zip_v8_9_1.py",
+        "scripts/release_audit_lite_zip_v8_9.py",
+        "scripts/release_audit_lite_zip_v8_9_1.py",
+        "scripts/run_ohlcv_trades_feature_audit_v8_9.py",
+        "scripts/smoke_audit_lite_zip_v8_9.py",
+        "scripts/smoke_audit_lite_zip_v8_9_1.py",
+        "scripts/validate_ohlcv_trades_feature_audit_v8_9.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/features/test_ohlcv_trades_feature_audit_v8_9.py",
+          "exists": true,
+          "bytes": 3310,
+          "sha256": "297c4b89882fce12ff5a74bc965c6bb9769ae08528bdc689818344d7fd735a1c"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/ohlcv_trades_feature_audit_v8_9_manifest.json",
+        "reports/features/ohlcv_trades_feature_selection_v8_9.json",
+        "reports/audit_lite/v8_9_full_local_validation_attestation.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Selection proposee: 18 features; audit-lite initial insuffisamment autoporteur.",
+      "repo_status": "present",
+      "reservations": "Selection proposee: 18 features; audit-lite initial insuffisamment autoporteur."
+    },
+    {
+      "version": "V8.9.1",
+      "objective": "Correction packaging audit-lite V8.9 autoporteur.",
+      "key_artifacts": [
+        {
+          "path": "reports/audit_lite/zip_audit_v8_9_1.json",
+          "exists": true,
+          "bytes": 322,
+          "sha256": "3cde843d669f85e0276900b691813447838b3969e88ef2995847a2fb49e723aa"
+        },
+        {
+          "path": "reports/audit_lite/zip_smoke_v8_9_1.json",
+          "exists": true,
+          "bytes": 3573,
+          "sha256": "25f5e0ca2c99f8c100eac3649187223d89cf584861cf7d3d34bbafc8d556c5b8"
+        },
+        {
+          "path": "projet-galapagos-v8.9.1-audit-lite.zip",
+          "exists": true,
+          "bytes": 955480,
+          "sha256": "81cc1b5682b78da886d65d3a1a95c120bd7791e3ff1456d29994a4af48494ede"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v8_9_1.py",
+        "scripts/release_audit_lite_zip_v8_9_1.py",
+        "scripts/smoke_audit_lite_zip_v8_9_1.py"
+      ],
+      "tests": [],
+      "reports_manifests": [
+        "reports/audit_lite/zip_audit_v8_9_1.json",
+        "reports/audit_lite/zip_smoke_v8_9_1.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Validee par audit externe selon contexte; aucune modification fonctionnelle V8.9.",
+      "repo_status": "validated_by_external_audit_from_context_and_repo_artifacts",
+      "reservations": "Validee par audit externe selon contexte; aucune modification fonctionnelle V8.9."
+    },
+    {
+      "version": "V9.0",
+      "objective": "Feature store raffinee depuis V8.3 + selection V8.9.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+          "exists": true,
+          "bytes": 14479,
+          "sha256": "7ea5941ca25c62fc65818d54f2c25c83fafd58f779a1320f56bb165965c4370c"
+        },
+        {
+          "path": "reports/features/refined_ohlcv_trades_feature_store_v9_0.json",
+          "exists": true,
+          "bytes": 14479,
+          "sha256": "7ea5941ca25c62fc65818d54f2c25c83fafd58f779a1320f56bb165965c4370c"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v9_0_to_v9_3.py",
+        "scripts/audit_audit_lite_zip_v9_0_to_v9_3_1.py",
+        "scripts/release_audit_lite_zip_v9_0_to_v9_3.py",
+        "scripts/release_audit_lite_zip_v9_0_to_v9_3_1.py",
+        "scripts/run_refined_ohlcv_trades_feature_store_v9_0.py",
+        "scripts/smoke_audit_lite_zip_v9_0_to_v9_3.py",
+        "scripts/smoke_audit_lite_zip_v9_0_to_v9_3_1.py",
+        "scripts/validate_refined_ohlcv_trades_feature_store_v9_0.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/features/test_refined_ohlcv_trades_features_v9_0.py",
+          "exists": true,
+          "bytes": 2219,
+          "sha256": "a97185e8ba214b4920ab84fc06d34d3205cce3489833e6fada87c7b11337896b"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+        "reports/features/refined_ohlcv_trades_feature_store_v9_0.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Produite localement; incluse dans candidate groupee.",
+      "repo_status": "produced_locally_pending_group_external_audit",
+      "reservations": "Produite localement; incluse dans candidate groupee."
+    },
+    {
+      "version": "V9.1",
+      "objective": "Dataset supervise offline raffine avec labels V5.2.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+          "exists": true,
+          "bytes": 20239,
+          "sha256": "9624672783b1ae9d3e78c5fab72e6e4e790c8161439982a20ac52bf1cea1ee8a"
+        },
+        {
+          "path": "reports/datasets/refined_ohlcv_trades_offline_supervised_dataset_v9_1.json",
+          "exists": true,
+          "bytes": 20239,
+          "sha256": "9624672783b1ae9d3e78c5fab72e6e4e790c8161439982a20ac52bf1cea1ee8a"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/run_refined_ohlcv_trades_offline_supervised_dataset_v9_1.py",
+        "scripts/validate_refined_ohlcv_trades_offline_supervised_dataset_v9_1.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/datasets/test_refined_ohlcv_trades_offline_supervised_dataset_v9_1.py",
+          "exists": true,
+          "bytes": 7347,
+          "sha256": "0c8c30528d675fee182e15864176a620824ad26df681cc8fd4f437a8758dd802"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+        "reports/datasets/refined_ohlcv_trades_offline_supervised_dataset_v9_1.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Produite localement; full data non inclus dans audit-lite.",
+      "repo_status": "produced_locally_pending_group_external_audit",
+      "reservations": "Produite localement; full data non inclus dans audit-lite."
+    },
+    {
+      "version": "V9.2",
+      "objective": "ML offline raffine static split.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/refined_ohlcv_trades_offline_ml_research_v9_2_manifest.json",
+          "exists": true,
+          "bytes": 190027,
+          "sha256": "b27547fea2ff87fd0c33d7c34acb8c0d33da8efd1b7ba471a5681111b5ad7734"
+        },
+        {
+          "path": "reports/ml/refined_ohlcv_trades_offline_ml_research_v9_2.json",
+          "exists": true,
+          "bytes": 190027,
+          "sha256": "b27547fea2ff87fd0c33d7c34acb8c0d33da8efd1b7ba471a5681111b5ad7734"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/run_refined_ohlcv_trades_offline_ml_research_v9_2.py",
+        "scripts/validate_refined_ohlcv_trades_offline_ml_research_v9_2.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/ml/test_refined_ohlcv_trades_offline_ml_research_v9_2.py",
+          "exists": true,
+          "bytes": 6740,
+          "sha256": "3282aa229c4c0bb4b77ad00d250f1ab696ccd69661950aa4f9cdb5831be528c8"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/refined_ohlcv_trades_offline_ml_research_v9_2_manifest.json",
+        "reports/ml/refined_ohlcv_trades_offline_ml_research_v9_2.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Scores research_*; pas de modele persistant.",
+      "repo_status": "produced_locally_pending_group_external_audit",
+      "reservations": "Scores research_*; pas de modele persistant."
+    },
+    {
+      "version": "V9.3",
+      "objective": "Strict walk-forward raffine.",
+      "key_artifacts": [
+        {
+          "path": "reports/manifests/refined_strict_walk_forward_validation_v9_3_manifest.json",
+          "exists": true,
+          "bytes": 458212,
+          "sha256": "5fa406c7be9235a4d68c425f6ad4a535f7f01e5b98fbf1acb426d6972da42be4"
+        },
+        {
+          "path": "reports/ml/refined_strict_walk_forward_validation_v9_3.json",
+          "exists": true,
+          "bytes": 458212,
+          "sha256": "5fa406c7be9235a4d68c425f6ad4a535f7f01e5b98fbf1acb426d6972da42be4"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v9_0_to_v9_3.py",
+        "scripts/audit_audit_lite_zip_v9_0_to_v9_3_1.py",
+        "scripts/release_audit_lite_zip_v9_0_to_v9_3.py",
+        "scripts/release_audit_lite_zip_v9_0_to_v9_3_1.py",
+        "scripts/run_refined_strict_walk_forward_validation_v9_3.py",
+        "scripts/smoke_audit_lite_zip_v9_0_to_v9_3.py",
+        "scripts/smoke_audit_lite_zip_v9_0_to_v9_3_1.py",
+        "scripts/validate_refined_strict_walk_forward_validation_v9_3.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/ml/test_refined_strict_walk_forward_validation_v9_3.py",
+          "exists": true,
+          "bytes": 8094,
+          "sha256": "957078078bed1812fb639e1fcb0486ada682adb6f7f47c403c784e13441144f6"
+        }
+      ],
+      "reports_manifests": [
+        "reports/manifests/refined_strict_walk_forward_validation_v9_3_manifest.json",
+        "reports/ml/refined_strict_walk_forward_validation_v9_3.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Claims false; no backtest/no signal.",
+      "repo_status": "produced_locally_pending_group_external_audit",
+      "reservations": "Claims false; no backtest/no signal."
+    },
+    {
+      "version": "V9.3.1",
+      "objective": "Pas de version fonctionnelle autonome; suffixe de correction packaging groupee V9.0-to-V9.3.1.",
+      "key_artifacts": [
+        {
+          "path": "projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+          "exists": true,
+          "bytes": 2318053,
+          "sha256": "9bed32a8da8d4b57ca2995f8e16755823c012b181221504c3588ec8bef66430e"
+        },
+        {
+          "path": "scripts/release_audit_lite_zip_v9_0_to_v9_3_1.py",
+          "exists": true,
+          "bytes": 15390,
+          "sha256": "3f31f75febd44581300dde8e69c5dc7c00c69ac3c64aeb3d19ef737117da9c9a"
+        },
+        {
+          "path": "reports/audit_lite/zip_smoke_v9_0_to_v9_3_1.json",
+          "exists": true,
+          "bytes": 150,
+          "sha256": "f553e12e5162e142b91123305cfcdfb69b7b780ae22bc901f8d66c68c0cc2a77"
+        }
+      ],
+      "scripts_added_or_relevant": [
+        "scripts/audit_audit_lite_zip_v9_0_to_v9_3_1.py",
+        "scripts/release_audit_lite_zip_v9_0_to_v9_3_1.py",
+        "scripts/smoke_audit_lite_zip_v9_0_to_v9_3_1.py"
+      ],
+      "tests": [
+        {
+          "path": "tests/audit_lite/test_grouped_audit_lite_v9_0_to_v9_3_1.py",
+          "exists": true,
+          "bytes": 2814,
+          "sha256": "a242cd703d6d21d7ba6bbcc306843f4e54d235313f2845ec8e7dd142dd96cc39"
+        }
+      ],
+      "reports_manifests": [
+        "reports/audit_lite/zip_smoke_v9_0_to_v9_3_1.json"
+      ],
+      "announced_commands_or_safe_commands": "Voir attestation full locale quand presente; commandes safe relancees pour la candidate courante dans ce rapport.",
+      "announced_results": "PASS lorsque zip_audit/zip_smoke/attestation correspondants existent et indiquent passed/PASS; sinon trace indirecte.",
+      "limits": "Candidate actuelle pending_external_audit; correction packaging uniquement.",
+      "repo_status": "grouped_packaging_candidate_pending_external_audit",
+      "reservations": "Candidate actuelle pending_external_audit; correction packaging uniquement."
+    }
+  ],
+  "important_artifacts": [
+    {
+      "path": "reports/PROJECT_STATE.json",
+      "exists": true,
+      "bytes": 41538,
+      "sha256": "b53f6a52e4a76e6c09379891426125116670c025d5a7d02b982748cc24443f35"
+    },
+    {
+      "path": "reports/current/latest_summary.md",
+      "exists": true,
+      "bytes": 619,
+      "sha256": "e177542c9cd9651ac742373fbe2d296023962a1f0155d2e7a0c0120009978241"
+    },
+    {
+      "path": "reports/current/latest_metrics.json",
+      "exists": true,
+      "bytes": 1051,
+      "sha256": "793d71c63625afd751b835047264ff78c46b8c1a78df31438d1c1db9b60736b7"
+    },
+    {
+      "path": "projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+      "exists": true,
+      "bytes": 2318053,
+      "sha256": "9bed32a8da8d4b57ca2995f8e16755823c012b181221504c3588ec8bef66430e"
+    },
+    {
+      "path": "reports/audit_lite/v9_0_to_v9_3_full_local_validation_attestation.json",
+      "exists": true,
+      "bytes": 14789,
+      "sha256": "f734c0a150dbb0cef42053965644471403898ed1be84c961bf457feabf2e50ee"
+    },
+    {
+      "path": "reports/audit_lite/zip_audit_v9_0_to_v9_3_1.json",
+      "exists": true,
+      "bytes": 150,
+      "sha256": "f553e12e5162e142b91123305cfcdfb69b7b780ae22bc901f8d66c68c0cc2a77"
+    },
+    {
+      "path": "reports/audit_lite/zip_smoke_v9_0_to_v9_3_1.json",
+      "exists": true,
+      "bytes": 150,
+      "sha256": "f553e12e5162e142b91123305cfcdfb69b7b780ae22bc901f8d66c68c0cc2a77"
+    },
+    {
+      "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+      "exists": true,
+      "bytes": 14479,
+      "sha256": "7ea5941ca25c62fc65818d54f2c25c83fafd58f779a1320f56bb165965c4370c"
+    },
+    {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+      "exists": true,
+      "bytes": 20239,
+      "sha256": "9624672783b1ae9d3e78c5fab72e6e4e790c8161439982a20ac52bf1cea1ee8a"
+    },
+    {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_ml_research_v9_2_manifest.json",
+      "exists": true,
+      "bytes": 190027,
+      "sha256": "b27547fea2ff87fd0c33d7c34acb8c0d33da8efd1b7ba471a5681111b5ad7734"
+    },
+    {
+      "path": "reports/manifests/refined_strict_walk_forward_validation_v9_3_manifest.json",
+      "exists": true,
+      "bytes": 458212,
+      "sha256": "5fa406c7be9235a4d68c425f6ad4a535f7f01e5b98fbf1acb426d6972da42be4"
+    },
+    {
+      "path": "reports/features/ohlcv_trades_feature_selection_v8_9.json",
+      "exists": true,
+      "bytes": 21753,
+      "sha256": "3f56df349c7b2d21bf90edeb12401cbdffd122dc2c51383a809d20e3a837d887"
+    }
+  ],
+  "manifests": [
+    {
+      "path": "reports/manifests/advanced_ohlcv_feature_store_v6_0_manifest.json",
+      "version": "V6.0",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/advanced_ohlcv_ml_robustness_v6_3_manifest.json",
+      "version": "V6.3",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+      "version": "V6.2",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/advanced_ohlcv_offline_supervised_dataset_v6_1_manifest.json",
+      "version": "V6.1",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/causal_feature_store_v2_5_manifest.json",
+      "version": "V2.5",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/clean_label_factory_v2_6_manifest.json",
+      "version": "V2.6",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/expanded_causal_feature_store_v3_6_manifest.json",
+      "version": "V3.6",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/expanded_label_factory_v3_7_manifest.json",
+      "version": "V3.7",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/expanded_ml_robustness_v4_0_manifest.json",
+      "version": "V4.0",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/expanded_offline_ml_research_v3_9_manifest.json",
+      "version": "V3.9",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/expanded_offline_supervised_dataset_v3_8_manifest.json",
+      "version": "V3.8",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/expanded_public_market_data_v3_5_manifest.json",
+      "version": "V3.5",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/max_history_causal_feature_store_v5_1_manifest.json",
+      "version": "V5.1",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/max_history_label_factory_v5_2_manifest.json",
+      "version": "V5.2",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/max_history_ml_robustness_v5_5_manifest.json",
+      "version": "V5.5",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+      "version": "V5.4",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/max_history_offline_supervised_dataset_v5_3_manifest.json",
+      "version": "V5.3",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json",
+      "version": "V5.0",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/multi_day_causal_feature_store_v3_0_manifest.json",
+      "version": "V3.0",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/multi_day_label_factory_v3_1_manifest.json",
+      "version": "V3.1",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/multi_day_ml_robustness_v3_4_manifest.json",
+      "version": "V3.4",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/multi_day_offline_ml_research_v3_3_manifest.json",
+      "version": "V3.3",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/multi_day_offline_supervised_dataset_v3_2_manifest.json",
+      "version": "V3.2",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/multi_day_public_market_data_v2_9_manifest.json",
+      "version": "V2.9",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/offline_ml_research_v2_8_manifest.json",
+      "version": "V2.8",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/offline_supervised_dataset_v2_7_manifest.json",
+      "version": "V2.7",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_resampling_v2_4_manifest.json",
+      "version": "V2.4",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_1y_feature_store_v8_3_manifest.json",
+      "version": "V8.3",
+      "status": "PASS",
+      "window": {
+        "window_start": "2023-03-25",
+        "window_end": "2024-03-24",
+        "total_days": 366,
+        "bucket_convention": "[event_ts, next_event_ts), equivalent to [event_ts, close_ts] for millisecond klines"
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_1y_ml_robustness_v8_6_manifest.json",
+      "version": "V8.6",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_1y_offline_ml_research_v8_5_manifest.json",
+      "version": "V8.5",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": 71
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_1y_offline_supervised_dataset_v8_4_manifest.json",
+      "version": "V8.4",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": 74
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_90d_feature_store_v7_8_manifest.json",
+      "version": "V7.8",
+      "status": "PASS",
+      "window": {
+        "window_start": "2023-03-25",
+        "window_end": "2023-06-22",
+        "total_days": 90,
+        "bucket_convention": "[event_ts, next_event_ts), equivalent to [event_ts, close_ts] for millisecond klines"
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_90d_ml_robustness_v8_0_manifest.json",
+      "version": "V8.0",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_90d_offline_ml_research_v8_0_manifest.json",
+      "version": "V8.0",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": 71
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_90d_offline_supervised_dataset_v7_9_manifest.json",
+      "version": "V7.9",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": 74
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_feature_audit_v8_9_manifest.json",
+      "version": "V8.9",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_feature_store_v7_2_manifest.json",
+      "version": "V7.2",
+      "status": "PASS",
+      "window": {
+        "window_start": "2023-03-25",
+        "window_end": "2023-04-23",
+        "total_days": 30,
+        "bucket_convention": "[event_ts, next_event_ts), equivalent to [event_ts, close_ts] for millisecond klines"
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_ml_robustness_v7_5_manifest.json",
+      "version": "V7.5",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_offline_ml_research_v7_4_manifest.json",
+      "version": "V7.4",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": 71
+    },
+    {
+      "path": "reports/manifests/ohlcv_trades_offline_supervised_dataset_v7_3_manifest.json",
+      "version": "V7.3",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": 74
+    },
+    {
+      "path": "reports/manifests/one_year_causal_feature_store_v4_3_manifest.json",
+      "version": "V4.3",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/one_year_label_factory_v4_4_manifest.json",
+      "version": "V4.4",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/one_year_ml_robustness_v4_7_manifest.json",
+      "version": "V4.7",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/one_year_offline_ml_research_v4_6_manifest.json",
+      "version": "V4.6",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/one_year_offline_supervised_dataset_v4_5_manifest.json",
+      "version": "V4.5",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/one_year_public_market_data_v4_2_manifest.json",
+      "version": "V4.2",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/public_market_ingestion_v2_3_manifest.json",
+      "version": "V2.3",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/public_trades_1y_window_v8_2_manifest.json",
+      "version": "V8.2",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/public_trades_90d_window_v7_7_manifest.json",
+      "version": "V7.7",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/public_trades_expanded_window_v7_1_manifest.json",
+      "version": "V7.1",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/public_trades_v7_0_manifest.json",
+      "version": "V7.0",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": null
+    },
+    {
+      "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+      "version": "V9.0",
+      "status": "PASS",
+      "window": {
+        "window_start": "2023-03-25",
+        "window_end": "2024-03-24",
+        "total_days": 366
+      },
+      "target_name": null,
+      "feature_columns_count": 18
+    },
+    {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_ml_research_v9_2_manifest.json",
+      "version": "V9.2",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": 18
+    },
+    {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+      "version": "V9.1",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": null,
+      "feature_columns_count": 21
+    },
+    {
+      "path": "reports/manifests/refined_strict_walk_forward_validation_v9_3_manifest.json",
+      "version": "V9.3",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": 18
+    },
+    {
+      "path": "reports/manifests/strict_walk_forward_validation_v8_7_manifest.json",
+      "version": "V8.7",
+      "status": "PASS",
+      "window": {
+        "window_start": null,
+        "window_end": null,
+        "total_days": null
+      },
+      "target_name": "up_down_flat_h1",
+      "feature_columns_count": 71
+    }
+  ],
+  "reports": [
+    "reports/audit_lite/v3_6_artifact_inventory.json",
+    "reports/audit_lite/v3_6_full_local_validation_attestation.json",
+    "reports/audit_lite/v3_6_parquet_summary.json",
+    "reports/audit_lite/v3_7_artifact_inventory.json",
+    "reports/audit_lite/v3_7_full_local_validation_attestation.json",
+    "reports/audit_lite/v3_7_parquet_summary.json",
+    "reports/audit_lite/v3_8_artifact_inventory.json",
+    "reports/audit_lite/v3_8_full_local_validation_attestation.json",
+    "reports/audit_lite/v3_8_parquet_summary.json",
+    "reports/audit_lite/v3_9_artifact_inventory.json",
+    "reports/audit_lite/v3_9_full_local_validation_attestation.json",
+    "reports/audit_lite/v3_9_parquet_summary.json",
+    "reports/audit_lite/v4_0_artifact_inventory.json",
+    "reports/audit_lite/v4_0_full_local_validation_attestation.json",
+    "reports/audit_lite/v4_2_artifact_inventory.json",
+    "reports/audit_lite/v4_2_full_local_validation_attestation.json",
+    "reports/audit_lite/v4_2_parquet_summary.json",
+    "reports/audit_lite/v4_3_artifact_inventory.json",
+    "reports/audit_lite/v4_3_full_local_validation_attestation.json",
+    "reports/audit_lite/v4_3_parquet_summary.json",
+    "reports/audit_lite/v4_4_artifact_inventory.json",
+    "reports/audit_lite/v4_4_full_local_validation_attestation.json",
+    "reports/audit_lite/v4_4_parquet_summary.json",
+    "reports/audit_lite/v4_5_artifact_inventory.json",
+    "reports/audit_lite/v4_5_full_local_validation_attestation.json",
+    "reports/audit_lite/v4_5_parquet_summary.json",
+    "reports/audit_lite/v4_6_artifact_inventory.json",
+    "reports/audit_lite/v4_6_full_local_validation_attestation.json",
+    "reports/audit_lite/v4_6_parquet_summary.json",
+    "reports/audit_lite/v4_7_artifact_inventory.json",
+    "reports/audit_lite/v4_7_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_0_artifact_inventory.json",
+    "reports/audit_lite/v5_0_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_0_parquet_summary.json",
+    "reports/audit_lite/v5_1_artifact_inventory.json",
+    "reports/audit_lite/v5_1_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_1_parquet_summary.json",
+    "reports/audit_lite/v5_2_artifact_inventory.json",
+    "reports/audit_lite/v5_2_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_2_parquet_summary.json",
+    "reports/audit_lite/v5_3_artifact_inventory.json",
+    "reports/audit_lite/v5_3_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_3_parquet_summary.json",
+    "reports/audit_lite/v5_4_1_artifact_inventory.json",
+    "reports/audit_lite/v5_4_artifact_inventory.json",
+    "reports/audit_lite/v5_4_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_4_parquet_summary.json",
+    "reports/audit_lite/v5_5_artifact_inventory.json",
+    "reports/audit_lite/v5_5_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_6_1_artifact_inventory.json",
+    "reports/audit_lite/v5_6_1_full_local_validation_attestation.json",
+    "reports/audit_lite/v5_6_artifact_inventory.json",
+    "reports/audit_lite/v5_6_full_local_validation_attestation.json",
+    "reports/audit_lite/v6_0_artifact_inventory.json",
+    "reports/audit_lite/v6_0_command_timings.json",
+    "reports/audit_lite/v6_0_full_local_validation_attestation.json",
+    "reports/audit_lite/v6_0_parquet_summary.json",
+    "reports/audit_lite/v6_1_artifact_inventory.json",
+    "reports/audit_lite/v6_1_command_timings.json",
+    "reports/audit_lite/v6_1_full_local_validation_attestation.json",
+    "reports/audit_lite/v6_1_parquet_summary.json",
+    "reports/audit_lite/v6_2_artifact_inventory.json",
+    "reports/audit_lite/v6_2_command_timings.json",
+    "reports/audit_lite/v6_2_full_local_validation_attestation.json",
+    "reports/audit_lite/v6_2_parquet_summary.json",
+    "reports/audit_lite/v6_3_artifact_inventory.json",
+    "reports/audit_lite/v6_3_command_timings.json",
+    "reports/audit_lite/v6_3_full_local_validation_attestation.json",
+    "reports/audit_lite/v6_4_artifact_inventory.json",
+    "reports/audit_lite/v6_4_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_0_artifact_inventory.json",
+    "reports/audit_lite/v7_0_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_0_parquet_summary.json",
+    "reports/audit_lite/v7_1_artifact_inventory.json",
+    "reports/audit_lite/v7_1_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_1_parquet_summary.json",
+    "reports/audit_lite/v7_2_artifact_inventory.json",
+    "reports/audit_lite/v7_2_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_2_parquet_summary.json",
+    "reports/audit_lite/v7_3_artifact_inventory.json",
+    "reports/audit_lite/v7_3_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_3_parquet_summary.json",
+    "reports/audit_lite/v7_4_artifact_inventory.json",
+    "reports/audit_lite/v7_4_command_timings.json",
+    "reports/audit_lite/v7_4_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_4_parquet_summary.json",
+    "reports/audit_lite/v7_5_artifact_inventory.json",
+    "reports/audit_lite/v7_5_command_timings.json",
+    "reports/audit_lite/v7_5_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_7_artifact_inventory.json",
+    "reports/audit_lite/v7_7_command_timings.json",
+    "reports/audit_lite/v7_7_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_7_parquet_summary.json",
+    "reports/audit_lite/v7_8_artifact_inventory.json",
+    "reports/audit_lite/v7_8_command_timings.json",
+    "reports/audit_lite/v7_8_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_8_parquet_summary.json",
+    "reports/audit_lite/v7_9_artifact_inventory.json",
+    "reports/audit_lite/v7_9_command_timings.json",
+    "reports/audit_lite/v7_9_full_local_validation_attestation.json",
+    "reports/audit_lite/v7_9_parquet_summary.json",
+    "reports/audit_lite/v8_0_artifact_inventory.json",
+    "reports/audit_lite/v8_0_command_timings.json",
+    "reports/audit_lite/v8_0_full_local_validation_attestation.json",
+    "reports/audit_lite/v8_0_parquet_summary.json",
+    "reports/audit_lite/v8_2_artifact_inventory.json",
+    "reports/audit_lite/v8_2_command_timings.json",
+    "reports/audit_lite/v8_2_full_local_validation_attestation.json",
+    "reports/audit_lite/v8_2_parquet_summary.json",
+    "reports/audit_lite/v8_3_artifact_inventory.json",
+    "reports/audit_lite/v8_3_command_timings.json",
+    "reports/audit_lite/v8_3_full_local_validation_attestation.json",
+    "reports/audit_lite/v8_3_parquet_summary.json",
+    "reports/audit_lite/v8_4_artifact_inventory.json",
+    "reports/audit_lite/v8_4_command_timings.json",
+    "reports/audit_lite/v8_4_full_local_validation_attestation.json",
+    "reports/audit_lite/v8_4_parquet_summary.json",
+    "reports/audit_lite/v8_5_artifact_inventory.json",
+    "reports/audit_lite/v8_5_command_timings.json",
+    "reports/audit_lite/v8_5_full_local_validation_attestation.json",
+    "reports/audit_lite/v8_5_parquet_summary.json",
+    "reports/audit_lite/v8_6_artifact_inventory.json",
+    "reports/audit_lite/v8_6_command_timings.json",
+    "reports/audit_lite/v8_6_full_local_validation_attestation.json",
+    "reports/audit_lite/v8_7_artifact_inventory.json",
+    "reports/audit_lite/v8_7_command_timings.json",
+    "reports/audit_lite/v8_7_full_local_validation_attestation.json",
+    "reports/audit_lite/v8_7_parquet_summary.json",
+    "reports/audit_lite/v8_9_artifact_inventory.json",
+    "reports/audit_lite/v8_9_command_timings.json",
+    "reports/audit_lite/v8_9_full_local_validation_attestation.json",
+    "reports/audit_lite/v9_0_to_v9_3_artifact_inventory.json",
+    "reports/audit_lite/v9_0_to_v9_3_full_local_validation_attestation.json",
+    "reports/audit_lite/v9_0_to_v9_3_parquet_summary.json",
+    "reports/audit_lite/zip_audit_v3_6.json",
+    "reports/audit_lite/zip_audit_v3_7.json",
+    "reports/audit_lite/zip_audit_v3_8.json",
+    "reports/audit_lite/zip_audit_v3_9.json",
+    "reports/audit_lite/zip_audit_v4_0.json",
+    "reports/audit_lite/zip_audit_v4_0_1.json",
+    "reports/audit_lite/zip_audit_v4_0_2.json",
+    "reports/audit_lite/zip_audit_v4_2.json",
+    "reports/audit_lite/zip_audit_v4_3.json",
+    "reports/audit_lite/zip_audit_v4_4.json",
+    "reports/audit_lite/zip_audit_v4_5.json",
+    "reports/audit_lite/zip_audit_v4_6.json",
+    "reports/audit_lite/zip_audit_v4_7.json",
+    "reports/audit_lite/zip_audit_v5_0.json",
+    "reports/audit_lite/zip_audit_v5_1.json",
+    "reports/audit_lite/zip_audit_v5_2.json",
+    "reports/audit_lite/zip_audit_v5_3.json",
+    "reports/audit_lite/zip_audit_v5_4.json",
+    "reports/audit_lite/zip_audit_v5_4_1.json",
+    "reports/audit_lite/zip_audit_v5_5.json",
+    "reports/audit_lite/zip_audit_v5_6.json",
+    "reports/audit_lite/zip_audit_v5_6_1.json",
+    "reports/audit_lite/zip_audit_v6_0.json",
+    "reports/audit_lite/zip_audit_v6_1.json",
+    "reports/audit_lite/zip_audit_v6_2.json",
+    "reports/audit_lite/zip_audit_v6_3.json",
+    "reports/audit_lite/zip_audit_v6_4.json",
+    "reports/audit_lite/zip_audit_v7_0.json",
+    "reports/audit_lite/zip_audit_v7_1.json",
+    "reports/audit_lite/zip_audit_v7_2.json",
+    "reports/audit_lite/zip_audit_v7_3.json",
+    "reports/audit_lite/zip_audit_v7_4.json",
+    "reports/audit_lite/zip_audit_v7_5.json",
+    "reports/audit_lite/zip_audit_v7_7.json",
+    "reports/audit_lite/zip_audit_v7_8.json",
+    "reports/audit_lite/zip_audit_v7_9.json",
+    "reports/audit_lite/zip_audit_v8_0.json",
+    "reports/audit_lite/zip_audit_v8_2.json",
+    "reports/audit_lite/zip_audit_v8_3.json",
+    "reports/audit_lite/zip_audit_v8_4.json",
+    "reports/audit_lite/zip_audit_v8_5.json",
+    "reports/audit_lite/zip_audit_v8_6.json",
+    "reports/audit_lite/zip_audit_v8_7.json",
+    "reports/audit_lite/zip_audit_v8_9.json",
+    "reports/audit_lite/zip_audit_v8_9_1.json",
+    "reports/audit_lite/zip_audit_v9_0_to_v9_3_1.json",
+    "reports/audit_lite/zip_size_report_v3_6.json",
+    "reports/audit_lite/zip_size_report_v3_7.json",
+    "reports/audit_lite/zip_size_report_v3_8.json",
+    "reports/audit_lite/zip_size_report_v3_9.json",
+    "reports/audit_lite/zip_size_report_v4_0.json",
+    "reports/audit_lite/zip_size_report_v4_2.json",
+    "reports/audit_lite/zip_size_report_v4_3.json",
+    "reports/audit_lite/zip_size_report_v4_4.json",
+    "reports/audit_lite/zip_size_report_v4_5.json",
+    "reports/audit_lite/zip_size_report_v4_6.json",
+    "reports/audit_lite/zip_size_report_v4_7.json",
+    "reports/audit_lite/zip_size_report_v5_0.json",
+    "reports/audit_lite/zip_size_report_v5_1.json",
+    "reports/audit_lite/zip_size_report_v5_2.json",
+    "reports/audit_lite/zip_size_report_v5_3.json",
+    "reports/audit_lite/zip_size_report_v5_4.json",
+    "reports/audit_lite/zip_size_report_v5_4_1.json",
+    "reports/audit_lite/zip_size_report_v5_5.json",
+    "reports/audit_lite/zip_size_report_v5_6.json",
+    "reports/audit_lite/zip_size_report_v5_6_1.json",
+    "reports/audit_lite/zip_size_report_v6_0.json",
+    "reports/audit_lite/zip_size_report_v6_1.json",
+    "reports/audit_lite/zip_size_report_v6_2.json",
+    "reports/audit_lite/zip_size_report_v6_3.json",
+    "reports/audit_lite/zip_size_report_v6_4.json",
+    "reports/audit_lite/zip_size_report_v7_0.json",
+    "reports/audit_lite/zip_size_report_v7_1.json",
+    "reports/audit_lite/zip_size_report_v7_2.json",
+    "reports/audit_lite/zip_size_report_v7_3.json",
+    "reports/audit_lite/zip_size_report_v7_4.json",
+    "reports/audit_lite/zip_size_report_v7_5.json",
+    "reports/audit_lite/zip_size_report_v7_7.json",
+    "reports/audit_lite/zip_size_report_v7_8.json",
+    "reports/audit_lite/zip_size_report_v7_9.json",
+    "reports/audit_lite/zip_size_report_v8_0.json",
+    "reports/audit_lite/zip_size_report_v8_2.json",
+    "reports/audit_lite/zip_size_report_v8_3.json",
+    "reports/audit_lite/zip_size_report_v8_4.json",
+    "reports/audit_lite/zip_size_report_v8_5.json",
+    "reports/audit_lite/zip_size_report_v8_6.json",
+    "reports/audit_lite/zip_size_report_v8_7.json",
+    "reports/audit_lite/zip_size_report_v8_9.json",
+    "reports/audit_lite/zip_size_report_v8_9_1.json",
+    "reports/audit_lite/zip_size_report_v9_0_to_v9_3.json",
+    "reports/audit_lite/zip_size_report_v9_0_to_v9_3_1.json",
+    "reports/audit_lite/zip_smoke_v3_6.json",
+    "reports/audit_lite/zip_smoke_v3_7.json",
+    "reports/audit_lite/zip_smoke_v3_8.json",
+    "reports/audit_lite/zip_smoke_v3_9.json",
+    "reports/audit_lite/zip_smoke_v4_0.json",
+    "reports/audit_lite/zip_smoke_v4_0_1.json",
+    "reports/audit_lite/zip_smoke_v4_0_2.json",
+    "reports/audit_lite/zip_smoke_v4_2.json",
+    "reports/audit_lite/zip_smoke_v4_3.json",
+    "reports/audit_lite/zip_smoke_v4_4.json",
+    "reports/audit_lite/zip_smoke_v4_5.json",
+    "reports/audit_lite/zip_smoke_v4_6.json",
+    "reports/audit_lite/zip_smoke_v4_7.json",
+    "reports/audit_lite/zip_smoke_v5_0.json",
+    "reports/audit_lite/zip_smoke_v5_1.json",
+    "reports/audit_lite/zip_smoke_v5_2.json",
+    "reports/audit_lite/zip_smoke_v5_3.json",
+    "reports/audit_lite/zip_smoke_v5_4.json",
+    "reports/audit_lite/zip_smoke_v5_4_1.json",
+    "reports/audit_lite/zip_smoke_v5_5.json",
+    "reports/audit_lite/zip_smoke_v5_6.json",
+    "reports/audit_lite/zip_smoke_v5_6_1.json",
+    "reports/audit_lite/zip_smoke_v6_0.json",
+    "reports/audit_lite/zip_smoke_v6_1.json",
+    "reports/audit_lite/zip_smoke_v6_2.json",
+    "reports/audit_lite/zip_smoke_v6_3.json",
+    "reports/audit_lite/zip_smoke_v6_4.json",
+    "reports/audit_lite/zip_smoke_v7_0.json",
+    "reports/audit_lite/zip_smoke_v7_1.json",
+    "reports/audit_lite/zip_smoke_v7_2.json",
+    "reports/audit_lite/zip_smoke_v7_3.json",
+    "reports/audit_lite/zip_smoke_v7_4.json",
+    "reports/audit_lite/zip_smoke_v7_5.json",
+    "reports/audit_lite/zip_smoke_v7_7.json",
+    "reports/audit_lite/zip_smoke_v7_8.json",
+    "reports/audit_lite/zip_smoke_v7_9.json",
+    "reports/audit_lite/zip_smoke_v8_0.json",
+    "reports/audit_lite/zip_smoke_v8_2.json",
+    "reports/audit_lite/zip_smoke_v8_3.json",
+    "reports/audit_lite/zip_smoke_v8_4.json",
+    "reports/audit_lite/zip_smoke_v8_5.json",
+    "reports/audit_lite/zip_smoke_v8_6.json",
+    "reports/audit_lite/zip_smoke_v8_7.json",
+    "reports/audit_lite/zip_smoke_v8_9.json",
+    "reports/audit_lite/zip_smoke_v8_9_1.json",
+    "reports/audit_lite/zip_smoke_v9_0_to_v9_3.json",
+    "reports/audit_lite/zip_smoke_v9_0_to_v9_3_1.json",
+    "reports/datasets/advanced_ohlcv_offline_supervised_dataset_v6_1.json",
+    "reports/datasets/expanded_offline_supervised_dataset_v3_8.json",
+    "reports/datasets/max_history_offline_supervised_dataset_v5_3.json",
+    "reports/datasets/multi_day_offline_supervised_dataset_v3_2.json",
+    "reports/datasets/offline_supervised_dataset_v2_7.json",
+    "reports/datasets/ohlcv_trades_1y_offline_supervised_dataset_v8_4.json",
+    "reports/datasets/ohlcv_trades_90d_offline_supervised_dataset_v7_9.json",
+    "reports/datasets/ohlcv_trades_offline_supervised_dataset_v7_3.json",
+    "reports/datasets/one_year_offline_supervised_dataset_v4_5.json",
+    "reports/datasets/refined_ohlcv_trades_offline_supervised_dataset_v9_1.json",
+    "reports/features/advanced_ohlcv_feature_store_v6_0.json",
+    "reports/features/causal_feature_store_v2_5.json",
+    "reports/features/expanded_causal_feature_store_v3_6.json",
+    "reports/features/max_history_causal_feature_store_v5_1.json",
+    "reports/features/multi_day_causal_feature_store_v3_0.json",
+    "reports/features/ohlcv_trades_1y_feature_store_v8_3.json",
+    "reports/features/ohlcv_trades_90d_feature_store_v7_8.json",
+    "reports/features/ohlcv_trades_feature_audit_v8_9.json",
+    "reports/features/ohlcv_trades_feature_selection_v8_9.json",
+    "reports/features/ohlcv_trades_feature_store_v7_2.json",
+    "reports/features/one_year_causal_feature_store_v4_3.json",
+    "reports/features/refined_ohlcv_trades_feature_store_v9_0.json",
+    "reports/ml/advanced_ohlcv_ml_robustness_v6_3.json",
+    "reports/ml/advanced_ohlcv_offline_ml_research_v6_2.json",
+    "reports/ml/advanced_ohlcv_offline_research_scores_v6_2.json",
+    "reports/ml/expanded_ml_robustness_v4_0.json",
+    "reports/ml/expanded_offline_ml_research_v3_9.json",
+    "reports/ml/expanded_offline_research_scores_v3_9.json",
+    "reports/ml/max_history_ml_robustness_v5_5.json",
+    "reports/ml/max_history_offline_ml_research_v5_4.json",
+    "reports/ml/max_history_offline_research_scores_v5_4.json",
+    "reports/ml/multi_day_ml_robustness_v3_4.json",
+    "reports/ml/multi_day_offline_ml_research_v3_3.json",
+    "reports/ml/multi_day_offline_research_scores_v3_3.json",
+    "reports/ml/offline_ml_research_v2_8.json",
+    "reports/ml/offline_research_scores_v2_8.json",
+    "reports/ml/ohlcv_trades_1y_ml_robustness_v8_6.json",
+    "reports/ml/ohlcv_trades_1y_offline_ml_research_v8_5.json",
+    "reports/ml/ohlcv_trades_1y_offline_research_scores_v8_5.json",
+    "reports/ml/ohlcv_trades_90d_ml_robustness_v8_0.json",
+    "reports/ml/ohlcv_trades_90d_offline_ml_research_v8_0.json",
+    "reports/ml/ohlcv_trades_90d_offline_research_scores_v8_0.json",
+    "reports/ml/ohlcv_trades_ml_robustness_v7_5.json",
+    "reports/ml/ohlcv_trades_offline_ml_research_v7_4.json",
+    "reports/ml/ohlcv_trades_offline_research_scores_v7_4.json",
+    "reports/ml/one_year_ml_robustness_v4_7.json",
+    "reports/ml/one_year_offline_ml_research_v4_6.json",
+    "reports/ml/one_year_offline_research_scores_v4_6.json",
+    "reports/ml/refined_ohlcv_trades_offline_ml_research_v9_2.json",
+    "reports/ml/refined_ohlcv_trades_offline_research_scores_v9_2.json",
+    "reports/ml/refined_strict_walk_forward_scores_v9_3.json",
+    "reports/ml/refined_strict_walk_forward_validation_v9_3.json",
+    "reports/ml/strict_walk_forward_scores_v8_7.json",
+    "reports/ml/strict_walk_forward_validation_v8_7.json",
+    "reports/research_decisions/v4_1_research_decision_gate.json",
+    "reports/research_decisions/v4_8_research_decision_gate.json",
+    "reports/research_decisions/v5_6_research_decision_gate.json",
+    "reports/research_decisions/v6_4_research_decision_gate.json",
+    "reports/research_decisions/v7_6_research_decision_gate.json",
+    "reports/research_decisions/v8_1_research_decision_gate.json",
+    "reports/research_decisions/v8_6_research_decision_gate.json",
+    "reports/research_decisions/v8_8_research_decision_gate.json"
+  ],
+  "tests_run": [
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "result": "PASS",
+      "output_summary": "5192 tests collected in 2.54s; real 3.09s"
+    }
+  ],
+  "validators_run": [
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_0_to_v9_3_1.py --zip projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+      "result": "PASS",
+      "output_summary": "passed=true, errors=[]; real 0.69s"
+    }
+  ],
+  "smoke_tests_run": [
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_0_to_v9_3_1.py --zip projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+      "result": "PASS",
+      "output_summary": "passed=true, errors=[]; real 4.91s"
+    }
+  ],
+  "commands_run": [
+    {
+      "command": "git branch --show-current",
+      "result": "PASS",
+      "output_summary": "main"
+    },
+    {
+      "command": "git status --short --branch",
+      "result": "PASS",
+      "output_summary": "## main...origin/main [ahead 2]"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "result": "PASS",
+      "output_summary": "5192 tests collected in 2.54s; real 3.09s"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_0_to_v9_3_1.py --zip projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+      "result": "PASS",
+      "output_summary": "passed=true, errors=[]; real 0.69s"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_0_to_v9_3_1.py --zip projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+      "result": "PASS",
+      "output_summary": "passed=true, errors=[]; real 4.91s"
+    }
+  ],
+  "security_checks": [
+    {
+      "check": "git_branch",
+      "result": "main"
+    },
+    {
+      "check": "git_status_initial",
+      "result": "## main...origin/main [ahead 2]"
+    },
+    {
+      "check": "env_sensitive_filenames",
+      "result": [
+        ".env.example present",
+        "temp_smoke .env.example historical copies present",
+        "no root .env listed by safe filename scan"
+      ]
+    },
+    {
+      "check": "paper_broker_real_order_guard",
+      "result": "src/galapagos/execution/paper_broker.py::PaperBroker.create_order raises RealTradingDisabledError"
+    },
+    {
+      "check": "no_real_trading_test",
+      "result": "tests/test_no_real_trading.py covers create_order and static dangerous patterns"
+    },
+    {
+      "check": "current_scope_safety_flags",
+      "result": {
+        "trading_enabled": false,
+        "orders_enabled": false,
+        "backtest_enabled": false,
+        "paper_live_enabled": false
+      }
+    },
+    {
+      "check": "persistent_model_files",
+      "result": "none found by safe filename scan excluding .venv/temp_smoke"
+    },
+    {
+      "check": "root_orders_execution_models_dirs",
+      "result": {
+        "orders": false,
+        "execution": false,
+        "models": false,
+        "reports/backtests": false,
+        "reports/strategies": false
+      }
+    },
+    {
+      "check": "risk_engine",
+      "result": "RiskEngine requires profile_config.paper_trading_only and kill-switch checks; direct paper broker calls remain paper-only but can bypass risk evaluation if called manually"
+    }
+  ],
+  "changed_files_summary": [
+    "Cette mission cree reports/galapagos_resume_for_handoff.md et reports/galapagos_resume_for_handoff.json.",
+    "Avant generation, git status etait propre sur main avec ahead 2.",
+    "Derniers commits locaux: 56b0f33d packaging V9.0-to-V9.3.1, 5054a177 pipeline V9.0-V9.3."
+  ],
+  "validated_points": [
+    "V8.9.1 est la derniere version validee selon PROJECT_STATE et le contexte utilisateur.",
+    "La candidate courante est V9.0_to_V9.3.1 pending_external_audit.",
+    "Le ZIP audit-lite le plus recent existe et inclut la correction _bootstrap.py.",
+    "Audit ZIP V9.0-to-V9.3.1 PASS.",
+    "Smoke ZIP V9.0-to-V9.3.1 PASS.",
+    "pytest collect-only PASS avec 5192 tests collectes.",
+    "selected_features_count = 18.",
+    "Dataset row counts V9.1 = 527040/105408/35136/8784.",
+    "Score row counts V9.2 et V9.3 presents dans latest_metrics.",
+    "folds_count = 5 par timeframe.",
+    "Claims V9.3 false: robust_edge_claimed, strategy_validated, backtest_performed, actionable_signal_produced, walk_forward_validated_for_trading.",
+    "Flags courants no trading/no orders/no backtest/no strategy false cote enablement."
+  ],
+  "reservations": [
+    "V9.0_to_V9.3.1 reste pending_external_audit; ne pas passer a une nouvelle version fonctionnelle avant audit externe strict.",
+    "Les validateurs full V9.0/V9.1/V9.2/V9.3 n ont pas ete relances pendant ce handoff pour eviter lectures longues des Parquet complets; ils sont couverts par l attestation full locale existante.",
+    "Le repo contient des modules historiques backtest/strategies/configs; ils ne sont pas actifs dans le scope courant mais doivent rester exclus des claims V9.x.",
+    "Des dossiers temporaires/historiques comme temp_smoke et des __pycache__ existent dans le workspace; les ZIP audit-lite les excluent.",
+    "Le RiskEngine existe, mais une utilisation directe du PaperBroker pourrait contourner l evaluation de risque; cela reste paper-only car create_order reel est bloque."
+  ],
+  "blockers": [
+    "Validation externe stricte de V9.0_to_V9.3.1 encore requise avant suite fonctionnelle."
+  ],
+  "no_trading_confirmed": true,
+  "no_backtest_confirmed_for_current_scope": true,
+  "recommended_next_version": "V9.0-to-V9.3.2 uniquement si nouvel audit externe trouve encore une reserve packaging; sinon V9.4 Research Decision Gate refined apres validation externe.",
+  "recommended_next_action": "Soumettre projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip a l audit externe strict; ne pas creer V9.4 avant PASS externe.",
+  "recommended_next_prompt": "Tu es l'agent auditeur du Projet Galapagos. Lis reports/galapagos_resume_for_handoff.md et reports/galapagos_resume_for_handoff.json, puis audite strictement la candidate V9.0_to_V9.3.1 sans trading, sans ordre, sans cle API et sans backtest. Commence par verifier git status, le ZIP projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip, les scripts audit/smoke, les manifests V9.0/V9.1/V9.2/V9.3, les samples audit-lite, les claims false et les flags no-trading/no-backtest/no-orders. Si une reserve existe, proposer uniquement une sous-version corrective V9.0-to-V9.3.2; sinon recommander la prochaine etape research sans claim trading.",
+  "v8_9_1_state": {
+    "validated_from_context": true,
+    "zip": {
+      "path": "projet-galapagos-v8.9.1-audit-lite.zip",
+      "exists": true,
+      "bytes": 955480,
+      "sha256": "81cc1b5682b78da886d65d3a1a95c120bd7791e3ff1456d29994a4af48494ede"
+    },
+    "audit": {
+      "version": "V8.9.1",
+      "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v8.9.1-audit-lite.zip",
+      "zip_size_bytes": 955480,
+      "zip_size_mb": 0.911,
+      "entries": 244,
+      "raw_zips_absent": true,
+      "full_research_data_absent": true,
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "smoke": {
+      "version": "V8.9.1",
+      "zip_path": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v8.9.1-audit-lite.zip",
+      "zip_size_bytes": 955480,
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "pytest_collect_only": {
+        "executed": true,
+        "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+        "returncode": 0,
+        "stdout_tail": "tests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_feature_inventory_non_empty_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_feature_inventory_has_expected_families_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_missingness_summary_contains_all_timeframes_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_collinearity_clusters_have_representatives_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_candidate_refined_feature_set_non_empty_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_candidate_refined_feature_set_excludes_forbidden_columns_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_leakage_guard_passes_v8_9\ntests/features/test_ohlcv_trades_feature_audit_v8_9.py::test_feature_set_not_validated_for_trading_v8_9\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_accepts_valid_feature_audit\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_forbidden_future_feature_selected\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_forbidden_label_feature_selected\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_forbidden_signal_feature_selected\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_feature_set_validated_for_trading_true\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_strategy_validated_true\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_backtest_performed_true\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_actionable_signal_produced_true\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_dataset_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_ml_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_backtest_report_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_orders_directory_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_model_pickle_created\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_markdown_strategy_validated_claim\ntests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py::test_validator_v8_9_rejects_markdown_tradable_edge_confirmed_claim\n\n23 tests collected in 0.36s\n",
+        "stderr_tail": ""
+      },
+      "targeted_tests": {
+        "executed": true,
+        "command": "PYTHONPATH=src python -m pytest -q tests/features/test_ohlcv_trades_feature_audit_v8_9.py tests/validation/test_ohlcv_trades_feature_audit_v8_9_validator.py",
+        "returncode": 0,
+        "stdout_tail": ".......................                                                  [100%]\n23 passed in 0.41s\n",
+        "stderr_tail": ""
+      },
+      "smoke_duration_seconds": 2.781
+    },
+    "selected_features_count": 18,
+    "leakage_guard": {
+      "forbidden_features_present": [],
+      "checked_features_count": 18,
+      "passed": true
+    }
+  },
+  "v9_group_state": {
+    "v9_0_manifest": {
+      "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+      "exists": true,
+      "bytes": 14479,
+      "sha256": "7ea5941ca25c62fc65818d54f2c25c83fafd58f779a1320f56bb165965c4370c"
+    },
+    "v9_1_manifest": {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+      "exists": true,
+      "bytes": 20239,
+      "sha256": "9624672783b1ae9d3e78c5fab72e6e4e790c8161439982a20ac52bf1cea1ee8a"
+    },
+    "v9_2_manifest": {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_ml_research_v9_2_manifest.json",
+      "exists": true,
+      "bytes": 190027,
+      "sha256": "b27547fea2ff87fd0c33d7c34acb8c0d33da8efd1b7ba471a5681111b5ad7734"
+    },
+    "v9_3_manifest": {
+      "path": "reports/manifests/refined_strict_walk_forward_validation_v9_3_manifest.json",
+      "exists": true,
+      "bytes": 458212,
+      "sha256": "5fa406c7be9235a4d68c425f6ad4a535f7f01e5b98fbf1acb426d6972da42be4"
+    },
+    "selected_features_count": 18,
+    "dataset_row_counts": {
+      "1m": 527040,
+      "5m": 105408,
+      "15m": 35136,
+      "1h": 8784
+    },
+    "score_row_counts_v9_2": {
+      "1m": 2107920,
+      "5m": 421392,
+      "15m": 140304,
+      "1h": 34896
+    },
+    "score_row_counts_v9_3": {
+      "1m": 8805440,
+      "5m": 1759808,
+      "15m": 585536,
+      "1h": 145184
+    },
+    "folds_count": {
+      "1m": 5,
+      "5m": 5,
+      "15m": 5,
+      "1h": 5
+    },
+    "claims_false": {
+      "robust_edge_claimed": false,
+      "strategy_validated": false,
+      "backtest_performed": false,
+      "actionable_signal_produced": false,
+      "walk_forward_validated_for_trading": false
+    },
+    "audit_lite": {
+      "zip": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+      "passed": true,
+      "errors": []
+    },
+    "smoke": {
+      "zip": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+      "passed": true,
+      "errors": []
+    },
+    "zip_size": {
+      "version_scope": "V9.0_to_V9.3.1",
+      "source_version_scope": "V9.0_to_V9.3",
+      "packaging_fix_only": true,
+      "zip_name": "projet-galapagos-v9.0-to-v9.3.1-audit-lite.zip",
+      "zip_bytes": 2318053,
+      "zip_sha256": "9bed32a8da8d4b57ca2995f8e16755823c012b181221504c3588ec8bef66430e",
+      "included_files": 1364,
+      "created_at_utc": "2026-05-26T19:18:43Z"
+    },
+    "attestation": {
+      "path": "reports/audit_lite/v9_0_to_v9_3_full_local_validation_attestation.json",
+      "exists": true,
+      "bytes": 14789,
+      "sha256": "f734c0a150dbb0cef42053965644471403898ed1be84c961bf457feabf2e50ee"
+    }
+  }
+}
