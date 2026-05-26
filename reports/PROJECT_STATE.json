@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V8.9.1",
-  "candidate_version": "V9.0_to_V9.3.1",
+  "candidate_version": "V9.0_to_V9.3.2",
   "candidate_status": "pending_external_audit",
-  "direction": "grouped audit-lite packaging fix for refined OHLCV + trades V9.0 to V9.3",
+  "direction": "packaging/audit externe corrective fix only",
   "v8_9_1_scope": "packaging_audit_lite_only",
   "v8_9_1_functional_v8_9_results_unchanged": true,
   "v8_9_1_new_dataset_created": false,
@@ -1281,5 +1281,8 @@
   "signal_created": false,
   "persistent_model_created": false,
   "packaging_fix_only": true,
-  "source_candidate_version": "V9.0_to_V9.3"
+  "source_candidate_version": "V9.0_to_V9.3",
+  "no_v9_4_before_external_audit": true,
+  "source_version_scope": "V9.0_to_V9.3",
+  "correction_scope": "packaging_audit_lite_external_audit_fix_only"
 }

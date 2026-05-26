@@ -1,10 +1,13 @@
 {
   "last_validated_version": "V8.9.1",
-  "candidate_version": "V9.0_to_V9.3.1",
+  "candidate_version": "V9.0_to_V9.3.2",
   "candidate_status": "pending_external_audit",
-  "direction": "grouped audit-lite packaging fix for refined OHLCV + trades V9.0 to V9.3",
+  "direction": "packaging/audit externe corrective fix only",
   "packaging_fix_only": true,
   "source_candidate_version": "V9.0_to_V9.3",
+  "source_version_scope": "V9.0_to_V9.3",
+  "correction_scope": "packaging_audit_lite_external_audit_fix_only",
+  "no_v9_4_before_external_audit": true,
   "window_start": "2023-03-25",
   "window_end": "2024-03-24",
   "total_days": 366,
@@ -40,5 +43,7 @@
   "trading_enabled": false,
   "paper_live_enabled": false,
   "persistent_model_created": false,
+  "api_key_used": false,
+  "private_endpoint_used": false,
   "external_validation_required": true
 }

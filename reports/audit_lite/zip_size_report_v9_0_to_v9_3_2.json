@@ -1,0 +1,12 @@
+{
+  "version_scope": "V9.0_to_V9.3.2",
+  "source_version_scope": "V9.0_to_V9.3",
+  "correction_scope": "packaging_audit_lite_external_audit_fix_only",
+  "zip_name": "projet-galapagos-v9.0-to-v9.3.2-audit-lite.zip",
+  "zip_bytes": 2337609,
+  "zip_sha256": "2df14e644420b88625c44b87068365aa98815f32a6841c1882aa3ed3348040b3",
+  "included_files": 1367,
+  "created_at_utc": "2026-05-26T23:14:34Z",
+  "self_reference_note": "The in-archive report is generated during release; this disk report is authoritative for the final written ZIP.",
+  "packaging_fix_only": true
+}

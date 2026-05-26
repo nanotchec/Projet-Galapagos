@@ -1,9 +1,9 @@
-# Latest Metrics V9.0 -> V9.3.1
+# Latest Metrics V9.0 -> V9.3.2
 
 - Derniere version validee : V8.9.1.
-- Candidate : `V9.0_to_V9.3.1`.
-- Correction : packaging audit-lite uniquement.
-- Source metier conservee : `V9.0_to_V9.3`.
+- Candidate : `V9.0_to_V9.3.2`.
+- Correction : packaging audit-lite / audit externe uniquement.
+- Source metier : `V9.0_to_V9.3`.
 - Fenetre : `2023-03-25` -> `2024-03-24` (`366` jours).
 - Selected features : `18`.
 - Dataset rows : `{'1m': 527040, '5m': 105408, '15m': 35136, '1h': 8784}`.
