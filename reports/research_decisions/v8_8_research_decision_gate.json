@@ -1,0 +1,1189 @@
+{
+  "version": "V8.8",
+  "status": "PASS",
+  "decision_gate_type": "research_only",
+  "created_at_utc": "2026-05-26T12:45:14.339390Z",
+  "inputs": {
+    "strict_walk_forward_manifest": {
+      "path": "reports/manifests/strict_walk_forward_validation_v8_7_manifest.json",
+      "sha256": "f9d748917133663b0abfe61f3295490cdbc6d35ee6409bc9bae5e879297efd28",
+      "bytes": 461095
+    },
+    "strict_walk_forward_report": {
+      "path": "reports/ml/strict_walk_forward_validation_v8_7.json",
+      "sha256": "f9d748917133663b0abfe61f3295490cdbc6d35ee6409bc9bae5e879297efd28",
+      "bytes": 461095
+    },
+    "strict_walk_forward_scores_report": {
+      "path": "reports/ml/strict_walk_forward_scores_v8_7.json",
+      "sha256": "e052c0d549174840e1ff5447066c75d91ab5f769bbea9b01b5918c47684590dc",
+      "bytes": 439425
+    },
+    "static_split_manifest_v8_5": {
+      "path": "reports/manifests/ohlcv_trades_1y_offline_ml_research_v8_5_manifest.json",
+      "sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e",
+      "bytes": 268567
+    },
+    "static_split_report_v8_5": {
+      "path": "reports/ml/ohlcv_trades_1y_offline_ml_research_v8_5.json",
+      "sha256": "f6efdbd58578271795566d768c431aec921a9eb1e13f99c2bc8f5dcfed2a135e",
+      "bytes": 268567
+    },
+    "static_split_scores_report_v8_5": {
+      "path": "reports/ml/ohlcv_trades_1y_offline_research_scores_v8_5.json",
+      "sha256": "990306dc27c29209f107bd0ab35dc759369eeb08036ad23ca8c92bf327b7a923",
+      "bytes": 257085
+    },
+    "v8_7_attestation": {
+      "path": "reports/audit_lite/v8_7_full_local_validation_attestation.json",
+      "sha256": "5daa8cb2745559d4d057824f35011a10536e095438dc302f7edfdf2ae000fc8a",
+      "bytes": 6585
+    },
+    "reference_reports": {
+      "v8_0_ohlcv_trades_90d": {
+        "available": true,
+        "paths": [
+          "reports/manifests/ohlcv_trades_90d_offline_ml_research_v8_0_manifest.json",
+          "reports/ml/ohlcv_trades_90d_offline_ml_research_v8_0.json"
+        ]
+      },
+      "v6_2_advanced_ohlcv": {
+        "available": true,
+        "paths": [
+          "reports/manifests/advanced_ohlcv_offline_ml_research_v6_2_manifest.json",
+          "reports/ml/advanced_ohlcv_offline_ml_research_v6_2.json"
+        ]
+      },
+      "v5_4_simple_ohlcv": {
+        "available": true,
+        "paths": [
+          "reports/manifests/max_history_offline_ml_research_v5_4_manifest.json",
+          "reports/ml/max_history_offline_ml_research_v5_4.json"
+        ]
+      }
+    },
+    "window_start": "2023-03-25",
+    "window_end": "2024-03-24",
+    "total_days": 366,
+    "feature_columns_count": 71,
+    "target_name": "up_down_flat_h1",
+    "models": [
+      "majority_class_baseline",
+      "random_seeded_baseline",
+      "logistic_regression",
+      "decision_tree_depth_2"
+    ],
+    "timeframes": [
+      "1m",
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "folds_count_by_timeframe": {
+      "1m": 5,
+      "5m": 5,
+      "15m": 5,
+      "1h": 5
+    },
+    "walk_forward_policy": {
+      "grouping": "calendar_month",
+      "initial_train_months": 6,
+      "validation_months": 1,
+      "test_months": 1,
+      "step_months": 1,
+      "purge_bars": 5,
+      "embargo_bars": 5,
+      "expanding_train": true,
+      "shuffle": false
+    },
+    "v8_7_attestation_passed": true,
+    "v8_7_report_consistent_with_manifest": true,
+    "v8_7_scores_report_version": "V8.7",
+    "v8_5_status": "PASS"
+  },
+  "summary_verdict": "interessant_mais_instable_non_concluant",
+  "walk_forward_assessment": {
+    "verdict": "interessant_mais_instable_non_concluant",
+    "offline_validation_only": true,
+    "not_a_backtest": true,
+    "models_summary": {
+      "majority_class_baseline": {
+        "1m": {
+          "mean_test_accuracy": 0.6873055911268515,
+          "mean_test_macro_f1": 0.270450472871428,
+          "std_test_accuracy": 0.08677668491816576,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds"
+          ]
+        },
+        "5m": {
+          "mean_test_accuracy": 0.38217534090765526,
+          "mean_test_macro_f1": 0.18317720788644298,
+          "std_test_accuracy": 0.06609072227022958,
+          "weak_folds": [
+            "fold_02",
+            "fold_03",
+            "fold_05"
+          ],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds",
+            "weak folds present"
+          ]
+        },
+        "15m": {
+          "mean_test_accuracy": 0.30159575735123123,
+          "mean_test_macro_f1": 0.15181265040275366,
+          "std_test_accuracy": 0.09492627582061233,
+          "weak_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04"
+          ],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds",
+            "weak folds present"
+          ]
+        },
+        "1h": {
+          "mean_test_accuracy": 0.45683021415487357,
+          "mean_test_macro_f1": 0.20897773706730657,
+          "std_test_accuracy": 0.01867270072592959,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        }
+      },
+      "random_seeded_baseline": {
+        "1m": {
+          "mean_test_accuracy": 0.5894660911589549,
+          "mean_test_macro_f1": 0.32332296203827965,
+          "std_test_accuracy": 0.06577409583640838,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds"
+          ]
+        },
+        "5m": {
+          "mean_test_accuracy": 0.34758749212815654,
+          "mean_test_macro_f1": 0.3237656227865917,
+          "std_test_accuracy": 0.020407727357294406,
+          "weak_folds": [
+            "fold_05"
+          ],
+          "unstable_folds": [],
+          "fold_concentration_warnings": [
+            "weak folds present"
+          ]
+        },
+        "15m": {
+          "mean_test_accuracy": 0.32983119798365645,
+          "mean_test_macro_f1": 0.3235384932216264,
+          "std_test_accuracy": 0.008191426316659716,
+          "weak_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04"
+          ],
+          "unstable_folds": [],
+          "fold_concentration_warnings": [
+            "weak folds present"
+          ]
+        },
+        "1h": {
+          "mean_test_accuracy": 0.39083665682695545,
+          "mean_test_macro_f1": 0.3366848509206902,
+          "std_test_accuracy": 0.015675802296914676,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        }
+      },
+      "logistic_regression": {
+        "1m": {
+          "mean_test_accuracy": 0.6868445326611654,
+          "mean_test_macro_f1": 0.37467636773124036,
+          "std_test_accuracy": 0.08476072006555402,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds"
+          ]
+        },
+        "5m": {
+          "mean_test_accuracy": 0.44157978095783995,
+          "mean_test_macro_f1": 0.39010543455083935,
+          "std_test_accuracy": 0.027680090813359554,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        },
+        "15m": {
+          "mean_test_accuracy": 0.41670174998440074,
+          "mean_test_macro_f1": 0.3596252687194119,
+          "std_test_accuracy": 0.02029256015137136,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        },
+        "1h": {
+          "mean_test_accuracy": 0.46054921772590857,
+          "mean_test_macro_f1": 0.3269712437400996,
+          "std_test_accuracy": 0.01982466866805111,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        }
+      },
+      "decision_tree_depth_2": {
+        "1m": {
+          "mean_test_accuracy": 0.6873055911268515,
+          "mean_test_macro_f1": 0.270450472871428,
+          "std_test_accuracy": 0.08677668491816576,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds"
+          ]
+        },
+        "5m": {
+          "mean_test_accuracy": 0.4381800634021948,
+          "mean_test_macro_f1": 0.32616971150602825,
+          "std_test_accuracy": 0.02087780205380927,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        },
+        "15m": {
+          "mean_test_accuracy": 0.40547245431739887,
+          "mean_test_macro_f1": 0.32072867864728694,
+          "std_test_accuracy": 0.021523869837040563,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test macro_f1 varies across folds"
+          ]
+        },
+        "1h": {
+          "mean_test_accuracy": 0.4590168756454405,
+          "mean_test_macro_f1": 0.3174874037286043,
+          "std_test_accuracy": 0.016008795322803165,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        }
+      }
+    },
+    "findings": {
+      "robust_edge_claimed": false,
+      "strategy_validated": false,
+      "backtest_performed": false,
+      "actionable_signal_produced": false,
+      "walk_forward_validated_for_trading": false
+    },
+    "warnings_count": 11,
+    "warnings": [
+      "1m.decision_tree_depth_2: fold concentration warning",
+      "1m.logistic_regression: fold concentration warning",
+      "1m.majority_class_baseline: fold concentration warning",
+      "1m.random_seeded_baseline: fold concentration warning",
+      "5m.majority_class_baseline: fold concentration warning",
+      "5m.random_seeded_baseline: fold concentration warning",
+      "15m.decision_tree_depth_2: fold concentration warning",
+      "15m.majority_class_baseline: fold concentration warning",
+      "15m.random_seeded_baseline: fold concentration warning",
+      "no clear edge vs shuffled labels in 18 fold/model/role cases",
+      "V8.5 static split and V8.7 strict walk-forward are not identical validation designs."
+    ]
+  },
+  "baseline_assessment": {
+    "verdict": "mitige_pas_de_battement_net_generalise",
+    "clear_baseline_wins_count": 2,
+    "mixed_results_count": 6,
+    "baseline_miss_count": 0,
+    "comparison_policy": "clear win requires accuracy and macro_f1 above both baselines by more than 0.01",
+    "comparisons": {
+      "1m.logistic_regression": {
+        "timeframe": "1m",
+        "model_name": "logistic_regression",
+        "mean_test_accuracy": 0.6868445326611654,
+        "mean_test_macro_f1": 0.37467636773124036,
+        "delta_accuracy_vs_majority": -0.000461,
+        "delta_macro_f1_vs_majority": 0.104226,
+        "delta_accuracy_vs_random": 0.097378,
+        "delta_macro_f1_vs_random": 0.051353,
+        "verdict": "bat_les_baselines_en_macro_f1_mais_resultat_mitige"
+      },
+      "1m.decision_tree_depth_2": {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "mean_test_accuracy": 0.6873055911268515,
+        "mean_test_macro_f1": 0.270450472871428,
+        "delta_accuracy_vs_majority": 0.0,
+        "delta_macro_f1_vs_majority": 0.0,
+        "delta_accuracy_vs_random": 0.097839,
+        "delta_macro_f1_vs_random": -0.052872,
+        "verdict": "resultat_mitige"
+      },
+      "5m.logistic_regression": {
+        "timeframe": "5m",
+        "model_name": "logistic_regression",
+        "mean_test_accuracy": 0.44157978095783995,
+        "mean_test_macro_f1": 0.39010543455083935,
+        "delta_accuracy_vs_majority": 0.059404,
+        "delta_macro_f1_vs_majority": 0.206928,
+        "delta_accuracy_vs_random": 0.093992,
+        "delta_macro_f1_vs_random": 0.06634,
+        "verdict": "bat_clairement_les_baselines_sur_accuracy_et_macro_f1"
+      },
+      "5m.decision_tree_depth_2": {
+        "timeframe": "5m",
+        "model_name": "decision_tree_depth_2",
+        "mean_test_accuracy": 0.4381800634021948,
+        "mean_test_macro_f1": 0.32616971150602825,
+        "delta_accuracy_vs_majority": 0.056005,
+        "delta_macro_f1_vs_majority": 0.142993,
+        "delta_accuracy_vs_random": 0.090593,
+        "delta_macro_f1_vs_random": 0.002404,
+        "verdict": "resultat_mitige"
+      },
+      "15m.logistic_regression": {
+        "timeframe": "15m",
+        "model_name": "logistic_regression",
+        "mean_test_accuracy": 0.41670174998440074,
+        "mean_test_macro_f1": 0.3596252687194119,
+        "delta_accuracy_vs_majority": 0.115106,
+        "delta_macro_f1_vs_majority": 0.207813,
+        "delta_accuracy_vs_random": 0.086871,
+        "delta_macro_f1_vs_random": 0.036087,
+        "verdict": "bat_clairement_les_baselines_sur_accuracy_et_macro_f1"
+      },
+      "15m.decision_tree_depth_2": {
+        "timeframe": "15m",
+        "model_name": "decision_tree_depth_2",
+        "mean_test_accuracy": 0.40547245431739887,
+        "mean_test_macro_f1": 0.32072867864728694,
+        "delta_accuracy_vs_majority": 0.103877,
+        "delta_macro_f1_vs_majority": 0.168916,
+        "delta_accuracy_vs_random": 0.075641,
+        "delta_macro_f1_vs_random": -0.00281,
+        "verdict": "resultat_mitige"
+      },
+      "1h.logistic_regression": {
+        "timeframe": "1h",
+        "model_name": "logistic_regression",
+        "mean_test_accuracy": 0.46054921772590857,
+        "mean_test_macro_f1": 0.3269712437400996,
+        "delta_accuracy_vs_majority": 0.003719,
+        "delta_macro_f1_vs_majority": 0.117994,
+        "delta_accuracy_vs_random": 0.069713,
+        "delta_macro_f1_vs_random": -0.009714,
+        "verdict": "resultat_mitige"
+      },
+      "1h.decision_tree_depth_2": {
+        "timeframe": "1h",
+        "model_name": "decision_tree_depth_2",
+        "mean_test_accuracy": 0.4590168756454405,
+        "mean_test_macro_f1": 0.3174874037286043,
+        "delta_accuracy_vs_majority": 0.002187,
+        "delta_macro_f1_vs_majority": 0.10851,
+        "delta_accuracy_vs_random": 0.06818,
+        "delta_macro_f1_vs_random": -0.019197,
+        "verdict": "resultat_mitige"
+      }
+    },
+    "backtest_recommended": false
+  },
+  "fold_stability_assessment": {
+    "verdict": "instable_ou_concentre",
+    "folds_count_by_timeframe": {
+      "1m": 5,
+      "5m": 5,
+      "15m": 5,
+      "1h": 5
+    },
+    "unstable_entries_count": 7,
+    "weak_entries_count": 4,
+    "fold_concentration_warnings_count": 9,
+    "unstable_entries": {
+      "1m.decision_tree_depth_2": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "1m.logistic_regression": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "1m.majority_class_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "1m.random_seeded_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "5m.majority_class_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "15m.decision_tree_depth_2": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "15m.majority_class_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ]
+    },
+    "weak_entries": {
+      "5m.majority_class_baseline": [
+        "fold_02",
+        "fold_03",
+        "fold_05"
+      ],
+      "5m.random_seeded_baseline": [
+        "fold_05"
+      ],
+      "15m.majority_class_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04"
+      ],
+      "15m.random_seeded_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04"
+      ]
+    },
+    "fold_concentration_warnings": {
+      "1m.decision_tree_depth_2": [
+        "test accuracy varies across folds"
+      ],
+      "1m.logistic_regression": [
+        "test accuracy varies across folds"
+      ],
+      "1m.majority_class_baseline": [
+        "test accuracy varies across folds"
+      ],
+      "1m.random_seeded_baseline": [
+        "test accuracy varies across folds"
+      ],
+      "5m.majority_class_baseline": [
+        "test accuracy varies across folds",
+        "weak folds present"
+      ],
+      "5m.random_seeded_baseline": [
+        "weak folds present"
+      ],
+      "15m.decision_tree_depth_2": [
+        "test macro_f1 varies across folds"
+      ],
+      "15m.majority_class_baseline": [
+        "test accuracy varies across folds",
+        "weak folds present"
+      ],
+      "15m.random_seeded_baseline": [
+        "weak folds present"
+      ]
+    },
+    "depends_on_few_periods": true
+  },
+  "timeframe_stability_assessment": {
+    "verdict": "non_stable_entre_timeframes",
+    "timeframes": {
+      "1m": {
+        "majority_class_baseline": {
+          "mean_test_accuracy": 0.6873055911268515,
+          "mean_test_macro_f1": 0.270450472871428,
+          "std_test_accuracy": 0.08677668491816576,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds"
+          ]
+        },
+        "random_seeded_baseline": {
+          "mean_test_accuracy": 0.5894660911589549,
+          "mean_test_macro_f1": 0.32332296203827965,
+          "std_test_accuracy": 0.06577409583640838,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds"
+          ]
+        },
+        "logistic_regression": {
+          "mean_test_accuracy": 0.6868445326611654,
+          "mean_test_macro_f1": 0.37467636773124036,
+          "std_test_accuracy": 0.08476072006555402,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds"
+          ]
+        },
+        "decision_tree_depth_2": {
+          "mean_test_accuracy": 0.6873055911268515,
+          "mean_test_macro_f1": 0.270450472871428,
+          "std_test_accuracy": 0.08677668491816576,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds"
+          ]
+        }
+      },
+      "5m": {
+        "majority_class_baseline": {
+          "mean_test_accuracy": 0.38217534090765526,
+          "mean_test_macro_f1": 0.18317720788644298,
+          "std_test_accuracy": 0.06609072227022958,
+          "weak_folds": [
+            "fold_02",
+            "fold_03",
+            "fold_05"
+          ],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds",
+            "weak folds present"
+          ]
+        },
+        "random_seeded_baseline": {
+          "mean_test_accuracy": 0.34758749212815654,
+          "mean_test_macro_f1": 0.3237656227865917,
+          "std_test_accuracy": 0.020407727357294406,
+          "weak_folds": [
+            "fold_05"
+          ],
+          "unstable_folds": [],
+          "fold_concentration_warnings": [
+            "weak folds present"
+          ]
+        },
+        "logistic_regression": {
+          "mean_test_accuracy": 0.44157978095783995,
+          "mean_test_macro_f1": 0.39010543455083935,
+          "std_test_accuracy": 0.027680090813359554,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        },
+        "decision_tree_depth_2": {
+          "mean_test_accuracy": 0.4381800634021948,
+          "mean_test_macro_f1": 0.32616971150602825,
+          "std_test_accuracy": 0.02087780205380927,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        }
+      },
+      "15m": {
+        "majority_class_baseline": {
+          "mean_test_accuracy": 0.30159575735123123,
+          "mean_test_macro_f1": 0.15181265040275366,
+          "std_test_accuracy": 0.09492627582061233,
+          "weak_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04"
+          ],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test accuracy varies across folds",
+            "weak folds present"
+          ]
+        },
+        "random_seeded_baseline": {
+          "mean_test_accuracy": 0.32983119798365645,
+          "mean_test_macro_f1": 0.3235384932216264,
+          "std_test_accuracy": 0.008191426316659716,
+          "weak_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04"
+          ],
+          "unstable_folds": [],
+          "fold_concentration_warnings": [
+            "weak folds present"
+          ]
+        },
+        "logistic_regression": {
+          "mean_test_accuracy": 0.41670174998440074,
+          "mean_test_macro_f1": 0.3596252687194119,
+          "std_test_accuracy": 0.02029256015137136,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        },
+        "decision_tree_depth_2": {
+          "mean_test_accuracy": 0.40547245431739887,
+          "mean_test_macro_f1": 0.32072867864728694,
+          "std_test_accuracy": 0.021523869837040563,
+          "weak_folds": [],
+          "unstable_folds": [
+            "fold_01",
+            "fold_02",
+            "fold_03",
+            "fold_04",
+            "fold_05"
+          ],
+          "fold_concentration_warnings": [
+            "test macro_f1 varies across folds"
+          ]
+        }
+      },
+      "1h": {
+        "majority_class_baseline": {
+          "mean_test_accuracy": 0.45683021415487357,
+          "mean_test_macro_f1": 0.20897773706730657,
+          "std_test_accuracy": 0.01867270072592959,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        },
+        "random_seeded_baseline": {
+          "mean_test_accuracy": 0.39083665682695545,
+          "mean_test_macro_f1": 0.3366848509206902,
+          "std_test_accuracy": 0.015675802296914676,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        },
+        "logistic_regression": {
+          "mean_test_accuracy": 0.46054921772590857,
+          "mean_test_macro_f1": 0.3269712437400996,
+          "std_test_accuracy": 0.01982466866805111,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        },
+        "decision_tree_depth_2": {
+          "mean_test_accuracy": 0.4590168756454405,
+          "mean_test_macro_f1": 0.3174874037286043,
+          "std_test_accuracy": 0.016008795322803165,
+          "weak_folds": [],
+          "unstable_folds": [],
+          "fold_concentration_warnings": []
+        }
+      }
+    },
+    "best_timeframe_by_macro_f1": {
+      "majority_class_baseline": {
+        "best_timeframe": "1m",
+        "ranking": [
+          [
+            "1m",
+            0.270450472871428
+          ],
+          [
+            "1h",
+            0.20897773706730657
+          ],
+          [
+            "5m",
+            0.18317720788644298
+          ],
+          [
+            "15m",
+            0.15181265040275366
+          ]
+        ]
+      },
+      "random_seeded_baseline": {
+        "best_timeframe": "1h",
+        "ranking": [
+          [
+            "1h",
+            0.3366848509206902
+          ],
+          [
+            "5m",
+            0.3237656227865917
+          ],
+          [
+            "15m",
+            0.3235384932216264
+          ],
+          [
+            "1m",
+            0.32332296203827965
+          ]
+        ]
+      },
+      "logistic_regression": {
+        "best_timeframe": "5m",
+        "ranking": [
+          [
+            "5m",
+            0.39010543455083935
+          ],
+          [
+            "1m",
+            0.37467636773124036
+          ],
+          [
+            "15m",
+            0.3596252687194119
+          ],
+          [
+            "1h",
+            0.3269712437400996
+          ]
+        ]
+      },
+      "decision_tree_depth_2": {
+        "best_timeframe": "5m",
+        "ranking": [
+          [
+            "5m",
+            0.32616971150602825
+          ],
+          [
+            "15m",
+            0.32072867864728694
+          ],
+          [
+            "1h",
+            0.3174874037286043
+          ],
+          [
+            "1m",
+            0.270450472871428
+          ]
+        ]
+      }
+    },
+    "timeframe_concentration_detected": true,
+    "notes": [
+      "1m affiche une accuracy elevee mais une macro_f1 moins convaincante et des folds instables.",
+      "5m et 15m portent les meilleurs resultats learned en macro_f1.",
+      "1h reste mitige et proche des baselines random sur macro_f1."
+    ]
+  },
+  "label_shuffle_assessment": {
+    "verdict": "alerte_forte_resultats_trop_proches_des_labels_melanges",
+    "random_seed_policy": "123 + fold_order",
+    "shuffle_scope": "train_labels_only",
+    "total_cases": 80,
+    "no_clear_edge_vs_shuffled_labels_count": 18,
+    "by_model": {
+      "decision_tree_depth_2": 10,
+      "logistic_regression": 8
+    },
+    "by_timeframe": {
+      "1m": 12,
+      "1h": 6
+    },
+    "by_role": {
+      "validation": 8,
+      "test": 10
+    },
+    "cases": [
+      {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_01",
+        "fold_role": "validation",
+        "accuracy_delta_original_minus_shuffled": 0.0,
+        "macro_f1_delta_original_minus_shuffled": 0.0
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_01",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": 0.0,
+        "macro_f1_delta_original_minus_shuffled": 0.0
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "logistic_regression",
+        "fold_id": "fold_02",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": -0.001366,
+        "macro_f1_delta_original_minus_shuffled": 0.05949
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_02",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": -4.6e-05,
+        "macro_f1_delta_original_minus_shuffled": -0.00025
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "logistic_regression",
+        "fold_id": "fold_03",
+        "fold_role": "validation",
+        "accuracy_delta_original_minus_shuffled": -0.001922,
+        "macro_f1_delta_original_minus_shuffled": 0.071644
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "logistic_regression",
+        "fold_id": "fold_03",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": -0.000672,
+        "macro_f1_delta_original_minus_shuffled": 0.121846
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_03",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": 0.0,
+        "macro_f1_delta_original_minus_shuffled": -8.7e-05
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "logistic_regression",
+        "fold_id": "fold_04",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": -0.005713,
+        "macro_f1_delta_original_minus_shuffled": 0.081708
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_04",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": 0.0,
+        "macro_f1_delta_original_minus_shuffled": 0.0
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "logistic_regression",
+        "fold_id": "fold_05",
+        "fold_role": "validation",
+        "accuracy_delta_original_minus_shuffled": -0.003339,
+        "macro_f1_delta_original_minus_shuffled": 0.062935
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_05",
+        "fold_role": "validation",
+        "accuracy_delta_original_minus_shuffled": 0.0,
+        "macro_f1_delta_original_minus_shuffled": 0.0
+      },
+      {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_05",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": 0.0,
+        "macro_f1_delta_original_minus_shuffled": 0.0
+      },
+      {
+        "timeframe": "1h",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_02",
+        "fold_role": "validation",
+        "accuracy_delta_original_minus_shuffled": 0.00545,
+        "macro_f1_delta_original_minus_shuffled": -0.013795
+      },
+      {
+        "timeframe": "1h",
+        "model_name": "logistic_regression",
+        "fold_id": "fold_04",
+        "fold_role": "validation",
+        "accuracy_delta_original_minus_shuffled": -0.009537,
+        "macro_f1_delta_original_minus_shuffled": -0.000738
+      },
+      {
+        "timeframe": "1h",
+        "model_name": "logistic_regression",
+        "fold_id": "fold_05",
+        "fold_role": "validation",
+        "accuracy_delta_original_minus_shuffled": 0.0,
+        "macro_f1_delta_original_minus_shuffled": -0.000353
+      },
+      {
+        "timeframe": "1h",
+        "model_name": "logistic_regression",
+        "fold_id": "fold_05",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": -0.005789,
+        "macro_f1_delta_original_minus_shuffled": -0.011257
+      },
+      {
+        "timeframe": "1h",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_05",
+        "fold_role": "validation",
+        "accuracy_delta_original_minus_shuffled": -0.038147,
+        "macro_f1_delta_original_minus_shuffled": -0.006829
+      },
+      {
+        "timeframe": "1h",
+        "model_name": "decision_tree_depth_2",
+        "fold_id": "fold_05",
+        "fold_role": "test",
+        "accuracy_delta_original_minus_shuffled": -0.02026,
+        "macro_f1_delta_original_minus_shuffled": 0.023734
+      }
+    ],
+    "falsification_clean": false,
+    "backtest_recommended": false
+  },
+  "static_split_comparison_assessment": {
+    "verdict": "v8_7_affaiblit_le_diagnostic_de_stabilite_v8_5",
+    "descriptive_only": true,
+    "not_same_validation_design": true,
+    "compared_learned_cases": 8,
+    "positive_macro_f1_delta_cases": 4,
+    "negative_macro_f1_delta_cases": 4,
+    "comparisons": {
+      "15m.decision_tree_depth_2": {
+        "timeframe": "15m",
+        "model_name": "decision_tree_depth_2",
+        "v8_7_mean_test_accuracy": 0.40547245431739887,
+        "v8_5_static_test_accuracy": 0.41050085372794537,
+        "accuracy_delta_v8_7_minus_v8_5_static": -0.005028,
+        "v8_7_mean_test_macro_f1": 0.32072867864728694,
+        "v8_5_static_test_macro_f1": 0.3095290924462648,
+        "macro_f1_delta_v8_7_minus_v8_5_static": 0.0112,
+        "descriptive_only": true,
+        "not_same_validation_design": true
+      },
+      "15m.logistic_regression": {
+        "timeframe": "15m",
+        "model_name": "logistic_regression",
+        "v8_7_mean_test_accuracy": 0.41670174998440074,
+        "v8_5_static_test_accuracy": 0.4062322140011383,
+        "accuracy_delta_v8_7_minus_v8_5_static": 0.01047,
+        "v8_7_mean_test_macro_f1": 0.3596252687194119,
+        "v8_5_static_test_macro_f1": 0.3480156515782773,
+        "macro_f1_delta_v8_7_minus_v8_5_static": 0.01161,
+        "descriptive_only": true,
+        "not_same_validation_design": true
+      },
+      "1h.decision_tree_depth_2": {
+        "timeframe": "1h",
+        "model_name": "decision_tree_depth_2",
+        "v8_7_mean_test_accuracy": 0.4590168756454405,
+        "v8_5_static_test_accuracy": 0.450199203187251,
+        "accuracy_delta_v8_7_minus_v8_5_static": 0.008818,
+        "v8_7_mean_test_macro_f1": 0.3174874037286043,
+        "v8_5_static_test_macro_f1": 0.33541829465495393,
+        "macro_f1_delta_v8_7_minus_v8_5_static": -0.017931,
+        "descriptive_only": true,
+        "not_same_validation_design": true
+      },
+      "1h.logistic_regression": {
+        "timeframe": "1h",
+        "model_name": "logistic_regression",
+        "v8_7_mean_test_accuracy": 0.46054921772590857,
+        "v8_5_static_test_accuracy": 0.4752418895845191,
+        "accuracy_delta_v8_7_minus_v8_5_static": -0.014693,
+        "v8_7_mean_test_macro_f1": 0.3269712437400996,
+        "v8_5_static_test_macro_f1": 0.3447125646283209,
+        "macro_f1_delta_v8_7_minus_v8_5_static": -0.017741,
+        "descriptive_only": true,
+        "not_same_validation_design": true
+      },
+      "1m.decision_tree_depth_2": {
+        "timeframe": "1m",
+        "model_name": "decision_tree_depth_2",
+        "v8_7_mean_test_accuracy": 0.6873055911268515,
+        "v8_5_static_test_accuracy": 0.6485750607164542,
+        "accuracy_delta_v8_7_minus_v8_5_static": 0.038731,
+        "v8_7_mean_test_macro_f1": 0.270450472871428,
+        "v8_5_static_test_macro_f1": 0.2622770319132815,
+        "macro_f1_delta_v8_7_minus_v8_5_static": 0.008173,
+        "descriptive_only": true,
+        "not_same_validation_design": true
+      },
+      "1m.logistic_regression": {
+        "timeframe": "1m",
+        "model_name": "logistic_regression",
+        "v8_7_mean_test_accuracy": 0.6868445326611654,
+        "v8_5_static_test_accuracy": 0.6249905130540376,
+        "accuracy_delta_v8_7_minus_v8_5_static": 0.061854,
+        "v8_7_mean_test_macro_f1": 0.37467636773124036,
+        "v8_5_static_test_macro_f1": 0.4126129753705106,
+        "macro_f1_delta_v8_7_minus_v8_5_static": -0.037937,
+        "descriptive_only": true,
+        "not_same_validation_design": true
+      },
+      "5m.decision_tree_depth_2": {
+        "timeframe": "5m",
+        "model_name": "decision_tree_depth_2",
+        "v8_7_mean_test_accuracy": 0.4381800634021948,
+        "v8_5_static_test_accuracy": 0.42097523954084054,
+        "accuracy_delta_v8_7_minus_v8_5_static": 0.017205,
+        "v8_7_mean_test_macro_f1": 0.32616971150602825,
+        "v8_5_static_test_macro_f1": 0.3192601589915033,
+        "macro_f1_delta_v8_7_minus_v8_5_static": 0.00691,
+        "descriptive_only": true,
+        "not_same_validation_design": true
+      },
+      "5m.logistic_regression": {
+        "timeframe": "5m",
+        "model_name": "logistic_regression",
+        "v8_7_mean_test_accuracy": 0.44157978095783995,
+        "v8_5_static_test_accuracy": 0.42984536571482784,
+        "accuracy_delta_v8_7_minus_v8_5_static": 0.011734,
+        "v8_7_mean_test_macro_f1": 0.39010543455083935,
+        "v8_5_static_test_macro_f1": 0.40885027707147176,
+        "macro_f1_delta_v8_7_minus_v8_5_static": -0.018745,
+        "descriptive_only": true,
+        "not_same_validation_design": true
+      }
+    },
+    "warnings": [
+      "V8.5 static split and V8.7 strict walk-forward are not identical validation designs."
+    ]
+  },
+  "leakage_assessment": {
+    "verdict": "aucune_fuite_detectee_par_scan_v8_7",
+    "feature_leakage_detected": false,
+    "forbidden_feature_columns_present": [],
+    "metric_forbidden_terms_detected": false,
+    "forbidden_metric_terms_present": [],
+    "feature_columns_checked": 71,
+    "fold_columns_used_as_features": false,
+    "split_columns_used_as_features": false
+  },
+  "limitations": [
+    "V8.8 analyse uniquement les resultats offline V8.7 et ne modifie ni donnees, ni features, ni labels, ni scores.",
+    "V8.7 reste une validation walk-forward offline stricte, pas un backtest et pas une validation de strategie.",
+    "Les resultats restent trop proches des labels melanges dans plusieurs cas, avec concentration sur certains folds et timeframes.",
+    "La fenetre d'environ 1 an ne couvre pas toute la fenetre V5.0 disponible et ne suffit pas a conclure pour le trading."
+  ],
+  "recommended_next_step": "A. Ameliorer/refactoriser les features OHLCV + trades.",
+  "secondary_next_step": "B. Revoir les labels.",
+  "roadmap": [
+    "V8.9 - OHLCV + Trades Feature Audit / Selection",
+    "V9.0 - Refined OHLCV + Trades Feature Store",
+    "V9.1 - Refined OHLCV + Trades Dataset",
+    "V9.2 - Refined OHLCV + Trades ML Offline",
+    "V9.3 - Refined Strict Walk-Forward Validation"
+  ],
+  "safety": {
+    "trading_enabled": false,
+    "paper_live_enabled": false,
+    "orders_enabled": false,
+    "backtest_enabled": false,
+    "strategy_enabled": false,
+    "execution_enabled": false
+  },
+  "claims": {
+    "strategy_validated": false,
+    "model_validated_for_trading": false,
+    "walk_forward_validated_for_trading": false,
+    "profitability_claimed": false,
+    "real_trading_allowed": false
+  }
+}

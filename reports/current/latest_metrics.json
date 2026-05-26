@@ -1,35 +1,22 @@
 {
-  "last_validated_version": "V8.6",
-  "candidate_version": "V8.7",
+  "last_validated_version": "V8.7",
+  "candidate_version": "V8.8",
   "candidate_status": "pending_external_audit",
-  "direction": "strict walk-forward offline validation",
+  "direction": "strict walk-forward research decision gate",
   "window_start": "2023-03-25",
   "window_end": "2024-03-24",
   "total_days": 366,
   "feature_columns_count": 71,
-  "walk_forward_policy": {
-    "grouping": "calendar_month",
-    "initial_train_months": 6,
-    "validation_months": 1,
-    "test_months": 1,
-    "step_months": 1,
-    "purge_bars": 5,
-    "embargo_bars": 5,
-    "expanding_train": true,
-    "shuffle": false
-  },
+  "summary_verdict": "interessant_mais_instable_non_concluant",
+  "recommended_next_step": "A. Ameliorer/refactoriser les features OHLCV + trades.",
+  "secondary_next_step": "B. Revoir les labels.",
   "folds_count_by_timeframe": {
     "1m": 5,
     "5m": 5,
     "15m": 5,
     "1h": 5
   },
-  "score_rows_by_timeframe": {
-    "1m": 8805440,
-    "5m": 1759808,
-    "15m": 585536,
-    "1h": 145184
-  },
+  "no_clear_edge_vs_shuffled_labels_cases": 18,
   "backtest_enabled": false,
   "strategy_enabled": false,
   "signal_created": false,
