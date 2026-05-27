@@ -1,10 +1,11 @@
-# Synthese courante - V9.16
+# Synthese courante - V9.17
 
-- Derniere version validee : `V9.15`.
-- Candidate : `V9.16`.
+- Derniere version validee : `V9.16`.
+- Candidate : `V9.17`.
 - Statut : `pending_external_audit`.
-- Direction : diagnostic de fenetre derivatives.
-- Decision V9.16 : `data_extension_should_collect_more_history`.
-- Recommandation : V9.17 - Derivatives History Collection Plan.
-- Aucun feature store full, dataset supervise, ML, walk-forward, backtest, strategie, signal actionnable, ordre ou trading.
-- Aucun reseau, aucun telechargement de nouvelles donnees, aucun sidecar et aucune empreinte ZIP.
+- Direction : plan de collecte historique derivatives.
+- Decision V9.17 : `collection_plan_priority_aggtrades_post_v9_and_funding`.
+- Recommandation : V9.18 - AggTrades Post-V9 Collection Pack.
+- Aucun telechargement, aucune ingestion, aucun feature store full, dataset, ML, walk-forward, backtest, strategie ou signal actionnable.
+- Aucun trading, paper live, ordre, modele persistant, API privee ou cle API.
+- Aucun reseau, aucun sidecar et aucune empreinte ZIP.

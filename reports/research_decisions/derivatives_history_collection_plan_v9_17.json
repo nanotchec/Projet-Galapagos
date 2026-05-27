@@ -1,0 +1,665 @@
+{
+  "anti_leakage_plan": {
+    "forbidden_outputs": [
+      "prediction",
+      "model_score",
+      "signal",
+      "trading_signal",
+      "order",
+      "backtest",
+      "position_size",
+      "strategy"
+    ],
+    "future_collection_boundary": "Collection may create raw/silver data only after separate approval; it must not create a trading workflow.",
+    "timestamp_rules": [
+      "Every future row must preserve event_ts and available_ts.",
+      "Funding/OI rows must use source_publish_ts where available; otherwise a conservative available_ts policy is required.",
+      "Feature alignment must use available_ts <= decision_ts.",
+      "No future labels, predictions, scores or strategy outputs may enter source features."
+    ]
+  },
+  "backtest_executed": false,
+  "blockers": [
+    "Les aggTrades locaux valides s'arretent le 2024-03-24 alors que le funding local commence le 2024-05-05.",
+    "Open interest local ne couvre qu'une fenetre recente trop courte pour une recherche robuste.",
+    "V9.17 est un plan: aucune collecte future n'est executee dans cette version."
+  ],
+  "candidate_target_windows": [
+    {
+      "compatible_timeframes": [
+        "1m",
+        "5m",
+        "15m",
+        "1h",
+        "4h_after_resample"
+      ],
+      "currently_available_history_days": 0,
+      "desired_end": "2026-05-05T00:00:00Z",
+      "desired_start": "2024-05-05T00:00:00Z",
+      "extra_collection_needed": [
+        "Collect aggTrades from 2024-03-25 through 2026-05-05 and validate day completeness."
+      ],
+      "included_sources": [
+        "OHLCV",
+        "aggTrades",
+        "funding_rates"
+      ],
+      "minimum_required_history_days": 366,
+      "missing_sources": [
+        "aggTrades post-2024-03-24"
+      ],
+      "recommendation_status": "priority_1_collection_plan",
+      "suitable_for_future_dataset": true,
+      "suitable_for_future_features": true,
+      "suitable_for_future_ml": true,
+      "suitable_for_future_walk_forward": true,
+      "window_name": "funding_first_post_v9"
+    },
+    {
+      "compatible_timeframes": [
+        "1m",
+        "5m",
+        "15m",
+        "1h",
+        "4h_after_asof_join"
+      ],
+      "currently_available_history_days": 0,
+      "desired_end": "2024-03-24T23:59:59Z",
+      "desired_start": "2023-03-25T00:00:00Z",
+      "extra_collection_needed": [
+        "Prove and collect historical funding covering the V9 window."
+      ],
+      "included_sources": [
+        "OHLCV",
+        "aggTrades",
+        "funding_rates"
+      ],
+      "minimum_required_history_days": 366,
+      "missing_sources": [
+        "funding rates before 2024-03-24"
+      ],
+      "recommendation_status": "priority_2_collection_plan",
+      "suitable_for_future_dataset": true,
+      "suitable_for_future_features": true,
+      "suitable_for_future_ml": true,
+      "suitable_for_future_walk_forward": false,
+      "window_name": "v9_historical_with_added_funding"
+    },
+    {
+      "compatible_timeframes": [
+        "4h_only_for_smoke_quality"
+      ],
+      "currently_available_history_days": 34,
+      "desired_end": "2026-05-05T12:00:00Z",
+      "desired_start": "2026-04-02T08:00:00Z",
+      "extra_collection_needed": [
+        "Much longer OI history and recent aggTrades would be required."
+      ],
+      "included_sources": [
+        "OHLCV",
+        "funding_rates",
+        "open_interest"
+      ],
+      "minimum_required_history_days": 366,
+      "missing_sources": [
+        "aggTrades for recent window if OHLCV+trades is required"
+      ],
+      "recommendation_status": "reject_too_short",
+      "suitable_for_future_dataset": false,
+      "suitable_for_future_features": false,
+      "suitable_for_future_ml": false,
+      "suitable_for_future_walk_forward": false,
+      "window_name": "funding_open_interest_recent"
+    },
+    {
+      "compatible_timeframes": [
+        "4h"
+      ],
+      "currently_available_history_days": 731,
+      "desired_end": "2026-05-05T00:00:00Z",
+      "desired_start": "2024-05-05T00:00:00Z",
+      "extra_collection_needed": [
+        "Validate futures 4h raw archive and choose whether OI remains optional."
+      ],
+      "included_sources": [
+        "derivatives_ohlcv_futures_klines_4h",
+        "funding_rates",
+        "open_interest_optional"
+      ],
+      "minimum_required_history_days": 366,
+      "missing_sources": [
+        "validated OI history, explicit derivatives-native labels, optional aggTrades if required"
+      ],
+      "recommendation_status": "priority_2_collection_plan",
+      "suitable_for_future_dataset": true,
+      "suitable_for_future_features": true,
+      "suitable_for_future_ml": true,
+      "suitable_for_future_walk_forward": false,
+      "window_name": "derivatives_native_4h"
+    }
+  ],
+  "collection_executed": false,
+  "created_at_utc": "2026-05-27T17:22:18Z",
+  "current_data_gap_summary": {
+    "aggtrades_to_funding_gap_days": 42,
+    "aggtrades_to_open_interest_gap_days": 739,
+    "aggtrades_window": {
+      "end": "2024-03-24T23:59:59Z",
+      "start": "2023-03-25T00:00:00Z",
+      "total_rows": 352055121
+    },
+    "collection_needed_before_feature_candidate": true,
+    "current_common_window_ohlcv_aggtrades_funding_days": 0,
+    "current_common_window_ohlcv_aggtrades_funding_oi_days": 0,
+    "funding_window": {
+      "end": "2026-05-05 08:00:00+00:00",
+      "start": "2024-05-05 16:00:00+00:00",
+      "total_rows": 2390
+    },
+    "ohlcv_window": {
+      "end": "2026-05-23T23:59:59Z",
+      "start": "2023-03-25T00:00:00Z",
+      "total_rows": 2136288
+    },
+    "open_interest_gap": "Open interest starts too late and should not be priority 1.",
+    "open_interest_window": {
+      "end": "2026-05-05 12:00:00+00:00",
+      "start": "2026-04-02 08:00:00+00:00",
+      "total_rows": 200
+    },
+    "other_derivatives_window": {
+      "end": "2026-05-05 15:14:11+00:00",
+      "start": "2026-04-05 12:00:00+00:00",
+      "total_rows": 362
+    },
+    "primary_gap": "aggTrades post-2024-03-24 are missing for the already-local funding window.",
+    "source_version": "V9.16",
+    "v9_16_decision": "data_extension_should_collect_more_history"
+  },
+  "dataset_created": false,
+  "direction": "derivatives_history_collection_plan",
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "future_collection_plan": {
+    "collection_order": [
+      "1. Freeze a public read-only no-key collection spec and expected manifests.",
+      "2. Extend aggTrades/public trades after 2024-03-24 through at least 2026-05-05.",
+      "3. Validate existing funding rates and attempt historical funding only through public no-key sources.",
+      "4. Add open interest only after funding + aggTrades coverage is coherent.",
+      "5. Evaluate a derivatives-native 4h branch only if the spot+trades+funding branch remains blocked."
+    ],
+    "pre_execution_requirements": [
+      "External audit must approve the collection plan before any network collection.",
+      "Every future command must be explicit, public, read-only and runnable without secrets.",
+      "No private endpoint, no exchange authentication and no order-capable client."
+    ],
+    "priority_sources": [
+      "aggTrades_public_trades_post_v9",
+      "funding_rates_historical"
+    ],
+    "priority_windows": [
+      "funding_first_post_v9"
+    ],
+    "success_criteria_before_feature_store": [
+      "All target days/months present with documented gaps only.",
+      "Raw checksums and manifests created for source files, without ZIP sidecars.",
+      "Silver rows have strict schema and UTC timestamps.",
+      "available_ts is present and never after future decision alignment.",
+      "Coverage overlap is long enough for future train/validation/test research."
+    ]
+  },
+  "inputs_used": {
+    "derivatives_coverage_expansion_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_coverage_expansion_v1_14.json"
+    },
+    "derivatives_coverage_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_coverage_v1_14.json"
+    },
+    "derivatives_data_quality_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_data_quality_v1_14.json"
+    },
+    "derivatives_features_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_features_v1_14.json"
+    },
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "max_history_public_market_data_v5_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "public_trades_1y_window_v8_2_manifest": {
+      "available": true,
+      "path": "reports/manifests/public_trades_1y_window_v8_2_manifest.json"
+    },
+    "refined_ohlcv_trades_feature_store_v9_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json"
+    },
+    "v9_14_1_decision": {
+      "available": true,
+      "path": "reports/research_decisions/feature_label_separability_v9_14_1.json"
+    },
+    "v9_15_decision": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_data_extension_readiness_v9_15.json"
+    },
+    "v9_16_decision": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_window_extension_v9_16.json"
+    },
+    "v9_16_manifest": {
+      "available": true,
+      "path": "reports/manifests/derivatives_window_extension_v9_16_manifest.json"
+    }
+  },
+  "limitations": [
+    "V9.17 ne verifie pas en ligne la disponibilite reelle des endpoints publics.",
+    "Les estimations de fenetre viennent des rapports/manifests locaux existants.",
+    "Aucun fichier full Parquet/CSV n'est lu massivement."
+  ],
+  "local_metadata_inventory": {
+    "data_code": {
+      "exists": true,
+      "files_count": 123,
+      "is_dir": true,
+      "path": "src/galapagos/data"
+    },
+    "data_gold": {
+      "exists": true,
+      "files_count": 27,
+      "is_dir": true,
+      "path": "data/gold"
+    },
+    "data_raw": {
+      "exists": true,
+      "files_count": 3619,
+      "is_dir": true,
+      "path": "data/raw"
+    },
+    "data_silver": {
+      "exists": true,
+      "files_count": 9,
+      "is_dir": true,
+      "path": "data/silver"
+    },
+    "features_code": {
+      "exists": true,
+      "files_count": 84,
+      "is_dir": true,
+      "path": "src/galapagos/features"
+    },
+    "ingestion_executed_in_v9_17": false,
+    "network_used_in_v9_17": false,
+    "new_data_downloaded_in_v9_17": false,
+    "raw_binance_public": {
+      "exists": true,
+      "files_count": 52,
+      "is_dir": true,
+      "path": "data/raw/binance_public"
+    },
+    "raw_public_market": {
+      "exists": true,
+      "files_count": 3201,
+      "is_dir": true,
+      "path": "data/raw/public_market"
+    },
+    "raw_public_trades": {
+      "exists": true,
+      "files_count": 366,
+      "is_dir": true,
+      "path": "data/raw/public_trades"
+    },
+    "reports_manifests": {
+      "exists": true,
+      "files_count": 72,
+      "is_dir": true,
+      "path": "reports/manifests"
+    },
+    "reports_research": {
+      "exists": true,
+      "files_count": 5144,
+      "is_dir": true,
+      "path": "reports/research"
+    },
+    "scripts": {
+      "exists": true,
+      "files_count": 969,
+      "is_dir": true,
+      "path": "scripts"
+    }
+  },
+  "ml_executed": false,
+  "next_recommendation": "V9.18 - AggTrades Post-V9 Collection Pack.",
+  "quality_validation_plan": [
+    {
+      "check_name": "coverage",
+      "requirement": "Verify start/end, expected partitions and documented gaps."
+    },
+    {
+      "check_name": "duplicates",
+      "requirement": "Reject duplicate natural keys per source and timestamp."
+    },
+    {
+      "check_name": "timezone",
+      "requirement": "Require UTC normalized timestamps."
+    },
+    {
+      "check_name": "frequency",
+      "requirement": "Check expected cadence or event ordering by source."
+    },
+    {
+      "check_name": "monotonicity",
+      "requirement": "Require monotonic event_ts/close_ts within each partition."
+    },
+    {
+      "check_name": "schema",
+      "requirement": "Reject extra forbidden fields such as prediction, signal, order or trading payloads."
+    },
+    {
+      "check_name": "checksums_manifests",
+      "requirement": "Persist source manifests/checksums for data files; do not create ZIP sidecars."
+    },
+    {
+      "check_name": "quarantine",
+      "requirement": "Move invalid or partial partitions to a quarantine status before downstream use."
+    }
+  ],
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "feature_store_generated": false,
+    "ingestion_executed": false,
+    "labels_generated": false,
+    "ml_training_enabled": false,
+    "network_used": false,
+    "new_data_downloaded": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only_plan": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "walk_forward_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_ingestion_executed": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "source_collection_candidates": [
+    {
+      "desired_end": "2026-05-05 08:00:00+00:00",
+      "desired_frequency": "event-level aggregate trades partitioned daily",
+      "desired_start": "2024-03-25T00:00:00Z",
+      "expected_causal_timestamp_fields": [
+        "event_ts",
+        "trade_ts",
+        "ingest_ts",
+        "available_ts",
+        "decision_ts"
+      ],
+      "expected_file_format": "zip csv raw, parquet silver/research after validation",
+      "expected_partitioning": "source=binance_archive/market_type=spot/symbol=BTCUSDT/date=YYYY-MM-DD",
+      "integration_priority": "priority_1",
+      "leakage_risks": [
+        "using files not available by decision_ts",
+        "mixing partial days with complete historical windows"
+      ],
+      "market_type": "spot",
+      "needs_api_key": false,
+      "network_required_future_collection": true,
+      "public_source_candidate": "Binance public archive aggTrades daily files",
+      "quality_checks_required": [
+        "date completeness",
+        "schema strictness",
+        "monotonic aggregate_trade_id",
+        "duplicate aggregate_trade_id",
+        "price_quantity_positive",
+        "timezone_utc",
+        "checksum_manifest"
+      ],
+      "recommendation": "Collect and validate post-V9 aggTrades first because funding is already local after 2024-05-05.",
+      "source_name": "aggTrades_public_trades_post_v9",
+      "target_storage_layer": "bronze/raw then silver/research",
+      "target_symbol": "BTCUSDT"
+    },
+    {
+      "desired_end": "2026-05-05T08:00:00Z",
+      "desired_frequency": "8h native",
+      "desired_start": "2023-03-25T00:00:00Z",
+      "expected_causal_timestamp_fields": [
+        "event_ts",
+        "source_publish_ts",
+        "ingest_ts",
+        "available_ts"
+      ],
+      "expected_file_format": "json/csv raw, parquet silver/research after validation",
+      "expected_partitioning": "source=<venue>/market_type=derivatives/symbol=BTCUSDT/date=YYYY-MM-DD or month=YYYY-MM",
+      "integration_priority": "priority_1",
+      "leakage_risks": [
+        "backfilling funding rows into earlier decision times without publish timestamp",
+        "provider revisions without versioned raw snapshots"
+      ],
+      "market_type": "derivatives",
+      "needs_api_key": false,
+      "network_required_future_collection": true,
+      "public_source_candidate": "Public futures funding history endpoints or archival source, to be confirmed in a future collection implementation plan",
+      "quality_checks_required": [
+        "coverage start/end",
+        "8h cadence",
+        "duplicate timestamp",
+        "timezone_utc",
+        "available_ts_not_before_publish",
+        "gap report"
+      ],
+      "recommendation": "Attempt historical funding coverage for the V9 window only after preserving a no-key public read-only collection design.",
+      "source_name": "funding_rates_historical",
+      "target_storage_layer": "bronze/raw then silver/research",
+      "target_symbol": "BTCUSDT"
+    },
+    {
+      "desired_end": "2026-05-05T12:00:00Z",
+      "desired_frequency": "4h or provider-native historical cadence",
+      "desired_start": "2024-05-05T00:00:00Z",
+      "expected_causal_timestamp_fields": [
+        "event_ts",
+        "source_publish_ts",
+        "ingest_ts",
+        "available_ts"
+      ],
+      "expected_file_format": "json/csv raw, parquet silver/research after validation",
+      "expected_partitioning": "source=<venue>/market_type=derivatives/symbol=BTCUSDT/frequency=<freq>/date=YYYY-MM-DD",
+      "integration_priority": "priority_2",
+      "leakage_risks": [
+        "snapshot-only OI treated as historical",
+        "silent provider lookback limits"
+      ],
+      "market_type": "derivatives",
+      "needs_api_key": false,
+      "network_required_future_collection": true,
+      "public_source_candidate": "Public open interest historical endpoints if available; otherwise manual source research",
+      "quality_checks_required": [
+        "coverage",
+        "frequency consistency",
+        "staleness",
+        "duplicates",
+        "gaps",
+        "unit consistency"
+      ],
+      "recommendation": "Do not block the first funding branch on OI; collect only after funding/aggTrades coverage is solved.",
+      "source_name": "open_interest_history",
+      "target_storage_layer": "bronze/raw then silver/research",
+      "target_symbol": "BTCUSDT"
+    },
+    {
+      "desired_end": "2026-05-05T00:00:00Z",
+      "desired_frequency": "4h",
+      "desired_start": "2024-05-05T00:00:00Z",
+      "expected_causal_timestamp_fields": [
+        "event_ts",
+        "close_ts",
+        "ingest_ts",
+        "available_ts",
+        "decision_ts"
+      ],
+      "expected_file_format": "zip csv raw, parquet silver/research after validation",
+      "expected_partitioning": "source=binance_public/market_type=futures_um/symbol=BTCUSDT/timeframe=4h/month=YYYY-MM",
+      "integration_priority": "priority_2",
+      "leakage_risks": [
+        "using close_ts before candle close",
+        "mixing spot and futures features without explicit market_type"
+      ],
+      "market_type": "derivatives",
+      "needs_api_key": false,
+      "network_required_future_collection": false,
+      "public_source_candidate": "Local Binance public futures 4h archive plus future validated extension if needed",
+      "quality_checks_required": [
+        "monthly completeness",
+        "4h row count",
+        "ohlc validity",
+        "timezone_utc",
+        "monotonic close_ts",
+        "gap report"
+      ],
+      "recommendation": "Keep as a 4h-native backup branch, not as the first branch if aggTrades can be extended.",
+      "source_name": "derivatives_ohlcv_futures_klines_4h",
+      "target_storage_layer": "bronze/raw then silver/research",
+      "target_symbol": "BTCUSDT"
+    },
+    {
+      "desired_end": "2026-05-05T00:00:00Z",
+      "desired_frequency": "provider-native",
+      "desired_start": "2024-05-05T00:00:00Z",
+      "expected_causal_timestamp_fields": [
+        "event_ts",
+        "source_publish_ts",
+        "ingest_ts",
+        "available_ts"
+      ],
+      "expected_file_format": "json/csv raw, parquet silver/research after validation",
+      "expected_partitioning": "source=<venue>/market_type=derivatives/symbol=BTCUSDT/metric=<metric>/date=YYYY-MM-DD",
+      "integration_priority": "later",
+      "leakage_risks": [
+        "provider-derived aggregates with unknown publication time",
+        "requiring private API keys"
+      ],
+      "market_type": "derivatives",
+      "needs_api_key": false,
+      "network_required_future_collection": true,
+      "public_source_candidate": "Only public no-key historical sources if proven; no private provider in V9.17",
+      "quality_checks_required": [
+        "source availability proof",
+        "coverage",
+        "gap report",
+        "duplicates",
+        "timezone_utc"
+      ],
+      "recommendation": "Do not prioritize before aggTrades/funding; reject if a key or private endpoint is required.",
+      "source_name": "liquidations_long_short_ratios",
+      "target_storage_layer": "bronze/raw then silver/research or not collected",
+      "target_symbol": "BTCUSDT"
+    }
+  ],
+  "source_version": "V9.16",
+  "status": "PASS",
+  "storage_plan": {
+    "bronze_raw": {
+      "forbidden": [
+        "secrets",
+        "private_api_payloads",
+        "orders",
+        "execution_payloads"
+      ],
+      "partitioning": [
+        "source",
+        "market_type",
+        "symbol",
+        "dataset",
+        "date_or_month"
+      ],
+      "purpose": "Immutable public source files only."
+    },
+    "research_candidate": {
+      "purpose": "Future audited feature candidates only after coverage validation.",
+      "rule": "No supervised dataset, ML, walk-forward or backtest in the collection step."
+    },
+    "silver_normalized": {
+      "partitioning": [
+        "source",
+        "market_type",
+        "symbol",
+        "timeframe_or_frequency",
+        "window"
+      ],
+      "purpose": "Strict schema normalized rows with causal timestamps.",
+      "required_timestamps": [
+        "event_ts",
+        "close_ts_if_applicable",
+        "source_publish_ts_if_applicable",
+        "ingest_ts",
+        "available_ts"
+      ]
+    }
+  },
+  "v9_17_decision": {
+    "collection_executed": false,
+    "confidence": "high",
+    "decision": "collection_plan_priority_aggtrades_post_v9_and_funding",
+    "justification": "OHLCV already extends beyond funding and funding is local after 2024-05-05; the missing practical blocker is validated aggTrades after 2024-03-24.",
+    "next_recommendation": "V9.18 - AggTrades Post-V9 Collection Pack.",
+    "no_backtest": true,
+    "no_trading": true,
+    "no_walk_forward": true
+  },
+  "version": "V9.17",
+  "walk_forward_executed": false,
+  "warnings": [
+    "La future collecte devra etre publique, read-only, reproductible et separee d'un audit externe.",
+    "OI ne doit pas bloquer la premiere branche si le chemin funding-only est plus simple et auditable."
+  ]
+}
