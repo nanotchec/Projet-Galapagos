@@ -1,8 +1,10 @@
 {
   "api_key_used": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.14",
-  "direction": "feature_label_separability_and_branch_decision",
+  "candidate_version": "V9.14.1",
+  "corrected_decision": "data_extension_first_before_more_labels",
+  "correction_scope": "data_source_inventory_and_branch_decision_correction",
+  "direction": "data_source_inventory_and_branch_decision_correction",
   "last_validated_version": "V9.13",
   "no_actionable_signal": true,
   "no_backtest": true,
@@ -14,8 +16,8 @@
   "no_trading": true,
   "no_walk_forward": true,
   "no_zip_fingerprints": true,
+  "previous_v9_14_decision": "feature_first_before_more_labels",
   "private_endpoint_used": false,
-  "recommended_next_step": "V9.15 Feature Separability / Feature Refinement Candidate.",
-  "target_name": "up_down_flat_volnorm_h4",
-  "v9_14_decision": "feature_first_before_more_labels"
+  "recommended_next_step": "V9.15 Data Extension Readiness / Derivatives Feature Candidate.",
+  "source_version": "V9.14"
 }

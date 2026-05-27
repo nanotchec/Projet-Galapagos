@@ -1,0 +1,578 @@
+{
+  "blockers": [],
+  "confidence": "medium_high",
+  "corrected_decision": "data_extension_first_before_more_labels",
+  "correction_scope": "data_source_inventory_and_branch_decision_correction",
+  "created_at_utc": "2026-05-27T16:09:43Z",
+  "data_extension_recommendation": {
+    "next_version_candidate": "V9.15 Data Extension Readiness / Derivatives Feature Candidate.",
+    "no_backtest": true,
+    "no_walk_forward": true,
+    "not_available_or_unknown": [
+      "order_book_l2",
+      "liquidations",
+      "on_chain"
+    ],
+    "notes": "La prochaine version doit rester readiness/audit data-extension, sans integration trading.",
+    "primary_sources": [
+      "funding_rates",
+      "open_interest"
+    ],
+    "recommended_decision": "data_extension_first_before_more_labels",
+    "secondary_sources": [
+      "long_short_ratios",
+      "multi_exchange_multi_venue",
+      "other_derivatives"
+    ]
+  },
+  "data_source_inventory": [
+    {
+      "causality_feasibility": "good",
+      "evidence_paths": [
+        "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+        "reports/features/refined_ohlcv_trades_feature_store_v9_0.json",
+        "reports/manifests/ohlcv_resampling_v2_4_manifest.json",
+        "data/research/v9_0/features/refined_ohlcv_trades"
+      ],
+      "historical_availability": "good",
+      "integration_complexity": "low",
+      "known_coverage": "Fenetre validee 2023-03-25 a 2024-03-24 sur 1m, 5m, 15m et 1h.",
+      "known_frequency": "1m, 5m, 15m, 1h.",
+      "known_quality": "good",
+      "leakage_risk": "low",
+      "notes": "Source deja integree dans la chaine V9 validee; elle ne repond pas seule au besoin de data-extension.",
+      "potential_value": "medium",
+      "present_in_repo": true,
+      "recommended_priority": "not_recommended_now",
+      "source_name": "ohlcv",
+      "used_in_validated_v9_chain": true
+    },
+    {
+      "causality_feasibility": "good",
+      "evidence_paths": [
+        "reports/manifests/public_trades_1y_window_v8_2_manifest.json",
+        "reports/data_quality/public_trades_1y_window_v8_2.json",
+        "reports/manifests/ohlcv_trades_1y_feature_store_v8_3_manifest.json",
+        "reports/features/ohlcv_trades_1y_feature_store_v8_3.json",
+        "data/research/v8_2/trades/aggTrades"
+      ],
+      "historical_availability": "good",
+      "integration_complexity": "low",
+      "known_coverage": "aggTrades publics BTCUSDT spot sur la fenetre 2023-03-25 a 2024-03-24.",
+      "known_frequency": "trade aggregation disponible puis features par timeframe.",
+      "known_quality": "good",
+      "leakage_risk": "low",
+      "notes": "Source deja utilisee par les features refined V9.0; un raffinement feature reste possible mais ce n'est pas une nouvelle source.",
+      "potential_value": "medium",
+      "present_in_repo": true,
+      "recommended_priority": "not_recommended_now",
+      "source_name": "public_trades_aggTrades",
+      "used_in_validated_v9_chain": true
+    },
+    {
+      "causality_feasibility": "medium",
+      "evidence_paths": [],
+      "historical_availability": "unknown",
+      "integration_complexity": "high",
+      "known_coverage": "Aucune trace locale validee de snapshots L2/order book full.",
+      "known_frequency": "inconnue.",
+      "known_quality": "not_available",
+      "leakage_risk": "medium",
+      "notes": "Potentiellement utile, mais aucune presence locale ne doit etre supposee sans fichier ou rapport probant.",
+      "potential_value": "high",
+      "present_in_repo": false,
+      "recommended_priority": "missing_or_unknown",
+      "source_name": "order_book_l2",
+      "used_in_validated_v9_chain": false
+    },
+    {
+      "causality_feasibility": "good",
+      "evidence_paths": [
+        "src/galapagos/data/derivatives/binance_futures.py",
+        "src/galapagos/data/derivatives/bybit_v5.py",
+        "reports/research/derivatives_coverage_v1_14.json",
+        "reports/research/derivatives_data_quality_v1_14.json",
+        "reports/research/derivatives_features_v1_14.json",
+        "reports/research/derivatives_readiness_v1_12_2.json",
+        "data/silver/derivatives",
+        "data/gold/derivatives_features/BTCUSDT/4h"
+      ],
+      "historical_availability": "medium",
+      "integration_complexity": "medium",
+      "known_coverage": "Rapports V1.14 indiquent donnees derivatives partielles, dont funding Binance/Bybit; features gold 4h presentes.",
+      "known_frequency": "principalement 4h dans les artefacts locaux inspectes.",
+      "known_quality": "partial",
+      "leakage_risk": "low",
+      "notes": "Meilleure source data-extension deja amorcee localement, mais non integree a la chaine V9 validee.",
+      "potential_value": "high",
+      "present_in_repo": true,
+      "recommended_priority": "priority_1_candidate",
+      "source_name": "funding_rates",
+      "used_in_validated_v9_chain": false
+    },
+    {
+      "causality_feasibility": "good",
+      "evidence_paths": [
+        "src/galapagos/data/derivatives/features.py",
+        "reports/research/derivatives_coverage_v1_14.json",
+        "reports/research/derivatives_data_quality_v1_14.json",
+        "reports/research/derivatives_features_v1_14.json",
+        "data/silver/derivatives",
+        "data/gold/derivatives_features/BTCUSDT/4h"
+      ],
+      "historical_availability": "medium",
+      "integration_complexity": "medium",
+      "known_coverage": "Open interest mentionne dans les rapports derivatives; couverture partielle selon V1.14.",
+      "known_frequency": "4h ou snapshots publics selon source.",
+      "known_quality": "partial",
+      "leakage_risk": "low",
+      "notes": "Complement naturel pour tester si les regimes derivatives expliquent la faible separabilite OHLCV+aggTrades.",
+      "potential_value": "high",
+      "present_in_repo": true,
+      "recommended_priority": "priority_1_candidate",
+      "source_name": "open_interest",
+      "used_in_validated_v9_chain": false
+    },
+    {
+      "causality_feasibility": "medium",
+      "evidence_paths": [],
+      "historical_availability": "poor",
+      "integration_complexity": "high",
+      "known_coverage": "Aucun fichier local de liquidations identifie.",
+      "known_frequency": "inconnue.",
+      "known_quality": "not_available",
+      "leakage_risk": "medium",
+      "notes": "A ne pas prioriser tant qu'une source publique historique sans secret n'est pas prouvee.",
+      "potential_value": "medium",
+      "present_in_repo": false,
+      "recommended_priority": "missing_or_unknown",
+      "source_name": "liquidations",
+      "used_in_validated_v9_chain": false
+    },
+    {
+      "causality_feasibility": "medium",
+      "evidence_paths": [
+        "src/galapagos/data/derivatives/features.py",
+        "reports/research/derivatives_coverage_v1_14.json",
+        "reports/research/derivatives_data_quality_v1_14.json",
+        "reports/research/derivatives_features_v1_14.json",
+        "data/silver/derivatives",
+        "data/gold/derivatives_features/BTCUSDT/4h"
+      ],
+      "historical_availability": "medium",
+      "integration_complexity": "medium",
+      "known_coverage": "Ratios long/short presents dans les rapports derivatives, avec limitations de couverture.",
+      "known_frequency": "4h dans les features derivatives locales.",
+      "known_quality": "partial",
+      "leakage_risk": "medium",
+      "notes": "Utile apres funding/open interest, a condition de clarifier publication time et couverture historique.",
+      "potential_value": "medium",
+      "present_in_repo": true,
+      "recommended_priority": "priority_2_candidate",
+      "source_name": "long_short_ratios",
+      "used_in_validated_v9_chain": false
+    },
+    {
+      "causality_feasibility": "medium",
+      "evidence_paths": [
+        "src/galapagos/data/derivatives/bybit_v5.py",
+        "reports/research/derivatives_fetch_bybit_v1_14.json",
+        "reports/research/derivatives_fetch_binance_v1_14.json",
+        "data/silver/derivatives/bybit",
+        "data/silver/derivatives/binance",
+        "data/silver/ohlcv/kraken"
+      ],
+      "historical_availability": "medium",
+      "integration_complexity": "high",
+      "known_coverage": "Binance/Bybit derivatives et traces OHLCV Kraken existent hors chaine V9 validee.",
+      "known_frequency": "4h principalement pour les artefacts derivatives; OHLCV Kraken 30m/4h visible localement.",
+      "known_quality": "partial",
+      "leakage_risk": "medium",
+      "notes": "Candidat secondaire apres consolidation d'une premiere source derivatives causale.",
+      "potential_value": "medium",
+      "present_in_repo": true,
+      "recommended_priority": "priority_2_candidate",
+      "source_name": "multi_exchange_multi_venue",
+      "used_in_validated_v9_chain": false
+    },
+    {
+      "causality_feasibility": "unknown",
+      "evidence_paths": [],
+      "historical_availability": "unknown",
+      "integration_complexity": "high",
+      "known_coverage": "Aucun module, rapport ou data path on-chain local probant.",
+      "known_frequency": "inconnue.",
+      "known_quality": "not_available",
+      "leakage_risk": "unknown",
+      "notes": "Non recommande maintenant faute de preuve locale et de garde-fous d'acquisition.",
+      "potential_value": "unknown",
+      "present_in_repo": false,
+      "recommended_priority": "missing_or_unknown",
+      "source_name": "on_chain",
+      "used_in_validated_v9_chain": false
+    },
+    {
+      "causality_feasibility": "medium",
+      "evidence_paths": [
+        "src/galapagos/data/macro/fred_client.py",
+        "src/galapagos/data/macro/macro_features.py",
+        "reports/research/fred_macro_readiness_v1_12_2.json",
+        "data/silver/macro",
+        "data/gold/macro_features/4h"
+      ],
+      "historical_availability": "medium",
+      "integration_complexity": "medium",
+      "known_coverage": "Macro FRED localement tracee; aucune source news/sentiment locale probante.",
+      "known_frequency": "macro 4h apres alignement; news/sentiment absents.",
+      "known_quality": "partial",
+      "leakage_risk": "medium",
+      "notes": "A evaluer plus tard; certaines acquisitions macro peuvent requerir une cle externe et doivent rester separees.",
+      "potential_value": "medium",
+      "present_in_repo": true,
+      "recommended_priority": "later_candidate",
+      "source_name": "macro_news_sentiment",
+      "used_in_validated_v9_chain": false
+    },
+    {
+      "causality_feasibility": "medium",
+      "evidence_paths": [
+        "src/galapagos/data/derivatives/features.py",
+        "reports/research/derivatives_features_v1_14.json",
+        "reports/research/derivatives_signal_quality_v1_14.json",
+        "reports/research/with_without_derivatives_v1_14.json",
+        "data/gold/derivatives_features/BTCUSDT/4h"
+      ],
+      "historical_availability": "medium",
+      "integration_complexity": "medium",
+      "known_coverage": "Premium/taker ratio et autres features derivatives visibles dans les rapports/features V1.14.",
+      "known_frequency": "4h dans les features locales.",
+      "known_quality": "partial",
+      "leakage_risk": "medium",
+      "notes": "A examiner apres funding/open interest pour eviter une integration trop large d'un coup.",
+      "potential_value": "medium",
+      "present_in_repo": true,
+      "recommended_priority": "priority_2_candidate",
+      "source_name": "other_derivatives",
+      "used_in_validated_v9_chain": false
+    }
+  ],
+  "decision_rationale": {
+    "confidence": "medium_high",
+    "decision": "data_extension_first_before_more_labels",
+    "explicit_no_backtest_statement": "Aucun backtest n'est recommande ou execute par V9.14.1.",
+    "explicit_no_trading_statement": "V9.14.1 n'autorise aucun trading, paper live, ordre, strategie ou signal actionnable.",
+    "justification": "Les features OHLCV+aggTrades restent peu separables et le repo contient des sources derivatives partielles non utilisees par V9, notamment funding/open interest.",
+    "next_recommendation": "V9.15 Data Extension Readiness / Derivatives Feature Candidate.",
+    "previous_decision": "feature_first_before_more_labels",
+    "priority_sources_considered": [
+      "funding_rates",
+      "open_interest"
+    ]
+  },
+  "feature_label_separability_summary": {
+    "common_top_features_between_timeframes": [],
+    "common_top_features_count": 0,
+    "interpretation": "Aucune top feature commune stable entre timeframes; la separabilite OHLCV+aggTrades reste faible.",
+    "low_discrimination_features_count": 2,
+    "model_training_performed": false,
+    "signal_produced": false,
+    "unstable_top_features": [
+      "agg_trade_count",
+      "agg_trade_quote_quantity_sum",
+      "agg_trade_vwap",
+      "agg_trades_per_minute",
+      "close",
+      "high",
+      "low",
+      "open",
+      "quote_volume",
+      "trade_count_ohlcv"
+    ],
+    "unstable_top_features_count": 10
+  },
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "hypothesis_ranking": [
+    {
+      "confidence": "medium",
+      "consequence_next_version": "Ne pas relancer de walk-forward; revoir les conditions de label seulement apres inventaire data.",
+      "evidence_against": [
+        "Le h4 corrige partiellement la distribution du label."
+      ],
+      "evidence_for": [
+        "14 cas restent proches des labels melanges."
+      ],
+      "hypothesis": "label encore mal defini",
+      "id": "H1",
+      "status": "likely"
+    },
+    {
+      "confidence": "high",
+      "consequence_next_version": "Tester d'abord des sources complementaires ou une selection feature plus ciblee.",
+      "evidence_against": [
+        "Des features OHLCV+aggTrades existent et sont techniquement propres."
+      ],
+      "evidence_for": [
+        "clear wins baseline=0.",
+        "top features communes=0."
+      ],
+      "hypothesis": "features actuelles insuffisantes",
+      "id": "H2",
+      "status": "likely"
+    },
+    {
+      "confidence": "medium",
+      "consequence_next_version": "Ne pas prioriser un nouvel horizon sans source data complementaire.",
+      "evidence_against": [
+        "Il ameliore legerement la distance moyenne vs V9.8."
+      ],
+      "evidence_for": [
+        "Le h4 reste proche des labels melanges."
+      ],
+      "hypothesis": "horizon h4 pas adapte",
+      "id": "H3",
+      "status": "possible"
+    },
+    {
+      "confidence": "medium",
+      "consequence_next_version": "Garder le binaire comme hypothese secondaire, pas decision principale.",
+      "evidence_against": [
+        "Aucune classe ne depasse 70 % sur le candidat h4/k=1.25."
+      ],
+      "evidence_for": [
+        "FLAT faible sur ['1m'] et eleve sur ['1h']."
+      ],
+      "hypothesis": "multi-classe DOWN/FLAT/UP trop difficile",
+      "id": "H4",
+      "status": "possible"
+    },
+    {
+      "confidence": "medium",
+      "consequence_next_version": "Extension de fenetre possible apres examen de disponibilite multi-annees.",
+      "evidence_against": [
+        "OHLCV/aggTrades V9 sont deja complets sur 366 jours."
+      ],
+      "evidence_for": [
+        "Stabilite regime non prouvee sur une seule fenetre d'un an."
+      ],
+      "hypothesis": "fenetre 2023-2024 trop limitee",
+      "id": "H5",
+      "status": "possible"
+    },
+    {
+      "confidence": "high",
+      "consequence_next_version": "Prioriser data-extension derivatives/microstructure avant nouveau label complexe.",
+      "evidence_against": [
+        "Les donnees trades publiques apportent deja des proxys de flux."
+      ],
+      "evidence_for": [
+        "top features instables=10."
+      ],
+      "hypothesis": "OHLCV+trades agreges ne contiennent pas assez d'information",
+      "id": "H6",
+      "status": "likely"
+    },
+    {
+      "confidence": "high",
+      "consequence_next_version": "Creer une version V9.15 de readiness data-extension.",
+      "evidence_against": [
+        "Ces sources ne sont pas encore integrees dans la chaine V9 validee."
+      ],
+      "evidence_for": [
+        "Sources priority_1 detectees: ['funding_rates', 'open_interest']."
+      ],
+      "hypothesis": "besoin d'extension data/features avant nouveau label",
+      "id": "H7",
+      "status": "likely"
+    },
+    {
+      "confidence": "medium",
+      "consequence_next_version": "Ne pas arreter avant un diagnostic data-extension strict.",
+      "evidence_against": [
+        "Des sources derivatives/macro existent encore hors chaine V9."
+      ],
+      "evidence_for": [
+        "Plusieurs redesigns labels successifs restent faibles."
+      ],
+      "hypothesis": "besoin d'arreter la branche refined labels",
+      "id": "H8",
+      "status": "possible"
+    },
+    {
+      "confidence": "medium",
+      "consequence_next_version": "Hypothese secondaire si data-extension ne reduit pas le bruit.",
+      "evidence_against": [
+        "Le probleme de separabilite des features reste dominant."
+      ],
+      "evidence_for": [
+        "Collapses de classes et instabilite FLAT indiquent une difficulte multi-classe."
+      ],
+      "hypothesis": "besoin d'un label binaire plus simple avant toute autre chose",
+      "id": "H9",
+      "status": "possible"
+    },
+    {
+      "confidence": "medium",
+      "consequence_next_version": "A garder en reserve apres diagnostic des sources complementaires.",
+      "evidence_against": [
+        "Un label plus equilibre ne cree pas necessairement d'information predictive."
+      ],
+      "evidence_for": [
+        "Un label quantile pourrait regulariser les distributions."
+      ],
+      "hypothesis": "besoin d'un label quantile-based plutot que seuil directionnel",
+      "id": "H10",
+      "status": "possible"
+    },
+    {
+      "confidence": "high",
+      "consequence_next_version": "Decision corrigee orientee data-extension avant nouveaux labels.",
+      "evidence_against": [
+        "Order book L2 et liquidations ne sont pas prouves localement."
+      ],
+      "evidence_for": [
+        "Sources complementaires prioritaires detectees: ['funding_rates', 'open_interest']."
+      ],
+      "hypothesis": "besoin de microstructure / derivatives pour esperer une separabilite",
+      "id": "H11",
+      "status": "likely"
+    }
+  ],
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v9_10_decision": {
+      "available": true,
+      "path": "reports/research_decisions/refined_volnorm_research_decision_gate_v9_10.json"
+    },
+    "v9_11_failure": {
+      "available": true,
+      "path": "reports/research_decisions/label_failure_analysis_v9_11.json"
+    },
+    "v9_12_labels": {
+      "available": true,
+      "path": "reports/labels/horizon_event_label_redesign_v9_12.json"
+    },
+    "v9_13_dataset": {
+      "available": true,
+      "path": "reports/datasets/h4_label_candidate_dataset_v9_13.json"
+    },
+    "v9_13_ml": {
+      "available": true,
+      "path": "reports/ml/h4_label_candidate_offline_ml_v9_13.json"
+    },
+    "v9_13_scores": {
+      "available": true,
+      "path": "reports/ml/h4_label_candidate_offline_scores_v9_13.json"
+    },
+    "v9_14_manifest": {
+      "available": true,
+      "path": "reports/manifests/feature_label_separability_v9_14_manifest.json"
+    },
+    "v9_14_markdown": {
+      "available": true,
+      "path": "reports/research_decisions/feature_label_separability_v9_14.md"
+    },
+    "v9_14_report": {
+      "available": true,
+      "path": "reports/research_decisions/feature_label_separability_v9_14.json"
+    },
+    "v9_8_ml": {
+      "available": true,
+      "path": "reports/ml/refined_volnorm_labels_offline_ml_v9_8.json"
+    },
+    "v9_9_walk_forward": {
+      "available": true,
+      "path": "reports/ml/refined_volnorm_strict_walk_forward_v9_9.json"
+    }
+  },
+  "label_diagnostic_summary": {
+    "flat_high_timeframes": [
+      "1h"
+    ],
+    "flat_low_timeframes": [
+      "1m"
+    ],
+    "full_parquet_read_only_used_in_v9_14": true,
+    "interpretation": "Le h4 reduit certains desequilibres mais conserve un profil FLAT trop faible en 1m et trop eleve en 1h.",
+    "target_name": "up_down_flat_volnorm_h4"
+  },
+  "limitations": [
+    "V9.14.1 corrige uniquement l'inventaire data-extension et la decision de branche de V9.14.",
+    "V9.14.1 ne cree aucun nouveau label, dataset, score ML, walk-forward, backtest, strategie, signal actionnable ou ordre.",
+    "La presence d'une source n'est affirmee que lorsqu'un chemin local ou un rapport local la prouve."
+  ],
+  "ml_diagnostic_summary": {
+    "class_collapse_cases_count": 33,
+    "clear_wins_vs_baselines": 0,
+    "interpretation": "Le diagnostic ML V9.13 reste faible, proche des labels melanges et sans clear win baseline.",
+    "mean_delta_macro_f1_vs_best_baseline": -0.11073883657668578,
+    "mean_delta_original_vs_shuffled": 0.014758230658094534,
+    "no_clear_edge_vs_shuffled_labels_count": 14,
+    "walk_forward_not_repeated_in_v9_14": true
+  },
+  "next_recommendation": "V9.15 Data Extension Readiness / Derivatives Feature Candidate.",
+  "previous_v9_14_decision": "feature_first_before_more_labels",
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "labels_generated": false,
+    "ml_training_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "walk_forward_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "source_version": "V9.14",
+  "status": "PASS",
+  "version": "V9.14.1",
+  "warnings": [
+    "La decision V9.14 precedente ne couvrait pas assez explicitement les sources data au-dela de OHLCV + aggTrades.",
+    "Les sources derivatives/macro detectees restent hors chaine V9 validee et demandent une version separee de readiness avant integration."
+  ]
+}
