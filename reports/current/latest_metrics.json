@@ -1,50 +1,18 @@
 {
-  "actionable_signal_produced": false,
   "api_key_used": false,
-  "backtest_performed": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.6_to_V9.10",
-  "dataset_decision_v9_7": "dataset_created_with_volnorm_labels",
-  "dataset_row_counts": {
-    "15m": 35136,
-    "1h": 8784,
-    "1m": 527040,
-    "5m": 105408
-  },
-  "direction": "refined_volatility_normalized_labels_research_chain",
-  "folds_count": {
-    "15m": 5,
-    "1h": 5,
-    "1m": 5,
-    "5m": 5
-  },
-  "label_decision_v9_6": "label_factory_candidate_created_volatility_normalized",
-  "last_validated_version": "V9.5",
-  "ml_decision_v9_8": "offline_ml_completed_but_close_to_shuffled_labels",
-  "orders_enabled": false,
-  "paper_live_enabled": false,
-  "persistent_model_created": false,
+  "candidate_version": "V9.11",
+  "direction": "label_failure_analysis_and_redesign_plan",
+  "last_validated_version": "V9.6_to_V9.10",
+  "no_actionable_signal": true,
+  "no_backtest": true,
+  "no_orders": true,
+  "no_paper_live": true,
+  "no_persistent_model": true,
+  "no_sidecars": true,
+  "no_strategy": true,
+  "no_trading": true,
+  "no_zip_fingerprints": true,
   "private_endpoint_used": false,
-  "research_decision_v9_10": "backtest_not_justified_refine_labels_again",
-  "score_row_counts_v9_8": {
-    "15m": 140304,
-    "1h": 34896,
-    "1m": 2107920,
-    "5m": 421392
-  },
-  "score_row_counts_v9_9": {
-    "15m": 585536,
-    "1h": 145184,
-    "1m": 8805440,
-    "5m": 1759808
-  },
-  "selected_label_candidate": 0.5,
-  "sidecars_created": false,
-  "strategy_enabled": false,
-  "total_days": 366,
-  "trading_enabled": false,
-  "walk_forward_decision_v9_9": "strict_walk_forward_completed_but_close_to_shuffled_labels",
-  "window_end": "2024-03-24",
-  "window_start": "2023-03-25",
-  "zip_fingerprints_created": false
+  "v9_11_decision": "label_redesign_plan_horizon_extension"
 }

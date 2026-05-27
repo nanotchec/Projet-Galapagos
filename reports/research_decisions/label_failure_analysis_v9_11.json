@@ -1,0 +1,3143 @@
+{
+  "created_at_utc": "2026-05-27T12:59:13Z",
+  "decision_recap": {
+    "v9_10": {
+      "decision": "backtest_not_justified_refine_labels_again",
+      "interpretation": "Les labels volatility-normalized restent trop proches des labels melanges.",
+      "static_split_decision": "offline_ml_completed_but_close_to_shuffled_labels",
+      "walk_forward_decision": "strict_walk_forward_completed_but_close_to_shuffled_labels"
+    },
+    "v9_4": {
+      "decision": "backtest_not_justified_refine_labels",
+      "interpretation": "Aucun backtest; raffinement des labels demande."
+    },
+    "v9_5": {
+      "decision": "label_redesign_candidate_volatility_normalized",
+      "interpretation": "Candidat volatility-normalized recommande pour une factory future."
+    }
+  },
+  "decision_type": "label_failure_analysis_and_redesign_plan",
+  "failure_hypotheses": [
+    {
+      "active": true,
+      "evidence": [
+        "76 cas no-clear en walk-forward",
+        "best learned macro_f1 faible"
+      ],
+      "id": "H1",
+      "name": "horizon h1 trop bruite",
+      "recommended_action": "Tester un horizon plus long avant tout backtest.",
+      "severity": "likely"
+    },
+    {
+      "active": true,
+      "evidence": [
+        "Les modeles appris restent proches des baselines",
+        "V8.9/V9.0 avaient deja fortement reduit les features"
+      ],
+      "id": "H2",
+      "name": "features actuelles insuffisantes pour predire ce label",
+      "recommended_action": "Coupler le redesign label a un audit feature si le label reste non falsifiable.",
+      "severity": "likely"
+    },
+    {
+      "active": true,
+      "evidence": [
+        "FLAT max apres V9.6 = 0.500",
+        "FLAT reste majoritaire sur tous les timeframes"
+      ],
+      "id": "H3",
+      "name": "classe FLAT encore mal definie",
+      "recommended_action": "Comparer une cible binaire et une cible event-based.",
+      "severity": "possible"
+    },
+    {
+      "active": true,
+      "evidence": [
+        "k=0.5 a ete retenu pour distribution, pas pour apprenabilite",
+        "les labels restent proches du shuffle"
+      ],
+      "id": "H4",
+      "name": "seuil k=0.5 trop permissif",
+      "recommended_action": "Tester k plus strict ou barriere de mouvement significatif.",
+      "severity": "likely"
+    },
+    {
+      "active": true,
+      "evidence": [
+        "DOWN/FLAT/UP cree une classe intermediaire difficile",
+        "plusieurs modeles predisent essentiellement FLAT"
+      ],
+      "id": "H5",
+      "name": "labels multi-classes trop difficiles",
+      "recommended_action": "Evaluer un design binaire directionnel comme diagnostic, sans signal trading.",
+      "severity": "possible"
+    },
+    {
+      "active": true,
+      "evidence": [
+        "20 unstable folds",
+        "22 weak folds"
+      ],
+      "id": "H6",
+      "name": "fenetre 2023-2024 pas assez robuste",
+      "recommended_action": "Etendre les donnees uniquement apres un label mieux defini.",
+      "severity": "possible"
+    },
+    {
+      "active": true,
+      "evidence": [
+        "Instabilite par folds",
+        "concentration temporelle residuelle"
+      ],
+      "id": "H7",
+      "name": "probleme de regime de marche",
+      "recommended_action": "Ajouter une analyse de regime descriptive dans la prochaine iteration.",
+      "severity": "possible"
+    },
+    {
+      "active": true,
+      "evidence": [
+        "76 cas no-clear",
+        "aucun backtest justifie"
+      ],
+      "id": "H8",
+      "name": "signal absent dans OHLCV+trades agreges actuels",
+      "recommended_action": "Prevoir un critere d'arret si un redesign label plus strict reste non falsifiable.",
+      "severity": "plausible"
+    }
+  ],
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "forbidden_terms_scan": {
+    "forbidden_paths": [],
+    "passed": true
+  },
+  "future_designs_compared": [
+    {
+      "advantages": "Reduit le bruit h1; cible H1/H7.",
+      "causality": "Doit garantir feature_available_ts <= decision_ts et label_available_ts > decision_ts.",
+      "decision": "accept_for_future_experiment",
+      "design_id": "longer_horizon_labels",
+      "leakage_risk": "A verifier explicitement dans une future factory; aucune validation trading n'est impliquee.",
+      "name": "labels horizon plus long",
+      "priority": "high",
+      "risks": "Latence de label plus longue et moins de lignes valides en bord de fenetre."
+    },
+    {
+      "advantages": "Peut separer bruit court terme et mouvement plus durable.",
+      "causality": "Doit garantir feature_available_ts <= decision_ts et label_available_ts > decision_ts.",
+      "decision": "review_before_experiment",
+      "design_id": "multi_horizon_labels",
+      "leakage_risk": "A verifier explicitement dans une future factory; aucune validation trading n'est impliquee.",
+      "name": "labels multi-horizon",
+      "priority": "medium",
+      "risks": "Risque de complexite et de leakage si les disponibilites ne sont pas strictes."
+    },
+    {
+      "advantages": "Teste si la classe FLAT bloque l'apprentissage.",
+      "causality": "Doit garantir feature_available_ts <= decision_ts et label_available_ts > decision_ts.",
+      "decision": "review_before_experiment",
+      "design_id": "binary_directional_without_flat",
+      "leakage_risk": "A verifier explicitement dans une future factory; aucune validation trading n'est impliquee.",
+      "name": "labels binaires directionnels sans FLAT",
+      "priority": "low",
+      "risks": "Peut forcer des mouvements non significatifs dans UP/DOWN."
+    },
+    {
+      "advantages": "Controle la distribution sans optimiser le trading.",
+      "causality": "Doit garantir feature_available_ts <= decision_ts et label_available_ts > decision_ts.",
+      "decision": "review_before_experiment",
+      "design_id": "quantile_based_labels",
+      "leakage_risk": "A verifier explicitement dans une future factory; aucune validation trading n'est impliquee.",
+      "name": "labels quantile-based",
+      "priority": "medium",
+      "risks": "Peut creer un equilibre artificiel et instable par regime."
+    },
+    {
+      "advantages": "Cible des mouvements significatifs plutot qu'un horizon fixe bruite.",
+      "causality": "Doit garantir feature_available_ts <= decision_ts et label_available_ts > decision_ts.",
+      "decision": "accept_for_future_experiment",
+      "design_id": "event_based_labels",
+      "leakage_risk": "A verifier explicitement dans une future factory; aucune validation trading n'est impliquee.",
+      "name": "labels event-based",
+      "priority": "high",
+      "risks": "Doit definir une disponibilite label_available_ts stricte et ne pas devenir un backtest."
+    },
+    {
+      "advantages": "Teste H4 avec seuils plus stricts.",
+      "causality": "Doit garantir feature_available_ts <= decision_ts et label_available_ts > decision_ts.",
+      "decision": "review_before_experiment",
+      "design_id": "volnorm_different_k",
+      "leakage_risk": "A verifier explicitement dans une future factory; aucune validation trading n'est impliquee.",
+      "name": "volatility-normalized avec k different",
+      "priority": "medium",
+      "risks": "Peut augmenter FLAT et reduire trop fortement les evenements."
+    },
+    {
+      "advantages": "Filtre le bruit minuscule sans produire de PnL.",
+      "causality": "Doit garantir feature_available_ts <= decision_ts et label_available_ts > decision_ts.",
+      "decision": "review_before_experiment",
+      "design_id": "significant_move_with_descriptive_cost",
+      "leakage_risk": "A verifier explicitement dans une future factory; aucune validation trading n'est impliquee.",
+      "name": "mouvement significatif avec cout theorique descriptif",
+      "priority": "medium",
+      "risks": "Le cout theorique doit rester descriptif et non backtest."
+    },
+    {
+      "advantages": "Adresse H2/H6 si le label n'est pas seul responsable.",
+      "causality": "Doit garantir feature_available_ts <= decision_ts et label_available_ts > decision_ts.",
+      "decision": "review_before_experiment",
+      "design_id": "feature_or_data_extension_first",
+      "leakage_risk": "A verifier explicitement dans une future factory; aucune validation trading n'est impliquee.",
+      "name": "extension features/data avant nouveau label",
+      "priority": "medium",
+      "risks": "Risque de retarder la correction du target."
+    }
+  ],
+  "inputs": {
+    "latest_metrics": {
+      "path": "reports/current/latest_metrics.json",
+      "sha256": "f458e621c29a4be0aa1a2b75b7f4cb08bb1dfc76acbfb09f0af88eb3fa0d7c40"
+    },
+    "latest_summary": {
+      "path": "reports/current/latest_summary.md",
+      "sha256": "718acaa0784e9f2be557040abf80b05ec94e71fe891c9e829ee53c777e4af531"
+    },
+    "project_state": {
+      "path": "reports/PROJECT_STATE.json",
+      "sha256": "14549f4595bd8651dde09b6db341043f353b2b3d9bd4c26f2bfdfb0f0f506fd5"
+    },
+    "v9_10_decision": {
+      "path": "reports/research_decisions/refined_volnorm_research_decision_gate_v9_10.json",
+      "sha256": "b1d756da4cc00a6f6e45c6772da924ef0f3bf64fb63cfb350a17267e0554cab4"
+    },
+    "v9_10_manifest": {
+      "path": "reports/manifests/refined_volnorm_research_decision_gate_v9_10_manifest.json",
+      "sha256": "2093cb061232b950ad74b8eb4eca8e94b11df3bc2cb3db003362e2843b013026"
+    },
+    "v9_4_decision": {
+      "path": "reports/research_decisions/refined_research_decision_gate_v9_4.json",
+      "sha256": "22f9cc78c248fddd5e52f0f7f3363ca576c01869b52d880e1ab2de0cbf926506"
+    },
+    "v9_5_label_audit": {
+      "path": "reports/research_decisions/alternative_label_design_audit_v9_5.json",
+      "sha256": "42f94cb4eaa1faabb5492fcc9cf6f1193d8b8d12fc415f39fddb7bd616dacdeb"
+    },
+    "v9_5_manifest": {
+      "path": "reports/manifests/alternative_label_design_audit_v9_5_manifest.json",
+      "sha256": "c05f90da2a79a4fbdf300a295a6abed49aaae4a045e0608b3b46cf79a5f9ec38"
+    },
+    "v9_6_labels": {
+      "path": "reports/labels/refined_volatility_normalized_labels_v9_6.json",
+      "sha256": "7f70df1c78e5aff9388f6f3cb03205d8c70324100ed821c153293bc185d27b11"
+    },
+    "v9_6_manifest": {
+      "path": "reports/manifests/refined_volatility_normalized_labels_v9_6_manifest.json",
+      "sha256": "3a1ce6c933e6af15a42cd31f64564bb10f76518787a51bd497f217e088a63f50"
+    },
+    "v9_7_dataset": {
+      "path": "reports/datasets/refined_volnorm_labels_dataset_v9_7.json",
+      "sha256": "dcd9969fb7209713e407791294a78dbbb47ebe33d0851516b3c5dd6e8a880c31"
+    },
+    "v9_7_manifest": {
+      "path": "reports/manifests/refined_volnorm_labels_dataset_v9_7_manifest.json",
+      "sha256": "dcd9969fb7209713e407791294a78dbbb47ebe33d0851516b3c5dd6e8a880c31"
+    },
+    "v9_8_manifest": {
+      "path": "reports/manifests/refined_volnorm_labels_offline_ml_v9_8_manifest.json",
+      "sha256": "2e2f666993ac80f34e8f706fdb9e0d41149da7d405b3da619f5916a5838bbc07"
+    },
+    "v9_8_ml": {
+      "path": "reports/ml/refined_volnorm_labels_offline_ml_v9_8.json",
+      "sha256": "2e2f666993ac80f34e8f706fdb9e0d41149da7d405b3da619f5916a5838bbc07"
+    },
+    "v9_8_scores": {
+      "path": "reports/ml/refined_volnorm_labels_offline_scores_v9_8.json",
+      "sha256": "847de49724105ba1b1d13270a3a812965348b39a86e495748789c69ecb1b12b2"
+    },
+    "v9_9_manifest": {
+      "path": "reports/manifests/refined_volnorm_strict_walk_forward_v9_9_manifest.json",
+      "sha256": "625fb9ca91c8e1d0098f57dd664b0dd44cabc8b2d6537e3d370b8c2452ad278d"
+    },
+    "v9_9_scores": {
+      "path": "reports/ml/refined_volnorm_strict_walk_forward_scores_v9_9.json",
+      "sha256": "17068093fd8b3a0dc67005a491ce38d422c7254e454af543256baed6d9c72fa0"
+    },
+    "v9_9_walk_forward": {
+      "path": "reports/ml/refined_volnorm_strict_walk_forward_v9_9.json",
+      "sha256": "625fb9ca91c8e1d0098f57dd664b0dd44cabc8b2d6537e3d370b8c2452ad278d"
+    }
+  },
+  "label_analysis_v9_6": {
+    "design_limits": [
+      "k=0.5 reduit la dominance FLAT du 1m mais ne rend pas le label falsifiable par les modeles offline.",
+      "Le seuil normalise par volatilite reste local au retour h1 et peut conserver un bruit directionnel eleve.",
+      "La selection V9.6 n'utilise volontairement aucune performance ML, donc elle ne garantit pas une cible apprenable."
+    ],
+    "dominance_flat_remaining": 0.49988537368179736,
+    "flat_rates": {
+      "15m": 0.44186908427414756,
+      "1h": 0.49988537368179736,
+      "1m": 0.4680234544005465,
+      "5m": 0.43417055852982495
+    },
+    "full_parquet_read_only_used": true,
+    "parameters_tested": [
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "selected_k": 0.5,
+    "selection_basis": [
+      "distribution de classes",
+      "entropie",
+      "stabilite par timeframe",
+      "dominance de classe",
+      "taux de labels invalides",
+      "causalite et disponibilite temporelle"
+    ],
+    "target_name": "up_down_flat_volnorm_h1",
+    "timeframes": {
+      "15m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 9674,
+            "rate": 0.27580111757326947
+          },
+          "FLAT": {
+            "count": 15499,
+            "rate": 0.44186908427414756
+          },
+          "UP": {
+            "count": 9903,
+            "rate": 0.28232979815258297
+          }
+        },
+        "distribution_by_month": {
+          "2023-03": {
+            "distribution": {
+              "DOWN": {
+                "count": 153,
+                "rate": 0.25
+              },
+              "FLAT": {
+                "count": 293,
+                "rate": 0.47875816993464054
+              },
+              "UP": {
+                "count": 166,
+                "rate": 0.27124183006535946
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47875816993464054,
+            "rows": 612
+          },
+          "2023-04": {
+            "distribution": {
+              "DOWN": {
+                "count": 747,
+                "rate": 0.259375
+              },
+              "FLAT": {
+                "count": 1361,
+                "rate": 0.47256944444444443
+              },
+              "UP": {
+                "count": 772,
+                "rate": 0.26805555555555555
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47256944444444443,
+            "rows": 2880
+          },
+          "2023-05": {
+            "distribution": {
+              "DOWN": {
+                "count": 782,
+                "rate": 0.26276881720430106
+              },
+              "FLAT": {
+                "count": 1415,
+                "rate": 0.4754704301075269
+              },
+              "UP": {
+                "count": 779,
+                "rate": 0.26176075268817206
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4754704301075269,
+            "rows": 2976
+          },
+          "2023-06": {
+            "distribution": {
+              "DOWN": {
+                "count": 744,
+                "rate": 0.25833333333333336
+              },
+              "FLAT": {
+                "count": 1371,
+                "rate": 0.47604166666666664
+              },
+              "UP": {
+                "count": 765,
+                "rate": 0.265625
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47604166666666664,
+            "rows": 2880
+          },
+          "2023-07": {
+            "distribution": {
+              "DOWN": {
+                "count": 857,
+                "rate": 0.2879704301075269
+              },
+              "FLAT": {
+                "count": 1315,
+                "rate": 0.4418682795698925
+              },
+              "UP": {
+                "count": 804,
+                "rate": 0.2701612903225806
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4418682795698925,
+            "rows": 2976
+          },
+          "2023-08": {
+            "distribution": {
+              "DOWN": {
+                "count": 834,
+                "rate": 0.28024193548387094
+              },
+              "FLAT": {
+                "count": 1350,
+                "rate": 0.4536290322580645
+              },
+              "UP": {
+                "count": 792,
+                "rate": 0.2661290322580645
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4536290322580645,
+            "rows": 2976
+          },
+          "2023-09": {
+            "distribution": {
+              "DOWN": {
+                "count": 789,
+                "rate": 0.27395833333333336
+              },
+              "FLAT": {
+                "count": 1271,
+                "rate": 0.44131944444444443
+              },
+              "UP": {
+                "count": 820,
+                "rate": 0.2847222222222222
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.44131944444444443,
+            "rows": 2880
+          },
+          "2023-10": {
+            "distribution": {
+              "DOWN": {
+                "count": 778,
+                "rate": 0.2614247311827957
+              },
+              "FLAT": {
+                "count": 1352,
+                "rate": 0.4543010752688172
+              },
+              "UP": {
+                "count": 846,
+                "rate": 0.2842741935483871
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4543010752688172,
+            "rows": 2976
+          },
+          "2023-11": {
+            "distribution": {
+              "DOWN": {
+                "count": 841,
+                "rate": 0.2920138888888889
+              },
+              "FLAT": {
+                "count": 1184,
+                "rate": 0.4111111111111111
+              },
+              "UP": {
+                "count": 855,
+                "rate": 0.296875
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4111111111111111,
+            "rows": 2880
+          },
+          "2023-12": {
+            "distribution": {
+              "DOWN": {
+                "count": 861,
+                "rate": 0.28931451612903225
+              },
+              "FLAT": {
+                "count": 1248,
+                "rate": 0.41935483870967744
+              },
+              "UP": {
+                "count": 867,
+                "rate": 0.2913306451612903
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41935483870967744,
+            "rows": 2976
+          },
+          "2024-01": {
+            "distribution": {
+              "DOWN": {
+                "count": 848,
+                "rate": 0.2849462365591398
+              },
+              "FLAT": {
+                "count": 1231,
+                "rate": 0.41364247311827956
+              },
+              "UP": {
+                "count": 897,
+                "rate": 0.3014112903225806
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41364247311827956,
+            "rows": 2976
+          },
+          "2024-02": {
+            "distribution": {
+              "DOWN": {
+                "count": 777,
+                "rate": 0.2790948275862069
+              },
+              "FLAT": {
+                "count": 1150,
+                "rate": 0.4130747126436782
+              },
+              "UP": {
+                "count": 857,
+                "rate": 0.3078304597701149
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4130747126436782,
+            "rows": 2784
+          },
+          "2024-03": {
+            "distribution": {
+              "DOWN": {
+                "count": 663,
+                "rate": 0.2877604166666667
+              },
+              "FLAT": {
+                "count": 958,
+                "rate": 0.4157986111111111
+              },
+              "UP": {
+                "count": 683,
+                "rate": 0.2964409722222222
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4157986111111111,
+            "rows": 2304
+          }
+        },
+        "distribution_by_split": {
+          "test": {
+            "distribution": {
+              "DOWN": {
+                "count": 2017,
+                "rate": 0.28699487763232784
+              },
+              "FLAT": {
+                "count": 2897,
+                "rate": 0.41220830961866817
+              },
+              "UP": {
+                "count": 2114,
+                "rate": 0.300796812749004
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41220830961866817,
+            "rows": 7028
+          },
+          "train": {
+            "distribution": {
+              "DOWN": {
+                "count": 5642,
+                "rate": 0.2683982683982684
+              },
+              "FLAT": {
+                "count": 9679,
+                "rate": 0.46044431758717475
+              },
+              "UP": {
+                "count": 5700,
+                "rate": 0.2711574140145569
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.46044431758717475,
+            "rows": 21021
+          },
+          "validation": {
+            "distribution": {
+              "DOWN": {
+                "count": 2015,
+                "rate": 0.28675110288885725
+              },
+              "FLAT": {
+                "count": 2923,
+                "rate": 0.41596698448840186
+              },
+              "UP": {
+                "count": 2089,
+                "rate": 0.29728191262274084
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41596698448840186,
+            "rows": 7027
+          }
+        },
+        "distribution_by_walk_forward_group": {
+          "wf_2023_03": {
+            "distribution": {
+              "DOWN": {
+                "count": 153,
+                "rate": 0.25
+              },
+              "FLAT": {
+                "count": 293,
+                "rate": 0.47875816993464054
+              },
+              "UP": {
+                "count": 166,
+                "rate": 0.27124183006535946
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47875816993464054,
+            "rows": 612
+          },
+          "wf_2023_04": {
+            "distribution": {
+              "DOWN": {
+                "count": 747,
+                "rate": 0.259375
+              },
+              "FLAT": {
+                "count": 1361,
+                "rate": 0.47256944444444443
+              },
+              "UP": {
+                "count": 772,
+                "rate": 0.26805555555555555
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47256944444444443,
+            "rows": 2880
+          },
+          "wf_2023_05": {
+            "distribution": {
+              "DOWN": {
+                "count": 782,
+                "rate": 0.26276881720430106
+              },
+              "FLAT": {
+                "count": 1415,
+                "rate": 0.4754704301075269
+              },
+              "UP": {
+                "count": 779,
+                "rate": 0.26176075268817206
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4754704301075269,
+            "rows": 2976
+          },
+          "wf_2023_06": {
+            "distribution": {
+              "DOWN": {
+                "count": 744,
+                "rate": 0.25833333333333336
+              },
+              "FLAT": {
+                "count": 1371,
+                "rate": 0.47604166666666664
+              },
+              "UP": {
+                "count": 765,
+                "rate": 0.265625
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47604166666666664,
+            "rows": 2880
+          },
+          "wf_2023_07": {
+            "distribution": {
+              "DOWN": {
+                "count": 857,
+                "rate": 0.2879704301075269
+              },
+              "FLAT": {
+                "count": 1315,
+                "rate": 0.4418682795698925
+              },
+              "UP": {
+                "count": 804,
+                "rate": 0.2701612903225806
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4418682795698925,
+            "rows": 2976
+          },
+          "wf_2023_08": {
+            "distribution": {
+              "DOWN": {
+                "count": 834,
+                "rate": 0.28024193548387094
+              },
+              "FLAT": {
+                "count": 1350,
+                "rate": 0.4536290322580645
+              },
+              "UP": {
+                "count": 792,
+                "rate": 0.2661290322580645
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4536290322580645,
+            "rows": 2976
+          },
+          "wf_2023_09": {
+            "distribution": {
+              "DOWN": {
+                "count": 789,
+                "rate": 0.27395833333333336
+              },
+              "FLAT": {
+                "count": 1271,
+                "rate": 0.44131944444444443
+              },
+              "UP": {
+                "count": 820,
+                "rate": 0.2847222222222222
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.44131944444444443,
+            "rows": 2880
+          },
+          "wf_2023_10": {
+            "distribution": {
+              "DOWN": {
+                "count": 778,
+                "rate": 0.2614247311827957
+              },
+              "FLAT": {
+                "count": 1352,
+                "rate": 0.4543010752688172
+              },
+              "UP": {
+                "count": 846,
+                "rate": 0.2842741935483871
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4543010752688172,
+            "rows": 2976
+          },
+          "wf_2023_11": {
+            "distribution": {
+              "DOWN": {
+                "count": 841,
+                "rate": 0.2920138888888889
+              },
+              "FLAT": {
+                "count": 1184,
+                "rate": 0.4111111111111111
+              },
+              "UP": {
+                "count": 855,
+                "rate": 0.296875
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4111111111111111,
+            "rows": 2880
+          },
+          "wf_2023_12": {
+            "distribution": {
+              "DOWN": {
+                "count": 861,
+                "rate": 0.28931451612903225
+              },
+              "FLAT": {
+                "count": 1248,
+                "rate": 0.41935483870967744
+              },
+              "UP": {
+                "count": 867,
+                "rate": 0.2913306451612903
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41935483870967744,
+            "rows": 2976
+          },
+          "wf_2024_01": {
+            "distribution": {
+              "DOWN": {
+                "count": 848,
+                "rate": 0.2849462365591398
+              },
+              "FLAT": {
+                "count": 1231,
+                "rate": 0.41364247311827956
+              },
+              "UP": {
+                "count": 897,
+                "rate": 0.3014112903225806
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41364247311827956,
+            "rows": 2976
+          },
+          "wf_2024_02": {
+            "distribution": {
+              "DOWN": {
+                "count": 777,
+                "rate": 0.2790948275862069
+              },
+              "FLAT": {
+                "count": 1150,
+                "rate": 0.4130747126436782
+              },
+              "UP": {
+                "count": 857,
+                "rate": 0.3078304597701149
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4130747126436782,
+            "rows": 2784
+          },
+          "wf_2024_03": {
+            "distribution": {
+              "DOWN": {
+                "count": 663,
+                "rate": 0.2877604166666667
+              },
+              "FLAT": {
+                "count": 958,
+                "rate": 0.4157986111111111
+              },
+              "UP": {
+                "count": 683,
+                "rate": 0.2964409722222222
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4157986111111111,
+            "rows": 2304
+          }
+        },
+        "entropy_bits": 1.5483034211380486,
+        "fixed_label_distribution_h1": {
+          "DOWN": {
+            "count": 12166,
+            "rate": 0.34625455373406194
+          },
+          "FLAT": {
+            "count": 10392,
+            "rate": 0.2957650273224044
+          },
+          "UP": {
+            "count": 12578,
+            "rate": 0.3579804189435337
+          }
+        },
+        "flat_rate_reduction_vs_fixed_h1": -0.14610405695174317,
+        "invalid_rows": 60,
+        "majority_class": "FLAT",
+        "majority_rate": 0.44186908427414756,
+        "timeframe": "15m",
+        "valid_rows": 35076,
+        "warmup_rows": 60
+      },
+      "1h": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 2098,
+            "rate": 0.24048601558917929
+          },
+          "FLAT": {
+            "count": 4361,
+            "rate": 0.49988537368179736
+          },
+          "UP": {
+            "count": 2265,
+            "rate": 0.2596286107290234
+          }
+        },
+        "distribution_by_month": {
+          "2023-03": {
+            "distribution": {
+              "DOWN": {
+                "count": 27,
+                "rate": 0.25
+              },
+              "FLAT": {
+                "count": 54,
+                "rate": 0.5
+              },
+              "UP": {
+                "count": 27,
+                "rate": 0.25
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5,
+            "rows": 108
+          },
+          "2023-04": {
+            "distribution": {
+              "DOWN": {
+                "count": 176,
+                "rate": 0.24444444444444444
+              },
+              "FLAT": {
+                "count": 363,
+                "rate": 0.5041666666666667
+              },
+              "UP": {
+                "count": 181,
+                "rate": 0.2513888888888889
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5041666666666667,
+            "rows": 720
+          },
+          "2023-05": {
+            "distribution": {
+              "DOWN": {
+                "count": 176,
+                "rate": 0.23655913978494625
+              },
+              "FLAT": {
+                "count": 394,
+                "rate": 0.5295698924731183
+              },
+              "UP": {
+                "count": 174,
+                "rate": 0.23387096774193547
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5295698924731183,
+            "rows": 744
+          },
+          "2023-06": {
+            "distribution": {
+              "DOWN": {
+                "count": 160,
+                "rate": 0.2222222222222222
+              },
+              "FLAT": {
+                "count": 369,
+                "rate": 0.5125
+              },
+              "UP": {
+                "count": 191,
+                "rate": 0.2652777777777778
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5125,
+            "rows": 720
+          },
+          "2023-07": {
+            "distribution": {
+              "DOWN": {
+                "count": 187,
+                "rate": 0.2513440860215054
+              },
+              "FLAT": {
+                "count": 378,
+                "rate": 0.5080645161290323
+              },
+              "UP": {
+                "count": 179,
+                "rate": 0.24059139784946237
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5080645161290323,
+            "rows": 744
+          },
+          "2023-08": {
+            "distribution": {
+              "DOWN": {
+                "count": 184,
+                "rate": 0.24731182795698925
+              },
+              "FLAT": {
+                "count": 392,
+                "rate": 0.5268817204301075
+              },
+              "UP": {
+                "count": 168,
+                "rate": 0.22580645161290322
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5268817204301075,
+            "rows": 744
+          },
+          "2023-09": {
+            "distribution": {
+              "DOWN": {
+                "count": 168,
+                "rate": 0.23333333333333334
+              },
+              "FLAT": {
+                "count": 380,
+                "rate": 0.5277777777777778
+              },
+              "UP": {
+                "count": 172,
+                "rate": 0.2388888888888889
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5277777777777778,
+            "rows": 720
+          },
+          "2023-10": {
+            "distribution": {
+              "DOWN": {
+                "count": 172,
+                "rate": 0.23118279569892472
+              },
+              "FLAT": {
+                "count": 358,
+                "rate": 0.48118279569892475
+              },
+              "UP": {
+                "count": 214,
+                "rate": 0.28763440860215056
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.48118279569892475,
+            "rows": 744
+          },
+          "2023-11": {
+            "distribution": {
+              "DOWN": {
+                "count": 169,
+                "rate": 0.23472222222222222
+              },
+              "FLAT": {
+                "count": 364,
+                "rate": 0.5055555555555555
+              },
+              "UP": {
+                "count": 187,
+                "rate": 0.25972222222222224
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5055555555555555,
+            "rows": 720
+          },
+          "2023-12": {
+            "distribution": {
+              "DOWN": {
+                "count": 188,
+                "rate": 0.25268817204301075
+              },
+              "FLAT": {
+                "count": 359,
+                "rate": 0.4825268817204301
+              },
+              "UP": {
+                "count": 197,
+                "rate": 0.2647849462365591
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4825268817204301,
+            "rows": 744
+          },
+          "2024-01": {
+            "distribution": {
+              "DOWN": {
+                "count": 185,
+                "rate": 0.24865591397849462
+              },
+              "FLAT": {
+                "count": 360,
+                "rate": 0.4838709677419355
+              },
+              "UP": {
+                "count": 199,
+                "rate": 0.2674731182795699
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4838709677419355,
+            "rows": 744
+          },
+          "2024-02": {
+            "distribution": {
+              "DOWN": {
+                "count": 163,
+                "rate": 0.23419540229885058
+              },
+              "FLAT": {
+                "count": 333,
+                "rate": 0.47844827586206895
+              },
+              "UP": {
+                "count": 200,
+                "rate": 0.28735632183908044
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47844827586206895,
+            "rows": 696
+          },
+          "2024-03": {
+            "distribution": {
+              "DOWN": {
+                "count": 143,
+                "rate": 0.2482638888888889
+              },
+              "FLAT": {
+                "count": 257,
+                "rate": 0.4461805555555556
+              },
+              "UP": {
+                "count": 176,
+                "rate": 0.3055555555555556
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4461805555555556,
+            "rows": 576
+          }
+        },
+        "distribution_by_split": {
+          "test": {
+            "distribution": {
+              "DOWN": {
+                "count": 431,
+                "rate": 0.24516496018202502
+              },
+              "FLAT": {
+                "count": 831,
+                "rate": 0.4726962457337884
+              },
+              "UP": {
+                "count": 496,
+                "rate": 0.2821387940841866
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4726962457337884,
+            "rows": 1758
+          },
+          "train": {
+            "distribution": {
+              "DOWN": {
+                "count": 1239,
+                "rate": 0.23781190019193857
+              },
+              "FLAT": {
+                "count": 2676,
+                "rate": 0.5136276391554703
+              },
+              "UP": {
+                "count": 1295,
+                "rate": 0.24856046065259116
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5136276391554703,
+            "rows": 5210
+          },
+          "validation": {
+            "distribution": {
+              "DOWN": {
+                "count": 428,
+                "rate": 0.2437357630979499
+              },
+              "FLAT": {
+                "count": 854,
+                "rate": 0.4863325740318907
+              },
+              "UP": {
+                "count": 474,
+                "rate": 0.26993166287015946
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4863325740318907,
+            "rows": 1756
+          }
+        },
+        "distribution_by_walk_forward_group": {
+          "wf_2023_03": {
+            "distribution": {
+              "DOWN": {
+                "count": 27,
+                "rate": 0.25
+              },
+              "FLAT": {
+                "count": 54,
+                "rate": 0.5
+              },
+              "UP": {
+                "count": 27,
+                "rate": 0.25
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5,
+            "rows": 108
+          },
+          "wf_2023_04": {
+            "distribution": {
+              "DOWN": {
+                "count": 176,
+                "rate": 0.24444444444444444
+              },
+              "FLAT": {
+                "count": 363,
+                "rate": 0.5041666666666667
+              },
+              "UP": {
+                "count": 181,
+                "rate": 0.2513888888888889
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5041666666666667,
+            "rows": 720
+          },
+          "wf_2023_05": {
+            "distribution": {
+              "DOWN": {
+                "count": 176,
+                "rate": 0.23655913978494625
+              },
+              "FLAT": {
+                "count": 394,
+                "rate": 0.5295698924731183
+              },
+              "UP": {
+                "count": 174,
+                "rate": 0.23387096774193547
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5295698924731183,
+            "rows": 744
+          },
+          "wf_2023_06": {
+            "distribution": {
+              "DOWN": {
+                "count": 160,
+                "rate": 0.2222222222222222
+              },
+              "FLAT": {
+                "count": 369,
+                "rate": 0.5125
+              },
+              "UP": {
+                "count": 191,
+                "rate": 0.2652777777777778
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5125,
+            "rows": 720
+          },
+          "wf_2023_07": {
+            "distribution": {
+              "DOWN": {
+                "count": 187,
+                "rate": 0.2513440860215054
+              },
+              "FLAT": {
+                "count": 378,
+                "rate": 0.5080645161290323
+              },
+              "UP": {
+                "count": 179,
+                "rate": 0.24059139784946237
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5080645161290323,
+            "rows": 744
+          },
+          "wf_2023_08": {
+            "distribution": {
+              "DOWN": {
+                "count": 184,
+                "rate": 0.24731182795698925
+              },
+              "FLAT": {
+                "count": 392,
+                "rate": 0.5268817204301075
+              },
+              "UP": {
+                "count": 168,
+                "rate": 0.22580645161290322
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5268817204301075,
+            "rows": 744
+          },
+          "wf_2023_09": {
+            "distribution": {
+              "DOWN": {
+                "count": 168,
+                "rate": 0.23333333333333334
+              },
+              "FLAT": {
+                "count": 380,
+                "rate": 0.5277777777777778
+              },
+              "UP": {
+                "count": 172,
+                "rate": 0.2388888888888889
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5277777777777778,
+            "rows": 720
+          },
+          "wf_2023_10": {
+            "distribution": {
+              "DOWN": {
+                "count": 172,
+                "rate": 0.23118279569892472
+              },
+              "FLAT": {
+                "count": 358,
+                "rate": 0.48118279569892475
+              },
+              "UP": {
+                "count": 214,
+                "rate": 0.28763440860215056
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.48118279569892475,
+            "rows": 744
+          },
+          "wf_2023_11": {
+            "distribution": {
+              "DOWN": {
+                "count": 169,
+                "rate": 0.23472222222222222
+              },
+              "FLAT": {
+                "count": 364,
+                "rate": 0.5055555555555555
+              },
+              "UP": {
+                "count": 187,
+                "rate": 0.25972222222222224
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5055555555555555,
+            "rows": 720
+          },
+          "wf_2023_12": {
+            "distribution": {
+              "DOWN": {
+                "count": 188,
+                "rate": 0.25268817204301075
+              },
+              "FLAT": {
+                "count": 359,
+                "rate": 0.4825268817204301
+              },
+              "UP": {
+                "count": 197,
+                "rate": 0.2647849462365591
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4825268817204301,
+            "rows": 744
+          },
+          "wf_2024_01": {
+            "distribution": {
+              "DOWN": {
+                "count": 185,
+                "rate": 0.24865591397849462
+              },
+              "FLAT": {
+                "count": 360,
+                "rate": 0.4838709677419355
+              },
+              "UP": {
+                "count": 199,
+                "rate": 0.2674731182795699
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4838709677419355,
+            "rows": 744
+          },
+          "wf_2024_02": {
+            "distribution": {
+              "DOWN": {
+                "count": 163,
+                "rate": 0.23419540229885058
+              },
+              "FLAT": {
+                "count": 333,
+                "rate": 0.47844827586206895
+              },
+              "UP": {
+                "count": 200,
+                "rate": 0.28735632183908044
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47844827586206895,
+            "rows": 696
+          },
+          "wf_2024_03": {
+            "distribution": {
+              "DOWN": {
+                "count": 143,
+                "rate": 0.2482638888888889
+              },
+              "FLAT": {
+                "count": 257,
+                "rate": 0.4461805555555556
+              },
+              "UP": {
+                "count": 176,
+                "rate": 0.3055555555555556
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4461805555555556,
+            "rows": 576
+          }
+        },
+        "entropy_bits": 1.4995859207867168,
+        "fixed_label_distribution_h1": {
+          "DOWN": {
+            "count": 3585,
+            "rate": 0.40812841530054644
+          },
+          "FLAT": {
+            "count": 1431,
+            "rate": 0.16290983606557377
+          },
+          "UP": {
+            "count": 3768,
+            "rate": 0.42896174863387976
+          }
+        },
+        "flat_rate_reduction_vs_fixed_h1": -0.33697553761622356,
+        "invalid_rows": 60,
+        "majority_class": "FLAT",
+        "majority_rate": 0.49988537368179736,
+        "timeframe": "1h",
+        "valid_rows": 8724,
+        "warmup_rows": 60
+      },
+      "1m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 139523,
+            "rate": 0.26475957341834605
+          },
+          "FLAT": {
+            "count": 246639,
+            "rate": 0.4680234544005465
+          },
+          "UP": {
+            "count": 140818,
+            "rate": 0.26721697218110746
+          }
+        },
+        "distribution_by_month": {
+          "2023-03": {
+            "distribution": {
+              "DOWN": {
+                "count": 2907,
+                "rate": 0.2901197604790419
+              },
+              "FLAT": {
+                "count": 4221,
+                "rate": 0.4212574850299401
+              },
+              "UP": {
+                "count": 2892,
+                "rate": 0.288622754491018
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4212574850299401,
+            "rows": 10020
+          },
+          "2023-04": {
+            "distribution": {
+              "DOWN": {
+                "count": 11069,
+                "rate": 0.25622685185185184
+              },
+              "FLAT": {
+                "count": 20991,
+                "rate": 0.4859027777777778
+              },
+              "UP": {
+                "count": 11140,
+                "rate": 0.25787037037037036
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4859027777777778,
+            "rows": 43200
+          },
+          "2023-05": {
+            "distribution": {
+              "DOWN": {
+                "count": 11854,
+                "rate": 0.26554659498207883
+              },
+              "FLAT": {
+                "count": 21250,
+                "rate": 0.4760304659498208
+              },
+              "UP": {
+                "count": 11536,
+                "rate": 0.2584229390681004
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4760304659498208,
+            "rows": 44640
+          },
+          "2023-06": {
+            "distribution": {
+              "DOWN": {
+                "count": 11121,
+                "rate": 0.25743055555555555
+              },
+              "FLAT": {
+                "count": 20677,
+                "rate": 0.47863425925925923
+              },
+              "UP": {
+                "count": 11402,
+                "rate": 0.26393518518518516
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47863425925925923,
+            "rows": 43200
+          },
+          "2023-07": {
+            "distribution": {
+              "DOWN": {
+                "count": 10903,
+                "rate": 0.24424283154121865
+              },
+              "FLAT": {
+                "count": 22793,
+                "rate": 0.5105958781362007
+              },
+              "UP": {
+                "count": 10944,
+                "rate": 0.24516129032258063
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5105958781362007,
+            "rows": 44640
+          },
+          "2023-08": {
+            "distribution": {
+              "DOWN": {
+                "count": 10664,
+                "rate": 0.2388888888888889
+              },
+              "FLAT": {
+                "count": 23768,
+                "rate": 0.532437275985663
+              },
+              "UP": {
+                "count": 10208,
+                "rate": 0.22867383512544803
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.532437275985663,
+            "rows": 44640
+          },
+          "2023-09": {
+            "distribution": {
+              "DOWN": {
+                "count": 10479,
+                "rate": 0.24256944444444445
+              },
+              "FLAT": {
+                "count": 22154,
+                "rate": 0.512824074074074
+              },
+              "UP": {
+                "count": 10567,
+                "rate": 0.24460648148148148
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.512824074074074,
+            "rows": 43200
+          },
+          "2023-10": {
+            "distribution": {
+              "DOWN": {
+                "count": 11639,
+                "rate": 0.26073028673835125
+              },
+              "FLAT": {
+                "count": 20809,
+                "rate": 0.46615143369175627
+              },
+              "UP": {
+                "count": 12192,
+                "rate": 0.2731182795698925
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.46615143369175627,
+            "rows": 44640
+          },
+          "2023-11": {
+            "distribution": {
+              "DOWN": {
+                "count": 12107,
+                "rate": 0.2802546296296296
+              },
+              "FLAT": {
+                "count": 18830,
+                "rate": 0.4358796296296296
+              },
+              "UP": {
+                "count": 12263,
+                "rate": 0.2838657407407407
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4358796296296296,
+            "rows": 43200
+          },
+          "2023-12": {
+            "distribution": {
+              "DOWN": {
+                "count": 12524,
+                "rate": 0.28055555555555556
+              },
+              "FLAT": {
+                "count": 19531,
+                "rate": 0.43752240143369175
+              },
+              "UP": {
+                "count": 12585,
+                "rate": 0.2819220430107527
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.43752240143369175,
+            "rows": 44640
+          },
+          "2024-01": {
+            "distribution": {
+              "DOWN": {
+                "count": 12624,
+                "rate": 0.28279569892473116
+              },
+              "FLAT": {
+                "count": 19346,
+                "rate": 0.43337813620071686
+              },
+              "UP": {
+                "count": 12670,
+                "rate": 0.283826164874552
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.43337813620071686,
+            "rows": 44640
+          },
+          "2024-02": {
+            "distribution": {
+              "DOWN": {
+                "count": 11508,
+                "rate": 0.27557471264367817
+              },
+              "FLAT": {
+                "count": 18097,
+                "rate": 0.4333572796934866
+              },
+              "UP": {
+                "count": 12155,
+                "rate": 0.29106800766283525
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4333572796934866,
+            "rows": 41760
+          },
+          "2024-03": {
+            "distribution": {
+              "DOWN": {
+                "count": 10124,
+                "rate": 0.2929398148148148
+              },
+              "FLAT": {
+                "count": 14172,
+                "rate": 0.41006944444444443
+              },
+              "UP": {
+                "count": 10264,
+                "rate": 0.2969907407407407
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41006944444444443,
+            "rows": 34560
+          }
+        },
+        "distribution_by_split": {
+          "test": {
+            "distribution": {
+              "DOWN": {
+                "count": 29890,
+                "rate": 0.2835648148148148
+              },
+              "FLAT": {
+                "count": 44958,
+                "rate": 0.42651411657559196
+              },
+              "UP": {
+                "count": 30560,
+                "rate": 0.2899210686095932
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.42651411657559196,
+            "rows": 105408
+          },
+          "train": {
+            "distribution": {
+              "DOWN": {
+                "count": 80071,
+                "rate": 0.25325780291241257
+              },
+              "FLAT": {
+                "count": 155802,
+                "rate": 0.4927885527764072
+              },
+              "UP": {
+                "count": 80291,
+                "rate": 0.2539536443111803
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4927885527764072,
+            "rows": 316164
+          },
+          "validation": {
+            "distribution": {
+              "DOWN": {
+                "count": 29562,
+                "rate": 0.2804530965391621
+              },
+              "FLAT": {
+                "count": 45879,
+                "rate": 0.4352515938069217
+              },
+              "UP": {
+                "count": 29967,
+                "rate": 0.2842953096539162
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4352515938069217,
+            "rows": 105408
+          }
+        },
+        "distribution_by_walk_forward_group": {
+          "wf_2023_03": {
+            "distribution": {
+              "DOWN": {
+                "count": 2907,
+                "rate": 0.2901197604790419
+              },
+              "FLAT": {
+                "count": 4221,
+                "rate": 0.4212574850299401
+              },
+              "UP": {
+                "count": 2892,
+                "rate": 0.288622754491018
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4212574850299401,
+            "rows": 10020
+          },
+          "wf_2023_04": {
+            "distribution": {
+              "DOWN": {
+                "count": 11069,
+                "rate": 0.25622685185185184
+              },
+              "FLAT": {
+                "count": 20991,
+                "rate": 0.4859027777777778
+              },
+              "UP": {
+                "count": 11140,
+                "rate": 0.25787037037037036
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4859027777777778,
+            "rows": 43200
+          },
+          "wf_2023_05": {
+            "distribution": {
+              "DOWN": {
+                "count": 11854,
+                "rate": 0.26554659498207883
+              },
+              "FLAT": {
+                "count": 21250,
+                "rate": 0.4760304659498208
+              },
+              "UP": {
+                "count": 11536,
+                "rate": 0.2584229390681004
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4760304659498208,
+            "rows": 44640
+          },
+          "wf_2023_06": {
+            "distribution": {
+              "DOWN": {
+                "count": 11121,
+                "rate": 0.25743055555555555
+              },
+              "FLAT": {
+                "count": 20677,
+                "rate": 0.47863425925925923
+              },
+              "UP": {
+                "count": 11402,
+                "rate": 0.26393518518518516
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.47863425925925923,
+            "rows": 43200
+          },
+          "wf_2023_07": {
+            "distribution": {
+              "DOWN": {
+                "count": 10903,
+                "rate": 0.24424283154121865
+              },
+              "FLAT": {
+                "count": 22793,
+                "rate": 0.5105958781362007
+              },
+              "UP": {
+                "count": 10944,
+                "rate": 0.24516129032258063
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.5105958781362007,
+            "rows": 44640
+          },
+          "wf_2023_08": {
+            "distribution": {
+              "DOWN": {
+                "count": 10664,
+                "rate": 0.2388888888888889
+              },
+              "FLAT": {
+                "count": 23768,
+                "rate": 0.532437275985663
+              },
+              "UP": {
+                "count": 10208,
+                "rate": 0.22867383512544803
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.532437275985663,
+            "rows": 44640
+          },
+          "wf_2023_09": {
+            "distribution": {
+              "DOWN": {
+                "count": 10479,
+                "rate": 0.24256944444444445
+              },
+              "FLAT": {
+                "count": 22154,
+                "rate": 0.512824074074074
+              },
+              "UP": {
+                "count": 10567,
+                "rate": 0.24460648148148148
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.512824074074074,
+            "rows": 43200
+          },
+          "wf_2023_10": {
+            "distribution": {
+              "DOWN": {
+                "count": 11639,
+                "rate": 0.26073028673835125
+              },
+              "FLAT": {
+                "count": 20809,
+                "rate": 0.46615143369175627
+              },
+              "UP": {
+                "count": 12192,
+                "rate": 0.2731182795698925
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.46615143369175627,
+            "rows": 44640
+          },
+          "wf_2023_11": {
+            "distribution": {
+              "DOWN": {
+                "count": 12107,
+                "rate": 0.2802546296296296
+              },
+              "FLAT": {
+                "count": 18830,
+                "rate": 0.4358796296296296
+              },
+              "UP": {
+                "count": 12263,
+                "rate": 0.2838657407407407
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4358796296296296,
+            "rows": 43200
+          },
+          "wf_2023_12": {
+            "distribution": {
+              "DOWN": {
+                "count": 12524,
+                "rate": 0.28055555555555556
+              },
+              "FLAT": {
+                "count": 19531,
+                "rate": 0.43752240143369175
+              },
+              "UP": {
+                "count": 12585,
+                "rate": 0.2819220430107527
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.43752240143369175,
+            "rows": 44640
+          },
+          "wf_2024_01": {
+            "distribution": {
+              "DOWN": {
+                "count": 12624,
+                "rate": 0.28279569892473116
+              },
+              "FLAT": {
+                "count": 19346,
+                "rate": 0.43337813620071686
+              },
+              "UP": {
+                "count": 12670,
+                "rate": 0.283826164874552
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.43337813620071686,
+            "rows": 44640
+          },
+          "wf_2024_02": {
+            "distribution": {
+              "DOWN": {
+                "count": 11508,
+                "rate": 0.27557471264367817
+              },
+              "FLAT": {
+                "count": 18097,
+                "rate": 0.4333572796934866
+              },
+              "UP": {
+                "count": 12155,
+                "rate": 0.29106800766283525
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4333572796934866,
+            "rows": 41760
+          },
+          "wf_2024_03": {
+            "distribution": {
+              "DOWN": {
+                "count": 10124,
+                "rate": 0.2929398148148148
+              },
+              "FLAT": {
+                "count": 14172,
+                "rate": 0.41006944444444443
+              },
+              "UP": {
+                "count": 10264,
+                "rate": 0.2969907407407407
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41006944444444443,
+            "rows": 34560
+          }
+        },
+        "entropy_bits": 1.5290160328404434,
+        "fixed_label_distribution_h1": {
+          "DOWN": {
+            "count": 60407,
+            "rate": 0.11461558894960534
+          },
+          "FLAT": {
+            "count": 405035,
+            "rate": 0.7685090315725561
+          },
+          "UP": {
+            "count": 61598,
+            "rate": 0.11687537947783849
+          }
+        },
+        "flat_rate_reduction_vs_fixed_h1": 0.30048557717200963,
+        "invalid_rows": 60,
+        "majority_class": "FLAT",
+        "majority_rate": 0.4680234544005465,
+        "timeframe": "1m",
+        "valid_rows": 526980,
+        "warmup_rows": 60
+      },
+      "5m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 29411,
+            "rate": 0.27917948133804155
+          },
+          "FLAT": {
+            "count": 45739,
+            "rate": 0.43417055852982495
+          },
+          "UP": {
+            "count": 30198,
+            "rate": 0.2866499601321335
+          }
+        },
+        "distribution_by_month": {
+          "2023-03": {
+            "distribution": {
+              "DOWN": {
+                "count": 503,
+                "rate": 0.25715746421267893
+              },
+              "FLAT": {
+                "count": 916,
+                "rate": 0.46830265848670755
+              },
+              "UP": {
+                "count": 537,
+                "rate": 0.2745398773006135
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.46830265848670755,
+            "rows": 1956
+          },
+          "2023-04": {
+            "distribution": {
+              "DOWN": {
+                "count": 2342,
+                "rate": 0.2710648148148148
+              },
+              "FLAT": {
+                "count": 3906,
+                "rate": 0.45208333333333334
+              },
+              "UP": {
+                "count": 2392,
+                "rate": 0.27685185185185185
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.45208333333333334,
+            "rows": 8640
+          },
+          "2023-05": {
+            "distribution": {
+              "DOWN": {
+                "count": 2528,
+                "rate": 0.2831541218637993
+              },
+              "FLAT": {
+                "count": 3925,
+                "rate": 0.43962813620071683
+              },
+              "UP": {
+                "count": 2475,
+                "rate": 0.2772177419354839
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.43962813620071683,
+            "rows": 8928
+          },
+          "2023-06": {
+            "distribution": {
+              "DOWN": {
+                "count": 2292,
+                "rate": 0.2652777777777778
+              },
+              "FLAT": {
+                "count": 3946,
+                "rate": 0.456712962962963
+              },
+              "UP": {
+                "count": 2402,
+                "rate": 0.27800925925925923
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.456712962962963,
+            "rows": 8640
+          },
+          "2023-07": {
+            "distribution": {
+              "DOWN": {
+                "count": 2492,
+                "rate": 0.27912186379928317
+              },
+              "FLAT": {
+                "count": 3969,
+                "rate": 0.44455645161290325
+              },
+              "UP": {
+                "count": 2467,
+                "rate": 0.27632168458781364
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.44455645161290325,
+            "rows": 8928
+          },
+          "2023-08": {
+            "distribution": {
+              "DOWN": {
+                "count": 2511,
+                "rate": 0.28125
+              },
+              "FLAT": {
+                "count": 4037,
+                "rate": 0.45217293906810035
+              },
+              "UP": {
+                "count": 2380,
+                "rate": 0.26657706093189965
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.45217293906810035,
+            "rows": 8928
+          },
+          "2023-09": {
+            "distribution": {
+              "DOWN": {
+                "count": 2359,
+                "rate": 0.2730324074074074
+              },
+              "FLAT": {
+                "count": 3842,
+                "rate": 0.4446759259259259
+              },
+              "UP": {
+                "count": 2439,
+                "rate": 0.28229166666666666
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4446759259259259,
+            "rows": 8640
+          },
+          "2023-10": {
+            "distribution": {
+              "DOWN": {
+                "count": 2354,
+                "rate": 0.26366487455197135
+              },
+              "FLAT": {
+                "count": 4015,
+                "rate": 0.44970878136200715
+              },
+              "UP": {
+                "count": 2559,
+                "rate": 0.2866263440860215
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.44970878136200715,
+            "rows": 8928
+          },
+          "2023-11": {
+            "distribution": {
+              "DOWN": {
+                "count": 2488,
+                "rate": 0.287962962962963
+              },
+              "FLAT": {
+                "count": 3577,
+                "rate": 0.41400462962962964
+              },
+              "UP": {
+                "count": 2575,
+                "rate": 0.2980324074074074
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41400462962962964,
+            "rows": 8640
+          },
+          "2023-12": {
+            "distribution": {
+              "DOWN": {
+                "count": 2562,
+                "rate": 0.28696236559139787
+              },
+              "FLAT": {
+                "count": 3691,
+                "rate": 0.413418458781362
+              },
+              "UP": {
+                "count": 2675,
+                "rate": 0.29961917562724016
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.413418458781362,
+            "rows": 8928
+          },
+          "2024-01": {
+            "distribution": {
+              "DOWN": {
+                "count": 2588,
+                "rate": 0.28987455197132617
+              },
+              "FLAT": {
+                "count": 3676,
+                "rate": 0.4117383512544803
+              },
+              "UP": {
+                "count": 2664,
+                "rate": 0.29838709677419356
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4117383512544803,
+            "rows": 8928
+          },
+          "2024-02": {
+            "distribution": {
+              "DOWN": {
+                "count": 2361,
+                "rate": 0.2826867816091954
+              },
+              "FLAT": {
+                "count": 3446,
+                "rate": 0.41259578544061304
+              },
+              "UP": {
+                "count": 2545,
+                "rate": 0.30471743295019155
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41259578544061304,
+            "rows": 8352
+          },
+          "2024-03": {
+            "distribution": {
+              "DOWN": {
+                "count": 2031,
+                "rate": 0.2938368055555556
+              },
+              "FLAT": {
+                "count": 2793,
+                "rate": 0.4040798611111111
+              },
+              "UP": {
+                "count": 2088,
+                "rate": 0.3020833333333333
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4040798611111111,
+            "rows": 6912
+          }
+        },
+        "distribution_by_split": {
+          "test": {
+            "distribution": {
+              "DOWN": {
+                "count": 6126,
+                "rate": 0.2905658587487549
+              },
+              "FLAT": {
+                "count": 8596,
+                "rate": 0.4077218612151971
+              },
+              "UP": {
+                "count": 6361,
+                "rate": 0.301712280036048
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4077218612151971,
+            "rows": 21083
+          },
+          "train": {
+            "distribution": {
+              "DOWN": {
+                "count": 17269,
+                "rate": 0.27331286401620664
+              },
+              "FLAT": {
+                "count": 28382,
+                "rate": 0.44919599898708534
+              },
+              "UP": {
+                "count": 17533,
+                "rate": 0.277491136996708
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.44919599898708534,
+            "rows": 63184
+          },
+          "validation": {
+            "distribution": {
+              "DOWN": {
+                "count": 6016,
+                "rate": 0.28537545657226887
+              },
+              "FLAT": {
+                "count": 8761,
+                "rate": 0.415587495849343
+              },
+              "UP": {
+                "count": 6304,
+                "rate": 0.2990370475783881
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.415587495849343,
+            "rows": 21081
+          }
+        },
+        "distribution_by_walk_forward_group": {
+          "wf_2023_03": {
+            "distribution": {
+              "DOWN": {
+                "count": 503,
+                "rate": 0.25715746421267893
+              },
+              "FLAT": {
+                "count": 916,
+                "rate": 0.46830265848670755
+              },
+              "UP": {
+                "count": 537,
+                "rate": 0.2745398773006135
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.46830265848670755,
+            "rows": 1956
+          },
+          "wf_2023_04": {
+            "distribution": {
+              "DOWN": {
+                "count": 2342,
+                "rate": 0.2710648148148148
+              },
+              "FLAT": {
+                "count": 3906,
+                "rate": 0.45208333333333334
+              },
+              "UP": {
+                "count": 2392,
+                "rate": 0.27685185185185185
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.45208333333333334,
+            "rows": 8640
+          },
+          "wf_2023_05": {
+            "distribution": {
+              "DOWN": {
+                "count": 2528,
+                "rate": 0.2831541218637993
+              },
+              "FLAT": {
+                "count": 3925,
+                "rate": 0.43962813620071683
+              },
+              "UP": {
+                "count": 2475,
+                "rate": 0.2772177419354839
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.43962813620071683,
+            "rows": 8928
+          },
+          "wf_2023_06": {
+            "distribution": {
+              "DOWN": {
+                "count": 2292,
+                "rate": 0.2652777777777778
+              },
+              "FLAT": {
+                "count": 3946,
+                "rate": 0.456712962962963
+              },
+              "UP": {
+                "count": 2402,
+                "rate": 0.27800925925925923
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.456712962962963,
+            "rows": 8640
+          },
+          "wf_2023_07": {
+            "distribution": {
+              "DOWN": {
+                "count": 2492,
+                "rate": 0.27912186379928317
+              },
+              "FLAT": {
+                "count": 3969,
+                "rate": 0.44455645161290325
+              },
+              "UP": {
+                "count": 2467,
+                "rate": 0.27632168458781364
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.44455645161290325,
+            "rows": 8928
+          },
+          "wf_2023_08": {
+            "distribution": {
+              "DOWN": {
+                "count": 2511,
+                "rate": 0.28125
+              },
+              "FLAT": {
+                "count": 4037,
+                "rate": 0.45217293906810035
+              },
+              "UP": {
+                "count": 2380,
+                "rate": 0.26657706093189965
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.45217293906810035,
+            "rows": 8928
+          },
+          "wf_2023_09": {
+            "distribution": {
+              "DOWN": {
+                "count": 2359,
+                "rate": 0.2730324074074074
+              },
+              "FLAT": {
+                "count": 3842,
+                "rate": 0.4446759259259259
+              },
+              "UP": {
+                "count": 2439,
+                "rate": 0.28229166666666666
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4446759259259259,
+            "rows": 8640
+          },
+          "wf_2023_10": {
+            "distribution": {
+              "DOWN": {
+                "count": 2354,
+                "rate": 0.26366487455197135
+              },
+              "FLAT": {
+                "count": 4015,
+                "rate": 0.44970878136200715
+              },
+              "UP": {
+                "count": 2559,
+                "rate": 0.2866263440860215
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.44970878136200715,
+            "rows": 8928
+          },
+          "wf_2023_11": {
+            "distribution": {
+              "DOWN": {
+                "count": 2488,
+                "rate": 0.287962962962963
+              },
+              "FLAT": {
+                "count": 3577,
+                "rate": 0.41400462962962964
+              },
+              "UP": {
+                "count": 2575,
+                "rate": 0.2980324074074074
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41400462962962964,
+            "rows": 8640
+          },
+          "wf_2023_12": {
+            "distribution": {
+              "DOWN": {
+                "count": 2562,
+                "rate": 0.28696236559139787
+              },
+              "FLAT": {
+                "count": 3691,
+                "rate": 0.413418458781362
+              },
+              "UP": {
+                "count": 2675,
+                "rate": 0.29961917562724016
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.413418458781362,
+            "rows": 8928
+          },
+          "wf_2024_01": {
+            "distribution": {
+              "DOWN": {
+                "count": 2588,
+                "rate": 0.28987455197132617
+              },
+              "FLAT": {
+                "count": 3676,
+                "rate": 0.4117383512544803
+              },
+              "UP": {
+                "count": 2664,
+                "rate": 0.29838709677419356
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4117383512544803,
+            "rows": 8928
+          },
+          "wf_2024_02": {
+            "distribution": {
+              "DOWN": {
+                "count": 2361,
+                "rate": 0.2826867816091954
+              },
+              "FLAT": {
+                "count": 3446,
+                "rate": 0.41259578544061304
+              },
+              "UP": {
+                "count": 2545,
+                "rate": 0.30471743295019155
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.41259578544061304,
+            "rows": 8352
+          },
+          "wf_2024_03": {
+            "distribution": {
+              "DOWN": {
+                "count": 2031,
+                "rate": 0.2938368055555556
+              },
+              "FLAT": {
+                "count": 2793,
+                "rate": 0.4040798611111111
+              },
+              "UP": {
+                "count": 2088,
+                "rate": 0.3020833333333333
+              }
+            },
+            "majority_class": "FLAT",
+            "majority_rate": 0.4040798611111111,
+            "rows": 6912
+          }
+        },
+        "entropy_bits": 1.5532180336046384,
+        "fixed_label_distribution_h1": {
+          "DOWN": {
+            "count": 27243,
+            "rate": 0.258452868852459
+          },
+          "FLAT": {
+            "count": 50140,
+            "rate": 0.47567547055251974
+          },
+          "UP": {
+            "count": 28025,
+            "rate": 0.26587166059502126
+          }
+        },
+        "flat_rate_reduction_vs_fixed_h1": 0.041504912022694795,
+        "invalid_rows": 60,
+        "majority_class": "FLAT",
+        "majority_rate": 0.43417055852982495,
+        "timeframe": "5m",
+        "valid_rows": 105348,
+        "warmup_rows": 60
+      }
+    }
+  },
+  "limitations": [
+    "V9.11 analyse uniquement l'echec des labels V9.6/V9.10 et propose un plan de redesign.",
+    "V9.11 ne cree aucun nouveau label full, aucun dataset, aucun modele ML, aucun walk-forward et aucun backtest.",
+    "La recommandation V9.11 ne justifie aucun trading, paper live, ordre, strategie ou signal actionnable."
+  ],
+  "ml_analysis_v9_8": {
+    "best_cases": [
+      {
+        "accuracy": 0.3707289293849658,
+        "balanced_accuracy": 0.36614554574760766,
+        "macro_f1": 0.32134886880825075,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      {
+        "accuracy": 0.3904382470119522,
+        "balanced_accuracy": 0.337867283538091,
+        "macro_f1": 0.26595981382548023,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      {
+        "accuracy": 0.42606823011536127,
+        "balanced_accuracy": 0.3416398503114519,
+        "macro_f1": 0.2449536022427524,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      {
+        "accuracy": 0.29294653014789535,
+        "balanced_accuracy": 0.3584381095298255,
+        "macro_f1": 0.23831670763312948,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      {
+        "accuracy": 0.4355741499696418,
+        "balanced_accuracy": 0.3378663849607036,
+        "macro_f1": 0.22505362623705327,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1m"
+      }
+    ],
+    "close_to_shuffled_labels": {
+      "by_model": {
+        "decision_tree_depth_2": 6,
+        "logistic_regression": 8
+      },
+      "by_timeframe": {
+        "15m": 4,
+        "1h": 2,
+        "1m": 4,
+        "5m": 4
+      },
+      "count": 14
+    },
+    "decision": "offline_ml_completed_but_close_to_shuffled_labels",
+    "learned_vs_baselines": {
+      "baseline_cases": 16,
+      "learned_cases": 16,
+      "weak_learned_cases_count": 16,
+      "weak_learned_cases_examples": [
+        {
+          "best_baseline_macro_f1": 0.32368122187516285,
+          "macro_f1": 0.19459277917716203,
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "timeframe": "15m"
+        },
+        {
+          "best_baseline_macro_f1": 0.33690368889532235,
+          "macro_f1": 0.1958458961474037,
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "timeframe": "15m"
+        },
+        {
+          "best_baseline_macro_f1": 0.32368122187516285,
+          "macro_f1": 0.26595981382548023,
+          "model_name": "logistic_regression",
+          "split": "test",
+          "timeframe": "15m"
+        },
+        {
+          "best_baseline_macro_f1": 0.33690368889532235,
+          "macro_f1": 0.21726322073797957,
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "timeframe": "15m"
+        },
+        {
+          "best_baseline_macro_f1": 0.3447719104418325,
+          "macro_f1": 0.21398223252220935,
+          "model_name": "decision_tree_depth_2",
+          "split": "test",
+          "timeframe": "1h"
+        },
+        {
+          "best_baseline_macro_f1": 0.33585969973709,
+          "macro_f1": 0.21813537675606642,
+          "model_name": "decision_tree_depth_2",
+          "split": "validation",
+          "timeframe": "1h"
+        },
+        {
+          "best_baseline_macro_f1": 0.3447719104418325,
+          "macro_f1": 0.23831670763312948,
+          "model_name": "logistic_regression",
+          "split": "test",
+          "timeframe": "1h"
+        },
+        {
+          "best_baseline_macro_f1": 0.33585969973709,
+          "macro_f1": 0.32134886880825075,
+          "model_name": "logistic_regression",
+          "split": "validation",
+          "timeframe": "1h"
+        }
+      ]
+    },
+    "metric_floor_assessment": "Les meilleurs learned cases restent trop faibles et trop proches des labels melanges pour justifier une suite backtest.",
+    "models_learning_nothing": [
+      "decision_tree_depth_2",
+      "logistic_regression"
+    ],
+    "worst_cases": [
+      {
+        "accuracy": 0.4077218612151971,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.1930882666756517,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      {
+        "accuracy": 0.41220830961866817,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.19459277917716203,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      {
+        "accuracy": 0.415587495849343,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.19571967919933875,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "5m"
+      },
+      {
+        "accuracy": 0.41596698448840186,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.1958458961474037,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      {
+        "accuracy": 0.42651411657559196,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.19932697551308143,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1m"
+      }
+    ]
+  },
+  "next_step_recommendation": "V9.12 - Label Redesign Candidate: horizon extension + event-based diagnostic, sans ML ni backtest dans la phase de design.",
+  "packaging_observations": {
+    "add_internal_timeouts_to_pytest_collect_only": true,
+    "add_internal_timeouts_to_smoke_import_subprocesses": true,
+    "do_not_reintroduce_sha256_sidecars": true,
+    "do_not_reintroduce_zip_fingerprints": true,
+    "exclude_icon_carriage_return_files_from_future_zips": true,
+    "exclude_icon_files_from_future_zips": true
+  },
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "labels_generated": false,
+    "ml_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "status": "PASS",
+  "v9_11_decision": {
+    "confidence": "medium",
+    "decision": "label_redesign_plan_horizon_extension",
+    "explicit_no_backtest_statement": "Aucun backtest n'est justifie par V9.11.",
+    "explicit_no_trading_statement": "V9.11 n'autorise aucun trading, paper live, ordre, strategie ou signal actionnable.",
+    "justification": "Le label volatility-normalized ameliore la distribution mais reste non falsifie face aux labels melanges en static split et walk-forward.",
+    "next_step_recommendation": "V9.12 - Label Redesign Candidate: horizon extension + event-based diagnostic, sans ML ni backtest dans la phase de design.",
+    "primary_evidence": {
+      "accepted_future_designs": [
+        "longer_horizon_labels",
+        "event_based_labels"
+      ],
+      "no_clear_edge_vs_shuffled_labels_count": 76,
+      "top_hypotheses": [
+        "H1",
+        "H2",
+        "H4",
+        "H8"
+      ],
+      "unstable_folds_count": 20,
+      "weak_folds_count": 22
+    }
+  },
+  "version": "V9.11",
+  "walk_forward_analysis_v9_9": {
+    "comparison_to_static_split_v9_8": {
+      "available": true,
+      "comparison_type": "descriptive_static_split_vs_strict_walk_forward",
+      "v9_8_decision": "offline_ml_completed_but_close_to_shuffled_labels",
+      "v9_9_aggregate_metric_keys": [
+        "15m.decision_tree_depth_2",
+        "15m.logistic_regression",
+        "15m.majority_class_baseline",
+        "15m.random_seeded_baseline",
+        "1h.decision_tree_depth_2",
+        "1h.logistic_regression",
+        "1h.majority_class_baseline",
+        "1h.random_seeded_baseline",
+        "1m.decision_tree_depth_2",
+        "1m.logistic_regression",
+        "1m.majority_class_baseline",
+        "1m.random_seeded_baseline",
+        "5m.decision_tree_depth_2",
+        "5m.logistic_regression",
+        "5m.majority_class_baseline",
+        "5m.random_seeded_baseline"
+      ],
+      "warning": "V9.8 static split and V9.9 strict walk-forward are not identical validation designs."
+    },
+    "decision": "strict_walk_forward_completed_but_close_to_shuffled_labels",
+    "fold_concentration_examples": [
+      {
+        "timeframe_model": "15m.decision_tree_depth_2",
+        "warnings": [
+          "weak folds present"
+        ]
+      },
+      {
+        "timeframe_model": "15m.logistic_regression",
+        "warnings": [
+          "test macro_f1 varies across folds"
+        ]
+      },
+      {
+        "timeframe_model": "15m.majority_class_baseline",
+        "warnings": [
+          "weak folds present"
+        ]
+      },
+      {
+        "timeframe_model": "15m.random_seeded_baseline",
+        "warnings": [
+          "weak folds present"
+        ]
+      },
+      {
+        "timeframe_model": "1h.logistic_regression",
+        "warnings": [
+          "test accuracy varies across folds",
+          "weak folds present"
+        ]
+      },
+      {
+        "timeframe_model": "1m.decision_tree_depth_2",
+        "warnings": [
+          "weak folds present"
+        ]
+      },
+      {
+        "timeframe_model": "1m.logistic_regression",
+        "warnings": [
+          "test macro_f1 varies across folds"
+        ]
+      },
+      {
+        "timeframe_model": "1m.majority_class_baseline",
+        "warnings": [
+          "weak folds present"
+        ]
+      }
+    ],
+    "fold_concentration_warnings_count": 11,
+    "interpretation": "Le walk-forward strict confirme que la proximite aux labels melanges n'est pas un artefact du static split.",
+    "no_clear_by_model": {
+      "decision_tree_depth_2": 36,
+      "logistic_regression": 40
+    },
+    "no_clear_by_timeframe": {
+      "15m": 20,
+      "1h": 20,
+      "1m": 20,
+      "5m": 16
+    },
+    "no_clear_edge_vs_shuffled_labels_count": 76,
+    "unstable_folds_count": 20,
+    "unstable_folds_examples": [
+      {
+        "timeframe_model": "15m.logistic_regression",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ]
+      },
+      {
+        "timeframe_model": "1h.logistic_regression",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ]
+      },
+      {
+        "timeframe_model": "1m.logistic_regression",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ]
+      },
+      {
+        "timeframe_model": "5m.logistic_regression",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ]
+      }
+    ],
+    "v9_10_summary": {
+      "decision": "strict_walk_forward_completed_but_close_to_shuffled_labels",
+      "no_clear_edge_vs_shuffled_labels_count": 76,
+      "unstable_folds_count": 20,
+      "walk_forward_clean_enough_for_backtest_candidate": false,
+      "warnings_count": 0,
+      "weak_folds_count": 22
+    },
+    "weak_folds_count": 22,
+    "weak_folds_examples": [
+      {
+        "timeframe_model": "15m.decision_tree_depth_2",
+        "weak_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ]
+      },
+      {
+        "timeframe_model": "15m.majority_class_baseline",
+        "weak_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ]
+      },
+      {
+        "timeframe_model": "15m.random_seeded_baseline",
+        "weak_folds": [
+          "fold_04"
+        ]
+      },
+      {
+        "timeframe_model": "1h.logistic_regression",
+        "weak_folds": [
+          "fold_02"
+        ]
+      },
+      {
+        "timeframe_model": "1m.decision_tree_depth_2",
+        "weak_folds": [
+          "fold_05"
+        ]
+      },
+      {
+        "timeframe_model": "1m.majority_class_baseline",
+        "weak_folds": [
+          "fold_05"
+        ]
+      },
+      {
+        "timeframe_model": "5m.decision_tree_depth_2",
+        "weak_folds": [
+          "fold_02",
+          "fold_03",
+          "fold_05"
+        ]
+      },
+      {
+        "timeframe_model": "5m.majority_class_baseline",
+        "weak_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ]
+      }
+    ]
+  },
+  "window": {
+    "total_days": 366,
+    "window_end": "2024-03-24",
+    "window_start": "2023-03-25"
+  }
+}

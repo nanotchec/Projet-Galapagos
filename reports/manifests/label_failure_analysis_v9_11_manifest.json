@@ -1,0 +1,159 @@
+{
+  "created_at_utc": "2026-05-27T12:59:13Z",
+  "decision_type": "label_failure_analysis_and_redesign_plan",
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "inputs": {
+    "latest_metrics": {
+      "path": "reports/current/latest_metrics.json",
+      "sha256": "f458e621c29a4be0aa1a2b75b7f4cb08bb1dfc76acbfb09f0af88eb3fa0d7c40"
+    },
+    "latest_summary": {
+      "path": "reports/current/latest_summary.md",
+      "sha256": "718acaa0784e9f2be557040abf80b05ec94e71fe891c9e829ee53c777e4af531"
+    },
+    "project_state": {
+      "path": "reports/PROJECT_STATE.json",
+      "sha256": "14549f4595bd8651dde09b6db341043f353b2b3d9bd4c26f2bfdfb0f0f506fd5"
+    },
+    "v9_10_decision": {
+      "path": "reports/research_decisions/refined_volnorm_research_decision_gate_v9_10.json",
+      "sha256": "b1d756da4cc00a6f6e45c6772da924ef0f3bf64fb63cfb350a17267e0554cab4"
+    },
+    "v9_10_manifest": {
+      "path": "reports/manifests/refined_volnorm_research_decision_gate_v9_10_manifest.json",
+      "sha256": "2093cb061232b950ad74b8eb4eca8e94b11df3bc2cb3db003362e2843b013026"
+    },
+    "v9_4_decision": {
+      "path": "reports/research_decisions/refined_research_decision_gate_v9_4.json",
+      "sha256": "22f9cc78c248fddd5e52f0f7f3363ca576c01869b52d880e1ab2de0cbf926506"
+    },
+    "v9_5_label_audit": {
+      "path": "reports/research_decisions/alternative_label_design_audit_v9_5.json",
+      "sha256": "42f94cb4eaa1faabb5492fcc9cf6f1193d8b8d12fc415f39fddb7bd616dacdeb"
+    },
+    "v9_5_manifest": {
+      "path": "reports/manifests/alternative_label_design_audit_v9_5_manifest.json",
+      "sha256": "c05f90da2a79a4fbdf300a295a6abed49aaae4a045e0608b3b46cf79a5f9ec38"
+    },
+    "v9_6_labels": {
+      "path": "reports/labels/refined_volatility_normalized_labels_v9_6.json",
+      "sha256": "7f70df1c78e5aff9388f6f3cb03205d8c70324100ed821c153293bc185d27b11"
+    },
+    "v9_6_manifest": {
+      "path": "reports/manifests/refined_volatility_normalized_labels_v9_6_manifest.json",
+      "sha256": "3a1ce6c933e6af15a42cd31f64564bb10f76518787a51bd497f217e088a63f50"
+    },
+    "v9_7_dataset": {
+      "path": "reports/datasets/refined_volnorm_labels_dataset_v9_7.json",
+      "sha256": "dcd9969fb7209713e407791294a78dbbb47ebe33d0851516b3c5dd6e8a880c31"
+    },
+    "v9_7_manifest": {
+      "path": "reports/manifests/refined_volnorm_labels_dataset_v9_7_manifest.json",
+      "sha256": "dcd9969fb7209713e407791294a78dbbb47ebe33d0851516b3c5dd6e8a880c31"
+    },
+    "v9_8_manifest": {
+      "path": "reports/manifests/refined_volnorm_labels_offline_ml_v9_8_manifest.json",
+      "sha256": "2e2f666993ac80f34e8f706fdb9e0d41149da7d405b3da619f5916a5838bbc07"
+    },
+    "v9_8_ml": {
+      "path": "reports/ml/refined_volnorm_labels_offline_ml_v9_8.json",
+      "sha256": "2e2f666993ac80f34e8f706fdb9e0d41149da7d405b3da619f5916a5838bbc07"
+    },
+    "v9_8_scores": {
+      "path": "reports/ml/refined_volnorm_labels_offline_scores_v9_8.json",
+      "sha256": "847de49724105ba1b1d13270a3a812965348b39a86e495748789c69ecb1b12b2"
+    },
+    "v9_9_manifest": {
+      "path": "reports/manifests/refined_volnorm_strict_walk_forward_v9_9_manifest.json",
+      "sha256": "625fb9ca91c8e1d0098f57dd664b0dd44cabc8b2d6537e3d370b8c2452ad278d"
+    },
+    "v9_9_scores": {
+      "path": "reports/ml/refined_volnorm_strict_walk_forward_scores_v9_9.json",
+      "sha256": "17068093fd8b3a0dc67005a491ce38d422c7254e454af543256baed6d9c72fa0"
+    },
+    "v9_9_walk_forward": {
+      "path": "reports/ml/refined_volnorm_strict_walk_forward_v9_9.json",
+      "sha256": "625fb9ca91c8e1d0098f57dd664b0dd44cabc8b2d6537e3d370b8c2452ad278d"
+    }
+  },
+  "limitations": [
+    "V9.11 analyse uniquement l'echec des labels V9.6/V9.10 et propose un plan de redesign.",
+    "V9.11 ne cree aucun nouveau label full, aucun dataset, aucun modele ML, aucun walk-forward et aucun backtest.",
+    "La recommandation V9.11 ne justifie aucun trading, paper live, ordre, strategie ou signal actionnable."
+  ],
+  "packaging_observations": {
+    "add_internal_timeouts_to_pytest_collect_only": true,
+    "add_internal_timeouts_to_smoke_import_subprocesses": true,
+    "do_not_reintroduce_sha256_sidecars": true,
+    "do_not_reintroduce_zip_fingerprints": true,
+    "exclude_icon_carriage_return_files_from_future_zips": true,
+    "exclude_icon_files_from_future_zips": true
+  },
+  "report_path": "reports/research_decisions/label_failure_analysis_v9_11.json",
+  "report_sha256": "234f474f41aba8da7e5e76592defa0773beeee44d2abd6d1312d4e335a03b7a0",
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "labels_generated": false,
+    "ml_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "status": "PASS",
+  "v9_11_decision": {
+    "confidence": "medium",
+    "decision": "label_redesign_plan_horizon_extension",
+    "explicit_no_backtest_statement": "Aucun backtest n'est justifie par V9.11.",
+    "explicit_no_trading_statement": "V9.11 n'autorise aucun trading, paper live, ordre, strategie ou signal actionnable.",
+    "justification": "Le label volatility-normalized ameliore la distribution mais reste non falsifie face aux labels melanges en static split et walk-forward.",
+    "next_step_recommendation": "V9.12 - Label Redesign Candidate: horizon extension + event-based diagnostic, sans ML ni backtest dans la phase de design.",
+    "primary_evidence": {
+      "accepted_future_designs": [
+        "longer_horizon_labels",
+        "event_based_labels"
+      ],
+      "no_clear_edge_vs_shuffled_labels_count": 76,
+      "top_hypotheses": [
+        "H1",
+        "H2",
+        "H4",
+        "H8"
+      ],
+      "unstable_folds_count": 20,
+      "weak_folds_count": 22
+    }
+  },
+  "version": "V9.11"
+}
