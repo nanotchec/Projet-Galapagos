@@ -1,0 +1,82 @@
+{
+  "batch_end": "2024-12-07",
+  "batch_start": "2024-10-09",
+  "commands": [
+    {
+      "command": "git branch --show-current",
+      "status": "PASS",
+      "summary": "main"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "PASS",
+      "summary": "## main...origin/main [ahead 5]"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "status": "PASS",
+      "summary": "5515 tests collected in 2.02s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_aggtrades_post_v9_batch3_collection_v9_24.py",
+      "status": "PASS",
+      "summary": "13 passed in 0.53s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_aggtrades_post_v9_batch3_collection_v9_24_validator.py",
+      "status": "PASS",
+      "summary": "9 passed in 0.05s"
+    },
+    {
+      "command": "python scripts/run_aggtrades_post_v9_batch3_collection_v9_24.py --mode collect --start-date 2024-10-09 --end-date 2024-12-07 --max-downloads 60",
+      "status": "PASS",
+      "summary": "60 downloaded, 60 normalized, 60 complete, 0 failed"
+    },
+    {
+      "command": "python scripts/validate_aggtrades_post_v9_batch3_collection_v9_24.py",
+      "status": "PASS",
+      "summary": "passed=true, errors=[]"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_24.py",
+      "status": "PASS",
+      "summary": "ZIP PASS"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_24.py --zip projet-galapagos-v9.24-audit-lite.zip",
+      "status": "PASS",
+      "summary": "passed=true, errors=[]"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_24.py --zip projet-galapagos-v9.24-audit-lite.zip",
+      "status": "PASS",
+      "summary": "passed=true, errors=[]"
+    }
+  ],
+  "created_at_utc": "2026-05-27T23:05:47Z",
+  "days_attempted": 60,
+  "days_complete": 60,
+  "days_downloaded": 60,
+  "days_failed": 0,
+  "days_normalized": 60,
+  "days_quarantined": 0,
+  "days_requested": 60,
+  "decision": "aggtrades_post_v9_batch3_collection_success",
+  "local_file_coverage_end": "2024-12-07",
+  "local_file_coverage_start": "2024-05-05",
+  "mode": "collect",
+  "network_scope": "public_archive_read_only",
+  "network_used": true,
+  "raw_bytes_total": 1553341925,
+  "reported_cumulative_coverage_end": "2024-12-07",
+  "reported_cumulative_coverage_start": "2024-05-05",
+  "runtime_seconds": 1251.3,
+  "sidecars_created": false,
+  "silver_bytes_total": 3004532928,
+  "status": "PASS",
+  "total_rows": 124227690,
+  "version": "V9.24",
+  "zip_audit_passed": true,
+  "zip_fingerprints_created": false,
+  "zip_smoke_passed": true
+}
