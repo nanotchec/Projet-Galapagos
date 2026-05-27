@@ -1,11 +1,16 @@
-# Synthese courante - V9.17
+# Synthese courante - V9.18
 
-- Derniere version validee : `V9.16`.
-- Candidate : `V9.17`.
+- Derniere version validee : `V9.17`.
+- Candidate : `V9.18`.
 - Statut : `pending_external_audit`.
-- Direction : plan de collecte historique derivatives.
-- Decision V9.17 : `collection_plan_priority_aggtrades_post_v9_and_funding`.
-- Recommandation : V9.18 - AggTrades Post-V9 Collection Pack.
-- Aucun telechargement, aucune ingestion, aucun feature store full, dataset, ML, walk-forward, backtest, strategie ou signal actionnable.
-- Aucun trading, paper live, ordre, modele persistant, API privee ou cle API.
-- Aucun reseau, aucun sidecar et aucune empreinte ZIP.
+- Direction : pack de collecte aggTrades post-V9.
+- Mode execute : `dry-run`.
+- Decision V9.18 : `aggtrades_post_v9_collection_pack_ready_dry_run_only`.
+- Jours attendus : `772`.
+- Jours deja presents : `0`.
+- Jours manquants : `772`.
+- Recommandation : V9.19 - AggTrades Post-V9 Collection Execution.
+- Aucun label, dataset supervise, ML, walk-forward, backtest, strategie ou signal actionnable.
+- Aucun trading, paper live, ordre, modele persistant, API privee, cle API, client exchange authentifie ou websocket live.
+- Aucun sidecar et aucune empreinte ZIP.
+- Aucun reseau, aucun telechargement et aucune ingestion executee.
