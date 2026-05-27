@@ -3,22 +3,48 @@
   "api_key_used": false,
   "backtest_performed": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.5",
-  "dataset_full_local_available": true,
-  "direction": "alternative_label_design_audit",
-  "external_validation_required": true,
-  "label_shuffle_no_clear_edge_cases": 21,
-  "labels_full_local_available": true,
-  "last_validated_version": "V9.4.1",
+  "candidate_version": "V9.6_to_V9.10",
+  "dataset_decision_v9_7": "dataset_created_with_volnorm_labels",
+  "dataset_row_counts": {
+    "15m": 35136,
+    "1h": 8784,
+    "1m": 527040,
+    "5m": 105408
+  },
+  "direction": "refined_volatility_normalized_labels_research_chain",
+  "folds_count": {
+    "15m": 5,
+    "1h": 5,
+    "1m": 5,
+    "5m": 5
+  },
+  "label_decision_v9_6": "label_factory_candidate_created_volatility_normalized",
+  "last_validated_version": "V9.5",
+  "ml_decision_v9_8": "offline_ml_completed_but_close_to_shuffled_labels",
   "orders_enabled": false,
   "paper_live_enabled": false,
   "persistent_model_created": false,
   "private_endpoint_used": false,
-  "recommended_next_action": "Refined Label Factory Candidate",
-  "recommended_next_version": "V9.6",
-  "source_decision_version": "V9.4",
-  "source_research_decision": "backtest_not_justified_refine_labels",
+  "research_decision_v9_10": "backtest_not_justified_refine_labels_again",
+  "score_row_counts_v9_8": {
+    "15m": 140304,
+    "1h": 34896,
+    "1m": 2107920,
+    "5m": 421392
+  },
+  "score_row_counts_v9_9": {
+    "15m": 585536,
+    "1h": 145184,
+    "1m": 8805440,
+    "5m": 1759808
+  },
+  "selected_label_candidate": 0.5,
+  "sidecars_created": false,
   "strategy_enabled": false,
+  "total_days": 366,
   "trading_enabled": false,
-  "v9_5_decision": "label_redesign_candidate_volatility_normalized"
+  "walk_forward_decision_v9_9": "strict_walk_forward_completed_but_close_to_shuffled_labels",
+  "window_end": "2024-03-24",
+  "window_start": "2023-03-25",
+  "zip_fingerprints_created": false
 }

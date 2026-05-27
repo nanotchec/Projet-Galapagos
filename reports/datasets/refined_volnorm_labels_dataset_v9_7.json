@@ -1,0 +1,364 @@
+{
+  "created_at_utc": "2026-05-27T12:24:45.380468Z",
+  "dataset_columns": [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "available_ts",
+    "decision_ts",
+    "feature_available_ts",
+    "label_available_ts",
+    "dataset_run_id",
+    "dataset_schema_version",
+    "source_features_sha256",
+    "source_labels_sha256",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "quote_volume",
+    "trade_count_ohlcv",
+    "agg_trade_count",
+    "agg_trade_quantity_sum",
+    "agg_trade_quote_quantity_sum",
+    "agg_trade_vwap",
+    "taker_buy_ratio_count",
+    "taker_buy_ratio_quantity",
+    "taker_imbalance_quantity",
+    "agg_trades_per_minute",
+    "trade_flow_pressure",
+    "hour_utc",
+    "day_of_week_utc",
+    "warmup_row",
+    "refined_feature_null_count",
+    "refined_feature_error_count",
+    "label_start_ts",
+    "label_end_ts",
+    "label_run_id",
+    "label_schema_version",
+    "source_dataset_version",
+    "source_dataset_path",
+    "source_label_design_version",
+    "target_name",
+    "horizon_name",
+    "horizon_bars",
+    "future_log_return",
+    "causal_vol_window_bars",
+    "causal_vol_min_periods",
+    "causal_realized_vol",
+    "volatility_threshold_multiplier",
+    "volatility_normalized_threshold",
+    "up_down_flat_volnorm_h1",
+    "label_valid_volnorm_h1",
+    "label_invalid_reason",
+    "label_null_count",
+    "label_error_count",
+    "split",
+    "split_order",
+    "walk_forward_group",
+    "dataset_null_count",
+    "dataset_error_count"
+  ],
+  "dataset_run_id": "v9_7_20260527T122440Z_e31e53cb",
+  "dataset_schema_version": "DATASET_COLUMNS_V9_7",
+  "decision": "dataset_created_with_volnorm_labels",
+  "feature_columns": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "quote_volume",
+    "trade_count_ohlcv",
+    "agg_trade_count",
+    "agg_trade_quantity_sum",
+    "agg_trade_quote_quantity_sum",
+    "agg_trade_vwap",
+    "taker_buy_ratio_count",
+    "taker_buy_ratio_quantity",
+    "taker_imbalance_quantity",
+    "agg_trades_per_minute",
+    "trade_flow_pressure",
+    "hour_utc",
+    "day_of_week_utc",
+    "warmup_row",
+    "refined_feature_null_count",
+    "refined_feature_error_count"
+  ],
+  "feature_columns_count": 21,
+  "input_features": {
+    "15m": {
+      "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/features.parquet",
+      "rows": 35136,
+      "sha256": "5f5db8d7ebc25e9a9afa1fe8b4ea3cff75b798ccbfabff7faac6e6343fd2e6a7"
+    },
+    "1h": {
+      "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/features.parquet",
+      "rows": 8784,
+      "sha256": "34bc29a6a6f2afed5702636f577d6a184ef90ff8392a2124e0536530a5a02c60"
+    },
+    "1m": {
+      "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/features.parquet",
+      "rows": 527040,
+      "sha256": "2cb272ca799c378a85257681ce10b34d9bb57e91a66f652916d84c465c6b5e6f"
+    },
+    "5m": {
+      "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/features.parquet",
+      "rows": 105408,
+      "sha256": "759c9720d5721163b41ba2be0970faa1068f88a9e296121bbbbfcf1ac89f96ac"
+    }
+  },
+  "input_features_manifest": {
+    "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+    "sha256": "7ea5941ca25c62fc65818d54f2c25c83fafd58f779a1320f56bb165965c4370c"
+  },
+  "input_labels": {
+    "15m": {
+      "path": "data/research/v9_6/labels/refined_volatility_normalized/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 35136,
+      "sha256": "3bab9373a0249d142207a6168cf761c6465768e6b4fe1f59816fa37e7515ee19"
+    },
+    "1h": {
+      "path": "data/research/v9_6/labels/refined_volatility_normalized/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 8784,
+      "sha256": "b3e0930b1d383c473485609a24f03aafed265fad2c32d494a4f3308bd4bb7f50"
+    },
+    "1m": {
+      "path": "data/research/v9_6/labels/refined_volatility_normalized/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 527040,
+      "sha256": "57ed4fb1691a5b7c44b27c68768fab1839baed14dc5c7bbc3bbb24d7a58e5143"
+    },
+    "5m": {
+      "path": "data/research/v9_6/labels/refined_volatility_normalized/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 105408,
+      "sha256": "db3505832e75cde50c4745db1472e3acd30f8a837b434d9192c59274c8089b0f"
+    }
+  },
+  "input_labels_manifest": {
+    "path": "reports/manifests/refined_volatility_normalized_labels_v9_6_manifest.json",
+    "sha256": "3a1ce6c933e6af15a42cd31f64564bb10f76518787a51bd497f217e088a63f50"
+  },
+  "leakage_guard": {
+    "feature_available_ts_lte_decision_ts": true,
+    "label_available_ts_gt_decision_ts": true,
+    "passed": true
+  },
+  "limitations": [
+    "V9.7 assemble uniquement un dataset supervise offline avec features raffinees V9.0 et labels volatility-normalized V9.6.",
+    "V9.7 ne produit aucun modele ML, aucun score ML, aucun backtest, aucune strategie, aucun signal actionnable et aucun ordre."
+  ],
+  "outputs": {
+    "15m": {
+      "bytes": 8457292,
+      "format": "parquet",
+      "path": "data/research/v9_7/datasets/refined_volnorm_labels/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "rows": 35136,
+      "sha256": "e9d4be6de1170c57df603f2630ad8581b62ab8abf026aa2deff68f42351a7b6e"
+    },
+    "1h": {
+      "bytes": 2144102,
+      "format": "parquet",
+      "path": "data/research/v9_7/datasets/refined_volnorm_labels/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+      "rows": 8784,
+      "sha256": "2abe6a6f9342d36005c982ee36457406cac7650e866ed8819effb235486aacb2"
+    },
+    "1m": {
+      "bytes": 99405645,
+      "format": "parquet",
+      "path": "data/research/v9_7/datasets/refined_volnorm_labels/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "rows": 527040,
+      "sha256": "4f080f36bc917e4a948607f291d8569bda8276aad9cd54f701a41457f0f4a3ea"
+    },
+    "5m": {
+      "bytes": 24593049,
+      "format": "parquet",
+      "path": "data/research/v9_7/datasets/refined_volnorm_labels/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "rows": 105408,
+      "sha256": "489c3bdcb54ce3e5b61c65f56db34057e874f8983685910b6e1c077bf82eba3e"
+    }
+  },
+  "quality": {
+    "15m": {
+      "errors": [],
+      "forbidden_columns_present": [],
+      "rows_invalid_labels": 60,
+      "rows_total": 35136,
+      "rows_valid_labels": 35076,
+      "split_counts": {
+        "test": 7028,
+        "train": 21081,
+        "validation": 7027
+      },
+      "timeframe": "15m",
+      "walk_forward_groups": [
+        "wf_2023_03",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03"
+      ],
+      "warnings": []
+    },
+    "1h": {
+      "errors": [],
+      "forbidden_columns_present": [],
+      "rows_invalid_labels": 60,
+      "rows_total": 8784,
+      "rows_valid_labels": 8724,
+      "split_counts": {
+        "test": 1758,
+        "train": 5270,
+        "validation": 1756
+      },
+      "timeframe": "1h",
+      "walk_forward_groups": [
+        "wf_2023_03",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03"
+      ],
+      "warnings": []
+    },
+    "1m": {
+      "errors": [],
+      "forbidden_columns_present": [],
+      "rows_invalid_labels": 60,
+      "rows_total": 527040,
+      "rows_valid_labels": 526980,
+      "split_counts": {
+        "test": 105408,
+        "train": 316224,
+        "validation": 105408
+      },
+      "timeframe": "1m",
+      "walk_forward_groups": [
+        "wf_2023_03",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03"
+      ],
+      "warnings": []
+    },
+    "5m": {
+      "errors": [],
+      "forbidden_columns_present": [],
+      "rows_invalid_labels": 60,
+      "rows_total": 105408,
+      "rows_valid_labels": 105348,
+      "split_counts": {
+        "test": 21083,
+        "train": 63244,
+        "validation": 21081
+      },
+      "timeframe": "5m",
+      "walk_forward_groups": [
+        "wf_2023_03",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03"
+      ],
+      "warnings": []
+    }
+  },
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_enabled": true,
+    "execution_enabled": false,
+    "labels_enabled": true,
+    "ml_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "strategy_enabled": false,
+    "trading_enabled": false
+  },
+  "split_policy": {
+    "shuffle": false,
+    "test_ratio": 0.2,
+    "train_ratio": 0.6,
+    "validation_ratio": 0.2,
+    "walk_forward_group": "calendar_month"
+  },
+  "splits": {
+    "15m": {
+      "bytes": 1211119,
+      "format": "parquet",
+      "path": "data/research/v9_7/datasets/refined_volnorm_labels/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/splits.parquet",
+      "rows": 35136,
+      "sha256": "b7104718570884a8d2ca059d01a672bb669011a92f40176951153a737e5188fe"
+    },
+    "1h": {
+      "bytes": 294576,
+      "format": "parquet",
+      "path": "data/research/v9_7/datasets/refined_volnorm_labels/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/splits.parquet",
+      "rows": 8784,
+      "sha256": "ac06ecb20eebbe7831e2871272162f18a6b45546ae93f56a759a9458bc1de188"
+    },
+    "1m": {
+      "bytes": 14330530,
+      "format": "parquet",
+      "path": "data/research/v9_7/datasets/refined_volnorm_labels/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/splits.parquet",
+      "rows": 527040,
+      "sha256": "4a1be7d4f0d12a498af8b08d72e283d1bc4f23f0e71d7ce342a04aa54572b42a"
+    },
+    "5m": {
+      "bytes": 3553960,
+      "format": "parquet",
+      "path": "data/research/v9_7/datasets/refined_volnorm_labels/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/splits.parquet",
+      "rows": 105408,
+      "sha256": "e4c35afa0eeaaed6e8b86e29bc22a01648614d28b208e306799f86b5f6d29d08"
+    }
+  },
+  "status": "PASS",
+  "target_name": "up_down_flat_volnorm_h1",
+  "version": "V9.7",
+  "window": {
+    "total_days": 366,
+    "window_end": "2024-03-24",
+    "window_start": "2023-03-25"
+  }
+}

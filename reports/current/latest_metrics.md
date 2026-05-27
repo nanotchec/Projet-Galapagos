@@ -1,10 +1,9 @@
-# Latest Metrics V9.5
+# Synthese courante - V9.6_to_V9.10
 
-- Derniere version validee : V9.4.1.
-- Candidate : V9.5.
-- Direction : alternative label design audit.
-- Decision : `label_redesign_candidate_volatility_normalized`.
-- Cas proches des labels melanges herites : `21`.
-- Lecture full dataset locale : `True`.
-
-Aucun backtest, aucune strategie, aucun signal actionnable, aucun ordre, aucun trading reel.
+- Derniere version validee : `V9.5`.
+- Candidate : `V9.6_to_V9.10`.
+- Statut : `pending_external_audit`.
+- Direction : chaine research labels volatility-normalized raffinee.
+- Decision V9.10 : `backtest_not_justified_refine_labels_again`.
+- Aucun trading, paper live, ordre, backtest, strategie, signal actionnable, modele persistant, API privee ou cle API.
+- Aucun sidecar et aucune empreinte ZIP.

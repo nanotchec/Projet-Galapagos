@@ -1,0 +1,12 @@
+{
+  "version_scope": "V9.6_to_V9.10",
+  "zip": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.6-to-v9.10-audit-lite.zip",
+  "passed": true,
+  "errors": [],
+  "tests_inspectable_included": true,
+  "full_tests_executed_in_smoke": false,
+  "full_tests_note": "Les tests full V9.6-V9.10 sont inclus pour inspection; le smoke audit-lite sample-only execute collect-only et les controles de samples.",
+  "sample_only_checks_executed": true,
+  "sidecars_expected": false,
+  "zip_fingerprints_expected": false
+}
