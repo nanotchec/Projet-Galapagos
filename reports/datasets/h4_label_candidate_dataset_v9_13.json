@@ -1,0 +1,552 @@
+{
+  "created_at_utc": "2026-05-27T14:19:01Z",
+  "dataset_columns": [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "available_ts",
+    "decision_ts",
+    "feature_available_ts",
+    "label_available_ts",
+    "dataset_run_id",
+    "dataset_schema_version",
+    "source_features_path",
+    "source_labels_path",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "quote_volume",
+    "trade_count_ohlcv",
+    "agg_trade_count",
+    "agg_trade_quantity_sum",
+    "agg_trade_quote_quantity_sum",
+    "agg_trade_vwap",
+    "taker_buy_ratio_count",
+    "taker_buy_ratio_quantity",
+    "taker_imbalance_quantity",
+    "agg_trades_per_minute",
+    "trade_flow_pressure",
+    "hour_utc",
+    "day_of_week_utc",
+    "warmup_row",
+    "refined_feature_null_count",
+    "refined_feature_error_count",
+    "label_start_ts",
+    "label_end_ts",
+    "label_run_id",
+    "label_schema_version",
+    "source_dataset_version",
+    "source_label_design_version",
+    "candidate_family",
+    "target_name",
+    "horizon_name",
+    "horizon_duration_minutes",
+    "future_log_return",
+    "causal_vol_window_bars",
+    "causal_vol_min_periods",
+    "causal_realized_vol",
+    "volatility_threshold_multiplier",
+    "volatility_normalized_threshold",
+    "up_down_flat_volnorm_h2",
+    "up_down_flat_volnorm_h4",
+    "up_down_flat_volnorm_h8",
+    "event_based_label",
+    "event_horizon_name",
+    "event_threshold_multiplier",
+    "event_valid",
+    "label_valid",
+    "label_invalid_reason",
+    "label_null_count",
+    "label_error_count",
+    "split",
+    "split_order",
+    "walk_forward_group",
+    "dataset_null_count",
+    "dataset_error_count"
+  ],
+  "dataset_run_id": "v9_13_dataset_20260527T141855Z_7a98d77b",
+  "dataset_schema_version": "H4_LABEL_CANDIDATE_DATASET_COLUMNS_V9_13",
+  "decision": "dataset_created_h4_label_candidate",
+  "feature_columns": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "quote_volume",
+    "trade_count_ohlcv",
+    "agg_trade_count",
+    "agg_trade_quantity_sum",
+    "agg_trade_quote_quantity_sum",
+    "agg_trade_vwap",
+    "taker_buy_ratio_count",
+    "taker_buy_ratio_quantity",
+    "taker_imbalance_quantity",
+    "agg_trades_per_minute",
+    "trade_flow_pressure",
+    "hour_utc",
+    "day_of_week_utc",
+    "warmup_row",
+    "refined_feature_null_count",
+    "refined_feature_error_count"
+  ],
+  "feature_columns_count": 21,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "input_features": {
+    "15m": {
+      "bytes": 6174329,
+      "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/features.parquet",
+      "rows": 35136
+    },
+    "1h": {
+      "bytes": 1581648,
+      "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/features.parquet",
+      "rows": 8784
+    },
+    "1m": {
+      "bytes": 71539161,
+      "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/features.parquet",
+      "rows": 527040
+    },
+    "5m": {
+      "bytes": 17805752,
+      "path": "data/research/v9_0/features/refined_ohlcv_trades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/features.parquet",
+      "rows": 105408
+    }
+  },
+  "input_features_manifest": {
+    "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+    "version": "V9.0"
+  },
+  "input_label_report_v9_12": {
+    "decision": "label_redesign_candidate_horizon_event_created_requires_review",
+    "path": "reports/labels/horizon_event_label_redesign_v9_12.json"
+  },
+  "input_labels": {
+    "15m": {
+      "bytes": 3094515,
+      "path": "data/research/v9_12/labels/horizon_event_redesign/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 35136
+    },
+    "1h": {
+      "bytes": 762862,
+      "path": "data/research/v9_12/labels/horizon_event_redesign/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 8784
+    },
+    "1m": {
+      "bytes": 37593532,
+      "path": "data/research/v9_12/labels/horizon_event_redesign/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 527040
+    },
+    "5m": {
+      "bytes": 9094841,
+      "path": "data/research/v9_12/labels/horizon_event_redesign/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 105408
+    }
+  },
+  "input_labels_manifest": {
+    "path": "reports/manifests/horizon_event_label_redesign_v9_12_manifest.json",
+    "version": "V9.12"
+  },
+  "leakage_guard": {
+    "event_based_label_excluded_from_features": true,
+    "feature_available_ts_lte_decision_ts": true,
+    "future_columns_excluded_from_features": true,
+    "label_available_ts_gt_decision_ts": true,
+    "passed": true,
+    "target_name": "up_down_flat_volnorm_h4",
+    "v9_12_label_columns_excluded_from_features": true
+  },
+  "limitations": [
+    "V9.13 assemble uniquement un dataset supervise offline avec le label candidat h4 V9.12.",
+    "V9.13 dataset ne produit aucun score ML, aucun backtest, aucune strategie, aucun signal actionnable et aucun ordre."
+  ],
+  "outputs": {
+    "15m": {
+      "bytes": 8482341,
+      "format": "parquet",
+      "path": "data/research/v9_13/datasets/h4_label_candidate/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "rows": 35136
+    },
+    "1h": {
+      "bytes": 2153921,
+      "format": "parquet",
+      "path": "data/research/v9_13/datasets/h4_label_candidate/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/dataset.parquet",
+      "rows": 8784
+    },
+    "1m": {
+      "bytes": 99578709,
+      "format": "parquet",
+      "path": "data/research/v9_13/datasets/h4_label_candidate/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "rows": 527040
+    },
+    "5m": {
+      "bytes": 24641058,
+      "format": "parquet",
+      "path": "data/research/v9_13/datasets/h4_label_candidate/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/dataset.parquet",
+      "rows": 105408
+    }
+  },
+  "quality": {
+    "15m": {
+      "errors": [],
+      "event_based_label_excluded_from_features": true,
+      "forbidden_columns_present": [],
+      "rows_invalid_labels": 92,
+      "rows_total": 35136,
+      "rows_valid_labels": 35044,
+      "split_counts": {
+        "test": 7028,
+        "train": 21081,
+        "validation": 7027
+      },
+      "split_temporal_order_valid": true,
+      "target_distribution": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 11193,
+            "rate": 0.3193984704942358
+          },
+          "FLAT": {
+            "count": 11803,
+            "rate": 0.3368051592283986
+          },
+          "UP": {
+            "count": 12048,
+            "rate": 0.3437963702773656
+          }
+        },
+        "invalid_rows": 92,
+        "majority_class": "UP",
+        "majority_rate": 0.3437963702773656,
+        "valid_rows": 35044
+      },
+      "timeframe": "15m",
+      "walk_forward_groups": [
+        "wf_2023_03",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03"
+      ],
+      "warnings": []
+    },
+    "1h": {
+      "errors": [],
+      "event_based_label_excluded_from_features": true,
+      "forbidden_columns_present": [],
+      "rows_invalid_labels": 68,
+      "rows_total": 8784,
+      "rows_valid_labels": 8716,
+      "split_counts": {
+        "test": 1758,
+        "train": 5270,
+        "validation": 1756
+      },
+      "split_temporal_order_valid": true,
+      "target_distribution": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 1673,
+            "rate": 0.1919458467186783
+          },
+          "FLAT": {
+            "count": 5189,
+            "rate": 0.5953418999541074
+          },
+          "UP": {
+            "count": 1854,
+            "rate": 0.21271225332721433
+          }
+        },
+        "invalid_rows": 68,
+        "majority_class": "FLAT",
+        "majority_rate": 0.5953418999541074,
+        "valid_rows": 8716
+      },
+      "timeframe": "1h",
+      "walk_forward_groups": [
+        "wf_2023_03",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03"
+      ],
+      "warnings": []
+    },
+    "1m": {
+      "errors": [],
+      "event_based_label_excluded_from_features": true,
+      "forbidden_columns_present": [],
+      "rows_invalid_labels": 540,
+      "rows_total": 527040,
+      "rows_valid_labels": 526500,
+      "split_counts": {
+        "test": 105408,
+        "train": 316224,
+        "validation": 105408
+      },
+      "split_temporal_order_valid": true,
+      "target_distribution": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 235408,
+            "rate": 0.44711870845204177
+          },
+          "FLAT": {
+            "count": 42182,
+            "rate": 0.08011775878442545
+          },
+          "UP": {
+            "count": 248910,
+            "rate": 0.4727635327635328
+          }
+        },
+        "invalid_rows": 540,
+        "majority_class": "UP",
+        "majority_rate": 0.4727635327635328,
+        "valid_rows": 526500
+      },
+      "timeframe": "1m",
+      "walk_forward_groups": [
+        "wf_2023_03",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03"
+      ],
+      "warnings": []
+    },
+    "5m": {
+      "errors": [],
+      "event_based_label_excluded_from_features": true,
+      "forbidden_columns_present": [],
+      "rows_invalid_labels": 156,
+      "rows_total": 105408,
+      "rows_valid_labels": 105252,
+      "split_counts": {
+        "test": 21083,
+        "train": 63244,
+        "validation": 21081
+      },
+      "split_temporal_order_valid": true,
+      "target_distribution": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 41202,
+            "rate": 0.3914604948124501
+          },
+          "FLAT": {
+            "count": 20291,
+            "rate": 0.19278493520313153
+          },
+          "UP": {
+            "count": 43759,
+            "rate": 0.41575456998441834
+          }
+        },
+        "invalid_rows": 156,
+        "majority_class": "UP",
+        "majority_rate": 0.41575456998441834,
+        "valid_rows": 105252
+      },
+      "timeframe": "5m",
+      "walk_forward_groups": [
+        "wf_2023_03",
+        "wf_2023_04",
+        "wf_2023_05",
+        "wf_2023_06",
+        "wf_2023_07",
+        "wf_2023_08",
+        "wf_2023_09",
+        "wf_2023_10",
+        "wf_2023_11",
+        "wf_2023_12",
+        "wf_2024_01",
+        "wf_2024_02",
+        "wf_2024_03"
+      ],
+      "warnings": []
+    }
+  },
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_enabled": true,
+    "execution_enabled": false,
+    "labels_enabled": true,
+    "ml_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "split_policy": {
+    "shuffle": false,
+    "test_ratio": 0.2,
+    "train_ratio": 0.6,
+    "validation_ratio": 0.2,
+    "walk_forward_group": "calendar_month"
+  },
+  "splits": {
+    "15m": {
+      "bytes": 1211119,
+      "format": "parquet",
+      "path": "data/research/v9_13/datasets/h4_label_candidate/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/splits.parquet",
+      "rows": 35136
+    },
+    "1h": {
+      "bytes": 294576,
+      "format": "parquet",
+      "path": "data/research/v9_13/datasets/h4_label_candidate/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/splits.parquet",
+      "rows": 8784
+    },
+    "1m": {
+      "bytes": 14330530,
+      "format": "parquet",
+      "path": "data/research/v9_13/datasets/h4_label_candidate/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/splits.parquet",
+      "rows": 527040
+    },
+    "5m": {
+      "bytes": 3553960,
+      "format": "parquet",
+      "path": "data/research/v9_13/datasets/h4_label_candidate/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/splits.parquet",
+      "rows": 105408
+    }
+  },
+  "status": "PASS",
+  "target_distributions": {
+    "15m": {
+      "class_distribution": {
+        "DOWN": {
+          "count": 11193,
+          "rate": 0.3193984704942358
+        },
+        "FLAT": {
+          "count": 11803,
+          "rate": 0.3368051592283986
+        },
+        "UP": {
+          "count": 12048,
+          "rate": 0.3437963702773656
+        }
+      },
+      "invalid_rows": 92,
+      "majority_class": "UP",
+      "majority_rate": 0.3437963702773656,
+      "valid_rows": 35044
+    },
+    "1h": {
+      "class_distribution": {
+        "DOWN": {
+          "count": 1673,
+          "rate": 0.1919458467186783
+        },
+        "FLAT": {
+          "count": 5189,
+          "rate": 0.5953418999541074
+        },
+        "UP": {
+          "count": 1854,
+          "rate": 0.21271225332721433
+        }
+      },
+      "invalid_rows": 68,
+      "majority_class": "FLAT",
+      "majority_rate": 0.5953418999541074,
+      "valid_rows": 8716
+    },
+    "1m": {
+      "class_distribution": {
+        "DOWN": {
+          "count": 235408,
+          "rate": 0.44711870845204177
+        },
+        "FLAT": {
+          "count": 42182,
+          "rate": 0.08011775878442545
+        },
+        "UP": {
+          "count": 248910,
+          "rate": 0.4727635327635328
+        }
+      },
+      "invalid_rows": 540,
+      "majority_class": "UP",
+      "majority_rate": 0.4727635327635328,
+      "valid_rows": 526500
+    },
+    "5m": {
+      "class_distribution": {
+        "DOWN": {
+          "count": 41202,
+          "rate": 0.3914604948124501
+        },
+        "FLAT": {
+          "count": 20291,
+          "rate": 0.19278493520313153
+        },
+        "UP": {
+          "count": 43759,
+          "rate": 0.41575456998441834
+        }
+      },
+      "invalid_rows": 156,
+      "majority_class": "UP",
+      "majority_rate": 0.41575456998441834,
+      "valid_rows": 105252
+    }
+  },
+  "target_name": "up_down_flat_volnorm_h4",
+  "version": "V9.13",
+  "window": {
+    "total_days": 366,
+    "window_end": "2024-03-24",
+    "window_start": "2023-03-25"
+  }
+}

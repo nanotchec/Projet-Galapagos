@@ -1,6 +1,6 @@
 # Projet Galapagos
 
-- Derniere version validee : V9.11.
-- Candidate : V9.12, label redesign candidate horizon extension + diagnostic event-based.
+- Derniere version validee : V9.12.
+- Candidate : V9.13, dataset + diagnostic ML offline du label h4.
 - Aucun trading, ordre, backtest, strategie, signal actionnable, modele persistant, API privee ou cle API.
-- Aucun sidecar, aucune empreinte ZIP et aucun champ zip_sha256.
+- Aucun sidecar et aucune empreinte ZIP.

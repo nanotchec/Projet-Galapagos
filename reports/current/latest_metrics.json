@@ -1,9 +1,12 @@
 {
   "api_key_used": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.12",
-  "direction": "horizon_extension_event_based_label_redesign",
-  "last_validated_version": "V9.11",
+  "candidate_version": "V9.13",
+  "dataset_decision_v9_13": "dataset_created_h4_label_candidate",
+  "direction": "h4_label_candidate_dataset_ml_diagnostic",
+  "global_decision_v9_13": "h4_candidate_not_ready_refine_labels_again",
+  "last_validated_version": "V9.12",
+  "ml_decision_v9_13": "h4_offline_ml_completed_but_close_to_shuffled_labels",
   "no_actionable_signal": true,
   "no_backtest": true,
   "no_orders": true,
@@ -14,6 +17,5 @@
   "no_trading": true,
   "no_zip_fingerprints": true,
   "private_endpoint_used": false,
-  "recommended_candidate": "up_down_flat_volnorm_h4",
-  "v9_12_decision": "label_redesign_candidate_horizon_event_created_requires_review"
+  "target_name": "up_down_flat_volnorm_h4"
 }
