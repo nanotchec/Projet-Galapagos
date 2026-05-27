@@ -1,0 +1,482 @@
+{
+  "backtest_executed": false,
+  "blockers": [],
+  "checkpoint_policy": {
+    "batch_size_days": 60,
+    "do_not_collect_full_remaining_window_in_one_version": true,
+    "external_audit_after_each_batch": true,
+    "global_coverage_validation_after_final_batch": true,
+    "max_single_version_days": 60,
+    "next_batch_recommended": {
+      "end_date": "2024-10-08",
+      "max_downloads": 60,
+      "start_date": "2024-08-10"
+    },
+    "stop_conditions": [
+      "any day_failed or day_quarantined",
+      "disk free space below review threshold",
+      "raw/silver size sanity check fails",
+      "duplicate aggregate_trade_id appears within a day",
+      "timestamp or available_ts checks fail"
+    ]
+  },
+  "collection_executed": false,
+  "complete_collection_reached": false,
+  "created_at_utc": "2026-05-27T21:52:46Z",
+  "cumulative_metrics": {
+    "average_raw_bytes_per_day": 14995504,
+    "average_rows_per_day": 1171576,
+    "average_runtime_seconds_per_day": 10.954,
+    "average_silver_bytes_per_day": 29479264,
+    "days_collected_total": 97,
+    "raw_bytes_collected_total": 1454563943,
+    "reported_batches": [
+      {
+        "days_complete": 7,
+        "raw_bytes_total": 92848715,
+        "runtime_seconds": 69.524,
+        "silver_bytes_total": 178259093,
+        "total_rows": 6827579,
+        "version": "V9.19"
+      },
+      {
+        "days_complete": 30,
+        "raw_bytes_total": 365946254,
+        "runtime_seconds": 282.14,
+        "silver_bytes_total": 718259780,
+        "total_rows": 27668612,
+        "version": "V9.20"
+      },
+      {
+        "days_complete": 60,
+        "raw_bytes_total": 995768974,
+        "runtime_seconds": 710.887,
+        "silver_bytes_total": 1962969758,
+        "total_rows": 79146750,
+        "version": "V9.21"
+      }
+    ],
+    "rows_collected_total": 113642941,
+    "runtime_seconds_total": 1062.551,
+    "silver_bytes_collected_total": 2859488631
+  },
+  "current_coverage": {
+    "complete_dates_sample": {
+      "first": [
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07"
+      ],
+      "last": [
+        "2024-08-07",
+        "2024-08-08",
+        "2024-08-09"
+      ]
+    },
+    "current_coverage_end": "2024-08-09",
+    "current_coverage_is_continuous": true,
+    "current_coverage_start": "2024-05-05",
+    "days_covered": 97,
+    "days_remaining": 634,
+    "expected_current_coverage_end": "2024-08-09",
+    "expected_current_coverage_start": "2024-05-05",
+    "gaps_detected": [],
+    "local_metadata_only": true,
+    "raw_missing_dates": [],
+    "silver_missing_dates": [],
+    "target_days_total": 731,
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2024-05-05",
+    "v9_19_days": 7,
+    "v9_20_days": 30,
+    "v9_21_days": 60
+  },
+  "dataset_created": false,
+  "direction": "aggtrades_post_v9_multi_batch_completion_plan",
+  "estimated_remaining_volume": {
+    "days_remaining": 634,
+    "estimate_source": "V9.19+V9.20+V9.21 realized averages",
+    "estimated_remaining_raw_bytes": 9507149536,
+    "estimated_remaining_rows": 742779184,
+    "estimated_remaining_runtime_seconds": 6944.836,
+    "estimated_remaining_silver_bytes": 18689853376,
+    "zip_bytes_is_authoritative": false
+  },
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "ingestion_executed": false,
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v9_16_window_diagnostic": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_window_extension_v9_16.json"
+    },
+    "v9_17_collection_plan": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_history_collection_plan_v9_17.json"
+    },
+    "v9_18_collection_pack": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_collection_v9_18.json"
+    },
+    "v9_18_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_post_v9_collection_v9_18_manifest.json"
+    },
+    "v9_19_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_post_v9_pilot_collection_v9_19_manifest.json"
+    },
+    "v9_19_pilot_collection": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_pilot_collection_v9_19.json"
+    },
+    "v9_20_batch_collection": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch_collection_v9_20.json"
+    },
+    "v9_20_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_post_v9_batch_collection_v9_20_manifest.json"
+    },
+    "v9_21_batch_expansion": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch_expansion_v9_21.json"
+    },
+    "v9_21_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_post_v9_batch_expansion_v9_21_manifest.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.22 est un plan de completion multi-batch; aucune collecte, aucun telechargement et aucune ingestion ne sont executes.",
+    "Les estimations de volume et de runtime sont derivees des batches V9.19, V9.20 et V9.21 deja valides.",
+    "La future couverture complete funding-first reste a executer par versions separees et auditees."
+  ],
+  "ml_executed": false,
+  "mode": "plan-only",
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.23 - AggTrades Post-V9 Batch 2 Collection.",
+  "proposed_batches": [
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_01",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2024-10-08",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2024-10-08",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "priority_batch",
+      "start_date": "2024-08-10"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_02",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2024-12-07",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2024-12-07",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2024-10-09"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_03",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2025-02-05",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2025-02-05",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2024-12-08"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_04",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2025-04-06",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2025-04-06",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2025-02-06"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_05",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2025-06-05",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2025-06-05",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2025-04-07"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_06",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2025-08-04",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2025-08-04",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2025-06-06"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_07",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2025-10-03",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2025-10-03",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2025-08-05"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_08",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2025-12-02",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2025-12-02",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2025-10-04"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_09",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2026-01-31",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2026-01-31",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2025-12-03"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_10",
+      "checkpoint_required": true,
+      "disk_warning_level": "medium",
+      "end_date": "2026-04-01",
+      "estimated_raw_bytes": 899730240,
+      "estimated_rows": 70294560,
+      "estimated_runtime_seconds": 657.24,
+      "estimated_silver_bytes": 1768755840,
+      "expected_cumulative_coverage_end": "2026-04-01",
+      "expected_days": 60,
+      "max_downloads": 60,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2026-02-01"
+    },
+    {
+      "audit_required_after_batch": true,
+      "batch_id": "V9.23_batch_11",
+      "checkpoint_required": true,
+      "disk_warning_level": "low",
+      "end_date": "2026-05-05",
+      "estimated_raw_bytes": 509847136,
+      "estimated_rows": 39833584,
+      "estimated_runtime_seconds": 372.436,
+      "estimated_silver_bytes": 1002294976,
+      "expected_cumulative_coverage_end": "2026-05-05",
+      "expected_days": 34,
+      "max_downloads": 34,
+      "recommendation_status": "planned_followup_batch",
+      "start_date": "2026-04-02"
+    }
+  ],
+  "quality_policy": {
+    "cumulative_quality_checks": [
+      "continuous date coverage from target start to latest completed day",
+      "duplicate checks across adjacent days",
+      "aggregate_trade_id continuity warnings across adjacent days",
+      "timestamp continuity and gap warnings across adjacent days",
+      "raw/silver size sanity checks by day and by batch",
+      "manifest per batch plus global coverage manifest"
+    ],
+    "daily_quality_checks": [
+      "raw ZIP present and non-empty",
+      "archive readable with one CSV payload",
+      "normalized silver Parquet present and non-empty",
+      "price and quantity strictly positive",
+      "UTC timestamps and date partition alignment",
+      "available_ts >= event_ts",
+      "no duplicate aggregate_trade_id within a day",
+      "row_valid and invalid_reason audited"
+    ],
+    "forbidden_actions": [
+      "no labels",
+      "no supervised dataset",
+      "no ML",
+      "no walk-forward",
+      "no backtest",
+      "no strategy",
+      "no actionable signal"
+    ]
+  },
+  "remaining_window": {
+    "complete_target_coverage_reached": false,
+    "remaining_days": 634,
+    "remaining_end": "2026-05-05",
+    "remaining_start": "2024-08-10",
+    "target_completion_end": "2026-05-05"
+  },
+  "rollback_policy": {
+    "batch_failure_result": "do not mark cumulative coverage complete; repair or rerun failed days only",
+    "never_overwrite_complete_raw_or_silver_without_explicit_repair_mode": true,
+    "quarantine_partial_or_failed_days": true,
+    "retry_policy": {
+      "do_not_delete_successful_days": true,
+      "resume_from_manifest_and_existing_day_status": true,
+      "retry_failed_public_downloads_only": true
+    },
+    "rollback_plan": [
+      "preserve complete days",
+      "move partial raw files to quarantine",
+      "remove or quarantine partial silver outputs for failed days",
+      "rerun validate-only before any next batch"
+    ],
+    "skip_days_already_complete": true
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_ingestion_executed": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_public_target": {
+    "account_required": false,
+    "api_key_required": false,
+    "exchange_auth_required": false,
+    "global_post_v9_window_end": "2026-05-05",
+    "global_post_v9_window_start": "2024-03-25",
+    "host": "data.binance.vision",
+    "market_type": "spot",
+    "private_endpoint_required": false,
+    "raw_pattern": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-YYYY-MM-DD.zip",
+    "silver_pattern": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date={date}/agg_trades.parquet",
+    "source_name": "Binance public archive aggTrades daily files",
+    "symbol": "BTCUSDT",
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2024-05-05",
+    "trade_source_type": "aggTrades",
+    "v9_22_network_used": false,
+    "venue": "binance",
+    "websocket_live_required": false
+  },
+  "source_version": "V9.21",
+  "status": "PASS",
+  "storage_warning": {
+    "guidance": "Verifier l'espace disque libre avant chaque batch; ne pas lancer plusieurs batches sans checkpoint audit.",
+    "largest_batch_raw_plus_silver_bytes_estimate": 2668486080,
+    "level": "medium",
+    "remaining_raw_plus_silver_bytes_estimate": 28197002912,
+    "storage_review_required_before_full_completion": true
+  },
+  "v9_22_decision": {
+    "blockers": [],
+    "confidence": "high",
+    "decision": "multi_batch_completion_plan_ready_with_disk_warning",
+    "justification": "La couverture actuelle est continue et le plan existe, mais le volume restant impose des checkpoints disque.",
+    "next_recommendation": "V9.23 - AggTrades Post-V9 Batch 2 Collection.",
+    "no_backtest": true,
+    "no_trading": true,
+    "no_walk_forward": true
+  },
+  "version": "V9.22",
+  "walk_forward_executed": false,
+  "warnings": [
+    "V9.22 ne collecte aucun nouveau jour.",
+    "La couverture complete funding-first reste partielle.",
+    "Le volume restant estime justifie une verification disque avant chaque batch."
+  ]
+}
