@@ -1,8 +1,8 @@
 {
-  "last_validated_version": "V9.0_to_V9.3.2",
-  "candidate_version": "V9.4.1",
+  "last_validated_version": "V9.4.1",
+  "candidate_version": "V9.5",
   "candidate_status": "pending_external_audit",
-  "direction": "correction packaging audit-lite sidecars V9.4",
+  "direction": "alternative_label_design_audit",
   "v8_9_1_scope": "packaging_audit_lite_only",
   "v8_9_1_functional_v8_9_results_unchanged": true,
   "v8_9_1_new_dataset_created": false,
@@ -1295,5 +1295,13 @@
   "research_decision_gate_v9_4_status": "PASS",
   "research_decision_v9_4": "backtest_not_justified_refine_labels",
   "source_version": "V9.4",
-  "research_decision_unchanged": true
+  "research_decision_unchanged": true,
+  "source_decision_version": "V9.4",
+  "source_research_decision": "backtest_not_justified_refine_labels",
+  "v9_5_decision": "label_redesign_candidate_volatility_normalized",
+  "recommended_next_version": "V9.6",
+  "recommended_next_action": "Refined Label Factory Candidate",
+  "labels_full_local_available": true,
+  "dataset_full_local_available": true,
+  "label_shuffle_no_clear_edge_cases": 21
 }

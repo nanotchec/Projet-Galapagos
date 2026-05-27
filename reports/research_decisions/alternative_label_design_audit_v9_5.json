@@ -1,0 +1,2409 @@
+{
+  "alternative_label_design_catalog": [
+    {
+      "advantages": "Simple, reproductible, facile a auditer.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si calcule uniquement avec close futur pour le label et publie apres label_end_ts."
+      },
+      "decision_reason": "Le seuil actuel est 0.0005; la dominance FLAT 1m suggere qu'un seuil fixe seul ne suffit pas.",
+      "definition": "Seuils fixes plus stricts que le seuil actuel.",
+      "expected_impact_on_noise_and_imbalance": "Reduit potentiellement les labels directionnels bruites, mais peut augmenter excessivement FLAT.",
+      "family_id": "fixed_stricter_thresholds",
+      "future_experiment_recommendation": "review",
+      "leakage_risks": "Risque faible si aucune feature future n'est introduite.",
+      "risks": "Peut aggraver l'instabilite entre timeframes si le seuil reste non scale.",
+      "temporal_availability": "label_available_ts reste strictement apres decision_ts."
+    },
+    {
+      "advantages": "Aligne mieux les labels entre 1m, 5m, 15m et 1h.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si la volatilite de normalisation n'utilise que des donnees closes avant decision_ts."
+      },
+      "decision_reason": "Candidat prioritaire car le seuil fixe actuel semble non scale entre timeframes.",
+      "definition": "Seuils normalises par volatilite historique causale disponible avant decision_ts.",
+      "expected_impact_on_noise_and_imbalance": "Devrait reduire l'ecart de classe entre timeframes et rendre FLAT plus comparable.",
+      "family_id": "volatility_normalized_thresholds",
+      "future_experiment_recommendation": "accept_for_future_experiment",
+      "leakage_risks": "Risque de leakage si la volatilite inclut la fenetre future du label.",
+      "risks": "Doit verrouiller une volatilite strictement causale pour eviter leakage.",
+      "temporal_availability": "label_available_ts reste strictement apres decision_ts; feature_available_ts <= decision_ts doit rester vrai."
+    },
+    {
+      "advantages": "Controle mieux l'equilibre de classes.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal uniquement si les seuils quantiles sont calcules sur une fenetre passee et figes avant decision_ts."
+      },
+      "decision_reason": "Utile si le redesign volatility-normalized ne stabilise pas les classes.",
+      "definition": "Labels construits par quantiles/tertiles sur une fenetre temporelle definie.",
+      "expected_impact_on_noise_and_imbalance": "Peut reduire le desequilibre, mais complique l'interpretation economique du label.",
+      "family_id": "rolling_quantile_or_tertile_labels",
+      "future_experiment_recommendation": "review_for_future_experiment",
+      "leakage_risks": "Risque moyen : les quantiles doivent exclure validation/test futur.",
+      "risks": "Risque de non-stationnarite et de fuite si les quantiles utilisent le futur.",
+      "temporal_availability": "Disponibilite temporelle acceptable si les seuils sont connus avant la decision."
+    },
+    {
+      "advantages": "Peut reduire le bruit si h1 est trop court.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si le label est seulement disponible apres l'horizon complet."
+      },
+      "decision_reason": "Le taux de transition eleve suggere de tester un horizon un peu plus long, sans le valider ici.",
+      "definition": "Tester des horizons alternatifs a h1, h3, h5 en bars.",
+      "expected_impact_on_noise_and_imbalance": "Peut reduire les transitions rapides, mais peut aussi augmenter l'autocorrelation.",
+      "family_id": "alternative_horizon",
+      "future_experiment_recommendation": "review_for_future_experiment",
+      "leakage_risks": "Risque faible si label_end_ts et label_available_ts sont validates strictement.",
+      "risks": "Un horizon trop long augmente la latence du label et peut diluer le lien aux features.",
+      "temporal_availability": "label_available_ts doit etre decale au-dela du nouvel horizon."
+    },
+    {
+      "advantages": "Peut retirer des mouvements faibles et bruites des classes UP/DOWN.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si base uniquement sur le retour futur du label et disponible apres label_end_ts."
+      },
+      "decision_reason": "Non prioritaire car la classe FLAT est deja trop dominante en 1m.",
+      "definition": "Elargir la classe FLAT autour de zero retour.",
+      "expected_impact_on_noise_and_imbalance": "Peut reduire le bruit directionnel, mais risque d'aggraver le desequilibre 1m.",
+      "family_id": "wider_flat_class",
+      "future_experiment_recommendation": "reject_as_primary",
+      "leakage_risks": "Risque faible de leakage, mais fort risque de desequilibre.",
+      "risks": "Risque d'une classe FLAT dominante, deja observee en 1m.",
+      "temporal_availability": "Disponibilite temporelle identique au label actuel."
+    },
+    {
+      "advantages": "Simplifie la cible et les metriques.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si le filtrage est effectue uniquement a partir du label futur et publie apres label_end_ts."
+      },
+      "decision_reason": "A evaluer seulement apres un redesign de seuils causaux.",
+      "definition": "Supprimer FLAT et garder uniquement UP/DOWN sur lignes directionnelles.",
+      "expected_impact_on_noise_and_imbalance": "Peut aider l'equilibre directionnel, mais n'adresse pas seul la qualite du seuil.",
+      "family_id": "binary_directional_only",
+      "future_experiment_recommendation": "review_only",
+      "leakage_risks": "Risque de fuite si le filtrage est applique comme information disponible a decision_ts.",
+      "risks": "Peut jeter beaucoup de lignes et creer un biais de selection.",
+      "temporal_availability": "Les lignes ignorees doivent etre marquees non valides pour ML avant tout entrainement futur."
+    },
+    {
+      "advantages": "Peut reduire les faux signaux de micro-bruit en exigeant confirmation temporelle.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si tous les horizons sont futurs et la disponibilite est apres le plus long horizon."
+      },
+      "decision_reason": "Prometteur en recherche, mais pas le premier candidat conservateur.",
+      "definition": "Label multi-horizon combinant h1/h3/h5 ou nouveaux horizons avec regles explicites.",
+      "expected_impact_on_noise_and_imbalance": "Peut stabiliser la cible, mais doit rester une hypothese V9.6+.",
+      "family_id": "causal_multi_horizon_labels",
+      "future_experiment_recommendation": "review_for_future_experiment",
+      "leakage_risks": "Risque moyen si des horizons sont melanges avec des features non alignees temporellement.",
+      "risks": "Plus complexe, plus facile a sur-ajuster, et disponibilite label plus tardive.",
+      "temporal_availability": "label_available_ts doit etre strictement apres le dernier label_end_ts utilise."
+    }
+  ],
+  "created_at_utc": "2026-05-27T10:01:04.282154Z",
+  "current_label_analysis": {
+    "full_local_dataset_available": true,
+    "full_local_labels_available": true,
+    "horizons": [
+      1,
+      3,
+      5
+    ],
+    "label_outputs_read_only": {
+      "15m": {
+        "available": true,
+        "path": "data/research/v5_2/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/labels.parquet"
+      },
+      "1h": {
+        "available": true,
+        "path": "data/research/v5_2/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/labels.parquet"
+      },
+      "1m": {
+        "available": true,
+        "path": "data/research/v5_2/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/labels.parquet"
+      },
+      "5m": {
+        "available": true,
+        "path": "data/research/v5_2/labels/forward_returns/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/labels.parquet"
+      }
+    },
+    "label_shuffle_link": {
+      "by_model": {
+        "decision_tree_depth_2": 13,
+        "logistic_regression": 8
+      },
+      "by_timeframe": {
+        "15m": 1,
+        "1h": 4,
+        "1m": 16
+      },
+      "examples": [
+        "15m.decision_tree_depth_2.fold_04.validation",
+        "1h.decision_tree_depth_2.fold_05.test",
+        "1h.decision_tree_depth_2.fold_05.validation",
+        "1h.logistic_regression.fold_01.test",
+        "1h.logistic_regression.fold_04.validation",
+        "1m.decision_tree_depth_2.fold_01.test",
+        "1m.decision_tree_depth_2.fold_01.validation",
+        "1m.decision_tree_depth_2.fold_02.test",
+        "1m.decision_tree_depth_2.fold_02.validation",
+        "1m.decision_tree_depth_2.fold_03.test"
+      ],
+      "no_clear_edge_vs_shuffled_labels_count": 21,
+      "source_decision_no_clear_edge_count": 21
+    },
+    "read_mode": "v9_1_dataset_parquet_read_only",
+    "target_name": "up_down_flat_h1",
+    "threshold": 0.0005,
+    "timeframes": {
+      "15m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 12142,
+            "rate": 0.346162618315
+          },
+          "FLAT": {
+            "count": 10379,
+            "rate": 0.29590033071
+          },
+          "UP": {
+            "count": 12555,
+            "rate": 0.357937050975
+          }
+        },
+        "class_distribution_by_month": {
+          "2023-03": {
+            "DOWN": {
+              "count": 231,
+              "rate": 0.377450980392
+            },
+            "FLAT": {
+              "count": 137,
+              "rate": 0.22385620915
+            },
+            "UP": {
+              "count": 244,
+              "rate": 0.398692810458
+            }
+          },
+          "2023-04": {
+            "DOWN": {
+              "count": 998,
+              "rate": 0.346527777778
+            },
+            "FLAT": {
+              "count": 863,
+              "rate": 0.299652777778
+            },
+            "UP": {
+              "count": 1019,
+              "rate": 0.353819444444
+            }
+          },
+          "2023-05": {
+            "DOWN": {
+              "count": 1021,
+              "rate": 0.343077956989
+            },
+            "FLAT": {
+              "count": 925,
+              "rate": 0.310819892473
+            },
+            "UP": {
+              "count": 1030,
+              "rate": 0.346102150538
+            }
+          },
+          "2023-06": {
+            "DOWN": {
+              "count": 1002,
+              "rate": 0.347916666667
+            },
+            "FLAT": {
+              "count": 845,
+              "rate": 0.293402777778
+            },
+            "UP": {
+              "count": 1033,
+              "rate": 0.358680555556
+            }
+          },
+          "2023-07": {
+            "DOWN": {
+              "count": 867,
+              "rate": 0.291330645161
+            },
+            "FLAT": {
+              "count": 1255,
+              "rate": 0.421706989247
+            },
+            "UP": {
+              "count": 854,
+              "rate": 0.286962365591
+            }
+          },
+          "2023-08": {
+            "DOWN": {
+              "count": 850,
+              "rate": 0.28561827957
+            },
+            "FLAT": {
+              "count": 1321,
+              "rate": 0.443884408602
+            },
+            "UP": {
+              "count": 805,
+              "rate": 0.270497311828
+            }
+          },
+          "2023-09": {
+            "DOWN": {
+              "count": 839,
+              "rate": 0.291319444444
+            },
+            "FLAT": {
+              "count": 1168,
+              "rate": 0.405555555556
+            },
+            "UP": {
+              "count": 873,
+              "rate": 0.303125
+            }
+          },
+          "2023-10": {
+            "DOWN": {
+              "count": 961,
+              "rate": 0.322916666667
+            },
+            "FLAT": {
+              "count": 930,
+              "rate": 0.3125
+            },
+            "UP": {
+              "count": 1085,
+              "rate": 0.364583333333
+            }
+          },
+          "2023-11": {
+            "DOWN": {
+              "count": 1068,
+              "rate": 0.370833333333
+            },
+            "FLAT": {
+              "count": 709,
+              "rate": 0.246180555556
+            },
+            "UP": {
+              "count": 1103,
+              "rate": 0.382986111111
+            }
+          },
+          "2023-12": {
+            "DOWN": {
+              "count": 1128,
+              "rate": 0.379032258065
+            },
+            "FLAT": {
+              "count": 657,
+              "rate": 0.220766129032
+            },
+            "UP": {
+              "count": 1191,
+              "rate": 0.400201612903
+            }
+          },
+          "2024-01": {
+            "DOWN": {
+              "count": 1169,
+              "rate": 0.392809139785
+            },
+            "FLAT": {
+              "count": 600,
+              "rate": 0.201612903226
+            },
+            "UP": {
+              "count": 1207,
+              "rate": 0.405577956989
+            }
+          },
+          "2024-02": {
+            "DOWN": {
+              "count": 1032,
+              "rate": 0.370689655172
+            },
+            "FLAT": {
+              "count": 640,
+              "rate": 0.229885057471
+            },
+            "UP": {
+              "count": 1112,
+              "rate": 0.399425287356
+            }
+          },
+          "2024-03": {
+            "DOWN": {
+              "count": 976,
+              "rate": 0.423611111111
+            },
+            "FLAT": {
+              "count": 329,
+              "rate": 0.142795138889
+            },
+            "UP": {
+              "count": 999,
+              "rate": 0.43359375
+            }
+          }
+        },
+        "class_distribution_by_split": {
+          "test": {
+            "DOWN": {
+              "count": 2765,
+              "rate": 0.393426294821
+            },
+            "FLAT": {
+              "count": 1399,
+              "rate": 0.19906089926
+            },
+            "UP": {
+              "count": 2864,
+              "rate": 0.407512805919
+            }
+          },
+          "train": {
+            "DOWN": {
+              "count": 6723,
+              "rate": 0.319823034109
+            },
+            "FLAT": {
+              "count": 7410,
+              "rate": 0.352504638219
+            },
+            "UP": {
+              "count": 6888,
+              "rate": 0.327672327672
+            }
+          },
+          "validation": {
+            "DOWN": {
+              "count": 2654,
+              "rate": 0.377686068023
+            },
+            "FLAT": {
+              "count": 1570,
+              "rate": 0.223423936246
+            },
+            "UP": {
+              "count": 2803,
+              "rate": 0.398889995731
+            }
+          }
+        },
+        "class_distribution_by_walk_forward_group": {
+          "wf_2023_03_partial": {
+            "DOWN": {
+              "count": 231,
+              "rate": 0.377450980392
+            },
+            "FLAT": {
+              "count": 137,
+              "rate": 0.22385620915
+            },
+            "UP": {
+              "count": 244,
+              "rate": 0.398692810458
+            }
+          },
+          "wf_2023_04": {
+            "DOWN": {
+              "count": 998,
+              "rate": 0.346527777778
+            },
+            "FLAT": {
+              "count": 863,
+              "rate": 0.299652777778
+            },
+            "UP": {
+              "count": 1019,
+              "rate": 0.353819444444
+            }
+          },
+          "wf_2023_05": {
+            "DOWN": {
+              "count": 1021,
+              "rate": 0.343077956989
+            },
+            "FLAT": {
+              "count": 925,
+              "rate": 0.310819892473
+            },
+            "UP": {
+              "count": 1030,
+              "rate": 0.346102150538
+            }
+          },
+          "wf_2023_06": {
+            "DOWN": {
+              "count": 1002,
+              "rate": 0.347916666667
+            },
+            "FLAT": {
+              "count": 845,
+              "rate": 0.293402777778
+            },
+            "UP": {
+              "count": 1033,
+              "rate": 0.358680555556
+            }
+          },
+          "wf_2023_07": {
+            "DOWN": {
+              "count": 867,
+              "rate": 0.291330645161
+            },
+            "FLAT": {
+              "count": 1255,
+              "rate": 0.421706989247
+            },
+            "UP": {
+              "count": 854,
+              "rate": 0.286962365591
+            }
+          },
+          "wf_2023_08": {
+            "DOWN": {
+              "count": 850,
+              "rate": 0.28561827957
+            },
+            "FLAT": {
+              "count": 1321,
+              "rate": 0.443884408602
+            },
+            "UP": {
+              "count": 805,
+              "rate": 0.270497311828
+            }
+          },
+          "wf_2023_09": {
+            "DOWN": {
+              "count": 839,
+              "rate": 0.291319444444
+            },
+            "FLAT": {
+              "count": 1168,
+              "rate": 0.405555555556
+            },
+            "UP": {
+              "count": 873,
+              "rate": 0.303125
+            }
+          },
+          "wf_2023_10": {
+            "DOWN": {
+              "count": 961,
+              "rate": 0.322916666667
+            },
+            "FLAT": {
+              "count": 930,
+              "rate": 0.3125
+            },
+            "UP": {
+              "count": 1085,
+              "rate": 0.364583333333
+            }
+          },
+          "wf_2023_11": {
+            "DOWN": {
+              "count": 1068,
+              "rate": 0.370833333333
+            },
+            "FLAT": {
+              "count": 709,
+              "rate": 0.246180555556
+            },
+            "UP": {
+              "count": 1103,
+              "rate": 0.382986111111
+            }
+          },
+          "wf_2023_12": {
+            "DOWN": {
+              "count": 1128,
+              "rate": 0.379032258065
+            },
+            "FLAT": {
+              "count": 657,
+              "rate": 0.220766129032
+            },
+            "UP": {
+              "count": 1191,
+              "rate": 0.400201612903
+            }
+          },
+          "wf_2024_01": {
+            "DOWN": {
+              "count": 1169,
+              "rate": 0.392809139785
+            },
+            "FLAT": {
+              "count": 600,
+              "rate": 0.201612903226
+            },
+            "UP": {
+              "count": 1207,
+              "rate": 0.405577956989
+            }
+          },
+          "wf_2024_02": {
+            "DOWN": {
+              "count": 1032,
+              "rate": 0.370689655172
+            },
+            "FLAT": {
+              "count": 640,
+              "rate": 0.229885057471
+            },
+            "UP": {
+              "count": 1112,
+              "rate": 0.399425287356
+            }
+          },
+          "wf_2024_03_partial": {
+            "DOWN": {
+              "count": 976,
+              "rate": 0.423611111111
+            },
+            "FLAT": {
+              "count": 329,
+              "rate": 0.142795138889
+            },
+            "UP": {
+              "count": 999,
+              "rate": 0.43359375
+            }
+          }
+        },
+        "dominated_periods": [],
+        "entropy_bits": 1.580179239382,
+        "label_autocorrelation_lag_1": -0.057666965732,
+        "label_change_rate": 0.644219529579,
+        "majority_class": "UP",
+        "majority_rate": 0.357937050975,
+        "rows_total": 35076,
+        "rows_valid_for_label_audit": 35076,
+        "transition_matrix": {
+          "DOWN->DOWN": {
+            "count": 4063,
+            "rate": 0.115837491091
+          },
+          "DOWN->FLAT": {
+            "count": 3124,
+            "rate": 0.089066286529
+          },
+          "DOWN->UP": {
+            "count": 4954,
+            "rate": 0.141240199572
+          },
+          "FLAT->DOWN": {
+            "count": 3155,
+            "rate": 0.089950106914
+          },
+          "FLAT->FLAT": {
+            "count": 4020,
+            "rate": 0.114611546686
+          },
+          "FLAT->UP": {
+            "count": 3204,
+            "rate": 0.091347113329
+          },
+          "UP->DOWN": {
+            "count": 4924,
+            "rate": 0.140384889522
+          },
+          "UP->FLAT": {
+            "count": 3235,
+            "rate": 0.092230933713
+          },
+          "UP->UP": {
+            "count": 4396,
+            "rate": 0.125331432644
+          }
+        }
+      },
+      "1h": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 3563,
+            "rate": 0.408413571756
+          },
+          "FLAT": {
+            "count": 1421,
+            "rate": 0.162883998166
+          },
+          "UP": {
+            "count": 3740,
+            "rate": 0.428702430078
+          }
+        },
+        "class_distribution_by_month": {
+          "2023-03": {
+            "DOWN": {
+              "count": 48,
+              "rate": 0.444444444444
+            },
+            "FLAT": {
+              "count": 8,
+              "rate": 0.074074074074
+            },
+            "UP": {
+              "count": 52,
+              "rate": 0.481481481481
+            }
+          },
+          "2023-04": {
+            "DOWN": {
+              "count": 300,
+              "rate": 0.416666666667
+            },
+            "FLAT": {
+              "count": 119,
+              "rate": 0.165277777778
+            },
+            "UP": {
+              "count": 301,
+              "rate": 0.418055555556
+            }
+          },
+          "2023-05": {
+            "DOWN": {
+              "count": 319,
+              "rate": 0.42876344086
+            },
+            "FLAT": {
+              "count": 120,
+              "rate": 0.161290322581
+            },
+            "UP": {
+              "count": 305,
+              "rate": 0.409946236559
+            }
+          },
+          "2023-06": {
+            "DOWN": {
+              "count": 293,
+              "rate": 0.406944444444
+            },
+            "FLAT": {
+              "count": 112,
+              "rate": 0.155555555556
+            },
+            "UP": {
+              "count": 315,
+              "rate": 0.4375
+            }
+          },
+          "2023-07": {
+            "DOWN": {
+              "count": 290,
+              "rate": 0.389784946237
+            },
+            "FLAT": {
+              "count": 167,
+              "rate": 0.224462365591
+            },
+            "UP": {
+              "count": 287,
+              "rate": 0.385752688172
+            }
+          },
+          "2023-08": {
+            "DOWN": {
+              "count": 280,
+              "rate": 0.376344086022
+            },
+            "FLAT": {
+              "count": 189,
+              "rate": 0.254032258065
+            },
+            "UP": {
+              "count": 275,
+              "rate": 0.369623655914
+            }
+          },
+          "2023-09": {
+            "DOWN": {
+              "count": 259,
+              "rate": 0.359722222222
+            },
+            "FLAT": {
+              "count": 174,
+              "rate": 0.241666666667
+            },
+            "UP": {
+              "count": 287,
+              "rate": 0.398611111111
+            }
+          },
+          "2023-10": {
+            "DOWN": {
+              "count": 289,
+              "rate": 0.388440860215
+            },
+            "FLAT": {
+              "count": 124,
+              "rate": 0.166666666667
+            },
+            "UP": {
+              "count": 331,
+              "rate": 0.444892473118
+            }
+          },
+          "2023-11": {
+            "DOWN": {
+              "count": 297,
+              "rate": 0.4125
+            },
+            "FLAT": {
+              "count": 105,
+              "rate": 0.145833333333
+            },
+            "UP": {
+              "count": 318,
+              "rate": 0.441666666667
+            }
+          },
+          "2023-12": {
+            "DOWN": {
+              "count": 320,
+              "rate": 0.430107526882
+            },
+            "FLAT": {
+              "count": 89,
+              "rate": 0.119623655914
+            },
+            "UP": {
+              "count": 335,
+              "rate": 0.450268817204
+            }
+          },
+          "2024-01": {
+            "DOWN": {
+              "count": 339,
+              "rate": 0.45564516129
+            },
+            "FLAT": {
+              "count": 74,
+              "rate": 0.099462365591
+            },
+            "UP": {
+              "count": 331,
+              "rate": 0.444892473118
+            }
+          },
+          "2024-02": {
+            "DOWN": {
+              "count": 279,
+              "rate": 0.400862068966
+            },
+            "FLAT": {
+              "count": 96,
+              "rate": 0.137931034483
+            },
+            "UP": {
+              "count": 321,
+              "rate": 0.461206896552
+            }
+          },
+          "2024-03": {
+            "DOWN": {
+              "count": 250,
+              "rate": 0.434027777778
+            },
+            "FLAT": {
+              "count": 44,
+              "rate": 0.076388888889
+            },
+            "UP": {
+              "count": 282,
+              "rate": 0.489583333333
+            }
+          }
+        },
+        "class_distribution_by_split": {
+          "test": {
+            "DOWN": {
+              "count": 756,
+              "rate": 0.430278884462
+            },
+            "FLAT": {
+              "count": 193,
+              "rate": 0.10984632897
+            },
+            "UP": {
+              "count": 808,
+              "rate": 0.459874786568
+            }
+          },
+          "train": {
+            "DOWN": {
+              "count": 2064,
+              "rate": 0.396161228407
+            },
+            "FLAT": {
+              "count": 1009,
+              "rate": 0.193666026871
+            },
+            "UP": {
+              "count": 2137,
+              "rate": 0.410172744722
+            }
+          },
+          "validation": {
+            "DOWN": {
+              "count": 743,
+              "rate": 0.422879908936
+            },
+            "FLAT": {
+              "count": 219,
+              "rate": 0.124644280023
+            },
+            "UP": {
+              "count": 795,
+              "rate": 0.452475811042
+            }
+          }
+        },
+        "class_distribution_by_walk_forward_group": {
+          "wf_2023_03_partial": {
+            "DOWN": {
+              "count": 48,
+              "rate": 0.444444444444
+            },
+            "FLAT": {
+              "count": 8,
+              "rate": 0.074074074074
+            },
+            "UP": {
+              "count": 52,
+              "rate": 0.481481481481
+            }
+          },
+          "wf_2023_04": {
+            "DOWN": {
+              "count": 300,
+              "rate": 0.416666666667
+            },
+            "FLAT": {
+              "count": 119,
+              "rate": 0.165277777778
+            },
+            "UP": {
+              "count": 301,
+              "rate": 0.418055555556
+            }
+          },
+          "wf_2023_05": {
+            "DOWN": {
+              "count": 319,
+              "rate": 0.42876344086
+            },
+            "FLAT": {
+              "count": 120,
+              "rate": 0.161290322581
+            },
+            "UP": {
+              "count": 305,
+              "rate": 0.409946236559
+            }
+          },
+          "wf_2023_06": {
+            "DOWN": {
+              "count": 293,
+              "rate": 0.406944444444
+            },
+            "FLAT": {
+              "count": 112,
+              "rate": 0.155555555556
+            },
+            "UP": {
+              "count": 315,
+              "rate": 0.4375
+            }
+          },
+          "wf_2023_07": {
+            "DOWN": {
+              "count": 290,
+              "rate": 0.389784946237
+            },
+            "FLAT": {
+              "count": 167,
+              "rate": 0.224462365591
+            },
+            "UP": {
+              "count": 287,
+              "rate": 0.385752688172
+            }
+          },
+          "wf_2023_08": {
+            "DOWN": {
+              "count": 280,
+              "rate": 0.376344086022
+            },
+            "FLAT": {
+              "count": 189,
+              "rate": 0.254032258065
+            },
+            "UP": {
+              "count": 275,
+              "rate": 0.369623655914
+            }
+          },
+          "wf_2023_09": {
+            "DOWN": {
+              "count": 259,
+              "rate": 0.359722222222
+            },
+            "FLAT": {
+              "count": 174,
+              "rate": 0.241666666667
+            },
+            "UP": {
+              "count": 287,
+              "rate": 0.398611111111
+            }
+          },
+          "wf_2023_10": {
+            "DOWN": {
+              "count": 289,
+              "rate": 0.388440860215
+            },
+            "FLAT": {
+              "count": 124,
+              "rate": 0.166666666667
+            },
+            "UP": {
+              "count": 331,
+              "rate": 0.444892473118
+            }
+          },
+          "wf_2023_11": {
+            "DOWN": {
+              "count": 297,
+              "rate": 0.4125
+            },
+            "FLAT": {
+              "count": 105,
+              "rate": 0.145833333333
+            },
+            "UP": {
+              "count": 318,
+              "rate": 0.441666666667
+            }
+          },
+          "wf_2023_12": {
+            "DOWN": {
+              "count": 320,
+              "rate": 0.430107526882
+            },
+            "FLAT": {
+              "count": 89,
+              "rate": 0.119623655914
+            },
+            "UP": {
+              "count": 335,
+              "rate": 0.450268817204
+            }
+          },
+          "wf_2024_01": {
+            "DOWN": {
+              "count": 339,
+              "rate": 0.45564516129
+            },
+            "FLAT": {
+              "count": 74,
+              "rate": 0.099462365591
+            },
+            "UP": {
+              "count": 331,
+              "rate": 0.444892473118
+            }
+          },
+          "wf_2024_02": {
+            "DOWN": {
+              "count": 279,
+              "rate": 0.400862068966
+            },
+            "FLAT": {
+              "count": 96,
+              "rate": 0.137931034483
+            },
+            "UP": {
+              "count": 321,
+              "rate": 0.461206896552
+            }
+          },
+          "wf_2024_03_partial": {
+            "DOWN": {
+              "count": 250,
+              "rate": 0.434027777778
+            },
+            "FLAT": {
+              "count": 44,
+              "rate": 0.076388888889
+            },
+            "UP": {
+              "count": 282,
+              "rate": 0.489583333333
+            }
+          }
+        },
+        "dominated_periods": [],
+        "entropy_bits": 1.47792582421,
+        "label_autocorrelation_lag_1": -0.086270280839,
+        "label_change_rate": 0.644273759028,
+        "majority_class": "UP",
+        "majority_rate": 0.428702430078,
+        "rows_total": 8724,
+        "rows_valid_for_label_audit": 8724,
+        "transition_matrix": {
+          "DOWN->DOWN": {
+            "count": 1306,
+            "rate": 0.149719133326
+          },
+          "DOWN->FLAT": {
+            "count": 546,
+            "rate": 0.06259314456
+          },
+          "DOWN->UP": {
+            "count": 1710,
+            "rate": 0.196033474722
+          },
+          "FLAT->DOWN": {
+            "count": 554,
+            "rate": 0.063510260232
+          },
+          "FLAT->FLAT": {
+            "count": 317,
+            "rate": 0.036340708472
+          },
+          "FLAT->UP": {
+            "count": 550,
+            "rate": 0.063051702396
+          },
+          "UP->DOWN": {
+            "count": 1702,
+            "rate": 0.195116359051
+          },
+          "UP->FLAT": {
+            "count": 558,
+            "rate": 0.063968818067
+          },
+          "UP->UP": {
+            "count": 1480,
+            "rate": 0.169666399175
+          }
+        }
+      },
+      "1m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 60403,
+            "rate": 0.114621048237
+          },
+          "FLAT": {
+            "count": 404990,
+            "rate": 0.768511138943
+          },
+          "UP": {
+            "count": 61587,
+            "rate": 0.11686781282
+          }
+        },
+        "class_distribution_by_month": {
+          "2023-03": {
+            "DOWN": {
+              "count": 1554,
+              "rate": 0.155089820359
+            },
+            "FLAT": {
+              "count": 6899,
+              "rate": 0.688522954092
+            },
+            "UP": {
+              "count": 1567,
+              "rate": 0.156387225549
+            }
+          },
+          "2023-04": {
+            "DOWN": {
+              "count": 4650,
+              "rate": 0.107638888889
+            },
+            "FLAT": {
+              "count": 33916,
+              "rate": 0.785092592593
+            },
+            "UP": {
+              "count": 4634,
+              "rate": 0.107268518519
+            }
+          },
+          "2023-05": {
+            "DOWN": {
+              "count": 4391,
+              "rate": 0.098364695341
+            },
+            "FLAT": {
+              "count": 35721,
+              "rate": 0.800201612903
+            },
+            "UP": {
+              "count": 4528,
+              "rate": 0.101433691756
+            }
+          },
+          "2023-06": {
+            "DOWN": {
+              "count": 4683,
+              "rate": 0.108402777778
+            },
+            "FLAT": {
+              "count": 33753,
+              "rate": 0.781319444444
+            },
+            "UP": {
+              "count": 4764,
+              "rate": 0.110277777778
+            }
+          },
+          "2023-07": {
+            "DOWN": {
+              "count": 2603,
+              "rate": 0.0583109319
+            },
+            "FLAT": {
+              "count": 39401,
+              "rate": 0.882638888889
+            },
+            "UP": {
+              "count": 2636,
+              "rate": 0.059050179211
+            }
+          },
+          "2023-08": {
+            "DOWN": {
+              "count": 2579,
+              "rate": 0.057773297491
+            },
+            "FLAT": {
+              "count": 39576,
+              "rate": 0.886559139785
+            },
+            "UP": {
+              "count": 2485,
+              "rate": 0.055667562724
+            }
+          },
+          "2023-09": {
+            "DOWN": {
+              "count": 2826,
+              "rate": 0.065416666667
+            },
+            "FLAT": {
+              "count": 37477,
+              "rate": 0.867523148148
+            },
+            "UP": {
+              "count": 2897,
+              "rate": 0.067060185185
+            }
+          },
+          "2023-10": {
+            "DOWN": {
+              "count": 4775,
+              "rate": 0.106966845878
+            },
+            "FLAT": {
+              "count": 34913,
+              "rate": 0.78210125448
+            },
+            "UP": {
+              "count": 4952,
+              "rate": 0.110931899642
+            }
+          },
+          "2023-11": {
+            "DOWN": {
+              "count": 5027,
+              "rate": 0.116365740741
+            },
+            "FLAT": {
+              "count": 33092,
+              "rate": 0.766018518519
+            },
+            "UP": {
+              "count": 5081,
+              "rate": 0.117615740741
+            }
+          },
+          "2023-12": {
+            "DOWN": {
+              "count": 6059,
+              "rate": 0.135730286738
+            },
+            "FLAT": {
+              "count": 32393,
+              "rate": 0.725649641577
+            },
+            "UP": {
+              "count": 6188,
+              "rate": 0.138620071685
+            }
+          },
+          "2024-01": {
+            "DOWN": {
+              "count": 7382,
+              "rate": 0.165367383513
+            },
+            "FLAT": {
+              "count": 29785,
+              "rate": 0.667226702509
+            },
+            "UP": {
+              "count": 7473,
+              "rate": 0.167405913978
+            }
+          },
+          "2024-02": {
+            "DOWN": {
+              "count": 5547,
+              "rate": 0.13283045977
+            },
+            "FLAT": {
+              "count": 30316,
+              "rate": 0.725957854406
+            },
+            "UP": {
+              "count": 5897,
+              "rate": 0.141211685824
+            }
+          },
+          "2024-03": {
+            "DOWN": {
+              "count": 8327,
+              "rate": 0.240943287037
+            },
+            "FLAT": {
+              "count": 17748,
+              "rate": 0.513541666667
+            },
+            "UP": {
+              "count": 8485,
+              "rate": 0.245515046296
+            }
+          }
+        },
+        "class_distribution_by_split": {
+          "test": {
+            "DOWN": {
+              "count": 18320,
+              "rate": 0.17380085003
+            },
+            "FLAT": {
+              "count": 68365,
+              "rate": 0.648575060716
+            },
+            "UP": {
+              "count": 18723,
+              "rate": 0.177624089253
+            }
+          },
+          "train": {
+            "DOWN": {
+              "count": 27846,
+              "rate": 0.088074543591
+            },
+            "FLAT": {
+              "count": 260079,
+              "rate": 0.822607887046
+            },
+            "UP": {
+              "count": 28239,
+              "rate": 0.089317569363
+            }
+          },
+          "validation": {
+            "DOWN": {
+              "count": 14237,
+              "rate": 0.135065649666
+            },
+            "FLAT": {
+              "count": 76546,
+              "rate": 0.726187765634
+            },
+            "UP": {
+              "count": 14625,
+              "rate": 0.138746584699
+            }
+          }
+        },
+        "class_distribution_by_walk_forward_group": {
+          "wf_2023_03_partial": {
+            "DOWN": {
+              "count": 1554,
+              "rate": 0.155089820359
+            },
+            "FLAT": {
+              "count": 6899,
+              "rate": 0.688522954092
+            },
+            "UP": {
+              "count": 1567,
+              "rate": 0.156387225549
+            }
+          },
+          "wf_2023_04": {
+            "DOWN": {
+              "count": 4650,
+              "rate": 0.107638888889
+            },
+            "FLAT": {
+              "count": 33916,
+              "rate": 0.785092592593
+            },
+            "UP": {
+              "count": 4634,
+              "rate": 0.107268518519
+            }
+          },
+          "wf_2023_05": {
+            "DOWN": {
+              "count": 4391,
+              "rate": 0.098364695341
+            },
+            "FLAT": {
+              "count": 35721,
+              "rate": 0.800201612903
+            },
+            "UP": {
+              "count": 4528,
+              "rate": 0.101433691756
+            }
+          },
+          "wf_2023_06": {
+            "DOWN": {
+              "count": 4683,
+              "rate": 0.108402777778
+            },
+            "FLAT": {
+              "count": 33753,
+              "rate": 0.781319444444
+            },
+            "UP": {
+              "count": 4764,
+              "rate": 0.110277777778
+            }
+          },
+          "wf_2023_07": {
+            "DOWN": {
+              "count": 2603,
+              "rate": 0.0583109319
+            },
+            "FLAT": {
+              "count": 39401,
+              "rate": 0.882638888889
+            },
+            "UP": {
+              "count": 2636,
+              "rate": 0.059050179211
+            }
+          },
+          "wf_2023_08": {
+            "DOWN": {
+              "count": 2579,
+              "rate": 0.057773297491
+            },
+            "FLAT": {
+              "count": 39576,
+              "rate": 0.886559139785
+            },
+            "UP": {
+              "count": 2485,
+              "rate": 0.055667562724
+            }
+          },
+          "wf_2023_09": {
+            "DOWN": {
+              "count": 2826,
+              "rate": 0.065416666667
+            },
+            "FLAT": {
+              "count": 37477,
+              "rate": 0.867523148148
+            },
+            "UP": {
+              "count": 2897,
+              "rate": 0.067060185185
+            }
+          },
+          "wf_2023_10": {
+            "DOWN": {
+              "count": 4775,
+              "rate": 0.106966845878
+            },
+            "FLAT": {
+              "count": 34913,
+              "rate": 0.78210125448
+            },
+            "UP": {
+              "count": 4952,
+              "rate": 0.110931899642
+            }
+          },
+          "wf_2023_11": {
+            "DOWN": {
+              "count": 5027,
+              "rate": 0.116365740741
+            },
+            "FLAT": {
+              "count": 33092,
+              "rate": 0.766018518519
+            },
+            "UP": {
+              "count": 5081,
+              "rate": 0.117615740741
+            }
+          },
+          "wf_2023_12": {
+            "DOWN": {
+              "count": 6059,
+              "rate": 0.135730286738
+            },
+            "FLAT": {
+              "count": 32393,
+              "rate": 0.725649641577
+            },
+            "UP": {
+              "count": 6188,
+              "rate": 0.138620071685
+            }
+          },
+          "wf_2024_01": {
+            "DOWN": {
+              "count": 7382,
+              "rate": 0.165367383513
+            },
+            "FLAT": {
+              "count": 29785,
+              "rate": 0.667226702509
+            },
+            "UP": {
+              "count": 7473,
+              "rate": 0.167405913978
+            }
+          },
+          "wf_2024_02": {
+            "DOWN": {
+              "count": 5547,
+              "rate": 0.13283045977
+            },
+            "FLAT": {
+              "count": 30316,
+              "rate": 0.725957854406
+            },
+            "UP": {
+              "count": 5897,
+              "rate": 0.141211685824
+            }
+          },
+          "wf_2024_03_partial": {
+            "DOWN": {
+              "count": 8327,
+              "rate": 0.240943287037
+            },
+            "FLAT": {
+              "count": 17748,
+              "rate": 0.513541666667
+            },
+            "UP": {
+              "count": 8485,
+              "rate": 0.245515046296
+            }
+          }
+        },
+        "dominated_periods": [
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.785092592593,
+            "month": "2023-04"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.800201612903,
+            "month": "2023-05"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.781319444444,
+            "month": "2023-06"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.882638888889,
+            "month": "2023-07"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.886559139785,
+            "month": "2023-08"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.867523148148,
+            "month": "2023-09"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.78210125448,
+            "month": "2023-10"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.766018518519,
+            "month": "2023-11"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.725649641577,
+            "month": "2023-12"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.725957854406,
+            "month": "2024-02"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.785092592593,
+            "walk_forward_group": "wf_2023_04"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.800201612903,
+            "walk_forward_group": "wf_2023_05"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.781319444444,
+            "walk_forward_group": "wf_2023_06"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.882638888889,
+            "walk_forward_group": "wf_2023_07"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.886559139785,
+            "walk_forward_group": "wf_2023_08"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.867523148148,
+            "walk_forward_group": "wf_2023_09"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.78210125448,
+            "walk_forward_group": "wf_2023_10"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.766018518519,
+            "walk_forward_group": "wf_2023_11"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.725649641577,
+            "walk_forward_group": "wf_2023_12"
+          },
+          {
+            "majority_class": "FLAT",
+            "majority_rate": 0.725957854406,
+            "walk_forward_group": "wf_2024_02"
+          }
+        ],
+        "entropy_bits": 1.012070838247,
+        "label_autocorrelation_lag_1": -0.006268363986,
+        "label_change_rate": 0.31524216335,
+        "majority_class": "FLAT",
+        "majority_rate": 0.768511138943,
+        "rows_total": 526980,
+        "rows_valid_for_label_audit": 526980,
+        "transition_matrix": {
+          "DOWN->DOWN": {
+            "count": 12642,
+            "rate": 0.023989570742
+          },
+          "DOWN->FLAT": {
+            "count": 34385,
+            "rate": 0.065249279383
+          },
+          "DOWN->UP": {
+            "count": 13376,
+            "rate": 0.025382415618
+          },
+          "FLAT->DOWN": {
+            "count": 34678,
+            "rate": 0.065805278768
+          },
+          "FLAT->FLAT": {
+            "count": 335156,
+            "rate": 0.635994982722
+          },
+          "FLAT->UP": {
+            "count": 35156,
+            "rate": 0.066712335786
+          },
+          "UP->DOWN": {
+            "count": 13083,
+            "rate": 0.024826416233
+          },
+          "UP->FLAT": {
+            "count": 35448,
+            "rate": 0.067266437562
+          },
+          "UP->UP": {
+            "count": 13055,
+            "rate": 0.024773283186
+          }
+        }
+      },
+      "5m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 27225,
+            "rate": 0.25842920606
+          },
+          "FLAT": {
+            "count": 50112,
+            "rate": 0.475680601435
+          },
+          "UP": {
+            "count": 28011,
+            "rate": 0.265890192505
+          }
+        },
+        "class_distribution_by_month": {
+          "2023-03": {
+            "DOWN": {
+              "count": 596,
+              "rate": 0.304703476483
+            },
+            "FLAT": {
+              "count": 716,
+              "rate": 0.366053169734
+            },
+            "UP": {
+              "count": 644,
+              "rate": 0.329243353783
+            }
+          },
+          "2023-04": {
+            "DOWN": {
+              "count": 2255,
+              "rate": 0.26099537037
+            },
+            "FLAT": {
+              "count": 4093,
+              "rate": 0.473726851852
+            },
+            "UP": {
+              "count": 2292,
+              "rate": 0.265277777778
+            }
+          },
+          "2023-05": {
+            "DOWN": {
+              "count": 2343,
+              "rate": 0.262432795699
+            },
+            "FLAT": {
+              "count": 4272,
+              "rate": 0.478494623656
+            },
+            "UP": {
+              "count": 2313,
+              "rate": 0.259072580645
+            }
+          },
+          "2023-06": {
+            "DOWN": {
+              "count": 2245,
+              "rate": 0.259837962963
+            },
+            "FLAT": {
+              "count": 4076,
+              "rate": 0.471759259259
+            },
+            "UP": {
+              "count": 2319,
+              "rate": 0.268402777778
+            }
+          },
+          "2023-07": {
+            "DOWN": {
+              "count": 1671,
+              "rate": 0.187163978495
+            },
+            "FLAT": {
+              "count": 5623,
+              "rate": 0.629816308244
+            },
+            "UP": {
+              "count": 1634,
+              "rate": 0.183019713262
+            }
+          },
+          "2023-08": {
+            "DOWN": {
+              "count": 1581,
+              "rate": 0.177083333333
+            },
+            "FLAT": {
+              "count": 5779,
+              "rate": 0.647289426523
+            },
+            "UP": {
+              "count": 1568,
+              "rate": 0.175627240143
+            }
+          },
+          "2023-09": {
+            "DOWN": {
+              "count": 1646,
+              "rate": 0.190509259259
+            },
+            "FLAT": {
+              "count": 5276,
+              "rate": 0.610648148148
+            },
+            "UP": {
+              "count": 1718,
+              "rate": 0.198842592593
+            }
+          },
+          "2023-10": {
+            "DOWN": {
+              "count": 2156,
+              "rate": 0.241487455197
+            },
+            "FLAT": {
+              "count": 4451,
+              "rate": 0.49854390681
+            },
+            "UP": {
+              "count": 2321,
+              "rate": 0.259968637993
+            }
+          },
+          "2023-11": {
+            "DOWN": {
+              "count": 2372,
+              "rate": 0.274537037037
+            },
+            "FLAT": {
+              "count": 3848,
+              "rate": 0.44537037037
+            },
+            "UP": {
+              "count": 2420,
+              "rate": 0.280092592593
+            }
+          },
+          "2023-12": {
+            "DOWN": {
+              "count": 2632,
+              "rate": 0.294802867384
+            },
+            "FLAT": {
+              "count": 3575,
+              "rate": 0.40042562724
+            },
+            "UP": {
+              "count": 2721,
+              "rate": 0.304771505376
+            }
+          },
+          "2024-01": {
+            "DOWN": {
+              "count": 2822,
+              "rate": 0.316084229391
+            },
+            "FLAT": {
+              "count": 3208,
+              "rate": 0.359318996416
+            },
+            "UP": {
+              "count": 2898,
+              "rate": 0.324596774194
+            }
+          },
+          "2024-02": {
+            "DOWN": {
+              "count": 2324,
+              "rate": 0.278256704981
+            },
+            "FLAT": {
+              "count": 3474,
+              "rate": 0.415948275862
+            },
+            "UP": {
+              "count": 2554,
+              "rate": 0.305795019157
+            }
+          },
+          "2024-03": {
+            "DOWN": {
+              "count": 2582,
+              "rate": 0.373553240741
+            },
+            "FLAT": {
+              "count": 1721,
+              "rate": 0.248987268519
+            },
+            "UP": {
+              "count": 2609,
+              "rate": 0.377459490741
+            }
+          }
+        },
+        "class_distribution_by_split": {
+          "test": {
+            "DOWN": {
+              "count": 6702,
+              "rate": 0.317901527369
+            },
+            "FLAT": {
+              "count": 7436,
+              "rate": 0.352717958448
+            },
+            "UP": {
+              "count": 6944,
+              "rate": 0.329380514183
+            }
+          },
+          "train": {
+            "DOWN": {
+              "count": 14388,
+              "rate": 0.227715877437
+            },
+            "FLAT": {
+              "count": 34097,
+              "rate": 0.53964611294
+            },
+            "UP": {
+              "count": 14699,
+              "rate": 0.232638009623
+            }
+          },
+          "validation": {
+            "DOWN": {
+              "count": 6135,
+              "rate": 0.291006545869
+            },
+            "FLAT": {
+              "count": 8579,
+              "rate": 0.406934825918
+            },
+            "UP": {
+              "count": 6368,
+              "rate": 0.302058628214
+            }
+          }
+        },
+        "class_distribution_by_walk_forward_group": {
+          "wf_2023_03_partial": {
+            "DOWN": {
+              "count": 596,
+              "rate": 0.304703476483
+            },
+            "FLAT": {
+              "count": 716,
+              "rate": 0.366053169734
+            },
+            "UP": {
+              "count": 644,
+              "rate": 0.329243353783
+            }
+          },
+          "wf_2023_04": {
+            "DOWN": {
+              "count": 2255,
+              "rate": 0.26099537037
+            },
+            "FLAT": {
+              "count": 4093,
+              "rate": 0.473726851852
+            },
+            "UP": {
+              "count": 2292,
+              "rate": 0.265277777778
+            }
+          },
+          "wf_2023_05": {
+            "DOWN": {
+              "count": 2343,
+              "rate": 0.262432795699
+            },
+            "FLAT": {
+              "count": 4272,
+              "rate": 0.478494623656
+            },
+            "UP": {
+              "count": 2313,
+              "rate": 0.259072580645
+            }
+          },
+          "wf_2023_06": {
+            "DOWN": {
+              "count": 2245,
+              "rate": 0.259837962963
+            },
+            "FLAT": {
+              "count": 4076,
+              "rate": 0.471759259259
+            },
+            "UP": {
+              "count": 2319,
+              "rate": 0.268402777778
+            }
+          },
+          "wf_2023_07": {
+            "DOWN": {
+              "count": 1671,
+              "rate": 0.187163978495
+            },
+            "FLAT": {
+              "count": 5623,
+              "rate": 0.629816308244
+            },
+            "UP": {
+              "count": 1634,
+              "rate": 0.183019713262
+            }
+          },
+          "wf_2023_08": {
+            "DOWN": {
+              "count": 1581,
+              "rate": 0.177083333333
+            },
+            "FLAT": {
+              "count": 5779,
+              "rate": 0.647289426523
+            },
+            "UP": {
+              "count": 1568,
+              "rate": 0.175627240143
+            }
+          },
+          "wf_2023_09": {
+            "DOWN": {
+              "count": 1646,
+              "rate": 0.190509259259
+            },
+            "FLAT": {
+              "count": 5276,
+              "rate": 0.610648148148
+            },
+            "UP": {
+              "count": 1718,
+              "rate": 0.198842592593
+            }
+          },
+          "wf_2023_10": {
+            "DOWN": {
+              "count": 2156,
+              "rate": 0.241487455197
+            },
+            "FLAT": {
+              "count": 4451,
+              "rate": 0.49854390681
+            },
+            "UP": {
+              "count": 2321,
+              "rate": 0.259968637993
+            }
+          },
+          "wf_2023_11": {
+            "DOWN": {
+              "count": 2372,
+              "rate": 0.274537037037
+            },
+            "FLAT": {
+              "count": 3848,
+              "rate": 0.44537037037
+            },
+            "UP": {
+              "count": 2420,
+              "rate": 0.280092592593
+            }
+          },
+          "wf_2023_12": {
+            "DOWN": {
+              "count": 2632,
+              "rate": 0.294802867384
+            },
+            "FLAT": {
+              "count": 3575,
+              "rate": 0.40042562724
+            },
+            "UP": {
+              "count": 2721,
+              "rate": 0.304771505376
+            }
+          },
+          "wf_2024_01": {
+            "DOWN": {
+              "count": 2822,
+              "rate": 0.316084229391
+            },
+            "FLAT": {
+              "count": 3208,
+              "rate": 0.359318996416
+            },
+            "UP": {
+              "count": 2898,
+              "rate": 0.324596774194
+            }
+          },
+          "wf_2024_02": {
+            "DOWN": {
+              "count": 2324,
+              "rate": 0.278256704981
+            },
+            "FLAT": {
+              "count": 3474,
+              "rate": 0.415948275862
+            },
+            "UP": {
+              "count": 2554,
+              "rate": 0.305795019157
+            }
+          },
+          "wf_2024_03_partial": {
+            "DOWN": {
+              "count": 2582,
+              "rate": 0.373553240741
+            },
+            "FLAT": {
+              "count": 1721,
+              "rate": 0.248987268519
+            },
+            "UP": {
+              "count": 2609,
+              "rate": 0.377459490741
+            }
+          }
+        },
+        "dominated_periods": [],
+        "entropy_bits": 1.522535622606,
+        "label_autocorrelation_lag_1": -0.054751538419,
+        "label_change_rate": 0.580548093444,
+        "majority_class": "FLAT",
+        "majority_rate": 0.475680601435,
+        "rows_total": 105348,
+        "rows_valid_for_label_audit": 105348,
+        "transition_matrix": {
+          "DOWN->DOWN": {
+            "count": 7452,
+            "rate": 0.070737657456
+          },
+          "DOWN->FLAT": {
+            "count": 10592,
+            "rate": 0.10054391677
+          },
+          "DOWN->UP": {
+            "count": 9180,
+            "rate": 0.087140592518
+          },
+          "FLAT->DOWN": {
+            "count": 10503,
+            "rate": 0.099699089675
+          },
+          "FLAT->FLAT": {
+            "count": 28757,
+            "rate": 0.272974076148
+          },
+          "FLAT->UP": {
+            "count": 10852,
+            "rate": 0.103011950981
+          },
+          "UP->DOWN": {
+            "count": 9269,
+            "rate": 0.087985419613
+          },
+          "UP->FLAT": {
+            "count": 10763,
+            "rate": 0.102167123886
+          },
+          "UP->UP": {
+            "count": 7979,
+            "rate": 0.075740172952
+          }
+        }
+      }
+    }
+  },
+  "decision_type": "alternative_label_design_audit",
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "forbidden_output_scan": {
+    "forbidden_keys_present": [],
+    "forbidden_output_terms": [
+      "backtest",
+      "drawdown",
+      "equity_curve",
+      "model_score",
+      "order",
+      "pnl",
+      "position_size",
+      "prediction",
+      "profit_factor",
+      "sharpe",
+      "signal",
+      "trading_signal"
+    ],
+    "note": "V9.5 ne produit aucune prediction, score modele, sortie de trading ou metrique de performance trading.",
+    "passed": true
+  },
+  "inputs": {
+    "latest_metrics": {
+      "path": "reports/current/latest_metrics.json",
+      "sha256": "b8b454b19fdbc2a905ee76789900c1f594ef6e01b37d76cb5661025dffcda891"
+    },
+    "latest_summary": {
+      "path": "reports/current/latest_summary.md",
+      "sha256": "ad4fdc4cac99e4e1254fe063b9a95d1e5fbcbfabd76e4f1f137f197603ae93cd"
+    },
+    "project_state": {
+      "path": "reports/PROJECT_STATE.json",
+      "sha256": "1aee48b8e4362ca6df383a41dcec3e3c552130ae71685554f4e5291e1f68d59f"
+    },
+    "v5_2_label_manifest": {
+      "path": "reports/manifests/max_history_label_factory_v5_2_manifest.json",
+      "sha256": "3bf156f709be35feed7d5d7c8aaa55005bdec235f334d3bfa2244be256cf00a5"
+    },
+    "v9_1_dataset_manifest": {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+      "sha256": "9624672783b1ae9d3e78c5fab72e6e4e790c8161439982a20ac52bf1cea1ee8a"
+    },
+    "v9_2_scores_report": {
+      "path": "reports/ml/refined_ohlcv_trades_offline_research_scores_v9_2.json",
+      "sha256": "ef1098c01111cabcf8ec77083acc83179d2540749b10a5985106ad9fcfb62297"
+    },
+    "v9_2_static_ml": {
+      "path": "reports/ml/refined_ohlcv_trades_offline_ml_research_v9_2.json",
+      "sha256": "b27547fea2ff87fd0c33d7c34acb8c0d33da8efd1b7ba471a5681111b5ad7734"
+    },
+    "v9_3_scores_report": {
+      "path": "reports/ml/refined_strict_walk_forward_scores_v9_3.json",
+      "sha256": "b711c9aec00a436a7a65d51f71653caac8f88b50ad223eb31a1a7fb66a925a14"
+    },
+    "v9_3_walk_forward": {
+      "path": "reports/ml/refined_strict_walk_forward_validation_v9_3.json",
+      "sha256": "5fa406c7be9235a4d68c425f6ad4a535f7f01e5b98fbf1acb426d6972da42be4"
+    },
+    "v9_4_decision": {
+      "path": "reports/research_decisions/refined_research_decision_gate_v9_4.json",
+      "sha256": "22f9cc78c248fddd5e52f0f7f3363ca576c01869b52d880e1ab2de0cbf926506"
+    },
+    "v9_4_manifest": {
+      "path": "reports/manifests/refined_research_decision_gate_v9_4_manifest.json",
+      "sha256": "c5c9df1504c4cb3b73e26145751719aa26882df42e4dc3fedd4f8e179141f0d3"
+    }
+  },
+  "leakage_guard": {
+    "forbidden_designs_present": [],
+    "passed": true,
+    "required_rules": [
+      "feature_available_ts <= decision_ts",
+      "label_available_ts > decision_ts",
+      "no future return or label columns may become features",
+      "no split, fold or walk-forward identifiers may become features"
+    ]
+  },
+  "limitations": [
+    "V9.5 audite uniquement le design des labels existants et propose des hypotheses de recherche.",
+    "V9.5 ne cree aucun nouveau label, aucun dataset, aucun modele ML, aucun backtest, aucune strategie, aucun signal actionnable et aucun ordre.",
+    "Les alternatives recommandees doivent etre implementees et validees dans une future label factory candidate avant toute nouvelle evaluation ML."
+  ],
+  "next_step_recommendation": "V9.6 - Refined Label Factory Candidate",
+  "no_backtest_justified": true,
+  "problem_diagnostic": {
+    "class_imbalance_present": true,
+    "dominant_period_examples": [
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.785092592593,
+        "month": "2023-04",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.800201612903,
+        "month": "2023-05",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.781319444444,
+        "month": "2023-06",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.882638888889,
+        "month": "2023-07",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.886559139785,
+        "month": "2023-08",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.867523148148,
+        "month": "2023-09",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.78210125448,
+        "month": "2023-10",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.766018518519,
+        "month": "2023-11",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.725649641577,
+        "month": "2023-12",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.725957854406,
+        "month": "2024-02",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.785092592593,
+        "timeframe": "1m",
+        "walk_forward_group": "wf_2023_04"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.800201612903,
+        "timeframe": "1m",
+        "walk_forward_group": "wf_2023_05"
+      }
+    ],
+    "dominant_periods_count": 20,
+    "feature_label_incoherence_suspected": true,
+    "feature_leakage_scan_passed": true,
+    "flat_class_definition_issue": true,
+    "fold_concentration_entries": 9,
+    "horizon_too_long_suspected": false,
+    "horizon_too_short_suspected": true,
+    "labels_too_noisy": true,
+    "market_regime_instability_present": true,
+    "metric_forbidden_scan_passed": true,
+    "no_clear_edge_vs_shuffled_labels_count": 21,
+    "summary": "Le diagnostic pointe vers un probleme de labels : seuil fixe non scale entre timeframes, dominance FLAT en 1m, transitions rapides sur les timeframes plus longs et falsification label shuffle non propre.",
+    "thresholds_likely_too_weak_or_not_scaled": true,
+    "timeframe_instability_present": true
+  },
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_recomputed": false,
+    "execution_enabled": false,
+    "labels_recomputed": false,
+    "ml_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "strategy_enabled": false,
+    "trading_enabled": false
+  },
+  "source_decision": {
+    "fold_concentration_entries": 9,
+    "label_shuffle_no_clear_edge_cases": 21,
+    "reason": "Le backtest n'est pas justifie : 21 cas restent trop proches des labels melanges, avec 9 entrees de concentration et seulement 3 gains walk-forward clairs contre les baselines.",
+    "research_decision": "backtest_not_justified_refine_labels",
+    "version": "V9.4"
+  },
+  "status": "PASS",
+  "v9_5_decision": {
+    "accepted_for_future_experiment": [
+      "volatility_normalized_thresholds"
+    ],
+    "allowed_decisions": [
+      "label_redesign_candidate_fixed_thresholds",
+      "label_redesign_candidate_multi_horizon",
+      "label_redesign_candidate_quantile_based",
+      "label_redesign_candidate_volatility_normalized",
+      "label_redesign_not_ready_need_data_inspection",
+      "stop_refined_branch_labels_not_promising"
+    ],
+    "confidence_level": "medium_high",
+    "decision": "label_redesign_candidate_volatility_normalized",
+    "explicit_no_trading_statement": "V9.5 ne produit aucun backtest, aucune strategie, aucun signal actionnable, aucun ordre et aucun trading.",
+    "justification": "Le seuil fixe actuel semble non scale entre timeframes; la normalisation par volatilite est le candidat le plus defensif.",
+    "must_not_run_backtest": true,
+    "must_not_train_ml_in_v9_5": true,
+    "next_step": "V9.6 - Refined Label Factory Candidate",
+    "rejected_as_primary": [
+      "wider_flat_class"
+    ],
+    "selected_family": "volatility_normalized_thresholds"
+  },
+  "version": "V9.5",
+  "window": {
+    "total_days": 366,
+    "window_end": "2024-03-24",
+    "window_start": "2023-03-25"
+  }
+}

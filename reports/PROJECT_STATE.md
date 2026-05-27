@@ -1,10 +1,9 @@
-# Etat du Projet : V9.0_to_V9.3.2 validee + candidat V9.4.1
+# Etat du Projet : V9.4.1 validee + candidat V9.5
 
-- **Derniere version validee** : V9.0_to_V9.3.2.
-- **Version candidate** : V9.4.1.
+- **Derniere version validee** : V9.4.1.
+- **Version candidate** : V9.5.
 - **Statut candidate** : `pending_external_audit`.
-- **Source metier** : V9.4.
-- **Correction** : packaging audit-lite / sidecars uniquement.
-- **Decision research inchangee** : `backtest_not_justified_refine_labels`.
+- **Direction** : alternative label design audit.
+- **Decision V9.5** : `label_redesign_candidate_volatility_normalized`.
 
-Aucun backtest, aucune strategie, aucun signal actionnable, aucun ordre, aucun paper live, aucun trading reel, aucun modele persistant, aucune API privee, aucune cle API.
+V9.5 audite les labels et recommande une future label factory candidate. Aucun backtest, strategie, signal actionnable ou ordre.

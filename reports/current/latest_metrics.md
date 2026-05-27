@@ -1,9 +1,10 @@
-# Latest Metrics V9.4.1
+# Latest Metrics V9.5
 
-- Derniere version validee : V9.0_to_V9.3.2.
-- Candidate : V9.4.1.
-- Source : V9.4.
-- Correction : packaging sidecars only.
-- Decision research V9.4 : `backtest_not_justified_refine_labels`.
+- Derniere version validee : V9.4.1.
+- Candidate : V9.5.
+- Direction : alternative label design audit.
+- Decision : `label_redesign_candidate_volatility_normalized`.
+- Cas proches des labels melanges herites : `21`.
+- Lecture full dataset locale : `True`.
 
 Aucun backtest, aucune strategie, aucun signal actionnable, aucun ordre, aucun trading reel.

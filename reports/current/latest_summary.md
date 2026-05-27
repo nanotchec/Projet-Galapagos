@@ -1,9 +1,9 @@
-# Latest Summary V9.4.1
+# Latest Summary V9.5
 
-V9.0_to_V9.3.2 est la derniere version validee par audit externe.
+V9.4.1 est la derniere version validee par audit externe.
 
-V9.4.1 est une corrective packaging : elle fournit un ZIP audit-lite V9.4.1 avec sidecars externes JSON/TXT alignes sur le hash final du ZIP audite.
+V9.5 est la candidate courante. Elle audite le design des labels actuels apres la decision V9.4 `backtest_not_justified_refine_labels`.
 
-La decision research V9.4 reste inchangee : `backtest_not_justified_refine_labels`.
+Decision V9.5 : `label_redesign_candidate_volatility_normalized`. La prochaine etape recommandee est V9.6 - Refined Label Factory Candidate.
 
-La candidate reste `pending_external_audit`. Aucun trading, paper live, ordre, backtest, strategie, signal actionnable ou modele persistant n'est produit.
+Aucun trading, paper live, ordre, backtest execute, strategie, signal actionnable ou modele persistant n'est produit.

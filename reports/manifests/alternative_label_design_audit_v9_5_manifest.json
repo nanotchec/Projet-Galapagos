@@ -1,0 +1,376 @@
+{
+  "alternative_label_design_catalog": [
+    {
+      "advantages": "Simple, reproductible, facile a auditer.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si calcule uniquement avec close futur pour le label et publie apres label_end_ts."
+      },
+      "decision_reason": "Le seuil actuel est 0.0005; la dominance FLAT 1m suggere qu'un seuil fixe seul ne suffit pas.",
+      "definition": "Seuils fixes plus stricts que le seuil actuel.",
+      "expected_impact_on_noise_and_imbalance": "Reduit potentiellement les labels directionnels bruites, mais peut augmenter excessivement FLAT.",
+      "family_id": "fixed_stricter_thresholds",
+      "future_experiment_recommendation": "review",
+      "leakage_risks": "Risque faible si aucune feature future n'est introduite.",
+      "risks": "Peut aggraver l'instabilite entre timeframes si le seuil reste non scale.",
+      "temporal_availability": "label_available_ts reste strictement apres decision_ts."
+    },
+    {
+      "advantages": "Aligne mieux les labels entre 1m, 5m, 15m et 1h.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si la volatilite de normalisation n'utilise que des donnees closes avant decision_ts."
+      },
+      "decision_reason": "Candidat prioritaire car le seuil fixe actuel semble non scale entre timeframes.",
+      "definition": "Seuils normalises par volatilite historique causale disponible avant decision_ts.",
+      "expected_impact_on_noise_and_imbalance": "Devrait reduire l'ecart de classe entre timeframes et rendre FLAT plus comparable.",
+      "family_id": "volatility_normalized_thresholds",
+      "future_experiment_recommendation": "accept_for_future_experiment",
+      "leakage_risks": "Risque de leakage si la volatilite inclut la fenetre future du label.",
+      "risks": "Doit verrouiller une volatilite strictement causale pour eviter leakage.",
+      "temporal_availability": "label_available_ts reste strictement apres decision_ts; feature_available_ts <= decision_ts doit rester vrai."
+    },
+    {
+      "advantages": "Controle mieux l'equilibre de classes.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal uniquement si les seuils quantiles sont calcules sur une fenetre passee et figes avant decision_ts."
+      },
+      "decision_reason": "Utile si le redesign volatility-normalized ne stabilise pas les classes.",
+      "definition": "Labels construits par quantiles/tertiles sur une fenetre temporelle definie.",
+      "expected_impact_on_noise_and_imbalance": "Peut reduire le desequilibre, mais complique l'interpretation economique du label.",
+      "family_id": "rolling_quantile_or_tertile_labels",
+      "future_experiment_recommendation": "review_for_future_experiment",
+      "leakage_risks": "Risque moyen : les quantiles doivent exclure validation/test futur.",
+      "risks": "Risque de non-stationnarite et de fuite si les quantiles utilisent le futur.",
+      "temporal_availability": "Disponibilite temporelle acceptable si les seuils sont connus avant la decision."
+    },
+    {
+      "advantages": "Peut reduire le bruit si h1 est trop court.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si le label est seulement disponible apres l'horizon complet."
+      },
+      "decision_reason": "Le taux de transition eleve suggere de tester un horizon un peu plus long, sans le valider ici.",
+      "definition": "Tester des horizons alternatifs a h1, h3, h5 en bars.",
+      "expected_impact_on_noise_and_imbalance": "Peut reduire les transitions rapides, mais peut aussi augmenter l'autocorrelation.",
+      "family_id": "alternative_horizon",
+      "future_experiment_recommendation": "review_for_future_experiment",
+      "leakage_risks": "Risque faible si label_end_ts et label_available_ts sont validates strictement.",
+      "risks": "Un horizon trop long augmente la latence du label et peut diluer le lien aux features.",
+      "temporal_availability": "label_available_ts doit etre decale au-dela du nouvel horizon."
+    },
+    {
+      "advantages": "Peut retirer des mouvements faibles et bruites des classes UP/DOWN.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si base uniquement sur le retour futur du label et disponible apres label_end_ts."
+      },
+      "decision_reason": "Non prioritaire car la classe FLAT est deja trop dominante en 1m.",
+      "definition": "Elargir la classe FLAT autour de zero retour.",
+      "expected_impact_on_noise_and_imbalance": "Peut reduire le bruit directionnel, mais risque d'aggraver le desequilibre 1m.",
+      "family_id": "wider_flat_class",
+      "future_experiment_recommendation": "reject_as_primary",
+      "leakage_risks": "Risque faible de leakage, mais fort risque de desequilibre.",
+      "risks": "Risque d'une classe FLAT dominante, deja observee en 1m.",
+      "temporal_availability": "Disponibilite temporelle identique au label actuel."
+    },
+    {
+      "advantages": "Simplifie la cible et les metriques.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si le filtrage est effectue uniquement a partir du label futur et publie apres label_end_ts."
+      },
+      "decision_reason": "A evaluer seulement apres un redesign de seuils causaux.",
+      "definition": "Supprimer FLAT et garder uniquement UP/DOWN sur lignes directionnelles.",
+      "expected_impact_on_noise_and_imbalance": "Peut aider l'equilibre directionnel, mais n'adresse pas seul la qualite du seuil.",
+      "family_id": "binary_directional_only",
+      "future_experiment_recommendation": "review_only",
+      "leakage_risks": "Risque de fuite si le filtrage est applique comme information disponible a decision_ts.",
+      "risks": "Peut jeter beaucoup de lignes et creer un biais de selection.",
+      "temporal_availability": "Les lignes ignorees doivent etre marquees non valides pour ML avant tout entrainement futur."
+    },
+    {
+      "advantages": "Peut reduire les faux signaux de micro-bruit en exigeant confirmation temporelle.",
+      "causality": {
+        "feature_available_ts_compatible": true,
+        "label_available_ts_compatible": true,
+        "summary": "Causal si tous les horizons sont futurs et la disponibilite est apres le plus long horizon."
+      },
+      "decision_reason": "Prometteur en recherche, mais pas le premier candidat conservateur.",
+      "definition": "Label multi-horizon combinant h1/h3/h5 ou nouveaux horizons avec regles explicites.",
+      "expected_impact_on_noise_and_imbalance": "Peut stabiliser la cible, mais doit rester une hypothese V9.6+.",
+      "family_id": "causal_multi_horizon_labels",
+      "future_experiment_recommendation": "review_for_future_experiment",
+      "leakage_risks": "Risque moyen si des horizons sont melanges avec des features non alignees temporellement.",
+      "risks": "Plus complexe, plus facile a sur-ajuster, et disponibilite label plus tardive.",
+      "temporal_availability": "label_available_ts doit etre strictement apres le dernier label_end_ts utilise."
+    }
+  ],
+  "created_at_utc": "2026-05-27T10:01:04.283683Z",
+  "current_label_analysis_summary": {
+    "full_local_dataset_available": true,
+    "full_local_labels_available": true,
+    "timeframes": {
+      "15m": {
+        "dominated_periods_count": 0,
+        "entropy_bits": 1.580179239382,
+        "label_change_rate": 0.644219529579,
+        "majority_class": "UP",
+        "majority_rate": 0.357937050975
+      },
+      "1h": {
+        "dominated_periods_count": 0,
+        "entropy_bits": 1.47792582421,
+        "label_change_rate": 0.644273759028,
+        "majority_class": "UP",
+        "majority_rate": 0.428702430078
+      },
+      "1m": {
+        "dominated_periods_count": 20,
+        "entropy_bits": 1.012070838247,
+        "label_change_rate": 0.31524216335,
+        "majority_class": "FLAT",
+        "majority_rate": 0.768511138943
+      },
+      "5m": {
+        "dominated_periods_count": 0,
+        "entropy_bits": 1.522535622606,
+        "label_change_rate": 0.580548093444,
+        "majority_class": "FLAT",
+        "majority_rate": 0.475680601435
+      }
+    }
+  },
+  "decision_type": "alternative_label_design_audit",
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "input_reports": {
+    "latest_metrics": {
+      "path": "reports/current/latest_metrics.json",
+      "sha256": "b8b454b19fdbc2a905ee76789900c1f594ef6e01b37d76cb5661025dffcda891"
+    },
+    "latest_summary": {
+      "path": "reports/current/latest_summary.md",
+      "sha256": "ad4fdc4cac99e4e1254fe063b9a95d1e5fbcbfabd76e4f1f137f197603ae93cd"
+    },
+    "project_state": {
+      "path": "reports/PROJECT_STATE.json",
+      "sha256": "1aee48b8e4362ca6df383a41dcec3e3c552130ae71685554f4e5291e1f68d59f"
+    },
+    "v5_2_label_manifest": {
+      "path": "reports/manifests/max_history_label_factory_v5_2_manifest.json",
+      "sha256": "3bf156f709be35feed7d5d7c8aaa55005bdec235f334d3bfa2244be256cf00a5"
+    },
+    "v9_1_dataset_manifest": {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+      "sha256": "9624672783b1ae9d3e78c5fab72e6e4e790c8161439982a20ac52bf1cea1ee8a"
+    },
+    "v9_2_scores_report": {
+      "path": "reports/ml/refined_ohlcv_trades_offline_research_scores_v9_2.json",
+      "sha256": "ef1098c01111cabcf8ec77083acc83179d2540749b10a5985106ad9fcfb62297"
+    },
+    "v9_2_static_ml": {
+      "path": "reports/ml/refined_ohlcv_trades_offline_ml_research_v9_2.json",
+      "sha256": "b27547fea2ff87fd0c33d7c34acb8c0d33da8efd1b7ba471a5681111b5ad7734"
+    },
+    "v9_3_scores_report": {
+      "path": "reports/ml/refined_strict_walk_forward_scores_v9_3.json",
+      "sha256": "b711c9aec00a436a7a65d51f71653caac8f88b50ad223eb31a1a7fb66a925a14"
+    },
+    "v9_3_walk_forward": {
+      "path": "reports/ml/refined_strict_walk_forward_validation_v9_3.json",
+      "sha256": "5fa406c7be9235a4d68c425f6ad4a535f7f01e5b98fbf1acb426d6972da42be4"
+    },
+    "v9_4_decision": {
+      "path": "reports/research_decisions/refined_research_decision_gate_v9_4.json",
+      "sha256": "22f9cc78c248fddd5e52f0f7f3363ca576c01869b52d880e1ab2de0cbf926506"
+    },
+    "v9_4_manifest": {
+      "path": "reports/manifests/refined_research_decision_gate_v9_4_manifest.json",
+      "sha256": "c5c9df1504c4cb3b73e26145751719aa26882df42e4dc3fedd4f8e179141f0d3"
+    }
+  },
+  "limitations": [
+    "V9.5 audite uniquement le design des labels existants et propose des hypotheses de recherche.",
+    "V9.5 ne cree aucun nouveau label, aucun dataset, aucun modele ML, aucun backtest, aucune strategie, aucun signal actionnable et aucun ordre.",
+    "Les alternatives recommandees doivent etre implementees et validees dans une future label factory candidate avant toute nouvelle evaluation ML."
+  ],
+  "outputs": {
+    "documentation": {
+      "bytes": 2844,
+      "path": "docs/alternative_label_design_audit_v9_5.md",
+      "sha256": "45c0cf9288642d58f28c81b02b8ca83af2015f86a96e49b0659d83592ccf233d"
+    },
+    "report_json": {
+      "bytes": 67957,
+      "path": "reports/research_decisions/alternative_label_design_audit_v9_5.json",
+      "sha256": "42f94cb4eaa1faabb5492fcc9cf6f1193d8b8d12fc415f39fddb7bd616dacdeb"
+    },
+    "report_markdown": {
+      "bytes": 2844,
+      "path": "reports/research_decisions/alternative_label_design_audit_v9_5.md",
+      "sha256": "45c0cf9288642d58f28c81b02b8ca83af2015f86a96e49b0659d83592ccf233d"
+    }
+  },
+  "problem_diagnostic": {
+    "class_imbalance_present": true,
+    "dominant_period_examples": [
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.785092592593,
+        "month": "2023-04",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.800201612903,
+        "month": "2023-05",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.781319444444,
+        "month": "2023-06",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.882638888889,
+        "month": "2023-07",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.886559139785,
+        "month": "2023-08",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.867523148148,
+        "month": "2023-09",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.78210125448,
+        "month": "2023-10",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.766018518519,
+        "month": "2023-11",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.725649641577,
+        "month": "2023-12",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.725957854406,
+        "month": "2024-02",
+        "timeframe": "1m"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.785092592593,
+        "timeframe": "1m",
+        "walk_forward_group": "wf_2023_04"
+      },
+      {
+        "majority_class": "FLAT",
+        "majority_rate": 0.800201612903,
+        "timeframe": "1m",
+        "walk_forward_group": "wf_2023_05"
+      }
+    ],
+    "dominant_periods_count": 20,
+    "feature_label_incoherence_suspected": true,
+    "feature_leakage_scan_passed": true,
+    "flat_class_definition_issue": true,
+    "fold_concentration_entries": 9,
+    "horizon_too_long_suspected": false,
+    "horizon_too_short_suspected": true,
+    "labels_too_noisy": true,
+    "market_regime_instability_present": true,
+    "metric_forbidden_scan_passed": true,
+    "no_clear_edge_vs_shuffled_labels_count": 21,
+    "summary": "Le diagnostic pointe vers un probleme de labels : seuil fixe non scale entre timeframes, dominance FLAT en 1m, transitions rapides sur les timeframes plus longs et falsification label shuffle non propre.",
+    "thresholds_likely_too_weak_or_not_scaled": true,
+    "timeframe_instability_present": true
+  },
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_recomputed": false,
+    "execution_enabled": false,
+    "labels_recomputed": false,
+    "ml_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "strategy_enabled": false,
+    "trading_enabled": false
+  },
+  "source_decision": {
+    "fold_concentration_entries": 9,
+    "label_shuffle_no_clear_edge_cases": 21,
+    "reason": "Le backtest n'est pas justifie : 21 cas restent trop proches des labels melanges, avec 9 entrees de concentration et seulement 3 gains walk-forward clairs contre les baselines.",
+    "research_decision": "backtest_not_justified_refine_labels",
+    "version": "V9.4"
+  },
+  "status": "PASS",
+  "target_name": "up_down_flat_h1",
+  "v9_5_decision": {
+    "accepted_for_future_experiment": [
+      "volatility_normalized_thresholds"
+    ],
+    "allowed_decisions": [
+      "label_redesign_candidate_fixed_thresholds",
+      "label_redesign_candidate_multi_horizon",
+      "label_redesign_candidate_quantile_based",
+      "label_redesign_candidate_volatility_normalized",
+      "label_redesign_not_ready_need_data_inspection",
+      "stop_refined_branch_labels_not_promising"
+    ],
+    "confidence_level": "medium_high",
+    "decision": "label_redesign_candidate_volatility_normalized",
+    "explicit_no_trading_statement": "V9.5 ne produit aucun backtest, aucune strategie, aucun signal actionnable, aucun ordre et aucun trading.",
+    "justification": "Le seuil fixe actuel semble non scale entre timeframes; la normalisation par volatilite est le candidat le plus defensif.",
+    "must_not_run_backtest": true,
+    "must_not_train_ml_in_v9_5": true,
+    "next_step": "V9.6 - Refined Label Factory Candidate",
+    "rejected_as_primary": [
+      "wider_flat_class"
+    ],
+    "selected_family": "volatility_normalized_thresholds"
+  },
+  "version": "V9.5",
+  "window": {
+    "total_days": 366,
+    "window_end": "2024-03-24",
+    "window_start": "2023-03-25"
+  }
+}
