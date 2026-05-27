@@ -1,9 +1,10 @@
-# Synthese courante - V9.11
+# Synthese courante - V9.12
 
-- Derniere version validee : `V9.6_to_V9.10`.
-- Candidate : `V9.11`.
+- Derniere version validee : `V9.11`.
+- Candidate : `V9.12`.
 - Statut : `pending_external_audit`.
-- Direction : analyse d'echec des labels et plan de redesign.
-- Decision V9.11 : `label_redesign_plan_horizon_extension`.
+- Direction : horizon extension + diagnostic event-based pour labels.
+- Decision V9.12 : `label_redesign_candidate_horizon_event_created_requires_review`.
+- Candidat recommande : `up_down_flat_volnorm_h4`.
 - Aucun trading, paper live, ordre, backtest, strategie, signal actionnable, modele persistant, API privee ou cle API.
-- Aucun sidecar et aucune empreinte ZIP.
+- Aucun sidecar, aucune empreinte ZIP et aucun champ zip_sha256.

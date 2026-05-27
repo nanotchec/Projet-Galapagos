@@ -1,9 +1,9 @@
 {
   "api_key_used": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.11",
-  "direction": "label_failure_analysis_and_redesign_plan",
-  "last_validated_version": "V9.6_to_V9.10",
+  "candidate_version": "V9.12",
+  "direction": "horizon_extension_event_based_label_redesign",
+  "last_validated_version": "V9.11",
   "no_actionable_signal": true,
   "no_backtest": true,
   "no_orders": true,
@@ -14,5 +14,6 @@
   "no_trading": true,
   "no_zip_fingerprints": true,
   "private_endpoint_used": false,
-  "v9_11_decision": "label_redesign_plan_horizon_extension"
+  "recommended_candidate": "up_down_flat_volnorm_h4",
+  "v9_12_decision": "label_redesign_candidate_horizon_event_created_requires_review"
 }

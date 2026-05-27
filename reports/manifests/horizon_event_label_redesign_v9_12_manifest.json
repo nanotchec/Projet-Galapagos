@@ -1,0 +1,243 @@
+{
+  "created_at_utc": "2026-05-27T13:35:04Z",
+  "decision_type": "horizon_extension_event_based_label_redesign",
+  "event_based_safety_guard": {
+    "event_based_is_descriptive": true,
+    "no_backtest": true,
+    "no_entry": true,
+    "no_exit": true,
+    "no_pnl": true,
+    "no_position": true,
+    "no_signal": true,
+    "passed": true
+  },
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "full_data_available": true,
+  "label_columns": [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "close_ts",
+    "decision_ts",
+    "label_start_ts",
+    "label_end_ts",
+    "label_available_ts",
+    "label_run_id",
+    "label_schema_version",
+    "source_dataset_version",
+    "source_label_design_version",
+    "candidate_family",
+    "target_name",
+    "horizon_name",
+    "horizon_duration_minutes",
+    "future_log_return",
+    "causal_vol_window_bars",
+    "causal_vol_min_periods",
+    "causal_realized_vol",
+    "volatility_threshold_multiplier",
+    "volatility_normalized_threshold",
+    "up_down_flat_volnorm_h2",
+    "up_down_flat_volnorm_h4",
+    "up_down_flat_volnorm_h8",
+    "event_based_label",
+    "event_horizon_name",
+    "event_threshold_multiplier",
+    "event_valid",
+    "label_valid",
+    "label_invalid_reason",
+    "warmup_row",
+    "label_null_count",
+    "label_error_count"
+  ],
+  "label_run_id": "v9_12_20260527T133444Z_20bc6921",
+  "label_schema_version": "HORIZON_EVENT_LABEL_COLUMNS_V9_12",
+  "leakage_guard": {
+    "causal_volatility_uses_only_past_closed_returns": true,
+    "forbidden_features_present": [],
+    "future_returns_used_only_for_labels": true,
+    "label_available_ts_after_decision_ts_required": true,
+    "label_columns_must_not_be_used_as_features": true,
+    "passed": true
+  },
+  "limitations": [
+    "V9.12 cree et audite uniquement des candidats de labels horizon extension et event-based descriptifs.",
+    "V9.12 ne lance aucun ML, aucun walk-forward, aucun backtest, aucune strategie, aucun signal actionnable et aucun ordre.",
+    "Les candidats V9.12 ne prouvent aucun edge et doivent etre revalides dans une version future avant toute interpretation."
+  ],
+  "outputs": {
+    "15m": {
+      "bytes": 3094515,
+      "format": "parquet",
+      "path": "data/research/v9_12/labels/horizon_event_redesign/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 35136
+    },
+    "1h": {
+      "bytes": 762862,
+      "format": "parquet",
+      "path": "data/research/v9_12/labels/horizon_event_redesign/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 8784
+    },
+    "1m": {
+      "bytes": 37593532,
+      "format": "parquet",
+      "path": "data/research/v9_12/labels/horizon_event_redesign/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 527040
+    },
+    "5m": {
+      "bytes": 9094841,
+      "format": "parquet",
+      "path": "data/research/v9_12/labels/horizon_event_redesign/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2024-03-24/labels.parquet",
+      "rows": 105408
+    }
+  },
+  "recommended_candidate": {
+    "candidate_family": "horizon_extension",
+    "horizon_duration_minutes": 240,
+    "horizon_name": "h4",
+    "multiplier": 1.25,
+    "per_timeframe_summary": {
+      "15m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 11193,
+            "rate": 0.3192527096406161
+          },
+          "FLAT": {
+            "count": 11803,
+            "rate": 0.33665145464917284
+          },
+          "UP": {
+            "count": 12064,
+            "rate": 0.3440958357102111
+          }
+        },
+        "entropy_bits": 1.5842555203798003,
+        "invalid_rows": 76,
+        "majority_class": "UP",
+        "majority_rate": 0.3440958357102111
+      },
+      "1h": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 1673,
+            "rate": 0.19185779816513762
+          },
+          "FLAT": {
+            "count": 5189,
+            "rate": 0.5950688073394496
+          },
+          "UP": {
+            "count": 1858,
+            "rate": 0.21307339449541285
+          }
+        },
+        "entropy_bits": 1.3778911805325573,
+        "invalid_rows": 64,
+        "majority_class": "FLAT",
+        "majority_rate": 0.5950688073394496
+      },
+      "1m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 235410,
+            "rate": 0.4469187834605308
+          },
+          "FLAT": {
+            "count": 42189,
+            "rate": 0.08009454379769905
+          },
+          "UP": {
+            "count": 249141,
+            "rate": 0.47298667274177014
+          }
+        },
+        "entropy_bits": 1.3218847584648097,
+        "invalid_rows": 300,
+        "majority_class": "UP",
+        "majority_rate": 0.47298667274177014
+      },
+      "5m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 41202,
+            "rate": 0.3912820512820513
+          },
+          "FLAT": {
+            "count": 20293,
+            "rate": 0.19271604938271605
+          },
+          "UP": {
+            "count": 43805,
+            "rate": 0.4160018993352327
+          }
+        },
+        "entropy_bits": 1.5138566169668382,
+        "invalid_rows": 108,
+        "majority_class": "UP",
+        "majority_rate": 0.4160018993352327
+      }
+    },
+    "selection_basis": "h4/k=1.25 avoids >70% majority dominance across timeframes while extending beyond noisy h1; selection uses label quality only.",
+    "selection_status": "recommended_for_future_experiment",
+    "target_name": "up_down_flat_volnorm_h4"
+  },
+  "report_path": "reports/labels/horizon_event_label_redesign_v9_12.json",
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_enabled": false,
+    "execution_enabled": false,
+    "labels_enabled": true,
+    "ml_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "status": "PASS",
+  "v9_12_decision": {
+    "confidence": "medium",
+    "decision": "label_redesign_candidate_horizon_event_created_requires_review",
+    "explicit_no_backtest_statement": "Aucun backtest n'est lance ou justifie par V9.12.",
+    "explicit_no_trading_statement": "V9.12 n'autorise aucun trading, paper live, ordre, strategie ou signal actionnable.",
+    "justification": "Le candidat h4/k=1.25 ameliore le diagnostic de bruit h1 sans utiliser ML ni backtest; le diagnostic event-based reste a revoir car AMBIGUOUS domine certains timeframes.",
+    "next_step_recommendation": "V9.13 - Dataset/ML diagnostic with the h4 horizon-extension label candidate, uniquement si l'audit externe valide V9.12; aucun backtest."
+  },
+  "version": "V9.12",
+  "window": {
+    "total_days": 366,
+    "window_end": "2024-03-24",
+    "window_start": "2023-03-25"
+  }
+}
