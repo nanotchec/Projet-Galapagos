@@ -1,6 +1,6 @@
 # Projet Galapagos
 
-- Derniere version validee : V9.13.
-- Candidate : V9.14.1, correction inventaire data-extension et decision de branche de V9.14.
+- Derniere version validee : V9.14.1.
+- Candidate : V9.15, readiness data-extension derivatives.
 - Aucun trading, ordre, backtest, walk-forward, strategie, signal actionnable, modele persistant, API privee ou cle API.
-- Aucun sidecar et aucune empreinte ZIP.
+- Aucun reseau, aucun telechargement de nouvelles donnees, aucun sidecar et aucune empreinte ZIP.

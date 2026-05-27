@@ -1,0 +1,445 @@
+{
+  "created_at_utc": "2026-05-27T16:31:30Z",
+  "direction": "derivatives_data_extension_readiness",
+  "feature_candidate": {
+    "candidate_columns_considered": [
+      "funding_rate",
+      "funding_rate_change",
+      "funding_rate_zscore",
+      "open_interest",
+      "open_interest_change",
+      "open_interest_zscore",
+      "funding_open_interest_interaction",
+      "derivatives_missingness_flags"
+    ],
+    "created": false,
+    "outputs": [],
+    "reason": "No feature candidate was created because funding/OI coverage in local V1.14 reports does not overlap the V9 window."
+  },
+  "feature_candidate_outputs": [],
+  "features_candidate_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "funding_readiness": {
+    "causality": {
+      "available_timestamp_or_equivalent_present": true,
+      "causality_feasibility": "good",
+      "rule_required": "Use available_timestamp <= feature decision timestamp; never use metric timestamp alone when publication lag is ambiguous."
+    },
+    "combined_coverage_end": "2026-05-05 08:00:00+00:00",
+    "combined_coverage_start": "2024-05-05 16:00:00+00:00",
+    "compatible_timeframes": {
+      "15m": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "1h": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "1m": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "4h": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "5m": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "source_name": "funding_rates"
+    },
+    "compatible_with_v9_window": false,
+    "coverage_checks": [
+      {
+        "coverage_end": "2026-05-05 00:00:00+00:00",
+        "coverage_start": "2024-05-05 16:00:00+00:00",
+        "exchange": "binance",
+        "freshness": "fresh",
+        "missing_rate": 0.7691334598355472,
+        "overlap_end": null,
+        "overlap_start": null,
+        "overlaps_v9_window": false,
+        "rows": 2190,
+        "status": "available"
+      },
+      {
+        "coverage_end": "2026-05-05 08:00:00+00:00",
+        "coverage_start": "2026-02-28 00:00:00+00:00",
+        "exchange": "bybit",
+        "freshness": "fresh",
+        "missing_rate": 0.9789162977018765,
+        "overlap_end": null,
+        "overlap_start": null,
+        "overlaps_v9_window": false,
+        "rows": 200,
+        "status": "available"
+      }
+    ],
+    "evidence_paths": [
+      "reports/research/derivatives_coverage_v1_14.json",
+      "reports/research/derivatives_data_quality_v1_14.json",
+      "reports/research/derivatives_features_v1_14.json"
+    ],
+    "exchanges_available": [
+      "binance",
+      "bybit"
+    ],
+    "frequency": "8h native for funding where available; open interest source frequency varies and local feature report is 4h aligned.",
+    "freshness": [
+      "fresh"
+    ],
+    "known_quality": "partial",
+    "leakage_risk": "low_if_available_timestamp_enforced",
+    "metric_name": "funding_rate",
+    "missing_rates": {
+      "funding_rate": 0.0424822990420658,
+      "funding_rate_binance": 0.08788004997917534,
+      "funding_rate_bybit": 0.9167013744273219,
+      "funding_rate_change_1": 0.08413161182840483,
+      "funding_rate_change_3": 0.06247396917950854,
+      "funding_rate_diff_binance_bybit": 0.9620991253644315,
+      "funding_rate_mean": 0.0424822990420658,
+      "funding_rate_spread_binance_bybit": 0.9620991253644315,
+      "funding_rate_zscore_30d": 0.06747188671386922,
+      "funding_rate_zscore_90d": 0.11745106205747605,
+      "funding_trend_3": 0.06247396917950854,
+      "funding_zscore_30d": 0.06747188671386922,
+      "funding_zscore_90d": 0.11745106205747605
+    },
+    "notes": "Coverage does not overlap the V9 window.",
+    "present_local": true,
+    "readiness_decision": "not_ready_missing_coverage",
+    "source_name": "funding_rates",
+    "survivorship_or_revision_risk": "medium",
+    "total_rows_available": 2390
+  },
+  "inputs_used": {
+    "derivatives_coverage_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_coverage_v1_14.json"
+    },
+    "derivatives_data_quality_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_data_quality_v1_14.json"
+    },
+    "derivatives_features_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_features_v1_14.json"
+    },
+    "fred_macro_readiness_v1_12_2": {
+      "available": true,
+      "path": "reports/research/fred_macro_readiness_v1_12_2.json"
+    },
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v9_14_1_decision": {
+      "available": true,
+      "path": "reports/research_decisions/feature_label_separability_v9_14_1.json"
+    },
+    "v9_14_1_manifest": {
+      "available": true,
+      "path": "reports/manifests/feature_label_separability_v9_14_1_manifest.json"
+    }
+  },
+  "limitations": [
+    "V9.15 est un diagnostic readiness derivatives et ne cree aucun dataset supervise, aucun ML, aucun walk-forward, aucun backtest et aucun signal actionnable.",
+    "Aucune feature candidate full n'est produite si la couverture funding/open interest ne recouvre pas la fenetre V9.",
+    "Les rapports V1.14 mentionnent des collectes historiques precedentes; V9.15 ne les relance pas."
+  ],
+  "local_derivatives_source_inventory": {
+    "derivatives_report_count": 23,
+    "derivatives_report_paths": [
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_collection_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_contribution_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_coverage_expansion_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_coverage_v1_13.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_coverage_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_data_quality_v1_13.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_data_quality_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_features_v1_13.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_features_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_fetch_binance_v1_13.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_fetch_binance_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_fetch_bybit_v1_13.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_fetch_bybit_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_filter_hypotheses_v1_13.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_filter_hypotheses_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_readiness_v1_11.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_readiness_v1_12.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_readiness_v1_12_1.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_readiness_v1_12_2.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_signal_quality_v1_13.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/derivatives_signal_quality_v1_14.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/with_without_derivatives_v1_13.json",
+      "/Users/lilianserre/Documents/projets/projet-galapagos/reports/research/with_without_derivatives_v1_14.json"
+    ],
+    "network_used_in_v9_15": false,
+    "new_data_downloaded_in_v9_15": false,
+    "raw_binance_futures_4h_path": "data/raw/binance_public/futures_um/BTCUSDT/4h",
+    "raw_binance_futures_4h_zip_count": 52,
+    "source_paths": {
+      "audit_derivatives_coverage_script": {
+        "exists": true,
+        "files_count": 1,
+        "is_dir": false,
+        "path": "scripts/audit_derivatives_coverage.py"
+      },
+      "build_derivatives_features_script": {
+        "exists": true,
+        "files_count": 1,
+        "is_dir": false,
+        "path": "scripts/build_derivatives_features.py"
+      },
+      "derivatives_code": {
+        "exists": true,
+        "files_count": 13,
+        "is_dir": true,
+        "path": "src/galapagos/data/derivatives"
+      },
+      "fetch_derivatives_history_script": {
+        "exists": true,
+        "files_count": 1,
+        "is_dir": false,
+        "path": "scripts/fetch_derivatives_history.py"
+      },
+      "gold_derivatives_features": {
+        "exists": true,
+        "files_count": 0,
+        "is_dir": true,
+        "path": "data/gold/derivatives_features/BTCUSDT/4h"
+      },
+      "silver_derivatives": {
+        "exists": true,
+        "files_count": 0,
+        "is_dir": true,
+        "path": "data/silver/derivatives"
+      }
+    }
+  },
+  "next_recommendation": "V9.16 - Derivatives Window Extension Diagnostic.",
+  "open_interest_readiness": {
+    "causality": {
+      "available_timestamp_or_equivalent_present": true,
+      "causality_feasibility": "good",
+      "rule_required": "Use available_timestamp <= feature decision timestamp; never use metric timestamp alone when publication lag is ambiguous."
+    },
+    "combined_coverage_end": "2026-05-05 12:00:00+00:00",
+    "combined_coverage_start": "2026-04-02 08:00:00+00:00",
+    "compatible_timeframes": {
+      "15m": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "1h": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "1m": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "4h": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "5m": {
+        "compatible": false,
+        "reason": "No overlap with V9 window, so no timeframe can be integrated into current V9 datasets."
+      },
+      "source_name": "open_interest"
+    },
+    "compatible_with_v9_window": false,
+    "coverage_checks": [
+      {
+        "coverage_end": null,
+        "coverage_start": null,
+        "exchange": "binance",
+        "freshness": "unknown",
+        "missing_rate": 1.0,
+        "overlap_end": null,
+        "overlap_start": null,
+        "overlaps_v9_window": false,
+        "rows": 0,
+        "status": "unavailable"
+      },
+      {
+        "coverage_end": "2026-05-05 12:00:00+00:00",
+        "coverage_start": "2026-04-02 08:00:00+00:00",
+        "exchange": "bybit",
+        "freshness": "fresh",
+        "missing_rate": 0.9789162977018765,
+        "overlap_end": null,
+        "overlap_start": null,
+        "overlaps_v9_window": false,
+        "rows": 200,
+        "status": "available"
+      }
+    ],
+    "evidence_paths": [
+      "reports/research/derivatives_coverage_v1_14.json",
+      "reports/research/derivatives_data_quality_v1_14.json",
+      "reports/research/derivatives_features_v1_14.json"
+    ],
+    "exchanges_available": [
+      "binance",
+      "bybit"
+    ],
+    "frequency": "8h native for funding where available; open interest source frequency varies and local feature report is 4h aligned.",
+    "freshness": [
+      "fresh",
+      "unknown"
+    ],
+    "known_quality": "partial",
+    "leakage_risk": "low_if_available_timestamp_enforced",
+    "metric_name": "open_interest",
+    "missing_rates": {
+      "open_interest": 0.9167013744273219,
+      "open_interest_bybit": 0.9167013744273219,
+      "open_interest_change_1": 0.9400249895876718,
+      "open_interest_change_3": 0.9275301957517701,
+      "open_interest_mean": 0.9167013744273219,
+      "open_interest_zscore_30d": 0.9416909620991254,
+      "open_interest_zscore_90d": 0.9916701374427322
+    },
+    "notes": "Coverage does not overlap the V9 window.",
+    "present_local": true,
+    "readiness_decision": "not_ready_missing_coverage",
+    "source_name": "open_interest",
+    "survivorship_or_revision_risk": "medium",
+    "total_rows_available": 200
+  },
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "labels_generated": false,
+    "ml_training_enabled": false,
+    "network_used": false,
+    "new_data_downloaded": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "walk_forward_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "source_version": "V9.14.1",
+  "status": "PASS",
+  "v9_14_1_context": {
+    "corrected_decision": "data_extension_first_before_more_labels",
+    "primary_sources": [
+      "funding_rates",
+      "open_interest"
+    ],
+    "source_decision_used": true
+  },
+  "v9_15_decision": {
+    "confidence": "high",
+    "decision": "derivatives_readiness_not_compatible_with_v9_window",
+    "feature_candidate_created": false,
+    "justification": "Funding and open interest are present only partially in local reports and do not overlap the validated V9 window 2023-03-25 to 2024-03-24.",
+    "next_recommendation": "V9.16 - Derivatives Window Extension Diagnostic.",
+    "no_backtest": true,
+    "no_walk_forward": true
+  },
+  "v9_chain_compatibility": {
+    "alignment_possible_now": false,
+    "alignment_requirements": [
+      "Use as-of joins with available_timestamp <= decision_ts.",
+      "Do not forward-fill across publication gaps without a maximum staleness rule.",
+      "Keep derivatives features outside labels and outside any target columns.",
+      "Audit sparse and quasi-constant columns after alignment."
+    ],
+    "compatible_with_current_v9_chain": false,
+    "derivatives_native_or_reported_timeframe": "4h",
+    "expected_post_alignment_coverage": "0 for current V9 window when relying on V1.14 funding/OI reports.",
+    "forward_fill_policy": "not_allowed_for_current_v9_window_because_coverage_does_not_overlap",
+    "funding_overlaps_v9": false,
+    "impact_on_existing_v9_datasets": "Do not mutate existing V9 datasets; a future compatible derivatives window must be built separately.",
+    "local_source_inventory_summary": {
+      "derivatives_reports": 23,
+      "gold_derivatives_feature_files": 0,
+      "raw_futures_4h_zips": 52,
+      "silver_derivatives_files": 0
+    },
+    "open_interest_overlaps_v9": false,
+    "publication_latency_requirement": "available_timestamp must be carried through every future feature row.",
+    "sparse_or_constant_feature_risk": "high_for_current_v9_window",
+    "v9_timeframes": [
+      "1m",
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "v9_window": {
+      "total_days": 366,
+      "window_end": "2024-03-24T23:59:59Z",
+      "window_label": "2023-03-25_2024-03-24",
+      "window_start": "2023-03-25T00:00:00Z"
+    }
+  },
+  "v9_timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "v9_window": {
+    "total_days": 366,
+    "window_end": "2024-03-24T23:59:59Z",
+    "window_label": "2023-03-25_2024-03-24",
+    "window_start": "2023-03-25T00:00:00Z"
+  },
+  "version": "V9.15",
+  "warnings": [
+    "Les rapports derivatives V1.14 indiquent une couverture partielle et majoritairement posterieure a la fenetre V9.",
+    "V9.15 n'appelle aucune API et ne telecharge aucune nouvelle donnee; les constats sont limites aux artefacts locaux existants."
+  ]
+}
