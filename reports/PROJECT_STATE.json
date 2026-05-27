@@ -1,8 +1,8 @@
 {
   "last_validated_version": "V9.0_to_V9.3.2",
-  "candidate_version": "V9.4",
+  "candidate_version": "V9.4.1",
   "candidate_status": "pending_external_audit",
-  "direction": "refined research decision gate",
+  "direction": "correction packaging audit-lite sidecars V9.4",
   "v8_9_1_scope": "packaging_audit_lite_only",
   "v8_9_1_functional_v8_9_results_unchanged": true,
   "v8_9_1_new_dataset_created": false,
@@ -1284,7 +1284,7 @@
   "source_candidate_version": "V9.0_to_V9.3",
   "no_v9_4_before_external_audit": true,
   "source_version_scope": "V9.0_to_V9.3",
-  "correction_scope": "packaging_audit_lite_external_audit_fix_only",
+  "correction_scope": "packaging_sidecars_only",
   "actionable_signal_produced": false,
   "backtest_performed": false,
   "feature_columns_count": 18,
@@ -1293,5 +1293,7 @@
   "research_decision_gate_v9_4_manifest": "reports/manifests/refined_research_decision_gate_v9_4_manifest.json",
   "research_decision_gate_v9_4_report": "reports/research_decisions/refined_research_decision_gate_v9_4.json",
   "research_decision_gate_v9_4_status": "PASS",
-  "research_decision_v9_4": "backtest_not_justified_refine_labels"
+  "research_decision_v9_4": "backtest_not_justified_refine_labels",
+  "source_version": "V9.4",
+  "research_decision_unchanged": true
 }
