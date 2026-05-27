@@ -1,0 +1,4177 @@
+{
+  "created_at_utc": "2026-05-27T15:28:25Z",
+  "decision_type": "feature_label_separability_and_branch_decision",
+  "feature_columns": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "quote_volume",
+    "trade_count_ohlcv",
+    "agg_trade_count",
+    "agg_trade_quantity_sum",
+    "agg_trade_quote_quantity_sum",
+    "agg_trade_vwap",
+    "taker_buy_ratio_count",
+    "taker_buy_ratio_quantity",
+    "taker_imbalance_quantity",
+    "agg_trades_per_minute",
+    "trade_flow_pressure",
+    "hour_utc",
+    "day_of_week_utc"
+  ],
+  "feature_columns_count": 18,
+  "feature_label_separability": {
+    "by_timeframe": {
+      "15m": {
+        "class_separability": {
+          "by_class": {
+            "DOWN": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.021740417039583876
+            },
+            "FLAT": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.042390357058343126
+            },
+            "UP": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.0585055223272813
+            }
+          },
+          "weakest_class": "DOWN"
+        },
+        "data_source": "full_parquet_read_only",
+        "feature_scores": [
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 35530.1562315733,
+              "FLAT": 34986.333041599595,
+              "UP": 36199.21818642098
+            },
+            "eta_squared": 0.0020093076679444473,
+            "feature_name": "open",
+            "standardized_class_mean_range": 0.10845198026012091
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 35583.657973733585,
+              "FLAT": 35039.307421841906,
+              "UP": 36253.779750996015
+            },
+            "eta_squared": 0.0020018205529810417,
+            "feature_name": "high",
+            "standardized_class_mean_range": 0.1082485458581874
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 35476.52389618512,
+              "FLAT": 34931.887991188676,
+              "UP": 36137.62128486056
+            },
+            "eta_squared": 0.0019986885543133667,
+            "feature_name": "low",
+            "standardized_class_mean_range": 0.10819030766336224
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 35531.200434334125,
+              "FLAT": 34986.51940444822,
+              "UP": 36196.1088071162
+            },
+            "eta_squared": 0.001998123712231077,
+            "feature_name": "agg_trade_vwap",
+            "standardized_class_mean_range": 0.10816456345373679
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 35533.561028321266,
+              "FLAT": 34988.4042675591,
+              "UP": 36197.18702938247
+            },
+            "eta_squared": 0.00199461685059676,
+            "feature_name": "close",
+            "standardized_class_mean_range": 0.10807480545118198
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 656.2146937073766,
+              "FLAT": 645.6835098421305,
+              "UP": 700.1003873395308
+            },
+            "eta_squared": 0.0012884140109527492,
+            "feature_name": "agg_trades_per_minute",
+            "standardized_class_mean_range": 0.08208013636906894
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 9843.22040561065,
+              "FLAT": 9685.252647631958,
+              "UP": 10501.505810092962
+            },
+            "eta_squared": 0.0012884140109527473,
+            "feature_name": "agg_trade_count",
+            "standardized_class_mean_range": 0.08208013636906893
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 12721.099973197533,
+              "FLAT": 12503.52232483267,
+              "UP": 13557.750249003984
+            },
+            "eta_squared": 0.0012383028089412286,
+            "feature_name": "trade_count_ohlcv",
+            "standardized_class_mean_range": 0.08082944267063127
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 0.47544697428831334,
+              "FLAT": 0.47403264548700125,
+              "UP": 0.4698764736782443
+            },
+            "eta_squared": 0.0011328297860119872,
+            "feature_name": "taker_buy_ratio_count",
+            "standardized_class_mean_range": 0.07906824833317468
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 0.48837850951460754,
+              "FLAT": 0.4844494135159892,
+              "UP": 0.4820745298436481
+            },
+            "eta_squared": 0.000853633615835607,
+            "feature_name": "taker_buy_ratio_quantity",
+            "standardized_class_mean_range": 0.07127557828977196
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": -0.023242980970785025,
+              "FLAT": -0.031101172968021694,
+              "UP": -0.03585094031270374
+            },
+            "eta_squared": 0.0008536336158355928,
+            "feature_name": "taker_imbalance_quantity",
+            "standardized_class_mean_range": 0.07127557828977134
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": -0.023242980970785025,
+              "FLAT": -0.031101172968021694,
+              "UP": -0.03585094031270374
+            },
+            "eta_squared": 0.0008536336158355928,
+            "feature_name": "trade_flow_pressure",
+            "standardized_class_mean_range": 0.07127557828977134
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 15723409.41014531,
+              "FLAT": 15266742.533145849,
+              "UP": 16680929.85732619
+            },
+            "eta_squared": 0.000784979378532645,
+            "feature_name": "quote_volume",
+            "standardized_class_mean_range": 0.06652933690569879
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 15723409.41014531,
+              "FLAT": 15266742.533145849,
+              "UP": 16680929.85732619
+            },
+            "eta_squared": 0.000784979378532645,
+            "feature_name": "agg_trade_quote_quantity_sum",
+            "standardized_class_mean_range": 0.06652933690569879
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 425.89289135825965,
+              "FLAT": 418.37964943082267,
+              "UP": 442.7595206363712
+            },
+            "eta_squared": 0.0003934794389934706,
+            "feature_name": "volume",
+            "standardized_class_mean_range": 0.04694205758824235
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 425.89289135825965,
+              "FLAT": 418.37964943082267,
+              "UP": 442.7595206363712
+            },
+            "eta_squared": 0.0003934794389934706,
+            "feature_name": "agg_trade_quantity_sum",
+            "standardized_class_mean_range": 0.04694205758824235
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 3.0311802019119094,
+              "FLAT": 2.9829704312462932,
+              "UP": 3.009628154050465
+            },
+            "eta_squared": 9.561180210383442e-05,
+            "feature_name": "day_of_week_utc",
+            "standardized_class_mean_range": 0.024077588916937787
+          },
+          {
+            "class_counts": {
+              "DOWN": 11193,
+              "FLAT": 11803,
+              "UP": 12048
+            },
+            "class_means": {
+              "DOWN": 11.489949075314929,
+              "FLAT": 11.50410912479878,
+              "UP": 11.506474103585658
+            },
+            "eta_squared": 1.0895505114785148e-06,
+            "feature_name": "hour_utc",
+            "standardized_class_mean_range": 0.002387356973627828
+          }
+        ],
+        "rows_used": 35044,
+        "split_top_features": {
+          "test": [
+            "hour_utc",
+            "taker_buy_ratio_quantity",
+            "taker_imbalance_quantity",
+            "trade_flow_pressure",
+            "day_of_week_utc"
+          ],
+          "train": [
+            "low",
+            "close",
+            "agg_trade_vwap",
+            "high",
+            "open"
+          ],
+          "validation": [
+            "low",
+            "close",
+            "agg_trade_vwap",
+            "open",
+            "high"
+          ]
+        },
+        "timeframe": "15m",
+        "top_features": [
+          "open",
+          "high",
+          "low",
+          "agg_trade_vwap",
+          "close"
+        ],
+        "weak_features": [
+          "volume",
+          "agg_trade_quantity_sum",
+          "day_of_week_utc",
+          "hour_utc"
+        ]
+      },
+      "1h": {
+        "class_separability": {
+          "by_class": {
+            "DOWN": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.05248450324646287
+            },
+            "FLAT": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.0917067494824847
+            },
+            "UP": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.0985861167910416
+            }
+          },
+          "weakest_class": "DOWN"
+        },
+        "data_source": "full_parquet_read_only",
+        "feature_scores": [
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 693.2769874476987,
+              "FLAT": 633.9128894456221,
+              "UP": 742.2282542250989
+            },
+            "eta_squared": 0.00605720760253394,
+            "feature_name": "agg_trades_per_minute",
+            "standardized_class_mean_range": 0.1891501707088933
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 41596.61924686193,
+              "FLAT": 38034.77336673733,
+              "UP": 44533.69525350593
+            },
+            "eta_squared": 0.006057207602533927,
+            "feature_name": "agg_trade_count",
+            "standardized_class_mean_range": 0.18915017070889306
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 53743.326957561265,
+              "FLAT": 49087.09153979572,
+              "UP": 57530.82146709817
+            },
+            "eta_squared": 0.00596477690545217,
+            "feature_name": "trade_count_ohlcv",
+            "standardized_class_mean_range": 0.18753534227831567
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 67176459.60761774,
+              "FLAT": 59696843.59896416,
+              "UP": 71392890.36681871
+            },
+            "eta_squared": 0.004460569054549022,
+            "feature_name": "quote_volume",
+            "standardized_class_mean_range": 0.15800183292715972
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 67176459.60761774,
+              "FLAT": 59696843.59896416,
+              "UP": 71392890.36681871
+            },
+            "eta_squared": 0.004460569054549022,
+            "feature_name": "agg_trade_quote_quantity_sum",
+            "standardized_class_mean_range": 0.15800183292715972
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 1792.7219841273163,
+              "FLAT": 1626.9396051705532,
+              "UP": 1889.3525414277237
+            },
+            "eta_squared": 0.004100029591028055,
+            "feature_name": "volume",
+            "standardized_class_mean_range": 0.1518621542202253
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 1792.7219841273163,
+              "FLAT": 1626.9396051705532,
+              "UP": 1889.3525414277237
+            },
+            "eta_squared": 0.004100029591028055,
+            "feature_name": "agg_trade_quantity_sum",
+            "standardized_class_mean_range": 0.1518621542202253
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 2.954572624028691,
+              "FLAT": 3.0803623048756985,
+              "UP": 2.8225458468176914
+            },
+            "eta_squared": 0.002742190256258163,
+            "feature_name": "day_of_week_utc",
+            "standardized_class_mean_range": 0.129093531335584
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 35959.31690376569,
+              "FLAT": 35366.21158797456,
+              "UP": 36544.113694714135
+            },
+            "eta_squared": 0.0018098271840671456,
+            "feature_name": "high",
+            "standardized_class_mean_range": 0.10451834238299916
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 35842.50571448269,
+              "FLAT": 35257.05224791285,
+              "UP": 36415.406207076354
+            },
+            "eta_squared": 0.0017749671629936146,
+            "feature_name": "agg_trade_vwap",
+            "standardized_class_mean_range": 0.10346266655215913
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 35836.93167364017,
+              "FLAT": 35257.5908845635,
+              "UP": 36416.711218985976
+            },
+            "eta_squared": 0.001772677496854064,
+            "feature_name": "open",
+            "standardized_class_mean_range": 0.10352598437503374
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 35850.01670651524,
+              "FLAT": 35261.294617460015,
+              "UP": 36414.9140021575
+            },
+            "eta_squared": 0.001762905037609761,
+            "feature_name": "close",
+            "standardized_class_mean_range": 0.10299491773288631
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 35719.5216138673,
+              "FLAT": 35143.16818462132,
+              "UP": 36281.39338727077
+            },
+            "eta_squared": 0.0017393445786858812,
+            "feature_name": "low",
+            "standardized_class_mean_range": 0.1023972703142899
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 0.4747314266592497,
+              "FLAT": 0.4715328848590656,
+              "UP": 0.4686446904804352
+            },
+            "eta_squared": 0.001437781135319814,
+            "feature_name": "taker_buy_ratio_count",
+            "standardized_class_mean_range": 0.11937266278992416
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": -0.019377417296091538,
+              "FLAT": -0.029622700184965857,
+              "UP": -0.029540835925848007
+            },
+            "eta_squared": 0.0013249731959371184,
+            "feature_name": "taker_imbalance_quantity",
+            "standardized_class_mean_range": 0.092617775146876
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": -0.019377417296091538,
+              "FLAT": -0.029622700184965857,
+              "UP": -0.029540835925848004
+            },
+            "eta_squared": 0.0013249731959371184,
+            "feature_name": "trade_flow_pressure",
+            "standardized_class_mean_range": 0.092617775146876
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 0.4903112913519542,
+              "FLAT": 0.4851886499075171,
+              "UP": 0.485229582037076
+            },
+            "eta_squared": 0.0013249731959371082,
+            "feature_name": "taker_buy_ratio_quantity",
+            "standardized_class_mean_range": 0.09261777514687558
+          },
+          {
+            "class_counts": {
+              "DOWN": 1673,
+              "FLAT": 5189,
+              "UP": 1854
+            },
+            "class_means": {
+              "DOWN": 11.742378959952182,
+              "FLAT": 11.3133551744074,
+              "UP": 11.807982740021576
+            },
+            "eta_squared": 0.0010896589022536265,
+            "feature_name": "hour_utc",
+            "standardized_class_mean_range": 0.07146999874098808
+          }
+        ],
+        "rows_used": 8716,
+        "split_top_features": {
+          "test": [
+            "agg_trades_per_minute",
+            "agg_trade_count",
+            "trade_count_ohlcv",
+            "volume",
+            "agg_trade_quantity_sum"
+          ],
+          "train": [
+            "trade_count_ohlcv",
+            "agg_trade_count",
+            "agg_trades_per_minute",
+            "agg_trade_quantity_sum",
+            "volume"
+          ],
+          "validation": [
+            "day_of_week_utc",
+            "low",
+            "close",
+            "agg_trade_vwap",
+            "open"
+          ]
+        },
+        "timeframe": "1h",
+        "top_features": [
+          "agg_trades_per_minute",
+          "agg_trade_count",
+          "trade_count_ohlcv",
+          "quote_volume",
+          "agg_trade_quote_quantity_sum"
+        ],
+        "weak_features": []
+      },
+      "1m": {
+        "class_separability": {
+          "by_class": {
+            "DOWN": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.035864937282174866
+            },
+            "FLAT": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.04434861043361554
+            },
+            "UP": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.02494268295071337
+            }
+          },
+          "weakest_class": "UP"
+        },
+        "data_source": "full_parquet_read_only",
+        "feature_scores": [
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 638.1793439475294,
+              "FLAT": 752.9316770186335,
+              "UP": 680.7592141737978
+            },
+            "eta_squared": 0.0013467816725302698,
+            "feature_name": "agg_trade_count",
+            "standardized_class_mean_range": 0.12982279538428385
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 638.1793439475294,
+              "FLAT": 752.9316770186335,
+              "UP": 680.7592141737978
+            },
+            "eta_squared": 0.0013467816725302698,
+            "feature_name": "agg_trades_per_minute",
+            "standardized_class_mean_range": 0.12982279538428385
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 823.8726381431387,
+              "FLAT": 973.8860414394766,
+              "UP": 879.2614840705476
+            },
+            "eta_squared": 0.0012995529983880346,
+            "feature_name": "trade_count_ohlcv",
+            "standardized_class_mean_range": 0.12768555825745026
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 1009627.8591226565,
+              "FLAT": 1213538.0506468276,
+              "UP": 1080799.8195667418
+            },
+            "eta_squared": 0.0009016639141650479,
+            "feature_name": "quote_volume",
+            "standardized_class_mean_range": 0.10777632669500341
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 1009627.8591226565,
+              "FLAT": 1213538.0506468276,
+              "UP": 1080799.8195667418
+            },
+            "eta_squared": 0.0009016639141650479,
+            "feature_name": "agg_trade_quote_quantity_sum",
+            "standardized_class_mean_range": 0.10777632669500341
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 27.54793766047458,
+              "FLAT": 33.12579213098004,
+              "UP": 28.860616539777432
+            },
+            "eta_squared": 0.0008832640479816595,
+            "feature_name": "volume",
+            "standardized_class_mean_range": 0.11259090515769803
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 27.54793766047458,
+              "FLAT": 33.12579213098004,
+              "UP": 28.860616539777432
+            },
+            "eta_squared": 0.0008832640479816595,
+            "feature_name": "agg_trade_quantity_sum",
+            "standardized_class_mean_range": 0.11259090515769803
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 35278.25593888058,
+              "FLAT": 35461.00783794035,
+              "UP": 35874.63392374753
+            },
+            "eta_squared": 0.0006620499212520146,
+            "feature_name": "high",
+            "standardized_class_mean_range": 0.05330892515135669
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 35268.045331891866,
+              "FLAT": 35448.62539945948,
+              "UP": 35863.78753866859
+            },
+            "eta_squared": 0.0006618806075573764,
+            "feature_name": "open",
+            "standardized_class_mean_range": 0.05329040756890403
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 35268.201438985125,
+              "FLAT": 35448.59585078858,
+              "UP": 35863.544266954625
+            },
+            "eta_squared": 0.0006610121747834953,
+            "feature_name": "agg_trade_vwap",
+            "standardized_class_mean_range": 0.05325505044841884
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 35268.36708170496,
+              "FLAT": 35448.8077533071,
+              "UP": 35863.60419388534
+            },
+            "eta_squared": 0.0006607483395868727,
+            "feature_name": "close",
+            "standardized_class_mean_range": 0.05324488829335088
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 35257.91494154829,
+              "FLAT": 35435.94719169314,
+              "UP": 35852.346997790366
+            },
+            "eta_squared": 0.0006602813628689532,
+            "feature_name": "low",
+            "standardized_class_mean_range": 0.05321304483237526
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 11.459657275878476,
+              "FLAT": 11.741003271537622,
+              "UP": 11.484657104977703
+            },
+            "eta_squared": 0.00011394695434325166,
+            "feature_name": "hour_utc",
+            "standardized_class_mean_range": 0.040656438673594086
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 0.4764493629523322,
+              "FLAT": 0.47486409066654284,
+              "UP": 0.4745525653683505
+            },
+            "eta_squared": 3.7775290358183084e-05,
+            "feature_name": "taker_buy_ratio_count",
+            "standardized_class_mean_range": 0.012613651535490093
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 0.48240825098267065,
+              "FLAT": 0.48177643757386884,
+              "UP": 0.4802707352514909
+            },
+            "eta_squared": 2.219942584272819e-05,
+            "feature_name": "taker_buy_ratio_quantity",
+            "standardized_class_mean_range": 0.009754570534339665
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": -0.035183498034658804,
+              "FLAT": -0.03644712485226231,
+              "UP": -0.03945852949701817
+            },
+            "eta_squared": 2.2199425842726582e-05,
+            "feature_name": "taker_imbalance_quantity",
+            "standardized_class_mean_range": 0.009754570534339303
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": -0.035183498034658804,
+              "FLAT": -0.03644712485226231,
+              "UP": -0.03945852949701817
+            },
+            "eta_squared": 2.2199425842726582e-05,
+            "feature_name": "trade_flow_pressure",
+            "standardized_class_mean_range": 0.009754570534339303
+          },
+          {
+            "class_counts": {
+              "DOWN": 235408,
+              "FLAT": 42182,
+              "UP": 248910
+            },
+            "class_means": {
+              "DOWN": 3.0176247196356965,
+              "FLAT": 3.018894315110711,
+              "UP": 3.002788156361737
+            },
+            "eta_squared": 1.4071663624557955e-05,
+            "feature_name": "day_of_week_utc",
+            "standardized_class_mean_range": 0.008044032856369997
+          }
+        ],
+        "rows_used": 526500,
+        "split_top_features": {
+          "test": [
+            "hour_utc",
+            "agg_trade_count",
+            "agg_trades_per_minute",
+            "trade_count_ohlcv",
+            "volume"
+          ],
+          "train": [
+            "agg_trade_count",
+            "agg_trades_per_minute",
+            "trade_count_ohlcv",
+            "low",
+            "close"
+          ],
+          "validation": [
+            "agg_trade_count",
+            "agg_trades_per_minute",
+            "trade_count_ohlcv",
+            "close",
+            "low"
+          ]
+        },
+        "timeframe": "1m",
+        "top_features": [
+          "agg_trade_count",
+          "agg_trades_per_minute",
+          "trade_count_ohlcv",
+          "quote_volume",
+          "agg_trade_quote_quantity_sum"
+        ],
+        "weak_features": [
+          "hour_utc",
+          "taker_buy_ratio_count",
+          "taker_buy_ratio_quantity",
+          "taker_imbalance_quantity",
+          "trade_flow_pressure",
+          "day_of_week_utc"
+        ]
+      },
+      "5m": {
+        "class_separability": {
+          "by_class": {
+            "DOWN": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.0369726272964947
+            },
+            "FLAT": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.030822691487431744
+            },
+            "UP": {
+              "features_evaluated": 18,
+              "mean_one_vs_rest_standardized_difference": 0.035685817851242134
+            }
+          },
+          "weakest_class": "FLAT"
+        },
+        "data_source": "full_parquet_read_only",
+        "feature_scores": [
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 35341.978068054945,
+              "FLAT": 35185.360700310484,
+              "UP": 35957.669736739874
+            },
+            "eta_squared": 0.000890802314021328,
+            "feature_name": "open",
+            "standardized_class_mean_range": 0.06907643562083168
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 35314.361250424736,
+              "FLAT": 35153.803813020546,
+              "UP": 35926.160858109186
+            },
+            "eta_squared": 0.000888744127533194,
+            "feature_name": "low",
+            "standardized_class_mean_range": 0.06921168261931994
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 35342.64213379281,
+              "FLAT": 35184.96409769581,
+              "UP": 35956.61293916792
+            },
+            "eta_squared": 0.0008876543005523654,
+            "feature_name": "agg_trade_vwap",
+            "standardized_class_mean_range": 0.06901969566025154
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 35370.0872433377,
+              "FLAT": 35215.380686511264,
+              "UP": 35986.6262302612
+            },
+            "eta_squared": 0.0008876263859233728,
+            "feature_name": "high",
+            "standardized_class_mean_range": 0.06886025998937585
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 35343.51254138149,
+              "FLAT": 35185.876361441035,
+              "UP": 35956.85654905277
+            },
+            "eta_squared": 0.0008858674998194645,
+            "feature_name": "close",
+            "standardized_class_mean_range": 0.06895538305388764
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 3206.737609824766,
+              "FLAT": 3439.2951554876545,
+              "UP": 3414.6496720674604
+            },
+            "eta_squared": 0.0008033972655769568,
+            "feature_name": "agg_trade_count",
+            "standardized_class_mean_range": 0.06238151370516798
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 641.3475219649532,
+              "FLAT": 687.8590310975309,
+              "UP": 682.9299344134921
+            },
+            "eta_squared": 0.000803397265576956,
+            "feature_name": "agg_trades_per_minute",
+            "standardized_class_mean_range": 0.06238151370516792
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 4141.238168050095,
+              "FLAT": 4446.019171061062,
+              "UP": 4408.205946205352
+            },
+            "eta_squared": 0.000778757618375099,
+            "feature_name": "trade_count_ohlcv",
+            "standardized_class_mean_range": 0.06215612911089246
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 138.31899182658609,
+              "FLAT": 150.33500878911832,
+              "UP": 144.1945811246372
+            },
+            "eta_squared": 0.0004885701407201832,
+            "feature_name": "volume",
+            "standardized_class_mean_range": 0.06008891452416361
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 138.31899182658609,
+              "FLAT": 150.33500878911832,
+              "UP": 144.1945811246372
+            },
+            "eta_squared": 0.0004885701407201832,
+            "feature_name": "agg_trade_quantity_sum",
+            "standardized_class_mean_range": 0.06008891452416361
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 5083500.400004212,
+              "FLAT": 5488129.8311954485,
+              "UP": 5413518.86145804
+            },
+            "eta_squared": 0.00048474918166620587,
+            "feature_name": "agg_trade_quote_quantity_sum",
+            "standardized_class_mean_range": 0.05098807374432214
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 5083500.400004212,
+              "FLAT": 5488129.8311954485,
+              "UP": 5413518.861458039
+            },
+            "eta_squared": 0.0004847491816662044,
+            "feature_name": "quote_volume",
+            "standardized_class_mean_range": 0.05098807374432214
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 0.47645093132616534,
+              "FLAT": 0.4745053412666079,
+              "UP": 0.47204681099074397
+            },
+            "eta_squared": 0.0004300837114494939,
+            "feature_name": "taker_buy_ratio_count",
+            "standardized_class_mean_range": 0.046090394671828454
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 0.4863494438531453,
+              "FLAT": 0.4849607545504513,
+              "UP": 0.4809447969139866
+            },
+            "eta_squared": 0.0003634902692869852,
+            "feature_name": "taker_buy_ratio_quantity",
+            "standardized_class_mean_range": 0.041408621149431765
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": -0.027301112293709292,
+              "FLAT": -0.030078490899097414,
+              "UP": -0.03811040617202667
+            },
+            "eta_squared": 0.00036349026928698193,
+            "feature_name": "taker_imbalance_quantity",
+            "standardized_class_mean_range": 0.04140862114943162
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": -0.027301112293709292,
+              "FLAT": -0.030078490899097414,
+              "UP": -0.03811040617202667
+            },
+            "eta_squared": 0.00036349026928698193,
+            "feature_name": "trade_flow_pressure",
+            "standardized_class_mean_range": 0.04140862114943162
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 11.430561623222173,
+              "FLAT": 11.758168646197822,
+              "UP": 11.441143536186841
+            },
+            "eta_squared": 0.0003378490804079785,
+            "feature_name": "hour_utc",
+            "standardized_class_mean_range": 0.047349208541361036
+          },
+          {
+            "class_counts": {
+              "DOWN": 41202,
+              "FLAT": 20291,
+              "UP": 43759
+            },
+            "class_means": {
+              "DOWN": 3.023445463812436,
+              "FLAT": 2.992952540535213,
+              "UP": 3.0047761603327316
+            },
+            "eta_squared": 3.444780228215869e-05,
+            "feature_name": "day_of_week_utc",
+            "standardized_class_mean_range": 0.01522929110158244
+          }
+        ],
+        "rows_used": 105252,
+        "split_top_features": {
+          "test": [
+            "hour_utc",
+            "agg_trades_per_minute",
+            "agg_trade_count",
+            "trade_count_ohlcv",
+            "quote_volume"
+          ],
+          "train": [
+            "low",
+            "close",
+            "agg_trade_vwap",
+            "open",
+            "high"
+          ],
+          "validation": [
+            "close",
+            "low",
+            "agg_trade_vwap",
+            "high",
+            "open"
+          ]
+        },
+        "timeframe": "5m",
+        "top_features": [
+          "open",
+          "low",
+          "agg_trade_vwap",
+          "high",
+          "close"
+        ],
+        "weak_features": [
+          "taker_buy_ratio_count",
+          "taker_buy_ratio_quantity",
+          "taker_imbalance_quantity",
+          "trade_flow_pressure",
+          "hour_utc",
+          "day_of_week_utc"
+        ]
+      }
+    },
+    "common_top_features_between_timeframes": [],
+    "features_with_low_univariate_discrimination_all_timeframes": [
+      "day_of_week_utc",
+      "hour_utc"
+    ],
+    "full_parquet_read_only_used": true,
+    "method": "eta_squared_and_standardized_class_mean_range_by_feature",
+    "model_training_performed": false,
+    "signal_produced": false,
+    "summary": {
+      "common_top_features_count": 0,
+      "low_discrimination_features_count": 2,
+      "unstable_top_features_count": 10
+    },
+    "unstable_top_features": [
+      "agg_trade_count",
+      "agg_trade_quote_quantity_sum",
+      "agg_trade_vwap",
+      "agg_trades_per_minute",
+      "close",
+      "high",
+      "low",
+      "open",
+      "quote_volume",
+      "trade_count_ohlcv"
+    ]
+  },
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "forbidden_metric_scan": {
+    "forbidden_terms_present": [],
+    "passed": true
+  },
+  "full_data_available": true,
+  "hypotheses": [
+    {
+      "evidence": "14 cas restent trop proches des labels melanges.",
+      "hypothesis": "label encore mal defini",
+      "id": "H1",
+      "support": "high"
+    },
+    {
+      "evidence": "clear wins=0, top features communes=0.",
+      "hypothesis": "features actuelles insuffisantes",
+      "id": "H2",
+      "support": "high"
+    },
+    {
+      "evidence": "Le h4 ameliore legerement la distance aux labels melanges mais reste insuffisant.",
+      "hypothesis": "horizon h4 pas adapte",
+      "id": "H3",
+      "support": "medium"
+    },
+    {
+      "evidence": "Les distributions extremes du FLAT en 1m et 1h persistent.",
+      "hypothesis": "multi-classe DOWN/FLAT/UP trop difficile",
+      "id": "H4",
+      "support": "medium"
+    },
+    {
+      "evidence": "La stabilite regime/fenetre reste non prouvee sans extension de donnees.",
+      "hypothesis": "fenetre 2023-2024 trop limitee",
+      "id": "H5",
+      "support": "medium"
+    },
+    {
+      "evidence": "top features instables=10.",
+      "hypothesis": "OHLCV+trades agreges peu informatifs",
+      "id": "H6",
+      "support": "high"
+    },
+    {
+      "evidence": "Les labels h1 puis h4 ne rendent pas les modeles clairement falsifiables.",
+      "hypothesis": "extension data/features avant nouveau label",
+      "id": "H7",
+      "support": "high"
+    },
+    {
+      "evidence": "Plusieurs redesign labels successifs restent proches du shuffle; arret possible si feature/data-first echoue.",
+      "hypothesis": "arret de branche refined labels",
+      "id": "H8",
+      "support": "medium"
+    }
+  ],
+  "inputs": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "v9_10_decision": {
+      "available": true,
+      "path": "reports/research_decisions/refined_volnorm_research_decision_gate_v9_10.json"
+    },
+    "v9_11_failure": {
+      "available": true,
+      "path": "reports/research_decisions/label_failure_analysis_v9_11.json"
+    },
+    "v9_12_labels": {
+      "available": true,
+      "path": "reports/labels/horizon_event_label_redesign_v9_12.json"
+    },
+    "v9_13_dataset": {
+      "available": true,
+      "path": "reports/datasets/h4_label_candidate_dataset_v9_13.json"
+    },
+    "v9_13_ml": {
+      "available": true,
+      "path": "reports/ml/h4_label_candidate_offline_ml_v9_13.json"
+    },
+    "v9_13_scores": {
+      "available": true,
+      "path": "reports/ml/h4_label_candidate_offline_scores_v9_13.json"
+    },
+    "v9_8_ml": {
+      "available": true,
+      "path": "reports/ml/refined_volnorm_labels_offline_ml_v9_8.json"
+    },
+    "v9_9_walk_forward": {
+      "available": true,
+      "path": "reports/ml/refined_volnorm_strict_walk_forward_v9_9.json"
+    }
+  },
+  "label_diagnostic_v9_13": {
+    "comparison_with_v9_6_v9_12": {
+      "interpretation": "Le h4 reduit le bruit h1 de facon descriptive, mais V9.13 reste proche des labels melanges.",
+      "v9_12_selected_target": "up_down_flat_volnorm_h4",
+      "v9_6_target": "up_down_flat_volnorm_h1"
+    },
+    "flat_high_timeframes": [
+      "1h"
+    ],
+    "flat_low_timeframes": [
+      "1m"
+    ],
+    "full_parquet_read_only_used": true,
+    "target_name": "up_down_flat_volnorm_h4",
+    "timeframes": {
+      "15m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 11193,
+            "rate": 0.3193984704942358
+          },
+          "FLAT": {
+            "count": 11803,
+            "rate": 0.3368051592283986
+          },
+          "UP": {
+            "count": 12048,
+            "rate": 0.3437963702773656
+          }
+        },
+        "data_source": "full_parquet_read_only",
+        "flat_too_high": false,
+        "flat_too_low": false,
+        "rows": 35136,
+        "split_distribution": {
+          "test": {
+            "DOWN": {
+              "count": 2206,
+              "rate": 0.3153230417381361
+            },
+            "FLAT": {
+              "count": 2157,
+              "rate": 0.30831903945111494
+            },
+            "UP": {
+              "count": 2633,
+              "rate": 0.376357918810749
+            }
+          },
+          "train": {
+            "DOWN": {
+              "count": 6818,
+              "rate": 0.32434232434232435
+            },
+            "FLAT": {
+              "count": 7390,
+              "rate": 0.3515532086960658
+            },
+            "UP": {
+              "count": 6813,
+              "rate": 0.3241044669616098
+            }
+          },
+          "validation": {
+            "DOWN": {
+              "count": 2169,
+              "rate": 0.3086665717945069
+            },
+            "FLAT": {
+              "count": 2256,
+              "rate": 0.3210473886438025
+            },
+            "UP": {
+              "count": 2602,
+              "rate": 0.3702860395616906
+            }
+          }
+        },
+        "timeframe": "15m",
+        "walk_forward_group_distribution": {
+          "wf_2023_03": {
+            "DOWN": {
+              "count": 173,
+              "rate": 0.2826797385620915
+            },
+            "FLAT": {
+              "count": 211,
+              "rate": 0.34477124183006536
+            },
+            "UP": {
+              "count": 228,
+              "rate": 0.37254901960784315
+            }
+          },
+          "wf_2023_04": {
+            "DOWN": {
+              "count": 966,
+              "rate": 0.33541666666666664
+            },
+            "FLAT": {
+              "count": 1022,
+              "rate": 0.3548611111111111
+            },
+            "UP": {
+              "count": 892,
+              "rate": 0.30972222222222223
+            }
+          },
+          "wf_2023_05": {
+            "DOWN": {
+              "count": 982,
+              "rate": 0.3299731182795699
+            },
+            "FLAT": {
+              "count": 1067,
+              "rate": 0.3585349462365591
+            },
+            "UP": {
+              "count": 927,
+              "rate": 0.31149193548387094
+            }
+          },
+          "wf_2023_06": {
+            "DOWN": {
+              "count": 854,
+              "rate": 0.2965277777777778
+            },
+            "FLAT": {
+              "count": 1056,
+              "rate": 0.36666666666666664
+            },
+            "UP": {
+              "count": 970,
+              "rate": 0.3368055555555556
+            }
+          },
+          "wf_2023_07": {
+            "DOWN": {
+              "count": 1009,
+              "rate": 0.3390456989247312
+            },
+            "FLAT": {
+              "count": 979,
+              "rate": 0.3289650537634409
+            },
+            "UP": {
+              "count": 988,
+              "rate": 0.33198924731182794
+            }
+          },
+          "wf_2023_08": {
+            "DOWN": {
+              "count": 1141,
+              "rate": 0.3834005376344086
+            },
+            "FLAT": {
+              "count": 1004,
+              "rate": 0.33736559139784944
+            },
+            "UP": {
+              "count": 831,
+              "rate": 0.27923387096774194
+            }
+          },
+          "wf_2023_09": {
+            "DOWN": {
+              "count": 893,
+              "rate": 0.31006944444444445
+            },
+            "FLAT": {
+              "count": 1086,
+              "rate": 0.3770833333333333
+            },
+            "UP": {
+              "count": 901,
+              "rate": 0.3128472222222222
+            }
+          },
+          "wf_2023_10": {
+            "DOWN": {
+              "count": 852,
+              "rate": 0.2862903225806452
+            },
+            "FLAT": {
+              "count": 993,
+              "rate": 0.3336693548387097
+            },
+            "UP": {
+              "count": 1131,
+              "rate": 0.3800403225806452
+            }
+          },
+          "wf_2023_11": {
+            "DOWN": {
+              "count": 907,
+              "rate": 0.31493055555555555
+            },
+            "FLAT": {
+              "count": 954,
+              "rate": 0.33125
+            },
+            "UP": {
+              "count": 1019,
+              "rate": 0.35381944444444446
+            }
+          },
+          "wf_2023_12": {
+            "DOWN": {
+              "count": 920,
+              "rate": 0.30913978494623656
+            },
+            "FLAT": {
+              "count": 942,
+              "rate": 0.3165322580645161
+            },
+            "UP": {
+              "count": 1114,
+              "rate": 0.3743279569892473
+            }
+          },
+          "wf_2024_01": {
+            "DOWN": {
+              "count": 1004,
+              "rate": 0.33736559139784944
+            },
+            "FLAT": {
+              "count": 933,
+              "rate": 0.31350806451612906
+            },
+            "UP": {
+              "count": 1039,
+              "rate": 0.3491263440860215
+            }
+          },
+          "wf_2024_02": {
+            "DOWN": {
+              "count": 770,
+              "rate": 0.2765804597701149
+            },
+            "FLAT": {
+              "count": 891,
+              "rate": 0.32004310344827586
+            },
+            "UP": {
+              "count": 1123,
+              "rate": 0.40337643678160917
+            }
+          },
+          "wf_2024_03": {
+            "DOWN": {
+              "count": 722,
+              "rate": 0.31778169014084506
+            },
+            "FLAT": {
+              "count": 665,
+              "rate": 0.292693661971831
+            },
+            "UP": {
+              "count": 885,
+              "rate": 0.38952464788732394
+            }
+          }
+        }
+      },
+      "1h": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 1673,
+            "rate": 0.1919458467186783
+          },
+          "FLAT": {
+            "count": 5189,
+            "rate": 0.5953418999541074
+          },
+          "UP": {
+            "count": 1854,
+            "rate": 0.21271225332721433
+          }
+        },
+        "data_source": "full_parquet_read_only",
+        "flat_too_high": true,
+        "flat_too_low": false,
+        "rows": 8784,
+        "split_distribution": {
+          "test": {
+            "DOWN": {
+              "count": 338,
+              "rate": 0.19314285714285714
+            },
+            "FLAT": {
+              "count": 993,
+              "rate": 0.5674285714285714
+            },
+            "UP": {
+              "count": 419,
+              "rate": 0.23942857142857144
+            }
+          },
+          "train": {
+            "DOWN": {
+              "count": 992,
+              "rate": 0.19040307101727447
+            },
+            "FLAT": {
+              "count": 3180,
+              "rate": 0.6103646833013435
+            },
+            "UP": {
+              "count": 1038,
+              "rate": 0.19923224568138195
+            }
+          },
+          "validation": {
+            "DOWN": {
+              "count": 343,
+              "rate": 0.19533029612756264
+            },
+            "FLAT": {
+              "count": 1016,
+              "rate": 0.5785876993166287
+            },
+            "UP": {
+              "count": 397,
+              "rate": 0.22608200455580865
+            }
+          }
+        },
+        "timeframe": "1h",
+        "walk_forward_group_distribution": {
+          "wf_2023_03": {
+            "DOWN": {
+              "count": 13,
+              "rate": 0.12037037037037036
+            },
+            "FLAT": {
+              "count": 73,
+              "rate": 0.6759259259259259
+            },
+            "UP": {
+              "count": 22,
+              "rate": 0.2037037037037037
+            }
+          },
+          "wf_2023_04": {
+            "DOWN": {
+              "count": 140,
+              "rate": 0.19444444444444445
+            },
+            "FLAT": {
+              "count": 446,
+              "rate": 0.6194444444444445
+            },
+            "UP": {
+              "count": 134,
+              "rate": 0.18611111111111112
+            }
+          },
+          "wf_2023_05": {
+            "DOWN": {
+              "count": 151,
+              "rate": 0.20295698924731181
+            },
+            "FLAT": {
+              "count": 444,
+              "rate": 0.5967741935483871
+            },
+            "UP": {
+              "count": 149,
+              "rate": 0.20026881720430106
+            }
+          },
+          "wf_2023_06": {
+            "DOWN": {
+              "count": 123,
+              "rate": 0.17083333333333334
+            },
+            "FLAT": {
+              "count": 437,
+              "rate": 0.6069444444444444
+            },
+            "UP": {
+              "count": 160,
+              "rate": 0.2222222222222222
+            }
+          },
+          "wf_2023_07": {
+            "DOWN": {
+              "count": 151,
+              "rate": 0.20295698924731181
+            },
+            "FLAT": {
+              "count": 453,
+              "rate": 0.6088709677419355
+            },
+            "UP": {
+              "count": 140,
+              "rate": 0.1881720430107527
+            }
+          },
+          "wf_2023_08": {
+            "DOWN": {
+              "count": 167,
+              "rate": 0.22446236559139784
+            },
+            "FLAT": {
+              "count": 449,
+              "rate": 0.603494623655914
+            },
+            "UP": {
+              "count": 128,
+              "rate": 0.17204301075268819
+            }
+          },
+          "wf_2023_09": {
+            "DOWN": {
+              "count": 127,
+              "rate": 0.1763888888888889
+            },
+            "FLAT": {
+              "count": 467,
+              "rate": 0.6486111111111111
+            },
+            "UP": {
+              "count": 126,
+              "rate": 0.175
+            }
+          },
+          "wf_2023_10": {
+            "DOWN": {
+              "count": 128,
+              "rate": 0.17204301075268819
+            },
+            "FLAT": {
+              "count": 427,
+              "rate": 0.5739247311827957
+            },
+            "UP": {
+              "count": 189,
+              "rate": 0.2540322580645161
+            }
+          },
+          "wf_2023_11": {
+            "DOWN": {
+              "count": 143,
+              "rate": 0.1986111111111111
+            },
+            "FLAT": {
+              "count": 428,
+              "rate": 0.5944444444444444
+            },
+            "UP": {
+              "count": 149,
+              "rate": 0.20694444444444443
+            }
+          },
+          "wf_2023_12": {
+            "DOWN": {
+              "count": 152,
+              "rate": 0.20430107526881722
+            },
+            "FLAT": {
+              "count": 418,
+              "rate": 0.5618279569892473
+            },
+            "UP": {
+              "count": 174,
+              "rate": 0.23387096774193547
+            }
+          },
+          "wf_2024_01": {
+            "DOWN": {
+              "count": 152,
+              "rate": 0.20430107526881722
+            },
+            "FLAT": {
+              "count": 437,
+              "rate": 0.5873655913978495
+            },
+            "UP": {
+              "count": 155,
+              "rate": 0.20833333333333334
+            }
+          },
+          "wf_2024_02": {
+            "DOWN": {
+              "count": 114,
+              "rate": 0.16379310344827586
+            },
+            "FLAT": {
+              "count": 398,
+              "rate": 0.5718390804597702
+            },
+            "UP": {
+              "count": 184,
+              "rate": 0.26436781609195403
+            }
+          },
+          "wf_2024_03": {
+            "DOWN": {
+              "count": 112,
+              "rate": 0.19718309859154928
+            },
+            "FLAT": {
+              "count": 312,
+              "rate": 0.5492957746478874
+            },
+            "UP": {
+              "count": 144,
+              "rate": 0.2535211267605634
+            }
+          }
+        }
+      },
+      "1m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 235408,
+            "rate": 0.44711870845204177
+          },
+          "FLAT": {
+            "count": 42182,
+            "rate": 0.08011775878442545
+          },
+          "UP": {
+            "count": 248910,
+            "rate": 0.4727635327635328
+          }
+        },
+        "data_source": "full_parquet_read_only",
+        "flat_too_high": false,
+        "flat_too_low": true,
+        "rows": 527040,
+        "split_distribution": {
+          "test": {
+            "DOWN": {
+              "count": 44845,
+              "rate": 0.4273883043610857
+            },
+            "FLAT": {
+              "count": 8441,
+              "rate": 0.08044563891430315
+            },
+            "UP": {
+              "count": 51642,
+              "rate": 0.49216605672461117
+            }
+          },
+          "train": {
+            "DOWN": {
+              "count": 145233,
+              "rate": 0.4593596993965157
+            },
+            "FLAT": {
+              "count": 25795,
+              "rate": 0.08158740400551613
+            },
+            "UP": {
+              "count": 145136,
+              "rate": 0.45905289659796816
+            }
+          },
+          "validation": {
+            "DOWN": {
+              "count": 45330,
+              "rate": 0.4300432604735883
+            },
+            "FLAT": {
+              "count": 7946,
+              "rate": 0.07538327261687917
+            },
+            "UP": {
+              "count": 52132,
+              "rate": 0.49457346690953247
+            }
+          }
+        },
+        "timeframe": "1m",
+        "walk_forward_group_distribution": {
+          "wf_2023_03": {
+            "DOWN": {
+              "count": 4225,
+              "rate": 0.4216566866267465
+            },
+            "FLAT": {
+              "count": 862,
+              "rate": 0.08602794411177644
+            },
+            "UP": {
+              "count": 4933,
+              "rate": 0.49231536926147706
+            }
+          },
+          "wf_2023_04": {
+            "DOWN": {
+              "count": 20442,
+              "rate": 0.4731944444444444
+            },
+            "FLAT": {
+              "count": 3781,
+              "rate": 0.08752314814814814
+            },
+            "UP": {
+              "count": 18977,
+              "rate": 0.4392824074074074
+            }
+          },
+          "wf_2023_05": {
+            "DOWN": {
+              "count": 21676,
+              "rate": 0.48557347670250894
+            },
+            "FLAT": {
+              "count": 3660,
+              "rate": 0.08198924731182795
+            },
+            "UP": {
+              "count": 19304,
+              "rate": 0.43243727598566306
+            }
+          },
+          "wf_2023_06": {
+            "DOWN": {
+              "count": 18858,
+              "rate": 0.4365277777777778
+            },
+            "FLAT": {
+              "count": 3605,
+              "rate": 0.08344907407407408
+            },
+            "UP": {
+              "count": 20737,
+              "rate": 0.48002314814814817
+            }
+          },
+          "wf_2023_07": {
+            "DOWN": {
+              "count": 20397,
+              "rate": 0.4569220430107527
+            },
+            "FLAT": {
+              "count": 3384,
+              "rate": 0.07580645161290323
+            },
+            "UP": {
+              "count": 20859,
+              "rate": 0.4672715053763441
+            }
+          },
+          "wf_2023_08": {
+            "DOWN": {
+              "count": 23286,
+              "rate": 0.5216397849462365
+            },
+            "FLAT": {
+              "count": 3106,
+              "rate": 0.06957885304659499
+            },
+            "UP": {
+              "count": 18248,
+              "rate": 0.40878136200716847
+            }
+          },
+          "wf_2023_09": {
+            "DOWN": {
+              "count": 18897,
+              "rate": 0.43743055555555554
+            },
+            "FLAT": {
+              "count": 3942,
+              "rate": 0.09125
+            },
+            "UP": {
+              "count": 20361,
+              "rate": 0.47131944444444446
+            }
+          },
+          "wf_2023_10": {
+            "DOWN": {
+              "count": 18426,
+              "rate": 0.4127688172043011
+            },
+            "FLAT": {
+              "count": 3531,
+              "rate": 0.0790994623655914
+            },
+            "UP": {
+              "count": 22683,
+              "rate": 0.5081317204301076
+            }
+          },
+          "wf_2023_11": {
+            "DOWN": {
+              "count": 19293,
+              "rate": 0.4465972222222222
+            },
+            "FLAT": {
+              "count": 3312,
+              "rate": 0.07666666666666666
+            },
+            "UP": {
+              "count": 20595,
+              "rate": 0.47673611111111114
+            }
+          },
+          "wf_2023_12": {
+            "DOWN": {
+              "count": 18854,
+              "rate": 0.42235663082437275
+            },
+            "FLAT": {
+              "count": 3259,
+              "rate": 0.07300627240143369
+            },
+            "UP": {
+              "count": 22527,
+              "rate": 0.5046370967741935
+            }
+          },
+          "wf_2024_01": {
+            "DOWN": {
+              "count": 20296,
+              "rate": 0.4546594982078853
+            },
+            "FLAT": {
+              "count": 3642,
+              "rate": 0.08158602150537635
+            },
+            "UP": {
+              "count": 20702,
+              "rate": 0.4637544802867383
+            }
+          },
+          "wf_2024_02": {
+            "DOWN": {
+              "count": 16728,
+              "rate": 0.40057471264367817
+            },
+            "FLAT": {
+              "count": 3392,
+              "rate": 0.08122605363984674
+            },
+            "UP": {
+              "count": 21640,
+              "rate": 0.5181992337164751
+            }
+          },
+          "wf_2024_03": {
+            "DOWN": {
+              "count": 14030,
+              "rate": 0.41167840375586856
+            },
+            "FLAT": {
+              "count": 2706,
+              "rate": 0.07940140845070423
+            },
+            "UP": {
+              "count": 17344,
+              "rate": 0.5089201877934272
+            }
+          }
+        }
+      },
+      "5m": {
+        "class_distribution": {
+          "DOWN": {
+            "count": 41202,
+            "rate": 0.3914604948124501
+          },
+          "FLAT": {
+            "count": 20291,
+            "rate": 0.19278493520313153
+          },
+          "UP": {
+            "count": 43759,
+            "rate": 0.41575456998441834
+          }
+        },
+        "data_source": "full_parquet_read_only",
+        "flat_too_high": false,
+        "flat_too_low": false,
+        "rows": 105408,
+        "split_distribution": {
+          "test": {
+            "DOWN": {
+              "count": 7931,
+              "rate": 0.3779006051365131
+            },
+            "FLAT": {
+              "count": 3806,
+              "rate": 0.18135035974650973
+            },
+            "UP": {
+              "count": 9250,
+              "rate": 0.44074903511697716
+            }
+          },
+          "train": {
+            "DOWN": {
+              "count": 25248,
+              "rate": 0.3995948341352241
+            },
+            "FLAT": {
+              "count": 12691,
+              "rate": 0.2008578121043302
+            },
+            "UP": {
+              "count": 25245,
+              "rate": 0.3995473537604457
+            }
+          },
+          "validation": {
+            "DOWN": {
+              "count": 8023,
+              "rate": 0.3805796688961624
+            },
+            "FLAT": {
+              "count": 3794,
+              "rate": 0.17997248707366822
+            },
+            "UP": {
+              "count": 9264,
+              "rate": 0.43944784403016934
+            }
+          }
+        },
+        "timeframe": "5m",
+        "walk_forward_group_distribution": {
+          "wf_2023_03": {
+            "DOWN": {
+              "count": 679,
+              "rate": 0.34713701431492844
+            },
+            "FLAT": {
+              "count": 418,
+              "rate": 0.21370143149284254
+            },
+            "UP": {
+              "count": 859,
+              "rate": 0.439161554192229
+            }
+          },
+          "wf_2023_04": {
+            "DOWN": {
+              "count": 3563,
+              "rate": 0.41238425925925926
+            },
+            "FLAT": {
+              "count": 1803,
+              "rate": 0.20868055555555556
+            },
+            "UP": {
+              "count": 3274,
+              "rate": 0.3789351851851852
+            }
+          },
+          "wf_2023_05": {
+            "DOWN": {
+              "count": 3756,
+              "rate": 0.4206989247311828
+            },
+            "FLAT": {
+              "count": 1815,
+              "rate": 0.20329301075268819
+            },
+            "UP": {
+              "count": 3357,
+              "rate": 0.37600806451612906
+            }
+          },
+          "wf_2023_06": {
+            "DOWN": {
+              "count": 3267,
+              "rate": 0.378125
+            },
+            "FLAT": {
+              "count": 1752,
+              "rate": 0.20277777777777778
+            },
+            "UP": {
+              "count": 3621,
+              "rate": 0.41909722222222223
+            }
+          },
+          "wf_2023_07": {
+            "DOWN": {
+              "count": 3578,
+              "rate": 0.4007616487455197
+            },
+            "FLAT": {
+              "count": 1745,
+              "rate": 0.19545250896057348
+            },
+            "UP": {
+              "count": 3605,
+              "rate": 0.4037858422939068
+            }
+          },
+          "wf_2023_08": {
+            "DOWN": {
+              "count": 4152,
+              "rate": 0.4650537634408602
+            },
+            "FLAT": {
+              "count": 1612,
+              "rate": 0.18055555555555555
+            },
+            "UP": {
+              "count": 3164,
+              "rate": 0.35439068100358423
+            }
+          },
+          "wf_2023_09": {
+            "DOWN": {
+              "count": 3257,
+              "rate": 0.3769675925925926
+            },
+            "FLAT": {
+              "count": 1900,
+              "rate": 0.2199074074074074
+            },
+            "UP": {
+              "count": 3483,
+              "rate": 0.403125
+            }
+          },
+          "wf_2023_10": {
+            "DOWN": {
+              "count": 3176,
+              "rate": 0.3557347670250896
+            },
+            "FLAT": {
+              "count": 1684,
+              "rate": 0.1886200716845878
+            },
+            "UP": {
+              "count": 4068,
+              "rate": 0.45564516129032256
+            }
+          },
+          "wf_2023_11": {
+            "DOWN": {
+              "count": 3410,
+              "rate": 0.39467592592592593
+            },
+            "FLAT": {
+              "count": 1579,
+              "rate": 0.18275462962962963
+            },
+            "UP": {
+              "count": 3651,
+              "rate": 0.42256944444444444
+            }
+          },
+          "wf_2023_12": {
+            "DOWN": {
+              "count": 3359,
+              "rate": 0.3762320788530466
+            },
+            "FLAT": {
+              "count": 1534,
+              "rate": 0.17181899641577061
+            },
+            "UP": {
+              "count": 4035,
+              "rate": 0.4519489247311828
+            }
+          },
+          "wf_2024_01": {
+            "DOWN": {
+              "count": 3615,
+              "rate": 0.4049059139784946
+            },
+            "FLAT": {
+              "count": 1658,
+              "rate": 0.1857078853046595
+            },
+            "UP": {
+              "count": 3655,
+              "rate": 0.4093862007168459
+            }
+          },
+          "wf_2024_02": {
+            "DOWN": {
+              "count": 2931,
+              "rate": 0.350933908045977
+            },
+            "FLAT": {
+              "count": 1518,
+              "rate": 0.1817528735632184
+            },
+            "UP": {
+              "count": 3903,
+              "rate": 0.4673132183908046
+            }
+          },
+          "wf_2024_03": {
+            "DOWN": {
+              "count": 2459,
+              "rate": 0.360768779342723
+            },
+            "FLAT": {
+              "count": 1273,
+              "rate": 0.18676643192488263
+            },
+            "UP": {
+              "count": 3084,
+              "rate": 0.4524647887323944
+            }
+          }
+        }
+      }
+    },
+    "v9_12_recommended_candidate": {
+      "candidate_family": "horizon_extension",
+      "horizon_name": "h4",
+      "multiplier": 1.25,
+      "target_name": "up_down_flat_volnorm_h4"
+    }
+  },
+  "limitations": [
+    "V9.14 est une analyse descriptive de separabilite features/labels et une decision de branche.",
+    "V9.14 ne cree aucun nouveau label full, aucun modele ML, aucun walk-forward, aucun backtest, aucune strategie, aucun signal actionnable et aucun ordre.",
+    "Les scores de separabilite ne constituent pas des signaux et ne justifient aucun trading."
+  ],
+  "ml_diagnostic_v9_13": {
+    "best_cases": [
+      {
+        "accuracy": 0.5746013667425968,
+        "balanced_accuracy": 0.35871727768722783,
+        "class_distribution_pred": {
+          "DOWN": 130,
+          "FLAT": 1626,
+          "UP": 0
+        },
+        "class_distribution_true": {
+          "DOWN": 343,
+          "FLAT": 1016,
+          "UP": 397
+        },
+        "confusion_matrix": [
+          [
+            43,
+            300,
+            0
+          ],
+          [
+            50,
+            966,
+            0
+          ],
+          [
+            37,
+            360,
+            0
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.3043607918702544,
+        "model_name": "decision_tree_depth_2",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.33076923076923076,
+          "FLAT": 0.5940959409594095,
+          "UP": 0.0
+        },
+        "per_class_recall": {
+          "DOWN": 0.12536443148688048,
+          "FLAT": 0.9507874015748031,
+          "UP": 0.0
+        },
+        "rows": 1756,
+        "split": "validation",
+        "test_rows": 1750,
+        "timeframe": "1h",
+        "train_rows": 5210,
+        "validation_rows": 1756
+      },
+      {
+        "accuracy": 0.5577142857142857,
+        "balanced_accuracy": 0.356249168240802,
+        "class_distribution_pred": {
+          "DOWN": 135,
+          "FLAT": 1615,
+          "UP": 0
+        },
+        "class_distribution_true": {
+          "DOWN": 338,
+          "FLAT": 993,
+          "UP": 419
+        },
+        "confusion_matrix": [
+          [
+            44,
+            294,
+            0
+          ],
+          [
+            61,
+            932,
+            0
+          ],
+          [
+            30,
+            389,
+            0
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.300256812669425,
+        "model_name": "decision_tree_depth_2",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.32592592592592595,
+          "FLAT": 0.5770897832817338,
+          "UP": 0.0
+        },
+        "per_class_recall": {
+          "DOWN": 0.1301775147928994,
+          "FLAT": 0.9385699899295066,
+          "UP": 0.0
+        },
+        "rows": 1750,
+        "split": "test",
+        "test_rows": 1750,
+        "timeframe": "1h",
+        "train_rows": 5210,
+        "validation_rows": 1756
+      },
+      {
+        "accuracy": 0.3712821972392201,
+        "balanced_accuracy": 0.39123926279064447,
+        "class_distribution_pred": {
+          "DOWN": 2615,
+          "FLAT": 4412,
+          "UP": 0
+        },
+        "class_distribution_true": {
+          "DOWN": 2169,
+          "FLAT": 2256,
+          "UP": 2602
+        },
+        "confusion_matrix": [
+          [
+            970,
+            1199,
+            0
+          ],
+          [
+            617,
+            1639,
+            0
+          ],
+          [
+            1028,
+            1574,
+            0
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.29904002477096553,
+        "model_name": "decision_tree_depth_2",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.37093690248565964,
+          "FLAT": 0.3714868540344515,
+          "UP": 0.0
+        },
+        "per_class_recall": {
+          "DOWN": 0.4472106961733518,
+          "FLAT": 0.7265070921985816,
+          "UP": 0.0
+        },
+        "rows": 7027,
+        "split": "validation",
+        "test_rows": 6996,
+        "timeframe": "15m",
+        "train_rows": 21021,
+        "validation_rows": 7027
+      },
+      {
+        "accuracy": 0.42342857142857143,
+        "balanced_accuracy": 0.3378610828064697,
+        "class_distribution_pred": {
+          "DOWN": 702,
+          "FLAT": 1048,
+          "UP": 0
+        },
+        "class_distribution_true": {
+          "DOWN": 338,
+          "FLAT": 993,
+          "UP": 419
+        },
+        "confusion_matrix": [
+          [
+            137,
+            201,
+            0
+          ],
+          [
+            389,
+            604,
+            0
+          ],
+          [
+            176,
+            243,
+            0
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.28510942348521967,
+        "model_name": "logistic_regression",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.19515669515669515,
+          "FLAT": 0.5763358778625954,
+          "UP": 0.0
+        },
+        "per_class_recall": {
+          "DOWN": 0.40532544378698226,
+          "FLAT": 0.608257804632427,
+          "UP": 0.0
+        },
+        "rows": 1750,
+        "split": "test",
+        "test_rows": 1750,
+        "timeframe": "1h",
+        "train_rows": 5210,
+        "validation_rows": 1756
+      },
+      {
+        "accuracy": 0.34248141795311604,
+        "balanced_accuracy": 0.3670681930806991,
+        "class_distribution_pred": {
+          "DOWN": 2628,
+          "FLAT": 4368,
+          "UP": 0
+        },
+        "class_distribution_true": {
+          "DOWN": 2206,
+          "FLAT": 2157,
+          "UP": 2633
+        },
+        "confusion_matrix": [
+          [
+            932,
+            1274,
+            0
+          ],
+          [
+            693,
+            1464,
+            0
+          ],
+          [
+            1003,
+            1630,
+            0
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.2781125393722943,
+        "model_name": "decision_tree_depth_2",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.3546423135464231,
+          "FLAT": 0.33516483516483514,
+          "UP": 0.0
+        },
+        "per_class_recall": {
+          "DOWN": 0.4224841341795104,
+          "FLAT": 0.6787204450625869,
+          "UP": 0.0
+        },
+        "rows": 6996,
+        "split": "test",
+        "test_rows": 6996,
+        "timeframe": "15m",
+        "train_rows": 21021,
+        "validation_rows": 7027
+      }
+    ],
+    "class_collapse_cases": [
+      {
+        "class_distribution_pred": {
+          "DOWN": 2628,
+          "FLAT": 4368,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            932,
+            1274,
+            0
+          ],
+          [
+            693,
+            1464,
+            0
+          ],
+          [
+            1003,
+            1630,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 0.6243567753001715,
+        "metric_key": "15m.decision_tree_depth_2.test",
+        "missing_predicted_classes": [
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 7921,
+          "FLAT": 13100,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            3130,
+            3688,
+            0
+          ],
+          [
+            2045,
+            5345,
+            0
+          ],
+          [
+            2746,
+            4067,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 0.6231863374720518,
+        "metric_key": "15m.decision_tree_depth_2.train",
+        "missing_predicted_classes": [
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "train",
+        "timeframe": "15m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 2615,
+          "FLAT": 4412,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            970,
+            1199,
+            0
+          ],
+          [
+            617,
+            1639,
+            0
+          ],
+          [
+            1028,
+            1574,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 0.6278639533228974,
+        "metric_key": "15m.decision_tree_depth_2.validation",
+        "missing_predicted_classes": [
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 6953,
+          "FLAT": 35,
+          "UP": 8
+        },
+        "confusion_matrix": [
+          [
+            2190,
+            12,
+            4
+          ],
+          [
+            2151,
+            6,
+            0
+          ],
+          [
+            2612,
+            17,
+            4
+          ]
+        ],
+        "max_predicted_class_rate": 0.9938536306460835,
+        "metric_key": "15m.logistic_regression.test",
+        "missing_predicted_classes": [],
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 6947,
+          "FLAT": 60,
+          "UP": 20
+        },
+        "confusion_matrix": [
+          [
+            2151,
+            16,
+            2
+          ],
+          [
+            2233,
+            16,
+            7
+          ],
+          [
+            2563,
+            28,
+            11
+          ]
+        ],
+        "max_predicted_class_rate": 0.988615340828234,
+        "metric_key": "15m.logistic_regression.validation",
+        "missing_predicted_classes": [],
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 0,
+          "FLAT": 6996,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            0,
+            2206,
+            0
+          ],
+          [
+            0,
+            2157,
+            0
+          ],
+          [
+            0,
+            2633,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "15m.majority_class_baseline.test",
+        "missing_predicted_classes": [
+          "DOWN",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 0,
+          "FLAT": 21021,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            0,
+            6818,
+            0
+          ],
+          [
+            0,
+            7390,
+            0
+          ],
+          [
+            0,
+            6813,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "15m.majority_class_baseline.train",
+        "missing_predicted_classes": [
+          "DOWN",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "train",
+        "timeframe": "15m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 0,
+          "FLAT": 7027,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            0,
+            2169,
+            0
+          ],
+          [
+            0,
+            2256,
+            0
+          ],
+          [
+            0,
+            2602,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "15m.majority_class_baseline.validation",
+        "missing_predicted_classes": [
+          "DOWN",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 135,
+          "FLAT": 1615,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            44,
+            294,
+            0
+          ],
+          [
+            61,
+            932,
+            0
+          ],
+          [
+            30,
+            389,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 0.9228571428571428,
+        "metric_key": "1h.decision_tree_depth_2.test",
+        "missing_predicted_classes": [
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 403,
+          "FLAT": 4807,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            142,
+            850,
+            0
+          ],
+          [
+            132,
+            3048,
+            0
+          ],
+          [
+            129,
+            909,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 0.9226487523992323,
+        "metric_key": "1h.decision_tree_depth_2.train",
+        "missing_predicted_classes": [
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "train",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 130,
+          "FLAT": 1626,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            43,
+            300,
+            0
+          ],
+          [
+            50,
+            966,
+            0
+          ],
+          [
+            37,
+            360,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 0.9259681093394078,
+        "metric_key": "1h.decision_tree_depth_2.validation",
+        "missing_predicted_classes": [
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 702,
+          "FLAT": 1048,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            137,
+            201,
+            0
+          ],
+          [
+            389,
+            604,
+            0
+          ],
+          [
+            176,
+            243,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 0.5988571428571429,
+        "metric_key": "1h.logistic_regression.test",
+        "missing_predicted_classes": [
+          "UP"
+        ],
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 3,
+          "FLAT": 5197,
+          "UP": 10
+        },
+        "confusion_matrix": [
+          [
+            2,
+            990,
+            0
+          ],
+          [
+            1,
+            3175,
+            4
+          ],
+          [
+            0,
+            1032,
+            6
+          ]
+        ],
+        "max_predicted_class_rate": 0.9975047984644914,
+        "metric_key": "1h.logistic_regression.train",
+        "missing_predicted_classes": [],
+        "model_name": "logistic_regression",
+        "split": "train",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 54,
+          "FLAT": 1702,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            9,
+            334,
+            0
+          ],
+          [
+            32,
+            984,
+            0
+          ],
+          [
+            13,
+            384,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 0.969248291571754,
+        "metric_key": "1h.logistic_regression.validation",
+        "missing_predicted_classes": [
+          "UP"
+        ],
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 0,
+          "FLAT": 1750,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            0,
+            338,
+            0
+          ],
+          [
+            0,
+            993,
+            0
+          ],
+          [
+            0,
+            419,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "1h.majority_class_baseline.test",
+        "missing_predicted_classes": [
+          "DOWN",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 0,
+          "FLAT": 5210,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            0,
+            992,
+            0
+          ],
+          [
+            0,
+            3180,
+            0
+          ],
+          [
+            0,
+            1038,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "1h.majority_class_baseline.train",
+        "missing_predicted_classes": [
+          "DOWN",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "train",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 0,
+          "FLAT": 1756,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            0,
+            343,
+            0
+          ],
+          [
+            0,
+            1016,
+            0
+          ],
+          [
+            0,
+            397,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "1h.majority_class_baseline.validation",
+        "missing_predicted_classes": [
+          "DOWN",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 104928,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            44845,
+            0,
+            0
+          ],
+          [
+            8441,
+            0,
+            0
+          ],
+          [
+            51642,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "1m.decision_tree_depth_2.test",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 307394,
+          "FLAT": 0,
+          "UP": 8770
+        },
+        "confusion_matrix": [
+          [
+            142786,
+            0,
+            2447
+          ],
+          [
+            24994,
+            0,
+            801
+          ],
+          [
+            139614,
+            0,
+            5522
+          ]
+        ],
+        "max_predicted_class_rate": 0.9722612315127592,
+        "metric_key": "1m.decision_tree_depth_2.train",
+        "missing_predicted_classes": [
+          "FLAT"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "train",
+        "timeframe": "1m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 105408,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            45330,
+            0,
+            0
+          ],
+          [
+            7946,
+            0,
+            0
+          ],
+          [
+            52132,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "1m.decision_tree_depth_2.validation",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 104800,
+          "FLAT": 3,
+          "UP": 125
+        },
+        "confusion_matrix": [
+          [
+            44780,
+            2,
+            63
+          ],
+          [
+            8428,
+            0,
+            13
+          ],
+          [
+            51592,
+            1,
+            49
+          ]
+        ],
+        "max_predicted_class_rate": 0.9987801158889905,
+        "metric_key": "1m.logistic_regression.test",
+        "missing_predicted_classes": [],
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 105358,
+          "FLAT": 11,
+          "UP": 39
+        },
+        "confusion_matrix": [
+          [
+            45312,
+            1,
+            17
+          ],
+          [
+            7941,
+            1,
+            4
+          ],
+          [
+            52105,
+            9,
+            18
+          ]
+        ],
+        "max_predicted_class_rate": 0.9995256527018822,
+        "metric_key": "1m.logistic_regression.validation",
+        "missing_predicted_classes": [],
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 104928,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            44845,
+            0,
+            0
+          ],
+          [
+            8441,
+            0,
+            0
+          ],
+          [
+            51642,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "1m.majority_class_baseline.test",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 316164,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            145233,
+            0,
+            0
+          ],
+          [
+            25795,
+            0,
+            0
+          ],
+          [
+            145136,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "1m.majority_class_baseline.train",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "train",
+        "timeframe": "1m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 105408,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            45330,
+            0,
+            0
+          ],
+          [
+            7946,
+            0,
+            0
+          ],
+          [
+            52132,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "1m.majority_class_baseline.validation",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 20987,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            7931,
+            0,
+            0
+          ],
+          [
+            3806,
+            0,
+            0
+          ],
+          [
+            9250,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "5m.decision_tree_depth_2.test",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 61328,
+          "FLAT": 0,
+          "UP": 1856
+        },
+        "confusion_matrix": [
+          [
+            24847,
+            0,
+            401
+          ],
+          [
+            12261,
+            0,
+            430
+          ],
+          [
+            24220,
+            0,
+            1025
+          ]
+        ],
+        "max_predicted_class_rate": 0.9706254748037478,
+        "metric_key": "5m.decision_tree_depth_2.train",
+        "missing_predicted_classes": [
+          "FLAT"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "train",
+        "timeframe": "5m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 21081,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            8023,
+            0,
+            0
+          ],
+          [
+            3794,
+            0,
+            0
+          ],
+          [
+            9264,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "5m.decision_tree_depth_2.validation",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "5m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 20969,
+          "FLAT": 0,
+          "UP": 18
+        },
+        "confusion_matrix": [
+          [
+            7919,
+            0,
+            12
+          ],
+          [
+            3806,
+            0,
+            0
+          ],
+          [
+            9244,
+            0,
+            6
+          ]
+        ],
+        "max_predicted_class_rate": 0.9991423262019345,
+        "metric_key": "5m.logistic_regression.test",
+        "missing_predicted_classes": [
+          "FLAT"
+        ],
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 21074,
+          "FLAT": 0,
+          "UP": 7
+        },
+        "confusion_matrix": [
+          [
+            8021,
+            0,
+            2
+          ],
+          [
+            3794,
+            0,
+            0
+          ],
+          [
+            9259,
+            0,
+            5
+          ]
+        ],
+        "max_predicted_class_rate": 0.9996679474408235,
+        "metric_key": "5m.logistic_regression.validation",
+        "missing_predicted_classes": [
+          "FLAT"
+        ],
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "5m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 20987,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            7931,
+            0,
+            0
+          ],
+          [
+            3806,
+            0,
+            0
+          ],
+          [
+            9250,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "5m.majority_class_baseline.test",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 63184,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            25248,
+            0,
+            0
+          ],
+          [
+            12691,
+            0,
+            0
+          ],
+          [
+            25245,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "5m.majority_class_baseline.train",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "train",
+        "timeframe": "5m"
+      },
+      {
+        "class_distribution_pred": {
+          "DOWN": 21081,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "confusion_matrix": [
+          [
+            8023,
+            0,
+            0
+          ],
+          [
+            3794,
+            0,
+            0
+          ],
+          [
+            9264,
+            0,
+            0
+          ]
+        ],
+        "max_predicted_class_rate": 1.0,
+        "metric_key": "5m.majority_class_baseline.validation",
+        "missing_predicted_classes": [
+          "FLAT",
+          "UP"
+        ],
+        "model_name": "majority_class_baseline",
+        "split": "validation",
+        "timeframe": "5m"
+      }
+    ],
+    "class_collapse_cases_count": 33,
+    "comparison_v9_8_v9_13": {
+      "baseline_clear_wins_count_v9_13": 0,
+      "distance_to_shuffled_improved_vs_v9_8": true,
+      "interpretation": "Comparaison descriptive offline uniquement; V9.13 ne lance pas de walk-forward ni de backtest.",
+      "no_clear_count_delta_v9_13_minus_v9_8": 0,
+      "v9_13_mean_delta_original_vs_shuffled": 0.014758230658094534,
+      "v9_13_no_clear_edge_vs_shuffled_labels_count": 14,
+      "v9_8_decision": "offline_ml_completed_but_close_to_shuffled_labels",
+      "v9_8_mean_delta_original_vs_shuffled": 0.013612718532922171,
+      "v9_8_no_clear_edge_vs_shuffled_labels_count": 14
+    },
+    "decision": "h4_offline_ml_completed_but_close_to_shuffled_labels",
+    "global_decision": "h4_candidate_not_ready_refine_labels_again",
+    "learned_vs_baselines": {
+      "clear_wins_count": 0,
+      "interpretation": "Aucun modele appris ne bat clairement les baselines sur V9.13.",
+      "mean_delta_macro_f1_vs_best_baseline": -0.11073883657668578
+    },
+    "learned_vs_shuffled_labels": {
+      "max_delta_original_vs_shuffled": 0.33371298405466965,
+      "mean_delta_original_vs_shuffled": 0.014758230658094534,
+      "min_delta_original_vs_shuffled": -0.08457142857142858,
+      "no_clear_edge_vs_shuffled_labels_count": 14
+    },
+    "v9_8_decision": "offline_ml_completed_but_close_to_shuffled_labels",
+    "v9_9_decision": "strict_walk_forward_completed_but_close_to_shuffled_labels",
+    "walk_forward_not_repeated_in_v9_14": true,
+    "worst_cases": [
+      {
+        "accuracy": 0.31446540880503143,
+        "balanced_accuracy": 0.33234929143392083,
+        "class_distribution_pred": {
+          "DOWN": 6953,
+          "FLAT": 35,
+          "UP": 8
+        },
+        "class_distribution_true": {
+          "DOWN": 2206,
+          "FLAT": 2157,
+          "UP": 2633
+        },
+        "confusion_matrix": [
+          [
+            2190,
+            12,
+            4
+          ],
+          [
+            2151,
+            6,
+            0
+          ],
+          [
+            2612,
+            17,
+            4
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.1622405847544773,
+        "model_name": "logistic_regression",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.31497195455199195,
+          "FLAT": 0.17142857142857143,
+          "UP": 0.5
+        },
+        "per_class_recall": {
+          "DOWN": 0.9927470534904805,
+          "FLAT": 0.0027816411682892906,
+          "UP": 0.0015191796429927839
+        },
+        "rows": 6996,
+        "split": "test",
+        "test_rows": 6996,
+        "timeframe": "15m",
+        "train_rows": 21021,
+        "validation_rows": 7027
+      },
+      {
+        "accuracy": 0.30994734595133056,
+        "balanced_accuracy": 0.3343403202297424,
+        "class_distribution_pred": {
+          "DOWN": 6947,
+          "FLAT": 60,
+          "UP": 20
+        },
+        "class_distribution_true": {
+          "DOWN": 2169,
+          "FLAT": 2256,
+          "UP": 2602
+        },
+        "confusion_matrix": [
+          [
+            2151,
+            16,
+            2
+          ],
+          [
+            2233,
+            16,
+            7
+          ],
+          [
+            2563,
+            28,
+            11
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.16470832499471674,
+        "model_name": "logistic_regression",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.30963005613934075,
+          "FLAT": 0.26666666666666666,
+          "UP": 0.55
+        },
+        "per_class_recall": {
+          "DOWN": 0.991701244813278,
+          "FLAT": 0.0070921985815602835,
+          "UP": 0.004227517294388932
+        },
+        "rows": 7027,
+        "split": "validation",
+        "test_rows": 6996,
+        "timeframe": "15m",
+        "train_rows": 21021,
+        "validation_rows": 7027
+      },
+      {
+        "accuracy": 0.3779006051365131,
+        "balanced_accuracy": 0.3333333333333333,
+        "class_distribution_pred": {
+          "DOWN": 20987,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "class_distribution_true": {
+          "DOWN": 7931,
+          "FLAT": 3806,
+          "UP": 9250
+        },
+        "confusion_matrix": [
+          [
+            7931,
+            0,
+            0
+          ],
+          [
+            3806,
+            0,
+            0
+          ],
+          [
+            9250,
+            0,
+            0
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.18283883163888695,
+        "model_name": "decision_tree_depth_2",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.3779006051365131,
+          "FLAT": 0.0,
+          "UP": 0.0
+        },
+        "per_class_recall": {
+          "DOWN": 1.0,
+          "FLAT": 0.0,
+          "UP": 0.0
+        },
+        "rows": 20987,
+        "split": "test",
+        "test_rows": 20987,
+        "timeframe": "5m",
+        "train_rows": 63184,
+        "validation_rows": 21081
+      },
+      {
+        "accuracy": 0.3776147138704913,
+        "balanced_accuracy": 0.33304519953063644,
+        "class_distribution_pred": {
+          "DOWN": 20969,
+          "FLAT": 0,
+          "UP": 18
+        },
+        "class_distribution_true": {
+          "DOWN": 7931,
+          "FLAT": 3806,
+          "UP": 9250
+        },
+        "confusion_matrix": [
+          [
+            7919,
+            0,
+            12
+          ],
+          [
+            3806,
+            0,
+            0
+          ],
+          [
+            9244,
+            0,
+            6
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.18310748646357422,
+        "model_name": "logistic_regression",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.3776527254518575,
+          "FLAT": 0.0,
+          "UP": 0.3333333333333333
+        },
+        "per_class_recall": {
+          "DOWN": 0.9984869499432606,
+          "FLAT": 0.0,
+          "UP": 0.0006486486486486486
+        },
+        "rows": 20987,
+        "split": "test",
+        "test_rows": 20987,
+        "timeframe": "5m",
+        "train_rows": 63184,
+        "validation_rows": 21081
+      },
+      {
+        "accuracy": 0.3805796688961624,
+        "balanced_accuracy": 0.3333333333333333,
+        "class_distribution_pred": {
+          "DOWN": 21081,
+          "FLAT": 0,
+          "UP": 0
+        },
+        "class_distribution_true": {
+          "DOWN": 8023,
+          "FLAT": 3794,
+          "UP": 9264
+        },
+        "confusion_matrix": [
+          [
+            8023,
+            0,
+            0
+          ],
+          [
+            3794,
+            0,
+            0
+          ],
+          [
+            9264,
+            0,
+            0
+          ]
+        ],
+        "forbidden_feature_columns_present": [],
+        "forbidden_output_columns_present": [],
+        "macro_f1": 0.1837777166941543,
+        "model_name": "decision_tree_depth_2",
+        "no_shuffle_confirmed": true,
+        "per_class_precision": {
+          "DOWN": 0.3805796688961624,
+          "FLAT": 0.0,
+          "UP": 0.0
+        },
+        "per_class_recall": {
+          "DOWN": 1.0,
+          "FLAT": 0.0,
+          "UP": 0.0
+        },
+        "rows": 21081,
+        "split": "validation",
+        "test_rows": 20987,
+        "timeframe": "5m",
+        "train_rows": 63184,
+        "validation_rows": 21081
+      }
+    ]
+  },
+  "next_step_recommendation": "V9.15 Feature Separability / Feature Refinement Candidate.",
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "labels_generated": false,
+    "ml_training_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "walk_forward_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "status": "PASS",
+  "target_name": "up_down_flat_volnorm_h4",
+  "v9_14_decision": {
+    "confidence": "medium",
+    "decision": "feature_first_before_more_labels",
+    "explicit_no_backtest_statement": "Aucun backtest n'est justifie ou execute par V9.14.",
+    "explicit_no_trading_statement": "V9.14 n'autorise aucun trading, paper live, ordre, strategie ou signal actionnable.",
+    "justification": "Les labels h4 restent proches du shuffle et les features ne montrent pas une separabilite commune stable entre timeframes.",
+    "next_step_recommendation": "V9.15 Feature Separability / Feature Refinement Candidate."
+  },
+  "version": "V9.14",
+  "window": {
+    "total_days": 366,
+    "window_end": "2024-03-24",
+    "window_start": "2023-03-25"
+  }
+}

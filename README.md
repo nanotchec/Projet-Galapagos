@@ -1,6 +1,6 @@
 # Projet Galapagos
 
-- Derniere version validee : V9.12.
-- Candidate : V9.13, dataset + diagnostic ML offline du label h4.
-- Aucun trading, ordre, backtest, strategie, signal actionnable, modele persistant, API privee ou cle API.
+- Derniere version validee : V9.13.
+- Candidate : V9.14, separabilite features/labels et decision de branche.
+- Aucun trading, ordre, backtest, walk-forward, strategie, signal actionnable, modele persistant, API privee ou cle API.
 - Aucun sidecar et aucune empreinte ZIP.

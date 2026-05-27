@@ -1,11 +1,10 @@
-# Synthese courante - V9.13
+# Synthese courante - V9.14
 
-- Derniere version validee : `V9.12`.
-- Candidate : `V9.13`.
+- Derniere version validee : `V9.13`.
+- Candidate : `V9.14`.
 - Statut : `pending_external_audit`.
-- Direction : dataset + diagnostic ML offline du label h4.
-- Dataset : `dataset_created_h4_label_candidate`.
-- ML : `h4_offline_ml_completed_but_close_to_shuffled_labels`.
-- Decision globale : `h4_candidate_not_ready_refine_labels_again`.
-- Aucun trading, paper live, ordre, backtest, strategie, signal actionnable, modele persistant, API privee ou cle API.
+- Direction : separabilite features/labels et decision de branche.
+- Decision V9.14 : `feature_first_before_more_labels`.
+- Recommandation : V9.15 Feature Separability / Feature Refinement Candidate.
+- Aucun trading, paper live, ordre, backtest, walk-forward, strategie, signal actionnable, modele persistant, API privee ou cle API.
 - Aucun sidecar et aucune empreinte ZIP.

@@ -1,0 +1,107 @@
+{
+  "created_at_utc": "2026-05-27T15:28:25Z",
+  "decision_type": "feature_label_separability_and_branch_decision",
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "full_data_available": true,
+  "inputs": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "v9_10_decision": {
+      "available": true,
+      "path": "reports/research_decisions/refined_volnorm_research_decision_gate_v9_10.json"
+    },
+    "v9_11_failure": {
+      "available": true,
+      "path": "reports/research_decisions/label_failure_analysis_v9_11.json"
+    },
+    "v9_12_labels": {
+      "available": true,
+      "path": "reports/labels/horizon_event_label_redesign_v9_12.json"
+    },
+    "v9_13_dataset": {
+      "available": true,
+      "path": "reports/datasets/h4_label_candidate_dataset_v9_13.json"
+    },
+    "v9_13_ml": {
+      "available": true,
+      "path": "reports/ml/h4_label_candidate_offline_ml_v9_13.json"
+    },
+    "v9_13_scores": {
+      "available": true,
+      "path": "reports/ml/h4_label_candidate_offline_scores_v9_13.json"
+    },
+    "v9_8_ml": {
+      "available": true,
+      "path": "reports/ml/refined_volnorm_labels_offline_ml_v9_8.json"
+    },
+    "v9_9_walk_forward": {
+      "available": true,
+      "path": "reports/ml/refined_volnorm_strict_walk_forward_v9_9.json"
+    }
+  },
+  "markdown_path": "reports/research_decisions/feature_label_separability_v9_14.md",
+  "report_path": "reports/research_decisions/feature_label_separability_v9_14.json",
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "labels_generated": false,
+    "ml_training_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "walk_forward_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "status": "PASS",
+  "target_name": "up_down_flat_volnorm_h4",
+  "v9_14_decision": {
+    "confidence": "medium",
+    "decision": "feature_first_before_more_labels",
+    "explicit_no_backtest_statement": "Aucun backtest n'est justifie ou execute par V9.14.",
+    "explicit_no_trading_statement": "V9.14 n'autorise aucun trading, paper live, ordre, strategie ou signal actionnable.",
+    "justification": "Les labels h4 restent proches du shuffle et les features ne montrent pas une separabilite commune stable entre timeframes.",
+    "next_step_recommendation": "V9.15 Feature Separability / Feature Refinement Candidate."
+  },
+  "version": "V9.14"
+}

@@ -1,12 +1,9 @@
 {
   "api_key_used": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.13",
-  "dataset_decision_v9_13": "dataset_created_h4_label_candidate",
-  "direction": "h4_label_candidate_dataset_ml_diagnostic",
-  "global_decision_v9_13": "h4_candidate_not_ready_refine_labels_again",
-  "last_validated_version": "V9.12",
-  "ml_decision_v9_13": "h4_offline_ml_completed_but_close_to_shuffled_labels",
+  "candidate_version": "V9.14",
+  "direction": "feature_label_separability_and_branch_decision",
+  "last_validated_version": "V9.13",
   "no_actionable_signal": true,
   "no_backtest": true,
   "no_orders": true,
@@ -15,7 +12,10 @@
   "no_sidecars": true,
   "no_strategy": true,
   "no_trading": true,
+  "no_walk_forward": true,
   "no_zip_fingerprints": true,
   "private_endpoint_used": false,
-  "target_name": "up_down_flat_volnorm_h4"
+  "recommended_next_step": "V9.15 Feature Separability / Feature Refinement Candidate.",
+  "target_name": "up_down_flat_volnorm_h4",
+  "v9_14_decision": "feature_first_before_more_labels"
 }
