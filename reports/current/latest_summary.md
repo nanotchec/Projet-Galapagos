@@ -1,14 +1,16 @@
-# Synthese courante - V9.19
+# Synthese courante - V9.20
 
-- Derniere version validee : `V9.18`.
-- Candidate : `V9.19`.
+- Derniere version validee : `V9.19`.
+- Candidate : `V9.20`.
 - Statut : `pending_external_audit`.
-- Direction : execution pilote de collecte aggTrades post-V9.
-- Periode pilote : `2024-05-05` -> `2024-05-11`.
-- Decision V9.19 : `aggtrades_post_v9_pilot_collection_success`.
-- Jours demandes/tentes/valides : `7` / `7` / `7`.
-- Lignes totales : `6827579`.
-- Recommandation : V9.20 - AggTrades Post-V9 Batch Collection.
+- Direction : execution batche de collecte aggTrades post-V9.
+- Periode batche : `2024-05-12` -> `2024-06-10`.
+- Decision V9.20 : `aggtrades_post_v9_batch_collection_success`.
+- Jours demandes/tentes/valides : `30` / `30` / `30`.
+- Jours skips deja complets : `0`.
+- Lignes totales : `27668612`.
+- Couverture cumulee connue : `2024-05-05` -> `2024-06-10`.
+- Recommandation : V9.21 - AggTrades Post-V9 Batch Collection Expansion.
 - Couverture complete future : `False`.
 - Aucun label, dataset supervise, ML, walk-forward, backtest, strategie ou signal actionnable.
 - Aucun trading, paper live, ordre, modele persistant, API privee, cle API, client exchange authentifie ou websocket live.

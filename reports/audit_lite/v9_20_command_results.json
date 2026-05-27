@@ -1,0 +1,117 @@
+{
+  "version": "V9.20",
+  "created_at_utc": "2026-05-27T20:53:57Z",
+  "status": "PASS",
+  "commands": [
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "duration_seconds": 4.648,
+      "status": "PASS",
+      "stdout_tail": "/validation/test_research_decision_gate_v8_6.py::test_decision_gate_v8_6_has_recommendation\ntests/validation/test_research_decision_gate_v8_6.py::test_decision_gate_v8_6_claims_false\ntests/validation/test_research_decision_gate_v8_6.py::test_decision_gate_v8_6_no_backtest_claim\ntests/validation/test_research_decision_gate_v8_6.py::test_decision_gate_v8_6_rejects_claim_true\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_is_research_only\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_has_feature_refinement_recommendation\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_preserves_label_shuffle_warning_count\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_claims_false\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_no_backtest_recommendation\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_rejects_claim_true\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_rejects_backtest_primary_recommendation\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_rejects_forbidden_markdown_claim\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_accepts_valid_walk_forward_report\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_forbidden_future_feature\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_forbidden_label_feature\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_forbidden_fold_feature\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_unknown_model\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_output_trading_signal_column\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_output_order_column\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_output_pnl_column\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_overlapping_folds\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_validation_before_train\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_test_before_validation\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_backtest_report_created\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_strategy_report_created\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_orders_directory_created\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_model_pickle_created\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_markdown_strategy_validated_claim\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_markdown_tradable_edge_confirmed_claim\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_safety_flag_trading_true\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_safety_flag_backtest_true\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_walk_forward_validated_for_trading_true\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_trading_metric_in_metrics\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_report_json_lie\n\n5440 tests collected in 4.24s\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:49:05Z"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_aggtrades_post_v9_batch_collection_v9_20.py",
+      "returncode": 0,
+      "duration_seconds": 0.527,
+      "status": "PASS",
+      "stdout_tail": "...........                                                              [100%]\n11 passed in 0.33s\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:49:10Z"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_aggtrades_post_v9_batch_collection_v9_20_validator.py",
+      "returncode": 0,
+      "duration_seconds": 0.192,
+      "status": "PASS",
+      "stdout_tail": ".........                                                                [100%]\n9 passed in 0.03s\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:49:11Z"
+    },
+    {
+      "command": "python scripts/run_aggtrades_post_v9_batch_collection_v9_20.py --mode collect --start-date 2024-05-12 --end-date 2024-06-10 --max-downloads 30",
+      "returncode": 0,
+      "duration_seconds": 282.318,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"status\": \"PASS\",\n  \"mode\": \"collect\",\n  \"decision\": \"aggtrades_post_v9_batch_collection_success\",\n  \"batch_start\": \"2024-05-12\",\n  \"batch_end\": \"2024-06-10\",\n  \"max_downloads\": 30,\n  \"days_requested\": 30,\n  \"days_attempted\": 30,\n  \"days_downloaded\": 30,\n  \"days_normalized\": 30,\n  \"days_skipped_existing\": 0,\n  \"days_complete\": 30,\n  \"days_failed\": 0,\n  \"total_rows\": 27668612,\n  \"raw_bytes_total\": 365946254,\n  \"silver_bytes_total\": 718259780,\n  \"runtime_seconds\": 282.14,\n  \"cumulative_known_coverage_start\": \"2024-05-05\",\n  \"cumulative_known_coverage_end\": \"2024-06-10\",\n  \"network_used\": true,\n  \"api_key_used\": false,\n  \"private_endpoint_used\": false,\n  \"exchange_auth_used\": false,\n  \"websocket_live_used\": false,\n  \"complete_collection_reached\": false\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:49:11Z"
+    },
+    {
+      "command": "python scripts/validate_aggtrades_post_v9_batch_collection_v9_20.py",
+      "returncode": 0,
+      "duration_seconds": 0.533,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"passed\": true,\n  \"errors\": []\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:53:53Z"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_20.py",
+      "returncode": 0,
+      "duration_seconds": 0.588,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"zip_name\": \"projet-galapagos-v9.20-audit-lite.zip\",\n  \"zip_bytes_estimate\": 237647,\n  \"zip_bytes_is_authoritative\": false,\n  \"included_files\": 48,\n  \"sidecars_created\": false,\n  \"zip_fingerprints_created\": false,\n  \"status\": \"PASS\"\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:53:54Z"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_20.py",
+      "returncode": 0,
+      "duration_seconds": 0.107,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"zip_name\": \"projet-galapagos-v9.20-audit-lite.zip\",\n  \"zip_bytes_estimate\": 237893,\n  \"zip_bytes_is_authoritative\": false,\n  \"included_files\": 48,\n  \"sidecars_created\": false,\n  \"zip_fingerprints_created\": false,\n  \"status\": \"PASS\"\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:53:54Z"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_20.py --zip projet-galapagos-v9.20-audit-lite.zip",
+      "returncode": 0,
+      "duration_seconds": 0.051,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"zip\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.20-audit-lite.zip\",\n  \"passed\": true,\n  \"errors\": []\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:53:54Z"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_20.py --zip projet-galapagos-v9.20-audit-lite.zip",
+      "returncode": 0,
+      "duration_seconds": 1.377,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"zip\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.20-audit-lite.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"import_timeout_seconds\": 20,\n  \"pytest_timeout_seconds\": 60,\n  \"test_timeout_seconds\": 90,\n  \"audit_timeout_seconds\": 30,\n  \"sidecars_expected\": false,\n  \"zip_fingerprints_expected\": false\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:53:54Z"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_20.py",
+      "returncode": 0,
+      "duration_seconds": 0.106,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"zip_name\": \"projet-galapagos-v9.20-audit-lite.zip\",\n  \"zip_bytes_estimate\": 238362,\n  \"zip_bytes_is_authoritative\": false,\n  \"included_files\": 48,\n  \"sidecars_created\": false,\n  \"zip_fingerprints_created\": false,\n  \"status\": \"PASS\"\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:53:56Z"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_20.py --zip projet-galapagos-v9.20-audit-lite.zip",
+      "returncode": 0,
+      "duration_seconds": 0.047,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"zip\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.20-audit-lite.zip\",\n  \"passed\": true,\n  \"errors\": []\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:53:56Z"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_20.py --zip projet-galapagos-v9.20-audit-lite.zip",
+      "returncode": 0,
+      "duration_seconds": 1.255,
+      "status": "PASS",
+      "stdout_tail": "{\n  \"version\": \"V9.20\",\n  \"zip\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.20-audit-lite.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"import_timeout_seconds\": 20,\n  \"pytest_timeout_seconds\": 60,\n  \"test_timeout_seconds\": 90,\n  \"audit_timeout_seconds\": 30,\n  \"sidecars_expected\": false,\n  \"zip_fingerprints_expected\": false\n}\n",
+      "stderr_tail": "",
+      "timestamp_utc": "2026-05-27T20:53:56Z"
+    }
+  ],
+  "sidecars_created": false,
+  "zip_fingerprints_created": false
+}
