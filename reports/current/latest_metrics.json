@@ -1,10 +1,13 @@
 {
   "api_key_used": false,
+  "backtest_executed": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.15",
-  "direction": "derivatives_data_extension_readiness",
-  "features_candidate_created": false,
-  "last_validated_version": "V9.14.1",
+  "candidate_version": "V9.16",
+  "dataset_created": false,
+  "direction": "derivatives_window_extension_diagnostic",
+  "features_created": false,
+  "last_validated_version": "V9.15",
+  "ml_executed": false,
   "network_used": false,
   "no_actionable_signal": true,
   "no_backtest": true,
@@ -18,7 +21,8 @@
   "no_walk_forward": true,
   "no_zip_fingerprints": true,
   "private_endpoint_used": false,
-  "recommended_next_step": "V9.16 - Derivatives Window Extension Diagnostic.",
-  "source_version": "V9.14.1",
-  "v9_15_decision": "derivatives_readiness_not_compatible_with_v9_window"
+  "recommended_next_step": "V9.17 - Derivatives History Collection Plan.",
+  "source_version": "V9.15",
+  "v9_16_decision": "data_extension_should_collect_more_history",
+  "walk_forward_executed": false
 }

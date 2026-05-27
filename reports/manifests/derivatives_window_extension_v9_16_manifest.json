@@ -1,0 +1,134 @@
+{
+  "backtest_executed": false,
+  "candidate_windows_count": 4,
+  "created_at_utc": "2026-05-27T16:56:47Z",
+  "data_sources_count": 5,
+  "dataset_created": false,
+  "direction": "derivatives_window_extension_diagnostic",
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "inputs_used": {
+    "derivatives_coverage_expansion_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_coverage_expansion_v1_14.json"
+    },
+    "derivatives_coverage_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_coverage_v1_14.json"
+    },
+    "derivatives_data_quality_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_data_quality_v1_14.json"
+    },
+    "derivatives_features_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_features_v1_14.json"
+    },
+    "derivatives_readiness_v1_12_2": {
+      "available": true,
+      "path": "reports/research/derivatives_readiness_v1_12_2.json"
+    },
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "max_history_public_market_data_v5_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "public_trades_1y_window_v8_2_manifest": {
+      "available": true,
+      "path": "reports/manifests/public_trades_1y_window_v8_2_manifest.json"
+    },
+    "refined_ohlcv_trades_feature_store_v9_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json"
+    },
+    "v9_14_1_decision": {
+      "available": true,
+      "path": "reports/research_decisions/feature_label_separability_v9_14_1.json"
+    },
+    "v9_15_decision": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_data_extension_readiness_v9_15.json"
+    },
+    "v9_15_manifest": {
+      "available": true,
+      "path": "reports/manifests/derivatives_data_extension_readiness_v9_15_manifest.json"
+    }
+  },
+  "markdown_path": "reports/research_decisions/derivatives_window_extension_v9_16.md",
+  "ml_executed": false,
+  "report_path": "reports/research_decisions/derivatives_window_extension_v9_16.json",
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "labels_generated": false,
+    "ml_training_enabled": false,
+    "network_used": false,
+    "new_data_downloaded": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "walk_forward_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "source_version": "V9.15",
+  "status": "PASS",
+  "v9_16_decision": {
+    "confidence": "high",
+    "decision": "data_extension_should_collect_more_history",
+    "justification": "Funding a une couverture locale post-V9 mais ne recouvre pas les aggTrades; open interest est trop court. Il faut collecter/valider l'historique manquant avant toute feature candidate.",
+    "next_recommendation": "V9.17 - Derivatives History Collection Plan.",
+    "no_backtest": true,
+    "no_trading": true,
+    "no_walk_forward": true
+  },
+  "version": "V9.16",
+  "walk_forward_executed": false
+}

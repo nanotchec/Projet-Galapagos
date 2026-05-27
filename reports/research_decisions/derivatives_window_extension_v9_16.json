@@ -1,0 +1,663 @@
+{
+  "backtest_executed": false,
+  "candidate_windows": [
+    {
+      "candidate_window_name": "funding_only_with_ohlcv_trades",
+      "causal_alignment_risk": "medium",
+      "compatible_with_existing_v9_features": false,
+      "coverage_risk": "high_no_overlap",
+      "description": "Fenetre OHLCV + aggTrades + funding. Funding seul n'est pas bloquant, mais aggTrades est obligatoire pour rester coherent avec la chaine V9.",
+      "duration_days": 0,
+      "excluded_sources": [
+        "open_interest",
+        "other_derivatives_local"
+      ],
+      "expected_row_counts_by_timeframe": null,
+      "included_sources": [
+        "OHLCV",
+        "trades_aggTrades",
+        "funding_rates"
+      ],
+      "limitations": [
+        "Aucune intersection temporelle exploitable entre toutes les sources incluses.",
+        "Funding commence le 2024-05-05 alors que les aggTrades valides s'arretent le 2024-03-24."
+      ],
+      "missingness_risk": "medium",
+      "overlap_quality": "none",
+      "recommendation_status": "not_viable",
+      "recommended_timeframes": [
+        "4h"
+      ],
+      "requires_new_dataset": true,
+      "requires_new_feature_store": true,
+      "requires_new_labels": true,
+      "window_end": "2024-03-24T23:59:59Z",
+      "window_start": "2024-05-05T16:00:00Z"
+    },
+    {
+      "candidate_window_name": "funding_and_open_interest_with_ohlcv_trades",
+      "causal_alignment_risk": "medium",
+      "compatible_with_existing_v9_features": false,
+      "coverage_risk": "high_no_overlap",
+      "description": "Fenetre OHLCV + aggTrades + funding + open interest.",
+      "duration_days": 0,
+      "excluded_sources": [
+        "other_derivatives_local"
+      ],
+      "expected_row_counts_by_timeframe": null,
+      "included_sources": [
+        "OHLCV",
+        "trades_aggTrades",
+        "funding_rates",
+        "open_interest"
+      ],
+      "limitations": [
+        "Aucune intersection temporelle exploitable entre toutes les sources incluses.",
+        "Open interest commence surtout en 2026 et ne recouvre pas les aggTrades V8/V9.",
+        "Open interest local est trop sparse pour supporter une recherche robuste sans extension historique."
+      ],
+      "missingness_risk": "high",
+      "overlap_quality": "none",
+      "recommendation_status": "not_viable",
+      "recommended_timeframes": [
+        "4h"
+      ],
+      "requires_new_dataset": true,
+      "requires_new_feature_store": true,
+      "requires_new_labels": true,
+      "window_end": "2024-03-24T23:59:59Z",
+      "window_start": "2026-04-02T08:00:00Z"
+    },
+    {
+      "candidate_window_name": "derivatives_4h_native",
+      "causal_alignment_risk": "medium",
+      "compatible_with_existing_v9_features": false,
+      "coverage_risk": "high",
+      "description": "Fenetre 4h native derivatives. Elle exclut les aggTrades post-V9 faute de preuve locale.",
+      "duration_days": 31,
+      "excluded_sources": [
+        "spot_aggTrades_currently_missing_after_2024-03-24"
+      ],
+      "expected_row_counts_by_timeframe": {
+        "4h": 186
+      },
+      "included_sources": [
+        "OHLCV",
+        "funding_rates",
+        "open_interest",
+        "other_derivatives_local"
+      ],
+      "limitations": [
+        "La piste 4h native exclut les aggTrades post-V9; elle necessite une nouvelle collecte/validation si elle devient prioritaire.",
+        "Open interest local est trop sparse pour supporter une recherche robuste sans extension historique."
+      ],
+      "missingness_risk": "high",
+      "overlap_quality": "too_short",
+      "recommendation_status": "too_short",
+      "recommended_timeframes": [
+        "4h"
+      ],
+      "requires_new_dataset": true,
+      "requires_new_feature_store": true,
+      "requires_new_labels": true,
+      "window_end": "2026-05-05T08:00:00Z",
+      "window_start": "2026-04-05T12:00:00Z"
+    },
+    {
+      "candidate_window_name": "multi_year_ohlcv_trades_without_derivatives",
+      "causal_alignment_risk": "low",
+      "compatible_with_existing_v9_features": true,
+      "coverage_risk": "low",
+      "description": "Comparaison OHLCV + aggTrades sans derivatives; non prioritaire car l'objectif V9.16 est data-extension derivatives.",
+      "duration_days": 366,
+      "excluded_sources": [
+        "funding_rates",
+        "open_interest",
+        "other_derivatives_local"
+      ],
+      "expected_row_counts_by_timeframe": {
+        "15m": 35136,
+        "1h": 8784,
+        "1m": 527040,
+        "5m": 105408
+      },
+      "included_sources": [
+        "OHLCV",
+        "trades_aggTrades"
+      ],
+      "limitations": [
+        "Fenetre de comparaison sans derivatives; elle ne repond pas a l'objectif prioritaire d'extension derivatives."
+      ],
+      "missingness_risk": "low",
+      "overlap_quality": "comparison_only",
+      "recommendation_status": "not_viable",
+      "recommended_timeframes": [
+        "1m",
+        "5m",
+        "15m",
+        "1h"
+      ],
+      "requires_new_dataset": false,
+      "requires_new_feature_store": false,
+      "requires_new_labels": false,
+      "window_end": "2024-03-24T23:59:59Z",
+      "window_start": "2023-03-25T00:00:00Z"
+    }
+  ],
+  "compatibility_analysis": {
+    "compatible_with_monthly_folds": false,
+    "compatible_with_temporal_train_validation_test": false,
+    "derivatives_4h_native_candidate_status": "too_short",
+    "derivatives_4h_should_be_considered_only_after_data_alignment": true,
+    "enough_for_future_ml": false,
+    "enough_for_future_walk_forward": false,
+    "existing_v9_feature_store_reusable": false,
+    "funding_and_open_interest_candidate_status": "not_viable",
+    "funding_coverage_summary": {
+      "end": "2026-05-05 08:00:00+00:00",
+      "start": "2024-05-05 16:00:00+00:00"
+    },
+    "funding_only_candidate_status": "not_viable",
+    "funding_only_more_realistic_than_oi_plus_funding": true,
+    "main_blockers": [
+      "Les aggTrades locaux s'arretent le 2024-03-24 alors que le funding local commence le 2024-05-05.",
+      "Open interest local couvre surtout 2026-04-02 a 2026-05-05, ce qui est trop court.",
+      "Les sorties gold derivatives features V1.14 sont documentees par rapport mais aucun fichier full n'est present sous data/gold/derivatives_features dans l'inspection locale."
+    ],
+    "ohlcv_coverage_summary": {
+      "end": "2026-05-23T23:59:59Z",
+      "start": "2023-03-25T00:00:00Z"
+    },
+    "old_v9_labels_should_not_be_reused_blindly": true,
+    "open_interest_coverage_summary": {
+      "end": "2026-05-05 12:00:00+00:00",
+      "start": "2026-04-02 08:00:00+00:00"
+    },
+    "open_interest_window_too_short": true,
+    "requires_new_dataset": true,
+    "requires_new_feature_store": true,
+    "requires_new_labels": true,
+    "research_recommendation_boundary": "Ne pas lancer walk-forward, backtest, strategie ou signal; collecter/valider l'historique manquant avant toute branche predictive.",
+    "trades_coverage_summary": {
+      "end": "2024-03-24T23:59:59Z",
+      "start": "2023-03-25T00:00:00Z"
+    }
+  },
+  "created_at_utc": "2026-05-27T16:56:47Z",
+  "data_sources_inventory": [
+    {
+      "available_ts_or_equivalent": true,
+      "causal_alignment_feasibility": "good",
+      "coverage_end": "2026-05-23T23:59:59Z",
+      "coverage_start": "2023-03-25T00:00:00Z",
+      "data_layer": "raw/research/report",
+      "evidence_paths": [
+        "reports/manifests/max_history_public_market_data_v5_0_manifest.json",
+        "reports/research/derivatives_coverage_v1_14.json",
+        "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m"
+      ],
+      "exchanges": [
+        "binance"
+      ],
+      "frequency": "1m source, resampled to 5m/15m/1h in validated V9 chain; 4h available in V1.14 derivatives context.",
+      "limitations": "Validated V9 features use the 2023-03-25 to 2024-03-24 slice; OHLCV raw history extends later than aggTrades.",
+      "local_file_count": 3201,
+      "market_type": "spot",
+      "missing_rate": 0,
+      "present_local": true,
+      "quality_known": "good",
+      "source_name": "OHLCV",
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "timeframe": "1m/5m/15m/1h and report-level 4h",
+      "total_rows": 2136288
+    },
+    {
+      "available_ts_or_equivalent": true,
+      "causal_alignment_feasibility": "good",
+      "coverage_end": "2024-03-24T23:59:59Z",
+      "coverage_start": "2023-03-25T00:00:00Z",
+      "data_layer": "raw/research",
+      "evidence_paths": [
+        "reports/manifests/public_trades_1y_window_v8_2_manifest.json",
+        "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades"
+      ],
+      "exchanges": [
+        "binance"
+      ],
+      "frequency": "event-level aggregate trades partitioned by day",
+      "limitations": "Local aggTrades evidence is the validated V8.2 one-year window only; it ends before funding starts.",
+      "local_file_count": 366,
+      "market_type": "spot",
+      "missing_rate": 0,
+      "present_local": true,
+      "quality_known": "good",
+      "source_name": "trades_aggTrades",
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "timeframe": "daily raw partitions, aggregated into 1m/5m/15m/1h features in V8/V9",
+      "total_rows": 352055121
+    },
+    {
+      "available_ts_or_equivalent": true,
+      "causal_alignment_feasibility": "good",
+      "coverage_checks": [
+        {
+          "coverage_end": "2026-05-05 00:00:00+00:00",
+          "coverage_start": "2024-05-05 16:00:00+00:00",
+          "granularity": null,
+          "history_limit": null,
+          "missing_rate": 0.7691334598355472,
+          "rows": 2190,
+          "source": "binance",
+          "status": "available"
+        },
+        {
+          "coverage_end": "2026-05-05 08:00:00+00:00",
+          "coverage_start": "2026-02-28 00:00:00+00:00",
+          "granularity": null,
+          "history_limit": null,
+          "missing_rate": 0.9789162977018765,
+          "rows": 200,
+          "source": "bybit",
+          "status": "available"
+        }
+      ],
+      "coverage_end": "2026-05-05 08:00:00+00:00",
+      "coverage_start": "2024-05-05 16:00:00+00:00",
+      "data_layer": "report-only/local derivative collection metadata",
+      "evidence_paths": [
+        "reports/research/derivatives_coverage_v1_14.json",
+        "reports/research/derivatives_coverage_expansion_v1_14.json",
+        "reports/research/derivatives_data_quality_v1_14.json",
+        "reports/research/derivatives_features_v1_14.json"
+      ],
+      "exchanges": [
+        "binance",
+        "bybit"
+      ],
+      "frequency": "8h native where available",
+      "limitations": "Coverage is local/report-derived only in V9.16; no network refresh is performed.",
+      "market_type": "derivatives",
+      "metric_name": "funding_rate",
+      "missing_rate": {
+        "funding_rate": 0.0424822990420658,
+        "funding_rate_binance": 0.08788004997917534,
+        "funding_rate_bybit": 0.9167013744273219,
+        "funding_rate_change_1": 0.08413161182840483,
+        "funding_rate_change_3": 0.06247396917950854,
+        "funding_rate_diff_binance_bybit": 0.9620991253644315,
+        "funding_rate_mean": 0.0424822990420658,
+        "funding_rate_spread_binance_bybit": 0.9620991253644315,
+        "funding_rate_zscore_30d": 0.06747188671386922,
+        "funding_rate_zscore_90d": 0.11745106205747605,
+        "funding_trend_3": 0.06247396917950854,
+        "funding_zscore_30d": 0.06747188671386922,
+        "funding_zscore_90d": 0.11745106205747605
+      },
+      "present_local": true,
+      "quality_known": "partial",
+      "source_name": "funding_rates",
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "timeframe": "8h native funding; open interest varies by provider and is reviewed as 4h-aligned in V1.14 reports.",
+      "total_rows": 2390
+    },
+    {
+      "available_ts_or_equivalent": true,
+      "causal_alignment_feasibility": "good",
+      "coverage_checks": [
+        {
+          "coverage_end": null,
+          "coverage_start": null,
+          "granularity": null,
+          "history_limit": null,
+          "missing_rate": 1.0,
+          "rows": 0,
+          "source": "binance",
+          "status": "unavailable"
+        },
+        {
+          "coverage_end": "2026-05-05 12:00:00+00:00",
+          "coverage_start": "2026-04-02 08:00:00+00:00",
+          "granularity": null,
+          "history_limit": null,
+          "missing_rate": 0.9789162977018765,
+          "rows": 200,
+          "source": "bybit",
+          "status": "available"
+        }
+      ],
+      "coverage_end": "2026-05-05 12:00:00+00:00",
+      "coverage_start": "2026-04-02 08:00:00+00:00",
+      "data_layer": "report-only/local derivative collection metadata",
+      "evidence_paths": [
+        "reports/research/derivatives_coverage_v1_14.json",
+        "reports/research/derivatives_coverage_expansion_v1_14.json",
+        "reports/research/derivatives_data_quality_v1_14.json",
+        "reports/research/derivatives_features_v1_14.json"
+      ],
+      "exchanges": [
+        "binance",
+        "bybit"
+      ],
+      "frequency": "provider-dependent",
+      "limitations": "Coverage is local/report-derived only in V9.16; no network refresh is performed.",
+      "market_type": "derivatives",
+      "metric_name": "open_interest",
+      "missing_rate": {
+        "oi_change_1": 0.9400249895876718,
+        "oi_change_3": 0.9275301957517701,
+        "oi_zscore_30d": 0.9416909620991254,
+        "oi_zscore_90d": 0.9916701374427322,
+        "open_interest": 0.9167013744273219,
+        "open_interest_bybit": 0.9167013744273219,
+        "open_interest_change_1": 0.9400249895876718,
+        "open_interest_change_3": 0.9275301957517701,
+        "open_interest_mean": 0.9167013744273219,
+        "open_interest_zscore_30d": 0.9416909620991254,
+        "open_interest_zscore_90d": 0.9916701374427322,
+        "price_oi_divergence": 0.9400249895876718
+      },
+      "present_local": true,
+      "quality_known": "partial",
+      "source_name": "open_interest",
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "timeframe": "8h native funding; open interest varies by provider and is reviewed as 4h-aligned in V1.14 reports.",
+      "total_rows": 200
+    },
+    {
+      "available_ts_or_equivalent": true,
+      "causal_alignment_feasibility": "medium",
+      "coverage_checks": [
+        {
+          "coverage_end": "2026-05-05 15:14:11+00:00",
+          "coverage_start": "2026-05-05 15:14:11+00:00",
+          "known_limitations": null,
+          "metric_name": "premium",
+          "rows": 1,
+          "source": "binance",
+          "status": "available"
+        },
+        {
+          "coverage_end": "2026-05-05 15:13:39.393000+00:00",
+          "coverage_start": "2026-05-05 15:13:39.393000+00:00",
+          "known_limitations": null,
+          "metric_name": "premium",
+          "rows": 1,
+          "source": "bybit",
+          "status": "available"
+        },
+        {
+          "coverage_end": "2026-05-05 08:00:00+00:00",
+          "coverage_start": "2026-04-05 12:00:00+00:00",
+          "known_limitations": null,
+          "metric_name": "taker_buy_sell_ratio",
+          "rows": 180,
+          "source": "binance",
+          "status": "available"
+        },
+        {
+          "coverage_end": null,
+          "coverage_start": null,
+          "known_limitations": "bybit public endpoint is not integrated for taker_buy_sell_ratio.",
+          "metric_name": "taker_buy_sell_ratio",
+          "rows": 0,
+          "source": "bybit",
+          "status": "not_supported"
+        },
+        {
+          "coverage_end": "2026-05-05 12:00:00+00:00",
+          "coverage_start": "2026-04-05 16:00:00+00:00",
+          "known_limitations": "Public endpoint has limited lookback.",
+          "metric_name": "long_short_ratio",
+          "rows": 180,
+          "source": "binance",
+          "status": "history_limited"
+        },
+        {
+          "coverage_end": null,
+          "coverage_start": null,
+          "known_limitations": "bybit public endpoint is not integrated for long_short_ratio.",
+          "metric_name": "long_short_ratio",
+          "rows": 0,
+          "source": "bybit",
+          "status": "not_supported"
+        },
+        {
+          "coverage_end": null,
+          "coverage_start": null,
+          "known_limitations": "Historical liquidations require CoinGlass or another provider.",
+          "metric_name": "liquidations",
+          "rows": 0,
+          "source": "coinglass",
+          "status": "requires_api_key"
+        },
+        {
+          "coverage_end": null,
+          "coverage_start": null,
+          "known_limitations": null,
+          "metric_name": "aggregated_open_interest",
+          "rows": 0,
+          "source": "coinglass",
+          "status": "requires_api_key"
+        }
+      ],
+      "coverage_end": "2026-05-05 15:14:11+00:00",
+      "coverage_start": "2026-04-05 12:00:00+00:00",
+      "data_layer": "raw/report",
+      "evidence_paths": [
+        "reports/research/derivatives_coverage_v1_14.json",
+        "reports/research/derivatives_coverage_expansion_v1_14.json",
+        "reports/research/derivatives_data_quality_v1_14.json",
+        "reports/research/derivatives_features_v1_14.json",
+        "data/raw/binance_public/futures_um/BTCUSDT/4h"
+      ],
+      "exchanges": [
+        "binance",
+        "bybit",
+        "coinglass"
+      ],
+      "frequency": "mixed; local futures OHLCV is monthly 4h zip archives, derivatives metrics are sparse/report-level.",
+      "limitations": "Other derivatives are sparse, provider-limited or require API keys; they are not candidates for V9.16 integration.",
+      "local_file_count": 52,
+      "market_type": "derivatives",
+      "missing_rate": {
+        "liquidation_proxy": 1.0,
+        "long_short_crowding": 0.9500208246563931,
+        "long_short_ratio": 0.9250312369845898,
+        "long_short_ratio_binance": 0.9250312369845898,
+        "long_short_ratio_zscore": 0.9500208246563931,
+        "premium": 0.9991670137442732,
+        "premium_binance": 0.9995835068721366,
+        "premium_bybit": 0.9995835068721366,
+        "premium_mean": 0.9991670137442732,
+        "premium_proxy": 0.9991670137442732,
+        "premium_zscore_30d": 1.0,
+        "taker_buy_sell_ratio": 0.9250312369845898,
+        "taker_buy_sell_ratio_binance": 0.9250312369845898,
+        "taker_buy_volume": 0.9250312369845898,
+        "taker_buy_volume_binance": 0.9250312369845898,
+        "taker_imbalance": 0.9250312369845898,
+        "taker_imbalance_zscore": 0.9500208246563931,
+        "taker_sell_volume": 0.9250312369845898,
+        "taker_sell_volume_binance": 0.9250312369845898
+      },
+      "present_local": true,
+      "quality_known": "partial",
+      "source_name": "other_derivatives_local",
+      "symbols": [
+        "BTCUSDT"
+      ],
+      "timeframe": "4h native futures OHLCV and sparse derivatives metrics",
+      "total_rows": 362
+    }
+  ],
+  "dataset_created": false,
+  "direction": "derivatives_window_extension_diagnostic",
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "inputs_used": {
+    "derivatives_coverage_expansion_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_coverage_expansion_v1_14.json"
+    },
+    "derivatives_coverage_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_coverage_v1_14.json"
+    },
+    "derivatives_data_quality_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_data_quality_v1_14.json"
+    },
+    "derivatives_features_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_features_v1_14.json"
+    },
+    "derivatives_readiness_v1_12_2": {
+      "available": true,
+      "path": "reports/research/derivatives_readiness_v1_12_2.json"
+    },
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "max_history_public_market_data_v5_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "public_trades_1y_window_v8_2_manifest": {
+      "available": true,
+      "path": "reports/manifests/public_trades_1y_window_v8_2_manifest.json"
+    },
+    "refined_ohlcv_trades_feature_store_v9_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json"
+    },
+    "v9_14_1_decision": {
+      "available": true,
+      "path": "reports/research_decisions/feature_label_separability_v9_14_1.json"
+    },
+    "v9_15_decision": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_data_extension_readiness_v9_15.json"
+    },
+    "v9_15_manifest": {
+      "available": true,
+      "path": "reports/manifests/derivatives_data_extension_readiness_v9_15_manifest.json"
+    }
+  },
+  "limitations": [
+    "V9.16 utilise uniquement les rapports, manifests et metadonnees locales existantes.",
+    "Aucun appel reseau, aucune API et aucun telechargement ne sont executes.",
+    "Les fichiers Parquet complets ne sont pas lus massivement.",
+    "Aucune fenetre n'est consideree viable si elle ne recouvre pas OHLCV, aggTrades et la source derivatives cible."
+  ],
+  "ml_executed": false,
+  "next_recommendation": "V9.17 - Derivatives History Collection Plan.",
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_generated": false,
+    "execution_enabled": false,
+    "labels_generated": false,
+    "ml_training_enabled": false,
+    "network_used": false,
+    "new_data_downloaded": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "persistent_model_created": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "sidecars_created": false,
+    "strategy_enabled": false,
+    "trading_enabled": false,
+    "walk_forward_enabled": false,
+    "zip_fingerprints_created": false
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false
+  },
+  "source_version": "V9.15",
+  "status": "PASS",
+  "v9_15_context": {
+    "decision": "derivatives_readiness_not_compatible_with_v9_window",
+    "features_candidate_created": false,
+    "funding_coverage": {
+      "end": "2026-05-05 08:00:00+00:00",
+      "start": "2024-05-05 16:00:00+00:00"
+    },
+    "open_interest_coverage": {
+      "end": "2026-05-05 12:00:00+00:00",
+      "start": "2026-04-02 08:00:00+00:00"
+    }
+  },
+  "v9_16_decision": {
+    "confidence": "high",
+    "decision": "data_extension_should_collect_more_history",
+    "justification": "Funding a une couverture locale post-V9 mais ne recouvre pas les aggTrades; open interest est trop court. Il faut collecter/valider l'historique manquant avant toute feature candidate.",
+    "next_recommendation": "V9.17 - Derivatives History Collection Plan.",
+    "no_backtest": true,
+    "no_trading": true,
+    "no_walk_forward": true
+  },
+  "v9_timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "v9_window": {
+    "total_days": 366,
+    "window_end": "2024-03-24T23:59:59Z",
+    "window_label": "2023-03-25_2024-03-24",
+    "window_start": "2023-03-25T00:00:00Z"
+  },
+  "version": "V9.16",
+  "walk_forward_executed": false,
+  "warnings": [
+    "Les donnees funding locales commencent apres la fenetre aggTrades V8/V9 validee.",
+    "Open interest local est trop tardif et trop court pour une branche research robuste.",
+    "Les features derivatives V1.14 sont report-only dans ce diagnostic; V9.16 ne genere aucun feature store full."
+  ]
+}
