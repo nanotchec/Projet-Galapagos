@@ -1,14 +1,19 @@
-# Synthese courante - V9.22
+# Synthese courante - V9.23
 
-- Derniere version validee : `V9.21`.
-- Candidate : `V9.22`.
+- Derniere version validee : `V9.22`.
+- Candidate : `V9.23`.
 - Statut : `pending_external_audit`.
-- Direction : plan de completion multi-batch aggTrades post-V9.
-- Couverture actuelle : `2024-05-05` -> `2024-08-09`.
-- Jours couverts/restants : `97` / `634`.
-- Gaps detectes : `[]`.
-- Decision V9.22 : `multi_batch_completion_plan_ready_with_disk_warning`.
-- Recommandation : V9.23 - AggTrades Post-V9 Batch 2 Collection.
-- Aucun reseau, telechargement, ingestion, label, dataset supervise, ML, walk-forward, backtest, strategie ou signal actionnable.
+- Direction : collecte batch 2 aggTrades post-V9.
+- Periode batche : `2024-08-10` -> `2024-10-08`.
+- Decision V9.23 : `aggtrades_post_v9_batch2_collection_success`.
+- Jours demandes/tentes/valides : `60` / `60` / `60`.
+- Jours skips deja complets : `0`.
+- Lignes totales : `73423696`.
+- Couverture cumulee declaree : `2024-05-05` -> `2024-10-08`.
+- Couverture locale reelle : `2024-05-05` -> `2024-10-08`.
+- Recommandation : V9.24 - AggTrades Post-V9 Batch 3 Collection.
+- Couverture complete future : `False`.
+- Aucun label, dataset supervise, ML, walk-forward, backtest, strategie ou signal actionnable.
 - Aucun trading, paper live, ordre, modele persistant, API privee, cle API, client exchange authentifie ou websocket live.
 - Aucun sidecar et aucune empreinte ZIP.
+- Reseau utilise uniquement pour archive publique read-only `data.binance.vision`.

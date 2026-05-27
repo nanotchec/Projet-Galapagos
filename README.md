@@ -1,8 +1,7 @@
 # Projet Galapagos
 
-- Derniere version validee : V9.21.
-- Candidate : V9.22, plan de completion multi-batch aggTrades post-V9.
-- Couverture actuelle : 2024-05-05 -> 2024-08-09.
-- Fenetre restante planifiee : 2024-08-10 -> 2026-05-05.
+- Derniere version validee : V9.22.
+- Candidate : V9.23, collecte batch 2 aggTrades post-V9.
+- Batch limite : 2024-08-10 -> 2024-10-08, maximum 60 jours.
 - Aucun trading, ordre, backtest, walk-forward, strategie, signal actionnable, modele persistant, API privee ou cle API.
-- Aucun client exchange authentifie, aucun websocket live, aucun reseau, aucun telechargement, aucune ingestion, aucun sidecar et aucune empreinte ZIP.
+- Aucun client exchange authentifie, aucun websocket live, aucun sidecar et aucune empreinte ZIP.
