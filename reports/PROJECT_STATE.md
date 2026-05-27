@@ -1,11 +1,11 @@
-# Etat du Projet : V8.9.1 validee + candidat V9.0_to_V9.3.2
+# Etat du Projet : V9.0_to_V9.3.2 validee + candidat V9.4
 
-- **Derniere version validee** : V8.9.1.
-- **Version candidate** : V9.0_to_V9.3.2.
+- **Derniere version validee** : V9.0_to_V9.3.2.
+- **Version candidate** : V9.4.
 - **Statut candidate** : `pending_external_audit`.
-- **Direction** : correction packaging/audit externe uniquement.
-- **Source metier** : `V9.0_to_V9.3`.
+- **Direction** : refined research decision gate.
+- **Decision research** : `backtest_not_justified_refine_labels`.
 
-Aucune V9.4 ne doit etre lancee tant que l'audit externe strict ne valide pas cette correction.
+V9.4 ne lance aucun backtest et ne produit aucun signal actionnable.
 
-Aucun backtest, aucune strategie, aucun signal de trading, aucun paper live, aucun ordre, aucun trading reel, aucune API privee, aucune cle API.
+Aucun trading, paper live, ordre, strategie, modele persistant, API privee ou cle API.

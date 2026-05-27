@@ -1,13 +1,9 @@
-# Latest Summary V9.0 -> V9.3.2
+# Latest Summary V9.4
 
-V8.9.1 est la derniere version validee par audit externe.
+V9.0_to_V9.3.2 est la derniere version validee par audit externe.
 
-V9.0_to_V9.3.2 est la candidate courante. Elle corrige uniquement les reserves d'audit externe sur le packaging audit-lite groupe V9.0 -> V9.3 : inventaire dedie, attestation dediee, rapports zip/parquet dedies, tests V9 inspectables, exclusions `.DS_Store` et controles renforces.
+V9.4 est la candidate courante. Elle produit uniquement un decision gate research sur les resultats V9.2/V9.3 de la chaine refined OHLCV + trades.
 
-Les resultats metier V9.0, V9.1, V9.2 et V9.3 ne sont pas recalcules ni modifies.
+Decision : `backtest_not_justified_refine_labels`. Le backtest n'est pas justifie maintenant ; la priorite recommandee est un audit/redesign des labels.
 
-Aucune V9.4 ne doit etre lancee avant validation externe stricte de V9.0_to_V9.3.2.
-
-Fenetre : `2023-03-25` -> `2024-03-24`, `366` jours.
-
-La candidate reste `pending_external_audit`. Aucun trading, paper live, ordre, backtest, strategie, signal ou modele persistant n'est produit.
+La candidate reste `pending_external_audit`. Aucun trading, paper live, ordre, backtest execute, strategie, signal actionnable ou modele persistant n'est produit.

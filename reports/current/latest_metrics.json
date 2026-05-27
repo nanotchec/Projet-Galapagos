@@ -1,49 +1,24 @@
 {
-  "last_validated_version": "V8.9.1",
-  "candidate_version": "V9.0_to_V9.3.2",
+  "actionable_signal_produced": false,
+  "api_key_used": false,
+  "backtest_performed": false,
   "candidate_status": "pending_external_audit",
-  "direction": "packaging/audit externe corrective fix only",
-  "packaging_fix_only": true,
-  "source_candidate_version": "V9.0_to_V9.3",
-  "source_version_scope": "V9.0_to_V9.3",
-  "correction_scope": "packaging_audit_lite_external_audit_fix_only",
-  "no_v9_4_before_external_audit": true,
-  "window_start": "2023-03-25",
-  "window_end": "2024-03-24",
-  "total_days": 366,
-  "selected_features_count": 18,
-  "dataset_row_counts": {
-    "1m": 527040,
-    "5m": 105408,
-    "15m": 35136,
-    "1h": 8784
-  },
-  "score_row_counts_v9_2": {
-    "1m": 2107920,
-    "5m": 421392,
-    "15m": 140304,
-    "1h": 34896
-  },
-  "score_row_counts_v9_3": {
-    "1m": 8805440,
-    "5m": 1759808,
-    "15m": 585536,
-    "1h": 145184
-  },
-  "folds_count": {
-    "1m": 5,
-    "5m": 5,
-    "15m": 5,
-    "1h": 5
-  },
-  "backtest_enabled": false,
-  "strategy_enabled": false,
-  "signal_created": false,
+  "candidate_version": "V9.4",
+  "direction": "refined research decision gate",
+  "external_validation_required": true,
+  "feature_columns_count": 18,
+  "fold_concentration_entries_v9_4": 9,
+  "label_shuffle_no_clear_edge_cases_v9_4": 21,
+  "last_validated_version": "V9.0_to_V9.3.2",
   "orders_enabled": false,
-  "trading_enabled": false,
   "paper_live_enabled": false,
   "persistent_model_created": false,
-  "api_key_used": false,
   "private_endpoint_used": false,
-  "external_validation_required": true
+  "research_decision_gate_v9_4_manifest": "reports/manifests/refined_research_decision_gate_v9_4_manifest.json",
+  "research_decision_gate_v9_4_report": "reports/research_decisions/refined_research_decision_gate_v9_4.json",
+  "research_decision_gate_v9_4_status": "PASS",
+  "research_decision_v9_4": "backtest_not_justified_refine_labels",
+  "selected_features_count": 18,
+  "strategy_enabled": false,
+  "trading_enabled": false
 }

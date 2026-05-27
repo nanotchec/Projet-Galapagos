@@ -1,0 +1,1076 @@
+{
+  "baseline_assessment": {
+    "backtest_not_justified": true,
+    "clear_static_split_wins": 2,
+    "clear_walk_forward_wins": 3,
+    "clear_win_policy": "accuracy and macro_f1 above majority and random baselines by more than 0.01",
+    "learned_models_clearly_beat_baselines": false,
+    "mixed_walk_forward_cases": 5,
+    "static_split_comparisons": {
+      "15m.decision_tree_depth_2": {
+        "accuracy": 0.41050085372794537,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": 0.211439954468,
+        "delta_accuracy_vs_random": 0.080108138873,
+        "delta_macro_f1_vs_majority": 0.198853090706,
+        "delta_macro_f1_vs_random": -0.014728846934,
+        "macro_f1": 0.3095290924462648,
+        "mixed_or_small_win": true,
+        "model_name": "decision_tree_depth_2",
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression": {
+        "accuracy": 0.40936254980079684,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": 0.210301650541,
+        "delta_accuracy_vs_random": 0.078969834946,
+        "delta_macro_f1_vs_majority": 0.219611740757,
+        "delta_macro_f1_vs_random": 0.006029803117,
+        "macro_f1": 0.3302877424969953,
+        "mixed_or_small_win": true,
+        "model_name": "logistic_regression",
+        "timeframe": "15m"
+      },
+      "1h.decision_tree_depth_2": {
+        "accuracy": 0.46727376209447924,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": 0.007398975526,
+        "delta_accuracy_vs_random": 0.083096186682,
+        "delta_macro_f1_vs_majority": 0.117359344417,
+        "delta_macro_f1_vs_random": -0.01046428453,
+        "macro_f1": 0.3273658421430519,
+        "mixed_or_small_win": true,
+        "model_name": "decision_tree_depth_2",
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression": {
+        "accuracy": 0.4593056346044394,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": -0.000569151964,
+        "delta_accuracy_vs_random": 0.075128059192,
+        "delta_macro_f1_vs_majority": 0.109519516589,
+        "delta_macro_f1_vs_random": -0.018304112358,
+        "macro_f1": 0.3195260143148649,
+        "mixed_or_small_win": true,
+        "model_name": "logistic_regression",
+        "timeframe": "1h"
+      },
+      "1m.decision_tree_depth_2": {
+        "accuracy": 0.6485750607164542,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": 0.0,
+        "delta_accuracy_vs_random": 0.0830582119,
+        "delta_macro_f1_vs_majority": 0.0,
+        "delta_macro_f1_vs_random": -0.058341796284,
+        "macro_f1": 0.2622770319132815,
+        "mixed_or_small_win": true,
+        "model_name": "decision_tree_depth_2",
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression": {
+        "accuracy": 0.6092516697024893,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": -0.039323391014,
+        "delta_accuracy_vs_random": 0.043734820886,
+        "delta_macro_f1_vs_majority": 0.152856115908,
+        "delta_macro_f1_vs_random": 0.094514319624,
+        "macro_f1": 0.41513314782140354,
+        "mixed_or_small_win": true,
+        "model_name": "logistic_regression",
+        "timeframe": "1m"
+      },
+      "5m.decision_tree_depth_2": {
+        "accuracy": 0.426240394649464,
+        "clear_win": true,
+        "delta_accuracy_vs_majority": 0.073522436201,
+        "delta_accuracy_vs_random": 0.087041077697,
+        "delta_macro_f1_vs_majority": 0.1651980894,
+        "delta_macro_f1_vs_random": 0.016428844632,
+        "macro_f1": 0.3390298214054639,
+        "mixed_or_small_win": false,
+        "model_name": "decision_tree_depth_2",
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression": {
+        "accuracy": 0.40764633336495587,
+        "clear_win": true,
+        "delta_accuracy_vs_majority": 0.054928374917,
+        "delta_accuracy_vs_random": 0.068447016412,
+        "delta_macro_f1_vs_majority": 0.202455898287,
+        "delta_macro_f1_vs_random": 0.053686653518,
+        "macro_f1": 0.3762876302920692,
+        "mixed_or_small_win": false,
+        "model_name": "logistic_regression",
+        "timeframe": "5m"
+      }
+    },
+    "verdict": "mitige_gain_insuffisant_pour_backtest",
+    "walk_forward_comparisons": {
+      "15m.decision_tree_depth_2": {
+        "accuracy": 0.40547245431739887,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": 0.103876696966,
+        "delta_accuracy_vs_random": 0.075641256334,
+        "delta_macro_f1_vs_majority": 0.168916028245,
+        "delta_macro_f1_vs_random": -0.002809814574,
+        "macro_f1": 0.32072867864728694,
+        "mixed_or_small_win": true,
+        "model_name": "decision_tree_depth_2",
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression": {
+        "accuracy": 0.4184213396447272,
+        "clear_win": true,
+        "delta_accuracy_vs_majority": 0.116825582293,
+        "delta_accuracy_vs_random": 0.088590141661,
+        "delta_macro_f1_vs_majority": 0.195598003385,
+        "delta_macro_f1_vs_random": 0.023872160566,
+        "macro_f1": 0.34741065378782854,
+        "mixed_or_small_win": false,
+        "model_name": "logistic_regression",
+        "timeframe": "15m"
+      },
+      "1h.decision_tree_depth_2": {
+        "accuracy": 0.4724136726214866,
+        "clear_win": true,
+        "delta_accuracy_vs_majority": 0.015583458467,
+        "delta_accuracy_vs_random": 0.081577015795,
+        "delta_macro_f1_vs_majority": 0.140664643994,
+        "delta_macro_f1_vs_random": 0.012957530141,
+        "macro_f1": 0.3496423810614454,
+        "mixed_or_small_win": false,
+        "model_name": "decision_tree_depth_2",
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression": {
+        "accuracy": 0.4699065364605882,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": 0.013076322306,
+        "delta_accuracy_vs_random": 0.079069879634,
+        "delta_macro_f1_vs_majority": 0.111395917588,
+        "delta_macro_f1_vs_random": -0.016311196266,
+        "macro_f1": 0.32037365465491263,
+        "mixed_or_small_win": true,
+        "model_name": "logistic_regression",
+        "timeframe": "1h"
+      },
+      "1m.decision_tree_depth_2": {
+        "accuracy": 0.6873055911268515,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": 0.0,
+        "delta_accuracy_vs_random": 0.097839499968,
+        "delta_macro_f1_vs_majority": 0.0,
+        "delta_macro_f1_vs_random": -0.052872489167,
+        "macro_f1": 0.270450472871428,
+        "mixed_or_small_win": true,
+        "model_name": "decision_tree_depth_2",
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression": {
+        "accuracy": 0.683965662206101,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": -0.003339928921,
+        "delta_accuracy_vs_random": 0.094499571047,
+        "delta_macro_f1_vs_majority": 0.077670609858,
+        "delta_macro_f1_vs_random": 0.024798120691,
+        "macro_f1": 0.3481210827290241,
+        "mixed_or_small_win": true,
+        "model_name": "logistic_regression",
+        "timeframe": "1m"
+      },
+      "5m.decision_tree_depth_2": {
+        "accuracy": 0.4372364073228163,
+        "clear_win": false,
+        "delta_accuracy_vs_majority": 0.055061066415,
+        "delta_accuracy_vs_random": 0.089648915195,
+        "delta_macro_f1_vs_majority": 0.145941283699,
+        "delta_macro_f1_vs_random": 0.005352868798,
+        "macro_f1": 0.32911849158508616,
+        "mixed_or_small_win": true,
+        "model_name": "decision_tree_depth_2",
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression": {
+        "accuracy": 0.433685545524847,
+        "clear_win": true,
+        "delta_accuracy_vs_majority": 0.051510204617,
+        "delta_accuracy_vs_random": 0.086098053397,
+        "delta_macro_f1_vs_majority": 0.178596217571,
+        "delta_macro_f1_vs_random": 0.03800780267,
+        "macro_f1": 0.3617734254570485,
+        "mixed_or_small_win": false,
+        "model_name": "logistic_regression",
+        "timeframe": "5m"
+      }
+    }
+  },
+  "confidence_level": "medium_high",
+  "created_at_utc": "2026-05-27T09:10:42.092463Z",
+  "decision_gate_type": "research_only",
+  "decision_justification": "Le backtest n'est pas justifie : 21 cas restent trop proches des labels melanges, avec 9 entrees de concentration et seulement 3 gains walk-forward clairs contre les baselines.",
+  "evidence_used": [
+    "V9.2 static split metrics",
+    "V9.3 strict walk-forward aggregate metrics",
+    "V9.3 fold concentration warnings",
+    "V9.3 label shuffle falsification",
+    "V9.3 feature leakage scan",
+    "V9.3 metric forbidden scan",
+    "V9.0 selected feature coherence",
+    "V9.0_to_V9.3.2 audit-lite attestation"
+  ],
+  "explicit_no_trading_statement": "V9.4 est une decision research offline : aucun trading, aucun paper live, aucun ordre et aucun signal actionnable.",
+  "feature_columns_count": 18,
+  "feature_leakage_scan": {
+    "feature_columns_checked": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "quote_volume",
+      "trade_count_ohlcv",
+      "agg_trade_count",
+      "agg_trade_quantity_sum",
+      "agg_trade_quote_quantity_sum",
+      "agg_trade_vwap",
+      "taker_buy_ratio_count",
+      "taker_buy_ratio_quantity",
+      "taker_imbalance_quantity",
+      "agg_trades_per_minute",
+      "trade_flow_pressure",
+      "hour_utc",
+      "day_of_week_utc"
+    ],
+    "feature_leakage_detected": false,
+    "forbidden_feature_columns_present": [],
+    "passed": true
+  },
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "fold_stability_assessment": {
+    "backtest_not_justified_due_to_concentration": true,
+    "fold_concentration_entries_count": 9,
+    "fold_concentration_warnings_by_model_timeframe": {
+      "15m.decision_tree_depth_2": [
+        "test macro_f1 varies across folds"
+      ],
+      "15m.majority_class_baseline": [
+        "test accuracy varies across folds",
+        "weak folds present"
+      ],
+      "15m.random_seeded_baseline": [
+        "weak folds present"
+      ],
+      "1m.decision_tree_depth_2": [
+        "test accuracy varies across folds"
+      ],
+      "1m.logistic_regression": [
+        "test accuracy varies across folds"
+      ],
+      "1m.majority_class_baseline": [
+        "test accuracy varies across folds"
+      ],
+      "1m.random_seeded_baseline": [
+        "test accuracy varies across folds"
+      ],
+      "5m.majority_class_baseline": [
+        "test accuracy varies across folds",
+        "weak folds present"
+      ],
+      "5m.random_seeded_baseline": [
+        "weak folds present"
+      ]
+    },
+    "unstable_entries_count": 7,
+    "unstable_folds_by_model_timeframe": {
+      "15m.decision_tree_depth_2": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "15m.majority_class_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "1m.decision_tree_depth_2": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "1m.logistic_regression": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "1m.majority_class_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "1m.random_seeded_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ],
+      "5m.majority_class_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04",
+        "fold_05"
+      ]
+    },
+    "verdict": "instable_concentration_presente",
+    "weak_entries_count": 4,
+    "weak_folds_by_model_timeframe": {
+      "15m.majority_class_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04"
+      ],
+      "15m.random_seeded_baseline": [
+        "fold_01",
+        "fold_02",
+        "fold_03",
+        "fold_04"
+      ],
+      "5m.majority_class_baseline": [
+        "fold_02",
+        "fold_03",
+        "fold_05"
+      ],
+      "5m.random_seeded_baseline": [
+        "fold_05"
+      ]
+    }
+  },
+  "forbidden_claims_assessment": {
+    "passed": true,
+    "v9_3_2_attestation_flags": {
+      "api_key_used": false,
+      "no_backtest": true,
+      "no_orders": true,
+      "no_persistent_model": true,
+      "no_strategy": true,
+      "no_trading": true,
+      "private_endpoint_used": false
+    },
+    "v9_3_findings": {
+      "actionable_signal_produced": false,
+      "backtest_performed": false,
+      "robust_edge_claimed": false,
+      "strategy_validated": false,
+      "walk_forward_validated_for_trading": false
+    }
+  },
+  "inputs": {
+    "latest_metrics": {
+      "path": "reports/current/latest_metrics.json",
+      "sha256": "a6de867682e49619dd13d287297f223da972903b88b95ff13fc3b546b619a13b"
+    },
+    "latest_summary": {
+      "path": "reports/current/latest_summary.md",
+      "sha256": "caca011607c8387a5202423c75bd95f3c2e71ff952562ab1479906afd400f28d"
+    },
+    "project_state": {
+      "path": "reports/PROJECT_STATE.json",
+      "sha256": "f34b5209401c739c34bc0bc227777e40eafe16d1191f83063b67af32b947b044"
+    },
+    "v9_0_manifest": {
+      "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json",
+      "sha256": "7ea5941ca25c62fc65818d54f2c25c83fafd58f779a1320f56bb165965c4370c"
+    },
+    "v9_1_manifest": {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_supervised_dataset_v9_1_manifest.json",
+      "sha256": "9624672783b1ae9d3e78c5fab72e6e4e790c8161439982a20ac52bf1cea1ee8a"
+    },
+    "v9_2_manifest": {
+      "path": "reports/manifests/refined_ohlcv_trades_offline_ml_research_v9_2_manifest.json",
+      "sha256": "b27547fea2ff87fd0c33d7c34acb8c0d33da8efd1b7ba471a5681111b5ad7734"
+    },
+    "v9_2_report": {
+      "path": "reports/ml/refined_ohlcv_trades_offline_ml_research_v9_2.json",
+      "sha256": "b27547fea2ff87fd0c33d7c34acb8c0d33da8efd1b7ba471a5681111b5ad7734"
+    },
+    "v9_2_scores_report": {
+      "path": "reports/ml/refined_ohlcv_trades_offline_research_scores_v9_2.json",
+      "sha256": "ef1098c01111cabcf8ec77083acc83179d2540749b10a5985106ad9fcfb62297"
+    },
+    "v9_3_2_attestation": {
+      "path": "reports/audit_lite/v9_0_to_v9_3_2_full_local_validation_attestation.json",
+      "sha256": "dca8dbc25f226d7e255db0500a9cb380ecc99bfa63639bc921d2d999b2bc47fe"
+    },
+    "v9_3_2_inventory": {
+      "path": "reports/audit_lite/v9_0_to_v9_3_2_artifact_inventory.json",
+      "sha256": "7a3fd3f2b17681203b62280dfa481f7ca176b83feebe4cef11101a84283d8b5a"
+    },
+    "v9_3_manifest": {
+      "path": "reports/manifests/refined_strict_walk_forward_validation_v9_3_manifest.json",
+      "sha256": "5fa406c7be9235a4d68c425f6ad4a535f7f01e5b98fbf1acb426d6972da42be4"
+    },
+    "v9_3_report": {
+      "path": "reports/ml/refined_strict_walk_forward_validation_v9_3.json",
+      "sha256": "5fa406c7be9235a4d68c425f6ad4a535f7f01e5b98fbf1acb426d6972da42be4"
+    },
+    "v9_3_scores_report": {
+      "path": "reports/ml/refined_strict_walk_forward_scores_v9_3.json",
+      "sha256": "b711c9aec00a436a7a65d51f71653caac8f88b50ad223eb31a1a7fb66a925a14"
+    }
+  },
+  "label_shuffle_assessment": {
+    "backtest_not_justified_due_to_shuffle": true,
+    "examples": [
+      "15m.decision_tree_depth_2.fold_04.validation",
+      "1h.decision_tree_depth_2.fold_05.test",
+      "1h.decision_tree_depth_2.fold_05.validation",
+      "1h.logistic_regression.fold_01.test",
+      "1h.logistic_regression.fold_04.validation",
+      "1m.decision_tree_depth_2.fold_01.test",
+      "1m.decision_tree_depth_2.fold_01.validation",
+      "1m.decision_tree_depth_2.fold_02.test",
+      "1m.decision_tree_depth_2.fold_02.validation",
+      "1m.decision_tree_depth_2.fold_03.test"
+    ],
+    "falsification_clean": false,
+    "no_clear_edge_by_fold_role": {
+      "test": 11,
+      "validation": 10
+    },
+    "no_clear_edge_by_model": {
+      "decision_tree_depth_2": 13,
+      "logistic_regression": 8
+    },
+    "no_clear_edge_by_timeframe": {
+      "15m": 1,
+      "1h": 4,
+      "1m": 16
+    },
+    "no_clear_edge_vs_shuffled_labels_count": 21,
+    "verdict": "falsification_non_propre"
+  },
+  "limitations": [
+    "V9.4 analyse uniquement les resultats offline V9.2/V9.3 et ne modifie aucun artefact metier.",
+    "V9.4 ne lance aucun backtest, aucune strategie, aucun signal actionnable et aucun ordre.",
+    "Les resultats restent descriptifs et ne prouvent aucun edge exploitable."
+  ],
+  "metric_forbidden_scan": {
+    "metric_forbidden_terms_detected": false,
+    "passed": true,
+    "v9_2_forbidden_terms_present": [],
+    "v9_3_forbidden_terms_present": []
+  },
+  "models": [
+    "majority_class_baseline",
+    "random_seeded_baseline",
+    "logistic_regression",
+    "decision_tree_depth_2"
+  ],
+  "next_step_recommendation": "V9.5 - Alternative Label Design Audit avant tout backtest research.",
+  "research_decision": "backtest_not_justified_refine_labels",
+  "safety": {
+    "api_key_used": false,
+    "authentication_used": false,
+    "backtest_enabled": false,
+    "dataset_enabled": false,
+    "execution_enabled": false,
+    "labels_enabled": false,
+    "ml_enabled": false,
+    "orders_enabled": false,
+    "paper_live_enabled": false,
+    "private_endpoint_used": false,
+    "public_read_only": true,
+    "strategy_enabled": false,
+    "trading_enabled": false
+  },
+  "secondary_next_step_recommendation": "Revenir aux features seulement si le redesign de labels ne reduit pas le bruit.",
+  "selected_features_coherence": {
+    "extra_in_v9_2": [],
+    "extra_in_v9_3": [],
+    "missing_in_v9_2": [],
+    "missing_in_v9_3": [],
+    "passed": true,
+    "selected_features": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "quote_volume",
+      "trade_count_ohlcv",
+      "agg_trade_count",
+      "agg_trade_quantity_sum",
+      "agg_trade_quote_quantity_sum",
+      "agg_trade_vwap",
+      "taker_buy_ratio_count",
+      "taker_buy_ratio_quantity",
+      "taker_imbalance_quantity",
+      "agg_trades_per_minute",
+      "trade_flow_pressure",
+      "hour_utc",
+      "day_of_week_utc"
+    ],
+    "selected_features_count": 18,
+    "v9_2_feature_columns_count": 18,
+    "v9_3_feature_columns_count": 18
+  },
+  "selected_features_count": 18,
+  "source_versions": {
+    "dataset": "V9.1",
+    "feature_store": "V9.0",
+    "last_validated_version": "V9.0_to_V9.3.2",
+    "static_split_ml": "V9.2",
+    "strict_walk_forward": "V9.3"
+  },
+  "static_split_vs_walk_forward_assessment": {
+    "backtest_not_justified_due_to_design_gap": true,
+    "comparisons_count": 16,
+    "descriptive_only": true,
+    "large_accuracy_delta_count": 2,
+    "large_accuracy_delta_examples": [
+      "15m.majority_class_baseline",
+      "1m.logistic_regression"
+    ],
+    "large_macro_f1_delta_count": 1,
+    "large_macro_f1_delta_examples": [
+      "1m.logistic_regression"
+    ],
+    "not_same_validation_design": true,
+    "verdict": "comparaison_descriptive_non_equivalente"
+  },
+  "status": "PASS",
+  "target_name": "up_down_flat_h1",
+  "timeframe_stability_assessment": {
+    "by_model": {
+      "decision_tree_depth_2": {
+        "best_timeframe": "1h",
+        "dominant_timeframe_warning": false,
+        "macro_f1_range": 0.07919190819,
+        "mean_test_macro_f1_by_timeframe": {
+          "15m": 0.32072867864728694,
+          "1h": 0.3496423810614454,
+          "1m": 0.270450472871428,
+          "5m": 0.32911849158508616
+        },
+        "worst_timeframe": "1m"
+      },
+      "logistic_regression": {
+        "best_timeframe": "5m",
+        "dominant_timeframe_warning": false,
+        "macro_f1_range": 0.041399770802,
+        "mean_test_macro_f1_by_timeframe": {
+          "15m": 0.34741065378782854,
+          "1h": 0.32037365465491263,
+          "1m": 0.3481210827290241,
+          "5m": 0.3617734254570485
+        },
+        "worst_timeframe": "1h"
+      },
+      "majority_class_baseline": {
+        "best_timeframe": "1m",
+        "dominant_timeframe_warning": true,
+        "macro_f1_range": 0.118637822469,
+        "mean_test_macro_f1_by_timeframe": {
+          "15m": 0.15181265040275366,
+          "1h": 0.20897773706730657,
+          "1m": 0.270450472871428,
+          "5m": 0.18317720788644298
+        },
+        "worst_timeframe": "15m"
+      },
+      "random_seeded_baseline": {
+        "best_timeframe": "1h",
+        "dominant_timeframe_warning": false,
+        "macro_f1_range": 0.013361888882,
+        "mean_test_macro_f1_by_timeframe": {
+          "15m": 0.3235384932216264,
+          "1h": 0.3366848509206902,
+          "1m": 0.32332296203827965,
+          "5m": 0.3237656227865917
+        },
+        "worst_timeframe": "1m"
+      }
+    },
+    "dominant_timeframe_warnings_count": 1,
+    "verdict": "non_uniforme_entre_timeframes"
+  },
+  "timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "v9_2_static_split_assessment": {
+    "descriptive_only": true,
+    "metrics_count": 16,
+    "not_a_backtest": true,
+    "status": "PASS",
+    "test_metrics": {
+      "15m.decision_tree_depth_2.test": {
+        "accuracy": 0.41050085372794537,
+        "balanced_accuracy": 0.35046349536289867,
+        "macro_f1": 0.3095290924462648,
+        "model_name": "decision_tree_depth_2",
+        "rows": 7028,
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression.test": {
+        "accuracy": 0.40936254980079684,
+        "balanced_accuracy": 0.3684960954926106,
+        "macro_f1": 0.3302877424969953,
+        "model_name": "logistic_regression",
+        "rows": 7028,
+        "timeframe": "15m"
+      },
+      "15m.majority_class_baseline.test": {
+        "accuracy": 0.19906089926010245,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.11067600174043747,
+        "model_name": "majority_class_baseline",
+        "rows": 7028,
+        "timeframe": "15m"
+      },
+      "15m.random_seeded_baseline.test": {
+        "accuracy": 0.33039271485486627,
+        "balanced_accuracy": 0.3339159031597661,
+        "macro_f1": 0.3242579393802584,
+        "model_name": "random_seeded_baseline",
+        "rows": 7028,
+        "timeframe": "15m"
+      },
+      "1h.decision_tree_depth_2.test": {
+        "accuracy": 0.46727376209447924,
+        "balanced_accuracy": 0.3483157839593483,
+        "macro_f1": 0.3273658421430519,
+        "model_name": "decision_tree_depth_2",
+        "rows": 1757,
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression.test": {
+        "accuracy": 0.4593056346044394,
+        "balanced_accuracy": 0.34708034295493045,
+        "macro_f1": 0.3195260143148649,
+        "model_name": "logistic_regression",
+        "rows": 1757,
+        "timeframe": "1h"
+      },
+      "1h.majority_class_baseline.test": {
+        "accuracy": 0.45987478656801367,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.21000649772579597,
+        "model_name": "majority_class_baseline",
+        "rows": 1757,
+        "timeframe": "1h"
+      },
+      "1h.random_seeded_baseline.test": {
+        "accuracy": 0.3841775754126352,
+        "balanced_accuracy": 0.34587857070927913,
+        "macro_f1": 0.3378301266730402,
+        "model_name": "random_seeded_baseline",
+        "rows": 1757,
+        "timeframe": "1h"
+      },
+      "1m.decision_tree_depth_2.test": {
+        "accuracy": 0.6485750607164542,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.2622770319132815,
+        "model_name": "decision_tree_depth_2",
+        "rows": 105408,
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression.test": {
+        "accuracy": 0.6092516697024893,
+        "balanced_accuracy": 0.42313385909346946,
+        "macro_f1": 0.41513314782140354,
+        "model_name": "logistic_regression",
+        "rows": 105408,
+        "timeframe": "1m"
+      },
+      "1m.majority_class_baseline.test": {
+        "accuracy": 0.6485750607164542,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.2622770319132815,
+        "model_name": "majority_class_baseline",
+        "rows": 105408,
+        "timeframe": "1m"
+      },
+      "1m.random_seeded_baseline.test": {
+        "accuracy": 0.5655168488160291,
+        "balanced_accuracy": 0.33368286041463485,
+        "macro_f1": 0.32061882819703996,
+        "model_name": "random_seeded_baseline",
+        "rows": 105408,
+        "timeframe": "1m"
+      },
+      "5m.decision_tree_depth_2.test": {
+        "accuracy": 0.426240394649464,
+        "balanced_accuracy": 0.4178444590975608,
+        "macro_f1": 0.3390298214054639,
+        "model_name": "decision_tree_depth_2",
+        "rows": 21082,
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression.test": {
+        "accuracy": 0.40764633336495587,
+        "balanced_accuracy": 0.39858051633579455,
+        "macro_f1": 0.3762876302920692,
+        "model_name": "logistic_regression",
+        "rows": 21082,
+        "timeframe": "5m"
+      },
+      "5m.majority_class_baseline.test": {
+        "accuracy": 0.3527179584479651,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.17383173200551696,
+        "model_name": "majority_class_baseline",
+        "rows": 21082,
+        "timeframe": "5m"
+      },
+      "5m.random_seeded_baseline.test": {
+        "accuracy": 0.33919931695285077,
+        "balanced_accuracy": 0.33338241602808666,
+        "macro_f1": 0.3226009767738944,
+        "model_name": "random_seeded_baseline",
+        "rows": 21082,
+        "timeframe": "5m"
+      }
+    }
+  },
+  "v9_3_walk_forward_assessment": {
+    "aggregate_metrics": {
+      "15m.decision_tree_depth_2": {
+        "fold_concentration_warnings": [
+          "test macro_f1 varies across folds"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.40547245431739887,
+        "mean_test_macro_f1": 0.32072867864728694,
+        "mean_validation_accuracy": 0.40226859107045937,
+        "model_name": "decision_tree_depth_2",
+        "std_test_accuracy": 0.021523869837040563,
+        "std_test_macro_f1": 0.04557125590666058,
+        "timeframe": "15m",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ],
+        "weak_folds": []
+      },
+      "15m.logistic_regression": {
+        "fold_concentration_warnings": [],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.4184213396447272,
+        "mean_test_macro_f1": 0.34741065378782854,
+        "mean_validation_accuracy": 0.41699582492405207,
+        "model_name": "logistic_regression",
+        "std_test_accuracy": 0.018140175823041546,
+        "std_test_macro_f1": 0.021006735397407172,
+        "timeframe": "15m",
+        "unstable_folds": [],
+        "weak_folds": []
+      },
+      "15m.majority_class_baseline": {
+        "fold_concentration_warnings": [
+          "test accuracy varies across folds",
+          "weak folds present"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.30159575735123123,
+        "mean_test_macro_f1": 0.15181265040275366,
+        "mean_validation_accuracy": 0.32024646340288665,
+        "model_name": "majority_class_baseline",
+        "std_test_accuracy": 0.09492627582061233,
+        "std_test_macro_f1": 0.03652703505797766,
+        "timeframe": "15m",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ],
+        "weak_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04"
+        ]
+      },
+      "15m.random_seeded_baseline": {
+        "fold_concentration_warnings": [
+          "weak folds present"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.32983119798365645,
+        "mean_test_macro_f1": 0.3235384932216264,
+        "mean_validation_accuracy": 0.3326466034335712,
+        "model_name": "random_seeded_baseline",
+        "std_test_accuracy": 0.008191426316659716,
+        "std_test_macro_f1": 0.0038642101637606533,
+        "timeframe": "15m",
+        "unstable_folds": [],
+        "weak_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04"
+        ]
+      },
+      "1h.decision_tree_depth_2": {
+        "fold_concentration_warnings": [],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.4724136726214866,
+        "mean_test_macro_f1": 0.3496423810614454,
+        "mean_validation_accuracy": 0.4626349925164064,
+        "model_name": "decision_tree_depth_2",
+        "std_test_accuracy": 0.009361689531893315,
+        "std_test_macro_f1": 0.019987096820800104,
+        "timeframe": "1h",
+        "unstable_folds": [],
+        "weak_folds": []
+      },
+      "1h.logistic_regression": {
+        "fold_concentration_warnings": [],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.4699065364605882,
+        "mean_test_macro_f1": 0.32037365465491263,
+        "mean_validation_accuracy": 0.46300495068503666,
+        "model_name": "logistic_regression",
+        "std_test_accuracy": 0.009123270978097371,
+        "std_test_macro_f1": 0.016901487482250614,
+        "timeframe": "1h",
+        "unstable_folds": [],
+        "weak_folds": []
+      },
+      "1h.majority_class_baseline": {
+        "fold_concentration_warnings": [],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.45683021415487357,
+        "mean_test_macro_f1": 0.20897773706730657,
+        "mean_validation_accuracy": 0.44631001266454307,
+        "model_name": "majority_class_baseline",
+        "std_test_accuracy": 0.01867270072592959,
+        "std_test_macro_f1": 0.005805377060231421,
+        "timeframe": "1h",
+        "unstable_folds": [],
+        "weak_folds": []
+      },
+      "1h.random_seeded_baseline": {
+        "fold_concentration_warnings": [],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.39083665682695545,
+        "mean_test_macro_f1": 0.3366848509206902,
+        "mean_validation_accuracy": 0.38372951606094335,
+        "model_name": "random_seeded_baseline",
+        "std_test_accuracy": 0.015675802296914676,
+        "std_test_macro_f1": 0.01400822818587772,
+        "timeframe": "1h",
+        "unstable_folds": [],
+        "weak_folds": []
+      },
+      "1m.decision_tree_depth_2": {
+        "fold_concentration_warnings": [
+          "test accuracy varies across folds"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.6873055911268515,
+        "mean_test_macro_f1": 0.270450472871428,
+        "mean_validation_accuracy": 0.7433480491003776,
+        "model_name": "decision_tree_depth_2",
+        "std_test_accuracy": 0.08677668491816576,
+        "std_test_macro_f1": 0.02157399751438437,
+        "timeframe": "1m",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ],
+        "weak_folds": []
+      },
+      "1m.logistic_regression": {
+        "fold_concentration_warnings": [
+          "test accuracy varies across folds"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.683965662206101,
+        "mean_test_macro_f1": 0.3481210827290241,
+        "mean_validation_accuracy": 0.7428391232752828,
+        "model_name": "logistic_regression",
+        "std_test_accuracy": 0.08774681344498922,
+        "std_test_macro_f1": 0.010458525853892547,
+        "timeframe": "1m",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ],
+        "weak_folds": []
+      },
+      "1m.majority_class_baseline": {
+        "fold_concentration_warnings": [
+          "test accuracy varies across folds"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.6873055911268515,
+        "mean_test_macro_f1": 0.270450472871428,
+        "mean_validation_accuracy": 0.7433480491003776,
+        "model_name": "majority_class_baseline",
+        "std_test_accuracy": 0.08677668491816576,
+        "std_test_macro_f1": 0.02157399751438437,
+        "timeframe": "1m",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ],
+        "weak_folds": []
+      },
+      "1m.random_seeded_baseline": {
+        "fold_concentration_warnings": [
+          "test accuracy varies across folds"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.5894660911589549,
+        "mean_test_macro_f1": 0.32332296203827965,
+        "mean_validation_accuracy": 0.6293139334987472,
+        "model_name": "random_seeded_baseline",
+        "std_test_accuracy": 0.06577409583640838,
+        "std_test_macro_f1": 0.008225948252093657,
+        "timeframe": "1m",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ],
+        "weak_folds": []
+      },
+      "5m.decision_tree_depth_2": {
+        "fold_concentration_warnings": [],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.4372364073228163,
+        "mean_test_macro_f1": 0.32911849158508616,
+        "mean_validation_accuracy": 0.4633325078213578,
+        "model_name": "decision_tree_depth_2",
+        "std_test_accuracy": 0.02091725050918636,
+        "std_test_macro_f1": 0.011947236773044835,
+        "timeframe": "5m",
+        "unstable_folds": [],
+        "weak_folds": []
+      },
+      "5m.logistic_regression": {
+        "fold_concentration_warnings": [],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.433685545524847,
+        "mean_test_macro_f1": 0.3617734254570485,
+        "mean_validation_accuracy": 0.46345447396739753,
+        "model_name": "logistic_regression",
+        "std_test_accuracy": 0.026788928363807914,
+        "std_test_macro_f1": 0.012098072726536525,
+        "timeframe": "5m",
+        "unstable_folds": [],
+        "weak_folds": []
+      },
+      "5m.majority_class_baseline": {
+        "fold_concentration_warnings": [
+          "test accuracy varies across folds",
+          "weak folds present"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.38217534090765526,
+        "mean_test_macro_f1": 0.18317720788644298,
+        "mean_validation_accuracy": 0.43317968242649585,
+        "model_name": "majority_class_baseline",
+        "std_test_accuracy": 0.06609072227022958,
+        "std_test_macro_f1": 0.02422879207271642,
+        "timeframe": "5m",
+        "unstable_folds": [
+          "fold_01",
+          "fold_02",
+          "fold_03",
+          "fold_04",
+          "fold_05"
+        ],
+        "weak_folds": [
+          "fold_02",
+          "fold_03",
+          "fold_05"
+        ]
+      },
+      "5m.random_seeded_baseline": {
+        "fold_concentration_warnings": [
+          "weak folds present"
+        ],
+        "folds_count": 5,
+        "mean_test_accuracy": 0.34758749212815654,
+        "mean_test_macro_f1": 0.3237656227865917,
+        "mean_validation_accuracy": 0.3634660744462811,
+        "model_name": "random_seeded_baseline",
+        "std_test_accuracy": 0.020407727357294406,
+        "std_test_macro_f1": 0.00896860112010161,
+        "timeframe": "5m",
+        "unstable_folds": [],
+        "weak_folds": [
+          "fold_05"
+        ]
+      }
+    },
+    "descriptive_only": true,
+    "findings_false": true,
+    "not_a_backtest": true,
+    "status": "PASS"
+  },
+  "version": "V9.4",
+  "warnings": [
+    "15m.decision_tree_depth_2: fold concentration warning",
+    "15m.majority_class_baseline: fold concentration warning",
+    "15m.random_seeded_baseline: fold concentration warning",
+    "1m.decision_tree_depth_2: fold concentration warning",
+    "1m.logistic_regression: fold concentration warning",
+    "1m.majority_class_baseline: fold concentration warning",
+    "1m.random_seeded_baseline: fold concentration warning",
+    "5m.majority_class_baseline: fold concentration warning",
+    "5m.random_seeded_baseline: fold concentration warning",
+    "La comparaison V9.2 static split / V9.3 walk-forward n'est pas equivalente.",
+    "La falsification label shuffle reste trop proche dans plusieurs cas.",
+    "Les modeles appris ne battent pas clairement les baselines de facon generalisee.",
+    "V9.2 static split and V9.3 strict walk-forward are not identical validation designs.",
+    "no clear edge vs shuffled labels in 21 fold/model/role cases"
+  ],
+  "window": {
+    "total_days": 366,
+    "window_end": "2024-03-24",
+    "window_start": "2023-03-25"
+  }
+}

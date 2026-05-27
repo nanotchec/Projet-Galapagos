@@ -1,9 +1,9 @@
 # Projet Galapagos
 
-- Derniere version validee : V8.9.1.
-- Candidate : V9.0_to_V9.3.2, correction packaging audit-lite / audit externe uniquement.
-- Source metier : V9.0_to_V9.3.
+- Derniere version validee : V9.0_to_V9.3.2.
+- Candidate : V9.4, refined research decision gate.
+- Decision research : backtest_not_justified_refine_labels.
 
-V9.0_to_V9.3.2 ne modifie pas les resultats metier V9.0 -> V9.3. Elle produit uniquement un ZIP audit-lite corrige et coherent pour l'audit externe strict.
+V9.4 analyse uniquement les resultats offline V9.2/V9.3. Elle ne lance aucun backtest, ne produit aucune strategie, aucun signal actionnable et aucun ordre.
 
-Aucun backtest, aucune strategie, aucun signal de trading, aucun ordre, aucun paper live et aucun trading reel. Pas de V9.4 avant validation externe.
+Aucun trading reel, aucun paper live, aucune API privee, aucune cle API et aucun modele persistant.
