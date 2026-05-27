@@ -1,7 +1,7 @@
 # Projet Galapagos
 
-- Derniere version validee : V9.17.
-- Candidate : V9.18, pack de collecte aggTrades post-V9.
-- Mode par defaut et execute : dry-run.
+- Derniere version validee : V9.18.
+- Candidate : V9.19, execution pilote de collecte aggTrades post-V9.
+- Pilot limite : 2024-05-05 -> 2024-05-11, maximum 7 jours.
 - Aucun trading, ordre, backtest, walk-forward, strategie, signal actionnable, modele persistant, API privee ou cle API.
-- Aucun reseau, aucun telechargement, aucune ingestion, aucun sidecar et aucune empreinte ZIP en dry-run.
+- Aucun client exchange authentifie, aucun websocket live, aucun sidecar et aucune empreinte ZIP.

@@ -1,0 +1,879 @@
+from __future__ import annotations
+
+import json
+import time
+import zipfile
+from datetime import UTC, date, datetime, timedelta
+from pathlib import Path
+from typing import Any
+
+from galapagos.data.aggtrades_post_v9_collection_v9_18 import (
+    ALLOWED_PUBLIC_HOSTS,
+    BASE_SAFETY_FLAGS as BASE_SAFETY_FLAGS_V9_18,
+    BRONZE_PARTITION_TEMPLATE,
+    FINDINGS,
+    FUNDING_FIRST_END,
+    FUNDING_FIRST_START,
+    INPUT_PATHS as INPUT_PATHS_V9_18,
+    MARKET_TYPE,
+    PUBLIC_ARCHIVE_HOST,
+    QUALITY_CHECKS,
+    QUARANTINE_DIR,
+    RAW_DIR,
+    SILVER_COLUMNS_V9_18,
+    SILVER_PARTITION_TEMPLATE,
+    SOURCE_STORAGE,
+    SYMBOL,
+    TARGET_END,
+    TARGET_START,
+    TRADE_SOURCE_TYPE,
+    VENUE,
+    build_public_archive_url_v9_18,
+    checksum_file_v9_18,
+    normalize_raw_zip_to_silver_v9_18,
+    parse_date_from_raw_name_v9_18,
+    raw_zip_path_for_date_v9_18,
+    silver_path_for_date_v9_18,
+)
+
+
+VERSION = "V9.19"
+LAST_VALIDATED_VERSION = "V9.18"
+SOURCE_VERSION = "V9.18"
+DIRECTION = "aggtrades_post_v9_pilot_collection_execution"
+
+PILOT_START = "2024-05-05"
+PILOT_END = "2024-05-11"
+MAX_PILOT_DOWNLOADS = 7
+
+REPORT_JSON_PATH = Path("reports/data/aggtrades_post_v9_pilot_collection_v9_19.json")
+REPORT_MD_PATH = Path("reports/data/aggtrades_post_v9_pilot_collection_v9_19.md")
+MANIFEST_PATH = Path("reports/manifests/aggtrades_post_v9_pilot_collection_v9_19_manifest.json")
+DOC_PATH = Path("docs/aggtrades_post_v9_pilot_collection_v9_19.md")
+
+ALLOWED_MODES = {"dry-run", "collect", "validate-only"}
+ALLOWED_DECISIONS = {
+    "aggtrades_post_v9_pilot_collection_success",
+    "aggtrades_post_v9_pilot_collection_partial",
+    "aggtrades_post_v9_pilot_collection_failed_source_issue",
+    "aggtrades_post_v9_pilot_collection_failed_quality",
+    "aggtrades_post_v9_pilot_collection_not_executed",
+    "stop_aggtrades_collection_branch",
+}
+
+INPUT_PATHS = {
+    "v9_18_collection_pack": Path("reports/data/aggtrades_post_v9_collection_v9_18.json"),
+    "v9_18_manifest": Path("reports/manifests/aggtrades_post_v9_collection_v9_18_manifest.json"),
+    "v9_17_collection_plan": Path("reports/research_decisions/derivatives_history_collection_plan_v9_17.json"),
+    "v9_16_window_diagnostic": Path("reports/research_decisions/derivatives_window_extension_v9_16.json"),
+    "v9_15_derivatives_readiness": Path("reports/research_decisions/derivatives_data_extension_readiness_v9_15.json"),
+    "v9_14_1_branch_decision": Path("reports/research_decisions/feature_label_separability_v9_14_1.json"),
+    "public_trades_1y_window_v8_2_manifest": Path("reports/manifests/public_trades_1y_window_v8_2_manifest.json"),
+    "max_history_public_market_data_v5_0_manifest": Path("reports/manifests/max_history_public_market_data_v5_0_manifest.json"),
+    "latest_metrics": Path("reports/current/latest_metrics.json"),
+    "latest_summary": Path("reports/current/latest_summary.md"),
+    "project_state": Path("reports/PROJECT_STATE.json"),
+    "project_state_md": Path("reports/PROJECT_STATE.md"),
+}
+
+BASE_SAFETY_FLAGS = {
+    **BASE_SAFETY_FLAGS_V9_18,
+    "network_used": False,
+    "new_data_downloaded": False,
+    "ingestion_executed": False,
+    "no_new_data_download": True,
+    "no_ingestion_executed": True,
+}
+
+
+def run_aggtrades_post_v9_pilot_collection_v9_19(
+    root: Path = Path("."),
+    *,
+    mode: str = "dry-run",
+    start_date: str = PILOT_START,
+    end_date: str = PILOT_END,
+    max_downloads: int | None = None,
+) -> dict[str, Any]:
+    root = root.resolve()
+    report = build_aggtrades_post_v9_pilot_report_v9_19(
+        root,
+        mode=mode,
+        start_date=start_date,
+        end_date=end_date,
+        max_downloads=max_downloads,
+    )
+    _write_json(root / REPORT_JSON_PATH, report)
+    markdown = build_markdown_v9_19(report)
+    _write_text(root / REPORT_MD_PATH, markdown)
+    _write_text(root / DOC_PATH, markdown)
+    _write_json(root / MANIFEST_PATH, build_manifest_v9_19(report))
+    update_state_surfaces_v9_19(root, report)
+    return report
+
+
+def build_aggtrades_post_v9_pilot_report_v9_19(
+    root: Path = Path("."),
+    *,
+    mode: str = "dry-run",
+    start_date: str = PILOT_START,
+    end_date: str = PILOT_END,
+    max_downloads: int | None = None,
+) -> dict[str, Any]:
+    if mode not in ALLOWED_MODES:
+        raise ValueError(f"unsupported V9.19 mode: {mode}")
+    requested_dates = date_range_v9_19(start_date, end_date)
+    validate_pilot_request_v9_19(mode, requested_dates, max_downloads)
+    root = root.resolve()
+    started = time.monotonic()
+    inputs = {name: _load_input(root, path) for name, path in INPUT_PATHS.items()}
+    day_plan_before = build_pilot_day_plan_v9_19(root, requested_dates)
+    collection_result = execute_pilot_mode_v9_19(
+        root,
+        mode,
+        requested_dates,
+        max_downloads=max_downloads,
+    )
+    day_plan_after = build_pilot_day_plan_v9_19(root, requested_dates)
+    day_validation = [validate_pilot_day_v9_19(root, day_value) for day_value in requested_dates]
+    runtime_seconds = round(time.monotonic() - started, 3)
+    pilot_summary = summarize_pilot_validation_v9_19(
+        requested_dates,
+        day_plan_before,
+        collection_result,
+        day_validation,
+        runtime_seconds,
+    )
+    safety_flags = safety_flags_for_pilot_v9_19(collection_result)
+    decision = decide_v9_19(collection_result, pilot_summary)
+    status = "PASS" if collection_result["status"] == "PASS" and not pilot_summary["quality_errors"] else "FAIL"
+    if mode != "collect" and decision["decision"] == "aggtrades_post_v9_pilot_collection_not_executed":
+        status = "PASS"
+    report = {
+        "version": VERSION,
+        "source_version": SOURCE_VERSION,
+        "status": status,
+        "created_at_utc": _utc_now(),
+        "direction": DIRECTION,
+        "mode": mode,
+        "inputs_used": {name: {"path": item["path"], "available": item["available"]} for name, item in inputs.items()},
+        "source_public_target": build_source_design_v9_19(),
+        "global_target_window": {
+            "start": TARGET_START,
+            "end": TARGET_END,
+            "days_expected": len(date_range_v9_19(TARGET_START, TARGET_END)),
+            "complete_collection_reached": False,
+        },
+        "future_funding_first_window": {
+            "start": FUNDING_FIRST_START,
+            "end": FUNDING_FIRST_END,
+            "days_expected": len(date_range_v9_19(FUNDING_FIRST_START, FUNDING_FIRST_END)),
+            "complete_collection_reached": False,
+        },
+        "pilot_window": {
+            "start": start_date,
+            "end": end_date,
+            "max_downloads": max_downloads,
+            "days_requested": len(requested_dates),
+            "requested_dates": requested_dates,
+        },
+        "storage_convention": {
+            "raw_pattern": BRONZE_PARTITION_TEMPLATE,
+            "silver_pattern": SILVER_PARTITION_TEMPLATE,
+            "quarantine_dir": QUARANTINE_DIR.as_posix(),
+            "raw_dir": RAW_DIR.as_posix(),
+        },
+        "day_plan_before": day_plan_before,
+        "day_plan_after": day_plan_after,
+        "collection_result": collection_result,
+        "pilot_validation": {
+            "day_results": day_validation,
+            "summary": pilot_summary,
+        },
+        "quality_checks": list(QUALITY_CHECKS),
+        "silver_schema_columns": list(SILVER_COLUMNS_V9_18),
+        "anti_leakage_plan": build_anti_leakage_plan_v9_19(),
+        "v9_19_decision": decision,
+        "next_recommendation": decision["next_recommendation"],
+        "collection_executed": collection_result["collection_executed"],
+        "network_used": collection_result["network_used"],
+        "new_data_downloaded": collection_result["new_data_downloaded"],
+        "ingestion_executed": collection_result["ingestion_executed"],
+        "complete_collection_reached": False,
+        "features_created": False,
+        "labels_created": False,
+        "dataset_created": False,
+        "ml_executed": False,
+        "walk_forward_executed": False,
+        "backtest_executed": False,
+        "blockers": collection_result["errors"],
+        "warnings": build_warnings_v9_19(collection_result, pilot_summary),
+        "limitations": [
+            "V9.19 ne collecte pas la fenetre complete de 772 jours.",
+            "Le pilot valide le pipeline public archive -> raw ZIP -> silver Parquet sur un echantillon borne.",
+            "Aucune integration funding/open-interest, aucun label, aucun dataset supervise, aucun ML et aucun walk-forward ne sont executes.",
+        ],
+        "findings": dict(FINDINGS),
+        "safety_flags": safety_flags,
+    }
+    return report
+
+
+def validate_pilot_request_v9_19(mode: str, requested_dates: list[str], max_downloads: int | None) -> None:
+    if not requested_dates:
+        raise ValueError("V9.19 pilot window cannot be empty.")
+    if len(requested_dates) > MAX_PILOT_DOWNLOADS:
+        raise ValueError("V9.19 pilot window is limited to 7 days.")
+    if mode == "collect":
+        if max_downloads is None:
+            raise ValueError("V9.19 collect mode requires --max-downloads to prevent accidental bulk collection.")
+        if max_downloads <= 0 or max_downloads > MAX_PILOT_DOWNLOADS:
+            raise ValueError("V9.19 collect mode requires 1 <= --max-downloads <= 7.")
+        if max_downloads > len(requested_dates):
+            raise ValueError("V9.19 --max-downloads cannot exceed requested pilot days.")
+
+
+def build_source_design_v9_19() -> dict[str, Any]:
+    return {
+        "source_name": "Binance public archive aggTrades daily files",
+        "host": PUBLIC_ARCHIVE_HOST,
+        "allowed_public_hosts": sorted(ALLOWED_PUBLIC_HOSTS),
+        "venue": VENUE,
+        "market_type": MARKET_TYPE,
+        "symbol": SYMBOL,
+        "trade_source_type": TRADE_SOURCE_TYPE,
+        "pilot_window": f"{PILOT_START}_{PILOT_END}",
+        "global_target_window": f"{TARGET_START}_{TARGET_END}",
+        "funding_first_research_window": f"{FUNDING_FIRST_START}_{FUNDING_FIRST_END}",
+        "account_required": False,
+        "api_key_required": False,
+        "private_endpoint_required": False,
+        "exchange_auth_required": False,
+        "websocket_live_required": False,
+        "download_url_template": f"https://{PUBLIC_ARCHIVE_HOST}/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-YYYY-MM-DD.zip",
+        "expected_silver_columns": list(SILVER_COLUMNS_V9_18),
+    }
+
+
+def build_pilot_day_plan_v9_19(root: Path, requested_dates: list[str]) -> list[dict[str, Any]]:
+    plan: list[dict[str, Any]] = []
+    for day_value in requested_dates:
+        raw_path = root / raw_zip_path_for_date_v9_18(day_value)
+        silver_path = root / silver_path_for_date_v9_18(day_value)
+        status = "day_missing"
+        if raw_path.exists() and raw_path.stat().st_size <= 0:
+            status = "day_partial"
+        elif raw_path.exists() and silver_path.exists():
+            status = "day_complete"
+        elif raw_path.exists():
+            status = "day_raw_present"
+        elif silver_path.exists():
+            status = "day_silver_without_raw"
+        plan.append(
+            {
+                "date": day_value,
+                "status": status,
+                "raw_path": raw_zip_path_for_date_v9_18(day_value).as_posix(),
+                "silver_path": silver_path_for_date_v9_18(day_value).as_posix(),
+                "public_url": build_public_archive_url_v9_18(day_value),
+                "raw_exists": raw_path.exists(),
+                "raw_bytes": raw_path.stat().st_size if raw_path.exists() else 0,
+                "silver_exists": silver_path.exists(),
+                "silver_bytes": silver_path.stat().st_size if silver_path.exists() else 0,
+            }
+        )
+    return plan
+
+
+def execute_pilot_mode_v9_19(
+    root: Path,
+    mode: str,
+    requested_dates: list[str],
+    *,
+    max_downloads: int | None,
+) -> dict[str, Any]:
+    if mode == "dry-run":
+        return {
+            "mode": mode,
+            "status": "PASS",
+            "collection_executed": False,
+            "network_used": False,
+            "new_data_downloaded": False,
+            "ingestion_executed": False,
+            "network_scope": None,
+            "new_data_download_scope": None,
+            "ingestion_scope": None,
+            "days_attempted": 0,
+            "days_downloaded": 0,
+            "days_normalized": 0,
+            "errors": [],
+            "downloaded_dates": [],
+            "normalized_dates": [],
+        }
+    if mode == "validate-only":
+        return {
+            "mode": mode,
+            "status": "PASS",
+            "collection_executed": False,
+            "network_used": False,
+            "new_data_downloaded": False,
+            "ingestion_executed": False,
+            "network_scope": None,
+            "new_data_download_scope": None,
+            "ingestion_scope": None,
+            "days_attempted": len(requested_dates),
+            "days_downloaded": 0,
+            "days_normalized": 0,
+            "errors": [],
+            "downloaded_dates": [],
+            "normalized_dates": [],
+        }
+    return collect_pilot_public_aggtrades_v9_19(root, requested_dates, max_downloads=max_downloads)
+
+
+def collect_pilot_public_aggtrades_v9_19(
+    root: Path,
+    requested_dates: list[str],
+    *,
+    max_downloads: int | None,
+) -> dict[str, Any]:
+    validate_pilot_request_v9_19("collect", requested_dates, max_downloads)
+    attempted_dates = requested_dates[: max_downloads or 0]
+    errors: list[str] = []
+    downloaded_dates: list[str] = []
+    normalized_dates: list[str] = []
+    for day_value in attempted_dates:
+        raw_path = root / raw_zip_path_for_date_v9_18(day_value)
+        silver_path = root / silver_path_for_date_v9_18(day_value)
+        try:
+            before_exists = raw_path.exists() and raw_path.stat().st_size > 0
+            download_public_archive_v9_19(build_public_archive_url_v9_18(day_value), raw_path)
+            after_exists = raw_path.exists() and raw_path.stat().st_size > 0
+            if after_exists and not before_exists:
+                downloaded_dates.append(day_value)
+            normalize_raw_zip_to_silver_v9_18(raw_path, silver_path, day_value)
+            normalized_dates.append(day_value)
+        except Exception as exc:  # noqa: BLE001 - the pilot must report each daily failure precisely.
+            quarantine_path = quarantine_failed_raw_v9_19(root, day_value, raw_path)
+            suffix = f"; quarantined={quarantine_path.as_posix()}" if quarantine_path else ""
+            errors.append(f"{day_value}: {exc}{suffix}")
+    return {
+        "mode": "collect",
+        "status": "PASS" if not errors else "FAIL",
+        "collection_executed": True,
+        "network_used": bool(attempted_dates),
+        "new_data_downloaded": bool(downloaded_dates),
+        "ingestion_executed": bool(normalized_dates),
+        "network_scope": "public_archive_read_only",
+        "new_data_download_scope": "public_historical_aggtrades_pilot_only",
+        "ingestion_scope": "public_aggtrades_bronze_silver_pilot_only",
+        "days_attempted": len(attempted_dates),
+        "days_downloaded": len(downloaded_dates),
+        "days_normalized": len(normalized_dates),
+        "errors": errors,
+        "downloaded_dates": downloaded_dates,
+        "normalized_dates": normalized_dates,
+    }
+
+
+def download_public_archive_v9_19(url: str, destination: Path) -> None:
+    from urllib.parse import urlparse
+    from urllib.request import Request, urlopen
+
+    parsed = urlparse(url)
+    if parsed.scheme != "https" or parsed.netloc not in ALLOWED_PUBLIC_HOSTS:
+        raise ValueError("V9.19 allows public read-only downloads from data.binance.vision only.")
+    if destination.exists() and destination.stat().st_size > 0:
+        return
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = destination.with_suffix(destination.suffix + ".part")
+    if tmp_path.exists():
+        tmp_path.unlink()
+    request = Request(url, headers={"User-Agent": "galapagos-v9.19-public-read-only"})
+    with urlopen(request, timeout=180) as response:
+        if getattr(response, "status", 200) != 200:
+            raise RuntimeError(f"public archive download failed with status {response.status}")
+        with tmp_path.open("wb") as handle:
+            while True:
+                chunk = response.read(1024 * 1024)
+                if not chunk:
+                    break
+                handle.write(chunk)
+    if tmp_path.stat().st_size <= 0:
+        tmp_path.unlink(missing_ok=True)
+        raise RuntimeError("downloaded public archive is empty")
+    if not zipfile.is_zipfile(tmp_path):
+        quarantine = destination.parent / f"{destination.name}.invalid"
+        tmp_path.replace(quarantine)
+        raise RuntimeError(f"downloaded public archive is not a ZIP; quarantined={quarantine.as_posix()}")
+    tmp_path.replace(destination)
+
+
+def validate_pilot_day_v9_19(root: Path, day_value: str) -> dict[str, Any]:
+    raw_path = root / raw_zip_path_for_date_v9_18(day_value)
+    silver_path = root / silver_path_for_date_v9_18(day_value)
+    errors: list[str] = []
+    raw_bytes = raw_path.stat().st_size if raw_path.exists() else 0
+    silver_bytes = silver_path.stat().st_size if silver_path.exists() else 0
+    if not raw_path.exists():
+        errors.append("raw_zip_missing")
+    elif raw_bytes <= 0:
+        errors.append("raw_zip_empty")
+    elif not zipfile.is_zipfile(raw_path):
+        errors.append("raw_zip_unreadable")
+    else:
+        try:
+            with zipfile.ZipFile(raw_path) as archive:
+                csv_names = [name for name in archive.namelist() if name.endswith(".csv")]
+                if len(csv_names) != 1:
+                    errors.append("raw_zip_expected_single_csv")
+        except zipfile.BadZipFile:
+            errors.append("raw_zip_bad_zip")
+    if not silver_path.exists():
+        errors.append("silver_parquet_missing")
+        return _day_result(day_value, raw_path, silver_path, raw_bytes, silver_bytes, errors)
+    try:
+        import pandas as pd
+
+        frame = pd.read_parquet(silver_path)
+        missing_columns = [column for column in SILVER_COLUMNS_V9_18 if column not in frame.columns]
+        if missing_columns:
+            errors.append(f"silver_missing_columns={missing_columns}")
+            return _day_result(day_value, raw_path, silver_path, raw_bytes, silver_bytes, errors)
+        rows = len(frame)
+        duplicates = int(frame["aggregate_trade_id"].duplicated().sum())
+        invalid_rows = int((frame["row_valid"] != True).sum())  # noqa: E712 - pandas boolean comparison.
+        event_ts = pd.to_datetime(frame["event_ts"], utc=True)
+        available_ts = pd.to_datetime(frame["available_ts"], utc=True)
+        partition_mismatch = int((event_ts.dt.date.astype(str) != day_value).sum())
+        non_positive_price = int((frame["price"].astype(float) <= 0).sum())
+        non_positive_quantity = int((frame["quantity"].astype(float) <= 0).sum())
+        availability_violations = int((available_ts < event_ts).sum())
+        monotone = bool(frame["aggregate_trade_id"].is_monotonic_increasing)
+        if rows == 0:
+            errors.append("silver_zero_rows")
+        if duplicates:
+            errors.append(f"duplicate_aggregate_trade_id={duplicates}")
+        if partition_mismatch:
+            errors.append(f"partition_event_ts_mismatch={partition_mismatch}")
+        if non_positive_price:
+            errors.append(f"price_non_positive={non_positive_price}")
+        if non_positive_quantity:
+            errors.append(f"quantity_non_positive={non_positive_quantity}")
+        if availability_violations:
+            errors.append(f"available_ts_before_event_ts={availability_violations}")
+        if not monotone:
+            errors.append("aggregate_trade_id_not_monotone")
+        result = _day_result(day_value, raw_path, silver_path, raw_bytes, silver_bytes, errors)
+        result.update(
+            {
+                "rows": rows,
+                "invalid_rows": invalid_rows,
+                "duplicates": duplicates,
+                "min_event_ts": event_ts.min().isoformat().replace("+00:00", "Z") if rows else None,
+                "max_event_ts": event_ts.max().isoformat().replace("+00:00", "Z") if rows else None,
+                "min_aggregate_trade_id": int(frame["aggregate_trade_id"].min()) if rows else None,
+                "max_aggregate_trade_id": int(frame["aggregate_trade_id"].max()) if rows else None,
+                "source_checksum": checksum_file_v9_18(raw_path) if raw_path.exists() and raw_bytes > 0 else None,
+            }
+        )
+        return result
+    except Exception as exc:  # noqa: BLE001 - validator reports dependency or parquet failures explicitly.
+        errors.append(f"silver_read_failed={exc}")
+        return _day_result(day_value, raw_path, silver_path, raw_bytes, silver_bytes, errors)
+
+
+def _day_result(
+    day_value: str,
+    raw_path: Path,
+    silver_path: Path,
+    raw_bytes: int,
+    silver_bytes: int,
+    errors: list[str],
+) -> dict[str, Any]:
+    status = "day_complete" if not errors else "day_failed"
+    return {
+        "date": day_value,
+        "status": status,
+        "raw_path": raw_path.as_posix(),
+        "silver_path": silver_path.as_posix(),
+        "raw_bytes": raw_bytes,
+        "silver_bytes": silver_bytes,
+        "rows": 0,
+        "invalid_rows": None,
+        "duplicates": None,
+        "min_event_ts": None,
+        "max_event_ts": None,
+        "min_aggregate_trade_id": None,
+        "max_aggregate_trade_id": None,
+        "errors": errors,
+    }
+
+
+def summarize_pilot_validation_v9_19(
+    requested_dates: list[str],
+    day_plan_before: list[dict[str, Any]],
+    collection_result: dict[str, Any],
+    day_validation: list[dict[str, Any]],
+    runtime_seconds: float,
+) -> dict[str, Any]:
+    complete_days = [item for item in day_validation if item["status"] == "day_complete"]
+    failed_days = [item for item in day_validation if item["status"] == "day_failed"]
+    raw_bytes_total = sum(int(item.get("raw_bytes") or 0) for item in day_validation)
+    silver_bytes_total = sum(int(item.get("silver_bytes") or 0) for item in day_validation)
+    total_rows = sum(int(item.get("rows") or 0) for item in day_validation)
+    invalid_rows = sum(int(item.get("invalid_rows") or 0) for item in day_validation if item.get("invalid_rows") is not None)
+    duplicates = sum(int(item.get("duplicates") or 0) for item in day_validation if item.get("duplicates") is not None)
+    min_event_values = [item["min_event_ts"] for item in day_validation if item.get("min_event_ts")]
+    max_event_values = [item["max_event_ts"] for item in day_validation if item.get("max_event_ts")]
+    min_ids = [int(item["min_aggregate_trade_id"]) for item in day_validation if item.get("min_aggregate_trade_id") is not None]
+    max_ids = [int(item["max_aggregate_trade_id"]) for item in day_validation if item.get("max_aggregate_trade_id") is not None]
+    days_already_complete_before = sum(1 for item in day_plan_before if item["status"] == "day_complete")
+    attempted = int(collection_result.get("days_attempted") or 0)
+    average_rows = int(total_rows / len(complete_days)) if complete_days else 0
+    average_raw_bytes = int(raw_bytes_total / len(complete_days)) if complete_days else 0
+    average_runtime = runtime_seconds / max(attempted, 1)
+    target_days = len(date_range_v9_19(TARGET_START, TARGET_END))
+    return {
+        "days_requested": len(requested_dates),
+        "days_attempted": attempted,
+        "days_downloaded": int(collection_result.get("days_downloaded") or 0),
+        "days_normalized": int(collection_result.get("days_normalized") or 0),
+        "days_complete": len(complete_days),
+        "days_failed": len(failed_days),
+        "days_quarantined": sum(1 for item in day_validation if item["status"] == "day_quarantined"),
+        "days_already_complete_before": days_already_complete_before,
+        "requested_dates": requested_dates,
+        "complete_dates": [item["date"] for item in complete_days],
+        "failed_dates": [item["date"] for item in failed_days],
+        "total_rows": total_rows,
+        "invalid_rows": invalid_rows,
+        "duplicates": duplicates,
+        "min_event_ts": min(min_event_values) if min_event_values else None,
+        "max_event_ts": max(max_event_values) if max_event_values else None,
+        "min_aggregate_trade_id": min(min_ids) if min_ids else None,
+        "max_aggregate_trade_id": max(max_ids) if max_ids else None,
+        "raw_bytes_total": raw_bytes_total,
+        "silver_bytes_total": silver_bytes_total,
+        "runtime_seconds": runtime_seconds,
+        "average_rows_per_day": average_rows,
+        "average_raw_bytes_per_day": average_raw_bytes,
+        "estimated_full_collection_raw_bytes": average_raw_bytes * target_days if average_raw_bytes else None,
+        "estimated_full_collection_rows": average_rows * target_days if average_rows else None,
+        "estimated_full_collection_runtime_seconds": round(average_runtime * target_days, 3) if attempted else None,
+        "restartability_status": "resumable_existing_raw_files_are_skipped_and_silver_can_be_regenerated",
+        "quality_status": "PASS" if not failed_days and duplicates == 0 and invalid_rows == 0 else "FAIL",
+        "coverage_status": "pilot_complete_not_full_window" if len(complete_days) == len(requested_dates) else "pilot_incomplete",
+        "future_full_coverage_complete": False,
+        "pilot_success": len(complete_days) == len(requested_dates) and not failed_days,
+        "quality_errors": [error for item in failed_days for error in item.get("errors", [])],
+    }
+
+
+def decide_v9_19(collection_result: dict[str, Any], pilot_summary: dict[str, Any]) -> dict[str, Any]:
+    if not collection_result["collection_executed"]:
+        decision = "aggtrades_post_v9_pilot_collection_not_executed"
+        recommendation = "V9.20 - AggTrades Pilot Collection Execution."
+        confidence = "high"
+        justification = "Aucune collecte pilote n'a ete executee."
+    elif collection_result["status"] != "PASS":
+        decision = "aggtrades_post_v9_pilot_collection_failed_source_issue"
+        recommendation = "V9.20 - AggTrades Pilot Collection Correction."
+        confidence = "medium"
+        justification = "La collecte publique ou la normalisation a produit au moins une erreur."
+    elif pilot_summary["quality_status"] != "PASS":
+        decision = "aggtrades_post_v9_pilot_collection_failed_quality"
+        recommendation = "V9.20 - AggTrades Pilot Collection Correction."
+        confidence = "medium"
+        justification = "La validation qualite du pilot a echoue."
+    elif pilot_summary["days_complete"] == pilot_summary["days_requested"]:
+        decision = "aggtrades_post_v9_pilot_collection_success"
+        recommendation = "V9.20 - AggTrades Post-V9 Batch Collection."
+        confidence = "high"
+        justification = "Les jours pilotes demandes ont ete collectes, normalises et valides sans etendre la collecte complete."
+    else:
+        decision = "aggtrades_post_v9_pilot_collection_partial"
+        recommendation = "V9.20 - AggTrades Pilot Collection Correction."
+        confidence = "medium"
+        justification = "Une partie seulement des jours pilotes est complete."
+    return {
+        "decision": decision,
+        "confidence": confidence,
+        "justification": justification,
+        "next_recommendation": recommendation,
+        "collection_executed": collection_result["collection_executed"],
+        "complete_collection_reached": False,
+        "no_backtest": True,
+        "no_walk_forward": True,
+        "no_trading": True,
+    }
+
+
+def build_manifest_v9_19(report: dict[str, Any]) -> dict[str, Any]:
+    summary = report["pilot_validation"]["summary"]
+    return {
+        "version": VERSION,
+        "source_version": SOURCE_VERSION,
+        "status": report["status"],
+        "created_at_utc": _utc_now(),
+        "direction": DIRECTION,
+        "mode": report["mode"],
+        "report_path": REPORT_JSON_PATH.as_posix(),
+        "markdown_path": REPORT_MD_PATH.as_posix(),
+        "pilot_window": report["pilot_window"],
+        "global_target_window": report["global_target_window"],
+        "future_funding_first_window": report["future_funding_first_window"],
+        "days_requested": summary["days_requested"],
+        "days_attempted": summary["days_attempted"],
+        "days_downloaded": summary["days_downloaded"],
+        "days_normalized": summary["days_normalized"],
+        "days_complete": summary["days_complete"],
+        "days_failed": summary["days_failed"],
+        "days_quarantined": summary["days_quarantined"],
+        "total_rows": summary["total_rows"],
+        "raw_bytes_total": summary["raw_bytes_total"],
+        "silver_bytes_total": summary["silver_bytes_total"],
+        "collection_executed": report["collection_executed"],
+        "network_used": report["network_used"],
+        "network_scope": report["collection_result"]["network_scope"],
+        "api_key_used": report["safety_flags"]["api_key_used"],
+        "private_endpoint_used": report["safety_flags"]["private_endpoint_used"],
+        "v9_19_decision": report["v9_19_decision"],
+        "findings": report["findings"],
+        "safety_flags": report["safety_flags"],
+    }
+
+
+def build_markdown_v9_19(report: dict[str, Any]) -> str:
+    summary = report["pilot_validation"]["summary"]
+    decision = report["v9_19_decision"]
+    source = report["source_public_target"]
+    lines = [
+        "# V9.19 - AggTrades Post-V9 Pilot Collection Execution",
+        "",
+        "## Resume executif",
+        f"- Mode execute : `{report['mode']}`.",
+        f"- Decision V9.19 : `{decision['decision']}`.",
+        f"- Justification : {decision['justification']}",
+        f"- Recommandation suivante : {decision['next_recommendation']}",
+        "- V9.19 reste data-only : aucun label, dataset supervise, ML, walk-forward, backtest, strategie ou signal actionnable.",
+        "- Couverture complete future : `False`.",
+        "",
+        "## Source publique utilisee",
+        f"- Source : `{source['source_name']}`.",
+        f"- Host : `{source['host']}`.",
+        f"- Marche : `{source['market_type']}`.",
+        f"- Symbole : `{source['symbol']}`.",
+        "- Compte requis : `False`.",
+        "- Cle API requise : `False`.",
+        "- Endpoint prive requis : `False`.",
+        "- Client exchange authentifie requis : `False`.",
+        "- Websocket live requis : `False`.",
+        "",
+        "## Pilot",
+        f"- Periode pilote : `{report['pilot_window']['start']}` -> `{report['pilot_window']['end']}`.",
+        f"- Jours demandes : `{summary['days_requested']}`.",
+        f"- Jours tentes : `{summary['days_attempted']}`.",
+        f"- Jours telecharges : `{summary['days_downloaded']}`.",
+        f"- Jours normalises : `{summary['days_normalized']}`.",
+        f"- Jours valides : `{summary['days_complete']}`.",
+        f"- Jours echoues : `{summary['days_failed']}`.",
+        f"- Jours quarantine : `{summary['days_quarantined']}`.",
+        f"- Lignes totales : `{summary['total_rows']}`.",
+        f"- Raw bytes total : `{summary['raw_bytes_total']}`.",
+        f"- Silver bytes total : `{summary['silver_bytes_total']}`.",
+        f"- Runtime secondes : `{summary['runtime_seconds']}`.",
+        "",
+        "## Estimation collecte complete",
+        f"- Fenetre cible future : `{report['global_target_window']['start']}` -> `{report['global_target_window']['end']}`.",
+        f"- Jours cible complets : `{report['global_target_window']['days_expected']}`.",
+        f"- Raw bytes estimes : `{summary['estimated_full_collection_raw_bytes']}`.",
+        f"- Lignes estimees : `{summary['estimated_full_collection_rows']}`.",
+        f"- Runtime estime secondes : `{summary['estimated_full_collection_runtime_seconds']}`.",
+        "",
+        "## Qualite et causalite",
+        f"- Statut qualite : `{summary['quality_status']}`.",
+        f"- Statut couverture : `{summary['coverage_status']}`.",
+        "- Anti-leakage : `available_ts >= event_ts`, aucune jointure label, aucune integration funding/OI dans V9.19.",
+        "",
+        "## Garde-fous",
+        "- Aucun trading reel.",
+        "- Aucun paper live.",
+        "- Aucun ordre.",
+        "- Aucun backtest execute.",
+        "- Aucun walk-forward.",
+        "- Aucune strategie.",
+        "- Aucun signal actionnable.",
+        "- Aucun modele persistant.",
+        "- Aucune API privee.",
+        "- Aucune cle API.",
+        "- Aucun client exchange authentifie.",
+        "- Aucun websocket live.",
+        "- Aucun sidecar et aucune empreinte ZIP.",
+    ]
+    if report["network_used"]:
+        lines.append("- Reseau limite a `public_archive_read_only` sur `data.binance.vision`.")
+    return "\n".join(lines) + "\n"
+
+
+def update_state_surfaces_v9_19(root: Path, report: dict[str, Any]) -> None:
+    summary = report["pilot_validation"]["summary"]
+    metrics = {
+        "last_validated_version": LAST_VALIDATED_VERSION,
+        "candidate_version": VERSION,
+        "candidate_status": "pending_external_audit",
+        "source_version": SOURCE_VERSION,
+        "direction": DIRECTION,
+        "mode": report["mode"],
+        "v9_19_decision": report["v9_19_decision"]["decision"],
+        "recommended_next_step": report["next_recommendation"],
+        "pilot_start": report["pilot_window"]["start"],
+        "pilot_end": report["pilot_window"]["end"],
+        "days_requested": summary["days_requested"],
+        "days_attempted": summary["days_attempted"],
+        "days_downloaded": summary["days_downloaded"],
+        "days_normalized": summary["days_normalized"],
+        "days_complete": summary["days_complete"],
+        "days_failed": summary["days_failed"],
+        "days_quarantined": summary["days_quarantined"],
+        "total_rows": summary["total_rows"],
+        "raw_bytes_total": summary["raw_bytes_total"],
+        "silver_bytes_total": summary["silver_bytes_total"],
+        "collection_executed": report["collection_executed"],
+        "complete_collection_reached": False,
+        "features_created": False,
+        "labels_created": False,
+        "dataset_created": False,
+        "ml_executed": False,
+        "walk_forward_executed": False,
+        "backtest_executed": False,
+        "network_used": report["network_used"],
+        "new_data_downloaded": report["new_data_downloaded"],
+        "ingestion_executed": report["ingestion_executed"],
+        **report["safety_flags"],
+    }
+    state_path = root / "reports/PROJECT_STATE.json"
+    state = _read_json(state_path) if state_path.exists() else {}
+    for stale_key in ["recommended_next_version", "recommended_next_action"]:
+        state.pop(stale_key, None)
+    state.update(metrics)
+    _write_json(state_path, state)
+    _write_json(root / "reports/current/latest_metrics.json", metrics)
+    text = (
+        "# Synthese courante - V9.19\n\n"
+        "- Derniere version validee : `V9.18`.\n"
+        "- Candidate : `V9.19`.\n"
+        "- Statut : `pending_external_audit`.\n"
+        "- Direction : execution pilote de collecte aggTrades post-V9.\n"
+        f"- Periode pilote : `{report['pilot_window']['start']}` -> `{report['pilot_window']['end']}`.\n"
+        f"- Decision V9.19 : `{report['v9_19_decision']['decision']}`.\n"
+        f"- Jours demandes/tentes/valides : `{summary['days_requested']}` / `{summary['days_attempted']}` / `{summary['days_complete']}`.\n"
+        f"- Lignes totales : `{summary['total_rows']}`.\n"
+        f"- Recommandation : {report['next_recommendation']}\n"
+        "- Couverture complete future : `False`.\n"
+        "- Aucun label, dataset supervise, ML, walk-forward, backtest, strategie ou signal actionnable.\n"
+        "- Aucun trading, paper live, ordre, modele persistant, API privee, cle API, client exchange authentifie ou websocket live.\n"
+        "- Aucun sidecar et aucune empreinte ZIP.\n"
+    )
+    if report["network_used"]:
+        text += "- Reseau utilise uniquement pour archive publique read-only `data.binance.vision`.\n"
+    _write_text(root / "reports/PROJECT_STATE.md", text)
+    _write_text(root / "reports/current/latest_summary.md", text)
+    _write_text(root / "reports/current/latest_metrics.md", text)
+    _write_text(
+        root / "README.md",
+        "# Projet Galapagos\n\n"
+        "- Derniere version validee : V9.18.\n"
+        "- Candidate : V9.19, execution pilote de collecte aggTrades post-V9.\n"
+        "- Pilot limite : 2024-05-05 -> 2024-05-11, maximum 7 jours.\n"
+        "- Aucun trading, ordre, backtest, walk-forward, strategie, signal actionnable, modele persistant, API privee ou cle API.\n"
+        "- Aucun client exchange authentifie, aucun websocket live, aucun sidecar et aucune empreinte ZIP.\n",
+    )
+
+
+def safety_flags_for_pilot_v9_19(collection_result: dict[str, Any]) -> dict[str, Any]:
+    flags: dict[str, Any] = dict(BASE_SAFETY_FLAGS)
+    if collection_result["collection_executed"]:
+        flags.update(
+            {
+                "network_used": bool(collection_result["network_used"]),
+                "new_data_downloaded": bool(collection_result["new_data_downloaded"]),
+                "ingestion_executed": bool(collection_result["ingestion_executed"]),
+                "no_new_data_download": not bool(collection_result["new_data_downloaded"]),
+                "no_ingestion_executed": not bool(collection_result["ingestion_executed"]),
+                "network_scope": "public_archive_read_only",
+                "new_data_download_scope": "public_historical_aggtrades_pilot_only",
+                "ingestion_scope": "public_aggtrades_bronze_silver_pilot_only",
+            }
+        )
+    return flags
+
+
+def build_anti_leakage_plan_v9_19() -> dict[str, Any]:
+    return {
+        "rules": [
+            "available_ts >= event_ts for every normalized pilot row.",
+            "V9.19 collects and normalizes aggTrades only; it creates no labels and no supervised dataset.",
+            "Funding and open interest are not joined in V9.19.",
+            "No future-derived feature, prediction, signal, order, strategy or backtest artifact is created.",
+        ],
+        "forbidden_outputs": ["label", "prediction", "model_score", "signal", "trading_signal", "order", "backtest", "position_size", "strategy"],
+    }
+
+
+def build_warnings_v9_19(collection_result: dict[str, Any], pilot_summary: dict[str, Any]) -> list[str]:
+    warnings = [
+        "V9.19 ne couvre pas la fenetre complete de 772 jours.",
+        "Les raw/silver pilotes restent locaux et sont exclus du ZIP audit-lite.",
+    ]
+    if collection_result["errors"]:
+        warnings.append("Des erreurs de collecte ou normalisation sont presentes dans le pilot.")
+    if pilot_summary["days_complete"] < pilot_summary["days_requested"]:
+        warnings.append("Tous les jours pilotes demandes ne sont pas valides.")
+    return warnings
+
+
+def quarantine_failed_raw_v9_19(root: Path, day_value: str, raw_path: Path) -> Path | None:
+    if not raw_path.exists():
+        return None
+    quarantine_dir = root / QUARANTINE_DIR / f"date={day_value}"
+    quarantine_dir.mkdir(parents=True, exist_ok=True)
+    quarantine_path = quarantine_dir / raw_path.name
+    raw_path.replace(quarantine_path)
+    return quarantine_path
+
+
+def date_range_v9_19(start: str, end: str) -> list[str]:
+    start_date = date.fromisoformat(start)
+    end_date = date.fromisoformat(end)
+    if end_date < start_date:
+        raise ValueError("end date must be >= start date")
+    return [(start_date + timedelta(days=offset)).isoformat() for offset in range((end_date - start_date).days + 1)]
+
+
+def _load_input(root: Path, path: Path) -> dict[str, Any]:
+    full = root / path
+    if not full.exists():
+        return {"path": path.as_posix(), "available": False, "payload": {}}
+    if path.suffix == ".json":
+        payload: Any = _read_json(full)
+    else:
+        payload = {"text": full.read_text(encoding="utf-8")}
+    return {"path": path.as_posix(), "available": True, "payload": payload}
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+
+def _utc_now() -> str:
+    return datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")

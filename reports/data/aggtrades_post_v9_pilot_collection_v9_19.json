@@ -1,0 +1,616 @@
+{
+  "anti_leakage_plan": {
+    "forbidden_outputs": [
+      "label",
+      "prediction",
+      "model_score",
+      "signal",
+      "trading_signal",
+      "order",
+      "backtest",
+      "position_size",
+      "strategy"
+    ],
+    "rules": [
+      "available_ts >= event_ts for every normalized pilot row.",
+      "V9.19 collects and normalizes aggTrades only; it creates no labels and no supervised dataset.",
+      "Funding and open interest are not joined in V9.19.",
+      "No future-derived feature, prediction, signal, order, strategy or backtest artifact is created."
+    ]
+  },
+  "backtest_executed": false,
+  "blockers": [],
+  "collection_executed": true,
+  "collection_result": {
+    "collection_executed": true,
+    "days_attempted": 7,
+    "days_downloaded": 7,
+    "days_normalized": 7,
+    "downloaded_dates": [
+      "2024-05-05",
+      "2024-05-06",
+      "2024-05-07",
+      "2024-05-08",
+      "2024-05-09",
+      "2024-05-10",
+      "2024-05-11"
+    ],
+    "errors": [],
+    "ingestion_executed": true,
+    "ingestion_scope": "public_aggtrades_bronze_silver_pilot_only",
+    "mode": "collect",
+    "network_scope": "public_archive_read_only",
+    "network_used": true,
+    "new_data_download_scope": "public_historical_aggtrades_pilot_only",
+    "new_data_downloaded": true,
+    "normalized_dates": [
+      "2024-05-05",
+      "2024-05-06",
+      "2024-05-07",
+      "2024-05-08",
+      "2024-05-09",
+      "2024-05-10",
+      "2024-05-11"
+    ],
+    "status": "PASS"
+  },
+  "complete_collection_reached": false,
+  "created_at_utc": "2026-05-27T20:06:49Z",
+  "dataset_created": false,
+  "day_plan_after": [
+    {
+      "date": "2024-05-05",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-05.zip",
+      "raw_bytes": 10700787,
+      "raw_exists": true,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-05.zip",
+      "silver_bytes": 20702641,
+      "silver_exists": true,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-05/agg_trades.parquet",
+      "status": "day_complete"
+    },
+    {
+      "date": "2024-05-06",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-06.zip",
+      "raw_bytes": 14680900,
+      "raw_exists": true,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-06.zip",
+      "silver_bytes": 28013957,
+      "silver_exists": true,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-06/agg_trades.parquet",
+      "status": "day_complete"
+    },
+    {
+      "date": "2024-05-07",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-07.zip",
+      "raw_bytes": 13464009,
+      "raw_exists": true,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-07.zip",
+      "silver_bytes": 25436312,
+      "silver_exists": true,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-07/agg_trades.parquet",
+      "status": "day_complete"
+    },
+    {
+      "date": "2024-05-08",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-08.zip",
+      "raw_bytes": 15235112,
+      "raw_exists": true,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-08.zip",
+      "silver_bytes": 29152140,
+      "silver_exists": true,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-08/agg_trades.parquet",
+      "status": "day_complete"
+    },
+    {
+      "date": "2024-05-09",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-09.zip",
+      "raw_bytes": 14465809,
+      "raw_exists": true,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-09.zip",
+      "silver_bytes": 27553930,
+      "silver_exists": true,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-09/agg_trades.parquet",
+      "status": "day_complete"
+    },
+    {
+      "date": "2024-05-10",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-10.zip",
+      "raw_bytes": 15916229,
+      "raw_exists": true,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-10.zip",
+      "silver_bytes": 30835652,
+      "silver_exists": true,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-10/agg_trades.parquet",
+      "status": "day_complete"
+    },
+    {
+      "date": "2024-05-11",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-11.zip",
+      "raw_bytes": 8385869,
+      "raw_exists": true,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-11.zip",
+      "silver_bytes": 16564461,
+      "silver_exists": true,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-11/agg_trades.parquet",
+      "status": "day_complete"
+    }
+  ],
+  "day_plan_before": [
+    {
+      "date": "2024-05-05",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-05.zip",
+      "raw_bytes": 0,
+      "raw_exists": false,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-05.zip",
+      "silver_bytes": 0,
+      "silver_exists": false,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-05/agg_trades.parquet",
+      "status": "day_missing"
+    },
+    {
+      "date": "2024-05-06",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-06.zip",
+      "raw_bytes": 0,
+      "raw_exists": false,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-06.zip",
+      "silver_bytes": 0,
+      "silver_exists": false,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-06/agg_trades.parquet",
+      "status": "day_missing"
+    },
+    {
+      "date": "2024-05-07",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-07.zip",
+      "raw_bytes": 0,
+      "raw_exists": false,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-07.zip",
+      "silver_bytes": 0,
+      "silver_exists": false,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-07/agg_trades.parquet",
+      "status": "day_missing"
+    },
+    {
+      "date": "2024-05-08",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-08.zip",
+      "raw_bytes": 0,
+      "raw_exists": false,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-08.zip",
+      "silver_bytes": 0,
+      "silver_exists": false,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-08/agg_trades.parquet",
+      "status": "day_missing"
+    },
+    {
+      "date": "2024-05-09",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-09.zip",
+      "raw_bytes": 0,
+      "raw_exists": false,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-09.zip",
+      "silver_bytes": 0,
+      "silver_exists": false,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-09/agg_trades.parquet",
+      "status": "day_missing"
+    },
+    {
+      "date": "2024-05-10",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-10.zip",
+      "raw_bytes": 0,
+      "raw_exists": false,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-10.zip",
+      "silver_bytes": 0,
+      "silver_exists": false,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-10/agg_trades.parquet",
+      "status": "day_missing"
+    },
+    {
+      "date": "2024-05-11",
+      "public_url": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2024-05-11.zip",
+      "raw_bytes": 0,
+      "raw_exists": false,
+      "raw_path": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-11.zip",
+      "silver_bytes": 0,
+      "silver_exists": false,
+      "silver_path": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-11/agg_trades.parquet",
+      "status": "day_missing"
+    }
+  ],
+  "direction": "aggtrades_post_v9_pilot_collection_execution",
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "future_funding_first_window": {
+    "complete_collection_reached": false,
+    "days_expected": 731,
+    "end": "2026-05-05",
+    "start": "2024-05-05"
+  },
+  "global_target_window": {
+    "complete_collection_reached": false,
+    "days_expected": 772,
+    "end": "2026-05-05",
+    "start": "2024-03-25"
+  },
+  "ingestion_executed": true,
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "max_history_public_market_data_v5_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "public_trades_1y_window_v8_2_manifest": {
+      "available": true,
+      "path": "reports/manifests/public_trades_1y_window_v8_2_manifest.json"
+    },
+    "v9_14_1_branch_decision": {
+      "available": true,
+      "path": "reports/research_decisions/feature_label_separability_v9_14_1.json"
+    },
+    "v9_15_derivatives_readiness": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_data_extension_readiness_v9_15.json"
+    },
+    "v9_16_window_diagnostic": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_window_extension_v9_16.json"
+    },
+    "v9_17_collection_plan": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_history_collection_plan_v9_17.json"
+    },
+    "v9_18_collection_pack": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_collection_v9_18.json"
+    },
+    "v9_18_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_post_v9_collection_v9_18_manifest.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.19 ne collecte pas la fenetre complete de 772 jours.",
+    "Le pilot valide le pipeline public archive -> raw ZIP -> silver Parquet sur un echantillon borne.",
+    "Aucune integration funding/open-interest, aucun label, aucun dataset supervise, aucun ML et aucun walk-forward ne sont executes."
+  ],
+  "ml_executed": false,
+  "mode": "collect",
+  "network_used": true,
+  "new_data_downloaded": true,
+  "next_recommendation": "V9.20 - AggTrades Post-V9 Batch Collection.",
+  "pilot_validation": {
+    "day_results": [
+      {
+        "date": "2024-05-05",
+        "duplicates": 0,
+        "errors": [],
+        "invalid_rows": 0,
+        "max_aggregate_trade_id": 2997847251,
+        "max_event_ts": "2024-05-05T23:59:59.999000Z",
+        "min_aggregate_trade_id": 2997063917,
+        "min_event_ts": "2024-05-05T00:00:00.004000Z",
+        "raw_bytes": 10700787,
+        "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-05.zip",
+        "rows": 783335,
+        "silver_bytes": 20702641,
+        "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-05/agg_trades.parquet",
+        "source_checksum": "f8d889ae6ed8f7e660eea59b33b647fc9e5d75be77cf228e61c208fea2fdcc2b",
+        "status": "day_complete"
+      },
+      {
+        "date": "2024-05-06",
+        "duplicates": 0,
+        "errors": [],
+        "invalid_rows": 0,
+        "max_aggregate_trade_id": 2998913884,
+        "max_event_ts": "2024-05-06T23:59:59.999000Z",
+        "min_aggregate_trade_id": 2997847252,
+        "min_event_ts": "2024-05-06T00:00:00Z",
+        "raw_bytes": 14680900,
+        "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-06.zip",
+        "rows": 1066633,
+        "silver_bytes": 28013957,
+        "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-06/agg_trades.parquet",
+        "source_checksum": "76cacd488111ef61331dafe6e0690e214bd0f68ac36083f7bf2e9b7da88551e6",
+        "status": "day_complete"
+      },
+      {
+        "date": "2024-05-07",
+        "duplicates": 0,
+        "errors": [],
+        "invalid_rows": 0,
+        "max_aggregate_trade_id": 2999896353,
+        "max_event_ts": "2024-05-07T23:59:59.999000Z",
+        "min_aggregate_trade_id": 2998913885,
+        "min_event_ts": "2024-05-07T00:00:00Z",
+        "raw_bytes": 13464009,
+        "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-07.zip",
+        "rows": 982469,
+        "silver_bytes": 25436312,
+        "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-07/agg_trades.parquet",
+        "source_checksum": "f9428120cc849ac12dcd6acdd15408b2d8d8888e3c0fc649fddeb5fce2f4bf94",
+        "status": "day_complete"
+      },
+      {
+        "date": "2024-05-08",
+        "duplicates": 0,
+        "errors": [],
+        "invalid_rows": 0,
+        "max_aggregate_trade_id": 3001028998,
+        "max_event_ts": "2024-05-08T23:59:59.999000Z",
+        "min_aggregate_trade_id": 2999896354,
+        "min_event_ts": "2024-05-08T00:00:00Z",
+        "raw_bytes": 15235112,
+        "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-08.zip",
+        "rows": 1132645,
+        "silver_bytes": 29152140,
+        "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-08/agg_trades.parquet",
+        "source_checksum": "c336c27b6d7d57c19f646fc52e0c49ae47367fbff38fa1375f71595d00455389",
+        "status": "day_complete"
+      },
+      {
+        "date": "2024-05-09",
+        "duplicates": 0,
+        "errors": [],
+        "invalid_rows": 0,
+        "max_aggregate_trade_id": 3002101592,
+        "max_event_ts": "2024-05-09T23:59:59.999000Z",
+        "min_aggregate_trade_id": 3001028999,
+        "min_event_ts": "2024-05-09T00:00:00Z",
+        "raw_bytes": 14465809,
+        "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-09.zip",
+        "rows": 1072594,
+        "silver_bytes": 27553930,
+        "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-09/agg_trades.parquet",
+        "source_checksum": "06692cfba4642488e86a2787cc1749cb0053c9f2682b021b5eeb177270a0a4e9",
+        "status": "day_complete"
+      },
+      {
+        "date": "2024-05-10",
+        "duplicates": 0,
+        "errors": [],
+        "invalid_rows": 0,
+        "max_aggregate_trade_id": 3003275358,
+        "max_event_ts": "2024-05-10T23:59:59.999000Z",
+        "min_aggregate_trade_id": 3002101593,
+        "min_event_ts": "2024-05-10T00:00:00Z",
+        "raw_bytes": 15916229,
+        "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-10.zip",
+        "rows": 1173766,
+        "silver_bytes": 30835652,
+        "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-10/agg_trades.parquet",
+        "source_checksum": "ef962403df2802d8565bcb4d2f75c75b8455a1d04389ed71bf1fdf6ddaa9dc17",
+        "status": "day_complete"
+      },
+      {
+        "date": "2024-05-11",
+        "duplicates": 0,
+        "errors": [],
+        "invalid_rows": 0,
+        "max_aggregate_trade_id": 3003891495,
+        "max_event_ts": "2024-05-11T23:59:59.999000Z",
+        "min_aggregate_trade_id": 3003275359,
+        "min_event_ts": "2024-05-11T00:00:00.003000Z",
+        "raw_bytes": 8385869,
+        "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2024-05-11.zip",
+        "rows": 616137,
+        "silver_bytes": 16564461,
+        "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2024-05-11/agg_trades.parquet",
+        "source_checksum": "5ad14663320356bbbe12a39d3e74418be4b9c19ec01574ba497563cde73385f4",
+        "status": "day_complete"
+      }
+    ],
+    "summary": {
+      "average_raw_bytes_per_day": 13264102,
+      "average_rows_per_day": 975368,
+      "complete_dates": [
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07",
+        "2024-05-08",
+        "2024-05-09",
+        "2024-05-10",
+        "2024-05-11"
+      ],
+      "coverage_status": "pilot_complete_not_full_window",
+      "days_already_complete_before": 0,
+      "days_attempted": 7,
+      "days_complete": 7,
+      "days_downloaded": 7,
+      "days_failed": 0,
+      "days_normalized": 7,
+      "days_quarantined": 0,
+      "days_requested": 7,
+      "duplicates": 0,
+      "estimated_full_collection_raw_bytes": 10239886744,
+      "estimated_full_collection_rows": 752984096,
+      "estimated_full_collection_runtime_seconds": 7667.504,
+      "failed_dates": [],
+      "future_full_coverage_complete": false,
+      "invalid_rows": 0,
+      "max_aggregate_trade_id": 3003891495,
+      "max_event_ts": "2024-05-11T23:59:59.999000Z",
+      "min_aggregate_trade_id": 2997063917,
+      "min_event_ts": "2024-05-05T00:00:00.004000Z",
+      "pilot_success": true,
+      "quality_errors": [],
+      "quality_status": "PASS",
+      "raw_bytes_total": 92848715,
+      "requested_dates": [
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07",
+        "2024-05-08",
+        "2024-05-09",
+        "2024-05-10",
+        "2024-05-11"
+      ],
+      "restartability_status": "resumable_existing_raw_files_are_skipped_and_silver_can_be_regenerated",
+      "runtime_seconds": 69.524,
+      "silver_bytes_total": 178259093,
+      "total_rows": 6827579
+    }
+  },
+  "pilot_window": {
+    "days_requested": 7,
+    "end": "2024-05-11",
+    "max_downloads": 7,
+    "requested_dates": [
+      "2024-05-05",
+      "2024-05-06",
+      "2024-05-07",
+      "2024-05-08",
+      "2024-05-09",
+      "2024-05-10",
+      "2024-05-11"
+    ],
+    "start": "2024-05-05"
+  },
+  "quality_checks": [
+    "file_present",
+    "file_readable",
+    "expected_schema",
+    "valid_types",
+    "timestamps_utc",
+    "price_positive",
+    "quantity_positive",
+    "aggregate_trade_id_monotone_or_coherent",
+    "no_duplicate_aggregate_trade_id",
+    "invalid_rows_not_excessive",
+    "partition_date_matches_event_ts",
+    "file_size_nonzero",
+    "day_status"
+  ],
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "ingestion_executed": true,
+    "ingestion_scope": "public_aggtrades_bronze_silver_pilot_only",
+    "network_scope": "public_archive_read_only",
+    "network_used": true,
+    "new_data_download_scope": "public_historical_aggtrades_pilot_only",
+    "new_data_downloaded": true,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_ingestion_executed": false,
+    "no_new_data_download": false,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "silver_schema_columns": [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "aggregate_trade_id",
+    "price",
+    "quantity",
+    "first_trade_id",
+    "last_trade_id",
+    "event_ts",
+    "trade_ts",
+    "is_buyer_maker",
+    "ingest_ts",
+    "available_ts",
+    "source_file",
+    "source_checksum",
+    "row_valid",
+    "invalid_reason"
+  ],
+  "source_public_target": {
+    "account_required": false,
+    "allowed_public_hosts": [
+      "data.binance.vision"
+    ],
+    "api_key_required": false,
+    "download_url_template": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-YYYY-MM-DD.zip",
+    "exchange_auth_required": false,
+    "expected_silver_columns": [
+      "source",
+      "venue",
+      "market_type",
+      "symbol",
+      "aggregate_trade_id",
+      "price",
+      "quantity",
+      "first_trade_id",
+      "last_trade_id",
+      "event_ts",
+      "trade_ts",
+      "is_buyer_maker",
+      "ingest_ts",
+      "available_ts",
+      "source_file",
+      "source_checksum",
+      "row_valid",
+      "invalid_reason"
+    ],
+    "funding_first_research_window": "2024-05-05_2026-05-05",
+    "global_target_window": "2024-03-25_2026-05-05",
+    "host": "data.binance.vision",
+    "market_type": "spot",
+    "pilot_window": "2024-05-05_2024-05-11",
+    "private_endpoint_required": false,
+    "source_name": "Binance public archive aggTrades daily files",
+    "symbol": "BTCUSDT",
+    "trade_source_type": "aggTrades",
+    "venue": "binance",
+    "websocket_live_required": false
+  },
+  "source_version": "V9.18",
+  "status": "PASS",
+  "storage_convention": {
+    "quarantine_dir": "data/quarantine/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT",
+    "raw_dir": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades",
+    "raw_pattern": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-{date}.zip",
+    "silver_pattern": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date={date}/agg_trades.parquet"
+  },
+  "v9_19_decision": {
+    "collection_executed": true,
+    "complete_collection_reached": false,
+    "confidence": "high",
+    "decision": "aggtrades_post_v9_pilot_collection_success",
+    "justification": "Les jours pilotes demandes ont ete collectes, normalises et valides sans etendre la collecte complete.",
+    "next_recommendation": "V9.20 - AggTrades Post-V9 Batch Collection.",
+    "no_backtest": true,
+    "no_trading": true,
+    "no_walk_forward": true
+  },
+  "version": "V9.19",
+  "walk_forward_executed": false,
+  "warnings": [
+    "V9.19 ne couvre pas la fenetre complete de 772 jours.",
+    "Les raw/silver pilotes restent locaux et sont exclus du ZIP audit-lite."
+  ]
+}
