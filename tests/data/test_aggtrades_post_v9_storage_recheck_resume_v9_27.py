@@ -6,6 +6,7 @@ from pathlib import Path
 from galapagos.data.aggtrades_post_v9_collection_v9_18 import raw_zip_path_for_date_v9_18, silver_path_for_date_v9_18
 from galapagos.data.aggtrades_post_v9_storage_recheck_resume_v9_27 import (
     MIN_FREE_BYTES,
+    build_next_storage_recheck_batch_v9_27,
     build_local_coverage_inventory_v9_27,
     build_storage_recheck_batches_v9_27,
     classify_disk_policy_v9_27,
@@ -27,8 +28,17 @@ def test_disk_policy_allows_seven_day_batches_above_sixty_gib_v9_27() -> None:
     policy = classify_disk_policy_v9_27(75 * 1024**3)
 
     assert policy["safe_to_continue_now"] is True
-    assert policy["resume_allowed_now"] is False
+    assert policy["resume_allowed_now"] is True
     assert policy["batch_size_days"] == 7
+
+
+def test_disk_policy_allows_sixty_day_batches_above_one_hundred_fifty_gib_v9_27() -> None:
+    policy = classify_disk_policy_v9_27(160 * 1024**3)
+
+    assert policy["safe_to_continue_now"] is True
+    assert policy["resume_allowed_now"] is True
+    assert policy["completion_campaign_allowed_now"] is False
+    assert policy["batch_size_days"] == 60
 
 
 def test_disk_policy_allows_ninety_day_batches_above_one_hundred_eighty_gib_v9_27() -> None:
@@ -74,6 +84,20 @@ def test_storage_recheck_batches_adapt_to_first_missing_day_v9_27() -> None:
     assert batches[1].start_date == "2025-05-05"
     assert batches[1].end_date == "2025-05-06"
     assert batches[1].max_downloads == 2
+
+
+def test_next_storage_recheck_batch_keeps_strict_max_downloads_v9_27() -> None:
+    batch = build_next_storage_recheck_batch_v9_27(
+        first_missing_day="2025-02-04",
+        end="2026-05-05",
+        batch_size_days=60,
+        batch_index=3,
+    )
+
+    assert batch.batch_id == "V9.27_batch_03"
+    assert batch.start_date == "2025-02-04"
+    assert batch.end_date == "2025-04-04"
+    assert batch.max_downloads == 60
 
 
 def test_v9_27_date_range_is_inclusive() -> None:

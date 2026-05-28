@@ -116,7 +116,6 @@ def build_aggtrades_post_v9_storage_recheck_resume_v9_27(root: Path = Path("."))
     can_collect = (
         canonical_before["state_reconciled"]
         and disk_preflight["safe_to_continue_now"]
-        and disk_preflight["resume_allowed_now"]
         and canonical_before["first_missing_day"] is not None
     )
     planned_batches = (
@@ -124,32 +123,50 @@ def build_aggtrades_post_v9_storage_recheck_resume_v9_27(root: Path = Path("."))
         if can_collect
         else []
     )
+    executed_batch_specs: list[StorageRecheckBatchSpec] = []
     batch_reports: list[dict[str, Any]] = []
     stop_reason = determine_initial_stop_reason_v9_27(canonical_before, disk_preflight)
     if can_collect:
         stop_reason = None
-        for batch in planned_batches:
-            fresh_preflight = build_disk_preflight_v9_27(root, build_local_coverage_inventory_v9_27(root, TARGET_WINDOW_START, TARGET_WINDOW_END))
-            if not fresh_preflight["safe_to_continue_now"]:
-                stop_reason = {"type": "storage", "batch_id": batch.batch_id, "message": "free disk fell below storage guard before next batch"}
+        while True:
+            fresh_inventory = build_local_coverage_inventory_v9_27(root, TARGET_WINDOW_START, TARGET_WINDOW_END)
+            if fresh_inventory["local_contiguous_coverage_start"] == TARGET_WINDOW_START and fresh_inventory["local_contiguous_coverage_end"] == TARGET_WINDOW_END:
                 break
+            if fresh_inventory["first_missing_day"] is None:
+                break
+            fresh_preflight = build_disk_preflight_v9_27(root, fresh_inventory)
+            if not fresh_preflight["safe_to_continue_now"]:
+                stop_reason = {
+                    "type": "storage",
+                    "batch_id": f"V9.27_batch_{len(executed_batch_specs) + 1:02d}",
+                    "message": "free disk fell below storage guard before next batch",
+                }
+                break
+            batch = build_next_storage_recheck_batch_v9_27(
+                first_missing_day=fresh_inventory["first_missing_day"],
+                end=TARGET_WINDOW_END,
+                batch_size_days=fresh_preflight["batch_size_days"],
+                batch_index=len(executed_batch_specs) + 1,
+            )
+            executed_batch_specs.append(batch)
             batch_report = execute_storage_recheck_batch_v9_27(root, batch, fresh_preflight)
             _write_json(root / batch.report_path, batch_report)
             batch_reports.append(batch_report)
             if batch_report["batch_summary"]["batch_success"] is not True:
                 stop_reason = {
-                    "type": batch_report["batch_summary"].get("failure_type") or "batch_failure",
+                    "type": batch_report["batch_summary"].get("failure_type") or "quality",
                     "batch_id": batch.batch_id,
                     "message": "storage recheck campaign stopped after first non-complete internal batch",
                 }
                 break
+    planned_batches_for_report = executed_batch_specs if executed_batch_specs else planned_batches
     runtime = round(time.monotonic() - started, 3)
     canonical_after = build_local_coverage_inventory_v9_27(root, TARGET_WINDOW_START, TARGET_WINDOW_END)
     summary = build_storage_recheck_summary_v9_27(
         canonical_before=canonical_before,
         canonical_after=canonical_after,
         disk_preflight=disk_preflight,
-        planned_batches=planned_batches,
+        planned_batches=planned_batches_for_report,
         batch_reports=batch_reports,
         runtime_seconds_total=runtime,
         stop_reason=stop_reason,
@@ -174,7 +191,7 @@ def build_aggtrades_post_v9_storage_recheck_resume_v9_27(root: Path = Path("."))
         "safe_to_resume_collection": bool(disk_preflight["safe_to_continue_now"] and disk_preflight["resume_allowed_now"]),
         "canonical_coverage_before_resume": canonical_before,
         "first_missing_day_before_resume": canonical_before["first_missing_day"],
-        "batches_planned": [batch_to_dict_v9_27(batch) for batch in planned_batches],
+        "batches_planned": [batch_to_dict_v9_27(batch) for batch in planned_batches_for_report],
         "batches_executed": [item["batch_summary"] for item in batch_reports],
         "batch_report_paths": [item["report_path"] for item in batch_reports],
         "storage_recheck_summary": summary,
@@ -212,11 +229,6 @@ def determine_initial_stop_reason_v9_27(canonical: dict[str, Any], disk: dict[st
         return {"type": "complete", "message": "target window already complete before V9.27"}
     if disk["storage_blocker"]:
         return {"type": "storage", "message": "free disk space is below V9.27 minimum threshold"}
-    if not disk["resume_allowed_now"]:
-        return {
-            "type": "storage",
-            "message": "V9.27 campaign requires more than 150 GiB free on the data volume before public collection resumes",
-        }
     return None
 
 
@@ -397,27 +409,36 @@ def classify_disk_policy_v9_27(free_bytes: int) -> dict[str, Any]:
     if free_bytes < MICRO_FREE_BYTES:
         return {
             "safe_to_continue_now": True,
-            "resume_allowed_now": False,
+            "resume_allowed_now": True,
             "completion_campaign_allowed_now": False,
             "storage_blocker": False,
-            "storage_warning": "free_disk_between_60gib_and_100gib_micro_batches_7_days_but_v9_27_campaign_resume_blocked_below_150gib",
+            "storage_warning": "free_disk_between_60gib_and_100gib_micro_batches_7_days",
             "batch_size_days": 7,
         }
     if free_bytes < COMFORT_FREE_BYTES:
         return {
             "safe_to_continue_now": True,
-            "resume_allowed_now": False,
+            "resume_allowed_now": True,
             "completion_campaign_allowed_now": False,
             "storage_blocker": False,
-            "storage_warning": "free_disk_between_100gib_and_150gib_batches_30_days_but_v9_27_campaign_resume_blocked_below_150gib",
+            "storage_warning": "free_disk_between_100gib_and_150gib_batches_30_days",
             "batch_size_days": 30,
+        }
+    if free_bytes < FULL_CAMPAIGN_FREE_BYTES:
+        return {
+            "safe_to_continue_now": True,
+            "resume_allowed_now": True,
+            "completion_campaign_allowed_now": False,
+            "storage_blocker": False,
+            "storage_warning": "free_disk_between_150gib_and_180gib_batches_60_days",
+            "batch_size_days": 60,
         }
     return {
         "safe_to_continue_now": True,
         "resume_allowed_now": True,
-        "completion_campaign_allowed_now": free_bytes > FULL_CAMPAIGN_FREE_BYTES,
+        "completion_campaign_allowed_now": True,
         "storage_blocker": False,
-        "storage_warning": "free_disk_above_180gib_completion_campaign_allowed" if free_bytes > FULL_CAMPAIGN_FREE_BYTES else "free_disk_above_150gib_batches_90_days",
+        "storage_warning": "free_disk_above_180gib_completion_campaign_allowed",
         "batch_size_days": 90,
     }
 
@@ -431,6 +452,20 @@ def build_storage_recheck_batches_v9_27(start: str | None, end: str, batch_size_
         chunk = dates[offset : offset + batch_size_days]
         batches.append(StorageRecheckBatchSpec(f"V9.27_batch_{index:02d}", chunk[0], chunk[-1], len(chunk)))
     return batches
+
+
+def build_next_storage_recheck_batch_v9_27(
+    *,
+    first_missing_day: str,
+    end: str,
+    batch_size_days: int,
+    batch_index: int,
+) -> StorageRecheckBatchSpec:
+    if batch_size_days <= 0:
+        raise ValueError("V9.27 cannot build a collection batch without a positive max_downloads limit.")
+    dates = date_range_v9_27(first_missing_day, end)
+    chunk = dates[:batch_size_days]
+    return StorageRecheckBatchSpec(f"V9.27_batch_{batch_index:02d}", chunk[0], chunk[-1], len(chunk))
 
 
 def execute_storage_recheck_batch_v9_27(root: Path, batch: StorageRecheckBatchSpec, preflight: dict[str, Any]) -> dict[str, Any]:
@@ -524,6 +559,9 @@ def summarize_storage_recheck_batch_v9_27(
     duplicates = sum_int_v9_27(day_results, "duplicates")
     gap_warnings = build_aggregate_trade_id_gap_warnings_v9_24(complete)
     batch_success = collection_result["status"] == "PASS" and len(complete) == len(requested_dates) and not failed and invalid_rows == 0 and duplicates == 0
+    failure_type = collection_result.get("failure_type")
+    if failure_type is None and not batch_success:
+        failure_type = "quality"
     return {
         "batch_id": batch.batch_id,
         "batch_start": batch.start_date,
@@ -548,7 +586,7 @@ def summarize_storage_recheck_batch_v9_27(
         "coverage_status": "batch_complete" if len(complete) == len(requested_dates) else "batch_incomplete",
         "restartability_status": "resumable_skip_existing_never_overwrite_complete_raw_silver",
         "batch_success": batch_success,
-        "failure_type": collection_result.get("failure_type"),
+        "failure_type": failure_type,
         "errors": list(collection_result.get("errors") or []),
         "failed_dates": [item["date"] for item in failed],
     }
@@ -627,7 +665,7 @@ def decide_v9_27(summary: dict[str, Any], canonical: dict[str, Any], disk: dict[
     elif summary["complete_collection_reached"]:
         decision = "storage_recheck_resume_completed_full_window"
         recommendation = "V9.28 - AggTrades Full Coverage Validation"
-    elif stop_reason and stop_reason.get("type") == "source_or_quality":
+    elif stop_reason and stop_reason.get("type") in {"source_or_quality", "quality", "batch_failure"}:
         decision = "storage_recheck_resume_partial_quality_issue"
         recommendation = "V9.28 - Resume Collection Continuation"
     elif stop_reason and stop_reason.get("type") == "storage":
@@ -651,9 +689,9 @@ def decide_v9_27(summary: dict[str, Any], canonical: dict[str, Any], disk: dict[
 
 
 def safety_flags_v9_27(summary: dict[str, Any]) -> dict[str, Any]:
-    attempted = summary["days_attempted_total"] > 0
-    downloaded = summary["days_downloaded_total"] > 0
-    normalized = summary["days_normalized_total"] > 0
+    attempted = int(summary.get("days_attempted_total", summary.get("days_attempted", 0)) or 0) > 0
+    downloaded = int(summary.get("days_downloaded_total", summary.get("days_downloaded", 0)) or 0) > 0
+    normalized = int(summary.get("days_normalized_total", summary.get("days_normalized", 0)) or 0) > 0
     flags = dict(SAFETY_BASE_V9_27)
     flags.update(
         {

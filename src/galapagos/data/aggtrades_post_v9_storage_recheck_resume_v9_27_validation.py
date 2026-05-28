@@ -102,7 +102,7 @@ def validate_disk_preflight_v9_27(disk: dict[str, Any], report: dict[str, Any]) 
     for key in ["free_bytes_project_mount", "free_bytes_data_mount", "raw_bytes_current", "silver_bytes_current", "quarantine_bytes_current"]:
         if not isinstance(disk.get(key), int) or disk.get(key, -1) < 0:
             errors.append(f"V9.27 disk preflight invalid integer: {key}")
-    if disk.get("batch_size_days") not in {0, 7, 30, 90}:
+    if disk.get("batch_size_days") not in {0, 7, 30, 60, 90}:
         errors.append("V9.27 batch size must follow disk policy")
     if report.get("decision") == "storage_recheck_not_executed_storage_blocker" and disk.get("free_bytes_data_mount", 0) >= 150 * 1024**3:
         errors.append("V9.27 measurement/storage blocker is inconsistent with >=150 GiB free data volume")

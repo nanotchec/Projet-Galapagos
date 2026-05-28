@@ -127,20 +127,39 @@ def _check_reports(extract_root: Path) -> list[str]:
     disk = report.get("disk_preflight", {})
     if report.get("version") != VERSION or report.get("source_version") != "V9.26":
         errors.append("V9.27 report version/source mismatch")
-    if report.get("decision") != "storage_recheck_not_executed_measurement_discrepancy":
-        errors.append("V9.27 expected storage blocker decision for delivered disk state")
+    if report.get("decision") not in {
+        "storage_recheck_resume_completed_full_window",
+        "storage_recheck_resume_partial_storage_warning",
+        "storage_recheck_resume_partial_source_issue",
+        "storage_recheck_resume_partial_quality_issue",
+        "storage_recheck_not_executed_storage_blocker",
+        "storage_recheck_not_executed_measurement_discrepancy",
+        "storage_recheck_not_executed_state_not_reconciled",
+        "stop_aggtrades_completion_branch",
+    }:
+        errors.append("V9.27 decision is not allowed")
     if manifest.get("decision") != report.get("decision") or manifest.get("safety_flags") != report.get("safety_flags"):
         errors.append("V9.27 manifest mismatch")
-    if disk.get("free_bytes_data_mount", 0) >= 60 * 1024**3:
-        errors.append("V9.27 storage blocker ZIP must reflect data free space below 60 GiB")
     if disk.get("data_mount_path") != disk.get("project_mount_path"):
         errors.append("V9.27 project and data mount should be explicit and matched for this repo")
-    if summary.get("days_downloaded_total") != 0 or summary.get("days_normalized_total") != 0 or summary.get("days_complete_total") != 0:
-        errors.append("V9.27 storage blocker must not download, normalize or complete new days")
-    if summary.get("local_file_coverage_start") != "2024-05-05" or summary.get("local_file_coverage_end") != "2025-02-03":
-        errors.append("V9.27 local coverage mismatch")
-    if summary.get("complete_collection_reached") is not False or summary.get("future_full_coverage_complete") is not False:
-        errors.append("V9.27 must not claim full completion")
+    if summary.get("local_file_coverage_start") != "2024-05-05":
+        errors.append("V9.27 local coverage must start at target start")
+    if report.get("decision") != "storage_recheck_resume_completed_full_window":
+        coverage_end = summary.get("local_file_coverage_end")
+        if coverage_end is not None and not ("2025-02-03" <= coverage_end <= "2026-05-05"):
+            errors.append("V9.27 partial local coverage end is outside the target range")
+    if report.get("decision") == "storage_recheck_resume_completed_full_window":
+        if summary.get("local_file_coverage_start") != "2024-05-05" or summary.get("local_file_coverage_end") != "2026-05-05":
+            errors.append("V9.27 completed decision must cover the full target window")
+        if summary.get("complete_collection_reached") is not True or summary.get("future_full_coverage_complete") is not True:
+            errors.append("V9.27 completed decision must set full completion flags")
+        if summary.get("days_downloaded_total", 0) <= 0 or summary.get("days_normalized_total", 0) <= 0:
+            errors.append("V9.27 completed decision must download and normalize public aggTrades")
+    if report.get("decision") in {"storage_recheck_not_executed_storage_blocker", "storage_recheck_not_executed_measurement_discrepancy", "storage_recheck_not_executed_state_not_reconciled"}:
+        if summary.get("days_downloaded_total") != 0 or summary.get("days_normalized_total") != 0 or summary.get("days_complete_total") != 0:
+            errors.append("V9.27 not-executed decision must not download, normalize or complete new days")
+        if summary.get("complete_collection_reached") is not False or summary.get("future_full_coverage_complete") is not False:
+            errors.append("V9.27 not-executed decision must not claim full completion")
     errors.extend(_check_flags(report, attestation))
     for payload_name, payload in {"report": report, "manifest": manifest, "attestation": attestation}.items():
         if _contains_forbidden_zip_field(payload):
@@ -154,11 +173,24 @@ def _check_flags(report: dict[str, Any], attestation: dict[str, Any]) -> list[st
     for key in ["no_trading", "no_paper_live", "no_orders", "no_backtest", "no_walk_forward", "no_strategy", "no_actionable_signal", "no_persistent_model", "no_data_deletion", "no_destructive_cleanup", "no_sidecars", "no_zip_fingerprints"]:
         if flags.get(key) is not True or attestation.get(key) is not True:
             errors.append(f"must confirm {key}=true")
-    for key in ["api_key_used", "private_endpoint_used", "exchange_auth_used", "websocket_live_used", "network_used", "new_data_downloaded", "ingestion_executed"]:
+    for key in ["api_key_used", "private_endpoint_used", "exchange_auth_used", "websocket_live_used"]:
         if flags.get(key) is not False or attestation.get(key) is not False:
             errors.append(f"must confirm {key}=false")
-    if flags.get("no_new_data_download") is not True or flags.get("no_ingestion_executed") is not True:
-        errors.append("must confirm no new data download and no ingestion")
+    if report.get("collection_executed"):
+        if flags.get("network_used") is not True or attestation.get("network_used") is not True:
+            errors.append("collection must confirm network_used=true")
+        if flags.get("new_data_downloaded") is not True or attestation.get("new_data_downloaded") is not True:
+            errors.append("collection must confirm new_data_downloaded=true")
+        if flags.get("ingestion_executed") is not True or attestation.get("ingestion_executed") is not True:
+            errors.append("collection must confirm ingestion_executed=true")
+        if flags.get("network_scope") != "public_archive_read_only":
+            errors.append("collection must use public_archive_read_only network scope")
+    else:
+        for key in ["network_used", "new_data_downloaded", "ingestion_executed"]:
+            if flags.get(key) is not False or attestation.get(key) is not False:
+                errors.append(f"must confirm {key}=false")
+        if flags.get("no_new_data_download") is not True or flags.get("no_ingestion_executed") is not True:
+            errors.append("must confirm no new data download and no ingestion")
     return errors
 
 

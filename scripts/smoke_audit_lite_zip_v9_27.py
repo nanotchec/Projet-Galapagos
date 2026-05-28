@@ -131,12 +131,19 @@ def _check_reports(extract_root: Path) -> list[str]:
     errors: list[str] = []
     if report.get("version") != VERSION:
         errors.append("V9.27 report version mismatch")
-    if report.get("decision") != "storage_recheck_not_executed_measurement_discrepancy":
-        errors.append("V9.27 smoke expects storage blocker decision")
-    if summary.get("days_downloaded_total") != 0 or summary.get("days_normalized_total") != 0:
-        errors.append("V9.27 smoke expects no download and no ingestion")
-    if report.get("safety_flags", {}).get("network_used") is not False:
-        errors.append("V9.27 smoke expects no network")
+    if report.get("decision") == "storage_recheck_resume_completed_full_window":
+        if summary.get("local_file_coverage_start") != "2024-05-05" or summary.get("local_file_coverage_end") != "2026-05-05":
+            errors.append("V9.27 completed smoke expects full target coverage")
+        if report.get("safety_flags", {}).get("network_used") is not True:
+            errors.append("V9.27 completed smoke expects public archive network usage")
+    elif report.get("decision") in {"storage_recheck_not_executed_storage_blocker", "storage_recheck_not_executed_measurement_discrepancy", "storage_recheck_not_executed_state_not_reconciled"}:
+        if summary.get("days_downloaded_total") != 0 or summary.get("days_normalized_total") != 0:
+            errors.append("V9.27 not-executed smoke expects no download and no ingestion")
+        if report.get("safety_flags", {}).get("network_used") is not False:
+            errors.append("V9.27 not-executed smoke expects no network")
+    else:
+        if summary.get("days_complete_total", 0) <= 0:
+            errors.append("V9.27 partial smoke expects at least one completed resume day")
     return errors
 
 

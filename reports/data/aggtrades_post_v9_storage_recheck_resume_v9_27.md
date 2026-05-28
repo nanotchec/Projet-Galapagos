@@ -1,27 +1,27 @@
 # V9.27 - Storage Recheck & Resume Collection
 
 ## Resume
-- Decision V9.27 : `storage_recheck_not_executed_measurement_discrepancy`.
-- Recommandation suivante : `V9.28 - Manual Storage Diagnosis Pack`.
+- Decision V9.27 : `storage_recheck_resume_partial_quality_issue`.
+- Recommandation suivante : `V9.28 - Resume Collection Continuation`.
 - Couverture canonique avant reprise : `2024-05-05` -> `2025-02-03`.
 - Premiere journee manquante : `2025-02-04`.
-- Couverture locale finale : `2024-05-05` -> `2025-02-03`.
+- Couverture locale finale : `2024-05-05` -> `2026-03-30`.
 - Couverture complete atteinte : `False`.
 
 ## Preflight disque reel
-- Volume projet : `/System/Volumes/Data` avec `64260771840` bytes libres (`59.848` GiB).
-- Volume data : `/System/Volumes/Data` avec `64260771840` bytes libres (`59.848` GiB).
+- Volume projet : `/System/Volumes/Data` avec `199973355520` bytes libres (`186.24` GiB).
+- Volume data : `/System/Volumes/Data` avec `199973355520` bytes libres (`186.24` GiB).
 - Raw actuel : `10563620520` bytes.
-- Silver actuel : `10552728837` bytes.
+- Silver actuel : `10552734985` bytes.
 - Quarantine actuelle : `405010278` bytes.
-- Safe to continue now : `False`.
-- Resume allowed now : `False`.
-- Warning stockage : `free_disk_below_60gib_stop_before_collection`.
+- Safe to continue now : `True`.
+- Resume allowed now : `True`.
+- Warning stockage : `free_disk_above_180gib_completion_campaign_allowed`.
 
 ## Reprise
-- Lots planifies/executés/reussis/echoues : `0` / `0` / `0` / `0`.
-- Jours telecharges/normalises/valides : `0` / `0` / `0`.
-- Jours echoues/quarantine/skips : `0` / `0` / `0`.
+- Lots planifies/executés/reussis/echoues : `6` / `6` / `5` / `1`.
+- Jours telecharges/normalises/valides : `420` / `420` / `419`.
+- Jours echoues/quarantine/skips : `1` / `0` / `0`.
 
 ## Garde-fous
 - Aucun trading, aucun paper live, aucun ordre, aucun backtest, aucun walk-forward, aucun ML, aucun dataset supervise.

@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-05-28T12:08:35Z",
+  "created_at_utc": "2026-05-28T21:10:24Z",
   "files": [
     "README.md",
     "docs/aggtrades_post_v9_storage_recheck_resume_v9_27.md",
@@ -32,6 +32,12 @@
     "reports/data/aggtrades_post_v9_resume_batch01_v9_25_1.json",
     "reports/data/aggtrades_post_v9_resume_campaign_v9_25_1.json",
     "reports/data/aggtrades_post_v9_resume_campaign_v9_25_1.md",
+    "reports/data/aggtrades_post_v9_storage_recheck_batch01_v9_27.json",
+    "reports/data/aggtrades_post_v9_storage_recheck_batch02_v9_27.json",
+    "reports/data/aggtrades_post_v9_storage_recheck_batch03_v9_27.json",
+    "reports/data/aggtrades_post_v9_storage_recheck_batch04_v9_27.json",
+    "reports/data/aggtrades_post_v9_storage_recheck_batch05_v9_27.json",
+    "reports/data/aggtrades_post_v9_storage_recheck_batch06_v9_27.json",
     "reports/data/aggtrades_post_v9_storage_recheck_resume_v9_27.json",
     "reports/data/aggtrades_post_v9_storage_recheck_resume_v9_27.md",
     "reports/data/aggtrades_post_v9_storage_resume_campaign_v9_26.json",
@@ -57,7 +63,7 @@
     "tests/data/test_aggtrades_post_v9_storage_recheck_resume_v9_27.py",
     "tests/validation/test_aggtrades_post_v9_storage_recheck_resume_v9_27_validator.py"
   ],
-  "files_count": 55,
+  "files_count": 61,
   "forbidden_absences_verified": {
     "no_models": true,
     "no_raw_full": true,
@@ -66,7 +72,7 @@
   },
   "sidecars_created": false,
   "version": "V9.27",
-  "zip_bytes_estimate": 324215,
+  "zip_bytes_estimate": 381597,
   "zip_bytes_is_authoritative": false,
   "zip_fingerprints_created": false,
   "zip_name": "projet-galapagos-v9.27-audit-lite.zip"
