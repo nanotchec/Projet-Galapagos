@@ -1,0 +1,153 @@
+{
+  "version": "V9.27",
+  "created_at_utc": "2026-05-28T12:06:14.183591Z",
+  "status": "PASS",
+  "commands": [
+    {
+      "command": "git branch --show-current",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "main\n",
+      "stderr": ""
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "## main...origin/main [ahead 9]\n",
+      "stderr": ""
+    },
+    {
+      "command": "df -h /Users/lilianserre/Documents/projets/projet-galapagos",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   926Gi   839Gi    60Gi    94%    2.7M  628M    0%   /System/Volumes/Data\n",
+      "stderr": ""
+    },
+    {
+      "command": "df -h /Users/lilianserre/Documents/projets/projet-galapagos/data || true",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   926Gi   839Gi    60Gi    94%    2.7M  628M    0%   /System/Volumes/Data\n",
+      "stderr": ""
+    },
+    {
+      "command": "df -g /Users/lilianserre/Documents/projets/projet-galapagos",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "Filesystem   1G-blocks Used Available Capacity iused     ifree %iused  Mounted on\n/dev/disk3s5       926  838        59    94% 2706927 627546640    0%   /System/Volumes/Data\n",
+      "stderr": ""
+    },
+    {
+      "command": "df -g /Users/lilianserre/Documents/projets/projet-galapagos/data || true",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "Filesystem   1G-blocks Used Available Capacity iused     ifree %iused  Mounted on\n/dev/disk3s5       926  838        59    94% 2706927 627546640    0%   /System/Volumes/Data\n",
+      "stderr": ""
+    },
+    {
+      "command": "diskutil info /Users/lilianserre/Documents/projets/projet-galapagos || true",
+      "status": "PASS",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Could not find disk: /Users/lilianserre/Documents/projets/projet-galapagos\n"
+    },
+    {
+      "command": "diskutil apfs list || true",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "APFS Containers (3 found)\n|\n+-- Container disk3 FFC0BB31-4EE1-4C3A-907C-685456252ED7\n    ====================================================\n    APFS Container Reference:     disk3\n    Size (Capacity Ceiling):      994662584320 B (994.7 GB)\n    Capacity In Use By Volumes:   930401812480 B (930.4 GB) (93.5% used)\n    Capacity Not Allocated:       64260771840 B (64.3 GB) (6.5% free)\n    |\n    +-< Physical Store disk0s2 629E56CB-623F-4565-8699-CCD468DC7503\n    |   -----------------------------------------------------------\n    |   APFS Physical Store Disk:   disk0s2\n    |   Size:                       994662584320 B (994.7 GB)\n    |\n    +-> Volume disk3s1 ABFCBFC6-55BE-41AE-8EDE-7F43C1337DDD\n    |   ---------------------------------------------------\n    |   APFS Volume Disk (Role):   disk3s1 (System)\n    |   Name:                      Macintosh HD (Case-insensitive)\n    |   Mount Point:               Not Mounted\n    |   Capacity Consumed:         12565975040 B (12.6 GB)\n    |   Sealed:                    Yes\n    |   FileVault:                 Yes (Unlocked)\n    |   Encrypted:                 No\n    |   |\n    |   Snapshot:                  CBB9CDC8-5AF2-4473-A269-C4F24D7F1C8E\n    |   Snapshot Disk:             disk3s1s1\n    |   Snapshot Mount Point:      /\n    |   Snapshot Sealed:           Yes\n    |\n    +-> Volume disk3s2 A06C7748-6F1E-4FD3-9965-478F056E9C50\n    |   ---------------------------------------------------\n    |   APFS Volume Disk (Role):   disk3s2 (Preboot)\n    |   Name:                      Preboot (Case-insensitive)\n    |   Mount Point:               /System/Volumes/Preboot\n    |   Capacity Consumed:         9059618816 B (9.1 GB)\n    |   Sealed:                    No\n    |   FileVault:                 No\n    |\n    +-> Volume disk3s3 48EAFAA6-46B1-46F9-AA3E-ECEC7DE01E23\n    |   ---------------------------------------------------\n    |   APFS Volume Disk (Role):   disk3s3 (Recovery)\n    |   Name:                      Recovery (Case-insensitive)\n    |   Mount Point:               Not Mounted\n    |   Capacity Consumed:         1300541440 B (1.3 GB)\n    |   Sealed:                    No\n    |   FileVault:                 No\n    |\n    +-> Volume disk3s5 71FCF7A6-F89A-4A03-90BC-31BD5715502D\n    |   ---------------------------------------------------\n    |   APFS Volume Disk (Role):   disk3s5 (Data)\n    |   Name:                      Data (Case-insensitive)\n    |   Mount Point:               /System/Volumes/Data\n    |   Capacity Consumed:         900823257088 B (900.8 GB)\n    |   Sealed:                    No\n    |   FileVault:                 Yes (Unlocked)\n    |\n    +-> Volume disk3s6 A975ED14-CD96-4AE7-A487-8153EC10066E\n        ---------------------------------------------------\n        APFS Volume Disk (Role):   disk3s6 (VM)\n        Name:                      VM (Case-insensitive)\n        Mount Point:               /System/Volumes/VM\n        Capacity Consumed:         6442504192 B (6.4 GB)\n        Sealed:                    No\n        FileVault:                 No\n",
+      "stderr": ""
+    },
+    {
+      "command": "du -sh /Users/lilianserre/Documents/projets/projet-galapagos/data/raw 2>/dev/null || true",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "9.8G\t/Users/lilianserre/Documents/projets/projet-galapagos/data/raw\n",
+      "stderr": ""
+    },
+    {
+      "command": "du -sh /Users/lilianserre/Documents/projets/projet-galapagos/data/silver 2>/dev/null || true",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "9.8G\t/Users/lilianserre/Documents/projets/projet-galapagos/data/silver\n",
+      "stderr": ""
+    },
+    {
+      "command": "du -sh /Users/lilianserre/Documents/projets/projet-galapagos/data/quarantine 2>/dev/null || true",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "386M\t/Users/lilianserre/Documents/projets/projet-galapagos/data/quarantine\n",
+      "stderr": ""
+    },
+    {
+      "command": "python - <<PY\nimport os, json; print(os.statvfs(project)); print(os.statvfs(data))\nPY",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "{\n  \"project\": {\n    \"f_bavail\": 15688665,\n    \"f_bfree\": 15688665,\n    \"f_blocks\": 242837545,\n    \"f_bsize\": 1048576,\n    \"f_frsize\": 4096,\n    \"free_bytes_bavail\": 64260771840,\n    \"free_bytes_bfree\": 64260771840,\n    \"free_gib_bavail\": 59.848,\n    \"free_gib_bfree\": 59.848,\n    \"path\": \"/Users/lilianserre/Documents/projets/projet-galapagos\",\n    \"st_dev\": 16777232\n  },\n  \"data\": {\n    \"f_bavail\": 15688665,\n    \"f_bfree\": 15688665,\n    \"f_blocks\": 242837545,\n    \"f_bsize\": 1048576,\n    \"f_frsize\": 4096,\n    \"free_bytes_bavail\": 64260771840,\n    \"free_bytes_bfree\": 64260771840,\n    \"free_gib_bavail\": 59.848,\n    \"free_gib_bfree\": 59.848,\n    \"path\": \"/Users/lilianserre/Documents/projets/projet-galapagos/data\",\n    \"st_dev\": 16777232\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "5569 tests collected in 1.71s\n",
+      "stderr": ""
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_aggtrades_post_v9_storage_recheck_resume_v9_27.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "........                                                                 [100%]\n8 passed in 0.04s\n",
+      "stderr": ""
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_aggtrades_post_v9_storage_recheck_resume_v9_27_validator.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "....                                                                     [100%]\n4 passed in 0.04s\n",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/run_aggtrades_post_v9_storage_recheck_resume_v9_27.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "{\n  \"version\": \"V9.27\",\n  \"decision\": \"storage_recheck_not_executed_measurement_discrepancy\",\n  \"measurement_discrepancy_detected\": true,\n  \"free_gib_data_mount\": 59.848,\n  \"statvfs_free_gib_data\": 59.848,\n  \"safe_to_resume_collection\": false,\n  \"first_missing_day_before_resume\": \"2025-02-04\",\n  \"local_file_coverage_start\": \"2024-05-05\",\n  \"local_file_coverage_end\": \"2025-02-03\",\n  \"days_downloaded_total\": 0,\n  \"days_complete_total\": 0,\n  \"complete_collection_reached\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/validate_aggtrades_post_v9_storage_recheck_resume_v9_27.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "{\n  \"version\": \"V9.27\",\n  \"passed\": true,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_27.py --zip projet-galapagos-v9.27-audit-lite.zip",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "{\n  \"version\": \"V9.27\",\n  \"zip\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.27-audit-lite.zip\",\n  \"passed\": true,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_27.py --zip projet-galapagos-v9.27-audit-lite.zip",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "{\n  \"version\": \"V9.27\",\n  \"zip\": \"/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.27-audit-lite.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"import_timeout_seconds\": 20,\n  \"pytest_timeout_seconds\": 60,\n  \"test_timeout_seconds\": 90,\n  \"audit_timeout_seconds\": 30,\n  \"sidecars_expected\": false,\n  \"zip_fingerprints_expected\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_27.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "{\n  \"version\": \"V9.27\",\n  \"zip_name\": \"projet-galapagos-v9.27-audit-lite.zip\",\n  \"zip_bytes_estimate\": 324219,\n  \"zip_bytes_is_authoritative\": false,\n  \"included_files\": 55,\n  \"sidecars_created\": false,\n  \"zip_fingerprints_created\": false,\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "network_used": false,
+  "new_data_downloaded": false,
+  "ingestion_executed": false,
+  "sidecars_created": false,
+  "zip_fingerprints_created": false,
+  "updated_at_utc": "2026-05-28T12:08:30.479304Z"
+}

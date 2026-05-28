@@ -102,7 +102,7 @@
   "campaign_end": "2026-05-05",
   "campaign_start": "2025-02-04",
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.26",
+  "candidate_version": "V9.27",
   "causal_feature_store_v2_5_validated": true,
   "clean_label_factory_v2_6_2_validated": true,
   "collection_executed": true,
@@ -181,7 +181,7 @@
   "days_skipped_existing_total": 0,
   "diagnostics_v4_0_modified_by_v4_0_1": false,
   "diagnostics_v4_0_modified_by_v4_0_2": false,
-  "direction": "aggtrades_post_v9_storage_resume_campaign",
+  "direction": "aggtrades_post_v9_storage_recheck_resume",
   "disk_preflight": {
     "batch_size_days": 0,
     "campaign_resume_free_bytes_required": 161061273600,
@@ -191,11 +191,117 @@
     "estimated_remaining_raw_bytes": 9036669648,
     "estimated_remaining_silver_bytes": 17497864104,
     "estimated_remaining_total_bytes": 26534533752,
-    "free_bytes_data_mount": 64276201472,
-    "free_bytes_project_mount": 64276201472,
-    "free_gib_data_mount": 59.862,
-    "free_gib_project_mount": 59.862,
+    "free_bytes_data_mount": 64260771840,
+    "free_bytes_project_mount": 64260771840,
+    "free_gib_data_mount": 59.848,
+    "free_gib_project_mount": 59.848,
     "full_campaign_free_bytes_required": 193273528320,
+    "measurement_discrepancy_detected": true,
+    "measurement_discrepancy_explanation": "L'utilisateur indique environ 200 GiB libres, mais df/statvfs et APFS exposent environ 59.848 GiB utilisables sur le volume data. Si Finder inclut de l'espace purgeable ou une autre vue APFS, cet espace n'est pas considere sur pour une collecte massive tant qu'il n'apparait pas dans df/statvfs.",
+    "measurement_results": {
+      "apfs_purgeable_or_available_notes": [
+        "Capacity In Use By Volumes:   930401812480 B (930.4 GB) (93.5% used)",
+        "Capacity Not Allocated:       64260771840 B (64.3 GB) (6.5% free)"
+      ],
+      "data_mount_path": "/System/Volumes/Data",
+      "data_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data",
+      "df_free_gib_data": 59.0,
+      "df_free_gib_project": 59.0,
+      "diskutil_available_gib": null,
+      "diskutil_free_gib": 59.848,
+      "measurement_discrepancy_detected": true,
+      "measurement_discrepancy_explanation": "L'utilisateur indique environ 200 GiB libres, mais df/statvfs et APFS exposent environ 59.848 GiB utilisables sur le volume data. Si Finder inclut de l'espace purgeable ou une autre vue APFS, cet espace n'est pas considere sur pour une collecte massive tant qu'il n'apparait pas dans df/statvfs.",
+      "project_mount_path": "/System/Volumes/Data",
+      "project_path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+      "quarantine_bytes_current": 405010278,
+      "raw_bytes_current": 10563620520,
+      "raw_command_outputs": {
+        "df_g_data": {
+          "command": "df -g /Users/lilianserre/Documents/projets/projet-galapagos/data",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "Filesystem   1G-blocks Used Available Capacity iused     ifree %iused  Mounted on\n/dev/disk3s5       926  838        59    94% 2706927 627546640    0%   /System/Volumes/Data\n"
+        },
+        "df_g_project": {
+          "command": "df -g /Users/lilianserre/Documents/projets/projet-galapagos",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "Filesystem   1G-blocks Used Available Capacity iused     ifree %iused  Mounted on\n/dev/disk3s5       926  838        59    94% 2706927 627546640    0%   /System/Volumes/Data\n"
+        },
+        "df_h_data": {
+          "command": "df -h /Users/lilianserre/Documents/projets/projet-galapagos/data",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   926Gi   839Gi    60Gi    94%    2.7M  628M    0%   /System/Volumes/Data\n"
+        },
+        "df_h_project": {
+          "command": "df -h /Users/lilianserre/Documents/projets/projet-galapagos",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   926Gi   839Gi    60Gi    94%    2.7M  628M    0%   /System/Volumes/Data\n"
+        },
+        "diskutil_apfs_list": {
+          "command": "diskutil apfs list",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "APFS Containers (3 found)\n|\n+-- Container disk3 FFC0BB31-4EE1-4C3A-907C-685456252ED7\n    ====================================================\n    APFS Container Reference:     disk3\n    Size (Capacity Ceiling):      994662584320 B (994.7 GB)\n    Capacity In Use By Volumes:   930401812480 B (930.4 GB) (93.5% used)\n    Capacity Not Allocated:       64260771840 B (64.3 GB) (6.5% free)\n    |\n    +-< Physical Store disk0s2 629E56CB-623F-4565-8699-CCD468DC7503\n    |   -----------------------------------------------------------\n    |   APFS Physical Store Disk:   disk0s2\n    |   Size:                       994662584320 B (994.7 GB)\n    |\n    +-> Volume disk3s1 ABFCBFC6-55BE-41AE-8EDE-7F43C1337DDD\n    |   ---------------------------------------------------\n    |   APFS Volume Disk (Role):   disk3s1 (System)\n    |   Name:                      Macintosh HD (Case-insensitive)\n    |   Mount Point:               Not Mounted\n    |   Capacity Consumed:         12565975040 B (12.6 GB)\n    |   Sealed:                    Yes\n    |   FileVault:                 Yes (Unlocked)\n    |   Encrypted:                 No\n    |   |\n    |   Snapshot:                  CBB9CDC8-5AF2-4473-A269-C4F24D7F1C8E\n    |   Snapshot Disk:             disk3s1s1\n    |   Snapshot Mount Point:      /\n    |   Snapshot Sealed:           Yes\n    |\n    +-> Volume disk3s2 A06C7748-6F1E-4FD3-9965-478F056E9C50\n    |   ---------------------------------------------------\n    |   APFS Volume Disk (Role):   disk3s2 (Preboot)\n    |   Name:                      Preboot (Case-insensitive)\n    |   Mount Point:               /System/Volumes/Preboot\n    |   Capacity Consumed:         9059618816 B (9.1 GB)\n    |   Sealed:                    No\n    |   FileVault:                 No\n    |\n    +-> Volume disk3s3 48EAFAA6-46B1-46F9-AA3E-ECEC7DE01E23\n    |   ---------------------------------------------------\n    |   APFS Volume Disk (Role):   disk3s3 (Recovery)\n    |   Name:                      Recovery (Case-insensitive)\n    |   Mount Point:               Not Mounted\n    |   Capacity Consumed:         1300541440 B (1.3 GB)\n    |   Sealed:                    No\n    |   FileVault:                 No\n    |\n    +-> Volume disk3s5 71FCF7A6-F89A-4A03-90BC-31BD5715502D\n    |   ---------------------------------------------------\n    |   APFS Volume Disk (Role):   disk3s5 (Data)\n    |   Name:                      Data (Case-insensitive)\n    |   Mount Point:               /System/Volumes/Data\n    |   Capacity Consumed:         900823257088 B (900.8 GB)\n    |   Sealed:                    No\n    |   FileVault:                 Yes (Unlocked)\n    |\n    +-> Volume disk3s6 A975ED14-CD96-4AE7-A487-8153EC10066E\n        ---------------------------------------------------\n        APFS Volume Disk (Role):   disk3s6 (VM)\n        Name:                      VM (Case-insensitive)\n        Mount Point:               /System/Volumes/VM\n        Capacity Consumed:         6442504192 B (6.4 GB)\n        Sealed:                    No\n        FileVault:                 No\n"
+        },
+        "diskutil_info_project": {
+          "command": "diskutil info /Users/lilianserre/Documents/projets/projet-galapagos",
+          "returncode": 1,
+          "stderr": "Could not find disk: /Users/lilianserre/Documents/projets/projet-galapagos\n",
+          "stdout": ""
+        },
+        "du_quarantine": {
+          "command": "du -sh /Users/lilianserre/Documents/projets/projet-galapagos/data/quarantine",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "386M\t/Users/lilianserre/Documents/projets/projet-galapagos/data/quarantine\n"
+        },
+        "du_raw": {
+          "command": "du -sh /Users/lilianserre/Documents/projets/projet-galapagos/data/raw",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "9.8G\t/Users/lilianserre/Documents/projets/projet-galapagos/data/raw\n"
+        },
+        "du_silver": {
+          "command": "du -sh /Users/lilianserre/Documents/projets/projet-galapagos/data/silver",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "9.8G\t/Users/lilianserre/Documents/projets/projet-galapagos/data/silver\n"
+        }
+      },
+      "silver_bytes_current": 10552728837,
+      "statvfs_data": {
+        "f_bavail": 15688665,
+        "f_bfree": 15688665,
+        "f_blocks": 242837545,
+        "f_bsize": 1048576,
+        "f_frsize": 4096,
+        "free_bytes_bavail": 64260771840,
+        "free_bytes_bfree": 64260771840,
+        "free_gib_bavail": 59.848,
+        "free_gib_bfree": 59.848,
+        "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data",
+        "st_dev": 16777232
+      },
+      "statvfs_free_gib_data": 59.848,
+      "statvfs_free_gib_project": 59.848,
+      "statvfs_project": {
+        "f_bavail": 15688665,
+        "f_bfree": 15688665,
+        "f_blocks": 242837545,
+        "f_bsize": 1048576,
+        "f_frsize": 4096,
+        "free_bytes_bavail": 64260771840,
+        "free_bytes_bfree": 64260771840,
+        "free_gib_bavail": 59.848,
+        "free_gib_bfree": 59.848,
+        "path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+        "st_dev": 16777232
+      },
+      "user_reported_available_gib": 200.0
+    },
     "minimum_free_bytes_required": 64424509440,
     "project_mount_path": "/System/Volumes/Data",
     "quarantine_bytes_current": 405010278,
@@ -397,7 +503,7 @@
   "labels_v7_8_created": false,
   "labels_v8_2_created": false,
   "labels_v8_3_created": false,
-  "last_validated_version": "V9.25.1",
+  "last_validated_version": "V9.26",
   "local_file_coverage_end": "2025-02-03",
   "local_file_coverage_start": "2024-05-05",
   "max_history_causal_feature_store_v5_1_created": true,
@@ -1050,7 +1156,7 @@
   "raw_zip_days_v5_0": 1156,
   "real_orders_possible": false,
   "recommended_candidate": "up_down_flat_volnorm_h4",
-  "recommended_next_step": "V9.27 - Storage Cleanup / Compression Review",
+  "recommended_next_step": "V9.28 - Manual Storage Diagnosis Pack",
   "reported_cumulative_coverage_end": "2025-02-03",
   "reported_cumulative_coverage_start": "2024-05-05",
   "research_decision_gate_v5_6_created": true,
@@ -1103,13 +1209,13 @@
   "research_decision_unchanged": true,
   "research_decision_v9_10": "backtest_not_justified_refine_labels_again",
   "research_decision_v9_4": "backtest_not_justified_refine_labels",
-  "restartability_status": "storage_resume_uses_first_missing_day_skips_existing_and_never_deletes_data",
+  "restartability_status": "storage_recheck_uses_first_missing_day_skips_existing_and_never_deletes_data",
   "review_features_count_v8_9": 29,
   "robust_edge_claimed_v3_4": false,
   "robust_edge_claimed_v4_0": false,
   "robust_edge_claimed_v4_7": false,
   "rows_collected_total": 113642941,
-  "runtime_seconds_total": 0.156,
+  "runtime_seconds_total": 0.278,
   "score_row_counts_v9_2": {
     "15m": 140304,
     "1h": 34896,
@@ -1183,11 +1289,11 @@
   "source_candidate_version": "V9.0_to_V9.3",
   "source_decision_version": "V9.4",
   "source_research_decision": "backtest_not_justified_refine_labels",
-  "source_version": "V9.25.1",
+  "source_version": "V9.26",
   "source_version_scope": "V9.0_to_V9.3",
   "splits_v4_5_created": true,
   "stop_reason": {
-    "message": "free disk space is below V9.26 minimum threshold",
+    "message": "free disk space is below V9.27 minimum threshold",
     "type": "storage"
   },
   "storage_warning": "free_disk_below_60gib_stop_before_collection",
@@ -1463,6 +1569,7 @@
   "v9_25_1_decision": "resume_collection_partial_storage_warning",
   "v9_25_decision": "aggtrades_post_v9_remaining_window_collection_failed_storage",
   "v9_26_decision": "resume_collection_not_executed_storage_blocker",
+  "v9_27_decision": "storage_recheck_not_executed_measurement_discrepancy",
   "v9_5_decision": "label_redesign_candidate_volatility_normalized",
   "walk_forward_decision_v9_9": "strict_walk_forward_completed_but_close_to_shuffled_labels",
   "walk_forward_executed": false,
