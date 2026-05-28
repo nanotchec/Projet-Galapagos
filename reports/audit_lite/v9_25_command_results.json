@@ -1,0 +1,145 @@
+{
+  "campaign_decision": "aggtrades_post_v9_remaining_window_collection_failed_storage",
+  "campaign_summary": {
+    "aggregate_trade_id_gap_warnings": [],
+    "average_raw_bytes_per_day": 25303545,
+    "average_rows_per_day": 1837091,
+    "batches_complete": 0,
+    "batches_executed": 1,
+    "batches_failed": 1,
+    "batches_planned": 6,
+    "campaign_end": "2026-05-05",
+    "campaign_start": "2024-12-08",
+    "complete_collection_reached": false,
+    "coverage_status": "target_window_incomplete",
+    "days_attempted_total": 0,
+    "days_complete_total": 57,
+    "days_downloaded_total": 57,
+    "days_failed_total": 33,
+    "days_normalized_total": 57,
+    "days_quarantined_total": 0,
+    "days_requested_total": 90,
+    "days_skipped_existing_total": 57,
+    "failed_batch_ids": [
+      "V9.25_batch_01"
+    ],
+    "final_coverage_end": "2025-02-02",
+    "final_coverage_start": "2024-05-05",
+    "future_full_coverage_complete": false,
+    "local_file_coverage_end": "2025-02-02",
+    "local_file_coverage_start": "2024-05-05",
+    "previous_coverage_end": "2024-12-07",
+    "previous_coverage_start": "2024-05-05",
+    "quality_status": "FAIL",
+    "raw_bytes_cumulative": 5287147417,
+    "raw_bytes_new": 1442302098,
+    "reported_cumulative_coverage_end": "2025-02-02",
+    "reported_cumulative_coverage_start": "2024-05-05",
+    "restartability_status": "resumable_campaign_skips_existing_complete_days_and_stops_on_first_failed_batch",
+    "runtime_seconds_total": 99.152,
+    "silver_bytes_cumulative": 10241505826,
+    "silver_bytes_new": 2760944662,
+    "stop_reason": {
+      "message": "free disk space below V9.25 minimum threshold",
+      "type": "storage"
+    },
+    "storage_warning": "free_disk_below_60gb_stop_before_collection",
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2024-05-05",
+    "timestamp_gap_warnings": [],
+    "total_rows_cumulative": 409180982,
+    "total_rows_new": 104714234
+  },
+  "commands": [
+    {
+      "command": "git branch --show-current",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "main"
+    },
+    {
+      "command": "git status --short --branch",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "## main...origin/main [ahead 6]"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "5532 tests collected in 2.40s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_aggtrades_post_v9_completion_campaign_v9_25.py",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "10 passed in 0.33s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_aggtrades_post_v9_completion_campaign_v9_25_validator.py",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "7 passed in 0.04s"
+    },
+    {
+      "command": "python scripts/run_aggtrades_post_v9_completion_campaign_v9_25.py",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "decision=aggtrades_post_v9_remaining_window_collection_failed_storage; batches_executed=1; days_downloaded=57; days_normalized=57; days_complete=57; coverage=2024-05-05->2025-02-02; complete_collection_reached=False; storage_warning=free_disk_below_60gb_stop_before_collection"
+    },
+    {
+      "command": "python scripts/validate_aggtrades_post_v9_completion_campaign_v9_25.py",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "passed=true; errors=[]"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_25.py",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "zip=projet-galapagos-v9.25-audit-lite.zip; included_files=58; zip_bytes_is_authoritative=false; no sidecars; no ZIP fingerprints"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_25.py --zip projet-galapagos-v9.25-audit-lite.zip",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "passed=true; errors=[]"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_25.py --zip projet-galapagos-v9.25-audit-lite.zip",
+      "returncode": 0,
+      "status": "PASS",
+      "summary": "passed=true; errors=[]; import_timeout=20s; pytest_collect_timeout=60s; tests_timeout=90s; audit_timeout=30s"
+    }
+  ],
+  "created_at_utc": "2026-05-28T09:37:22Z",
+  "safety_flags": {
+    "api_key_used": false,
+    "completion_decision": "aggtrades_post_v9_remaining_window_collection_failed_storage",
+    "exchange_auth_used": false,
+    "ingestion_executed": true,
+    "ingestion_scope": "public_aggtrades_bronze_silver_completion_campaign_only",
+    "network_scope": "public_archive_read_only",
+    "network_used": true,
+    "new_data_download_scope": "public_historical_aggtrades_remaining_window_only",
+    "new_data_downloaded": true,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_ingestion_executed": false,
+    "no_new_data_download": false,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "sidecars_created": false,
+  "status": "PASS",
+  "version": "V9.25",
+  "zip_fingerprints_created": false
+}
