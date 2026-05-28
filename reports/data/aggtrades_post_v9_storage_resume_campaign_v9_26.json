@@ -1,0 +1,625 @@
+{
+  "aggregate_trade_id_gap_warnings": [],
+  "backtest_executed": false,
+  "batch_report_paths": [],
+  "batches_complete": 0,
+  "batches_executed": 0,
+  "batches_failed": 0,
+  "batches_planned": 0,
+  "blockers": [
+    "Espace disque insuffisant pour la reprise V9.26 sur le volume data.",
+    "{'type': 'storage', 'message': 'free disk space is below V9.26 minimum threshold'}"
+  ],
+  "campaign_end": "2026-05-05",
+  "campaign_start": "2025-02-04",
+  "canonical_coverage_before_resume": {
+    "complete_dates_sample": {
+      "first": [
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07"
+      ],
+      "last": [
+        "2025-02-01",
+        "2025-02-02",
+        "2025-02-03"
+      ]
+    },
+    "days_complete": 275,
+    "days_missing": 456,
+    "days_partial": 0,
+    "days_quarantined": 19,
+    "first_missing_day": "2025-02-04",
+    "gaps_detected": [
+      {
+        "end": "2026-05-05",
+        "start": "2025-02-04"
+      }
+    ],
+    "last_complete_day_before_gap": "2025-02-03",
+    "local_contiguous_coverage_end": "2025-02-03",
+    "local_contiguous_coverage_start": "2024-05-05",
+    "local_coverage_more_advanced_than_v9_25_1": false,
+    "local_file_coverage_end": "2025-02-03",
+    "local_file_coverage_start": "2024-05-05",
+    "missing_dates_sample": {
+      "first": [
+        "2025-02-04",
+        "2025-02-05",
+        "2025-02-06"
+      ],
+      "last": [
+        "2026-05-03",
+        "2026-05-04",
+        "2026-05-05"
+      ]
+    },
+    "partial_dates": [],
+    "quarantined_dates_sample": {
+      "first": [
+        "2025-01-01",
+        "2025-01-02",
+        "2025-01-03"
+      ],
+      "last": [
+        "2025-01-17",
+        "2025-01-18",
+        "2025-01-19"
+      ]
+    },
+    "raw_bytes_complete_window": 5449746014,
+    "reconciliation_basis": "local raw/silver file metadata plus V9.25.1, V9.25 and prior reports",
+    "silver_bytes_complete_window": 10552440129,
+    "source_report_payload": {
+      "aggregate_trade_id_gap_warnings": [],
+      "backtest_executed": false,
+      "batch_report_paths": [
+        "reports/data/aggtrades_post_v9_resume_batch01_v9_25_1.json"
+      ],
+      "batches_complete": 0,
+      "batches_executed": 1,
+      "batches_failed": 1,
+      "batches_planned": 16,
+      "blockers": [
+        "{'type': 'storage', 'batch_id': 'V9.25.1_batch_01', 'message': 'resume campaign stopped after first non-complete internal batch'}"
+      ],
+      "campaign_end": "2026-05-05",
+      "campaign_start": "2025-02-03",
+      "canonical_coverage_before_resume": {
+        "canonical_days_downloaded": 57,
+        "canonical_days_newly_completed": 57,
+        "canonical_days_skipped_existing": 217,
+        "canonical_raw_bytes_new": 1442302098,
+        "canonical_silver_bytes_new": 2760944662,
+        "canonical_total_rows_new": 104714234,
+        "complete_dates_sample": {
+          "first": [
+            "2024-05-05",
+            "2024-05-06",
+            "2024-05-07"
+          ],
+          "last": [
+            "2025-01-31",
+            "2025-02-01",
+            "2025-02-02"
+          ]
+        },
+        "days_complete": 274,
+        "days_missing": 457,
+        "days_partial": 0,
+        "days_quarantined": 19,
+        "execution_history_not_fully_reconstructible": true,
+        "first_missing_day": "2025-02-03",
+        "gaps_detected": [
+          {
+            "end": "2026-05-05",
+            "start": "2025-02-03"
+          }
+        ],
+        "last_complete_day_before_gap": "2025-02-02",
+        "local_contiguous_coverage_end": "2025-02-02",
+        "local_contiguous_coverage_start": "2024-05-05",
+        "local_file_coverage_end": "2025-02-02",
+        "local_file_coverage_start": "2024-05-05",
+        "missing_dates_sample": {
+          "first": [
+            "2025-02-03",
+            "2025-02-04",
+            "2025-02-05"
+          ],
+          "last": [
+            "2026-05-03",
+            "2026-05-04",
+            "2026-05-05"
+          ]
+        },
+        "partial_dates": [],
+        "previous_validated_coverage_end": "2024-12-07",
+        "previous_validated_coverage_start": "2024-05-05",
+        "quarantined_dates_sample": {
+          "first": [
+            "2025-01-01",
+            "2025-01-02",
+            "2025-01-03"
+          ],
+          "last": [
+            "2025-01-17",
+            "2025-01-18",
+            "2025-01-19"
+          ]
+        },
+        "raw_bytes_complete_window": 5379996132,
+        "reconciliation_basis": "local raw/silver file metadata plus V9.25 and V9.24 reports",
+        "silver_bytes_complete_window": 10419764919,
+        "state_reconciled": true,
+        "target_window_end": "2026-05-05",
+        "target_window_start": "2024-05-05",
+        "v9_25_new_days_confirmed": 57,
+        "v9_25_reported_final_coverage_end": "2025-02-02",
+        "v9_25_reported_final_coverage_start": "2024-05-05",
+        "v9_25_reported_total_rows_cumulative": 409180982,
+        "v9_25_reporting_inconsistency_detected": true,
+        "v9_25_skipped_existing_days_confirmed": 217
+      },
+      "collection_executed": true,
+      "complete_collection_reached": false,
+      "correction_scope": "campaign_state_reconciliation_and_resume_collection",
+      "coverage_status": "target_window_incomplete",
+      "created_at_utc": "2026-05-28T10:39:54Z",
+      "dataset_created": false,
+      "days_attempted_total": 1,
+      "days_complete_total": 1,
+      "days_downloaded_total": 1,
+      "days_failed_total": 29,
+      "days_normalized_total": 1,
+      "days_quarantined_total": 0,
+      "days_requested_total": 30,
+      "days_skipped_existing_total": 0,
+      "decision": "resume_collection_partial_storage_warning",
+      "direction": "aggtrades_post_v9_resume_collection",
+      "disk_preflight": {
+        "batch_size_days": 30,
+        "estimate_basis": "canonical V9.25 newly completed local bytes per day",
+        "estimated_remaining_raw_bytes": 11563720065,
+        "estimated_remaining_silver_bytes": 22135994625,
+        "estimated_remaining_total_bytes": 33699714690,
+        "free_bytes_current": 64730021888,
+        "free_gb_current": 60.285,
+        "minimum_free_bytes_required": 64424509440,
+        "reserve_bytes_required": 73741170,
+        "safe_to_continue_now": true,
+        "storage_blocker": false,
+        "storage_warning": "free_disk_between_60gib_and_100gib_micro_batches_30_days"
+      },
+      "failed_batch_ids": [
+        "V9.25.1_batch_01"
+      ],
+      "features_created": false,
+      "findings": {
+        "actionable_signal_produced": false,
+        "backtest_performed": false,
+        "paper_live_allowed": false,
+        "real_trading_allowed": false,
+        "robust_edge_claimed": false,
+        "strategy_validated": false,
+        "trading_allowed": false,
+        "walk_forward_validated_for_trading": false
+      },
+      "first_missing_day_before_resume": "2025-02-03",
+      "future_full_coverage_complete": false,
+      "ingestion_executed": true,
+      "inputs_used": {
+        "latest_metrics": {
+          "available": true,
+          "path": "reports/current/latest_metrics.json"
+        },
+        "latest_summary": {
+          "available": true,
+          "path": "reports/current/latest_summary.md"
+        },
+        "project_state": {
+          "available": true,
+          "path": "reports/PROJECT_STATE.json"
+        },
+        "project_state_md": {
+          "available": true,
+          "path": "reports/PROJECT_STATE.md"
+        },
+        "v9_19_pilot": {
+          "available": true,
+          "path": "reports/data/aggtrades_post_v9_pilot_collection_v9_19.json"
+        },
+        "v9_20_batch_collection": {
+          "available": true,
+          "path": "reports/data/aggtrades_post_v9_batch_collection_v9_20.json"
+        },
+        "v9_21_batch_expansion": {
+          "available": true,
+          "path": "reports/data/aggtrades_post_v9_batch_expansion_v9_21.json"
+        },
+        "v9_23_batch2": {
+          "available": true,
+          "path": "reports/data/aggtrades_post_v9_batch2_collection_v9_23.json"
+        },
+        "v9_24_batch3": {
+          "available": true,
+          "path": "reports/data/aggtrades_post_v9_batch3_collection_v9_24.json"
+        },
+        "v9_25_attestation": {
+          "available": true,
+          "path": "reports/audit_lite/v9_25_full_local_validation_attestation.json"
+        },
+        "v9_25_batch01": {
+          "available": true,
+          "path": "reports/data/aggtrades_post_v9_completion_batch01_v9_25.json"
+        },
+        "v9_25_campaign": {
+          "available": true,
+          "path": "reports/data/aggtrades_post_v9_completion_campaign_v9_25.json"
+        },
+        "v9_25_campaign_md": {
+          "available": true,
+          "path": "reports/data/aggtrades_post_v9_completion_campaign_v9_25.md"
+        },
+        "v9_25_command_results": {
+          "available": true,
+          "path": "reports/audit_lite/v9_25_command_results.json"
+        },
+        "v9_25_manifest": {
+          "available": true,
+          "path": "reports/manifests/aggtrades_post_v9_completion_campaign_v9_25_manifest.json"
+        }
+      },
+      "labels_created": false,
+      "limitations": [
+        "V9.25.1 ne supprime, ne compresse et ne migre aucune donnee locale.",
+        "L'historique exact des relances V9.25 n'est pas totalement reconstructible; la decision se base sur l'etat local canonique et les rapports disponibles.",
+        "Aucun label, dataset supervise, ML, walk-forward, backtest, strategie ou signal n'est cree."
+      ],
+      "local_file_coverage_end": "2025-02-03",
+      "local_file_coverage_start": "2024-05-05",
+      "ml_executed": false,
+      "network_used": true,
+      "new_data_downloaded": true,
+      "next_recommendation": "V9.26 - Resume Collection Continuation",
+      "quality_status": "WARN",
+      "raw_bytes_cumulative": 5449746014,
+      "raw_bytes_new": 69749882,
+      "reported_cumulative_coverage_end": "2025-02-03",
+      "reported_cumulative_coverage_start": "2024-05-05",
+      "restartability_status": "resume_campaign_uses_first_missing_day_skips_existing_and_never_deletes_data",
+      "resume_summary": {
+        "aggregate_trade_id_gap_warnings": [],
+        "batches_complete": 0,
+        "batches_executed": 1,
+        "batches_failed": 1,
+        "batches_planned": 16,
+        "campaign_end": "2026-05-05",
+        "campaign_start": "2025-02-03",
+        "complete_collection_reached": false,
+        "coverage_status": "target_window_incomplete",
+        "days_attempted_total": 1,
+        "days_complete_total": 1,
+        "days_downloaded_total": 1,
+        "days_failed_total": 29,
+        "days_normalized_total": 1,
+        "days_quarantined_total": 0,
+        "days_requested_total": 30,
+        "days_skipped_existing_total": 0,
+        "failed_batch_ids": [
+          "V9.25.1_batch_01"
+        ],
+        "future_full_coverage_complete": false,
+        "local_file_coverage_end": "2025-02-03",
+        "local_file_coverage_start": "2024-05-05",
+        "quality_status": "WARN",
+        "raw_bytes_cumulative": 5449746014,
+        "raw_bytes_new": 69749882,
+        "reported_cumulative_coverage_end": "2025-02-03",
+        "reported_cumulative_coverage_start": "2024-05-05",
+        "restartability_status": "resume_campaign_uses_first_missing_day_skips_existing_and_never_deletes_data",
+        "runtime_seconds_total": 48.484,
+        "silver_bytes_cumulative": 10552440129,
+        "silver_bytes_new": 132675210,
+        "stop_reason": {
+          "batch_id": "V9.25.1_batch_01",
+          "message": "resume campaign stopped after first non-complete internal batch",
+          "type": "storage"
+        },
+        "storage_warning": "free_disk_between_60gib_and_100gib_micro_batches_30_days",
+        "target_window_end": "2026-05-05",
+        "target_window_start": "2024-05-05",
+        "timestamp_gap_warnings": [],
+        "total_rows_cumulative": 413923722,
+        "total_rows_new": 4742740
+      },
+      "runtime_seconds_total": 48.484,
+      "safety_flags": {
+        "api_key_used": false,
+        "exchange_auth_used": false,
+        "ingestion_executed": true,
+        "ingestion_scope": "public_aggtrades_bronze_silver_resume_only",
+        "network_scope": "public_archive_read_only",
+        "network_used": true,
+        "new_data_download_scope": "public_historical_aggtrades_resume_only",
+        "new_data_downloaded": true,
+        "no_actionable_signal": true,
+        "no_backtest": true,
+        "no_data_deletion": true,
+        "no_destructive_cleanup": true,
+        "no_ingestion_executed": false,
+        "no_new_data_download": false,
+        "no_orders": true,
+        "no_paper_live": true,
+        "no_persistent_model": true,
+        "no_sidecars": true,
+        "no_strategy": true,
+        "no_trading": true,
+        "no_walk_forward": true,
+        "no_zip_fingerprints": true,
+        "private_endpoint_used": false,
+        "websocket_live_used": false
+      },
+      "silver_bytes_cumulative": 10552440129,
+      "silver_bytes_new": 132675210,
+      "source_version": "V9.25",
+      "status": "PASS",
+      "stop_reason": {
+        "batch_id": "V9.25.1_batch_01",
+        "message": "resume campaign stopped after first non-complete internal batch",
+        "type": "storage"
+      },
+      "storage_warning": "free_disk_between_60gib_and_100gib_micro_batches_30_days",
+      "target_window_end": "2026-05-05",
+      "target_window_start": "2024-05-05",
+      "timestamp_gap_warnings": [],
+      "total_rows_cumulative": 413923722,
+      "total_rows_new": 4742740,
+      "v9_25_1_decision": {
+        "confidence": "high",
+        "decision": "resume_collection_partial_storage_warning",
+        "justification": "Decision fondee sur reconciliation locale, preflight disque et resultat des lots de reprise.",
+        "next_recommendation": "V9.26 - Resume Collection Continuation",
+        "no_backtest": true,
+        "no_trading": true,
+        "no_walk_forward": true
+      },
+      "version": "V9.25.1",
+      "walk_forward_executed": false,
+      "warnings": [
+        "Incoherence V9.25 detectee entre compteur skipped/downloaded et etat local canonique.",
+        "free_disk_between_60gib_and_100gib_micro_batches_30_days",
+        "La couverture complete future n'est pas atteinte."
+      ]
+    },
+    "source_reported_coverage_end": "2025-02-03",
+    "source_reported_coverage_start": "2024-05-05",
+    "state_reconciled": true,
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2024-05-05"
+  },
+  "collection_executed": false,
+  "complete_collection_reached": false,
+  "coverage_status": "target_window_incomplete",
+  "created_at_utc": "2026-05-28T11:45:53Z",
+  "dataset_created": false,
+  "days_attempted_total": 0,
+  "days_complete_total": 0,
+  "days_downloaded_total": 0,
+  "days_failed_total": 0,
+  "days_normalized_total": 0,
+  "days_quarantined_total": 0,
+  "days_requested_total": 0,
+  "days_skipped_existing_total": 0,
+  "decision": "resume_collection_not_executed_storage_blocker",
+  "direction": "aggtrades_post_v9_storage_resume_campaign",
+  "disk_preflight": {
+    "batch_size_days": 0,
+    "campaign_resume_free_bytes_required": 161061273600,
+    "completion_campaign_allowed_now": false,
+    "data_mount_path": "/System/Volumes/Data",
+    "estimate_basis": "average local complete-day raw/silver bytes in target window",
+    "estimated_remaining_raw_bytes": 9036669648,
+    "estimated_remaining_silver_bytes": 17497864104,
+    "estimated_remaining_total_bytes": 26534533752,
+    "free_bytes_data_mount": 64276201472,
+    "free_bytes_project_mount": 64276201472,
+    "free_gib_data_mount": 59.862,
+    "free_gib_project_mount": 59.862,
+    "full_campaign_free_bytes_required": 193273528320,
+    "minimum_free_bytes_required": 64424509440,
+    "project_mount_path": "/System/Volumes/Data",
+    "quarantine_bytes_current": 405010278,
+    "raw_bytes_current": 10563620520,
+    "resume_allowed_now": false,
+    "safe_to_continue_now": false,
+    "silver_bytes_current": 10552728837,
+    "storage_blocker": true,
+    "storage_warning": "free_disk_below_60gib_stop_before_collection"
+  },
+  "failed_batch_ids": [],
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "first_missing_day_before_resume": "2025-02-04",
+  "future_full_coverage_complete": false,
+  "ingestion_executed": false,
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v9_19_pilot": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_pilot_collection_v9_19.json"
+    },
+    "v9_20_batch_collection": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch_collection_v9_20.json"
+    },
+    "v9_21_batch_expansion": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch_expansion_v9_21.json"
+    },
+    "v9_23_batch2": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch2_collection_v9_23.json"
+    },
+    "v9_24_batch3": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch3_collection_v9_24.json"
+    },
+    "v9_25_1_batch01": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_resume_batch01_v9_25_1.json"
+    },
+    "v9_25_1_campaign": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_resume_campaign_v9_25_1.json"
+    },
+    "v9_25_1_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_post_v9_resume_campaign_v9_25_1_manifest.json"
+    },
+    "v9_25_campaign": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_completion_campaign_v9_25.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.26 mesure le volume reel du projet et de data avant toute reprise.",
+    "Aucune suppression, compression, migration ou correction destructive de donnees n'est effectuee.",
+    "Aucun label, dataset supervise, ML, walk-forward, backtest, strategie ou signal n'est cree."
+  ],
+  "local_file_coverage_end": "2025-02-03",
+  "local_file_coverage_start": "2024-05-05",
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.27 - Storage Cleanup / Compression Review",
+  "quality_status": "FAIL",
+  "raw_bytes_cumulative": 5449746014,
+  "raw_bytes_new": 0,
+  "reported_cumulative_coverage_end": "2025-02-03",
+  "reported_cumulative_coverage_start": "2024-05-05",
+  "restartability_status": "storage_resume_uses_first_missing_day_skips_existing_and_never_deletes_data",
+  "runtime_seconds_total": 0.156,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "ingestion_executed": false,
+    "ingestion_scope": null,
+    "network_scope": null,
+    "network_used": false,
+    "new_data_download_scope": null,
+    "new_data_downloaded": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_data_deletion": true,
+    "no_destructive_cleanup": true,
+    "no_ingestion_executed": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "silver_bytes_cumulative": 10552440129,
+  "silver_bytes_new": 0,
+  "source_version": "V9.25.1",
+  "status": "PASS",
+  "stop_reason": {
+    "message": "free disk space is below V9.26 minimum threshold",
+    "type": "storage"
+  },
+  "storage_resume_summary": {
+    "aggregate_trade_id_gap_warnings": [],
+    "batches_complete": 0,
+    "batches_executed": 0,
+    "batches_failed": 0,
+    "batches_planned": 0,
+    "campaign_end": "2026-05-05",
+    "campaign_start": "2025-02-04",
+    "complete_collection_reached": false,
+    "coverage_status": "target_window_incomplete",
+    "days_attempted_total": 0,
+    "days_complete_total": 0,
+    "days_downloaded_total": 0,
+    "days_failed_total": 0,
+    "days_normalized_total": 0,
+    "days_quarantined_total": 0,
+    "days_requested_total": 0,
+    "days_skipped_existing_total": 0,
+    "failed_batch_ids": [],
+    "future_full_coverage_complete": false,
+    "local_file_coverage_end": "2025-02-03",
+    "local_file_coverage_start": "2024-05-05",
+    "quality_status": "FAIL",
+    "raw_bytes_cumulative": 5449746014,
+    "raw_bytes_new": 0,
+    "reported_cumulative_coverage_end": "2025-02-03",
+    "reported_cumulative_coverage_start": "2024-05-05",
+    "restartability_status": "storage_resume_uses_first_missing_day_skips_existing_and_never_deletes_data",
+    "runtime_seconds_total": 0.156,
+    "silver_bytes_cumulative": 10552440129,
+    "silver_bytes_new": 0,
+    "stop_reason": {
+      "message": "free disk space is below V9.26 minimum threshold",
+      "type": "storage"
+    },
+    "storage_warning": "free_disk_below_60gib_stop_before_collection",
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2024-05-05",
+    "timestamp_gap_warnings": [],
+    "total_rows_cumulative": 413923722,
+    "total_rows_new": 0
+  },
+  "storage_warning": "free_disk_below_60gib_stop_before_collection",
+  "target_window_end": "2026-05-05",
+  "target_window_start": "2024-05-05",
+  "timestamp_gap_warnings": [],
+  "total_rows_cumulative": 413923722,
+  "total_rows_new": 0,
+  "v9_26_decision": {
+    "confidence": "high",
+    "decision": "resume_collection_not_executed_storage_blocker",
+    "justification": "Decision fondee sur le volume reel contenant data/raw et data/silver, la reconciliation locale et les resultats de reprise.",
+    "next_recommendation": "V9.27 - Storage Cleanup / Compression Review",
+    "no_backtest": true,
+    "no_trading": true,
+    "no_walk_forward": true
+  },
+  "version": "V9.26",
+  "walk_forward_executed": false,
+  "warnings": [
+    "free_disk_below_60gib_stop_before_collection",
+    "La couverture complete future n'est pas atteinte."
+  ]
+}
