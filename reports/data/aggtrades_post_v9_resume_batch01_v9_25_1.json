@@ -1,0 +1,704 @@
+{
+  "batch_id": "V9.25.1_batch_01",
+  "batch_spec": {
+    "batch_id": "V9.25.1_batch_01",
+    "end_date": "2025-03-04",
+    "expected_days": 30,
+    "max_downloads": 30,
+    "start_date": "2025-02-03"
+  },
+  "batch_summary": {
+    "aggregate_trade_id_gap_warnings": [],
+    "batch_end": "2025-03-04",
+    "batch_id": "V9.25.1_batch_01",
+    "batch_start": "2025-02-03",
+    "batch_success": false,
+    "coverage_status": "batch_incomplete",
+    "days_attempted": 1,
+    "days_complete": 1,
+    "days_downloaded": 1,
+    "days_failed": 29,
+    "days_normalized": 1,
+    "days_quarantined": 0,
+    "days_requested": 30,
+    "days_skipped_existing": 0,
+    "duplicates": 0,
+    "errors": [
+      "2025-02-04: storage guard stopped resume before download; free_bytes=64495845376; minimum_free_bytes=64424509440; reserve_bytes=73741170"
+    ],
+    "failed_dates": [
+      "2025-02-04",
+      "2025-02-05",
+      "2025-02-06",
+      "2025-02-07",
+      "2025-02-08",
+      "2025-02-09",
+      "2025-02-10",
+      "2025-02-11",
+      "2025-02-12",
+      "2025-02-13",
+      "2025-02-14",
+      "2025-02-15",
+      "2025-02-16",
+      "2025-02-17",
+      "2025-02-18",
+      "2025-02-19",
+      "2025-02-20",
+      "2025-02-21",
+      "2025-02-22",
+      "2025-02-23",
+      "2025-02-24",
+      "2025-02-25",
+      "2025-02-26",
+      "2025-02-27",
+      "2025-02-28",
+      "2025-03-01",
+      "2025-03-02",
+      "2025-03-03",
+      "2025-03-04"
+    ],
+    "failure_type": "storage",
+    "invalid_rows": 0,
+    "max_aggregate_trade_id": 3417815217,
+    "max_downloads": 30,
+    "max_event_ts": "2025-02-03T23:59:59.414056Z",
+    "min_aggregate_trade_id": 3413072478,
+    "min_event_ts": "2025-02-03T00:00:00.030553Z",
+    "quality_status": "FAIL",
+    "raw_bytes_new": 69749882,
+    "restartability_status": "resumable_skip_existing_never_overwrite_complete_raw_silver",
+    "runtime_seconds": 48.431,
+    "silver_bytes_new": 132675210,
+    "total_rows_new": 4742740
+  },
+  "collection_result": {
+    "attempted_dates": [
+      "2025-02-03"
+    ],
+    "collection_executed": true,
+    "days_attempted": 1,
+    "days_downloaded": 1,
+    "days_normalized": 1,
+    "days_quarantined": 0,
+    "days_skipped_existing": 0,
+    "downloaded_dates": [
+      "2025-02-03"
+    ],
+    "errors": [
+      "2025-02-04: storage guard stopped resume before download; free_bytes=64495845376; minimum_free_bytes=64424509440; reserve_bytes=73741170"
+    ],
+    "failure_type": "storage",
+    "ingestion_executed": true,
+    "ingestion_scope": "public_aggtrades_bronze_silver_resume_only",
+    "mode": "collect",
+    "network_scope": "public_archive_read_only",
+    "network_used": true,
+    "new_data_download_scope": "public_historical_aggtrades_resume_only",
+    "new_data_downloaded": true,
+    "normalized_dates": [
+      "2025-02-03"
+    ],
+    "quarantined_dates": [],
+    "skipped_existing_dates": [],
+    "status": "FAIL"
+  },
+  "created_at_utc": "2026-05-28T10:39:54Z",
+  "day_results": [
+    {
+      "date": "2025-02-03",
+      "duplicates": 0,
+      "errors": [],
+      "invalid_rows": 0,
+      "max_aggregate_trade_id": 3417815217,
+      "max_event_ts": "2025-02-03T23:59:59.414056Z",
+      "min_aggregate_trade_id": 3413072478,
+      "min_event_ts": "2025-02-03T00:00:00.030553Z",
+      "raw_bytes": 69749882,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-03.zip",
+      "rows": 4742740,
+      "silver_bytes": 132675210,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-03/agg_trades.parquet",
+      "source_checksum": "49c35b52061bc247217b2841f9c779a053acbddf63425f0e0e9aa8b670cc3cbf",
+      "status": "day_complete"
+    },
+    {
+      "date": "2025-02-04",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-04.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-04/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-05",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-05.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-05/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-06",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-06.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-06/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-07",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-07.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-07/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-08",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-08.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-08/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-09",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-09.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-09/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-10",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-10.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-10/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-11",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-11.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-11/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-12",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-12.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-12/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-13",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-13.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-13/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-14",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-14.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-14/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-15",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-15.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-15/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-16",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-16.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-16/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-17",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-17.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-17/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-18",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-18.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-18/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-19",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-19.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-19/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-20",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-20.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-20/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-21",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-21.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-21/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-22",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-22.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-22/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-23",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-23.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-23/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-24",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-24.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-24/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-25",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-25.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-25/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-26",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-26.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-26/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-27",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-27.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-27/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-02-28",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-02-28.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-02-28/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-03-01",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-03-01.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-03-01/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-03-02",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-03-02.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-03-02/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-03-03",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-03-03.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-03-03/agg_trades.parquet",
+      "status": "day_failed"
+    },
+    {
+      "date": "2025-03-04",
+      "duplicates": null,
+      "errors": [
+        "raw_zip_missing",
+        "silver_parquet_missing"
+      ],
+      "invalid_rows": null,
+      "max_aggregate_trade_id": null,
+      "max_event_ts": null,
+      "min_aggregate_trade_id": null,
+      "min_event_ts": null,
+      "raw_bytes": 0,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-2025-03-04.zip",
+      "rows": 0,
+      "silver_bytes": 0,
+      "silver_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date=2025-03-04/agg_trades.parquet",
+      "status": "day_failed"
+    }
+  ],
+  "report_path": "reports/data/aggtrades_post_v9_resume_batch01_v9_25_1.json",
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "ingestion_executed": true,
+    "ingestion_scope": "public_aggtrades_bronze_silver_resume_only",
+    "network_scope": "public_archive_read_only",
+    "network_used": true,
+    "new_data_download_scope": "public_historical_aggtrades_resume_only",
+    "new_data_downloaded": true,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_data_deletion": true,
+    "no_destructive_cleanup": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_version": "V9.25",
+  "status": "FAIL",
+  "version": "V9.25.1"
+}

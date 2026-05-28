@@ -1,0 +1,70 @@
+{
+  "version": "V9.25.1",
+  "created_at_utc": "2026-05-28T10:47:25Z",
+  "commands": [
+    {
+      "command": "git branch --show-current",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "main"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "working tree V9.25 dirty repaired by local commit 6b537ae4, then V9.25.1 started from clean state ahead 7"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "5546 tests collected in 4.03s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_aggtrades_post_v9_resume_campaign_v9_25_1.py",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "7 passed in 0.05s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_aggtrades_post_v9_resume_campaign_v9_25_1_validator.py",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "7 passed in 0.05s"
+    },
+    {
+      "command": "python scripts/run_aggtrades_post_v9_resume_campaign_v9_25_1.py",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "resume_collection_partial_storage_warning; downloaded/normalized/validated 1 day; local coverage 2024-05-05 -> 2025-02-03"
+    },
+    {
+      "command": "python scripts/validate_aggtrades_post_v9_resume_campaign_v9_25_1.py",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "V9.25.1 validation passed with no errors"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_25_1.py",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "audit-lite ZIP built; no sidecars or ZIP fingerprints; zip_bytes_estimate is non-authoritative"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_25_1.py --zip projet-galapagos-v9.25.1-audit-lite.zip",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "ZIP audit passed with no errors"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_25_1.py --zip projet-galapagos-v9.25.1-audit-lite.zip",
+      "status": "PASS",
+      "returncode": 0,
+      "summary": "ZIP smoke passed with imports, collect-only, tests and self-audit"
+    }
+  ],
+  "sidecars_created": false,
+  "zip_fingerprints_created": false,
+  "status": "PASS",
+  "updated_at_utc": "2026-05-28T10:48:32Z"
+}
