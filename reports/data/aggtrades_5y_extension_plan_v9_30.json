@@ -1,0 +1,671 @@
+{
+  "already_validated_days": 731,
+  "backtest_executed": false,
+  "blockers": [],
+  "collection_batch_size_recommendation": 60,
+  "collection_plan_v9_31": [
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_01",
+      "checkpoint_required": true,
+      "end_date": "2021-07-03",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2021-05-05",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_02",
+      "checkpoint_required": true,
+      "end_date": "2021-09-01",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2021-07-04",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_03",
+      "checkpoint_required": true,
+      "end_date": "2021-10-31",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2021-09-02",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_04",
+      "checkpoint_required": true,
+      "end_date": "2021-12-30",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2021-11-01",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_05",
+      "checkpoint_required": true,
+      "end_date": "2022-02-28",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2021-12-31",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_06",
+      "checkpoint_required": true,
+      "end_date": "2022-04-29",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2022-03-01",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_07",
+      "checkpoint_required": true,
+      "end_date": "2022-06-28",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2022-04-30",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_08",
+      "checkpoint_required": true,
+      "end_date": "2022-08-27",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2022-06-29",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_09",
+      "checkpoint_required": true,
+      "end_date": "2022-10-26",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2022-08-28",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_10",
+      "checkpoint_required": true,
+      "end_date": "2022-12-25",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2022-10-27",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_11",
+      "checkpoint_required": true,
+      "end_date": "2023-02-23",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2022-12-26",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_12",
+      "checkpoint_required": true,
+      "end_date": "2023-04-24",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2023-02-24",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_13",
+      "checkpoint_required": true,
+      "end_date": "2023-06-23",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2023-04-25",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_14",
+      "checkpoint_required": true,
+      "end_date": "2023-08-22",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2023-06-24",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_15",
+      "checkpoint_required": true,
+      "end_date": "2023-10-21",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2023-08-23",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_16",
+      "checkpoint_required": true,
+      "end_date": "2023-12-20",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2023-10-22",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_17",
+      "checkpoint_required": true,
+      "end_date": "2024-02-18",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2023-12-21",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_18",
+      "checkpoint_required": true,
+      "end_date": "2024-04-18",
+      "estimated_raw_bytes": 1091994360,
+      "estimated_rows": 78328620,
+      "estimated_silver_bytes": 2123886960,
+      "expected_days": 60,
+      "max_downloads": 60,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2024-02-19",
+      "storage_check_before_batch": true
+    },
+    {
+      "audit_required_after_batch": false,
+      "batch_id": "V9.31_batch_19",
+      "checkpoint_required": true,
+      "end_date": "2024-05-04",
+      "estimated_raw_bytes": 291198496,
+      "estimated_rows": 20887632,
+      "estimated_silver_bytes": 566369856,
+      "expected_days": 16,
+      "max_downloads": 16,
+      "overwrite_complete_days": false,
+      "quarantine_on_failure": true,
+      "skip_existing_complete_days": true,
+      "start_date": "2024-04-19",
+      "storage_check_before_batch": true
+    }
+  ],
+  "created_at_utc": "2026-05-29T09:46:52Z",
+  "current_validated_window": {
+    "average_raw_bytes_per_day": 18199906,
+    "average_rows_per_day": 1305477,
+    "average_silver_bytes_per_day": 35398116,
+    "complete_collection_reached": true,
+    "coverage_status": "target_window_validated",
+    "future_full_coverage_complete": true,
+    "local_files_present_assumption": "V9.30 inspecte seulement les metadonnees legeres et s'appuie sur la validation exhaustive V9.29.",
+    "quality_status": "PASS",
+    "quarantine_status": {
+      "quarantine_active_count": 0,
+      "quarantine_blocking": false,
+      "quarantine_notes": "stale_non_blocking",
+      "quarantine_stale_count": 19
+    },
+    "validated_by": "V9.29",
+    "validated_days": 731,
+    "validated_raw_bytes": 13304131326,
+    "validated_rows": 954304111,
+    "validated_silver_bytes": 25876022841,
+    "validated_window_end": "2026-05-05",
+    "validated_window_start": "2024-05-05"
+  },
+  "dataset_created": false,
+  "decision": "aggtrades_5y_extension_plan_ready",
+  "direction": "aggtrades_5y_historical_extension_plan",
+  "disk_preflight": {
+    "collection_batch_size_recommendation": 60,
+    "data_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data",
+    "df_g_data_output": {
+      "command": [
+        "df",
+        "-g",
+        "/Users/lilianserre/Documents/projets/projet-galapagos/data"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Filesystem   1G-blocks Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5       926  738       164    82% 2710365 1725645720    0%   /System/Volumes/Data\n"
+    },
+    "df_h_data_output": {
+      "command": [
+        "df",
+        "-h",
+        "/Users/lilianserre/Documents/projets/projet-galapagos/data"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   926Gi   738Gi   165Gi    82%    2.7M  1.7G    0%   /System/Volumes/Data\n"
+    },
+    "df_h_project_output": {
+      "command": [
+        "df",
+        "-h",
+        "/Users/lilianserre/Documents/projets/projet-galapagos"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   926Gi   738Gi   165Gi    82%    2.7M  1.7G    0%   /System/Volumes/Data\n"
+    },
+    "free_gib_data_mount": 164.57,
+    "free_gib_project_mount": 164.57,
+    "project_path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+    "recommended_free_gib_before_collection": 111.122,
+    "required_free_bytes_for_extension": 76366461745,
+    "required_free_gib_for_extension": 71.122,
+    "safe_for_5y_extension_collection": true,
+    "statvfs_data": {
+      "free_bytes": 176706121728,
+      "free_gib": 164.57,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data"
+    },
+    "statvfs_project": {
+      "free_bytes": 176706121728,
+      "free_gib": 164.57,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos"
+    },
+    "storage_notes": "Les lots doivent verifier l'espace avant chaque batch; V9.30 ne supprime et ne compresse aucune donnee.",
+    "storage_warning_level": "comfortable_with_checkpoints"
+  },
+  "estimated_extension_raw_bytes": 19947096976,
+  "estimated_extension_rows": 1430802792,
+  "estimated_extension_silver_bytes": 38796335136,
+  "estimated_extension_total_bytes": 58743432112,
+  "estimated_volume": {
+    "basis": "V9.29 validated averages",
+    "estimated_extension_raw_bytes": 19947096976,
+    "estimated_extension_rows": 1430802792,
+    "estimated_extension_silver_bytes": 38796335136,
+    "estimated_extension_total_bytes": 58743432112,
+    "estimated_target_5y_raw_bytes": 33251228262,
+    "estimated_target_5y_rows": 2385106479,
+    "estimated_target_5y_silver_bytes": 64672357932,
+    "estimated_target_5y_total_bytes": 97923586194,
+    "recommended_free_gib_before_collection": 111.122,
+    "required_free_bytes_for_extension": 76366461745,
+    "required_free_gib_for_extension": 71.122,
+    "safety_margin_factor": 1.3,
+    "validated_average_raw_bytes_per_day": 18199906,
+    "validated_average_rows_per_day": 1305477,
+    "validated_average_silver_bytes_per_day": 35398116
+  },
+  "extension_days_needed": 1096,
+  "extension_window": {
+    "extension_window_end": "2024-05-04",
+    "extension_window_start": "2021-05-05"
+  },
+  "extension_window_end": "2024-05-04",
+  "extension_window_start": "2021-05-05",
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "free_gib_data_mount": 164.57,
+  "free_gib_project_mount": 164.57,
+  "ingestion_executed": false,
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v5_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json"
+    },
+    "v8_2_manifest": {
+      "available": true,
+      "path": "reports/manifests/public_trades_1y_window_v8_2_manifest.json"
+    },
+    "v9_19_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_pilot_collection_v9_19.json"
+    },
+    "v9_20_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch_collection_v9_20.json"
+    },
+    "v9_21_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch_expansion_v9_21.json"
+    },
+    "v9_23_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch2_collection_v9_23.json"
+    },
+    "v9_24_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch3_collection_v9_24.json"
+    },
+    "v9_25_1_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_resume_campaign_v9_25_1.json"
+    },
+    "v9_26_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_storage_resume_campaign_v9_26.json"
+    },
+    "v9_27_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_storage_recheck_resume_v9_27.json"
+    },
+    "v9_28_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_bad_day_repair_v9_28.json"
+    },
+    "v9_29_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_post_v9_full_coverage_validation_v9_29_manifest.json"
+    },
+    "v9_29_markdown": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_full_coverage_validation_v9_29.md"
+    },
+    "v9_29_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_full_coverage_validation_v9_29.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.30 est plan-only: aucun reseau, aucun telechargement, aucune ingestion et aucune reparation ne sont executes.",
+    "La disponibilite exacte des fichiers Binance 2021-2024 doit etre confirmee pendant la collecte V9.31.",
+    "Les estimations utilisent les moyennes V9.29; les regimes de marche 2021-2024 peuvent produire des volumes differents."
+  ],
+  "ml_executed": false,
+  "mode": "plan-only",
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.31 - AggTrades 5Y Historical Extension Collection",
+  "recommended_free_gib_before_collection": 111.122,
+  "required_free_gib_for_extension": 71.122,
+  "roadmap_after_5y": [
+    {
+      "title": "AggTrades 5Y Historical Extension Collection",
+      "version": "V9.31"
+    },
+    {
+      "title": "AggTrades 5Y Full Coverage Validation",
+      "version": "V9.32"
+    },
+    {
+      "title": "OHLCV + AggTrades 5Y Feature Store",
+      "version": "V9.33"
+    },
+    {
+      "title": "5Y Dataset",
+      "version": "V9.34"
+    },
+    {
+      "title": "5Y ML Offline",
+      "version": "V9.35"
+    },
+    {
+      "title": "5Y Strict Walk-Forward",
+      "version": "V9.36"
+    },
+    {
+      "title": "5Y Research Decision Gate",
+      "version": "V9.37"
+    },
+    {
+      "title": "Funding / open interest, liquidations, order book L2 only after the decision gate",
+      "version": "post_v9_37"
+    }
+  ],
+  "safe_for_5y_extension_collection": true,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_data_deletion": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_ingestion_executed": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_availability_assessment": {
+    "availability_needs_confirmation": true,
+    "expected_url_pattern": "https://data.binance.vision/data/spot/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-YYYY-MM-DD.zip",
+    "historical_availability_assumption": "probable_for_btcusdt_spot_aggtrades_but_not_verified_by_v9_30",
+    "host": "data.binance.vision",
+    "known_risks": [
+      "Disponibilite exacte des fichiers 2021-2024 non verifiee sans reseau.",
+      "Possibles jours manquants ou archives corrompues dans l'historique ancien.",
+      "Volumes de trades 2021-2024 potentiellement differents des moyennes 2024-2026.",
+      "Doublons exacts ou anomalies d'ordre aggregate_trade_id similaires au cas 2026-02-11."
+    ],
+    "market_type": "spot",
+    "network_check_required_in_future_collection": true,
+    "schema_compatibility_assessment": "Le schema bronze/silver actuel peut etre conserve si les CSV historiques gardent les colonnes Binance aggTrades attendues.",
+    "source_name": "Binance public archive aggTrades daily",
+    "source_risk_level": "medium_until_v9_31_confirms_files",
+    "symbol": "BTCUSDT",
+    "trade_source_type": "aggTrades",
+    "venue": "binance"
+  },
+  "source_version": "V9.29",
+  "status": "PASS",
+  "storage_warning_level": "comfortable_with_checkpoints",
+  "target_5y_days_expected": 1827,
+  "target_5y_window": {
+    "already_validated_days": 731,
+    "current_validated_window_end": "2026-05-05",
+    "current_validated_window_start": "2024-05-05",
+    "extension_days_needed": 1096,
+    "extension_window": {
+      "extension_window_end": "2024-05-04",
+      "extension_window_start": "2021-05-05"
+    },
+    "gaps_expected": [],
+    "no_recollection_required_for_validated_window": true,
+    "overlap_days": 0,
+    "target_5y_days_expected": 1827,
+    "target_5y_window_end": "2026-05-05",
+    "target_5y_window_start": "2021-05-05"
+  },
+  "target_5y_window_end": "2026-05-05",
+  "target_5y_window_start": "2021-05-05",
+  "v9_30_decision": {
+    "blockers": [],
+    "decision": "aggtrades_5y_extension_plan_ready",
+    "justification": "Plan faisable en lots controles; disponibilite historique a confirmer durant V9.31 sans pretendre une existence non verifiee en V9.30.",
+    "next_recommendation": "V9.31 - AggTrades 5Y Historical Extension Collection",
+    "no_backtest": true,
+    "no_signal": true,
+    "no_trading": true
+  },
+  "v9_30_decision_name": "aggtrades_5y_extension_plan_ready",
+  "validated_days": 731,
+  "validated_raw_bytes": 13304131326,
+  "validated_rows": 954304111,
+  "validated_silver_bytes": 25876022841,
+  "validated_window_end": "2026-05-05",
+  "validated_window_start": "2024-05-05",
+  "validation_plan_v9_32": {
+    "allowed_decisions": [
+      "aggtrades_5y_full_coverage_validated",
+      "aggtrades_5y_full_coverage_validated_with_non_blocking_warnings",
+      "aggtrades_5y_full_coverage_blocked_by_missing_days",
+      "aggtrades_5y_full_coverage_blocked_by_quality",
+      "aggtrades_5y_full_coverage_inconclusive_manual_review_required"
+    ],
+    "checks": [
+      "raw_and_silver_presence",
+      "missing_days",
+      "duplicate_aggregate_trade_id",
+      "invalid_rows",
+      "timestamps_utc",
+      "partition_date_matches_event_ts",
+      "available_ts_gte_event_ts",
+      "aggregate_trade_id_continuity_warnings",
+      "volume_and_row_count_anomalies",
+      "quarantine_stale_or_active_reconciliation",
+      "schema_stability",
+      "global_manifest"
+    ],
+    "scope": "aggtrades_5y_full_coverage_validation",
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2021-05-05",
+    "version": "V9.32"
+  },
+  "version": "V9.30",
+  "walk_forward_executed": false,
+  "warnings": [
+    "L'espace disque reste a verifier avant chaque lot V9.31.",
+    "La disponibilite exacte des fichiers 2021-2024 doit etre confirmee par la collecte V9.31."
+  ]
+}
