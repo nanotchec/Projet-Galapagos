@@ -1,12 +1,11 @@
-# Synthese courante - V9.30
+# Synthese courante - V9.31
 
-- Derniere version validee : `V9.29`.
-- Candidate : `V9.30`.
+- Derniere version validee : `V9.30`.
+- Candidate : `V9.31`.
 - Statut : `pending_external_audit`.
-- Direction : `aggtrades_5y_historical_extension_plan`.
-- Decision V9.30 : `aggtrades_5y_extension_plan_ready`.
-- Fenetre validee : `2024-05-05` -> `2026-05-05`.
-- Extension 5Y a collecter : `2021-05-05` -> `2024-05-04` (`1096` jours).
-- Recommandation : V9.31 - AggTrades 5Y Historical Extension Collection.
+- Decision V9.31 : `aggtrades_5y_extension_collection_complete`.
+- Fenetre extension : `2021-05-05` -> `2024-05-04`.
+- Jours complets/failed/quarantine : `1096` / `0` / `0`.
+- Recommandation : V9.32 - AggTrades 5Y Full Coverage Validation.
 - Aucun trading, paper live, ordre, backtest, walk-forward, ML, dataset supervise, strategie ou signal actionnable.
-- Aucun telechargement, aucune ingestion, aucune suppression destructive, aucun sidecar et aucune empreinte ZIP.
+- Aucun sidecar et aucune empreinte ZIP.

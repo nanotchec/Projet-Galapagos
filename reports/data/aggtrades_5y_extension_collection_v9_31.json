@@ -1,0 +1,407 @@
+{
+  "already_validated_window_end": "2026-05-05",
+  "already_validated_window_start": "2024-05-05",
+  "backtest_executed": false,
+  "batch_report_paths": [
+    "reports/data/aggtrades_5y_extension_batch01_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch02_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch03_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch04_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch05_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch06_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch07_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch08_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch09_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch10_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch11_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch12_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch13_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch14_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch15_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch16_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch17_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch18_v9_31.json",
+    "reports/data/aggtrades_5y_extension_batch19_v9_31.json"
+  ],
+  "batches_complete": 19,
+  "batches_executed": 19,
+  "batches_failed": 0,
+  "batches_planned": 19,
+  "batches_planned_detail": [
+    {
+      "batch_id": "V9.31_batch_01",
+      "end_date": "2021-07-03",
+      "max_downloads": 60,
+      "start_date": "2021-05-05"
+    },
+    {
+      "batch_id": "V9.31_batch_02",
+      "end_date": "2021-09-01",
+      "max_downloads": 60,
+      "start_date": "2021-07-04"
+    },
+    {
+      "batch_id": "V9.31_batch_03",
+      "end_date": "2021-10-31",
+      "max_downloads": 60,
+      "start_date": "2021-09-02"
+    },
+    {
+      "batch_id": "V9.31_batch_04",
+      "end_date": "2021-12-30",
+      "max_downloads": 60,
+      "start_date": "2021-11-01"
+    },
+    {
+      "batch_id": "V9.31_batch_05",
+      "end_date": "2022-02-28",
+      "max_downloads": 60,
+      "start_date": "2021-12-31"
+    },
+    {
+      "batch_id": "V9.31_batch_06",
+      "end_date": "2022-04-29",
+      "max_downloads": 60,
+      "start_date": "2022-03-01"
+    },
+    {
+      "batch_id": "V9.31_batch_07",
+      "end_date": "2022-06-28",
+      "max_downloads": 60,
+      "start_date": "2022-04-30"
+    },
+    {
+      "batch_id": "V9.31_batch_08",
+      "end_date": "2022-08-27",
+      "max_downloads": 60,
+      "start_date": "2022-06-29"
+    },
+    {
+      "batch_id": "V9.31_batch_09",
+      "end_date": "2022-10-26",
+      "max_downloads": 60,
+      "start_date": "2022-08-28"
+    },
+    {
+      "batch_id": "V9.31_batch_10",
+      "end_date": "2022-12-25",
+      "max_downloads": 60,
+      "start_date": "2022-10-27"
+    },
+    {
+      "batch_id": "V9.31_batch_11",
+      "end_date": "2023-02-23",
+      "max_downloads": 60,
+      "start_date": "2022-12-26"
+    },
+    {
+      "batch_id": "V9.31_batch_12",
+      "end_date": "2023-04-24",
+      "max_downloads": 60,
+      "start_date": "2023-02-24"
+    },
+    {
+      "batch_id": "V9.31_batch_13",
+      "end_date": "2023-06-23",
+      "max_downloads": 60,
+      "start_date": "2023-04-25"
+    },
+    {
+      "batch_id": "V9.31_batch_14",
+      "end_date": "2023-08-22",
+      "max_downloads": 60,
+      "start_date": "2023-06-24"
+    },
+    {
+      "batch_id": "V9.31_batch_15",
+      "end_date": "2023-10-21",
+      "max_downloads": 60,
+      "start_date": "2023-08-23"
+    },
+    {
+      "batch_id": "V9.31_batch_16",
+      "end_date": "2023-12-20",
+      "max_downloads": 60,
+      "start_date": "2023-10-22"
+    },
+    {
+      "batch_id": "V9.31_batch_17",
+      "end_date": "2024-02-18",
+      "max_downloads": 60,
+      "start_date": "2023-12-21"
+    },
+    {
+      "batch_id": "V9.31_batch_18",
+      "end_date": "2024-04-18",
+      "max_downloads": 60,
+      "start_date": "2024-02-19"
+    },
+    {
+      "batch_id": "V9.31_batch_19",
+      "end_date": "2024-05-04",
+      "max_downloads": 16,
+      "start_date": "2024-04-19"
+    }
+  ],
+  "blockers": [],
+  "campaign_summary": {
+    "batches_complete": 19,
+    "batches_executed": 19,
+    "batches_failed": 0,
+    "batches_planned": 19,
+    "complete_extension_reached": true,
+    "coverage_status": "extension_complete",
+    "days_attempted": 1036,
+    "days_complete": 1096,
+    "days_downloaded": 670,
+    "days_expected_extension": 1096,
+    "days_failed": 0,
+    "days_missing": 0,
+    "days_normalized": 1036,
+    "days_quarantined": 0,
+    "days_skipped_existing": 60,
+    "local_file_coverage_end": "2026-05-05",
+    "local_file_coverage_start": "2021-05-05",
+    "quality_status": "PASS",
+    "raw_bytes_new": 32666277762,
+    "runtime_seconds_total": 17797.112,
+    "silver_bytes_new": 59011065109,
+    "source_availability_issues": [],
+    "stop_reason": null,
+    "storage_warnings": [],
+    "target_5y_collection_reached": true,
+    "total_rows_new": 2277139882
+  },
+  "complete_extension_reached": true,
+  "coverage_status": "extension_complete",
+  "created_at_utc": "2026-05-29T15:54:59Z",
+  "dataset_created": false,
+  "days_attempted": 1036,
+  "days_complete": 1096,
+  "days_downloaded": 670,
+  "days_expected_extension": 1096,
+  "days_failed": 0,
+  "days_missing": 0,
+  "days_normalized": 1036,
+  "days_quarantined": 0,
+  "days_skipped_existing": 60,
+  "decision": "aggtrades_5y_extension_collection_complete",
+  "direction": "aggtrades_5y_historical_extension_collection",
+  "extension_window_end": "2024-05-04",
+  "extension_window_start": "2021-05-05",
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "ingestion_executed": true,
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v9_28_repair": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_bad_day_repair_v9_28.json"
+    },
+    "v9_29_validation": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_full_coverage_validation_v9_29.json"
+    },
+    "v9_30_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_5y_extension_plan_v9_30_manifest.json"
+    },
+    "v9_30_plan": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_plan_v9_30.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.31 reste data-only et ne cree aucun label, dataset supervise, ML, walk-forward, backtest, strategie ou signal.",
+    "La validation globale 5Y definitive est reservee a V9.32.",
+    "Les fichiers raw/silver complets restent locaux et sont exclus du ZIP audit-lite."
+  ],
+  "local_file_coverage_end": "2026-05-05",
+  "local_file_coverage_start": "2021-05-05",
+  "ml_executed": false,
+  "network_used": true,
+  "new_data_downloaded": true,
+  "next_recommendation": "V9.32 - AggTrades 5Y Full Coverage Validation",
+  "preflight": {
+    "already_validated_window_end": "2026-05-05",
+    "already_validated_window_start": "2024-05-05",
+    "collection_window_end": "2024-05-04",
+    "collection_window_start": "2021-05-05",
+    "data_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data",
+    "df_g_data_output": {
+      "command": [
+        "df",
+        "-g",
+        "/Users/lilianserre/Documents/projets/projet-galapagos/data"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Filesystem   1G-blocks Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5       926  743       159    83% 2711898 1669776840    0%   /System/Volumes/Data\n"
+    },
+    "df_h_data_output": {
+      "command": [
+        "df",
+        "-h",
+        "/Users/lilianserre/Documents/projets/projet-galapagos/data"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   926Gi   744Gi   159Gi    83%    2.7M  1.7G    0%   /System/Volumes/Data\n"
+    },
+    "df_h_project_output": {
+      "command": [
+        "df",
+        "-h",
+        "/Users/lilianserre/Documents/projets/projet-galapagos"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   926Gi   744Gi   159Gi    83%    2.7M  1.7G    0%   /System/Volumes/Data\n"
+    },
+    "estimated_extension_total_bytes": 58743432112,
+    "extension_window_confirmed": true,
+    "free_gib_data_mount": 159.242,
+    "free_gib_project_mount": 159.242,
+    "max_batch_days_allowed": 60,
+    "project_path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+    "required_free_gib_for_extension": 71.122,
+    "safe_to_start_collection": true,
+    "statvfs_data": {
+      "free_bytes": 170985148416,
+      "free_gib": 159.242,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data"
+    },
+    "statvfs_project": {
+      "free_bytes": 170985148416,
+      "free_gib": 159.242,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos"
+    },
+    "validated_window_will_not_be_recollected": true
+  },
+  "quality_checks": [
+    "file_present",
+    "file_readable",
+    "expected_schema",
+    "valid_types",
+    "timestamps_utc",
+    "price_positive",
+    "quantity_positive",
+    "aggregate_trade_id_monotone_or_coherent",
+    "no_duplicate_aggregate_trade_id",
+    "invalid_rows_not_excessive",
+    "partition_date_matches_event_ts",
+    "file_size_nonzero",
+    "day_status"
+  ],
+  "quality_status": "PASS",
+  "raw_bytes_new": 32666277762,
+  "runtime_seconds_total": 17797.112,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "ingestion_executed": true,
+    "ingestion_scope": "public_aggtrades_bronze_silver_5y_extension_only",
+    "network_scope": "public_archive_read_only",
+    "network_used": true,
+    "new_data_download_scope": "public_historical_aggtrades_5y_extension_only",
+    "new_data_downloaded": true,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_ingestion_executed": false,
+    "no_ml": true,
+    "no_new_data_download": false,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "silver_bytes_new": 59011065109,
+  "silver_schema_columns": [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "aggregate_trade_id",
+    "price",
+    "quantity",
+    "first_trade_id",
+    "last_trade_id",
+    "event_ts",
+    "trade_ts",
+    "is_buyer_maker",
+    "ingest_ts",
+    "available_ts",
+    "source_file",
+    "source_checksum",
+    "row_valid",
+    "invalid_reason"
+  ],
+  "source_availability_issues": [],
+  "source_public_target": {
+    "account_required": false,
+    "api_key_required": false,
+    "host": "data.binance.vision",
+    "market_type": "spot",
+    "read_only": true,
+    "source_name": "Binance public archive",
+    "symbol": "BTCUSDT"
+  },
+  "source_version": "V9.30",
+  "status": "PASS",
+  "stop_reason": null,
+  "storage_convention": {
+    "quarantine_dir": "data/quarantine/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT",
+    "raw_dir": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades",
+    "raw_pattern": "data/raw/public_trades/binance_archive/spot/BTCUSDT/aggTrades/BTCUSDT-aggTrades-{date}.zip",
+    "silver_pattern": "data/silver/public_trades/venue=binance/market_type=spot/symbol=BTCUSDT/date={date}/agg_trades.parquet"
+  },
+  "storage_warnings": [],
+  "target_5y_collection_reached": true,
+  "target_5y_window_end": "2026-05-05",
+  "target_5y_window_start": "2021-05-05",
+  "total_rows_new": 2277139882,
+  "v9_31_decision": {
+    "blockers": [],
+    "decision": "aggtrades_5y_extension_collection_complete",
+    "next_recommendation": "V9.32 - AggTrades 5Y Full Coverage Validation",
+    "no_backtest": true,
+    "no_signal": true,
+    "no_trading": true
+  },
+  "version": "V9.31",
+  "walk_forward_executed": false,
+  "warnings": []
+}

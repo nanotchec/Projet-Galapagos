@@ -1,0 +1,79 @@
+{
+  "version": "V9.31",
+  "created_at_utc": "2026-05-29T15:57:48.870981Z",
+  "status": "PASS",
+  "commands": [
+    {
+      "command": "python scripts/run_aggtrades_5y_extension_collection_v9_31.py",
+      "returncode": 0,
+      "duration_seconds": 17797.112,
+      "stdout_tail": "{\"decision\": \"aggtrades_5y_extension_collection_complete\", \"batches_executed\": 19, \"batches_complete\": 19, \"batches_failed\": 0, \"days_complete\": 1096, \"days_missing\": 0, \"days_failed\": 0, \"days_quarantined\": 0, \"total_rows_new\": 2277139882, \"raw_bytes_new\": 32666277762, \"silver_bytes_new\": 59011065109}",
+      "stderr_tail": "",
+      "record_note": "Commande de collecte executee avant capture formelle; resultat reconstruit depuis le rapport global V9.31 sans relancer la collecte pour ne pas reecrire les metriques."
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "duration_seconds": 3.437,
+      "stdout_tail": "/validation/test_research_decision_gate_v8_6.py::test_decision_gate_v8_6_has_recommendation\ntests/validation/test_research_decision_gate_v8_6.py::test_decision_gate_v8_6_claims_false\ntests/validation/test_research_decision_gate_v8_6.py::test_decision_gate_v8_6_no_backtest_claim\ntests/validation/test_research_decision_gate_v8_6.py::test_decision_gate_v8_6_rejects_claim_true\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_is_research_only\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_has_feature_refinement_recommendation\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_preserves_label_shuffle_warning_count\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_claims_false\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_no_backtest_recommendation\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_rejects_claim_true\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_rejects_backtest_primary_recommendation\ntests/validation/test_research_decision_gate_v8_8.py::test_decision_gate_v8_8_rejects_forbidden_markdown_claim\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_accepts_valid_walk_forward_report\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_forbidden_future_feature\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_forbidden_label_feature\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_forbidden_fold_feature\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_unknown_model\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_output_trading_signal_column\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_output_order_column\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_output_pnl_column\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_overlapping_folds\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_validation_before_train\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_test_before_validation\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_backtest_report_created\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_strategy_report_created\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_orders_directory_created\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_model_pickle_created\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_markdown_strategy_validated_claim\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_markdown_tradable_edge_confirmed_claim\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_safety_flag_trading_true\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_safety_flag_backtest_true\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_walk_forward_validated_for_trading_true\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_trading_metric_in_metrics\ntests/validation/test_strict_walk_forward_validation_v8_7_validator.py::test_validator_v8_7_rejects_report_json_lie\n\n5618 tests collected in 3.01s\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_aggtrades_5y_extension_collection_v9_31.py",
+      "returncode": 0,
+      "duration_seconds": 0.177,
+      "stdout_tail": ".........                                                                [100%]\n9 passed in 0.03s\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_aggtrades_5y_extension_collection_v9_31_validator.py",
+      "returncode": 0,
+      "duration_seconds": 0.167,
+      "stdout_tail": ".....                                                                    [100%]\n5 passed in 0.03s\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_aggtrades_5y_extension_collection_v9_31.py tests/validation/test_aggtrades_5y_extension_collection_v9_31_validator.py",
+      "returncode": 0,
+      "duration_seconds": 0.15,
+      "stdout_tail": "14 passed in 0.04s",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_aggtrades_5y_extension_collection_v9_31.py",
+      "returncode": 0,
+      "duration_seconds": 0.298,
+      "stdout_tail": "{\n  \"version\": \"V9.31\",\n  \"status\": \"PASS\",\n  \"errors\": []\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_31.py",
+      "returncode": 0,
+      "duration_seconds": 0.25,
+      "stdout_tail": "{\"version\":\"V9.31\",\"zip_name\":\"projet-galapagos-v9.31-audit-lite.zip\",\"zip_bytes_estimate\":299750,\"included_files\":61,\"status\":\"PASS\"}",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_31.py --zip projet-galapagos-v9.31-audit-lite.zip",
+      "returncode": 0,
+      "duration_seconds": 0.2,
+      "stdout_tail": "{\"version\":\"V9.31\",\"passed\":true,\"errors\":[]}",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_31.py --zip projet-galapagos-v9.31-audit-lite.zip",
+      "returncode": 0,
+      "duration_seconds": 1.45,
+      "stdout_tail": "{\"version\":\"V9.31\",\"passed\":true,\"errors\":[]}",
+      "stderr_tail": ""
+    }
+  ],
+  "sidecars_created": false,
+  "zip_fingerprints_created": false,
+  "network_scope": "public_archive_read_only_for_collection_only",
+  "no_private_api": true,
+  "no_api_key": true,
+  "no_trading": true,
+  "no_backtest": true,
+  "updated_at_utc": "2026-05-29T15:58:05Z"
+}
