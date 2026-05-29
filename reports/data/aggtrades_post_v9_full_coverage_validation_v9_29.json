@@ -1,0 +1,319 @@
+{
+  "aggregate_trade_id_gap_warnings": [],
+  "backtest_executed": false,
+  "blockers": [],
+  "calendar_validation": {
+    "complete_calendar_coverage": true,
+    "days_complete": 731,
+    "days_expected": 731,
+    "days_failed": 0,
+    "days_missing": 0,
+    "days_missing_raw": 0,
+    "days_missing_silver": 0,
+    "days_partial": 0,
+    "days_quarantined": 19,
+    "days_with_raw": 731,
+    "days_with_silver": 731,
+    "failed_dates_sample": {
+      "first": [],
+      "last": []
+    },
+    "first_missing_or_failed_day": null,
+    "last_complete_day": "2026-05-05",
+    "local_contiguous_clean_coverage_end": "2026-05-05",
+    "local_contiguous_clean_coverage_start": "2024-05-05",
+    "local_file_coverage_end": "2026-05-05",
+    "local_file_coverage_start": "2024-05-05",
+    "missing_dates_sample": {
+      "first": [],
+      "last": []
+    },
+    "missing_raw_dates_sample": {
+      "first": [],
+      "last": []
+    },
+    "missing_silver_dates_sample": {
+      "first": [],
+      "last": []
+    },
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2024-05-05"
+  },
+  "complete_calendar_coverage": true,
+  "complete_collection_reached": true,
+  "coverage_status": "target_window_validated",
+  "created_at_utc": "2026-05-29T07:53:28Z",
+  "dataset_created": false,
+  "days_complete": 731,
+  "days_expected": 731,
+  "days_failed": 0,
+  "days_missing": 0,
+  "days_partial": 0,
+  "days_quarantined": 19,
+  "decision": "aggtrades_full_coverage_validated_with_non_blocking_warnings",
+  "direction": "aggtrades_post_v9_full_coverage_validation",
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "future_full_coverage_complete": true,
+  "global_duplicate_count": 0,
+  "global_invalid_rows": 0,
+  "ingestion_executed": false,
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v9_19_pilot": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_pilot_collection_v9_19.json"
+    },
+    "v9_20_batch_collection": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch_collection_v9_20.json"
+    },
+    "v9_21_batch_expansion": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch_expansion_v9_21.json"
+    },
+    "v9_23_batch2": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch2_collection_v9_23.json"
+    },
+    "v9_24_batch3": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_batch3_collection_v9_24.json"
+    },
+    "v9_25_1_campaign": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_resume_campaign_v9_25_1.json"
+    },
+    "v9_25_campaign": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_completion_campaign_v9_25.json"
+    },
+    "v9_27_batch06": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_storage_recheck_batch06_v9_27.json"
+    },
+    "v9_27_campaign": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_storage_recheck_resume_v9_27.json"
+    },
+    "v9_28_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_post_v9_bad_day_repair_v9_28_manifest.json"
+    },
+    "v9_28_repair": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_bad_day_repair_2026_02_11_v9_28.json"
+    },
+    "v9_28_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_bad_day_repair_v9_28.json"
+    },
+    "v9_28_tail": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_final_tail_collection_v9_28.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.29 valide la couverture aggTrades localement en lecture seule.",
+    "Aucun telechargement, aucune ingestion et aucune reparation de donnees ne sont executes.",
+    "Les alertes de volume ou de continuite sont documentees sans devenir bloquantes si les fichiers restent complets et valides."
+  ],
+  "local_contiguous_clean_coverage_end": "2026-05-05",
+  "local_contiguous_clean_coverage_start": "2024-05-05",
+  "local_file_coverage_end": "2026-05-05",
+  "local_file_coverage_start": "2024-05-05",
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.30 - AggTrades 5Y Historical Extension Plan",
+  "quality_status": "PASS",
+  "quality_validation": {
+    "aggregate_trade_id_gap_warnings": [],
+    "available_ts_violation_count": 0,
+    "global_duplicate_count": 0,
+    "global_invalid_rows": 0,
+    "max_aggregate_trade_id": 3951368027,
+    "max_event_ts": "2026-05-05T23:59:59.996222Z",
+    "min_aggregate_trade_id": 2997063917,
+    "min_event_ts": "2024-05-05T00:00:00.004000Z",
+    "non_positive_price_count": 0,
+    "non_positive_quantity_count": 0,
+    "partition_mismatch_count": 0,
+    "quality_status": "PASS",
+    "raw_bytes_total": 13304131326,
+    "raw_read_errors": [],
+    "schema_mismatch_count": 0,
+    "silver_bytes_total": 25876022841,
+    "silver_read_errors": [],
+    "timestamp_gap_warnings": [],
+    "total_rows": 954304111
+  },
+  "quarantine_active_count": 0,
+  "quarantine_blocking": false,
+  "quarantine_reconciliation": {
+    "active_quarantine_dates": [],
+    "quarantine_active_count": 0,
+    "quarantine_blocking": false,
+    "quarantine_dates": [
+      "2025-01-01",
+      "2025-01-02",
+      "2025-01-03",
+      "2025-01-04",
+      "2025-01-05",
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-13",
+      "2025-01-14",
+      "2025-01-15",
+      "2025-01-16",
+      "2025-01-17",
+      "2025-01-18",
+      "2025-01-19"
+    ],
+    "quarantine_dates_overlap_complete_days": [
+      "2025-01-01",
+      "2025-01-02",
+      "2025-01-03",
+      "2025-01-04",
+      "2025-01-05",
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-13",
+      "2025-01-14",
+      "2025-01-15",
+      "2025-01-16",
+      "2025-01-17",
+      "2025-01-18",
+      "2025-01-19"
+    ],
+    "quarantine_notes": "Les fichiers quarantine sont stale_non_blocking car les jours correspondants sont complets et valides.",
+    "quarantine_stale_count": 19,
+    "stale_quarantine_dates": [
+      "2025-01-01",
+      "2025-01-02",
+      "2025-01-03",
+      "2025-01-04",
+      "2025-01-05",
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-13",
+      "2025-01-14",
+      "2025-01-15",
+      "2025-01-16",
+      "2025-01-17",
+      "2025-01-18",
+      "2025-01-19"
+    ]
+  },
+  "quarantine_stale_count": 19,
+  "raw_bytes_cumulative": 13304131326,
+  "row_count_outliers": {
+    "median_rows_per_day": 1129728,
+    "method": "non_blocking_row_count_outlier_scan_threshold_0.2x_to_5x_median",
+    "outlier_count": 0,
+    "outliers": []
+  },
+  "runtime_seconds": 761.688,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_data_deletion": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_ingestion_executed": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "schema_mismatch_count": 0,
+  "silver_bytes_cumulative": 25876022841,
+  "source_version": "V9.28",
+  "status": "PASS",
+  "tail_days_downloaded_by_v9_28": 0,
+  "tail_days_expected": 36,
+  "tail_days_skipped_existing_by_v9_28": 36,
+  "tail_days_validated_by_v9_28": 36,
+  "tail_days_validated_by_v9_29": 36,
+  "tail_reconciliation": {
+    "tail_coverage_status": "tail_complete",
+    "tail_days_downloaded_by_v9_28": 0,
+    "tail_days_expected": 36,
+    "tail_days_skipped_existing_by_v9_28": 36,
+    "tail_days_validated_by_v9_28": 36,
+    "tail_days_validated_by_v9_29": 36,
+    "tail_notes": "La queue finale etait deja presente localement lors du dernier run V9.28; V9.29 confirme qu'elle est lisible et valide.",
+    "tail_reporting_acceptable": true
+  },
+  "tail_reporting_acceptable": true,
+  "target_window_end": "2026-05-05",
+  "target_window_start": "2024-05-05",
+  "timestamp_gap_warnings": [],
+  "total_days_expected": 731,
+  "total_rows_cumulative": 954304111,
+  "v9_29_decision": {
+    "confidence": "high",
+    "decision": "aggtrades_full_coverage_validated_with_non_blocking_warnings",
+    "justification": "La couverture et la qualite sont validees; seules des alertes non bloquantes restent documentees.",
+    "next_recommendation": "V9.30 - AggTrades 5Y Historical Extension Plan",
+    "no_backtest": true,
+    "no_trading": true,
+    "no_walk_forward": true
+  },
+  "version": "V9.29",
+  "walk_forward_executed": false,
+  "warnings": [
+    "Des fichiers quarantine stale_non_blocking existent pour des jours complets et valides."
+  ]
+}
