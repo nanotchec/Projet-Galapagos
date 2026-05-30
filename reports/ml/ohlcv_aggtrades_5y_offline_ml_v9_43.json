@@ -1,0 +1,6580 @@
+{
+  "backtest_executed": false,
+  "baseline_comparison": {
+    "classification_only": true,
+    "clear_wins_count": 0,
+    "comparisons": {
+      "15m.decision_tree_depth_2.test": {
+        "accuracy": 0.6442765502494654,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07217502432529826,
+        "macro_f1": 0.26121986602627456,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      "15m.decision_tree_depth_2.validation": {
+        "accuracy": 0.6434802440275956,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07118820986447155,
+        "macro_f1": 0.26102341717259325,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression.test": {
+        "accuracy": 0.6433071988595866,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.0009693513898787476,
+        "delta_macro_f1_vs_best_baseline": -0.06593108428777267,
+        "macro_f1": 0.26746380606380016,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression.validation": {
+        "accuracy": 0.6424539597468498,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.001026284280745804,
+        "delta_macro_f1_vs_best_baseline": -0.060425227844983054,
+        "macro_f1": 0.27178639919208175,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      "1h.decision_tree_depth_2.test": {
+        "accuracy": 0.6572015053027711,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07152981156417199,
+        "macro_f1": 0.2643820533993944,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      "1h.decision_tree_depth_2.validation": {
+        "accuracy": 0.6688711516533637,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.06619980744063159,
+        "macro_f1": 0.2671950441832924,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression.test": {
+        "accuracy": 0.6579997719238225,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0007982666210514244,
+        "delta_macro_f1_vs_best_baseline": -0.058343700355863504,
+        "macro_f1": 0.2775681646077029,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression.validation": {
+        "accuracy": 0.6660205245153934,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.002850627137970352,
+        "delta_macro_f1_vs_best_baseline": -0.041304209877942644,
+        "macro_f1": 0.2920906417459813,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      "1m.decision_tree_depth_2.test": {
+        "accuracy": 0.5977712139528165,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.08400533645712316,
+        "macro_f1": 0.24941877732876683,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      "1m.decision_tree_depth_2.validation": {
+        "accuracy": 0.601099251961321,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.0833178084362004,
+        "macro_f1": 0.25028606699427863,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression.test": {
+        "accuracy": 0.5976590713834972,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.00011214256931935118,
+        "delta_macro_f1_vs_best_baseline": -0.08366917389340509,
+        "macro_f1": 0.2497549398924849,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression.validation": {
+        "accuracy": 0.6008540868454662,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.00024516511585481737,
+        "delta_macro_f1_vs_best_baseline": -0.0830061429898829,
+        "macro_f1": 0.25059773244059613,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      "5m.decision_tree_depth_2.test": {
+        "accuracy": 0.6252280848475633,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07671503606244645,
+        "macro_f1": 0.2564678318802274,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      "5m.decision_tree_depth_2.validation": {
+        "accuracy": 0.6244595429277332,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07549653214243346,
+        "macro_f1": 0.25627376425855514,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression.test": {
+        "accuracy": 0.6248004257583821,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.0004276590891811871,
+        "delta_macro_f1_vs_best_baseline": -0.07513939366668587,
+        "macro_f1": 0.258043474275988,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression.validation": {
+        "accuracy": 0.6240794412505345,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.0003801016771987076,
+        "delta_macro_f1_vs_best_baseline": -0.07129653654517831,
+        "macro_f1": 0.2604737598558103,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "5m"
+      }
+    },
+    "mean_delta_macro_f1_vs_best_baseline": -0.07123393973465568,
+    "weak_vs_baselines_count": 16
+  },
+  "close_to_shuffled_warnings": [
+    "1m.logistic_regression.test",
+    "1m.logistic_regression.validation",
+    "1m.decision_tree_depth_2.test",
+    "1m.decision_tree_depth_2.validation",
+    "5m.logistic_regression.test",
+    "5m.logistic_regression.validation",
+    "5m.decision_tree_depth_2.test",
+    "5m.decision_tree_depth_2.validation",
+    "15m.logistic_regression.test",
+    "15m.logistic_regression.validation",
+    "15m.decision_tree_depth_2.test",
+    "15m.decision_tree_depth_2.validation",
+    "1h.logistic_regression.test",
+    "1h.decision_tree_depth_2.test",
+    "1h.decision_tree_depth_2.validation"
+  ],
+  "created_at_utc": "2026-05-30T23:06:37Z",
+  "dataset_created": false,
+  "dataset_inputs": {
+    "15m": {
+      "bytes": 68543704,
+      "exists": true,
+      "path": "data/research/v9_41/datasets/ohlcv_aggtrades_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/dataset.parquet"
+    },
+    "1h": {
+      "bytes": 18240901,
+      "exists": true,
+      "path": "data/research/v9_41/datasets/ohlcv_aggtrades_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/dataset.parquet"
+    },
+    "1m": {
+      "bytes": 843574494,
+      "exists": true,
+      "path": "data/research/v9_41/datasets/ohlcv_aggtrades_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_2026-05-05/dataset.parquet"
+    },
+    "5m": {
+      "bytes": 178028673,
+      "exists": true,
+      "path": "data/research/v9_41/datasets/ohlcv_aggtrades_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_2026-05-05/dataset.parquet"
+    }
+  },
+  "decision": "offline_ml_5y_completed_but_close_to_shuffled_labels",
+  "errors": [],
+  "feature_columns": [
+    "close_return_1",
+    "log_return_1",
+    "rolling_return_5",
+    "rolling_return_15",
+    "rolling_return_60",
+    "rolling_volatility_5",
+    "rolling_volatility_15",
+    "rolling_volatility_60",
+    "high_low_range",
+    "close_open_return",
+    "candle_body",
+    "upper_wick",
+    "lower_wick",
+    "volume",
+    "quote_volume",
+    "trades_count",
+    "volume_rolling_mean_5",
+    "volume_rolling_mean_15",
+    "volume_rolling_mean_60",
+    "volume_rolling_std_5",
+    "volume_rolling_std_15",
+    "volume_rolling_std_60",
+    "zero_trade_bucket_rolling_count_60",
+    "agg_trade_count",
+    "agg_trade_volume",
+    "agg_trade_quote_volume",
+    "average_trade_size",
+    "taker_buy_base_volume",
+    "taker_sell_base_volume",
+    "taker_buy_ratio",
+    "taker_buy_sell_imbalance",
+    "trade_intensity_rolling_5",
+    "trade_intensity_rolling_15",
+    "trade_intensity_rolling_60",
+    "agg_trade_volume_rolling_mean_5",
+    "agg_trade_volume_rolling_mean_15",
+    "agg_trade_volume_rolling_mean_60",
+    "taker_imbalance_rolling_mean_5",
+    "taker_imbalance_rolling_mean_15",
+    "taker_imbalance_rolling_mean_60",
+    "missing_aggtrades_flag"
+  ],
+  "feature_columns_count": 41,
+  "feature_source_version": "V9.38",
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "forbidden_feature_scan": {
+    "features_checked": 41,
+    "forbidden_feature_columns": [],
+    "status": "PASS"
+  },
+  "forbidden_metric_scan": {
+    "forbidden_terms_present": [],
+    "status": "PASS"
+  },
+  "labels_created": false,
+  "leakage_guard_status": "PASS",
+  "limitations": [
+    "V9.43 est un diagnostic ML offline classification-only.",
+    "Aucun signal, strategie, backtest, ordre ou modele persistant n'est produit.",
+    "Les resultats ne sont pas une validation de robust edge et ne sont pas actionnables."
+  ],
+  "ml_executed": true,
+  "ml_run_id": "v9_43_ml_20260530T230116Z_360bf06f",
+  "model_persisted": false,
+  "model_results_by_split": {
+    "15m.decision_tree_depth_2.test": {
+      "accuracy": 0.6442765502494654,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          6201,
+          0
+        ],
+        [
+          0,
+          22598,
+          0
+        ],
+        [
+          0,
+          6276,
+          0
+        ]
+      ],
+      "macro_f1": 0.26121986602627456,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7836595980788237,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6442765502494654,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 35075,
+        "UP": 0
+      },
+      "rows": 35075,
+      "split": "test",
+      "support": {
+        "DOWN": 6201,
+        "FLAT": 22598,
+        "UP": 6276
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5048935024201071
+    },
+    "15m.decision_tree_depth_2.train": {
+      "accuracy": 0.6598050867601616,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          17840,
+          0
+        ],
+        [
+          0,
+          69395,
+          0
+        ],
+        [
+          0,
+          17940,
+          0
+        ]
+      ],
+      "macro_f1": 0.2650130797578813,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7950392392736438,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6598050867601616,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105175,
+        "UP": 0
+      },
+      "rows": 105175,
+      "split": "train",
+      "support": {
+        "DOWN": 17840,
+        "FLAT": 69395,
+        "UP": 17940
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5245709342466794
+    },
+    "15m.decision_tree_depth_2.validation": {
+      "accuracy": 0.6434802440275956,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          6149,
+          0
+        ],
+        [
+          0,
+          22572,
+          0
+        ],
+        [
+          0,
+          6357,
+          0
+        ]
+      ],
+      "macro_f1": 0.26102341717259325,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7830702515177798,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6434802440275956,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 35078,
+        "UP": 0
+      },
+      "rows": 35078,
+      "split": "validation",
+      "support": {
+        "DOWN": 6149,
+        "FLAT": 22572,
+        "UP": 6357
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5038902365374116
+    },
+    "15m.logistic_regression.test": {
+      "accuracy": 0.6433071988595866,
+      "balanced_accuracy": 0.33519179885019534,
+      "confusion_matrix": [
+        [
+          31,
+          6145,
+          25
+        ],
+        [
+          46,
+          22503,
+          49
+        ],
+        [
+          24,
+          6222,
+          30
+        ]
+      ],
+      "macro_f1": 0.26746380606380016,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.009838146620120596,
+        "FLAT": 0.7831488828565463,
+        "UP": 0.009404388714733543
+      },
+      "per_class_precision": {
+        "DOWN": 0.3069306930693069,
+        "FLAT": 0.6453398336679094,
+        "UP": 0.28846153846153844
+      },
+      "per_class_recall": {
+        "DOWN": 0.004999193678438961,
+        "FLAT": 0.9957960881493938,
+        "UP": 0.004780114722753346
+      },
+      "prediction_distribution": {
+        "DOWN": 101,
+        "FLAT": 34870,
+        "UP": 104
+      },
+      "rows": 35075,
+      "split": "test",
+      "support": {
+        "DOWN": 6201,
+        "FLAT": 22598,
+        "UP": 6276
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5079865073572991
+    },
+    "15m.logistic_regression.train": {
+      "accuracy": 0.6589969099120514,
+      "balanced_accuracy": 0.3363658348308343,
+      "confusion_matrix": [
+        [
+          99,
+          17621,
+          120
+        ],
+        [
+          114,
+          69061,
+          220
+        ],
+        [
+          71,
+          17719,
+          150
+        ]
+      ],
+      "macro_f1": 0.2739796353886193,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.010924740675347605,
+        "FLAT": 0.7947363575686437,
+        "UP": 0.016277807921866522
+      },
+      "per_class_precision": {
+        "DOWN": 0.3485915492957746,
+        "FLAT": 0.66149749523472,
+        "UP": 0.30612244897959184
+      },
+      "per_class_recall": {
+        "DOWN": 0.00554932735426009,
+        "FLAT": 0.9951869731248649,
+        "UP": 0.008361204013377926
+      },
+      "prediction_distribution": {
+        "DOWN": 284,
+        "FLAT": 104401,
+        "UP": 490
+      },
+      "rows": 105175,
+      "split": "train",
+      "support": {
+        "DOWN": 17840,
+        "FLAT": 69395,
+        "UP": 17940
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5290007205252437
+    },
+    "15m.logistic_regression.validation": {
+      "accuracy": 0.6424539597468498,
+      "balanced_accuracy": 0.3368078672561881,
+      "confusion_matrix": [
+        [
+          50,
+          6056,
+          43
+        ],
+        [
+          81,
+          22432,
+          59
+        ],
+        [
+          67,
+          6236,
+          54
+        ]
+      ],
+      "macro_f1": 0.27178639919208175,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.01575547502757208,
+        "FLAT": 0.7830215023736387,
+        "UP": 0.016582220175034548
+      },
+      "per_class_precision": {
+        "DOWN": 0.25252525252525254,
+        "FLAT": 0.6460085243635526,
+        "UP": 0.34615384615384615
+      },
+      "per_class_recall": {
+        "DOWN": 0.00813140348024069,
+        "FLAT": 0.9937976253765728,
+        "UP": 0.008494572911750826
+      },
+      "prediction_distribution": {
+        "DOWN": 198,
+        "FLAT": 34724,
+        "UP": 156
+      },
+      "rows": 35078,
+      "split": "validation",
+      "support": {
+        "DOWN": 6149,
+        "FLAT": 22572,
+        "UP": 6357
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5096258321790013
+    },
+    "15m.majority_class_baseline.test": {
+      "accuracy": 0.6442765502494654,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          6201,
+          0
+        ],
+        [
+          0,
+          22598,
+          0
+        ],
+        [
+          0,
+          6276,
+          0
+        ]
+      ],
+      "macro_f1": 0.26121986602627456,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7836595980788237,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6442765502494654,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 35075,
+        "UP": 0
+      },
+      "rows": 35075,
+      "split": "test",
+      "support": {
+        "DOWN": 6201,
+        "FLAT": 22598,
+        "UP": 6276
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5048935024201071
+    },
+    "15m.majority_class_baseline.train": {
+      "accuracy": 0.6598050867601616,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          17840,
+          0
+        ],
+        [
+          0,
+          69395,
+          0
+        ],
+        [
+          0,
+          17940,
+          0
+        ]
+      ],
+      "macro_f1": 0.2650130797578813,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7950392392736438,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6598050867601616,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105175,
+        "UP": 0
+      },
+      "rows": 105175,
+      "split": "train",
+      "support": {
+        "DOWN": 17840,
+        "FLAT": 69395,
+        "UP": 17940
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5245709342466794
+    },
+    "15m.majority_class_baseline.validation": {
+      "accuracy": 0.6434802440275956,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          6149,
+          0
+        ],
+        [
+          0,
+          22572,
+          0
+        ],
+        [
+          0,
+          6357,
+          0
+        ]
+      ],
+      "macro_f1": 0.26102341717259325,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7830702515177798,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6434802440275956,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 35078,
+        "UP": 0
+      },
+      "rows": 35078,
+      "split": "validation",
+      "support": {
+        "DOWN": 6149,
+        "FLAT": 22572,
+        "UP": 6357
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5038902365374116
+    },
+    "15m.random_seeded_baseline.test": {
+      "accuracy": 0.4839344262295082,
+      "balanced_accuracy": 0.3334479742196297,
+      "confusion_matrix": [
+        [
+          1044,
+          4072,
+          1085
+        ],
+        [
+          3868,
+          14826,
+          3904
+        ],
+        [
+          1043,
+          4129,
+          1104
+        ]
+      ],
+      "macro_f1": 0.3333948903515728,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.1717670286278381,
+        "FLAT": 0.6499068493150685,
+        "UP": 0.17851079311181178
+      },
+      "per_class_precision": {
+        "DOWN": 0.17531486146095718,
+        "FLAT": 0.6438528683719112,
+        "UP": 0.1811915312653865
+      },
+      "per_class_recall": {
+        "DOWN": 0.1683599419448476,
+        "FLAT": 0.6560757589167183,
+        "UP": 0.17590822179732313
+      },
+      "prediction_distribution": {
+        "DOWN": 5955,
+        "FLAT": 23027,
+        "UP": 6093
+      },
+      "rows": 35075,
+      "split": "test",
+      "support": {
+        "DOWN": 6201,
+        "FLAT": 22598,
+        "UP": 6276
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4810279704322986
+    },
+    "15m.random_seeded_baseline.train": {
+      "accuracy": 0.4956786308533397,
+      "balanced_accuracy": 0.335219915075567,
+      "confusion_matrix": [
+        [
+          3096,
+          11606,
+          3138
+        ],
+        [
+          11615,
+          46001,
+          11779
+        ],
+        [
+          3009,
+          11895,
+          3036
+        ]
+      ],
+      "macro_f1": 0.3352244757237501,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.17412823397075367,
+        "FLAT": 0.6623757172581122,
+        "UP": 0.1691694759423843
+      },
+      "per_class_precision": {
+        "DOWN": 0.1747178329571106,
+        "FLAT": 0.6618658455871773,
+        "UP": 0.16910822703726397
+      },
+      "per_class_recall": {
+        "DOWN": 0.173542600896861,
+        "FLAT": 0.6628863750990706,
+        "UP": 0.16923076923076924
+      },
+      "prediction_distribution": {
+        "DOWN": 17720,
+        "FLAT": 69502,
+        "UP": 17953
+      },
+      "rows": 105175,
+      "split": "train",
+      "support": {
+        "DOWN": 17840,
+        "FLAT": 69395,
+        "UP": 17940
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4954305775286077
+    },
+    "15m.random_seeded_baseline.validation": {
+      "accuracy": 0.48423513313187755,
+      "balanced_accuracy": 0.3323805889329414,
+      "confusion_matrix": [
+        [
+          1076,
+          4043,
+          1030
+        ],
+        [
+          3882,
+          14872,
+          3818
+        ],
+        [
+          1067,
+          4252,
+          1038
+        ]
+      ],
+      "macro_f1": 0.3322116270370648,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.17677016592738623,
+        "FLAT": 0.6502984324099783,
+        "UP": 0.16956628277382996
+      },
+      "per_class_precision": {
+        "DOWN": 0.17858921161825725,
+        "FLAT": 0.6419475978762895,
+        "UP": 0.1763506625891947
+      },
+      "per_class_recall": {
+        "DOWN": 0.17498780289477964,
+        "FLAT": 0.6588693957115009,
+        "UP": 0.16328456819254367
+      },
+      "prediction_distribution": {
+        "DOWN": 6025,
+        "FLAT": 23167,
+        "UP": 5886
+      },
+      "rows": 35078,
+      "split": "validation",
+      "support": {
+        "DOWN": 6149,
+        "FLAT": 22572,
+        "UP": 6357
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4801707288396935
+    },
+    "1h.decision_tree_depth_2.test": {
+      "accuracy": 0.6572015053027711,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1502,
+          0
+        ],
+        [
+          0,
+          5763,
+          0
+        ],
+        [
+          0,
+          1504,
+          0
+        ]
+      ],
+      "macro_f1": 0.2643820533993944,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7931461601981833,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6572015053027711,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 8769,
+        "UP": 0
+      },
+      "rows": 8769,
+      "split": "test",
+      "support": {
+        "DOWN": 1502,
+        "FLAT": 5763,
+        "UP": 1504
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5212568504073589
+    },
+    "1h.decision_tree_depth_2.train": {
+      "accuracy": 0.6798994209082597,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          4177,
+          0
+        ],
+        [
+          0,
+          17846,
+          0
+        ],
+        [
+          0,
+          4225,
+          0
+        ]
+      ],
+      "macro_f1": 0.269817511074825,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.809452533224475,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6798994209082597,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 26248,
+        "UP": 0
+      },
+      "rows": 26248,
+      "split": "train",
+      "support": {
+        "DOWN": 4177,
+        "FLAT": 17846,
+        "UP": 4225
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5503463085920444
+    },
+    "1h.decision_tree_depth_2.validation": {
+      "accuracy": 0.6688711516533637,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1413,
+          0
+        ],
+        [
+          0,
+          5866,
+          0
+        ],
+        [
+          0,
+          1491,
+          0
+        ]
+      ],
+      "macro_f1": 0.2671950441832924,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.8015851325498771,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6688711516533637,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 8770,
+        "UP": 0
+      },
+      "rows": 8770,
+      "split": "validation",
+      "support": {
+        "DOWN": 1413,
+        "FLAT": 5866,
+        "UP": 1491
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5361571707568504
+    },
+    "1h.logistic_regression.test": {
+      "accuracy": 0.6579997719238225,
+      "balanced_accuracy": 0.338654599896056,
+      "confusion_matrix": [
+        [
+          9,
+          1479,
+          14
+        ],
+        [
+          3,
+          5740,
+          20
+        ],
+        [
+          5,
+          1478,
+          21
+        ]
+      ],
+      "macro_f1": 0.2775681646077029,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.01184990125082291,
+        "FLAT": 0.7939142461964038,
+        "UP": 0.026940346375881975
+      },
+      "per_class_precision": {
+        "DOWN": 0.5294117647058824,
+        "FLAT": 0.6599977003564448,
+        "UP": 0.38181818181818183
+      },
+      "per_class_recall": {
+        "DOWN": 0.005992010652463382,
+        "FLAT": 0.9960090230782579,
+        "UP": 0.013962765957446808
+      },
+      "prediction_distribution": {
+        "DOWN": 17,
+        "FLAT": 8697,
+        "UP": 55
+      },
+      "rows": 8769,
+      "split": "test",
+      "support": {
+        "DOWN": 1502,
+        "FLAT": 5763,
+        "UP": 1504
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.528411977814795
+    },
+    "1h.logistic_regression.train": {
+      "accuracy": 0.6787945748247486,
+      "balanced_accuracy": 0.3390130667523117,
+      "confusion_matrix": [
+        [
+          21,
+          4082,
+          74
+        ],
+        [
+          36,
+          17714,
+          96
+        ],
+        [
+          25,
+          4118,
+          82
+        ]
+      ],
+      "macro_f1": 0.28536364967987654,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.009861469828598262,
+        "FLAT": 0.8095978062157221,
+        "UP": 0.03663167299530936
+      },
+      "per_class_precision": {
+        "DOWN": 0.25609756097560976,
+        "FLAT": 0.683568727328857,
+        "UP": 0.3253968253968254
+      },
+      "per_class_recall": {
+        "DOWN": 0.005027531721331099,
+        "FLAT": 0.9926033845119354,
+        "UP": 0.019408284023668638
+      },
+      "prediction_distribution": {
+        "DOWN": 82,
+        "FLAT": 25914,
+        "UP": 252
+      },
+      "rows": 26248,
+      "split": "train",
+      "support": {
+        "DOWN": 4177,
+        "FLAT": 17846,
+        "UP": 4225
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5579107980648055
+    },
+    "1h.logistic_regression.validation": {
+      "accuracy": 0.6660205245153934,
+      "balanced_accuracy": 0.34208983050436376,
+      "confusion_matrix": [
+        [
+          14,
+          1368,
+          31
+        ],
+        [
+          31,
+          5781,
+          54
+        ],
+        [
+          18,
+          1427,
+          46
+        ]
+      ],
+      "macro_f1": 0.2920906417459813,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.018970189701897018,
+        "FLAT": 0.8005816368923971,
+        "UP": 0.05672009864364982
+      },
+      "per_class_precision": {
+        "DOWN": 0.2222222222222222,
+        "FLAT": 0.6740904850746269,
+        "UP": 0.3511450381679389
+      },
+      "per_class_recall": {
+        "DOWN": 0.009907997169143666,
+        "FLAT": 0.9855097170132969,
+        "UP": 0.03085177733065057
+      },
+      "prediction_distribution": {
+        "DOWN": 63,
+        "FLAT": 8576,
+        "UP": 131
+      },
+      "rows": 8770,
+      "split": "validation",
+      "support": {
+        "DOWN": 1413,
+        "FLAT": 5866,
+        "UP": 1491
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5481854534934166
+    },
+    "1h.majority_class_baseline.test": {
+      "accuracy": 0.6572015053027711,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1502,
+          0
+        ],
+        [
+          0,
+          5763,
+          0
+        ],
+        [
+          0,
+          1504,
+          0
+        ]
+      ],
+      "macro_f1": 0.2643820533993944,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7931461601981833,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6572015053027711,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 8769,
+        "UP": 0
+      },
+      "rows": 8769,
+      "split": "test",
+      "support": {
+        "DOWN": 1502,
+        "FLAT": 5763,
+        "UP": 1504
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5212568504073589
+    },
+    "1h.majority_class_baseline.train": {
+      "accuracy": 0.6798994209082597,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          4177,
+          0
+        ],
+        [
+          0,
+          17846,
+          0
+        ],
+        [
+          0,
+          4225,
+          0
+        ]
+      ],
+      "macro_f1": 0.269817511074825,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.809452533224475,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6798994209082597,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 26248,
+        "UP": 0
+      },
+      "rows": 26248,
+      "split": "train",
+      "support": {
+        "DOWN": 4177,
+        "FLAT": 17846,
+        "UP": 4225
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5503463085920444
+    },
+    "1h.majority_class_baseline.validation": {
+      "accuracy": 0.6688711516533637,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1413,
+          0
+        ],
+        [
+          0,
+          5866,
+          0
+        ],
+        [
+          0,
+          1491,
+          0
+        ]
+      ],
+      "macro_f1": 0.2671950441832924,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.8015851325498771,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6688711516533637,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 8770,
+        "UP": 0
+      },
+      "rows": 8770,
+      "split": "validation",
+      "support": {
+        "DOWN": 1413,
+        "FLAT": 5866,
+        "UP": 1491
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5361571707568504
+    },
+    "1h.random_seeded_baseline.test": {
+      "accuracy": 0.49914471433458774,
+      "balanced_accuracy": 0.3359534915677724,
+      "confusion_matrix": [
+        [
+          245,
+          995,
+          262
+        ],
+        [
+          952,
+          3872,
+          939
+        ],
+        [
+          231,
+          1013,
+          260
+        ]
+      ],
+      "macro_f1": 0.3359118649635664,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.16723549488054607,
+        "FLAT": 0.6651206733659709,
+        "UP": 0.17537942664418213
+      },
+      "per_class_precision": {
+        "DOWN": 0.1715686274509804,
+        "FLAT": 0.6585034013605442,
+        "UP": 0.17796030116358658
+      },
+      "per_class_recall": {
+        "DOWN": 0.16311584553928096,
+        "FLAT": 0.6718722887385042,
+        "UP": 0.17287234042553193
+      },
+      "prediction_distribution": {
+        "DOWN": 1428,
+        "FLAT": 5880,
+        "UP": 1461
+      },
+      "rows": 8769,
+      "split": "test",
+      "support": {
+        "DOWN": 1502,
+        "FLAT": 5763,
+        "UP": 1504
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.49584317614226486
+    },
+    "1h.random_seeded_baseline.train": {
+      "accuracy": 0.510515086863761,
+      "balanced_accuracy": 0.32999145298004,
+      "confusion_matrix": [
+        [
+          636,
+          2890,
+          651
+        ],
+        [
+          2902,
+          12086,
+          2858
+        ],
+        [
+          668,
+          2879,
+          678
+        ]
+      ],
+      "macro_f1": 0.3300006043001307,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.15173565549326018,
+        "FLAT": 0.6770678692473601,
+        "UP": 0.16119828815977175
+      },
+      "per_class_precision": {
+        "DOWN": 0.15121255349500715,
+        "FLAT": 0.6768972276673201,
+        "UP": 0.1619297826606162
+      },
+      "per_class_recall": {
+        "DOWN": 0.152262389274599,
+        "FLAT": 0.6772385968844559,
+        "UP": 0.16047337278106508
+      },
+      "prediction_distribution": {
+        "DOWN": 4206,
+        "FLAT": 17855,
+        "UP": 4187
+      },
+      "rows": 26248,
+      "split": "train",
+      "support": {
+        "DOWN": 4177,
+        "FLAT": 17846,
+        "UP": 4225
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5104318727163507
+    },
+    "1h.random_seeded_baseline.validation": {
+      "accuracy": 0.5118586088939566,
+      "balanced_accuracy": 0.3335743816593893,
+      "confusion_matrix": [
+        [
+          226,
+          960,
+          227
+        ],
+        [
+          906,
+          4035,
+          925
+        ],
+        [
+          248,
+          1015,
+          228
+        ]
+      ],
+      "macro_f1": 0.33339485162392396,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.16183315431435732,
+        "FLAT": 0.6795217244863591,
+        "UP": 0.1588296760710554
+      },
+      "per_class_precision": {
+        "DOWN": 0.16376811594202897,
+        "FLAT": 0.6713810316139767,
+        "UP": 0.16521739130434782
+      },
+      "per_class_recall": {
+        "DOWN": 0.1599433828733192,
+        "FLAT": 0.6878622570746675,
+        "UP": 0.1529175050301811
+      },
+      "prediction_distribution": {
+        "DOWN": 1380,
+        "FLAT": 6010,
+        "UP": 1380
+      },
+      "rows": 8770,
+      "split": "validation",
+      "support": {
+        "DOWN": 1413,
+        "FLAT": 5866,
+        "UP": 1491
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5075894788945396
+    },
+    "1m.decision_tree_depth_2.test": {
+      "accuracy": 0.5977712139528165,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          105992,
+          0
+        ],
+        [
+          0,
+          314497,
+          0
+        ],
+        [
+          0,
+          105627,
+          0
+        ]
+      ],
+      "macro_f1": 0.24941877732876683,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7482563319863005,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5977712139528165,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 526116,
+        "UP": 0
+      },
+      "rows": 526116,
+      "split": "test",
+      "support": {
+        "DOWN": 105992,
+        "FLAT": 314497,
+        "UP": 105627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.44728609591933255
+    },
+    "1m.decision_tree_depth_2.train": {
+      "accuracy": 0.6212750371807163,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          299166,
+          0
+        ],
+        [
+          0,
+          980436,
+          0
+        ],
+        [
+          0,
+          298501,
+          0
+        ]
+      ],
+      "macro_f1": 0.25546767119828934,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.766403013594868,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6212750371807163,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 1578103,
+        "UP": 0
+      },
+      "rows": 1578103,
+      "split": "train",
+      "support": {
+        "DOWN": 299166,
+        "FLAT": 980436,
+        "UP": 298501
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.4761470607665646
+    },
+    "1m.decision_tree_depth_2.validation": {
+      "accuracy": 0.601099251961321,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          103517,
+          0
+        ],
+        [
+          0,
+          316284,
+          0
+        ],
+        [
+          0,
+          106375,
+          0
+        ]
+      ],
+      "macro_f1": 0.25028606699427863,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.750858200982836,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.601099251961321,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 526176,
+        "UP": 0
+      },
+      "rows": 526176,
+      "split": "validation",
+      "support": {
+        "DOWN": 103517,
+        "FLAT": 316284,
+        "UP": 106375
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.45134030293980587
+    },
+    "1m.logistic_regression.test": {
+      "accuracy": 0.5976590713834972,
+      "balanced_accuracy": 0.3333919685762128,
+      "confusion_matrix": [
+        [
+          36,
+          105943,
+          13
+        ],
+        [
+          97,
+          314380,
+          20
+        ],
+        [
+          28,
+          105577,
+          22
+        ]
+      ],
+      "macro_f1": 0.2497549398924849,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.0006782662760355336,
+        "FLAT": 0.7481702100316874,
+        "UP": 0.000416343369731837
+      },
+      "per_class_precision": {
+        "DOWN": 0.2236024844720497,
+        "FLAT": 0.5977942574633961,
+        "UP": 0.4
+      },
+      "per_class_recall": {
+        "DOWN": 0.00033964827534153523,
+        "FLAT": 0.999627977373393,
+        "UP": 0.00020828007990381247
+      },
+      "prediction_distribution": {
+        "DOWN": 161,
+        "FLAT": 525900,
+        "UP": 55
+      },
+      "rows": 526116,
+      "split": "test",
+      "support": {
+        "DOWN": 105992,
+        "FLAT": 314497,
+        "UP": 105627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.44745484730473856
+    },
+    "1m.logistic_regression.train": {
+      "accuracy": 0.6211324609356931,
+      "balanced_accuracy": 0.33339031352946624,
+      "confusion_matrix": [
+        [
+          47,
+          298996,
+          123
+        ],
+        [
+          130,
+          980039,
+          267
+        ],
+        [
+          33,
+          298343,
+          125
+        ]
+      ],
+      "macro_f1": 0.25581996252867695,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.0003139864250975362,
+        "FLAT": 0.7663098254994304,
+        "UP": 0.0008360756615030634
+      },
+      "per_class_precision": {
+        "DOWN": 0.22380952380952382,
+        "FLAT": 0.6213089062989341,
+        "UP": 0.24271844660194175
+      },
+      "per_class_recall": {
+        "DOWN": 0.00015710341415802598,
+        "FLAT": 0.999595078108107,
+        "UP": 0.0004187590661337818
+      },
+      "prediction_distribution": {
+        "DOWN": 210,
+        "FLAT": 1577378,
+        "UP": 515
+      },
+      "rows": 1578103,
+      "split": "train",
+      "support": {
+        "DOWN": 299166,
+        "FLAT": 980436,
+        "UP": 298501
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.4763068339374836
+    },
+    "1m.logistic_regression.validation": {
+      "accuracy": 0.6008540868454662,
+      "balanced_accuracy": 0.33331955398911506,
+      "confusion_matrix": [
+        [
+          42,
+          103460,
+          15
+        ],
+        [
+          132,
+          316098,
+          54
+        ],
+        [
+          62,
+          106298,
+          15
+        ]
+      ],
+      "macro_f1": 0.25059773244059613,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.0008096151436584966,
+        "FLAT": 0.7507017835514285,
+        "UP": 0.0002817986267013592
+      },
+      "per_class_precision": {
+        "DOWN": 0.17796610169491525,
+        "FLAT": 0.6011113308586381,
+        "UP": 0.17857142857142858
+      },
+      "per_class_recall": {
+        "DOWN": 0.00040573045973125185,
+        "FLAT": 0.9994119209318207,
+        "UP": 0.0001410105757931845
+      },
+      "prediction_distribution": {
+        "DOWN": 236,
+        "FLAT": 525856,
+        "UP": 84
+      },
+      "rows": 526176,
+      "split": "validation",
+      "support": {
+        "DOWN": 103517,
+        "FLAT": 316284,
+        "UP": 106375
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.4514625299681503
+    },
+    "1m.majority_class_baseline.test": {
+      "accuracy": 0.5977712139528165,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          105992,
+          0
+        ],
+        [
+          0,
+          314497,
+          0
+        ],
+        [
+          0,
+          105627,
+          0
+        ]
+      ],
+      "macro_f1": 0.24941877732876683,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7482563319863005,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5977712139528165,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 526116,
+        "UP": 0
+      },
+      "rows": 526116,
+      "split": "test",
+      "support": {
+        "DOWN": 105992,
+        "FLAT": 314497,
+        "UP": 105627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.44728609591933255
+    },
+    "1m.majority_class_baseline.train": {
+      "accuracy": 0.6212750371807163,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          299166,
+          0
+        ],
+        [
+          0,
+          980436,
+          0
+        ],
+        [
+          0,
+          298501,
+          0
+        ]
+      ],
+      "macro_f1": 0.25546767119828934,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.766403013594868,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6212750371807163,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 1578103,
+        "UP": 0
+      },
+      "rows": 1578103,
+      "split": "train",
+      "support": {
+        "DOWN": 299166,
+        "FLAT": 980436,
+        "UP": 298501
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.4761470607665646
+    },
+    "1m.majority_class_baseline.validation": {
+      "accuracy": 0.601099251961321,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          103517,
+          0
+        ],
+        [
+          0,
+          316284,
+          0
+        ],
+        [
+          0,
+          106375,
+          0
+        ]
+      ],
+      "macro_f1": 0.25028606699427863,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.750858200982836,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.601099251961321,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 526176,
+        "UP": 0
+      },
+      "rows": 526176,
+      "split": "validation",
+      "support": {
+        "DOWN": 103517,
+        "FLAT": 316284,
+        "UP": 106375
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.45134030293980587
+    },
+    "1m.random_seeded_baseline.test": {
+      "accuracy": 0.4480589831900189,
+      "balanced_accuracy": 0.33362271386532844,
+      "confusion_matrix": [
+        [
+          20138,
+          65722,
+          20132
+        ],
+        [
+          59458,
+          195656,
+          59383
+        ],
+        [
+          19977,
+          65713,
+          19937
+        ]
+      ],
+      "macro_f1": 0.33342411378589,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.19592829518643737,
+        "FLAT": 0.6099116567018087,
+        "UP": 0.19443238946942398
+      },
+      "per_class_precision": {
+        "DOWN": 0.20224358008697138,
+        "FLAT": 0.5981699282462679,
+        "UP": 0.200468567751277
+      },
+      "per_class_recall": {
+        "DOWN": 0.18999547135632877,
+        "FLAT": 0.622123581465006,
+        "UP": 0.1887490887746504
+      },
+      "prediction_distribution": {
+        "DOWN": 99573,
+        "FLAT": 327091,
+        "UP": 99452
+      },
+      "rows": 526116,
+      "split": "test",
+      "support": {
+        "DOWN": 105992,
+        "FLAT": 314497,
+        "UP": 105627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.4430953024877336
+    },
+    "1m.random_seeded_baseline.train": {
+      "accuracy": 0.4572109678519083,
+      "balanced_accuracy": 0.33273358262764513,
+      "confusion_matrix": [
+        [
+          56452,
+          186148,
+          56566
+        ],
+        [
+          186202,
+          608786,
+          185448
+        ],
+        [
+          56306,
+          185907,
+          56288
+        ]
+      ],
+      "macro_f1": 0.33273346416759353,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.18876290279974453,
+        "FLAT": 0.6208057301441867,
+        "UP": 0.1886317595588494
+      },
+      "per_class_precision": {
+        "DOWN": 0.18882793684773883,
+        "FLAT": 0.6206775613988403,
+        "UP": 0.18869467854724406
+      },
+      "per_class_recall": {
+        "DOWN": 0.18869791353295495,
+        "FLAT": 0.620933951833674,
+        "UP": 0.1885688825163065
+      },
+      "prediction_distribution": {
+        "DOWN": 298960,
+        "FLAT": 980841,
+        "UP": 298302
+      },
+      "rows": 1578103,
+      "split": "train",
+      "support": {
+        "DOWN": 299166,
+        "FLAT": 980436,
+        "UP": 298501
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.45715552044366575
+    },
+    "1m.random_seeded_baseline.validation": {
+      "accuracy": 0.4492280149607736,
+      "balanced_accuracy": 0.33374156288271833,
+      "confusion_matrix": [
+        [
+          19653,
+          64054,
+          19810
+        ],
+        [
+          60053,
+          196498,
+          59733
+        ],
+        [
+          20162,
+          65991,
+          20222
+        ]
+      ],
+      "macro_f1": 0.33360387543047904,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.1932590899033852,
+        "FLAT": 0.611355776904206,
+        "UP": 0.19619675948384593
+      },
+      "per_class_precision": {
+        "DOWN": 0.19678976248648217,
+        "FLAT": 0.6017522960222697,
+        "UP": 0.2026963363905177
+      },
+      "per_class_recall": {
+        "DOWN": 0.18985287440710222,
+        "FLAT": 0.6212707566617344,
+        "UP": 0.19010105757931844
+      },
+      "prediction_distribution": {
+        "DOWN": 99868,
+        "FLAT": 326543,
+        "UP": 99765
+      },
+      "rows": 526176,
+      "split": "validation",
+      "support": {
+        "DOWN": 103517,
+        "FLAT": 316284,
+        "UP": 106375
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.4451705931893372
+    },
+    "5m.decision_tree_depth_2.test": {
+      "accuracy": 0.6252280848475633,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          19676,
+          0
+        ],
+        [
+          0,
+          65789,
+          0
+        ],
+        [
+          0,
+          19759,
+          0
+        ]
+      ],
+      "macro_f1": 0.2564678318802274,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7694034956406823,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6252280848475633,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105224,
+        "UP": 0
+      },
+      "rows": 105224,
+      "split": "test",
+      "support": {
+        "DOWN": 19676,
+        "FLAT": 65789,
+        "UP": 19759
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4810526740544443
+    },
+    "5m.decision_tree_depth_2.train": {
+      "accuracy": 0.647835384688495,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          55705,
+          0
+        ],
+        [
+          0,
+          204486,
+          0
+        ],
+        [
+          0,
+          55454,
+          0
+        ]
+      ],
+      "macro_f1": 0.26209551055407193,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7862865316622158,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.647835384688495,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 315645,
+        "UP": 0
+      },
+      "rows": 315645,
+      "split": "train",
+      "support": {
+        "DOWN": 55705,
+        "FLAT": 204486,
+        "UP": 55454
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.5093842377147741
+    },
+    "5m.decision_tree_depth_2.validation": {
+      "accuracy": 0.6244595429277332,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          19560,
+          0
+        ],
+        [
+          0,
+          65715,
+          0
+        ],
+        [
+          0,
+          19960,
+          0
+        ]
+      ],
+      "macro_f1": 0.25627376425855514,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7688212927756654,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6244595429277332,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105235,
+        "UP": 0
+      },
+      "rows": 105235,
+      "split": "validation",
+      "support": {
+        "DOWN": 19560,
+        "FLAT": 65715,
+        "UP": 19960
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.48009779307980094
+    },
+    "5m.logistic_regression.test": {
+      "accuracy": 0.6248004257583821,
+      "balanced_accuracy": 0.33368525635484114,
+      "confusion_matrix": [
+        [
+          22,
+          19624,
+          30
+        ],
+        [
+          57,
+          65695,
+          37
+        ],
+        [
+          23,
+          19709,
+          27
+        ]
+      ],
+      "macro_f1": 0.258043474275988,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.002224694104560623,
+        "FLAT": 0.7691857367826387,
+        "UP": 0.00271999194076462
+      },
+      "per_class_precision": {
+        "DOWN": 0.21568627450980393,
+        "FLAT": 0.6254998667022127,
+        "UP": 0.2872340425531915
+      },
+      "per_class_recall": {
+        "DOWN": 0.0011181134376905876,
+        "FLAT": 0.998571189712566,
+        "UP": 0.0013664659142669164
+      },
+      "prediction_distribution": {
+        "DOWN": 102,
+        "FLAT": 105028,
+        "UP": 94
+      },
+      "rows": 105224,
+      "split": "test",
+      "support": {
+        "DOWN": 19676,
+        "FLAT": 65789,
+        "UP": 19759
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.48184328517402797
+    },
+    "5m.logistic_regression.train": {
+      "accuracy": 0.6473348223478909,
+      "balanced_accuracy": 0.3342522035979718,
+      "confusion_matrix": [
+        [
+          75,
+          55484,
+          146
+        ],
+        [
+          148,
+          204059,
+          279
+        ],
+        [
+          60,
+          55200,
+          194
+        ]
+      ],
+      "macro_f1": 0.2652021373719776,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.002679145531185254,
+        "FLAT": 0.7860077152855484,
+        "UP": 0.006919551299199258
+      },
+      "per_class_precision": {
+        "DOWN": 0.26501766784452296,
+        "FLAT": 0.6483353084897837,
+        "UP": 0.3134087237479806
+      },
+      "per_class_recall": {
+        "DOWN": 0.0013463782425276007,
+        "FLAT": 0.9979118374852068,
+        "UP": 0.0034983950661809787
+      },
+      "prediction_distribution": {
+        "DOWN": 283,
+        "FLAT": 314743,
+        "UP": 619
+      },
+      "rows": 315645,
+      "split": "train",
+      "support": {
+        "DOWN": 55705,
+        "FLAT": 204486,
+        "UP": 55454
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.5108920853092591
+    },
+    "5m.logistic_regression.validation": {
+      "accuracy": 0.6240794412505345,
+      "balanced_accuracy": 0.33462593288143333,
+      "confusion_matrix": [
+        [
+          55,
+          19457,
+          48
+        ],
+        [
+          74,
+          65548,
+          93
+        ],
+        [
+          69,
+          19819,
+          72
+        ]
+      ],
+      "macro_f1": 0.2604737598558103,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.005567365117926916,
+        "FLAT": 0.7687156603474865,
+        "UP": 0.007138254102017548
+      },
+      "per_class_precision": {
+        "DOWN": 0.2777777777777778,
+        "FLAT": 0.6253148134015111,
+        "UP": 0.3380281690140845
+      },
+      "per_class_recall": {
+        "DOWN": 0.0028118609406952966,
+        "FLAT": 0.997458723274747,
+        "UP": 0.0036072144288577155
+      },
+      "prediction_distribution": {
+        "DOWN": 198,
+        "FLAT": 104824,
+        "UP": 213
+      },
+      "rows": 105235,
+      "split": "validation",
+      "support": {
+        "DOWN": 19560,
+        "FLAT": 65715,
+        "UP": 19960
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4824205524142918
+    },
+    "5m.majority_class_baseline.test": {
+      "accuracy": 0.6252280848475633,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          19676,
+          0
+        ],
+        [
+          0,
+          65789,
+          0
+        ],
+        [
+          0,
+          19759,
+          0
+        ]
+      ],
+      "macro_f1": 0.2564678318802274,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7694034956406823,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6252280848475633,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105224,
+        "UP": 0
+      },
+      "rows": 105224,
+      "split": "test",
+      "support": {
+        "DOWN": 19676,
+        "FLAT": 65789,
+        "UP": 19759
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4810526740544443
+    },
+    "5m.majority_class_baseline.train": {
+      "accuracy": 0.647835384688495,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          55705,
+          0
+        ],
+        [
+          0,
+          204486,
+          0
+        ],
+        [
+          0,
+          55454,
+          0
+        ]
+      ],
+      "macro_f1": 0.26209551055407193,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7862865316622158,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.647835384688495,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 315645,
+        "UP": 0
+      },
+      "rows": 315645,
+      "split": "train",
+      "support": {
+        "DOWN": 55705,
+        "FLAT": 204486,
+        "UP": 55454
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.5093842377147741
+    },
+    "5m.majority_class_baseline.validation": {
+      "accuracy": 0.6244595429277332,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          19560,
+          0
+        ],
+        [
+          0,
+          65715,
+          0
+        ],
+        [
+          0,
+          19960,
+          0
+        ]
+      ],
+      "macro_f1": 0.25627376425855514,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7688212927756654,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6244595429277332,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105235,
+        "UP": 0
+      },
+      "rows": 105235,
+      "split": "validation",
+      "support": {
+        "DOWN": 19560,
+        "FLAT": 65715,
+        "UP": 19960
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.48009779307980094
+    },
+    "5m.random_seeded_baseline.test": {
+      "accuracy": 0.4706910970881168,
+      "balanced_accuracy": 0.3333543599070412,
+      "confusion_matrix": [
+        [
+          3489,
+          12828,
+          3359
+        ],
+        [
+          11644,
+          42567,
+          11578
+        ],
+        [
+          3543,
+          12744,
+          3472
+        ]
+      ],
+      "macro_f1": 0.3331828679426739,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.1819461827284105,
+        "FLAT": 0.6356699121916254,
+        "UP": 0.18193250890798573
+      },
+      "per_class_precision": {
+        "DOWN": 0.18681730563289783,
+        "FLAT": 0.6247083168229648,
+        "UP": 0.1886034005106198
+      },
+      "per_class_recall": {
+        "DOWN": 0.1773226265501118,
+        "FLAT": 0.6470230585660217,
+        "UP": 0.17571739460499014
+      },
+      "prediction_distribution": {
+        "DOWN": 18676,
+        "FLAT": 68139,
+        "UP": 18409
+      },
+      "rows": 105224,
+      "split": "test",
+      "support": {
+        "DOWN": 19676,
+        "FLAT": 65789,
+        "UP": 19759
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.46562443347574645
+    },
+    "5m.random_seeded_baseline.train": {
+      "accuracy": 0.4836287601577722,
+      "balanced_accuracy": 0.33532044060222055,
+      "confusion_matrix": [
+        [
+          9928,
+          35902,
+          9875
+        ],
+        [
+          36033,
+          132854,
+          35599
+        ],
+        [
+          9767,
+          35814,
+          9873
+        ]
+      ],
+      "macro_f1": 0.33532101728377656,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.1781877899724498,
+        "FLAT": 0.6495638738950168,
+        "UP": 0.17821138798386296
+      },
+      "per_class_precision": {
+        "DOWN": 0.17815101923629056,
+        "FLAT": 0.6494305127829105,
+        "UP": 0.1783836522304732
+      },
+      "per_class_recall": {
+        "DOWN": 0.1782245758908536,
+        "FLAT": 0.6496972897900101,
+        "UP": 0.17803945612579797
+      },
+      "prediction_distribution": {
+        "DOWN": 55728,
+        "FLAT": 204570,
+        "UP": 55347
+      },
+      "rows": 315645,
+      "split": "train",
+      "support": {
+        "DOWN": 55705,
+        "FLAT": 204486,
+        "UP": 55454
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4835660424431525
+    },
+    "5m.random_seeded_baseline.validation": {
+      "accuracy": 0.4697676628498123,
+      "balanced_accuracy": 0.33199530210814343,
+      "confusion_matrix": [
+        [
+          3385,
+          12705,
+          3470
+        ],
+        [
+          11828,
+          42549,
+          11338
+        ],
+        [
+          3520,
+          12938,
+          3502
+        ]
+      ],
+      "macro_f1": 0.3317702964009886,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.17679471443867026,
+        "FLAT": 0.6355007579887534,
+        "UP": 0.1830154167755422
+      },
+      "per_class_precision": {
+        "DOWN": 0.18069716542998987,
+        "FLAT": 0.6239588221492257,
+        "UP": 0.19126160567995631
+      },
+      "per_class_recall": {
+        "DOWN": 0.17305725971370142,
+        "FLAT": 0.6474777448071216,
+        "UP": 0.1754509018036072
+      },
+      "prediction_distribution": {
+        "DOWN": 18733,
+        "FLAT": 68192,
+        "UP": 18310
+      },
+      "rows": 105235,
+      "split": "validation",
+      "support": {
+        "DOWN": 19560,
+        "FLAT": 65715,
+        "UP": 19960
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4644179659285518
+    }
+  },
+  "model_results_by_timeframe": {
+    "15m": {
+      "metrics": {
+        "15m.decision_tree_depth_2.test": {
+          "accuracy": 0.6442765502494654,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              6201,
+              0
+            ],
+            [
+              0,
+              22598,
+              0
+            ],
+            [
+              0,
+              6276,
+              0
+            ]
+          ],
+          "macro_f1": 0.26121986602627456,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7836595980788237,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6442765502494654,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 35075,
+            "UP": 0
+          },
+          "rows": 35075,
+          "split": "test",
+          "support": {
+            "DOWN": 6201,
+            "FLAT": 22598,
+            "UP": 6276
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5048935024201071
+        },
+        "15m.decision_tree_depth_2.train": {
+          "accuracy": 0.6598050867601616,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              17840,
+              0
+            ],
+            [
+              0,
+              69395,
+              0
+            ],
+            [
+              0,
+              17940,
+              0
+            ]
+          ],
+          "macro_f1": 0.2650130797578813,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7950392392736438,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6598050867601616,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 105175,
+            "UP": 0
+          },
+          "rows": 105175,
+          "split": "train",
+          "support": {
+            "DOWN": 17840,
+            "FLAT": 69395,
+            "UP": 17940
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5245709342466794
+        },
+        "15m.decision_tree_depth_2.validation": {
+          "accuracy": 0.6434802440275956,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              6149,
+              0
+            ],
+            [
+              0,
+              22572,
+              0
+            ],
+            [
+              0,
+              6357,
+              0
+            ]
+          ],
+          "macro_f1": 0.26102341717259325,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7830702515177798,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6434802440275956,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 35078,
+            "UP": 0
+          },
+          "rows": 35078,
+          "split": "validation",
+          "support": {
+            "DOWN": 6149,
+            "FLAT": 22572,
+            "UP": 6357
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5038902365374116
+        },
+        "15m.logistic_regression.test": {
+          "accuracy": 0.6433071988595866,
+          "balanced_accuracy": 0.33519179885019534,
+          "confusion_matrix": [
+            [
+              31,
+              6145,
+              25
+            ],
+            [
+              46,
+              22503,
+              49
+            ],
+            [
+              24,
+              6222,
+              30
+            ]
+          ],
+          "macro_f1": 0.26746380606380016,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.009838146620120596,
+            "FLAT": 0.7831488828565463,
+            "UP": 0.009404388714733543
+          },
+          "per_class_precision": {
+            "DOWN": 0.3069306930693069,
+            "FLAT": 0.6453398336679094,
+            "UP": 0.28846153846153844
+          },
+          "per_class_recall": {
+            "DOWN": 0.004999193678438961,
+            "FLAT": 0.9957960881493938,
+            "UP": 0.004780114722753346
+          },
+          "prediction_distribution": {
+            "DOWN": 101,
+            "FLAT": 34870,
+            "UP": 104
+          },
+          "rows": 35075,
+          "split": "test",
+          "support": {
+            "DOWN": 6201,
+            "FLAT": 22598,
+            "UP": 6276
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5079865073572991
+        },
+        "15m.logistic_regression.train": {
+          "accuracy": 0.6589969099120514,
+          "balanced_accuracy": 0.3363658348308343,
+          "confusion_matrix": [
+            [
+              99,
+              17621,
+              120
+            ],
+            [
+              114,
+              69061,
+              220
+            ],
+            [
+              71,
+              17719,
+              150
+            ]
+          ],
+          "macro_f1": 0.2739796353886193,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.010924740675347605,
+            "FLAT": 0.7947363575686437,
+            "UP": 0.016277807921866522
+          },
+          "per_class_precision": {
+            "DOWN": 0.3485915492957746,
+            "FLAT": 0.66149749523472,
+            "UP": 0.30612244897959184
+          },
+          "per_class_recall": {
+            "DOWN": 0.00554932735426009,
+            "FLAT": 0.9951869731248649,
+            "UP": 0.008361204013377926
+          },
+          "prediction_distribution": {
+            "DOWN": 284,
+            "FLAT": 104401,
+            "UP": 490
+          },
+          "rows": 105175,
+          "split": "train",
+          "support": {
+            "DOWN": 17840,
+            "FLAT": 69395,
+            "UP": 17940
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5290007205252437
+        },
+        "15m.logistic_regression.validation": {
+          "accuracy": 0.6424539597468498,
+          "balanced_accuracy": 0.3368078672561881,
+          "confusion_matrix": [
+            [
+              50,
+              6056,
+              43
+            ],
+            [
+              81,
+              22432,
+              59
+            ],
+            [
+              67,
+              6236,
+              54
+            ]
+          ],
+          "macro_f1": 0.27178639919208175,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.01575547502757208,
+            "FLAT": 0.7830215023736387,
+            "UP": 0.016582220175034548
+          },
+          "per_class_precision": {
+            "DOWN": 0.25252525252525254,
+            "FLAT": 0.6460085243635526,
+            "UP": 0.34615384615384615
+          },
+          "per_class_recall": {
+            "DOWN": 0.00813140348024069,
+            "FLAT": 0.9937976253765728,
+            "UP": 0.008494572911750826
+          },
+          "prediction_distribution": {
+            "DOWN": 198,
+            "FLAT": 34724,
+            "UP": 156
+          },
+          "rows": 35078,
+          "split": "validation",
+          "support": {
+            "DOWN": 6149,
+            "FLAT": 22572,
+            "UP": 6357
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5096258321790013
+        },
+        "15m.majority_class_baseline.test": {
+          "accuracy": 0.6442765502494654,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              6201,
+              0
+            ],
+            [
+              0,
+              22598,
+              0
+            ],
+            [
+              0,
+              6276,
+              0
+            ]
+          ],
+          "macro_f1": 0.26121986602627456,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7836595980788237,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6442765502494654,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 35075,
+            "UP": 0
+          },
+          "rows": 35075,
+          "split": "test",
+          "support": {
+            "DOWN": 6201,
+            "FLAT": 22598,
+            "UP": 6276
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5048935024201071
+        },
+        "15m.majority_class_baseline.train": {
+          "accuracy": 0.6598050867601616,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              17840,
+              0
+            ],
+            [
+              0,
+              69395,
+              0
+            ],
+            [
+              0,
+              17940,
+              0
+            ]
+          ],
+          "macro_f1": 0.2650130797578813,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7950392392736438,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6598050867601616,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 105175,
+            "UP": 0
+          },
+          "rows": 105175,
+          "split": "train",
+          "support": {
+            "DOWN": 17840,
+            "FLAT": 69395,
+            "UP": 17940
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5245709342466794
+        },
+        "15m.majority_class_baseline.validation": {
+          "accuracy": 0.6434802440275956,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              6149,
+              0
+            ],
+            [
+              0,
+              22572,
+              0
+            ],
+            [
+              0,
+              6357,
+              0
+            ]
+          ],
+          "macro_f1": 0.26102341717259325,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7830702515177798,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6434802440275956,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 35078,
+            "UP": 0
+          },
+          "rows": 35078,
+          "split": "validation",
+          "support": {
+            "DOWN": 6149,
+            "FLAT": 22572,
+            "UP": 6357
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.5038902365374116
+        },
+        "15m.random_seeded_baseline.test": {
+          "accuracy": 0.4839344262295082,
+          "balanced_accuracy": 0.3334479742196297,
+          "confusion_matrix": [
+            [
+              1044,
+              4072,
+              1085
+            ],
+            [
+              3868,
+              14826,
+              3904
+            ],
+            [
+              1043,
+              4129,
+              1104
+            ]
+          ],
+          "macro_f1": 0.3333948903515728,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.1717670286278381,
+            "FLAT": 0.6499068493150685,
+            "UP": 0.17851079311181178
+          },
+          "per_class_precision": {
+            "DOWN": 0.17531486146095718,
+            "FLAT": 0.6438528683719112,
+            "UP": 0.1811915312653865
+          },
+          "per_class_recall": {
+            "DOWN": 0.1683599419448476,
+            "FLAT": 0.6560757589167183,
+            "UP": 0.17590822179732313
+          },
+          "prediction_distribution": {
+            "DOWN": 5955,
+            "FLAT": 23027,
+            "UP": 6093
+          },
+          "rows": 35075,
+          "split": "test",
+          "support": {
+            "DOWN": 6201,
+            "FLAT": 22598,
+            "UP": 6276
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.4810279704322986
+        },
+        "15m.random_seeded_baseline.train": {
+          "accuracy": 0.4956786308533397,
+          "balanced_accuracy": 0.335219915075567,
+          "confusion_matrix": [
+            [
+              3096,
+              11606,
+              3138
+            ],
+            [
+              11615,
+              46001,
+              11779
+            ],
+            [
+              3009,
+              11895,
+              3036
+            ]
+          ],
+          "macro_f1": 0.3352244757237501,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.17412823397075367,
+            "FLAT": 0.6623757172581122,
+            "UP": 0.1691694759423843
+          },
+          "per_class_precision": {
+            "DOWN": 0.1747178329571106,
+            "FLAT": 0.6618658455871773,
+            "UP": 0.16910822703726397
+          },
+          "per_class_recall": {
+            "DOWN": 0.173542600896861,
+            "FLAT": 0.6628863750990706,
+            "UP": 0.16923076923076924
+          },
+          "prediction_distribution": {
+            "DOWN": 17720,
+            "FLAT": 69502,
+            "UP": 17953
+          },
+          "rows": 105175,
+          "split": "train",
+          "support": {
+            "DOWN": 17840,
+            "FLAT": 69395,
+            "UP": 17940
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.4954305775286077
+        },
+        "15m.random_seeded_baseline.validation": {
+          "accuracy": 0.48423513313187755,
+          "balanced_accuracy": 0.3323805889329414,
+          "confusion_matrix": [
+            [
+              1076,
+              4043,
+              1030
+            ],
+            [
+              3882,
+              14872,
+              3818
+            ],
+            [
+              1067,
+              4252,
+              1038
+            ]
+          ],
+          "macro_f1": 0.3322116270370648,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.17677016592738623,
+            "FLAT": 0.6502984324099783,
+            "UP": 0.16956628277382996
+          },
+          "per_class_precision": {
+            "DOWN": 0.17858921161825725,
+            "FLAT": 0.6419475978762895,
+            "UP": 0.1763506625891947
+          },
+          "per_class_recall": {
+            "DOWN": 0.17498780289477964,
+            "FLAT": 0.6588693957115009,
+            "UP": 0.16328456819254367
+          },
+          "prediction_distribution": {
+            "DOWN": 6025,
+            "FLAT": 23167,
+            "UP": 5886
+          },
+          "rows": 35078,
+          "split": "validation",
+          "support": {
+            "DOWN": 6149,
+            "FLAT": 22572,
+            "UP": 6357
+          },
+          "timeframe": "15m",
+          "weighted_f1": 0.4801707288396935
+        }
+      },
+      "models": [
+        "majority_class_baseline",
+        "random_seeded_baseline",
+        "logistic_regression",
+        "decision_tree_depth_2"
+      ],
+      "rows_used": 175328,
+      "test_rows": 35075,
+      "train_rows": 105175,
+      "validation_rows": 35078
+    },
+    "1h": {
+      "metrics": {
+        "1h.decision_tree_depth_2.test": {
+          "accuracy": 0.6572015053027711,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              1502,
+              0
+            ],
+            [
+              0,
+              5763,
+              0
+            ],
+            [
+              0,
+              1504,
+              0
+            ]
+          ],
+          "macro_f1": 0.2643820533993944,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7931461601981833,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6572015053027711,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 8769,
+            "UP": 0
+          },
+          "rows": 8769,
+          "split": "test",
+          "support": {
+            "DOWN": 1502,
+            "FLAT": 5763,
+            "UP": 1504
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5212568504073589
+        },
+        "1h.decision_tree_depth_2.train": {
+          "accuracy": 0.6798994209082597,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              4177,
+              0
+            ],
+            [
+              0,
+              17846,
+              0
+            ],
+            [
+              0,
+              4225,
+              0
+            ]
+          ],
+          "macro_f1": 0.269817511074825,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.809452533224475,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6798994209082597,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 26248,
+            "UP": 0
+          },
+          "rows": 26248,
+          "split": "train",
+          "support": {
+            "DOWN": 4177,
+            "FLAT": 17846,
+            "UP": 4225
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5503463085920444
+        },
+        "1h.decision_tree_depth_2.validation": {
+          "accuracy": 0.6688711516533637,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              1413,
+              0
+            ],
+            [
+              0,
+              5866,
+              0
+            ],
+            [
+              0,
+              1491,
+              0
+            ]
+          ],
+          "macro_f1": 0.2671950441832924,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.8015851325498771,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6688711516533637,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 8770,
+            "UP": 0
+          },
+          "rows": 8770,
+          "split": "validation",
+          "support": {
+            "DOWN": 1413,
+            "FLAT": 5866,
+            "UP": 1491
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5361571707568504
+        },
+        "1h.logistic_regression.test": {
+          "accuracy": 0.6579997719238225,
+          "balanced_accuracy": 0.338654599896056,
+          "confusion_matrix": [
+            [
+              9,
+              1479,
+              14
+            ],
+            [
+              3,
+              5740,
+              20
+            ],
+            [
+              5,
+              1478,
+              21
+            ]
+          ],
+          "macro_f1": 0.2775681646077029,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.01184990125082291,
+            "FLAT": 0.7939142461964038,
+            "UP": 0.026940346375881975
+          },
+          "per_class_precision": {
+            "DOWN": 0.5294117647058824,
+            "FLAT": 0.6599977003564448,
+            "UP": 0.38181818181818183
+          },
+          "per_class_recall": {
+            "DOWN": 0.005992010652463382,
+            "FLAT": 0.9960090230782579,
+            "UP": 0.013962765957446808
+          },
+          "prediction_distribution": {
+            "DOWN": 17,
+            "FLAT": 8697,
+            "UP": 55
+          },
+          "rows": 8769,
+          "split": "test",
+          "support": {
+            "DOWN": 1502,
+            "FLAT": 5763,
+            "UP": 1504
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.528411977814795
+        },
+        "1h.logistic_regression.train": {
+          "accuracy": 0.6787945748247486,
+          "balanced_accuracy": 0.3390130667523117,
+          "confusion_matrix": [
+            [
+              21,
+              4082,
+              74
+            ],
+            [
+              36,
+              17714,
+              96
+            ],
+            [
+              25,
+              4118,
+              82
+            ]
+          ],
+          "macro_f1": 0.28536364967987654,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.009861469828598262,
+            "FLAT": 0.8095978062157221,
+            "UP": 0.03663167299530936
+          },
+          "per_class_precision": {
+            "DOWN": 0.25609756097560976,
+            "FLAT": 0.683568727328857,
+            "UP": 0.3253968253968254
+          },
+          "per_class_recall": {
+            "DOWN": 0.005027531721331099,
+            "FLAT": 0.9926033845119354,
+            "UP": 0.019408284023668638
+          },
+          "prediction_distribution": {
+            "DOWN": 82,
+            "FLAT": 25914,
+            "UP": 252
+          },
+          "rows": 26248,
+          "split": "train",
+          "support": {
+            "DOWN": 4177,
+            "FLAT": 17846,
+            "UP": 4225
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5579107980648055
+        },
+        "1h.logistic_regression.validation": {
+          "accuracy": 0.6660205245153934,
+          "balanced_accuracy": 0.34208983050436376,
+          "confusion_matrix": [
+            [
+              14,
+              1368,
+              31
+            ],
+            [
+              31,
+              5781,
+              54
+            ],
+            [
+              18,
+              1427,
+              46
+            ]
+          ],
+          "macro_f1": 0.2920906417459813,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.018970189701897018,
+            "FLAT": 0.8005816368923971,
+            "UP": 0.05672009864364982
+          },
+          "per_class_precision": {
+            "DOWN": 0.2222222222222222,
+            "FLAT": 0.6740904850746269,
+            "UP": 0.3511450381679389
+          },
+          "per_class_recall": {
+            "DOWN": 0.009907997169143666,
+            "FLAT": 0.9855097170132969,
+            "UP": 0.03085177733065057
+          },
+          "prediction_distribution": {
+            "DOWN": 63,
+            "FLAT": 8576,
+            "UP": 131
+          },
+          "rows": 8770,
+          "split": "validation",
+          "support": {
+            "DOWN": 1413,
+            "FLAT": 5866,
+            "UP": 1491
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5481854534934166
+        },
+        "1h.majority_class_baseline.test": {
+          "accuracy": 0.6572015053027711,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              1502,
+              0
+            ],
+            [
+              0,
+              5763,
+              0
+            ],
+            [
+              0,
+              1504,
+              0
+            ]
+          ],
+          "macro_f1": 0.2643820533993944,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7931461601981833,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6572015053027711,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 8769,
+            "UP": 0
+          },
+          "rows": 8769,
+          "split": "test",
+          "support": {
+            "DOWN": 1502,
+            "FLAT": 5763,
+            "UP": 1504
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5212568504073589
+        },
+        "1h.majority_class_baseline.train": {
+          "accuracy": 0.6798994209082597,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              4177,
+              0
+            ],
+            [
+              0,
+              17846,
+              0
+            ],
+            [
+              0,
+              4225,
+              0
+            ]
+          ],
+          "macro_f1": 0.269817511074825,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.809452533224475,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6798994209082597,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 26248,
+            "UP": 0
+          },
+          "rows": 26248,
+          "split": "train",
+          "support": {
+            "DOWN": 4177,
+            "FLAT": 17846,
+            "UP": 4225
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5503463085920444
+        },
+        "1h.majority_class_baseline.validation": {
+          "accuracy": 0.6688711516533637,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              1413,
+              0
+            ],
+            [
+              0,
+              5866,
+              0
+            ],
+            [
+              0,
+              1491,
+              0
+            ]
+          ],
+          "macro_f1": 0.2671950441832924,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.8015851325498771,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6688711516533637,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 8770,
+            "UP": 0
+          },
+          "rows": 8770,
+          "split": "validation",
+          "support": {
+            "DOWN": 1413,
+            "FLAT": 5866,
+            "UP": 1491
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5361571707568504
+        },
+        "1h.random_seeded_baseline.test": {
+          "accuracy": 0.49914471433458774,
+          "balanced_accuracy": 0.3359534915677724,
+          "confusion_matrix": [
+            [
+              245,
+              995,
+              262
+            ],
+            [
+              952,
+              3872,
+              939
+            ],
+            [
+              231,
+              1013,
+              260
+            ]
+          ],
+          "macro_f1": 0.3359118649635664,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.16723549488054607,
+            "FLAT": 0.6651206733659709,
+            "UP": 0.17537942664418213
+          },
+          "per_class_precision": {
+            "DOWN": 0.1715686274509804,
+            "FLAT": 0.6585034013605442,
+            "UP": 0.17796030116358658
+          },
+          "per_class_recall": {
+            "DOWN": 0.16311584553928096,
+            "FLAT": 0.6718722887385042,
+            "UP": 0.17287234042553193
+          },
+          "prediction_distribution": {
+            "DOWN": 1428,
+            "FLAT": 5880,
+            "UP": 1461
+          },
+          "rows": 8769,
+          "split": "test",
+          "support": {
+            "DOWN": 1502,
+            "FLAT": 5763,
+            "UP": 1504
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.49584317614226486
+        },
+        "1h.random_seeded_baseline.train": {
+          "accuracy": 0.510515086863761,
+          "balanced_accuracy": 0.32999145298004,
+          "confusion_matrix": [
+            [
+              636,
+              2890,
+              651
+            ],
+            [
+              2902,
+              12086,
+              2858
+            ],
+            [
+              668,
+              2879,
+              678
+            ]
+          ],
+          "macro_f1": 0.3300006043001307,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.15173565549326018,
+            "FLAT": 0.6770678692473601,
+            "UP": 0.16119828815977175
+          },
+          "per_class_precision": {
+            "DOWN": 0.15121255349500715,
+            "FLAT": 0.6768972276673201,
+            "UP": 0.1619297826606162
+          },
+          "per_class_recall": {
+            "DOWN": 0.152262389274599,
+            "FLAT": 0.6772385968844559,
+            "UP": 0.16047337278106508
+          },
+          "prediction_distribution": {
+            "DOWN": 4206,
+            "FLAT": 17855,
+            "UP": 4187
+          },
+          "rows": 26248,
+          "split": "train",
+          "support": {
+            "DOWN": 4177,
+            "FLAT": 17846,
+            "UP": 4225
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5104318727163507
+        },
+        "1h.random_seeded_baseline.validation": {
+          "accuracy": 0.5118586088939566,
+          "balanced_accuracy": 0.3335743816593893,
+          "confusion_matrix": [
+            [
+              226,
+              960,
+              227
+            ],
+            [
+              906,
+              4035,
+              925
+            ],
+            [
+              248,
+              1015,
+              228
+            ]
+          ],
+          "macro_f1": 0.33339485162392396,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.16183315431435732,
+            "FLAT": 0.6795217244863591,
+            "UP": 0.1588296760710554
+          },
+          "per_class_precision": {
+            "DOWN": 0.16376811594202897,
+            "FLAT": 0.6713810316139767,
+            "UP": 0.16521739130434782
+          },
+          "per_class_recall": {
+            "DOWN": 0.1599433828733192,
+            "FLAT": 0.6878622570746675,
+            "UP": 0.1529175050301811
+          },
+          "prediction_distribution": {
+            "DOWN": 1380,
+            "FLAT": 6010,
+            "UP": 1380
+          },
+          "rows": 8770,
+          "split": "validation",
+          "support": {
+            "DOWN": 1413,
+            "FLAT": 5866,
+            "UP": 1491
+          },
+          "timeframe": "1h",
+          "weighted_f1": 0.5075894788945396
+        }
+      },
+      "models": [
+        "majority_class_baseline",
+        "random_seeded_baseline",
+        "logistic_regression",
+        "decision_tree_depth_2"
+      ],
+      "rows_used": 43787,
+      "test_rows": 8769,
+      "train_rows": 26248,
+      "validation_rows": 8770
+    },
+    "1m": {
+      "metrics": {
+        "1m.decision_tree_depth_2.test": {
+          "accuracy": 0.5977712139528165,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              105992,
+              0
+            ],
+            [
+              0,
+              314497,
+              0
+            ],
+            [
+              0,
+              105627,
+              0
+            ]
+          ],
+          "macro_f1": 0.24941877732876683,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7482563319863005,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.5977712139528165,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 526116,
+            "UP": 0
+          },
+          "rows": 526116,
+          "split": "test",
+          "support": {
+            "DOWN": 105992,
+            "FLAT": 314497,
+            "UP": 105627
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.44728609591933255
+        },
+        "1m.decision_tree_depth_2.train": {
+          "accuracy": 0.6212750371807163,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              299166,
+              0
+            ],
+            [
+              0,
+              980436,
+              0
+            ],
+            [
+              0,
+              298501,
+              0
+            ]
+          ],
+          "macro_f1": 0.25546767119828934,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.766403013594868,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6212750371807163,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 1578103,
+            "UP": 0
+          },
+          "rows": 1578103,
+          "split": "train",
+          "support": {
+            "DOWN": 299166,
+            "FLAT": 980436,
+            "UP": 298501
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.4761470607665646
+        },
+        "1m.decision_tree_depth_2.validation": {
+          "accuracy": 0.601099251961321,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              103517,
+              0
+            ],
+            [
+              0,
+              316284,
+              0
+            ],
+            [
+              0,
+              106375,
+              0
+            ]
+          ],
+          "macro_f1": 0.25028606699427863,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.750858200982836,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.601099251961321,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 526176,
+            "UP": 0
+          },
+          "rows": 526176,
+          "split": "validation",
+          "support": {
+            "DOWN": 103517,
+            "FLAT": 316284,
+            "UP": 106375
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.45134030293980587
+        },
+        "1m.logistic_regression.test": {
+          "accuracy": 0.5976590713834972,
+          "balanced_accuracy": 0.3333919685762128,
+          "confusion_matrix": [
+            [
+              36,
+              105943,
+              13
+            ],
+            [
+              97,
+              314380,
+              20
+            ],
+            [
+              28,
+              105577,
+              22
+            ]
+          ],
+          "macro_f1": 0.2497549398924849,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.0006782662760355336,
+            "FLAT": 0.7481702100316874,
+            "UP": 0.000416343369731837
+          },
+          "per_class_precision": {
+            "DOWN": 0.2236024844720497,
+            "FLAT": 0.5977942574633961,
+            "UP": 0.4
+          },
+          "per_class_recall": {
+            "DOWN": 0.00033964827534153523,
+            "FLAT": 0.999627977373393,
+            "UP": 0.00020828007990381247
+          },
+          "prediction_distribution": {
+            "DOWN": 161,
+            "FLAT": 525900,
+            "UP": 55
+          },
+          "rows": 526116,
+          "split": "test",
+          "support": {
+            "DOWN": 105992,
+            "FLAT": 314497,
+            "UP": 105627
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.44745484730473856
+        },
+        "1m.logistic_regression.train": {
+          "accuracy": 0.6211324609356931,
+          "balanced_accuracy": 0.33339031352946624,
+          "confusion_matrix": [
+            [
+              47,
+              298996,
+              123
+            ],
+            [
+              130,
+              980039,
+              267
+            ],
+            [
+              33,
+              298343,
+              125
+            ]
+          ],
+          "macro_f1": 0.25581996252867695,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.0003139864250975362,
+            "FLAT": 0.7663098254994304,
+            "UP": 0.0008360756615030634
+          },
+          "per_class_precision": {
+            "DOWN": 0.22380952380952382,
+            "FLAT": 0.6213089062989341,
+            "UP": 0.24271844660194175
+          },
+          "per_class_recall": {
+            "DOWN": 0.00015710341415802598,
+            "FLAT": 0.999595078108107,
+            "UP": 0.0004187590661337818
+          },
+          "prediction_distribution": {
+            "DOWN": 210,
+            "FLAT": 1577378,
+            "UP": 515
+          },
+          "rows": 1578103,
+          "split": "train",
+          "support": {
+            "DOWN": 299166,
+            "FLAT": 980436,
+            "UP": 298501
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.4763068339374836
+        },
+        "1m.logistic_regression.validation": {
+          "accuracy": 0.6008540868454662,
+          "balanced_accuracy": 0.33331955398911506,
+          "confusion_matrix": [
+            [
+              42,
+              103460,
+              15
+            ],
+            [
+              132,
+              316098,
+              54
+            ],
+            [
+              62,
+              106298,
+              15
+            ]
+          ],
+          "macro_f1": 0.25059773244059613,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.0008096151436584966,
+            "FLAT": 0.7507017835514285,
+            "UP": 0.0002817986267013592
+          },
+          "per_class_precision": {
+            "DOWN": 0.17796610169491525,
+            "FLAT": 0.6011113308586381,
+            "UP": 0.17857142857142858
+          },
+          "per_class_recall": {
+            "DOWN": 0.00040573045973125185,
+            "FLAT": 0.9994119209318207,
+            "UP": 0.0001410105757931845
+          },
+          "prediction_distribution": {
+            "DOWN": 236,
+            "FLAT": 525856,
+            "UP": 84
+          },
+          "rows": 526176,
+          "split": "validation",
+          "support": {
+            "DOWN": 103517,
+            "FLAT": 316284,
+            "UP": 106375
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.4514625299681503
+        },
+        "1m.majority_class_baseline.test": {
+          "accuracy": 0.5977712139528165,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              105992,
+              0
+            ],
+            [
+              0,
+              314497,
+              0
+            ],
+            [
+              0,
+              105627,
+              0
+            ]
+          ],
+          "macro_f1": 0.24941877732876683,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7482563319863005,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.5977712139528165,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 526116,
+            "UP": 0
+          },
+          "rows": 526116,
+          "split": "test",
+          "support": {
+            "DOWN": 105992,
+            "FLAT": 314497,
+            "UP": 105627
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.44728609591933255
+        },
+        "1m.majority_class_baseline.train": {
+          "accuracy": 0.6212750371807163,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              299166,
+              0
+            ],
+            [
+              0,
+              980436,
+              0
+            ],
+            [
+              0,
+              298501,
+              0
+            ]
+          ],
+          "macro_f1": 0.25546767119828934,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.766403013594868,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6212750371807163,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 1578103,
+            "UP": 0
+          },
+          "rows": 1578103,
+          "split": "train",
+          "support": {
+            "DOWN": 299166,
+            "FLAT": 980436,
+            "UP": 298501
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.4761470607665646
+        },
+        "1m.majority_class_baseline.validation": {
+          "accuracy": 0.601099251961321,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              103517,
+              0
+            ],
+            [
+              0,
+              316284,
+              0
+            ],
+            [
+              0,
+              106375,
+              0
+            ]
+          ],
+          "macro_f1": 0.25028606699427863,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.750858200982836,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.601099251961321,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 526176,
+            "UP": 0
+          },
+          "rows": 526176,
+          "split": "validation",
+          "support": {
+            "DOWN": 103517,
+            "FLAT": 316284,
+            "UP": 106375
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.45134030293980587
+        },
+        "1m.random_seeded_baseline.test": {
+          "accuracy": 0.4480589831900189,
+          "balanced_accuracy": 0.33362271386532844,
+          "confusion_matrix": [
+            [
+              20138,
+              65722,
+              20132
+            ],
+            [
+              59458,
+              195656,
+              59383
+            ],
+            [
+              19977,
+              65713,
+              19937
+            ]
+          ],
+          "macro_f1": 0.33342411378589,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.19592829518643737,
+            "FLAT": 0.6099116567018087,
+            "UP": 0.19443238946942398
+          },
+          "per_class_precision": {
+            "DOWN": 0.20224358008697138,
+            "FLAT": 0.5981699282462679,
+            "UP": 0.200468567751277
+          },
+          "per_class_recall": {
+            "DOWN": 0.18999547135632877,
+            "FLAT": 0.622123581465006,
+            "UP": 0.1887490887746504
+          },
+          "prediction_distribution": {
+            "DOWN": 99573,
+            "FLAT": 327091,
+            "UP": 99452
+          },
+          "rows": 526116,
+          "split": "test",
+          "support": {
+            "DOWN": 105992,
+            "FLAT": 314497,
+            "UP": 105627
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.4430953024877336
+        },
+        "1m.random_seeded_baseline.train": {
+          "accuracy": 0.4572109678519083,
+          "balanced_accuracy": 0.33273358262764513,
+          "confusion_matrix": [
+            [
+              56452,
+              186148,
+              56566
+            ],
+            [
+              186202,
+              608786,
+              185448
+            ],
+            [
+              56306,
+              185907,
+              56288
+            ]
+          ],
+          "macro_f1": 0.33273346416759353,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.18876290279974453,
+            "FLAT": 0.6208057301441867,
+            "UP": 0.1886317595588494
+          },
+          "per_class_precision": {
+            "DOWN": 0.18882793684773883,
+            "FLAT": 0.6206775613988403,
+            "UP": 0.18869467854724406
+          },
+          "per_class_recall": {
+            "DOWN": 0.18869791353295495,
+            "FLAT": 0.620933951833674,
+            "UP": 0.1885688825163065
+          },
+          "prediction_distribution": {
+            "DOWN": 298960,
+            "FLAT": 980841,
+            "UP": 298302
+          },
+          "rows": 1578103,
+          "split": "train",
+          "support": {
+            "DOWN": 299166,
+            "FLAT": 980436,
+            "UP": 298501
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.45715552044366575
+        },
+        "1m.random_seeded_baseline.validation": {
+          "accuracy": 0.4492280149607736,
+          "balanced_accuracy": 0.33374156288271833,
+          "confusion_matrix": [
+            [
+              19653,
+              64054,
+              19810
+            ],
+            [
+              60053,
+              196498,
+              59733
+            ],
+            [
+              20162,
+              65991,
+              20222
+            ]
+          ],
+          "macro_f1": 0.33360387543047904,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.1932590899033852,
+            "FLAT": 0.611355776904206,
+            "UP": 0.19619675948384593
+          },
+          "per_class_precision": {
+            "DOWN": 0.19678976248648217,
+            "FLAT": 0.6017522960222697,
+            "UP": 0.2026963363905177
+          },
+          "per_class_recall": {
+            "DOWN": 0.18985287440710222,
+            "FLAT": 0.6212707566617344,
+            "UP": 0.19010105757931844
+          },
+          "prediction_distribution": {
+            "DOWN": 99868,
+            "FLAT": 326543,
+            "UP": 99765
+          },
+          "rows": 526176,
+          "split": "validation",
+          "support": {
+            "DOWN": 103517,
+            "FLAT": 316284,
+            "UP": 106375
+          },
+          "timeframe": "1m",
+          "weighted_f1": 0.4451705931893372
+        }
+      },
+      "models": [
+        "majority_class_baseline",
+        "random_seeded_baseline",
+        "logistic_regression",
+        "decision_tree_depth_2"
+      ],
+      "rows_used": 2630395,
+      "test_rows": 526116,
+      "train_rows": 1578103,
+      "validation_rows": 526176
+    },
+    "5m": {
+      "metrics": {
+        "5m.decision_tree_depth_2.test": {
+          "accuracy": 0.6252280848475633,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              19676,
+              0
+            ],
+            [
+              0,
+              65789,
+              0
+            ],
+            [
+              0,
+              19759,
+              0
+            ]
+          ],
+          "macro_f1": 0.2564678318802274,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7694034956406823,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6252280848475633,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 105224,
+            "UP": 0
+          },
+          "rows": 105224,
+          "split": "test",
+          "support": {
+            "DOWN": 19676,
+            "FLAT": 65789,
+            "UP": 19759
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.4810526740544443
+        },
+        "5m.decision_tree_depth_2.train": {
+          "accuracy": 0.647835384688495,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              55705,
+              0
+            ],
+            [
+              0,
+              204486,
+              0
+            ],
+            [
+              0,
+              55454,
+              0
+            ]
+          ],
+          "macro_f1": 0.26209551055407193,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7862865316622158,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.647835384688495,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 315645,
+            "UP": 0
+          },
+          "rows": 315645,
+          "split": "train",
+          "support": {
+            "DOWN": 55705,
+            "FLAT": 204486,
+            "UP": 55454
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.5093842377147741
+        },
+        "5m.decision_tree_depth_2.validation": {
+          "accuracy": 0.6244595429277332,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              19560,
+              0
+            ],
+            [
+              0,
+              65715,
+              0
+            ],
+            [
+              0,
+              19960,
+              0
+            ]
+          ],
+          "macro_f1": 0.25627376425855514,
+          "metrics_scope": "classification_only",
+          "model_name": "decision_tree_depth_2",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7688212927756654,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6244595429277332,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 105235,
+            "UP": 0
+          },
+          "rows": 105235,
+          "split": "validation",
+          "support": {
+            "DOWN": 19560,
+            "FLAT": 65715,
+            "UP": 19960
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.48009779307980094
+        },
+        "5m.logistic_regression.test": {
+          "accuracy": 0.6248004257583821,
+          "balanced_accuracy": 0.33368525635484114,
+          "confusion_matrix": [
+            [
+              22,
+              19624,
+              30
+            ],
+            [
+              57,
+              65695,
+              37
+            ],
+            [
+              23,
+              19709,
+              27
+            ]
+          ],
+          "macro_f1": 0.258043474275988,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.002224694104560623,
+            "FLAT": 0.7691857367826387,
+            "UP": 0.00271999194076462
+          },
+          "per_class_precision": {
+            "DOWN": 0.21568627450980393,
+            "FLAT": 0.6254998667022127,
+            "UP": 0.2872340425531915
+          },
+          "per_class_recall": {
+            "DOWN": 0.0011181134376905876,
+            "FLAT": 0.998571189712566,
+            "UP": 0.0013664659142669164
+          },
+          "prediction_distribution": {
+            "DOWN": 102,
+            "FLAT": 105028,
+            "UP": 94
+          },
+          "rows": 105224,
+          "split": "test",
+          "support": {
+            "DOWN": 19676,
+            "FLAT": 65789,
+            "UP": 19759
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.48184328517402797
+        },
+        "5m.logistic_regression.train": {
+          "accuracy": 0.6473348223478909,
+          "balanced_accuracy": 0.3342522035979718,
+          "confusion_matrix": [
+            [
+              75,
+              55484,
+              146
+            ],
+            [
+              148,
+              204059,
+              279
+            ],
+            [
+              60,
+              55200,
+              194
+            ]
+          ],
+          "macro_f1": 0.2652021373719776,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.002679145531185254,
+            "FLAT": 0.7860077152855484,
+            "UP": 0.006919551299199258
+          },
+          "per_class_precision": {
+            "DOWN": 0.26501766784452296,
+            "FLAT": 0.6483353084897837,
+            "UP": 0.3134087237479806
+          },
+          "per_class_recall": {
+            "DOWN": 0.0013463782425276007,
+            "FLAT": 0.9979118374852068,
+            "UP": 0.0034983950661809787
+          },
+          "prediction_distribution": {
+            "DOWN": 283,
+            "FLAT": 314743,
+            "UP": 619
+          },
+          "rows": 315645,
+          "split": "train",
+          "support": {
+            "DOWN": 55705,
+            "FLAT": 204486,
+            "UP": 55454
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.5108920853092591
+        },
+        "5m.logistic_regression.validation": {
+          "accuracy": 0.6240794412505345,
+          "balanced_accuracy": 0.33462593288143333,
+          "confusion_matrix": [
+            [
+              55,
+              19457,
+              48
+            ],
+            [
+              74,
+              65548,
+              93
+            ],
+            [
+              69,
+              19819,
+              72
+            ]
+          ],
+          "macro_f1": 0.2604737598558103,
+          "metrics_scope": "classification_only",
+          "model_name": "logistic_regression",
+          "per_class_f1": {
+            "DOWN": 0.005567365117926916,
+            "FLAT": 0.7687156603474865,
+            "UP": 0.007138254102017548
+          },
+          "per_class_precision": {
+            "DOWN": 0.2777777777777778,
+            "FLAT": 0.6253148134015111,
+            "UP": 0.3380281690140845
+          },
+          "per_class_recall": {
+            "DOWN": 0.0028118609406952966,
+            "FLAT": 0.997458723274747,
+            "UP": 0.0036072144288577155
+          },
+          "prediction_distribution": {
+            "DOWN": 198,
+            "FLAT": 104824,
+            "UP": 213
+          },
+          "rows": 105235,
+          "split": "validation",
+          "support": {
+            "DOWN": 19560,
+            "FLAT": 65715,
+            "UP": 19960
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.4824205524142918
+        },
+        "5m.majority_class_baseline.test": {
+          "accuracy": 0.6252280848475633,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              19676,
+              0
+            ],
+            [
+              0,
+              65789,
+              0
+            ],
+            [
+              0,
+              19759,
+              0
+            ]
+          ],
+          "macro_f1": 0.2564678318802274,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7694034956406823,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6252280848475633,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 105224,
+            "UP": 0
+          },
+          "rows": 105224,
+          "split": "test",
+          "support": {
+            "DOWN": 19676,
+            "FLAT": 65789,
+            "UP": 19759
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.4810526740544443
+        },
+        "5m.majority_class_baseline.train": {
+          "accuracy": 0.647835384688495,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              55705,
+              0
+            ],
+            [
+              0,
+              204486,
+              0
+            ],
+            [
+              0,
+              55454,
+              0
+            ]
+          ],
+          "macro_f1": 0.26209551055407193,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7862865316622158,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.647835384688495,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 315645,
+            "UP": 0
+          },
+          "rows": 315645,
+          "split": "train",
+          "support": {
+            "DOWN": 55705,
+            "FLAT": 204486,
+            "UP": 55454
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.5093842377147741
+        },
+        "5m.majority_class_baseline.validation": {
+          "accuracy": 0.6244595429277332,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              19560,
+              0
+            ],
+            [
+              0,
+              65715,
+              0
+            ],
+            [
+              0,
+              19960,
+              0
+            ]
+          ],
+          "macro_f1": 0.25627376425855514,
+          "metrics_scope": "classification_only",
+          "model_name": "majority_class_baseline",
+          "per_class_f1": {
+            "DOWN": 0.0,
+            "FLAT": 0.7688212927756654,
+            "UP": 0.0
+          },
+          "per_class_precision": {
+            "DOWN": 0.0,
+            "FLAT": 0.6244595429277332,
+            "UP": 0.0
+          },
+          "per_class_recall": {
+            "DOWN": 0.0,
+            "FLAT": 1.0,
+            "UP": 0.0
+          },
+          "prediction_distribution": {
+            "DOWN": 0,
+            "FLAT": 105235,
+            "UP": 0
+          },
+          "rows": 105235,
+          "split": "validation",
+          "support": {
+            "DOWN": 19560,
+            "FLAT": 65715,
+            "UP": 19960
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.48009779307980094
+        },
+        "5m.random_seeded_baseline.test": {
+          "accuracy": 0.4706910970881168,
+          "balanced_accuracy": 0.3333543599070412,
+          "confusion_matrix": [
+            [
+              3489,
+              12828,
+              3359
+            ],
+            [
+              11644,
+              42567,
+              11578
+            ],
+            [
+              3543,
+              12744,
+              3472
+            ]
+          ],
+          "macro_f1": 0.3331828679426739,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.1819461827284105,
+            "FLAT": 0.6356699121916254,
+            "UP": 0.18193250890798573
+          },
+          "per_class_precision": {
+            "DOWN": 0.18681730563289783,
+            "FLAT": 0.6247083168229648,
+            "UP": 0.1886034005106198
+          },
+          "per_class_recall": {
+            "DOWN": 0.1773226265501118,
+            "FLAT": 0.6470230585660217,
+            "UP": 0.17571739460499014
+          },
+          "prediction_distribution": {
+            "DOWN": 18676,
+            "FLAT": 68139,
+            "UP": 18409
+          },
+          "rows": 105224,
+          "split": "test",
+          "support": {
+            "DOWN": 19676,
+            "FLAT": 65789,
+            "UP": 19759
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.46562443347574645
+        },
+        "5m.random_seeded_baseline.train": {
+          "accuracy": 0.4836287601577722,
+          "balanced_accuracy": 0.33532044060222055,
+          "confusion_matrix": [
+            [
+              9928,
+              35902,
+              9875
+            ],
+            [
+              36033,
+              132854,
+              35599
+            ],
+            [
+              9767,
+              35814,
+              9873
+            ]
+          ],
+          "macro_f1": 0.33532101728377656,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.1781877899724498,
+            "FLAT": 0.6495638738950168,
+            "UP": 0.17821138798386296
+          },
+          "per_class_precision": {
+            "DOWN": 0.17815101923629056,
+            "FLAT": 0.6494305127829105,
+            "UP": 0.1783836522304732
+          },
+          "per_class_recall": {
+            "DOWN": 0.1782245758908536,
+            "FLAT": 0.6496972897900101,
+            "UP": 0.17803945612579797
+          },
+          "prediction_distribution": {
+            "DOWN": 55728,
+            "FLAT": 204570,
+            "UP": 55347
+          },
+          "rows": 315645,
+          "split": "train",
+          "support": {
+            "DOWN": 55705,
+            "FLAT": 204486,
+            "UP": 55454
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.4835660424431525
+        },
+        "5m.random_seeded_baseline.validation": {
+          "accuracy": 0.4697676628498123,
+          "balanced_accuracy": 0.33199530210814343,
+          "confusion_matrix": [
+            [
+              3385,
+              12705,
+              3470
+            ],
+            [
+              11828,
+              42549,
+              11338
+            ],
+            [
+              3520,
+              12938,
+              3502
+            ]
+          ],
+          "macro_f1": 0.3317702964009886,
+          "metrics_scope": "classification_only",
+          "model_name": "random_seeded_baseline",
+          "per_class_f1": {
+            "DOWN": 0.17679471443867026,
+            "FLAT": 0.6355007579887534,
+            "UP": 0.1830154167755422
+          },
+          "per_class_precision": {
+            "DOWN": 0.18069716542998987,
+            "FLAT": 0.6239588221492257,
+            "UP": 0.19126160567995631
+          },
+          "per_class_recall": {
+            "DOWN": 0.17305725971370142,
+            "FLAT": 0.6474777448071216,
+            "UP": 0.1754509018036072
+          },
+          "prediction_distribution": {
+            "DOWN": 18733,
+            "FLAT": 68192,
+            "UP": 18310
+          },
+          "rows": 105235,
+          "split": "validation",
+          "support": {
+            "DOWN": 19560,
+            "FLAT": 65715,
+            "UP": 19960
+          },
+          "timeframe": "5m",
+          "weighted_f1": 0.4644179659285518
+        }
+      },
+      "models": [
+        "majority_class_baseline",
+        "random_seeded_baseline",
+        "logistic_regression",
+        "decision_tree_depth_2"
+      ],
+      "rows_used": 526104,
+      "test_rows": 105224,
+      "train_rows": 315645,
+      "validation_rows": 105235
+    }
+  },
+  "models_executed": [
+    "majority_class_baseline",
+    "random_seeded_baseline",
+    "logistic_regression",
+    "decision_tree_depth_2"
+  ],
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.44 - 5Y ML Diagnostic / Feature Review",
+  "no_clear_edge_vs_shuffled_labels_count": 15,
+  "no_persistent_model_check": {
+    "checked_suffixes": [
+      ".pkl",
+      ".pickle",
+      ".joblib",
+      ".onnx",
+      ".pt",
+      ".pth",
+      ".ckpt"
+    ],
+    "forbidden_model_artifacts_created": [],
+    "model_persisted": false,
+    "status": "PASS"
+  },
+  "optional_models_executed": [],
+  "original_vs_shuffled_delta": {
+    "15m.decision_tree_depth_2.test": {
+      "delta_accuracy_original_vs_shuffled": 0.0,
+      "delta_macro_f1_original_vs_shuffled": -0.00010369007411120679,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6442765502494654,
+      "original_macro_f1": 0.26121986602627456,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6442765502494654,
+      "shuffled_macro_f1": 0.26132355610038577,
+      "split": "test",
+      "timeframe": "15m"
+    },
+    "15m.decision_tree_depth_2.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.0,
+      "delta_macro_f1_original_vs_shuffled": 0.0,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6434802440275956,
+      "original_macro_f1": 0.26102341717259325,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6434802440275956,
+      "shuffled_macro_f1": 0.26102341717259325,
+      "split": "validation",
+      "timeframe": "15m"
+    },
+    "15m.logistic_regression.test": {
+      "delta_accuracy_original_vs_shuffled": -0.0009693513898787476,
+      "delta_macro_f1_original_vs_shuffled": 0.006239410632163767,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6433071988595866,
+      "original_macro_f1": 0.26746380606380016,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6442765502494654,
+      "shuffled_macro_f1": 0.2612243954316364,
+      "split": "test",
+      "timeframe": "15m"
+    },
+    "15m.logistic_regression.validation": {
+      "delta_accuracy_original_vs_shuffled": -0.001026284280745804,
+      "delta_macro_f1_original_vs_shuffled": 0.010762982019488498,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6424539597468498,
+      "original_macro_f1": 0.27178639919208175,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6434802440275956,
+      "shuffled_macro_f1": 0.26102341717259325,
+      "split": "validation",
+      "timeframe": "15m"
+    },
+    "1h.decision_tree_depth_2.test": {
+      "delta_accuracy_original_vs_shuffled": 0.0,
+      "delta_macro_f1_original_vs_shuffled": 0.0,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6572015053027711,
+      "original_macro_f1": 0.2643820533993944,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6572015053027711,
+      "shuffled_macro_f1": 0.2643820533993944,
+      "split": "test",
+      "timeframe": "1h"
+    },
+    "1h.decision_tree_depth_2.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.0,
+      "delta_macro_f1_original_vs_shuffled": 0.0,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6688711516533637,
+      "original_macro_f1": 0.2671950441832924,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6688711516533637,
+      "shuffled_macro_f1": 0.2671950441832924,
+      "split": "validation",
+      "timeframe": "1h"
+    },
+    "1h.logistic_regression.test": {
+      "delta_accuracy_original_vs_shuffled": 0.000912304709772993,
+      "delta_macro_f1_original_vs_shuffled": 0.013213795787020644,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6579997719238225,
+      "original_macro_f1": 0.2775681646077029,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6570874672140495,
+      "shuffled_macro_f1": 0.26435436882068225,
+      "split": "test",
+      "timeframe": "1h"
+    },
+    "1h.logistic_regression.validation": {
+      "delta_accuracy_original_vs_shuffled": -0.002850627137970352,
+      "delta_macro_f1_original_vs_shuffled": 0.024895597562688943,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.6660205245153934,
+      "original_macro_f1": 0.2920906417459813,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6688711516533637,
+      "shuffled_macro_f1": 0.2671950441832924,
+      "split": "validation",
+      "timeframe": "1h"
+    },
+    "1m.decision_tree_depth_2.test": {
+      "delta_accuracy_original_vs_shuffled": 1.9007215138922007e-05,
+      "delta_macro_f1_original_vs_shuffled": -5.2104373737177356e-05,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.5977712139528165,
+      "original_macro_f1": 0.24941877732876683,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5977522067376776,
+      "shuffled_macro_f1": 0.249470881702504,
+      "split": "test",
+      "timeframe": "1m"
+    },
+    "1m.decision_tree_depth_2.validation": {
+      "delta_accuracy_original_vs_shuffled": 2.4706562062881687e-05,
+      "delta_macro_f1_original_vs_shuffled": -4.3606211144020524e-05,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.601099251961321,
+      "original_macro_f1": 0.25028606699427863,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6010745453992581,
+      "shuffled_macro_f1": 0.25032967320542265,
+      "split": "validation",
+      "timeframe": "1m"
+    },
+    "1m.logistic_regression.test": {
+      "delta_accuracy_original_vs_shuffled": -0.00011214256931935118,
+      "delta_macro_f1_original_vs_shuffled": 0.0003361625637180732,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.5976590713834972,
+      "original_macro_f1": 0.2497549398924849,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5977712139528165,
+      "shuffled_macro_f1": 0.24941877732876683,
+      "split": "test",
+      "timeframe": "1m"
+    },
+    "1m.logistic_regression.validation": {
+      "delta_accuracy_original_vs_shuffled": -0.00024516511585481737,
+      "delta_macro_f1_original_vs_shuffled": 0.0003113683564092695,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6008540868454662,
+      "original_macro_f1": 0.25059773244059613,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.601099251961321,
+      "shuffled_macro_f1": 0.25028636408418686,
+      "split": "validation",
+      "timeframe": "1m"
+    },
+    "5m.decision_tree_depth_2.test": {
+      "delta_accuracy_original_vs_shuffled": 0.0,
+      "delta_macro_f1_original_vs_shuffled": 0.0,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6252280848475633,
+      "original_macro_f1": 0.2564678318802274,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6252280848475633,
+      "shuffled_macro_f1": 0.2564678318802274,
+      "split": "test",
+      "timeframe": "5m"
+    },
+    "5m.decision_tree_depth_2.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.0,
+      "delta_macro_f1_original_vs_shuffled": 0.0,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6244595429277332,
+      "original_macro_f1": 0.25627376425855514,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6244595429277332,
+      "shuffled_macro_f1": 0.25627376425855514,
+      "split": "validation",
+      "timeframe": "5m"
+    },
+    "5m.logistic_regression.test": {
+      "delta_accuracy_original_vs_shuffled": -0.0004276590891811871,
+      "delta_macro_f1_original_vs_shuffled": 0.0015756423957605792,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6248004257583821,
+      "original_macro_f1": 0.258043474275988,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6252280848475633,
+      "shuffled_macro_f1": 0.2564678318802274,
+      "split": "test",
+      "timeframe": "5m"
+    },
+    "5m.logistic_regression.validation": {
+      "delta_accuracy_original_vs_shuffled": -0.0003801016771987076,
+      "delta_macro_f1_original_vs_shuffled": 0.004199995597255146,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.6240794412505345,
+      "original_macro_f1": 0.2604737598558103,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.6244595429277332,
+      "shuffled_macro_f1": 0.25627376425855514,
+      "split": "validation",
+      "timeframe": "5m"
+    }
+  },
+  "quality_status": "PASS",
+  "random_seed": 42,
+  "runtime_seconds": 321.024704,
+  "safety_flags": {
+    "api_key_used": false,
+    "backtest_executed": false,
+    "exchange_auth_used": false,
+    "ml_executed": true,
+    "model_persisted": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_destructive_cleanup": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "signal_created": false,
+    "strategy_created": false,
+    "websocket_live_used": false
+  },
+  "shuffle_false_for_split_construction": true,
+  "shuffled_label_baseline_metrics": {
+    "15m.decision_tree_depth_2.shuffled_train_labels.test": {
+      "accuracy": 0.6442765502494654,
+      "balanced_accuracy": 0.3333716951512449,
+      "confusion_matrix": [
+        [
+          0,
+          6201,
+          0
+        ],
+        [
+          0,
+          22597,
+          1
+        ],
+        [
+          0,
+          6275,
+          1
+        ]
+      ],
+      "macro_f1": 0.26132355610038577,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.783652095507274,
+        "UP": 0.00031857279388340236
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6442847774641463,
+        "UP": 0.5
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.9999557482963094,
+        "UP": 0.00015933715742511153
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 35073,
+        "UP": 2
+      },
+      "rows": 35075,
+      "split": "test",
+      "support": {
+        "DOWN": 6201,
+        "FLAT": 22598,
+        "UP": 6276
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5049456711939497
+    },
+    "15m.decision_tree_depth_2.shuffled_train_labels.validation": {
+      "accuracy": 0.6434802440275956,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          6149,
+          0
+        ],
+        [
+          0,
+          22572,
+          0
+        ],
+        [
+          0,
+          6357,
+          0
+        ]
+      ],
+      "macro_f1": 0.26102341717259325,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7830702515177798,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6434802440275956,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 35078,
+        "UP": 0
+      },
+      "rows": 35078,
+      "split": "validation",
+      "support": {
+        "DOWN": 6149,
+        "FLAT": 22572,
+        "UP": 6357
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5038902365374116
+    },
+    "15m.logistic_regression.shuffled_train_labels.test": {
+      "accuracy": 0.6442765502494654,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          6201,
+          0
+        ],
+        [
+          0,
+          22598,
+          0
+        ],
+        [
+          1,
+          6275,
+          0
+        ]
+      ],
+      "macro_f1": 0.2612243954316364,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7836731862949091,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6442949193134515,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 1,
+        "FLAT": 35074,
+        "UP": 0
+      },
+      "rows": 35075,
+      "split": "test",
+      "support": {
+        "DOWN": 6201,
+        "FLAT": 22598,
+        "UP": 6276
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5049022569890906
+    },
+    "15m.logistic_regression.shuffled_train_labels.validation": {
+      "accuracy": 0.6434802440275956,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          6149,
+          0
+        ],
+        [
+          0,
+          22572,
+          0
+        ],
+        [
+          0,
+          6357,
+          0
+        ]
+      ],
+      "macro_f1": 0.26102341717259325,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7830702515177798,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6434802440275956,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 35078,
+        "UP": 0
+      },
+      "rows": 35078,
+      "split": "validation",
+      "support": {
+        "DOWN": 6149,
+        "FLAT": 22572,
+        "UP": 6357
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5038902365374116
+    },
+    "1h.decision_tree_depth_2.shuffled_train_labels.test": {
+      "accuracy": 0.6572015053027711,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1502,
+          0
+        ],
+        [
+          0,
+          5763,
+          0
+        ],
+        [
+          0,
+          1504,
+          0
+        ]
+      ],
+      "macro_f1": 0.2643820533993944,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7931461601981833,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6572015053027711,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 8769,
+        "UP": 0
+      },
+      "rows": 8769,
+      "split": "test",
+      "support": {
+        "DOWN": 1502,
+        "FLAT": 5763,
+        "UP": 1504
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5212568504073589
+    },
+    "1h.decision_tree_depth_2.shuffled_train_labels.validation": {
+      "accuracy": 0.6688711516533637,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1413,
+          0
+        ],
+        [
+          0,
+          5866,
+          0
+        ],
+        [
+          0,
+          1491,
+          0
+        ]
+      ],
+      "macro_f1": 0.2671950441832924,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.8015851325498771,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6688711516533637,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 8770,
+        "UP": 0
+      },
+      "rows": 8770,
+      "split": "validation",
+      "support": {
+        "DOWN": 1413,
+        "FLAT": 5866,
+        "UP": 1491
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5361571707568504
+    },
+    "1h.logistic_regression.shuffled_train_labels.test": {
+      "accuracy": 0.6570874672140495,
+      "balanced_accuracy": 0.3332754930880907,
+      "confusion_matrix": [
+        [
+          0,
+          1502,
+          0
+        ],
+        [
+          0,
+          5762,
+          1
+        ],
+        [
+          0,
+          1504,
+          0
+        ]
+      ],
+      "macro_f1": 0.26435436882068225,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7930631064620467,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6571624087591241,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.999826479264272,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 8768,
+        "UP": 1
+      },
+      "rows": 8769,
+      "split": "test",
+      "support": {
+        "DOWN": 1502,
+        "FLAT": 5763,
+        "UP": 1504
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5212022673669489
+    },
+    "1h.logistic_regression.shuffled_train_labels.validation": {
+      "accuracy": 0.6688711516533637,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          1413,
+          0
+        ],
+        [
+          0,
+          5866,
+          0
+        ],
+        [
+          0,
+          1491,
+          0
+        ]
+      ],
+      "macro_f1": 0.2671950441832924,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.8015851325498771,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6688711516533637,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 8770,
+        "UP": 0
+      },
+      "rows": 8770,
+      "split": "validation",
+      "support": {
+        "DOWN": 1413,
+        "FLAT": 5866,
+        "UP": 1491
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5361571707568504
+    },
+    "1m.decision_tree_depth_2.shuffled_train_labels.test": {
+      "accuracy": 0.5977522067376776,
+      "balanced_accuracy": 0.3333415971854723,
+      "confusion_matrix": [
+        [
+          0,
+          105991,
+          1
+        ],
+        [
+          0,
+          314478,
+          19
+        ],
+        [
+          6,
+          105612,
+          9
+        ]
+      ],
+      "macro_f1": 0.249470881702504,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7482422809067094,
+        "UP": 0.00017036420080260468
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.597774867368333,
+        "UP": 0.3103448275862069
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.9999395860691835,
+        "UP": 8.520548723337782e-05
+      },
+      "prediction_distribution": {
+        "DOWN": 6,
+        "FLAT": 526081,
+        "UP": 29
+      },
+      "rows": 526116,
+      "split": "test",
+      "support": {
+        "DOWN": 105992,
+        "FLAT": 314497,
+        "UP": 105627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.4473119001850458
+    },
+    "1m.decision_tree_depth_2.shuffled_train_labels.validation": {
+      "accuracy": 0.6010745453992581,
+      "balanced_accuracy": 0.3333362698721987,
+      "confusion_matrix": [
+        [
+          0,
+          103514,
+          3
+        ],
+        [
+          3,
+          316263,
+          18
+        ],
+        [
+          2,
+          106365,
+          8
+        ]
+      ],
+      "macro_f1": 0.25032967320542265,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7508386493294367,
+        "UP": 0.00015037028683132213
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6010981826199011,
+        "UP": 0.27586206896551724
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 0.9999336039761733,
+        "UP": 7.520564042303173e-05
+      },
+      "prediction_distribution": {
+        "DOWN": 5,
+        "FLAT": 526142,
+        "UP": 29
+      },
+      "rows": 526176,
+      "split": "validation",
+      "support": {
+        "DOWN": 103517,
+        "FLAT": 316284,
+        "UP": 106375
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.451358950244354
+    },
+    "1m.logistic_regression.shuffled_train_labels.test": {
+      "accuracy": 0.5977712139528165,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          105992,
+          0
+        ],
+        [
+          0,
+          314497,
+          0
+        ],
+        [
+          0,
+          105627,
+          0
+        ]
+      ],
+      "macro_f1": 0.24941877732876683,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7482563319863005,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.5977712139528165,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 526116,
+        "UP": 0
+      },
+      "rows": 526116,
+      "split": "test",
+      "support": {
+        "DOWN": 105992,
+        "FLAT": 314497,
+        "UP": 105627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.44728609591933255
+    },
+    "1m.logistic_regression.shuffled_train_labels.validation": {
+      "accuracy": 0.601099251961321,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          103517,
+          0
+        ],
+        [
+          0,
+          316284,
+          0
+        ],
+        [
+          1,
+          106374,
+          0
+        ]
+      ],
+      "macro_f1": 0.25028636408418686,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7508590922525606,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6011003943554901,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 1,
+        "FLAT": 526175,
+        "UP": 0
+      },
+      "rows": 526176,
+      "split": "validation",
+      "support": {
+        "DOWN": 103517,
+        "FLAT": 316284,
+        "UP": 106375
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.45134083868137065
+    },
+    "5m.decision_tree_depth_2.shuffled_train_labels.test": {
+      "accuracy": 0.6252280848475633,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          19676,
+          0
+        ],
+        [
+          0,
+          65789,
+          0
+        ],
+        [
+          0,
+          19759,
+          0
+        ]
+      ],
+      "macro_f1": 0.2564678318802274,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7694034956406823,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6252280848475633,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105224,
+        "UP": 0
+      },
+      "rows": 105224,
+      "split": "test",
+      "support": {
+        "DOWN": 19676,
+        "FLAT": 65789,
+        "UP": 19759
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4810526740544443
+    },
+    "5m.decision_tree_depth_2.shuffled_train_labels.validation": {
+      "accuracy": 0.6244595429277332,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          19560,
+          0
+        ],
+        [
+          0,
+          65715,
+          0
+        ],
+        [
+          0,
+          19960,
+          0
+        ]
+      ],
+      "macro_f1": 0.25627376425855514,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7688212927756654,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6244595429277332,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105235,
+        "UP": 0
+      },
+      "rows": 105235,
+      "split": "validation",
+      "support": {
+        "DOWN": 19560,
+        "FLAT": 65715,
+        "UP": 19960
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.48009779307980094
+    },
+    "5m.logistic_regression.shuffled_train_labels.test": {
+      "accuracy": 0.6252280848475633,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          19676,
+          0
+        ],
+        [
+          0,
+          65789,
+          0
+        ],
+        [
+          0,
+          19759,
+          0
+        ]
+      ],
+      "macro_f1": 0.2564678318802274,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7694034956406823,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6252280848475633,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105224,
+        "UP": 0
+      },
+      "rows": 105224,
+      "split": "test",
+      "support": {
+        "DOWN": 19676,
+        "FLAT": 65789,
+        "UP": 19759
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4810526740544443
+    },
+    "5m.logistic_regression.shuffled_train_labels.validation": {
+      "accuracy": 0.6244595429277332,
+      "balanced_accuracy": 0.3333333333333333,
+      "confusion_matrix": [
+        [
+          0,
+          19560,
+          0
+        ],
+        [
+          0,
+          65715,
+          0
+        ],
+        [
+          0,
+          19960,
+          0
+        ]
+      ],
+      "macro_f1": 0.25627376425855514,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "FLAT": 0.7688212927756654,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "FLAT": 0.6244595429277332,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "FLAT": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "FLAT": 105235,
+        "UP": 0
+      },
+      "rows": 105235,
+      "split": "validation",
+      "support": {
+        "DOWN": 19560,
+        "FLAT": 65715,
+        "UP": 19960
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.48009779307980094
+    }
+  },
+  "signal_created": false,
+  "source_dataset_version": "V9.41",
+  "source_version": "V9.42",
+  "status": "PASS",
+  "strategy_created": false,
+  "target": "up_down_flat_volnorm_h1_5y",
+  "target_name": "up_down_flat_volnorm_h1_5y",
+  "train_only_fit": true,
+  "validation_test_not_used_for_fit": true,
+  "version": "V9.43",
+  "walk_forward_executed": false,
+  "warnings": [
+    "learned models are close to shuffled-label falsification on at least one evaluation split",
+    "learned models do not clearly beat majority/random baselines on evaluation splits"
+  ]
+}

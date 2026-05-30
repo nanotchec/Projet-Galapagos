@@ -1,0 +1,92 @@
+{
+  "created_at_utc": "2026-05-30T23:07:46Z",
+  "files_count": 46,
+  "largest_files": [
+    {
+      "bytes": 338230,
+      "path": "reports/labels/ohlcv_aggtrades_5y_label_factory_v9_40.json"
+    },
+    {
+      "bytes": 215114,
+      "path": "reports/datasets/ohlcv_aggtrades_5y_dataset_validation_v9_42.json"
+    },
+    {
+      "bytes": 165236,
+      "path": "reports/ml/ohlcv_aggtrades_5y_offline_ml_v9_43.json"
+    },
+    {
+      "bytes": 102748,
+      "path": "reports/datasets/ohlcv_aggtrades_5y_dataset_v9_41.json"
+    },
+    {
+      "bytes": 91420,
+      "path": "reports/ml/ohlcv_aggtrades_5y_offline_scores_v9_43.json"
+    },
+    {
+      "bytes": 79327,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_validation_v9_38.json"
+    },
+    {
+      "bytes": 63398,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    {
+      "bytes": 24105,
+      "path": "src/galapagos/ml/ohlcv_aggtrades_5y_offline_ml_v9_43.py"
+    },
+    {
+      "bytes": 10520,
+      "path": "scripts/release_audit_lite_zip_v9_43.py"
+    },
+    {
+      "bytes": 10328,
+      "path": "scripts/audit_audit_lite_zip_v9_43.py"
+    },
+    {
+      "bytes": 8055,
+      "path": "src/galapagos/ml/ohlcv_aggtrades_5y_offline_ml_v9_43_validation.py"
+    },
+    {
+      "bytes": 6818,
+      "path": "src/galapagos/datasets/ohlcv_aggtrades_5y_dataset_v9_41_schemas.py"
+    },
+    {
+      "bytes": 6784,
+      "path": "scripts/smoke_audit_lite_zip_v9_43.py"
+    },
+    {
+      "bytes": 3762,
+      "path": "reports/labels/ohlcv_aggtrades_5y_label_distribution_v9_40.json"
+    },
+    {
+      "bytes": 2889,
+      "path": "reports/audit_lite/v9_43_artifact_inventory.json"
+    },
+    {
+      "bytes": 2461,
+      "path": "tests/validation/test_ohlcv_aggtrades_5y_offline_ml_v9_43_validator.py"
+    },
+    {
+      "bytes": 2407,
+      "path": "reports/audit_lite/zip_size_report_v9_43.json"
+    },
+    {
+      "bytes": 2361,
+      "path": "tests/ml/test_ohlcv_aggtrades_5y_offline_ml_v9_43.py"
+    },
+    {
+      "bytes": 2239,
+      "path": "reports/audit_lite/v9_43_command_results.json"
+    },
+    {
+      "bytes": 2055,
+      "path": "src/galapagos/ml/ohlcv_aggtrades_5y_offline_ml_v9_43_metrics.py"
+    }
+  ],
+  "sidecars_created": false,
+  "version": "V9.43",
+  "zip_bytes_estimate": 169092,
+  "zip_bytes_is_authoritative": false,
+  "zip_fingerprints_created": false,
+  "zip_name": "projet-galapagos-v9.43-audit-lite.zip"
+}
