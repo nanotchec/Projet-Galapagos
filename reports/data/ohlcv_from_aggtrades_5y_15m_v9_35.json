@@ -1,0 +1,13 @@
+{
+  "bytes": 22979031,
+  "days_complete": 1827,
+  "days_missing": 0,
+  "duplicate_open_ts": 0,
+  "first_missing_day": null,
+  "invalid_rows": 0,
+  "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_35/ohlcv_from_aggtrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/ohlcv.parquet",
+  "quality_status": "PASS",
+  "rows": 175392,
+  "timeframe": "15m",
+  "timestamp_gap_warnings": 0
+}

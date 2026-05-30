@@ -1,0 +1,92 @@
+{
+  "created_at_utc": "2026-05-30T19:22:48Z",
+  "files_count": 47,
+  "largest_files": [
+    {
+      "bytes": 60916,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    {
+      "bytes": 41420,
+      "path": "src/galapagos/data/ohlcv_5y_extension_v9_34.py"
+    },
+    {
+      "bytes": 36170,
+      "path": "src/galapagos/data/ohlcv_from_aggtrades_5y_v9_35.py"
+    },
+    {
+      "bytes": 23685,
+      "path": "reports/data/ohlcv_5y_extension_correction_v9_34_1.json"
+    },
+    {
+      "bytes": 21668,
+      "path": "reports/data/ohlcv_5y_extension_v9_34.json"
+    },
+    {
+      "bytes": 20651,
+      "path": "reports/data/aggtrades_5y_full_coverage_validation_v9_32.json"
+    },
+    {
+      "bytes": 11201,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_33.json"
+    },
+    {
+      "bytes": 10997,
+      "path": "scripts/audit_audit_lite_zip_v9_35.py"
+    },
+    {
+      "bytes": 10796,
+      "path": "scripts/release_audit_lite_zip_v9_35.py"
+    },
+    {
+      "bytes": 10262,
+      "path": "reports/data/ohlcv_from_aggtrades_5y_v9_35.json"
+    },
+    {
+      "bytes": 6907,
+      "path": "scripts/smoke_audit_lite_zip_v9_35.py"
+    },
+    {
+      "bytes": 5808,
+      "path": "src/galapagos/data/ohlcv_from_aggtrades_5y_v9_35_validation.py"
+    },
+    {
+      "bytes": 4425,
+      "path": "tests/validation/test_ohlcv_from_aggtrades_5y_v9_35_validator.py"
+    },
+    {
+      "bytes": 3828,
+      "path": "src/galapagos/data/public_market/sources/binance_archive.py"
+    },
+    {
+      "bytes": 3708,
+      "path": "tests/data/test_ohlcv_from_aggtrades_5y_v9_35.py"
+    },
+    {
+      "bytes": 2789,
+      "path": "reports/audit_lite/v9_35_artifact_inventory.json"
+    },
+    {
+      "bytes": 2528,
+      "path": "src/galapagos/data/public_market/config.py"
+    },
+    {
+      "bytes": 2343,
+      "path": "reports/audit_lite/zip_size_report_v9_35.json"
+    },
+    {
+      "bytes": 2096,
+      "path": "reports/audit_lite/v9_35_full_local_validation_attestation.json"
+    },
+    {
+      "bytes": 1914,
+      "path": "reports/manifests/aggtrades_5y_full_coverage_validation_v9_32_manifest.json"
+    }
+  ],
+  "sidecars_created": false,
+  "version": "V9.35",
+  "zip_bytes_estimate": 78825,
+  "zip_bytes_is_authoritative": false,
+  "zip_fingerprints_created": false,
+  "zip_name": "projet-galapagos-v9.35-audit-lite.zip"
+}

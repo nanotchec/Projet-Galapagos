@@ -1,0 +1,309 @@
+{
+  "backtest_executed": false,
+  "blockers": [],
+  "combined_feature_store_created": false,
+  "coverage_status": "target_5y_window_complete",
+  "created_at_utc": "2026-05-30T19:21:37Z",
+  "dataset_created": false,
+  "days_complete_by_timeframe": {
+    "15m": 1827,
+    "1h": 1827,
+    "1m": 1827,
+    "5m": 1827
+  },
+  "days_missing_by_timeframe": {
+    "15m": 0,
+    "1h": 0,
+    "1m": 0,
+    "5m": 0
+  },
+  "decision": "ohlcv_from_aggtrades_5y_derivation_complete_with_warnings",
+  "direction": "ohlcv_from_aggtrades_5y_derivation",
+  "disk_after": {
+    "data_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data",
+    "estimated_extension_total_bytes": 3000000000,
+    "free_bytes_data_mount": 79170957312,
+    "free_bytes_project_mount": 79170957312,
+    "free_gib_data_mount": 73.734,
+    "free_gib_project_mount": 73.734,
+    "project_path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+    "safe_to_start_collection": true,
+    "storage_warning": false
+  },
+  "disk_preflight": {
+    "data_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data",
+    "estimated_extension_total_bytes": 3000000000,
+    "free_bytes_data_mount": 79170248704,
+    "free_bytes_project_mount": 79170248704,
+    "free_gib_data_mount": 73.733,
+    "free_gib_project_mount": 73.733,
+    "project_path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+    "safe_to_start_collection": true,
+    "storage_warning": false
+  },
+  "feature_store_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "ingestion_executed": true,
+  "ingestion_scope": "local_derived_ohlcv_from_validated_aggtrades_only",
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "v9_29_validation": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_full_coverage_validation_v9_29.json"
+    },
+    "v9_30_plan": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_plan_v9_30.json"
+    },
+    "v9_31_collection": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_collection_v9_31.json"
+    },
+    "v9_32_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_5y_full_coverage_validation_v9_32_manifest.json"
+    },
+    "v9_32_validation": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_full_coverage_validation_v9_32.json"
+    },
+    "v9_33_report": {
+      "available": true,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_33.json"
+    },
+    "v9_34_1_manifest": {
+      "available": true,
+      "path": "reports/manifests/ohlcv_5y_extension_correction_v9_34_1_manifest.json"
+    },
+    "v9_34_1_report": {
+      "available": true,
+      "path": "reports/data/ohlcv_5y_extension_correction_v9_34_1.json"
+    },
+    "v9_34_report": {
+      "available": true,
+      "path": "reports/data/ohlcv_5y_extension_v9_34.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.35 produit uniquement une base OHLCV derivee depuis aggTrades et ne cree pas de feature store combine OHLCV + aggTrades.",
+    "La parite avec les klines Binance existantes est documentee comme controle de coherence, pas comme source de verite.",
+    "Aucun label, dataset supervise, ML, walk-forward, backtest, strategie, signal ou ordre n'est produit."
+  ],
+  "method": {
+    "causality": "Each candle uses only aggTrades with event_ts inside the candle interval; decision_ts and available_ts equal close_ts.",
+    "derivation": "1m buckets are derived directly from aggTrades ordered by event_ts then aggregate_trade_id; 5m/15m/1h buckets are deterministic resamples of the derived 1m bars.",
+    "network_used": false,
+    "ohlcv_source_type": "derived_from_aggtrades",
+    "source": "validated silver aggTrades",
+    "source_validation_version": "V9.32"
+  },
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.36 - OHLCV From AggTrades 5Y Coverage Validation",
+  "parity_comparison": {
+    "acceptable_tolerance": {
+      "price_abs": 1e-08,
+      "volume_abs": 1e-08
+    },
+    "blocking_mismatches": [],
+    "parity_status": "PASS",
+    "parity_warnings": [],
+    "timeframes": {
+      "15m": {
+        "derived_rows": 109248,
+        "existing_rows": 109248,
+        "matched_rows": 109248,
+        "max_close_abs_diff": 0.0,
+        "max_high_abs_diff": 0.0,
+        "max_low_abs_diff": 0.0,
+        "max_volume_abs_diff": 1.8189894035458565e-12,
+        "parity_status": "PASS",
+        "row_count_delta": 0
+      },
+      "1h": {
+        "derived_rows": 27312,
+        "existing_rows": 27312,
+        "matched_rows": 27312,
+        "max_close_abs_diff": 0.0,
+        "max_high_abs_diff": 0.0,
+        "max_low_abs_diff": 0.0,
+        "max_volume_abs_diff": 3.637978807091713e-12,
+        "parity_status": "PASS",
+        "row_count_delta": 0
+      },
+      "1m": {
+        "derived_rows": 1638720,
+        "existing_rows": 1638720,
+        "matched_rows": 1638720,
+        "max_close_abs_diff": 0.0,
+        "max_high_abs_diff": 0.0,
+        "max_low_abs_diff": 0.0,
+        "max_volume_abs_diff": 2.2737367544323206e-13,
+        "parity_status": "PASS",
+        "row_count_delta": 0
+      },
+      "5m": {
+        "derived_rows": 327744,
+        "existing_rows": 327744,
+        "matched_rows": 327744,
+        "max_close_abs_diff": 0.0,
+        "max_high_abs_diff": 0.0,
+        "max_low_abs_diff": 0.0,
+        "max_volume_abs_diff": 4.547473508864641e-13,
+        "parity_status": "PASS",
+        "row_count_delta": 0
+      }
+    }
+  },
+  "quality_status": "PASS",
+  "row_counts": {
+    "15m": 175392,
+    "1h": 43848,
+    "1m": 2630880,
+    "5m": 526176
+  },
+  "runtime_error": null,
+  "runtime_seconds": 9.418,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_combined_feature_store": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_labels": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_aggtrades_coverage": {
+    "coverage_end": "2026-05-05",
+    "coverage_start": "2021-05-05",
+    "days_expected": 1827,
+    "days_missing": 0,
+    "days_present": 1827,
+    "first_missing_day": null,
+    "silver_bytes": 84887087950,
+    "source_type": "silver_public_trades_aggtrades",
+    "source_validation_version": "V9.32"
+  },
+  "source_version": "V9.34.1",
+  "status": "PASS",
+  "storage_blocker": false,
+  "target_window_end": "2026-05-05",
+  "target_window_start": "2021-05-05",
+  "timeframe_reports": [
+    {
+      "bytes": 278316292,
+      "days_complete": 1827,
+      "days_missing": 0,
+      "duplicate_open_ts": 0,
+      "first_missing_day": null,
+      "invalid_rows": 0,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_35/ohlcv_from_aggtrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_2026-05-05/ohlcv.parquet",
+      "quality_status": "PASS",
+      "rows": 2630880,
+      "timeframe": "1m",
+      "timestamp_gap_warnings": 0
+    },
+    {
+      "bytes": 58454606,
+      "days_complete": 1827,
+      "days_missing": 0,
+      "duplicate_open_ts": 0,
+      "first_missing_day": null,
+      "invalid_rows": 0,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_35/ohlcv_from_aggtrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_2026-05-05/ohlcv.parquet",
+      "quality_status": "PASS",
+      "rows": 526176,
+      "timeframe": "5m",
+      "timestamp_gap_warnings": 0
+    },
+    {
+      "bytes": 22979031,
+      "days_complete": 1827,
+      "days_missing": 0,
+      "duplicate_open_ts": 0,
+      "first_missing_day": null,
+      "invalid_rows": 0,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_35/ohlcv_from_aggtrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/ohlcv.parquet",
+      "quality_status": "PASS",
+      "rows": 175392,
+      "timeframe": "15m",
+      "timestamp_gap_warnings": 0
+    },
+    {
+      "bytes": 6067023,
+      "days_complete": 1827,
+      "days_missing": 0,
+      "duplicate_open_ts": 0,
+      "first_missing_day": null,
+      "invalid_rows": 0,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_35/ohlcv_from_aggtrades/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/ohlcv.parquet",
+      "quality_status": "PASS",
+      "rows": 43848,
+      "timeframe": "1h",
+      "timestamp_gap_warnings": 0
+    }
+  ],
+  "timeframes_produced": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "timeframes_required": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "v9_35_decision": {
+    "decision": "ohlcv_from_aggtrades_5y_derivation_complete_with_warnings",
+    "justification": "Les 4 timeframes sont produits avec warnings non bloquants.",
+    "next_recommendation": "V9.36 - OHLCV From AggTrades 5Y Coverage Validation"
+  },
+  "version": "V9.35",
+  "walk_forward_executed": false,
+  "warnings": [
+    "1m: 542 zero-trade buckets filled causally from previous close",
+    "5m: 108 zero-trade buckets filled causally from previous close",
+    "15m: 36 zero-trade buckets filled causally from previous close",
+    "1h: 8 zero-trade buckets filled causally from previous close"
+  ],
+  "zero_trade_bucket_counts": {
+    "15m": 36,
+    "1h": 8,
+    "1m": 542,
+    "5m": 108
+  }
+}
