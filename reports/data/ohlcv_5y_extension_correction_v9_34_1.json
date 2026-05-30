@@ -1,0 +1,704 @@
+{
+  "backtest_executed": false,
+  "bad_day_diagnostic": {
+    "after": {
+      "csv_member_count": 1,
+      "date": "2021-08-13",
+      "duplicate_open_time_count": 0,
+      "errors": [
+        "rows 1170 != expected_rows 1440",
+        "timestamp gaps detected: 1"
+      ],
+      "expected_row_count": 1440,
+      "local_raw_incomplete_or_invalid": true,
+      "local_raw_quality_status": "FAIL",
+      "max_open_ts": "2021-08-13T23:59:00Z",
+      "min_open_ts": "2021-08-13T00:00:00Z",
+      "missing_intervals": [
+        {
+          "delta_seconds": 16260,
+          "next_open_ts": "2021-08-13T06:30:00Z",
+          "previous_open_ts": "2021-08-13T01:59:00Z"
+        }
+      ],
+      "negative_volume_count": 0,
+      "non_positive_price_count": 0,
+      "partition_mismatch_count": 0,
+      "price_invariant_violations": 0,
+      "raw_exists": true,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2021-08-13.zip",
+      "raw_size_bytes": 62163,
+      "row_count": 1170,
+      "timeframe": "1m",
+      "timestamp_gap_count": 1,
+      "zip_readable": true
+    },
+    "before": {
+      "csv_member_count": 1,
+      "date": "2021-08-13",
+      "duplicate_open_time_count": 0,
+      "errors": [
+        "rows 1170 != expected_rows 1440",
+        "timestamp gaps detected: 1"
+      ],
+      "expected_row_count": 1440,
+      "local_raw_incomplete_or_invalid": true,
+      "local_raw_quality_status": "FAIL",
+      "max_open_ts": "2021-08-13T23:59:00Z",
+      "min_open_ts": "2021-08-13T00:00:00Z",
+      "missing_intervals": [
+        {
+          "delta_seconds": 16260,
+          "next_open_ts": "2021-08-13T06:30:00Z",
+          "previous_open_ts": "2021-08-13T01:59:00Z"
+        }
+      ],
+      "negative_volume_count": 0,
+      "non_positive_price_count": 0,
+      "partition_mismatch_count": 0,
+      "price_invariant_violations": 0,
+      "raw_exists": true,
+      "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2021-08-13.zip",
+      "raw_size_bytes": 62163,
+      "row_count": 1170,
+      "timeframe": "1m",
+      "timestamp_gap_count": 1,
+      "zip_readable": true
+    },
+    "repair": {
+      "backup_raw_path": null,
+      "backup_silver_path": null,
+      "errors": [
+        "rows 1170 != expected_rows 1440",
+        "timestamp gaps detected: 1"
+      ],
+      "network_used": true,
+      "raw_replaced_or_backup_strategy": "not_needed",
+      "redownload_attempted": true,
+      "redownload_quality_status": "FAIL",
+      "redownload_raw_size_bytes": 62163,
+      "redownload_row_count": 1170,
+      "redownload_success": false,
+      "repair_status": "source_issue",
+      "silver_rebuilt_for_2021_08_13": false
+    }
+  },
+  "blockers": [
+    "source_issue",
+    "bad_day_source_issue",
+    "ohlcv_5y_incomplete"
+  ],
+  "collection_executed": false,
+  "combined_feature_store_created": false,
+  "created_at_utc": "2026-05-30T18:06:37Z",
+  "dataset_created": false,
+  "days_attempted_total": 0,
+  "days_complete_total": 0,
+  "days_downloaded_total": 0,
+  "days_failed_total": 0,
+  "days_normalized_total": 0,
+  "days_quarantined_total": 0,
+  "days_skipped_existing_total": 0,
+  "decision": "ohlcv_5y_extension_failed_source_issue",
+  "derivation_plan": {
+    "derive_ohlcv_from_aggtrades_possible": true,
+    "derive_ohlcv_from_aggtrades_recommended": false,
+    "expected_outputs": [
+      "1m",
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "expected_runtime": "depend du stockage local aggTrades; a mesurer dans une version dediee",
+    "required_tests": [
+      "parite OHLCV sur echantillon avec klines publiques Binance",
+      "open/high/low/close/volume par bucket strictement determines depuis aggTrades",
+      "controle causal decision_ts et available_ts",
+      "validation gaps, doublons open_time et invariants prix/volume"
+    ],
+    "risks": [
+      "differences possibles avec les klines publiques Binance si certaines transactions historiques manquent",
+      "cout runtime plus eleve que lecture directe des klines publiques",
+      "necessite une version separee si la source klines publique echoue"
+    ]
+  },
+  "derive_ohlcv_from_aggtrades_possible": true,
+  "derive_ohlcv_from_aggtrades_recommended": true,
+  "diagnostic_after": {
+    "available_days_by_timeframe": {
+      "15m": 1138,
+      "1h": 1138,
+      "1m": 1238,
+      "5m": 1138
+    },
+    "current_ohlcv_coverage_end": "2026-05-05",
+    "current_ohlcv_coverage_start": "2021-05-05",
+    "missing_days_by_timeframe": {
+      "15m": 689,
+      "1h": 689,
+      "1m": 589,
+      "5m": 689
+    },
+    "missing_window_end": "2023-03-24",
+    "missing_window_start": "2021-05-05",
+    "ohlcv_5y_ready": false,
+    "ohlcv_quality_known": true,
+    "ohlcv_schema_known": true,
+    "raw_kline_files_existing": {
+      "15m": 0,
+      "1h": 0,
+      "1m": 3201,
+      "5m": 0
+    },
+    "research_ohlcv_existing": {
+      "15m": [
+        {
+          "bytes": 14104034,
+          "end": "2026-05-23",
+          "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+          "start": "2023-03-25"
+        }
+      ],
+      "1h": [
+        {
+          "bytes": 3592349,
+          "end": "2026-05-23",
+          "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ohlcv.parquet",
+          "start": "2023-03-25"
+        }
+      ],
+      "1m": [
+        {
+          "bytes": 160315157,
+          "end": "2026-05-23",
+          "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+          "start": "2023-03-25"
+        }
+      ],
+      "5m": [
+        {
+          "bytes": 35258371,
+          "end": "2026-05-23",
+          "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+          "start": "2023-03-25"
+        }
+      ]
+    },
+    "silver_ohlcv_existing": {
+      "15m": 1,
+      "1h": 1,
+      "1m": 101,
+      "5m": 1
+    },
+    "source_paths_existing": [
+      "data/raw/public_market/binance_archive/spot/BTCUSDT/klines",
+      "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT",
+      "data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT"
+    ],
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2021-05-05",
+    "timeframes": {
+      "15m": {
+        "available_days": 1138,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "first_missing_day": "2021-05-05",
+        "missing_days": 689,
+        "missing_window_days_available_raw": 0,
+        "missing_window_days_available_silver": 0,
+        "raw_files_existing": 0,
+        "research_windows": [
+          {
+            "bytes": 14104034,
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_files_existing": 1
+      },
+      "1h": {
+        "available_days": 1138,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "first_missing_day": "2021-05-05",
+        "missing_days": 689,
+        "missing_window_days_available_raw": 0,
+        "missing_window_days_available_silver": 0,
+        "raw_files_existing": 0,
+        "research_windows": [
+          {
+            "bytes": 3592349,
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_files_existing": 1
+      },
+      "1m": {
+        "available_days": 1238,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2021-05-05",
+        "first_missing_day": "2021-08-13",
+        "missing_days": 589,
+        "missing_window_days_available_raw": 689,
+        "missing_window_days_available_silver": 100,
+        "raw_files_existing": 3201,
+        "research_windows": [
+          {
+            "bytes": 160315157,
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_files_existing": 101
+      },
+      "5m": {
+        "available_days": 1138,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "first_missing_day": "2021-05-05",
+        "missing_days": 689,
+        "missing_window_days_available_raw": 0,
+        "missing_window_days_available_silver": 0,
+        "raw_files_existing": 0,
+        "research_windows": [
+          {
+            "bytes": 35258371,
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_files_existing": 1
+      }
+    },
+    "timeframes_required": [
+      "1m",
+      "5m",
+      "15m",
+      "1h"
+    ]
+  },
+  "diagnostic_before": {
+    "available_days_by_timeframe": {
+      "15m": 1138,
+      "1h": 1138,
+      "1m": 1238,
+      "5m": 1138
+    },
+    "current_ohlcv_coverage_end": "2026-05-05",
+    "current_ohlcv_coverage_start": "2021-05-05",
+    "missing_days_by_timeframe": {
+      "15m": 689,
+      "1h": 689,
+      "1m": 589,
+      "5m": 689
+    },
+    "missing_window_end": "2023-03-24",
+    "missing_window_start": "2021-05-05",
+    "ohlcv_5y_ready": false,
+    "ohlcv_quality_known": true,
+    "ohlcv_schema_known": true,
+    "raw_kline_files_existing": {
+      "15m": 0,
+      "1h": 0,
+      "1m": 3201,
+      "5m": 0
+    },
+    "research_ohlcv_existing": {
+      "15m": [
+        {
+          "bytes": 14104034,
+          "end": "2026-05-23",
+          "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+          "start": "2023-03-25"
+        }
+      ],
+      "1h": [
+        {
+          "bytes": 3592349,
+          "end": "2026-05-23",
+          "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ohlcv.parquet",
+          "start": "2023-03-25"
+        }
+      ],
+      "1m": [
+        {
+          "bytes": 160315157,
+          "end": "2026-05-23",
+          "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+          "start": "2023-03-25"
+        }
+      ],
+      "5m": [
+        {
+          "bytes": 35258371,
+          "end": "2026-05-23",
+          "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+          "start": "2023-03-25"
+        }
+      ]
+    },
+    "silver_ohlcv_existing": {
+      "15m": 1,
+      "1h": 1,
+      "1m": 101,
+      "5m": 1
+    },
+    "source_paths_existing": [
+      "data/raw/public_market/binance_archive/spot/BTCUSDT/klines",
+      "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT",
+      "data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT"
+    ],
+    "target_window_end": "2026-05-05",
+    "target_window_start": "2021-05-05",
+    "timeframes": {
+      "15m": {
+        "available_days": 1138,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "first_missing_day": "2021-05-05",
+        "missing_days": 689,
+        "missing_window_days_available_raw": 0,
+        "missing_window_days_available_silver": 0,
+        "raw_files_existing": 0,
+        "research_windows": [
+          {
+            "bytes": 14104034,
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_files_existing": 1
+      },
+      "1h": {
+        "available_days": 1138,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "first_missing_day": "2021-05-05",
+        "missing_days": 689,
+        "missing_window_days_available_raw": 0,
+        "missing_window_days_available_silver": 0,
+        "raw_files_existing": 0,
+        "research_windows": [
+          {
+            "bytes": 3592349,
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_files_existing": 1
+      },
+      "1m": {
+        "available_days": 1238,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2021-05-05",
+        "first_missing_day": "2021-08-13",
+        "missing_days": 589,
+        "missing_window_days_available_raw": 689,
+        "missing_window_days_available_silver": 100,
+        "raw_files_existing": 3201,
+        "research_windows": [
+          {
+            "bytes": 160315157,
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_files_existing": 101
+      },
+      "5m": {
+        "available_days": 1138,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "first_missing_day": "2021-05-05",
+        "missing_days": 689,
+        "missing_window_days_available_raw": 0,
+        "missing_window_days_available_silver": 0,
+        "raw_files_existing": 0,
+        "research_windows": [
+          {
+            "bytes": 35258371,
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_files_existing": 1
+      }
+    },
+    "timeframes_required": [
+      "1m",
+      "5m",
+      "15m",
+      "1h"
+    ]
+  },
+  "direction": "ohlcv_5y_extension_correction",
+  "disk_preflight": {
+    "data_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data",
+    "estimated_extension_total_bytes": 3000000000,
+    "free_bytes_data_mount": 79584653312,
+    "free_bytes_project_mount": 79584653312,
+    "free_gib_data_mount": 74.119,
+    "free_gib_project_mount": 74.119,
+    "project_path": "/Users/lilianserre/Documents/projets/projet-galapagos",
+    "safe_to_start_collection": true,
+    "storage_warning": false
+  },
+  "failed_days": [],
+  "feature_store_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "ingestion_executed": false,
+  "ingestion_scope": "none",
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "v5_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json"
+    },
+    "v9_30_plan": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_plan_v9_30.json"
+    },
+    "v9_31_collection": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_collection_v9_31.json"
+    },
+    "v9_32_validation": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_full_coverage_validation_v9_32.json"
+    },
+    "v9_33_manifest": {
+      "available": true,
+      "path": "reports/manifests/ohlcv_aggtrades_5y_feature_store_v9_33_manifest.json"
+    },
+    "v9_33_report": {
+      "available": true,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_33.json"
+    },
+    "v9_34_manifest": {
+      "available": true,
+      "path": "reports/manifests/ohlcv_5y_extension_v9_34_manifest.json"
+    },
+    "v9_34_report": {
+      "available": true,
+      "path": "reports/data/ohlcv_5y_extension_v9_34.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.34.1 corrige uniquement l'extension OHLCV 5Y et ne cree pas le feature store combine.",
+    "Aucun label, dataset supervise, ML, walk-forward, backtest, strategie, signal ou ordre n'est produit."
+  ],
+  "missing_window_end": "2023-03-24",
+  "missing_window_start": "2021-05-05",
+  "ml_executed": false,
+  "network_scope": "public_archive_read_only",
+  "network_used": true,
+  "new_data_download_scope": "none",
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.35 - OHLCV From AggTrades Derivation",
+  "ohlcv_5y_ready": false,
+  "ohlcv_quality": {
+    "available_ts_violations": 0,
+    "coverage_status": "target_window_incomplete",
+    "days_complete_by_timeframe": {
+      "15m": 1138,
+      "1h": 1138,
+      "1m": 1238,
+      "5m": 1138
+    },
+    "days_expected_per_timeframe": 1827,
+    "days_missing_by_timeframe": {
+      "15m": 689,
+      "1h": 689,
+      "1m": 589,
+      "5m": 689
+    },
+    "duplicate_open_time_count": 0,
+    "invalid_rows": 0,
+    "price_invariant_violations": 0,
+    "quality_status": "INCOMPLETE",
+    "raw_read_errors": 0,
+    "schema_mismatch_count": 0,
+    "silver_read_errors": 0,
+    "timestamp_gap_warnings": 0
+  },
+  "raw_bytes_new": 0,
+  "raw_replaced_or_backup_strategy": "not_needed",
+  "redownload_attempted": true,
+  "redownload_quality_status": "FAIL",
+  "redownload_raw_size_bytes": 62163,
+  "redownload_row_count": 1170,
+  "redownload_success": false,
+  "repair_status": "source_issue",
+  "rows_new_total": 0,
+  "runtime_seconds": 1.238,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "ingestion_executed": false,
+    "ingestion_scope": "none",
+    "network_scope": "public_archive_read_only",
+    "network_used": true,
+    "new_data_download_scope": "none",
+    "new_data_downloaded": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_combined_feature_store": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_labels": true,
+    "no_ml": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "silver_bytes_new": 0,
+  "silver_rebuilt_for_2021_08_13": false,
+  "source": {
+    "authentication_used": false,
+    "data_type": "klines",
+    "host": "data.binance.vision",
+    "market_type": "spot",
+    "name": "Binance public archive",
+    "public_read_only": true,
+    "symbol": "BTCUSDT"
+  },
+  "source_version": "V9.34",
+  "status": "FAIL",
+  "status_counts": {},
+  "target_window_end": "2026-05-05",
+  "target_window_start": "2021-05-05",
+  "timeframe_reports": [
+    {
+      "days_attempted": 0,
+      "days_complete": 1238,
+      "days_downloaded": 0,
+      "days_failed": 0,
+      "days_missing": 589,
+      "days_normalized": 0,
+      "days_quarantined": 0,
+      "days_skipped_existing": 0,
+      "missing_window_end": "2023-03-24",
+      "missing_window_start": "2021-05-05",
+      "quality_status": "INCOMPLETE",
+      "raw_bytes_new": 0,
+      "rows_new": 0,
+      "silver_bytes_new": 0,
+      "target_window_end": "2026-05-05",
+      "target_window_start": "2021-05-05",
+      "timeframe": "1m",
+      "version": "V9.34.1"
+    },
+    {
+      "days_attempted": 0,
+      "days_complete": 1138,
+      "days_downloaded": 0,
+      "days_failed": 0,
+      "days_missing": 689,
+      "days_normalized": 0,
+      "days_quarantined": 0,
+      "days_skipped_existing": 0,
+      "missing_window_end": "2023-03-24",
+      "missing_window_start": "2021-05-05",
+      "quality_status": "INCOMPLETE",
+      "raw_bytes_new": 0,
+      "rows_new": 0,
+      "silver_bytes_new": 0,
+      "target_window_end": "2026-05-05",
+      "target_window_start": "2021-05-05",
+      "timeframe": "5m",
+      "version": "V9.34.1"
+    },
+    {
+      "days_attempted": 0,
+      "days_complete": 1138,
+      "days_downloaded": 0,
+      "days_failed": 0,
+      "days_missing": 689,
+      "days_normalized": 0,
+      "days_quarantined": 0,
+      "days_skipped_existing": 0,
+      "missing_window_end": "2023-03-24",
+      "missing_window_start": "2021-05-05",
+      "quality_status": "INCOMPLETE",
+      "raw_bytes_new": 0,
+      "rows_new": 0,
+      "silver_bytes_new": 0,
+      "target_window_end": "2026-05-05",
+      "target_window_start": "2021-05-05",
+      "timeframe": "15m",
+      "version": "V9.34.1"
+    },
+    {
+      "days_attempted": 0,
+      "days_complete": 1138,
+      "days_downloaded": 0,
+      "days_failed": 0,
+      "days_missing": 689,
+      "days_normalized": 0,
+      "days_quarantined": 0,
+      "days_skipped_existing": 0,
+      "missing_window_end": "2023-03-24",
+      "missing_window_start": "2021-05-05",
+      "quality_status": "INCOMPLETE",
+      "raw_bytes_new": 0,
+      "rows_new": 0,
+      "silver_bytes_new": 0,
+      "target_window_end": "2026-05-05",
+      "target_window_start": "2021-05-05",
+      "timeframe": "1h",
+      "version": "V9.34.1"
+    }
+  ],
+  "timeframes_required": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "timeframes_treated": [],
+  "v9_34_1_decision": {
+    "decision": "ohlcv_5y_extension_failed_source_issue",
+    "justification": "Le fichier public Binance est indisponible ou incomplet.",
+    "next_recommendation": "V9.35 - OHLCV From AggTrades Derivation"
+  },
+  "version": "V9.34.1",
+  "walk_forward_executed": false,
+  "warnings": [
+    "OHLCV 5Y reste incomplet.",
+    "Le raw local 2021-08-13 1m etait incomplet/invalide et a declenche un re-download public.",
+    "La derivation OHLCV depuis aggTrades doit etre consideree."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "after": {
+    "csv_member_count": 1,
+    "date": "2021-08-13",
+    "duplicate_open_time_count": 0,
+    "errors": [
+      "rows 1170 != expected_rows 1440",
+      "timestamp gaps detected: 1"
+    ],
+    "expected_row_count": 1440,
+    "local_raw_incomplete_or_invalid": true,
+    "local_raw_quality_status": "FAIL",
+    "max_open_ts": "2021-08-13T23:59:00Z",
+    "min_open_ts": "2021-08-13T00:00:00Z",
+    "missing_intervals": [
+      {
+        "delta_seconds": 16260,
+        "next_open_ts": "2021-08-13T06:30:00Z",
+        "previous_open_ts": "2021-08-13T01:59:00Z"
+      }
+    ],
+    "negative_volume_count": 0,
+    "non_positive_price_count": 0,
+    "partition_mismatch_count": 0,
+    "price_invariant_violations": 0,
+    "raw_exists": true,
+    "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2021-08-13.zip",
+    "raw_size_bytes": 62163,
+    "row_count": 1170,
+    "timeframe": "1m",
+    "timestamp_gap_count": 1,
+    "zip_readable": true
+  },
+  "before": {
+    "csv_member_count": 1,
+    "date": "2021-08-13",
+    "duplicate_open_time_count": 0,
+    "errors": [
+      "rows 1170 != expected_rows 1440",
+      "timestamp gaps detected: 1"
+    ],
+    "expected_row_count": 1440,
+    "local_raw_incomplete_or_invalid": true,
+    "local_raw_quality_status": "FAIL",
+    "max_open_ts": "2021-08-13T23:59:00Z",
+    "min_open_ts": "2021-08-13T00:00:00Z",
+    "missing_intervals": [
+      {
+        "delta_seconds": 16260,
+        "next_open_ts": "2021-08-13T06:30:00Z",
+        "previous_open_ts": "2021-08-13T01:59:00Z"
+      }
+    ],
+    "negative_volume_count": 0,
+    "non_positive_price_count": 0,
+    "partition_mismatch_count": 0,
+    "price_invariant_violations": 0,
+    "raw_exists": true,
+    "raw_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m/BTCUSDT-1m-2021-08-13.zip",
+    "raw_size_bytes": 62163,
+    "row_count": 1170,
+    "timeframe": "1m",
+    "timestamp_gap_count": 1,
+    "zip_readable": true
+  },
+  "repair": {
+    "backup_raw_path": null,
+    "backup_silver_path": null,
+    "errors": [
+      "rows 1170 != expected_rows 1440",
+      "timestamp gaps detected: 1"
+    ],
+    "network_used": true,
+    "raw_replaced_or_backup_strategy": "not_needed",
+    "redownload_attempted": true,
+    "redownload_quality_status": "FAIL",
+    "redownload_raw_size_bytes": 62163,
+    "redownload_row_count": 1170,
+    "redownload_success": false,
+    "repair_status": "source_issue",
+    "silver_rebuilt_for_2021_08_13": false
+  }
+}

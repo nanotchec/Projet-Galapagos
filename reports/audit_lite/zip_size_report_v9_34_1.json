@@ -1,0 +1,92 @@
+{
+  "created_at_utc": "2026-05-30T18:07:50Z",
+  "files_count": 51,
+  "largest_files": [
+    {
+      "bytes": 60613,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    {
+      "bytes": 41420,
+      "path": "src/galapagos/data/ohlcv_5y_extension_v9_34.py"
+    },
+    {
+      "bytes": 36407,
+      "path": "src/galapagos/data/ohlcv_5y_extension_correction_v9_34_1.py"
+    },
+    {
+      "bytes": 23685,
+      "path": "reports/data/ohlcv_5y_extension_correction_v9_34_1.json"
+    },
+    {
+      "bytes": 23415,
+      "path": "reports/data/aggtrades_5y_extension_plan_v9_30.json"
+    },
+    {
+      "bytes": 21668,
+      "path": "reports/data/ohlcv_5y_extension_v9_34.json"
+    },
+    {
+      "bytes": 20651,
+      "path": "reports/data/aggtrades_5y_full_coverage_validation_v9_32.json"
+    },
+    {
+      "bytes": 12818,
+      "path": "reports/data/aggtrades_5y_extension_collection_v9_31.json"
+    },
+    {
+      "bytes": 12498,
+      "path": "scripts/audit_audit_lite_zip_v9_34_1.py"
+    },
+    {
+      "bytes": 11369,
+      "path": "scripts/release_audit_lite_zip_v9_34_1.py"
+    },
+    {
+      "bytes": 11201,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_33.json"
+    },
+    {
+      "bytes": 7196,
+      "path": "scripts/smoke_audit_lite_zip_v9_34_1.py"
+    },
+    {
+      "bytes": 5393,
+      "path": "src/galapagos/data/ohlcv_5y_extension_v9_34_validation.py"
+    },
+    {
+      "bytes": 5343,
+      "path": "tests/data/test_ohlcv_5y_extension_correction_v9_34_1.py"
+    },
+    {
+      "bytes": 4634,
+      "path": "src/galapagos/data/ohlcv_5y_extension_correction_v9_34_1_validation.py"
+    },
+    {
+      "bytes": 3828,
+      "path": "src/galapagos/data/public_market/sources/binance_archive.py"
+    },
+    {
+      "bytes": 3688,
+      "path": "tests/validation/test_ohlcv_5y_extension_correction_v9_34_1_validator.py"
+    },
+    {
+      "bytes": 3157,
+      "path": "reports/audit_lite/v9_34_1_artifact_inventory.json"
+    },
+    {
+      "bytes": 2528,
+      "path": "src/galapagos/data/public_market/config.py"
+    },
+    {
+      "bytes": 2370,
+      "path": "reports/audit_lite/zip_size_report_v9_34_1.json"
+    }
+  ],
+  "sidecars_created": false,
+  "version": "V9.34.1",
+  "zip_bytes_estimate": 85407,
+  "zip_bytes_is_authoritative": false,
+  "zip_fingerprints_created": false,
+  "zip_name": "projet-galapagos-v9.34.1-audit-lite.zip"
+}
