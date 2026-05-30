@@ -1,0 +1,2793 @@
+{
+  "actual_rows": {
+    "15m": 175392,
+    "1h": 43848,
+    "1m": 2630880,
+    "5m": 526176
+  },
+  "aggtrades_feature_limitations": {
+    "blocking_for_next_dataset": false,
+    "buyer_maker_count_exact_included": false,
+    "direct_aggtrades_full_scan_performed": false,
+    "large_trade_count_exact_included": false,
+    "median_trade_size_exact_included": false,
+    "non_blocking_for_current_feature_store_validation": true,
+    "notes": [
+      "V9.38 valide le feature store V9.37 cree a partir des agregats aggTrades materialises dans l'OHLCV derivee V9.35.",
+      "L'absence de median_trade_size exact, large_trade_count exact et buyer_maker_count exact reste une limitation documentee, non bloquante pour V9.39 si la qualite V9.38 passe."
+    ]
+  },
+  "audit_columns": [
+    "warmup_row",
+    "zero_trade_bucket",
+    "feature_null_count",
+    "feature_error_count",
+    "row_valid_for_features",
+    "feature_invalid_reason"
+  ],
+  "backtest_executed": false,
+  "blockers": [],
+  "coverage_status": "target_5y_feature_window_complete",
+  "coverage_validation": {
+    "status": "target_5y_feature_window_complete",
+    "timeframes": {
+      "15m": {
+        "actual_rows": 175392,
+        "complete_calendar_coverage": true,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2021-05-05",
+        "coverage_status": "PASS",
+        "days_expected": 1827,
+        "days_missing": 0,
+        "duplicate_close_ts_count": 0,
+        "duplicate_event_ts_count": 0,
+        "expected_rows": 175392,
+        "file_exists": true,
+        "file_readable": true,
+        "timestamps_monotone": true
+      },
+      "1h": {
+        "actual_rows": 43848,
+        "complete_calendar_coverage": true,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2021-05-05",
+        "coverage_status": "PASS",
+        "days_expected": 1827,
+        "days_missing": 0,
+        "duplicate_close_ts_count": 0,
+        "duplicate_event_ts_count": 0,
+        "expected_rows": 43848,
+        "file_exists": true,
+        "file_readable": true,
+        "timestamps_monotone": true
+      },
+      "1m": {
+        "actual_rows": 2630880,
+        "complete_calendar_coverage": true,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2021-05-05",
+        "coverage_status": "PASS",
+        "days_expected": 1827,
+        "days_missing": 0,
+        "duplicate_close_ts_count": 0,
+        "duplicate_event_ts_count": 0,
+        "expected_rows": 2630880,
+        "file_exists": true,
+        "file_readable": true,
+        "timestamps_monotone": true
+      },
+      "5m": {
+        "actual_rows": 526176,
+        "complete_calendar_coverage": true,
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2021-05-05",
+        "coverage_status": "PASS",
+        "days_expected": 1827,
+        "days_missing": 0,
+        "duplicate_close_ts_count": 0,
+        "duplicate_event_ts_count": 0,
+        "expected_rows": 526176,
+        "file_exists": true,
+        "file_readable": true,
+        "timestamps_monotone": true
+      }
+    }
+  },
+  "created_at_utc": "2026-05-30T20:15:16Z",
+  "dataset_created": false,
+  "decision": "ohlcv_aggtrades_5y_feature_store_validated_with_non_blocking_warnings",
+  "decision_details": {
+    "decision": "ohlcv_aggtrades_5y_feature_store_validated_with_non_blocking_warnings",
+    "justification": "Le feature store est valide avec warnings documentes non bloquants.",
+    "next_recommendation": "V9.39 - OHLCV + AggTrades 5Y Dataset"
+  },
+  "direction": "ohlcv_aggtrades_5y_feature_store_validation",
+  "expected_rows": {
+    "15m": 175392,
+    "1h": 43848,
+    "1m": 2630880,
+    "5m": 526176
+  },
+  "feature_columns": [
+    "close_return_1",
+    "log_return_1",
+    "rolling_return_5",
+    "rolling_return_15",
+    "rolling_return_60",
+    "rolling_volatility_5",
+    "rolling_volatility_15",
+    "rolling_volatility_60",
+    "high_low_range",
+    "close_open_return",
+    "candle_body",
+    "upper_wick",
+    "lower_wick",
+    "volume",
+    "quote_volume",
+    "trades_count",
+    "volume_rolling_mean_5",
+    "volume_rolling_mean_15",
+    "volume_rolling_mean_60",
+    "volume_rolling_std_5",
+    "volume_rolling_std_15",
+    "volume_rolling_std_60",
+    "zero_trade_bucket_rolling_count_60",
+    "agg_trade_count",
+    "agg_trade_volume",
+    "agg_trade_quote_volume",
+    "average_trade_size",
+    "taker_buy_base_volume",
+    "taker_sell_base_volume",
+    "taker_buy_ratio",
+    "taker_buy_sell_imbalance",
+    "trade_intensity_rolling_5",
+    "trade_intensity_rolling_15",
+    "trade_intensity_rolling_60",
+    "agg_trade_volume_rolling_mean_5",
+    "agg_trade_volume_rolling_mean_15",
+    "agg_trade_volume_rolling_mean_60",
+    "taker_imbalance_rolling_mean_5",
+    "taker_imbalance_rolling_mean_15",
+    "taker_imbalance_rolling_mean_60",
+    "missing_aggtrades_flag"
+  ],
+  "feature_columns_count": 41,
+  "feature_families": {
+    "aggtrades_aggregates": [
+      "agg_trade_count",
+      "agg_trade_volume",
+      "agg_trade_quote_volume",
+      "average_trade_size",
+      "taker_buy_base_volume",
+      "taker_sell_base_volume",
+      "taker_buy_ratio",
+      "taker_buy_sell_imbalance",
+      "trade_intensity_rolling_5",
+      "trade_intensity_rolling_15",
+      "trade_intensity_rolling_60",
+      "agg_trade_volume_rolling_mean_5",
+      "agg_trade_volume_rolling_mean_15",
+      "agg_trade_volume_rolling_mean_60",
+      "taker_imbalance_rolling_mean_5",
+      "taker_imbalance_rolling_mean_15",
+      "taker_imbalance_rolling_mean_60",
+      "missing_aggtrades_flag"
+    ],
+    "ohlcv_candle": [
+      "high_low_range",
+      "close_open_return",
+      "candle_body",
+      "upper_wick",
+      "lower_wick"
+    ],
+    "ohlcv_returns": [
+      "close_return_1",
+      "log_return_1",
+      "rolling_return_5",
+      "rolling_return_15",
+      "rolling_return_60",
+      "rolling_volatility_5",
+      "rolling_volatility_15",
+      "rolling_volatility_60"
+    ],
+    "ohlcv_volume": [
+      "volume",
+      "quote_volume",
+      "trades_count",
+      "volume_rolling_mean_5",
+      "volume_rolling_mean_15",
+      "volume_rolling_mean_60",
+      "volume_rolling_std_5",
+      "volume_rolling_std_15",
+      "volume_rolling_std_60"
+    ],
+    "zero_trade": [
+      "zero_trade_bucket",
+      "zero_trade_bucket_rolling_count_60"
+    ]
+  },
+  "feature_store_validation": {
+    "15m": {
+      "actual_rows": 175392,
+      "available_ts_lte_decision_ts": true,
+      "complete_calendar_coverage": true,
+      "coverage_end": "2026-05-05",
+      "coverage_start": "2021-05-05",
+      "coverage_status": "PASS",
+      "days_complete": 1827,
+      "days_expected": 1827,
+      "days_missing": 0,
+      "duplicate_close_ts_count": 0,
+      "duplicate_event_ts_count": 0,
+      "duplicate_open_ts_count": 0,
+      "errors": [],
+      "expected_rows": 175392,
+      "extra_columns": [],
+      "feature_available_ts_lte_decision_ts": true,
+      "feature_columns_count": 41,
+      "feature_range_summary": {
+        "agg_trade_count": {
+          "max": 1170879.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_quote_volume": {
+          "max": 1086850286.548646,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume": {
+          "max": 40371.405060000005,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume_rolling_mean_15": {
+          "max": 19197.737996666667,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "agg_trade_volume_rolling_mean_5": {
+          "max": 33312.808222,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "agg_trade_volume_rolling_mean_60": {
+          "max": 9314.210203883333,
+          "min": 25.458764,
+          "nulls": 59
+        },
+        "average_trade_size": {
+          "max": 0.31152698515340455,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "candle_body": {
+          "max": 0.10171018497329881,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "close_open_return": {
+          "max": 0.11322647020135213,
+          "min": -0.08979638592791372,
+          "nulls": 0
+        },
+        "close_return_1": {
+          "max": 0.11322680150051267,
+          "min": -0.08979671484247265,
+          "nulls": 1
+        },
+        "high_low_range": {
+          "max": 0.18616453140295827,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "log_return_1": {
+          "max": 0.10726282646719139,
+          "min": -0.09408731413613816,
+          "nulls": 1
+        },
+        "lower_wick": {
+          "max": 0.07812140922622669,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "missing_aggtrades_flag": {
+          "max": 1.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "quote_volume": {
+          "max": 1086850286.548646,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "rolling_return_15": {
+          "max": 0.2253905981524722,
+          "min": -0.19539232908433468,
+          "nulls": 15
+        },
+        "rolling_return_5": {
+          "max": 0.10129391346129446,
+          "min": -0.16536279069767446,
+          "nulls": 5
+        },
+        "rolling_return_60": {
+          "max": 0.21675480782626622,
+          "min": -0.24686591093185373,
+          "nulls": 60
+        },
+        "rolling_volatility_15": {
+          "max": 0.04813366713565201,
+          "min": 0.0,
+          "nulls": 15
+        },
+        "rolling_volatility_5": {
+          "max": 0.07880960334312377,
+          "min": 0.0,
+          "nulls": 5
+        },
+        "rolling_volatility_60": {
+          "max": 0.028622651065935333,
+          "min": 0.0002664878649312791,
+          "nulls": 60
+        },
+        "taker_buy_base_volume": {
+          "max": 19925.6166,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_ratio": {
+          "max": 0.942880045208012,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_sell_imbalance": {
+          "max": 0.8857600904160242,
+          "min": -0.8455613502285888,
+          "nulls": 0
+        },
+        "taker_imbalance_rolling_mean_15": {
+          "max": 0.35215023342930346,
+          "min": -0.44935743081804774,
+          "nulls": 14
+        },
+        "taker_imbalance_rolling_mean_5": {
+          "max": 0.5612293846361762,
+          "min": -0.7343090918158872,
+          "nulls": 4
+        },
+        "taker_imbalance_rolling_mean_60": {
+          "max": 0.1589559099778123,
+          "min": -0.2386960218593414,
+          "nulls": 59
+        },
+        "taker_sell_base_volume": {
+          "max": 20445.788460000003,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "trade_intensity_rolling_15": {
+          "max": 248304.86666666667,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "trade_intensity_rolling_5": {
+          "max": 480884.2,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "trade_intensity_rolling_60": {
+          "max": 159151.9,
+          "min": 2290.866666666667,
+          "nulls": 59
+        },
+        "trades_count": {
+          "max": 1170879.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "upper_wick": {
+          "max": 0.06839355571196233,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume": {
+          "max": 40371.405060000005,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume_rolling_mean_15": {
+          "max": 19197.737996666667,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_mean_5": {
+          "max": 33312.808222,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_mean_60": {
+          "max": 9314.210203883333,
+          "min": 25.458764,
+          "nulls": 59
+        },
+        "volume_rolling_std_15": {
+          "max": 15685.211699329178,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_std_5": {
+          "max": 16191.435793703788,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_std_60": {
+          "max": 9985.548698903147,
+          "min": 13.764382333500588,
+          "nulls": 59
+        },
+        "zero_trade_bucket_rolling_count_60": {
+          "max": 18.0,
+          "min": 0.0,
+          "nulls": 0
+        }
+      },
+      "feature_run_id_values": [
+        "v9_37_20260530T195506Z"
+      ],
+      "feature_schema_version_values": [
+        "ohlcv_aggtrades_5y_features_v9_37_v1"
+      ],
+      "file_bytes": 66996806,
+      "file_exists": true,
+      "file_readable": true,
+      "forbidden_columns": [],
+      "invalid_row_summary": {
+        "feature_error_count_total": 0,
+        "feature_invalid_reason_non_empty": 0,
+        "row_invalid_for_features_count": 0,
+        "row_valid_for_features_count": 175392
+      },
+      "missing_columns": [],
+      "null_summary": {
+        "agg_trade_count": 0,
+        "agg_trade_quote_volume": 0,
+        "agg_trade_volume": 0,
+        "agg_trade_volume_rolling_mean_15": 14,
+        "agg_trade_volume_rolling_mean_5": 4,
+        "agg_trade_volume_rolling_mean_60": 59,
+        "average_trade_size": 0,
+        "candle_body": 0,
+        "close_open_return": 0,
+        "close_return_1": 1,
+        "high_low_range": 0,
+        "log_return_1": 1,
+        "lower_wick": 0,
+        "missing_aggtrades_flag": 0,
+        "quote_volume": 0,
+        "rolling_return_15": 15,
+        "rolling_return_5": 5,
+        "rolling_return_60": 60,
+        "rolling_volatility_15": 15,
+        "rolling_volatility_5": 5,
+        "rolling_volatility_60": 60,
+        "taker_buy_base_volume": 0,
+        "taker_buy_ratio": 0,
+        "taker_buy_sell_imbalance": 0,
+        "taker_imbalance_rolling_mean_15": 14,
+        "taker_imbalance_rolling_mean_5": 4,
+        "taker_imbalance_rolling_mean_60": 59,
+        "taker_sell_base_volume": 0,
+        "trade_intensity_rolling_15": 14,
+        "trade_intensity_rolling_5": 4,
+        "trade_intensity_rolling_60": 59,
+        "trades_count": 0,
+        "upper_wick": 0,
+        "volume": 0,
+        "volume_rolling_mean_15": 14,
+        "volume_rolling_mean_5": 4,
+        "volume_rolling_mean_60": 59,
+        "volume_rolling_std_15": 14,
+        "volume_rolling_std_5": 4,
+        "volume_rolling_std_60": 59,
+        "zero_trade_bucket_rolling_count_60": 0
+      },
+      "nulls_outside_warmup": 0,
+      "outlier_warning_summary": [],
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_37/features/ohlcv_aggtrades_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/features.parquet",
+      "quality_status": "PASS",
+      "rolling_windows_past_only_status": "PASS",
+      "source_lineage_status": "PASS",
+      "strict_schema_status": "PASS",
+      "timeframe": "15m",
+      "timestamps_monotone": true,
+      "warmup_summary": {
+        "expected_warmup_rows": 60,
+        "non_warmup_rows": 175332,
+        "warmup_rows": 60
+      },
+      "warnings": [],
+      "zero_trade_bucket_summary": {
+        "agg_trade_count_zero_on_zero_trade": true,
+        "no_future_fill": true,
+        "rolling_count_coherent": true,
+        "trades_count_zero_on_zero_trade": true,
+        "volume_zero_on_zero_trade": true,
+        "zero_trade_bucket_blocking": false,
+        "zero_trade_ratio": 0.00020525451559934318,
+        "zero_trade_rows": 36
+      }
+    },
+    "1h": {
+      "actual_rows": 43848,
+      "available_ts_lte_decision_ts": true,
+      "complete_calendar_coverage": true,
+      "coverage_end": "2026-05-05",
+      "coverage_start": "2021-05-05",
+      "coverage_status": "PASS",
+      "days_complete": 1827,
+      "days_expected": 1827,
+      "days_missing": 0,
+      "duplicate_close_ts_count": 0,
+      "duplicate_event_ts_count": 0,
+      "duplicate_open_ts_count": 0,
+      "errors": [],
+      "expected_rows": 43848,
+      "extra_columns": [],
+      "feature_available_ts_lte_decision_ts": true,
+      "feature_columns_count": 41,
+      "feature_range_summary": {
+        "agg_trade_count": {
+          "max": 2224341.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_quote_volume": {
+          "max": 3005633669.260812,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume": {
+          "max": 137207.1886,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume_rolling_mean_15": {
+          "max": 37080.9857622,
+          "min": 102.51187666666654,
+          "nulls": 14
+        },
+        "agg_trade_volume_rolling_mean_5": {
+          "max": 65401.7357406,
+          "min": 82.7551980000101,
+          "nulls": 4
+        },
+        "agg_trade_volume_rolling_mean_60": {
+          "max": 31170.92003753333,
+          "min": 226.63167733333333,
+          "nulls": 59
+        },
+        "average_trade_size": {
+          "max": 0.28164129277254346,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "candle_body": {
+          "max": 0.09835156445564042,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "close_open_return": {
+          "max": 0.06487232903615148,
+          "min": -0.08954470284237714,
+          "nulls": 0
+        },
+        "close_return_1": {
+          "max": 0.06487232903615148,
+          "min": -0.08954470284237714,
+          "nulls": 1
+        },
+        "high_low_range": {
+          "max": 0.22307075860230557,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "log_return_1": {
+          "max": 0.06285491313605168,
+          "min": -0.09381047804599706,
+          "nulls": 1
+        },
+        "lower_wick": {
+          "max": 0.14596133179935017,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "missing_aggtrades_flag": {
+          "max": 1.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "quote_volume": {
+          "max": 3005633669.260812,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "rolling_return_15": {
+          "max": 0.15678368922735952,
+          "min": -0.18020302147363088,
+          "nulls": 15
+        },
+        "rolling_return_5": {
+          "max": 0.128164823750752,
+          "min": -0.12723895902648008,
+          "nulls": 5
+        },
+        "rolling_return_60": {
+          "max": 0.27081298714300717,
+          "min": -0.2753676063086625,
+          "nulls": 60
+        },
+        "rolling_volatility_15": {
+          "max": 0.04152072744209802,
+          "min": 0.00040937303996862594,
+          "nulls": 15
+        },
+        "rolling_volatility_5": {
+          "max": 0.05916327414323217,
+          "min": 0.0001202505023343231,
+          "nulls": 5
+        },
+        "rolling_volatility_60": {
+          "max": 0.02745961754410993,
+          "min": 0.0008074925994363393,
+          "nulls": 60
+        },
+        "taker_buy_base_volume": {
+          "max": 68611.45039,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_ratio": {
+          "max": 0.8168844279012343,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_sell_imbalance": {
+          "max": 0.6337688558024686,
+          "min": -0.7737183060202096,
+          "nulls": 0
+        },
+        "taker_imbalance_rolling_mean_15": {
+          "max": 0.16021934365245324,
+          "min": -0.24688965233569432,
+          "nulls": 14
+        },
+        "taker_imbalance_rolling_mean_5": {
+          "max": 0.33329090176875226,
+          "min": -0.43821846026402766,
+          "nulls": 4
+        },
+        "taker_imbalance_rolling_mean_60": {
+          "max": 0.06942237780347674,
+          "min": -0.15388133702216378,
+          "nulls": 59
+        },
+        "taker_sell_base_volume": {
+          "max": 68595.73821,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "trade_intensity_rolling_15": {
+          "max": 633835.1333333333,
+          "min": 9208.133333333333,
+          "nulls": 14
+        },
+        "trade_intensity_rolling_5": {
+          "max": 928875.4,
+          "min": 8057.0,
+          "nulls": 4
+        },
+        "trade_intensity_rolling_60": {
+          "max": 526024.2166666667,
+          "min": 11508.066666666668,
+          "nulls": 59
+        },
+        "trades_count": {
+          "max": 2224341.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "upper_wick": {
+          "max": 0.07142857142857142,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume": {
+          "max": 137207.1886,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume_rolling_mean_15": {
+          "max": 37080.9857622,
+          "min": 102.51187666666654,
+          "nulls": 14
+        },
+        "volume_rolling_mean_5": {
+          "max": 65401.7357406,
+          "min": 82.7551980000101,
+          "nulls": 4
+        },
+        "volume_rolling_mean_60": {
+          "max": 31170.92003753333,
+          "min": 226.63167733333333,
+          "nulls": 59
+        },
+        "volume_rolling_std_15": {
+          "max": 37863.20469291555,
+          "min": 29.333354980920046,
+          "nulls": 14
+        },
+        "volume_rolling_std_5": {
+          "max": 59030.22568572441,
+          "min": 6.5996000482353026,
+          "nulls": 4
+        },
+        "volume_rolling_std_60": {
+          "max": 20248.656656485153,
+          "min": 142.80215760460834,
+          "nulls": 59
+        },
+        "zero_trade_bucket_rolling_count_60": {
+          "max": 4.0,
+          "min": 0.0,
+          "nulls": 0
+        }
+      },
+      "feature_run_id_values": [
+        "v9_37_20260530T195506Z"
+      ],
+      "feature_schema_version_values": [
+        "ohlcv_aggtrades_5y_features_v9_37_v1"
+      ],
+      "file_bytes": 17825809,
+      "file_exists": true,
+      "file_readable": true,
+      "forbidden_columns": [],
+      "invalid_row_summary": {
+        "feature_error_count_total": 0,
+        "feature_invalid_reason_non_empty": 0,
+        "row_invalid_for_features_count": 0,
+        "row_valid_for_features_count": 43848
+      },
+      "missing_columns": [],
+      "null_summary": {
+        "agg_trade_count": 0,
+        "agg_trade_quote_volume": 0,
+        "agg_trade_volume": 0,
+        "agg_trade_volume_rolling_mean_15": 14,
+        "agg_trade_volume_rolling_mean_5": 4,
+        "agg_trade_volume_rolling_mean_60": 59,
+        "average_trade_size": 0,
+        "candle_body": 0,
+        "close_open_return": 0,
+        "close_return_1": 1,
+        "high_low_range": 0,
+        "log_return_1": 1,
+        "lower_wick": 0,
+        "missing_aggtrades_flag": 0,
+        "quote_volume": 0,
+        "rolling_return_15": 15,
+        "rolling_return_5": 5,
+        "rolling_return_60": 60,
+        "rolling_volatility_15": 15,
+        "rolling_volatility_5": 5,
+        "rolling_volatility_60": 60,
+        "taker_buy_base_volume": 0,
+        "taker_buy_ratio": 0,
+        "taker_buy_sell_imbalance": 0,
+        "taker_imbalance_rolling_mean_15": 14,
+        "taker_imbalance_rolling_mean_5": 4,
+        "taker_imbalance_rolling_mean_60": 59,
+        "taker_sell_base_volume": 0,
+        "trade_intensity_rolling_15": 14,
+        "trade_intensity_rolling_5": 4,
+        "trade_intensity_rolling_60": 59,
+        "trades_count": 0,
+        "upper_wick": 0,
+        "volume": 0,
+        "volume_rolling_mean_15": 14,
+        "volume_rolling_mean_5": 4,
+        "volume_rolling_mean_60": 59,
+        "volume_rolling_std_15": 14,
+        "volume_rolling_std_5": 4,
+        "volume_rolling_std_60": 59,
+        "zero_trade_bucket_rolling_count_60": 0
+      },
+      "nulls_outside_warmup": 0,
+      "outlier_warning_summary": [],
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_37/features/ohlcv_aggtrades_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/features.parquet",
+      "quality_status": "PASS",
+      "rolling_windows_past_only_status": "PASS",
+      "source_lineage_status": "PASS",
+      "strict_schema_status": "PASS",
+      "timeframe": "1h",
+      "timestamps_monotone": true,
+      "warmup_summary": {
+        "expected_warmup_rows": 60,
+        "non_warmup_rows": 43788,
+        "warmup_rows": 60
+      },
+      "warnings": [],
+      "zero_trade_bucket_summary": {
+        "agg_trade_count_zero_on_zero_trade": true,
+        "no_future_fill": true,
+        "rolling_count_coherent": true,
+        "trades_count_zero_on_zero_trade": true,
+        "volume_zero_on_zero_trade": true,
+        "zero_trade_bucket_blocking": false,
+        "zero_trade_ratio": 0.00018244845831052726,
+        "zero_trade_rows": 8
+      }
+    },
+    "1m": {
+      "actual_rows": 2630880,
+      "available_ts_lte_decision_ts": true,
+      "complete_calendar_coverage": true,
+      "coverage_end": "2026-05-05",
+      "coverage_start": "2021-05-05",
+      "coverage_status": "PASS",
+      "days_complete": 1827,
+      "days_expected": 1827,
+      "days_missing": 0,
+      "duplicate_close_ts_count": 0,
+      "duplicate_event_ts_count": 0,
+      "duplicate_open_ts_count": 0,
+      "errors": [],
+      "expected_rows": 2630880,
+      "extra_columns": [],
+      "feature_available_ts_lte_decision_ts": true,
+      "feature_columns_count": 41,
+      "feature_range_summary": {
+        "agg_trade_count": {
+          "max": 143952.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_quote_volume": {
+          "max": 259850148.7256762,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume": {
+          "max": 5877.77545,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume_rolling_mean_15": {
+          "max": 2775.8975093333333,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "agg_trade_volume_rolling_mean_5": {
+          "max": 3145.693704000001,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "agg_trade_volume_rolling_mean_60": {
+          "max": 2304.9473251666664,
+          "min": 0.0,
+          "nulls": 59
+        },
+        "average_trade_size": {
+          "max": 0.7936730513595166,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "candle_body": {
+          "max": 0.06511180356053904,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "close_open_return": {
+          "max": 0.050260366132809375,
+          "min": -0.061131426149703905,
+          "nulls": 0
+        },
+        "close_return_1": {
+          "max": 0.04980448060954212,
+          "min": -0.057989123344277305,
+          "nulls": 1
+        },
+        "high_low_range": {
+          "max": 0.08556545912545195,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "log_return_1": {
+          "max": 0.04860393788710102,
+          "min": -0.059738458128777844,
+          "nulls": 1
+        },
+        "lower_wick": {
+          "max": 0.051480847924414125,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "missing_aggtrades_flag": {
+          "max": 1.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "quote_volume": {
+          "max": 259850148.7256762,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "rolling_return_15": {
+          "max": 0.14614165642337462,
+          "min": -0.13333174603174602,
+          "nulls": 15
+        },
+        "rolling_return_5": {
+          "max": 0.09402776307210492,
+          "min": -0.09890539631128059,
+          "nulls": 5
+        },
+        "rolling_return_60": {
+          "max": 0.17391282681638476,
+          "min": -0.22379512379025013,
+          "nulls": 60
+        },
+        "rolling_volatility_15": {
+          "max": 0.02830173684554514,
+          "min": 0.0,
+          "nulls": 15
+        },
+        "rolling_volatility_5": {
+          "max": 0.04024320212152503,
+          "min": 0.0,
+          "nulls": 5
+        },
+        "rolling_volatility_60": {
+          "max": 0.019690240966015914,
+          "min": 0.0,
+          "nulls": 60
+        },
+        "taker_buy_base_volume": {
+          "max": 3537.45296,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_ratio": {
+          "max": 0.9991905708820902,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_sell_imbalance": {
+          "max": 0.9983811417641804,
+          "min": -0.9982611483967927,
+          "nulls": 0
+        },
+        "taker_imbalance_rolling_mean_15": {
+          "max": 0.7790600019785513,
+          "min": -0.8509753112034498,
+          "nulls": 14
+        },
+        "taker_imbalance_rolling_mean_5": {
+          "max": 0.9820288456515238,
+          "min": -0.9616357299664203,
+          "nulls": 4
+        },
+        "taker_imbalance_rolling_mean_60": {
+          "max": 0.6165748605466664,
+          "min": -0.7726992956081539,
+          "nulls": 59
+        },
+        "taker_sell_base_volume": {
+          "max": 3024.372265,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "trade_intensity_rolling_15": {
+          "max": 82152.66666666667,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "trade_intensity_rolling_5": {
+          "max": 108511.6,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "trade_intensity_rolling_60": {
+          "max": 38429.15,
+          "min": 0.0,
+          "nulls": 59
+        },
+        "trades_count": {
+          "max": 143952.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "upper_wick": {
+          "max": 0.061005420691637995,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume": {
+          "max": 5877.77545,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume_rolling_mean_15": {
+          "max": 2775.8975093333333,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_mean_5": {
+          "max": 3145.693704000001,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_mean_60": {
+          "max": 2304.9473251666664,
+          "min": 0.0,
+          "nulls": 59
+        },
+        "volume_rolling_std_15": {
+          "max": 1707.201430740845,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_std_5": {
+          "max": 2497.4548457659034,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_std_60": {
+          "max": 1107.1347385384008,
+          "min": 0.0,
+          "nulls": 59
+        },
+        "zero_trade_bucket_rolling_count_60": {
+          "max": 60.0,
+          "min": 0.0,
+          "nulls": 0
+        }
+      },
+      "feature_run_id_values": [
+        "v9_37_20260530T195506Z"
+      ],
+      "feature_schema_version_values": [
+        "ohlcv_aggtrades_5y_features_v9_37_v1"
+      ],
+      "file_bytes": 824990330,
+      "file_exists": true,
+      "file_readable": true,
+      "forbidden_columns": [],
+      "invalid_row_summary": {
+        "feature_error_count_total": 0,
+        "feature_invalid_reason_non_empty": 0,
+        "row_invalid_for_features_count": 0,
+        "row_valid_for_features_count": 2630880
+      },
+      "missing_columns": [],
+      "null_summary": {
+        "agg_trade_count": 0,
+        "agg_trade_quote_volume": 0,
+        "agg_trade_volume": 0,
+        "agg_trade_volume_rolling_mean_15": 14,
+        "agg_trade_volume_rolling_mean_5": 4,
+        "agg_trade_volume_rolling_mean_60": 59,
+        "average_trade_size": 0,
+        "candle_body": 0,
+        "close_open_return": 0,
+        "close_return_1": 1,
+        "high_low_range": 0,
+        "log_return_1": 1,
+        "lower_wick": 0,
+        "missing_aggtrades_flag": 0,
+        "quote_volume": 0,
+        "rolling_return_15": 15,
+        "rolling_return_5": 5,
+        "rolling_return_60": 60,
+        "rolling_volatility_15": 15,
+        "rolling_volatility_5": 5,
+        "rolling_volatility_60": 60,
+        "taker_buy_base_volume": 0,
+        "taker_buy_ratio": 0,
+        "taker_buy_sell_imbalance": 0,
+        "taker_imbalance_rolling_mean_15": 14,
+        "taker_imbalance_rolling_mean_5": 4,
+        "taker_imbalance_rolling_mean_60": 59,
+        "taker_sell_base_volume": 0,
+        "trade_intensity_rolling_15": 14,
+        "trade_intensity_rolling_5": 4,
+        "trade_intensity_rolling_60": 59,
+        "trades_count": 0,
+        "upper_wick": 0,
+        "volume": 0,
+        "volume_rolling_mean_15": 14,
+        "volume_rolling_mean_5": 4,
+        "volume_rolling_mean_60": 59,
+        "volume_rolling_std_15": 14,
+        "volume_rolling_std_5": 4,
+        "volume_rolling_std_60": 59,
+        "zero_trade_bucket_rolling_count_60": 0
+      },
+      "nulls_outside_warmup": 0,
+      "outlier_warning_summary": [],
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_37/features/ohlcv_aggtrades_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_2026-05-05/features.parquet",
+      "quality_status": "PASS",
+      "rolling_windows_past_only_status": "PASS",
+      "source_lineage_status": "PASS",
+      "strict_schema_status": "PASS",
+      "timeframe": "1m",
+      "timestamps_monotone": true,
+      "warmup_summary": {
+        "expected_warmup_rows": 60,
+        "non_warmup_rows": 2630820,
+        "warmup_rows": 60
+      },
+      "warnings": [],
+      "zero_trade_bucket_summary": {
+        "agg_trade_count_zero_on_zero_trade": true,
+        "no_future_fill": true,
+        "rolling_count_coherent": true,
+        "trades_count_zero_on_zero_trade": true,
+        "volume_zero_on_zero_trade": true,
+        "zero_trade_bucket_blocking": false,
+        "zero_trade_ratio": 0.0002060147175089704,
+        "zero_trade_rows": 542
+      }
+    },
+    "5m": {
+      "actual_rows": 526176,
+      "available_ts_lte_decision_ts": true,
+      "complete_calendar_coverage": true,
+      "coverage_end": "2026-05-05",
+      "coverage_start": "2021-05-05",
+      "coverage_status": "PASS",
+      "days_complete": 1827,
+      "days_expected": 1827,
+      "days_missing": 0,
+      "duplicate_close_ts_count": 0,
+      "duplicate_event_ts_count": 0,
+      "duplicate_open_ts_count": 0,
+      "errors": [],
+      "expected_rows": 526176,
+      "extra_columns": [],
+      "feature_available_ts_lte_decision_ts": true,
+      "feature_columns_count": 41,
+      "feature_range_summary": {
+        "agg_trade_count": {
+          "max": 481062.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_quote_volume": {
+          "max": 558851896.0400627,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume": {
+          "max": 15659.93484,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume_rolling_mean_15": {
+          "max": 11104.269407333333,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "agg_trade_volume_rolling_mean_5": {
+          "max": 12326.594114000001,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "agg_trade_volume_rolling_mean_60": {
+          "max": 5450.14464505,
+          "min": 6.5576834999999996,
+          "nulls": 59
+        },
+        "average_trade_size": {
+          "max": 0.37729676209005,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "candle_body": {
+          "max": 0.10976115801947334,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "close_open_return": {
+          "max": 0.08939704837818652,
+          "min": -0.09890520786955437,
+          "nulls": 0
+        },
+        "close_return_1": {
+          "max": 0.09402776307210492,
+          "min": -0.09890539631128059,
+          "nulls": 1
+        },
+        "high_low_range": {
+          "max": 0.13241582778835953,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "log_return_1": {
+          "max": 0.08986608125740472,
+          "min": -0.10414502834112187,
+          "nulls": 1
+        },
+        "lower_wick": {
+          "max": 0.07812140922622669,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "missing_aggtrades_flag": {
+          "max": 1.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "quote_volume": {
+          "max": 558851896.0400627,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "rolling_return_15": {
+          "max": 0.18574366300122924,
+          "min": -0.2238731773550735,
+          "nulls": 15
+        },
+        "rolling_return_5": {
+          "max": 0.17834224776585494,
+          "min": -0.1737984794005435,
+          "nulls": 5
+        },
+        "rolling_return_60": {
+          "max": 0.2717454569615627,
+          "min": -0.25014896877733994,
+          "nulls": 60
+        },
+        "rolling_volatility_15": {
+          "max": 0.0599604660850854,
+          "min": 0.0,
+          "nulls": 15
+        },
+        "rolling_volatility_5": {
+          "max": 0.08659736943438226,
+          "min": 0.0,
+          "nulls": 5
+        },
+        "rolling_volatility_60": {
+          "max": 0.03168550540374758,
+          "min": 0.00010073270290939781,
+          "nulls": 60
+        },
+        "taker_buy_base_volume": {
+          "max": 8884.51143,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_ratio": {
+          "max": 0.9825325633549425,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_sell_imbalance": {
+          "max": 0.965065126709885,
+          "min": -0.971448610672847,
+          "nulls": 0
+        },
+        "taker_imbalance_rolling_mean_15": {
+          "max": 0.5699819957734272,
+          "min": -0.7086321121955808,
+          "nulls": 14
+        },
+        "taker_imbalance_rolling_mean_5": {
+          "max": 0.7181056702761394,
+          "min": -0.8098444887494448,
+          "nulls": 4
+        },
+        "taker_imbalance_rolling_mean_60": {
+          "max": 0.310648048782954,
+          "min": -0.3703061722764621,
+          "nulls": 59
+        },
+        "taker_sell_base_volume": {
+          "max": 7614.27297,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "trade_intensity_rolling_15": {
+          "max": 163001.93333333332,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "trade_intensity_rolling_5": {
+          "max": 303565.6,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "trade_intensity_rolling_60": {
+          "max": 77406.28333333334,
+          "min": 669.95,
+          "nulls": 59
+        },
+        "trades_count": {
+          "max": 481062.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "upper_wick": {
+          "max": 0.06663279535367002,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume": {
+          "max": 15659.93484,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume_rolling_mean_15": {
+          "max": 11104.269407333333,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_mean_5": {
+          "max": 12326.594114000001,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_mean_60": {
+          "max": 5450.14464505,
+          "min": 6.5576834999999996,
+          "nulls": 59
+        },
+        "volume_rolling_std_15": {
+          "max": 5246.324416109564,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_std_5": {
+          "max": 5851.971978879927,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_std_60": {
+          "max": 4926.259547857599,
+          "min": 4.166269569776783,
+          "nulls": 59
+        },
+        "zero_trade_bucket_rolling_count_60": {
+          "max": 54.0,
+          "min": 0.0,
+          "nulls": 0
+        }
+      },
+      "feature_run_id_values": [
+        "v9_37_20260530T195506Z"
+      ],
+      "feature_schema_version_values": [
+        "ohlcv_aggtrades_5y_features_v9_37_v1"
+      ],
+      "file_bytes": 174041451,
+      "file_exists": true,
+      "file_readable": true,
+      "forbidden_columns": [],
+      "invalid_row_summary": {
+        "feature_error_count_total": 0,
+        "feature_invalid_reason_non_empty": 0,
+        "row_invalid_for_features_count": 0,
+        "row_valid_for_features_count": 526176
+      },
+      "missing_columns": [],
+      "null_summary": {
+        "agg_trade_count": 0,
+        "agg_trade_quote_volume": 0,
+        "agg_trade_volume": 0,
+        "agg_trade_volume_rolling_mean_15": 14,
+        "agg_trade_volume_rolling_mean_5": 4,
+        "agg_trade_volume_rolling_mean_60": 59,
+        "average_trade_size": 0,
+        "candle_body": 0,
+        "close_open_return": 0,
+        "close_return_1": 1,
+        "high_low_range": 0,
+        "log_return_1": 1,
+        "lower_wick": 0,
+        "missing_aggtrades_flag": 0,
+        "quote_volume": 0,
+        "rolling_return_15": 15,
+        "rolling_return_5": 5,
+        "rolling_return_60": 60,
+        "rolling_volatility_15": 15,
+        "rolling_volatility_5": 5,
+        "rolling_volatility_60": 60,
+        "taker_buy_base_volume": 0,
+        "taker_buy_ratio": 0,
+        "taker_buy_sell_imbalance": 0,
+        "taker_imbalance_rolling_mean_15": 14,
+        "taker_imbalance_rolling_mean_5": 4,
+        "taker_imbalance_rolling_mean_60": 59,
+        "taker_sell_base_volume": 0,
+        "trade_intensity_rolling_15": 14,
+        "trade_intensity_rolling_5": 4,
+        "trade_intensity_rolling_60": 59,
+        "trades_count": 0,
+        "upper_wick": 0,
+        "volume": 0,
+        "volume_rolling_mean_15": 14,
+        "volume_rolling_mean_5": 4,
+        "volume_rolling_mean_60": 59,
+        "volume_rolling_std_15": 14,
+        "volume_rolling_std_5": 4,
+        "volume_rolling_std_60": 59,
+        "zero_trade_bucket_rolling_count_60": 0
+      },
+      "nulls_outside_warmup": 0,
+      "outlier_warning_summary": [],
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_37/features/ohlcv_aggtrades_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_2026-05-05/features.parquet",
+      "quality_status": "PASS",
+      "rolling_windows_past_only_status": "PASS",
+      "source_lineage_status": "PASS",
+      "strict_schema_status": "PASS",
+      "timeframe": "5m",
+      "timestamps_monotone": true,
+      "warmup_summary": {
+        "expected_warmup_rows": 60,
+        "non_warmup_rows": 526116,
+        "warmup_rows": 60
+      },
+      "warnings": [],
+      "zero_trade_bucket_summary": {
+        "agg_trade_count_zero_on_zero_trade": true,
+        "no_future_fill": true,
+        "rolling_count_coherent": true,
+        "trades_count_zero_on_zero_trade": true,
+        "volume_zero_on_zero_trade": true,
+        "zero_trade_bucket_blocking": false,
+        "zero_trade_ratio": 0.00020525451559934318,
+        "zero_trade_rows": 108
+      }
+    }
+  },
+  "features_full_modified": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "ingestion_executed": false,
+  "labels_created": false,
+  "leakage_guard": {
+    "available_ts_lte_decision_ts": true,
+    "feature_available_ts_lte_decision_ts": true,
+    "forbidden_future_columns_absent": true,
+    "leakage_errors": [],
+    "leakage_warnings": [],
+    "rolling_windows_past_only": true,
+    "status": "PASS"
+  },
+  "leakage_guard_status": "PASS",
+  "metadata_columns": [
+    "source",
+    "venue",
+    "market_type",
+    "symbol",
+    "timeframe",
+    "event_ts",
+    "open_ts",
+    "close_ts",
+    "decision_ts",
+    "available_ts",
+    "feature_available_ts",
+    "feature_run_id",
+    "feature_schema_version",
+    "ohlcv_source_type",
+    "aggtrades_source_type",
+    "source_ohlcv_validation_version",
+    "source_aggtrades_validation_version",
+    "source_window_start",
+    "source_window_end"
+  ],
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.39 - OHLCV + AggTrades 5Y Dataset",
+  "quality_status": "PASS",
+  "quality_validation": {
+    "errors": [],
+    "feature_range_summary_by_timeframe": {
+      "15m": {
+        "agg_trade_count": {
+          "max": 1170879.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_quote_volume": {
+          "max": 1086850286.548646,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume": {
+          "max": 40371.405060000005,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume_rolling_mean_15": {
+          "max": 19197.737996666667,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "agg_trade_volume_rolling_mean_5": {
+          "max": 33312.808222,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "agg_trade_volume_rolling_mean_60": {
+          "max": 9314.210203883333,
+          "min": 25.458764,
+          "nulls": 59
+        },
+        "average_trade_size": {
+          "max": 0.31152698515340455,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "candle_body": {
+          "max": 0.10171018497329881,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "close_open_return": {
+          "max": 0.11322647020135213,
+          "min": -0.08979638592791372,
+          "nulls": 0
+        },
+        "close_return_1": {
+          "max": 0.11322680150051267,
+          "min": -0.08979671484247265,
+          "nulls": 1
+        },
+        "high_low_range": {
+          "max": 0.18616453140295827,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "log_return_1": {
+          "max": 0.10726282646719139,
+          "min": -0.09408731413613816,
+          "nulls": 1
+        },
+        "lower_wick": {
+          "max": 0.07812140922622669,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "missing_aggtrades_flag": {
+          "max": 1.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "quote_volume": {
+          "max": 1086850286.548646,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "rolling_return_15": {
+          "max": 0.2253905981524722,
+          "min": -0.19539232908433468,
+          "nulls": 15
+        },
+        "rolling_return_5": {
+          "max": 0.10129391346129446,
+          "min": -0.16536279069767446,
+          "nulls": 5
+        },
+        "rolling_return_60": {
+          "max": 0.21675480782626622,
+          "min": -0.24686591093185373,
+          "nulls": 60
+        },
+        "rolling_volatility_15": {
+          "max": 0.04813366713565201,
+          "min": 0.0,
+          "nulls": 15
+        },
+        "rolling_volatility_5": {
+          "max": 0.07880960334312377,
+          "min": 0.0,
+          "nulls": 5
+        },
+        "rolling_volatility_60": {
+          "max": 0.028622651065935333,
+          "min": 0.0002664878649312791,
+          "nulls": 60
+        },
+        "taker_buy_base_volume": {
+          "max": 19925.6166,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_ratio": {
+          "max": 0.942880045208012,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_sell_imbalance": {
+          "max": 0.8857600904160242,
+          "min": -0.8455613502285888,
+          "nulls": 0
+        },
+        "taker_imbalance_rolling_mean_15": {
+          "max": 0.35215023342930346,
+          "min": -0.44935743081804774,
+          "nulls": 14
+        },
+        "taker_imbalance_rolling_mean_5": {
+          "max": 0.5612293846361762,
+          "min": -0.7343090918158872,
+          "nulls": 4
+        },
+        "taker_imbalance_rolling_mean_60": {
+          "max": 0.1589559099778123,
+          "min": -0.2386960218593414,
+          "nulls": 59
+        },
+        "taker_sell_base_volume": {
+          "max": 20445.788460000003,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "trade_intensity_rolling_15": {
+          "max": 248304.86666666667,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "trade_intensity_rolling_5": {
+          "max": 480884.2,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "trade_intensity_rolling_60": {
+          "max": 159151.9,
+          "min": 2290.866666666667,
+          "nulls": 59
+        },
+        "trades_count": {
+          "max": 1170879.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "upper_wick": {
+          "max": 0.06839355571196233,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume": {
+          "max": 40371.405060000005,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume_rolling_mean_15": {
+          "max": 19197.737996666667,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_mean_5": {
+          "max": 33312.808222,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_mean_60": {
+          "max": 9314.210203883333,
+          "min": 25.458764,
+          "nulls": 59
+        },
+        "volume_rolling_std_15": {
+          "max": 15685.211699329178,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_std_5": {
+          "max": 16191.435793703788,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_std_60": {
+          "max": 9985.548698903147,
+          "min": 13.764382333500588,
+          "nulls": 59
+        },
+        "zero_trade_bucket_rolling_count_60": {
+          "max": 18.0,
+          "min": 0.0,
+          "nulls": 0
+        }
+      },
+      "1h": {
+        "agg_trade_count": {
+          "max": 2224341.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_quote_volume": {
+          "max": 3005633669.260812,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume": {
+          "max": 137207.1886,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume_rolling_mean_15": {
+          "max": 37080.9857622,
+          "min": 102.51187666666654,
+          "nulls": 14
+        },
+        "agg_trade_volume_rolling_mean_5": {
+          "max": 65401.7357406,
+          "min": 82.7551980000101,
+          "nulls": 4
+        },
+        "agg_trade_volume_rolling_mean_60": {
+          "max": 31170.92003753333,
+          "min": 226.63167733333333,
+          "nulls": 59
+        },
+        "average_trade_size": {
+          "max": 0.28164129277254346,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "candle_body": {
+          "max": 0.09835156445564042,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "close_open_return": {
+          "max": 0.06487232903615148,
+          "min": -0.08954470284237714,
+          "nulls": 0
+        },
+        "close_return_1": {
+          "max": 0.06487232903615148,
+          "min": -0.08954470284237714,
+          "nulls": 1
+        },
+        "high_low_range": {
+          "max": 0.22307075860230557,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "log_return_1": {
+          "max": 0.06285491313605168,
+          "min": -0.09381047804599706,
+          "nulls": 1
+        },
+        "lower_wick": {
+          "max": 0.14596133179935017,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "missing_aggtrades_flag": {
+          "max": 1.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "quote_volume": {
+          "max": 3005633669.260812,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "rolling_return_15": {
+          "max": 0.15678368922735952,
+          "min": -0.18020302147363088,
+          "nulls": 15
+        },
+        "rolling_return_5": {
+          "max": 0.128164823750752,
+          "min": -0.12723895902648008,
+          "nulls": 5
+        },
+        "rolling_return_60": {
+          "max": 0.27081298714300717,
+          "min": -0.2753676063086625,
+          "nulls": 60
+        },
+        "rolling_volatility_15": {
+          "max": 0.04152072744209802,
+          "min": 0.00040937303996862594,
+          "nulls": 15
+        },
+        "rolling_volatility_5": {
+          "max": 0.05916327414323217,
+          "min": 0.0001202505023343231,
+          "nulls": 5
+        },
+        "rolling_volatility_60": {
+          "max": 0.02745961754410993,
+          "min": 0.0008074925994363393,
+          "nulls": 60
+        },
+        "taker_buy_base_volume": {
+          "max": 68611.45039,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_ratio": {
+          "max": 0.8168844279012343,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_sell_imbalance": {
+          "max": 0.6337688558024686,
+          "min": -0.7737183060202096,
+          "nulls": 0
+        },
+        "taker_imbalance_rolling_mean_15": {
+          "max": 0.16021934365245324,
+          "min": -0.24688965233569432,
+          "nulls": 14
+        },
+        "taker_imbalance_rolling_mean_5": {
+          "max": 0.33329090176875226,
+          "min": -0.43821846026402766,
+          "nulls": 4
+        },
+        "taker_imbalance_rolling_mean_60": {
+          "max": 0.06942237780347674,
+          "min": -0.15388133702216378,
+          "nulls": 59
+        },
+        "taker_sell_base_volume": {
+          "max": 68595.73821,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "trade_intensity_rolling_15": {
+          "max": 633835.1333333333,
+          "min": 9208.133333333333,
+          "nulls": 14
+        },
+        "trade_intensity_rolling_5": {
+          "max": 928875.4,
+          "min": 8057.0,
+          "nulls": 4
+        },
+        "trade_intensity_rolling_60": {
+          "max": 526024.2166666667,
+          "min": 11508.066666666668,
+          "nulls": 59
+        },
+        "trades_count": {
+          "max": 2224341.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "upper_wick": {
+          "max": 0.07142857142857142,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume": {
+          "max": 137207.1886,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume_rolling_mean_15": {
+          "max": 37080.9857622,
+          "min": 102.51187666666654,
+          "nulls": 14
+        },
+        "volume_rolling_mean_5": {
+          "max": 65401.7357406,
+          "min": 82.7551980000101,
+          "nulls": 4
+        },
+        "volume_rolling_mean_60": {
+          "max": 31170.92003753333,
+          "min": 226.63167733333333,
+          "nulls": 59
+        },
+        "volume_rolling_std_15": {
+          "max": 37863.20469291555,
+          "min": 29.333354980920046,
+          "nulls": 14
+        },
+        "volume_rolling_std_5": {
+          "max": 59030.22568572441,
+          "min": 6.5996000482353026,
+          "nulls": 4
+        },
+        "volume_rolling_std_60": {
+          "max": 20248.656656485153,
+          "min": 142.80215760460834,
+          "nulls": 59
+        },
+        "zero_trade_bucket_rolling_count_60": {
+          "max": 4.0,
+          "min": 0.0,
+          "nulls": 0
+        }
+      },
+      "1m": {
+        "agg_trade_count": {
+          "max": 143952.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_quote_volume": {
+          "max": 259850148.7256762,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume": {
+          "max": 5877.77545,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume_rolling_mean_15": {
+          "max": 2775.8975093333333,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "agg_trade_volume_rolling_mean_5": {
+          "max": 3145.693704000001,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "agg_trade_volume_rolling_mean_60": {
+          "max": 2304.9473251666664,
+          "min": 0.0,
+          "nulls": 59
+        },
+        "average_trade_size": {
+          "max": 0.7936730513595166,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "candle_body": {
+          "max": 0.06511180356053904,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "close_open_return": {
+          "max": 0.050260366132809375,
+          "min": -0.061131426149703905,
+          "nulls": 0
+        },
+        "close_return_1": {
+          "max": 0.04980448060954212,
+          "min": -0.057989123344277305,
+          "nulls": 1
+        },
+        "high_low_range": {
+          "max": 0.08556545912545195,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "log_return_1": {
+          "max": 0.04860393788710102,
+          "min": -0.059738458128777844,
+          "nulls": 1
+        },
+        "lower_wick": {
+          "max": 0.051480847924414125,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "missing_aggtrades_flag": {
+          "max": 1.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "quote_volume": {
+          "max": 259850148.7256762,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "rolling_return_15": {
+          "max": 0.14614165642337462,
+          "min": -0.13333174603174602,
+          "nulls": 15
+        },
+        "rolling_return_5": {
+          "max": 0.09402776307210492,
+          "min": -0.09890539631128059,
+          "nulls": 5
+        },
+        "rolling_return_60": {
+          "max": 0.17391282681638476,
+          "min": -0.22379512379025013,
+          "nulls": 60
+        },
+        "rolling_volatility_15": {
+          "max": 0.02830173684554514,
+          "min": 0.0,
+          "nulls": 15
+        },
+        "rolling_volatility_5": {
+          "max": 0.04024320212152503,
+          "min": 0.0,
+          "nulls": 5
+        },
+        "rolling_volatility_60": {
+          "max": 0.019690240966015914,
+          "min": 0.0,
+          "nulls": 60
+        },
+        "taker_buy_base_volume": {
+          "max": 3537.45296,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_ratio": {
+          "max": 0.9991905708820902,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_sell_imbalance": {
+          "max": 0.9983811417641804,
+          "min": -0.9982611483967927,
+          "nulls": 0
+        },
+        "taker_imbalance_rolling_mean_15": {
+          "max": 0.7790600019785513,
+          "min": -0.8509753112034498,
+          "nulls": 14
+        },
+        "taker_imbalance_rolling_mean_5": {
+          "max": 0.9820288456515238,
+          "min": -0.9616357299664203,
+          "nulls": 4
+        },
+        "taker_imbalance_rolling_mean_60": {
+          "max": 0.6165748605466664,
+          "min": -0.7726992956081539,
+          "nulls": 59
+        },
+        "taker_sell_base_volume": {
+          "max": 3024.372265,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "trade_intensity_rolling_15": {
+          "max": 82152.66666666667,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "trade_intensity_rolling_5": {
+          "max": 108511.6,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "trade_intensity_rolling_60": {
+          "max": 38429.15,
+          "min": 0.0,
+          "nulls": 59
+        },
+        "trades_count": {
+          "max": 143952.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "upper_wick": {
+          "max": 0.061005420691637995,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume": {
+          "max": 5877.77545,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume_rolling_mean_15": {
+          "max": 2775.8975093333333,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_mean_5": {
+          "max": 3145.693704000001,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_mean_60": {
+          "max": 2304.9473251666664,
+          "min": 0.0,
+          "nulls": 59
+        },
+        "volume_rolling_std_15": {
+          "max": 1707.201430740845,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_std_5": {
+          "max": 2497.4548457659034,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_std_60": {
+          "max": 1107.1347385384008,
+          "min": 0.0,
+          "nulls": 59
+        },
+        "zero_trade_bucket_rolling_count_60": {
+          "max": 60.0,
+          "min": 0.0,
+          "nulls": 0
+        }
+      },
+      "5m": {
+        "agg_trade_count": {
+          "max": 481062.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_quote_volume": {
+          "max": 558851896.0400627,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume": {
+          "max": 15659.93484,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "agg_trade_volume_rolling_mean_15": {
+          "max": 11104.269407333333,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "agg_trade_volume_rolling_mean_5": {
+          "max": 12326.594114000001,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "agg_trade_volume_rolling_mean_60": {
+          "max": 5450.14464505,
+          "min": 6.5576834999999996,
+          "nulls": 59
+        },
+        "average_trade_size": {
+          "max": 0.37729676209005,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "candle_body": {
+          "max": 0.10976115801947334,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "close_open_return": {
+          "max": 0.08939704837818652,
+          "min": -0.09890520786955437,
+          "nulls": 0
+        },
+        "close_return_1": {
+          "max": 0.09402776307210492,
+          "min": -0.09890539631128059,
+          "nulls": 1
+        },
+        "high_low_range": {
+          "max": 0.13241582778835953,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "log_return_1": {
+          "max": 0.08986608125740472,
+          "min": -0.10414502834112187,
+          "nulls": 1
+        },
+        "lower_wick": {
+          "max": 0.07812140922622669,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "missing_aggtrades_flag": {
+          "max": 1.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "quote_volume": {
+          "max": 558851896.0400627,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "rolling_return_15": {
+          "max": 0.18574366300122924,
+          "min": -0.2238731773550735,
+          "nulls": 15
+        },
+        "rolling_return_5": {
+          "max": 0.17834224776585494,
+          "min": -0.1737984794005435,
+          "nulls": 5
+        },
+        "rolling_return_60": {
+          "max": 0.2717454569615627,
+          "min": -0.25014896877733994,
+          "nulls": 60
+        },
+        "rolling_volatility_15": {
+          "max": 0.0599604660850854,
+          "min": 0.0,
+          "nulls": 15
+        },
+        "rolling_volatility_5": {
+          "max": 0.08659736943438226,
+          "min": 0.0,
+          "nulls": 5
+        },
+        "rolling_volatility_60": {
+          "max": 0.03168550540374758,
+          "min": 0.00010073270290939781,
+          "nulls": 60
+        },
+        "taker_buy_base_volume": {
+          "max": 8884.51143,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_ratio": {
+          "max": 0.9825325633549425,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "taker_buy_sell_imbalance": {
+          "max": 0.965065126709885,
+          "min": -0.971448610672847,
+          "nulls": 0
+        },
+        "taker_imbalance_rolling_mean_15": {
+          "max": 0.5699819957734272,
+          "min": -0.7086321121955808,
+          "nulls": 14
+        },
+        "taker_imbalance_rolling_mean_5": {
+          "max": 0.7181056702761394,
+          "min": -0.8098444887494448,
+          "nulls": 4
+        },
+        "taker_imbalance_rolling_mean_60": {
+          "max": 0.310648048782954,
+          "min": -0.3703061722764621,
+          "nulls": 59
+        },
+        "taker_sell_base_volume": {
+          "max": 7614.27297,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "trade_intensity_rolling_15": {
+          "max": 163001.93333333332,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "trade_intensity_rolling_5": {
+          "max": 303565.6,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "trade_intensity_rolling_60": {
+          "max": 77406.28333333334,
+          "min": 669.95,
+          "nulls": 59
+        },
+        "trades_count": {
+          "max": 481062.0,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "upper_wick": {
+          "max": 0.06663279535367002,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume": {
+          "max": 15659.93484,
+          "min": 0.0,
+          "nulls": 0
+        },
+        "volume_rolling_mean_15": {
+          "max": 11104.269407333333,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_mean_5": {
+          "max": 12326.594114000001,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_mean_60": {
+          "max": 5450.14464505,
+          "min": 6.5576834999999996,
+          "nulls": 59
+        },
+        "volume_rolling_std_15": {
+          "max": 5246.324416109564,
+          "min": 0.0,
+          "nulls": 14
+        },
+        "volume_rolling_std_5": {
+          "max": 5851.971978879927,
+          "min": 0.0,
+          "nulls": 4
+        },
+        "volume_rolling_std_60": {
+          "max": 4926.259547857599,
+          "min": 4.166269569776783,
+          "nulls": 59
+        },
+        "zero_trade_bucket_rolling_count_60": {
+          "max": 54.0,
+          "min": 0.0,
+          "nulls": 0
+        }
+      }
+    },
+    "invalid_row_summary_by_timeframe": {
+      "15m": {
+        "feature_error_count_total": 0,
+        "feature_invalid_reason_non_empty": 0,
+        "row_invalid_for_features_count": 0,
+        "row_valid_for_features_count": 175392
+      },
+      "1h": {
+        "feature_error_count_total": 0,
+        "feature_invalid_reason_non_empty": 0,
+        "row_invalid_for_features_count": 0,
+        "row_valid_for_features_count": 43848
+      },
+      "1m": {
+        "feature_error_count_total": 0,
+        "feature_invalid_reason_non_empty": 0,
+        "row_invalid_for_features_count": 0,
+        "row_valid_for_features_count": 2630880
+      },
+      "5m": {
+        "feature_error_count_total": 0,
+        "feature_invalid_reason_non_empty": 0,
+        "row_invalid_for_features_count": 0,
+        "row_valid_for_features_count": 526176
+      }
+    },
+    "null_summary_by_timeframe": {
+      "15m": {
+        "agg_trade_count": 0,
+        "agg_trade_quote_volume": 0,
+        "agg_trade_volume": 0,
+        "agg_trade_volume_rolling_mean_15": 14,
+        "agg_trade_volume_rolling_mean_5": 4,
+        "agg_trade_volume_rolling_mean_60": 59,
+        "average_trade_size": 0,
+        "candle_body": 0,
+        "close_open_return": 0,
+        "close_return_1": 1,
+        "high_low_range": 0,
+        "log_return_1": 1,
+        "lower_wick": 0,
+        "missing_aggtrades_flag": 0,
+        "quote_volume": 0,
+        "rolling_return_15": 15,
+        "rolling_return_5": 5,
+        "rolling_return_60": 60,
+        "rolling_volatility_15": 15,
+        "rolling_volatility_5": 5,
+        "rolling_volatility_60": 60,
+        "taker_buy_base_volume": 0,
+        "taker_buy_ratio": 0,
+        "taker_buy_sell_imbalance": 0,
+        "taker_imbalance_rolling_mean_15": 14,
+        "taker_imbalance_rolling_mean_5": 4,
+        "taker_imbalance_rolling_mean_60": 59,
+        "taker_sell_base_volume": 0,
+        "trade_intensity_rolling_15": 14,
+        "trade_intensity_rolling_5": 4,
+        "trade_intensity_rolling_60": 59,
+        "trades_count": 0,
+        "upper_wick": 0,
+        "volume": 0,
+        "volume_rolling_mean_15": 14,
+        "volume_rolling_mean_5": 4,
+        "volume_rolling_mean_60": 59,
+        "volume_rolling_std_15": 14,
+        "volume_rolling_std_5": 4,
+        "volume_rolling_std_60": 59,
+        "zero_trade_bucket_rolling_count_60": 0
+      },
+      "1h": {
+        "agg_trade_count": 0,
+        "agg_trade_quote_volume": 0,
+        "agg_trade_volume": 0,
+        "agg_trade_volume_rolling_mean_15": 14,
+        "agg_trade_volume_rolling_mean_5": 4,
+        "agg_trade_volume_rolling_mean_60": 59,
+        "average_trade_size": 0,
+        "candle_body": 0,
+        "close_open_return": 0,
+        "close_return_1": 1,
+        "high_low_range": 0,
+        "log_return_1": 1,
+        "lower_wick": 0,
+        "missing_aggtrades_flag": 0,
+        "quote_volume": 0,
+        "rolling_return_15": 15,
+        "rolling_return_5": 5,
+        "rolling_return_60": 60,
+        "rolling_volatility_15": 15,
+        "rolling_volatility_5": 5,
+        "rolling_volatility_60": 60,
+        "taker_buy_base_volume": 0,
+        "taker_buy_ratio": 0,
+        "taker_buy_sell_imbalance": 0,
+        "taker_imbalance_rolling_mean_15": 14,
+        "taker_imbalance_rolling_mean_5": 4,
+        "taker_imbalance_rolling_mean_60": 59,
+        "taker_sell_base_volume": 0,
+        "trade_intensity_rolling_15": 14,
+        "trade_intensity_rolling_5": 4,
+        "trade_intensity_rolling_60": 59,
+        "trades_count": 0,
+        "upper_wick": 0,
+        "volume": 0,
+        "volume_rolling_mean_15": 14,
+        "volume_rolling_mean_5": 4,
+        "volume_rolling_mean_60": 59,
+        "volume_rolling_std_15": 14,
+        "volume_rolling_std_5": 4,
+        "volume_rolling_std_60": 59,
+        "zero_trade_bucket_rolling_count_60": 0
+      },
+      "1m": {
+        "agg_trade_count": 0,
+        "agg_trade_quote_volume": 0,
+        "agg_trade_volume": 0,
+        "agg_trade_volume_rolling_mean_15": 14,
+        "agg_trade_volume_rolling_mean_5": 4,
+        "agg_trade_volume_rolling_mean_60": 59,
+        "average_trade_size": 0,
+        "candle_body": 0,
+        "close_open_return": 0,
+        "close_return_1": 1,
+        "high_low_range": 0,
+        "log_return_1": 1,
+        "lower_wick": 0,
+        "missing_aggtrades_flag": 0,
+        "quote_volume": 0,
+        "rolling_return_15": 15,
+        "rolling_return_5": 5,
+        "rolling_return_60": 60,
+        "rolling_volatility_15": 15,
+        "rolling_volatility_5": 5,
+        "rolling_volatility_60": 60,
+        "taker_buy_base_volume": 0,
+        "taker_buy_ratio": 0,
+        "taker_buy_sell_imbalance": 0,
+        "taker_imbalance_rolling_mean_15": 14,
+        "taker_imbalance_rolling_mean_5": 4,
+        "taker_imbalance_rolling_mean_60": 59,
+        "taker_sell_base_volume": 0,
+        "trade_intensity_rolling_15": 14,
+        "trade_intensity_rolling_5": 4,
+        "trade_intensity_rolling_60": 59,
+        "trades_count": 0,
+        "upper_wick": 0,
+        "volume": 0,
+        "volume_rolling_mean_15": 14,
+        "volume_rolling_mean_5": 4,
+        "volume_rolling_mean_60": 59,
+        "volume_rolling_std_15": 14,
+        "volume_rolling_std_5": 4,
+        "volume_rolling_std_60": 59,
+        "zero_trade_bucket_rolling_count_60": 0
+      },
+      "5m": {
+        "agg_trade_count": 0,
+        "agg_trade_quote_volume": 0,
+        "agg_trade_volume": 0,
+        "agg_trade_volume_rolling_mean_15": 14,
+        "agg_trade_volume_rolling_mean_5": 4,
+        "agg_trade_volume_rolling_mean_60": 59,
+        "average_trade_size": 0,
+        "candle_body": 0,
+        "close_open_return": 0,
+        "close_return_1": 1,
+        "high_low_range": 0,
+        "log_return_1": 1,
+        "lower_wick": 0,
+        "missing_aggtrades_flag": 0,
+        "quote_volume": 0,
+        "rolling_return_15": 15,
+        "rolling_return_5": 5,
+        "rolling_return_60": 60,
+        "rolling_volatility_15": 15,
+        "rolling_volatility_5": 5,
+        "rolling_volatility_60": 60,
+        "taker_buy_base_volume": 0,
+        "taker_buy_ratio": 0,
+        "taker_buy_sell_imbalance": 0,
+        "taker_imbalance_rolling_mean_15": 14,
+        "taker_imbalance_rolling_mean_5": 4,
+        "taker_imbalance_rolling_mean_60": 59,
+        "taker_sell_base_volume": 0,
+        "trade_intensity_rolling_15": 14,
+        "trade_intensity_rolling_5": 4,
+        "trade_intensity_rolling_60": 59,
+        "trades_count": 0,
+        "upper_wick": 0,
+        "volume": 0,
+        "volume_rolling_mean_15": 14,
+        "volume_rolling_mean_5": 4,
+        "volume_rolling_mean_60": 59,
+        "volume_rolling_std_15": 14,
+        "volume_rolling_std_5": 4,
+        "volume_rolling_std_60": 59,
+        "zero_trade_bucket_rolling_count_60": 0
+      }
+    },
+    "outlier_warning_summary_by_timeframe": {
+      "15m": [],
+      "1h": [],
+      "1m": [],
+      "5m": []
+    },
+    "status": "PASS",
+    "warmup_summary_by_timeframe": {
+      "15m": {
+        "expected_warmup_rows": 60,
+        "non_warmup_rows": 175332,
+        "warmup_rows": 60
+      },
+      "1h": {
+        "expected_warmup_rows": 60,
+        "non_warmup_rows": 43788,
+        "warmup_rows": 60
+      },
+      "1m": {
+        "expected_warmup_rows": 60,
+        "non_warmup_rows": 2630820,
+        "warmup_rows": 60
+      },
+      "5m": {
+        "expected_warmup_rows": 60,
+        "non_warmup_rows": 526116,
+        "warmup_rows": 60
+      }
+    }
+  },
+  "runtime_seconds": 6.93,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_labels": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "schema_status": "PASS",
+  "schema_validation": {
+    "aggtrades_source_type": "binance_public_archive_aggtrades",
+    "audit_columns": [
+      "warmup_row",
+      "zero_trade_bucket",
+      "feature_null_count",
+      "feature_error_count",
+      "row_valid_for_features",
+      "feature_invalid_reason"
+    ],
+    "errors": [],
+    "feature_columns": [
+      "close_return_1",
+      "log_return_1",
+      "rolling_return_5",
+      "rolling_return_15",
+      "rolling_return_60",
+      "rolling_volatility_5",
+      "rolling_volatility_15",
+      "rolling_volatility_60",
+      "high_low_range",
+      "close_open_return",
+      "candle_body",
+      "upper_wick",
+      "lower_wick",
+      "volume",
+      "quote_volume",
+      "trades_count",
+      "volume_rolling_mean_5",
+      "volume_rolling_mean_15",
+      "volume_rolling_mean_60",
+      "volume_rolling_std_5",
+      "volume_rolling_std_15",
+      "volume_rolling_std_60",
+      "zero_trade_bucket_rolling_count_60",
+      "agg_trade_count",
+      "agg_trade_volume",
+      "agg_trade_quote_volume",
+      "average_trade_size",
+      "taker_buy_base_volume",
+      "taker_sell_base_volume",
+      "taker_buy_ratio",
+      "taker_buy_sell_imbalance",
+      "trade_intensity_rolling_5",
+      "trade_intensity_rolling_15",
+      "trade_intensity_rolling_60",
+      "agg_trade_volume_rolling_mean_5",
+      "agg_trade_volume_rolling_mean_15",
+      "agg_trade_volume_rolling_mean_60",
+      "taker_imbalance_rolling_mean_5",
+      "taker_imbalance_rolling_mean_15",
+      "taker_imbalance_rolling_mean_60",
+      "missing_aggtrades_flag"
+    ],
+    "feature_columns_count": 41,
+    "feature_schema_version": "ohlcv_aggtrades_5y_features_v9_37_v1",
+    "forbidden_scan": {
+      "forbidden_columns": [],
+      "scanned_terms": [
+        "backtest",
+        "drawdown",
+        "entry",
+        "equity_curve",
+        "exit",
+        "future",
+        "label",
+        "model_score",
+        "order",
+        "pnl",
+        "position_size",
+        "prediction",
+        "profit_factor",
+        "sharpe",
+        "signal",
+        "strategy",
+        "target",
+        "trade_decision",
+        "trading_signal"
+      ],
+      "status": "PASS"
+    },
+    "metadata_columns": [
+      "source",
+      "venue",
+      "market_type",
+      "symbol",
+      "timeframe",
+      "event_ts",
+      "open_ts",
+      "close_ts",
+      "decision_ts",
+      "available_ts",
+      "feature_available_ts",
+      "feature_run_id",
+      "feature_schema_version",
+      "ohlcv_source_type",
+      "aggtrades_source_type",
+      "source_ohlcv_validation_version",
+      "source_aggtrades_validation_version",
+      "source_window_start",
+      "source_window_end"
+    ],
+    "ohlcv_source_type": "derived_from_aggtrades",
+    "source_aggtrades_validation_version": "V9.32",
+    "source_ohlcv_validation_version": "V9.36",
+    "status": "PASS"
+  },
+  "source_readiness": {
+    "errors": [],
+    "ready": true,
+    "v9_37_decision": "ohlcv_aggtrades_5y_feature_store_created_with_warnings"
+  },
+  "source_version": "V9.37",
+  "source_versions": {
+    "aggtrades_validation": "V9.32",
+    "feature_store": "V9.37",
+    "ohlcv_validation": "V9.36"
+  },
+  "status": "PASS",
+  "target_window": {
+    "days_expected": 1827,
+    "end": "2026-05-05",
+    "start": "2021-05-05"
+  },
+  "timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "version": "V9.38",
+  "walk_forward_executed": false,
+  "warnings": [
+    "Les features aggTrades exactes median_trade_size, large_trade_count et buyer_maker_count restent absentes; limitation non bloquante pour V9.38.",
+    "1m: 60 warmup rows attendues.",
+    "1m: 542 zero-trade buckets coherents et non bloquants.",
+    "5m: 60 warmup rows attendues.",
+    "5m: 108 zero-trade buckets coherents et non bloquants.",
+    "15m: 60 warmup rows attendues.",
+    "15m: 36 zero-trade buckets coherents et non bloquants.",
+    "1h: 60 warmup rows attendues.",
+    "1h: 8 zero-trade buckets coherents et non bloquants.",
+    "Zero-trade buckets herites de V9.36 valides comme flags causaux non bloquants."
+  ],
+  "zero_trade_bucket_validation": {
+    "actual_counts": {
+      "15m": 36,
+      "1h": 8,
+      "1m": 542,
+      "5m": 108
+    },
+    "details_by_timeframe": {
+      "15m": {
+        "agg_trade_count_zero_on_zero_trade": true,
+        "no_future_fill": true,
+        "rolling_count_coherent": true,
+        "trades_count_zero_on_zero_trade": true,
+        "volume_zero_on_zero_trade": true,
+        "zero_trade_bucket_blocking": false,
+        "zero_trade_ratio": 0.00020525451559934318,
+        "zero_trade_rows": 36
+      },
+      "1h": {
+        "agg_trade_count_zero_on_zero_trade": true,
+        "no_future_fill": true,
+        "rolling_count_coherent": true,
+        "trades_count_zero_on_zero_trade": true,
+        "volume_zero_on_zero_trade": true,
+        "zero_trade_bucket_blocking": false,
+        "zero_trade_ratio": 0.00018244845831052726,
+        "zero_trade_rows": 8
+      },
+      "1m": {
+        "agg_trade_count_zero_on_zero_trade": true,
+        "no_future_fill": true,
+        "rolling_count_coherent": true,
+        "trades_count_zero_on_zero_trade": true,
+        "volume_zero_on_zero_trade": true,
+        "zero_trade_bucket_blocking": false,
+        "zero_trade_ratio": 0.0002060147175089704,
+        "zero_trade_rows": 542
+      },
+      "5m": {
+        "agg_trade_count_zero_on_zero_trade": true,
+        "no_future_fill": true,
+        "rolling_count_coherent": true,
+        "trades_count_zero_on_zero_trade": true,
+        "volume_zero_on_zero_trade": true,
+        "zero_trade_bucket_blocking": false,
+        "zero_trade_ratio": 0.00020525451559934318,
+        "zero_trade_rows": 108
+      }
+    },
+    "errors": [],
+    "expected_counts_from_v9_36": {
+      "15m": 36,
+      "1h": 8,
+      "1m": 542,
+      "5m": 108
+    },
+    "status": "PASS",
+    "zero_trade_bucket_blocking": false
+  }
+}
