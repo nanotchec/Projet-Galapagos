@@ -1,0 +1,89 @@
+{
+  "blocking_mismatches": [],
+  "matched_rows": {
+    "15m": 109248,
+    "1h": 27312,
+    "1m": 1638720,
+    "5m": 327744
+  },
+  "max_close_abs_diff": {
+    "15m": 0.0,
+    "1h": 0.0,
+    "1m": 0.0,
+    "5m": 0.0
+  },
+  "max_high_abs_diff": {
+    "15m": 0.0,
+    "1h": 0.0,
+    "1m": 0.0,
+    "5m": 0.0
+  },
+  "max_low_abs_diff": {
+    "15m": 0.0,
+    "1h": 0.0,
+    "1m": 0.0,
+    "5m": 0.0
+  },
+  "max_volume_abs_diff": {
+    "15m": 1.8189894035458565e-12,
+    "1h": 3.637978807091713e-12,
+    "1m": 2.2737367544323206e-13,
+    "5m": 4.547473508864641e-13
+  },
+  "parity_status": "PASS",
+  "parity_warnings": [],
+  "timeframes": {
+    "15m": {
+      "blocking_mismatches": [],
+      "derived_rows": 109248,
+      "existing_rows": 109248,
+      "matched_rows": 109248,
+      "max_close_abs_diff": 0.0,
+      "max_high_abs_diff": 0.0,
+      "max_low_abs_diff": 0.0,
+      "max_volume_abs_diff": 1.8189894035458565e-12,
+      "parity_status": "PASS",
+      "row_count_parity": true,
+      "timestamp_parity": true
+    },
+    "1h": {
+      "blocking_mismatches": [],
+      "derived_rows": 27312,
+      "existing_rows": 27312,
+      "matched_rows": 27312,
+      "max_close_abs_diff": 0.0,
+      "max_high_abs_diff": 0.0,
+      "max_low_abs_diff": 0.0,
+      "max_volume_abs_diff": 3.637978807091713e-12,
+      "parity_status": "PASS",
+      "row_count_parity": true,
+      "timestamp_parity": true
+    },
+    "1m": {
+      "blocking_mismatches": [],
+      "derived_rows": 1638720,
+      "existing_rows": 1638720,
+      "matched_rows": 1638720,
+      "max_close_abs_diff": 0.0,
+      "max_high_abs_diff": 0.0,
+      "max_low_abs_diff": 0.0,
+      "max_volume_abs_diff": 2.2737367544323206e-13,
+      "parity_status": "PASS",
+      "row_count_parity": true,
+      "timestamp_parity": true
+    },
+    "5m": {
+      "blocking_mismatches": [],
+      "derived_rows": 327744,
+      "existing_rows": 327744,
+      "matched_rows": 327744,
+      "max_close_abs_diff": 0.0,
+      "max_high_abs_diff": 0.0,
+      "max_low_abs_diff": 0.0,
+      "max_volume_abs_diff": 4.547473508864641e-13,
+      "parity_status": "PASS",
+      "row_count_parity": true,
+      "timestamp_parity": true
+    }
+  }
+}

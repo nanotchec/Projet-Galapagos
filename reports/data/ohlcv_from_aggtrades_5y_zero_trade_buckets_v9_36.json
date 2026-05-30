@@ -1,0 +1,86 @@
+{
+  "15m": {
+    "available_ts_close_ts_coherent": true,
+    "causal_fill_uses_future_data": false,
+    "first_occurrence": "2021-08-13T02:00:00Z",
+    "last_occurrence": "2023-03-24T13:45:00Z",
+    "max_consecutive_zero_trade_buckets": 18,
+    "ohlc_convention": "OHLC equals previous close, volume=0, quote_volume=0, trades_count=0",
+    "ohlc_equals_previous_close": true,
+    "quote_volume_zero_confirmed": true,
+    "temporal_distribution": {
+      "2021-08-13": 18,
+      "2021-09-29": 8,
+      "2023-03-24": 10
+    },
+    "timeframe": "15m",
+    "trades_count_zero_confirmed": true,
+    "volume_zero_confirmed": true,
+    "zero_trade_bucket_count": 36,
+    "zero_trade_buckets_blocking": false,
+    "zero_trade_ratio": 0.00020525451559934318
+  },
+  "1h": {
+    "available_ts_close_ts_coherent": true,
+    "causal_fill_uses_future_data": false,
+    "first_occurrence": "2021-08-13T02:00:00Z",
+    "last_occurrence": "2023-03-24T13:00:00Z",
+    "max_consecutive_zero_trade_buckets": 4,
+    "ohlc_convention": "OHLC equals previous close, volume=0, quote_volume=0, trades_count=0",
+    "ohlc_equals_previous_close": true,
+    "quote_volume_zero_confirmed": true,
+    "temporal_distribution": {
+      "2021-08-13": 4,
+      "2021-09-29": 2,
+      "2023-03-24": 2
+    },
+    "timeframe": "1h",
+    "trades_count_zero_confirmed": true,
+    "volume_zero_confirmed": true,
+    "zero_trade_bucket_count": 8,
+    "zero_trade_buckets_blocking": false,
+    "zero_trade_ratio": 0.00018244845831052726
+  },
+  "1m": {
+    "available_ts_close_ts_coherent": true,
+    "causal_fill_uses_future_data": false,
+    "first_occurrence": "2021-08-13T02:00:00Z",
+    "last_occurrence": "2023-03-24T13:59:00Z",
+    "max_consecutive_zero_trade_buckets": 270,
+    "ohlc_convention": "OHLC equals previous close, volume=0, quote_volume=0, trades_count=0",
+    "ohlc_equals_previous_close": true,
+    "quote_volume_zero_confirmed": true,
+    "temporal_distribution": {
+      "2021-08-13": 270,
+      "2021-09-29": 120,
+      "2023-03-24": 152
+    },
+    "timeframe": "1m",
+    "trades_count_zero_confirmed": true,
+    "volume_zero_confirmed": true,
+    "zero_trade_bucket_count": 542,
+    "zero_trade_buckets_blocking": false,
+    "zero_trade_ratio": 0.0002060147175089704
+  },
+  "5m": {
+    "available_ts_close_ts_coherent": true,
+    "causal_fill_uses_future_data": false,
+    "first_occurrence": "2021-08-13T02:00:00Z",
+    "last_occurrence": "2023-03-24T13:55:00Z",
+    "max_consecutive_zero_trade_buckets": 54,
+    "ohlc_convention": "OHLC equals previous close, volume=0, quote_volume=0, trades_count=0",
+    "ohlc_equals_previous_close": true,
+    "quote_volume_zero_confirmed": true,
+    "temporal_distribution": {
+      "2021-08-13": 54,
+      "2021-09-29": 24,
+      "2023-03-24": 30
+    },
+    "timeframe": "5m",
+    "trades_count_zero_confirmed": true,
+    "volume_zero_confirmed": true,
+    "zero_trade_bucket_count": 108,
+    "zero_trade_buckets_blocking": false,
+    "zero_trade_ratio": 0.00020525451559934318
+  }
+}
