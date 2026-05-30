@@ -1,0 +1,337 @@
+{
+  "aggtrades_readiness": {
+    "aggtrades_5y_ready": true,
+    "coverage_end": "2026-05-05",
+    "coverage_start": "2021-05-05",
+    "coverage_status": "target_5y_window_validated",
+    "days_complete": 1827,
+    "days_expected_5y": 1827,
+    "days_failed": 0,
+    "days_missing": 0,
+    "quality_status": "PASS",
+    "source_report": "reports/data/aggtrades_5y_full_coverage_validation_v9_32.json"
+  },
+  "backtest_executed": false,
+  "blockers": [
+    "OHLCV 5Y local incomplet."
+  ],
+  "created_at_utc": "2026-05-30T17:13:04Z",
+  "dataset_created": false,
+  "decision": "ohlcv_5y_extension_required_before_feature_store",
+  "direction": "ohlcv_aggtrades_5y_feature_store_readiness",
+  "feature_columns_count": 0,
+  "feature_quality": {
+    "coverage_summary": {},
+    "feature_columns_count": 0,
+    "feature_families": [],
+    "forbidden_column_scan": {
+      "forbidden_columns": [],
+      "scanned_terms": [
+        "backtest",
+        "drawdown",
+        "entry",
+        "equity_curve",
+        "exit",
+        "future",
+        "future_return",
+        "label",
+        "model_score",
+        "order",
+        "pnl",
+        "position_size",
+        "prediction",
+        "profit_factor",
+        "sharpe",
+        "signal",
+        "strategy",
+        "target",
+        "trade_decision",
+        "trading_signal"
+      ],
+      "status": "PASS"
+    },
+    "leakage_guard": {
+      "feature_available_ts_lte_decision_ts": null,
+      "status": "not_applicable_no_feature_store_created"
+    },
+    "null_summary": {},
+    "quality_status": "NOT_CREATED",
+    "row_counts_by_timeframe": {},
+    "warmup_summary": {}
+  },
+  "feature_store_candidate": {
+    "feature_store_created": false,
+    "feature_store_paths": [],
+    "reason_not_created": "OHLCV 5Y local readiness is not complete; V9.33 stops before feature materialization.",
+    "timeframes_produced": []
+  },
+  "feature_store_created": false,
+  "feature_store_paths": [],
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "forbidden_columns_scan": {
+    "forbidden_columns": [],
+    "scanned_terms": [
+      "backtest",
+      "drawdown",
+      "entry",
+      "equity_curve",
+      "exit",
+      "future",
+      "future_return",
+      "label",
+      "model_score",
+      "order",
+      "pnl",
+      "position_size",
+      "prediction",
+      "profit_factor",
+      "sharpe",
+      "signal",
+      "strategy",
+      "target",
+      "trade_decision",
+      "trading_signal"
+    ],
+    "status": "PASS"
+  },
+  "ingestion_executed": false,
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v5_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/max_history_public_market_data_v5_0_manifest.json"
+    },
+    "v8_9_feature_selection": {
+      "available": true,
+      "path": "reports/features/ohlcv_trades_feature_selection_v8_9.json"
+    },
+    "v8_9_manifest": {
+      "available": true,
+      "path": "reports/manifests/ohlcv_trades_feature_audit_v8_9_manifest.json"
+    },
+    "v9_0_manifest": {
+      "available": true,
+      "path": "reports/manifests/refined_ohlcv_trades_feature_store_v9_0_manifest.json"
+    },
+    "v9_29_validation": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_full_coverage_validation_v9_29.json"
+    },
+    "v9_30_plan": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_plan_v9_30.json"
+    },
+    "v9_31_collection": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_collection_v9_31.json"
+    },
+    "v9_32_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_5y_full_coverage_validation_v9_32_manifest.json"
+    },
+    "v9_32_validation": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_full_coverage_validation_v9_32.json"
+    }
+  },
+  "labels_created": false,
+  "leakage_guard": {
+    "feature_available_ts_lte_decision_ts": null,
+    "status": "not_applicable_no_feature_store_created"
+  },
+  "limitations": [
+    "V9.33 ne cree pas de feature store si la couverture OHLCV 5Y n'est pas confirmee.",
+    "Aucun telechargement, aucune ingestion reseau, aucun label, aucun ML, aucun backtest et aucun signal ne sont executes.",
+    "La derivation OHLCV depuis aggTrades est documentee comme option future, pas executee dans V9.33."
+  ],
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.34 - OHLCV 5Y Extension / Derivation",
+  "ohlcv_readiness": {
+    "derive_ohlcv_from_aggtrades_possible": true,
+    "derive_ohlcv_from_aggtrades_recommended": false,
+    "derive_ohlcv_required_tests": [
+      "comparaison sur echantillons avec klines publiques Binance",
+      "controle causal feature_available_ts <= decision_ts",
+      "validation des gaps et duplicats par timeframe",
+      "controle strict schema et colonnes interdites"
+    ],
+    "derive_ohlcv_risks": [
+      "La derivation OHLCV depuis aggTrades doit definir precisement open/high/low/close, volume, close_ts et decision_ts par timeframe.",
+      "La parite avec les klines Binance historiques doit etre auditee avant de remplacer une source OHLCV publique.",
+      "La generation 1m/5m/15m/1h sur 5Y est une operation volumineuse qui doit etre versionnee separement."
+    ],
+    "ohlcv_5y_ready": false,
+    "ohlcv_compatible_with_aggtrades_5y": false,
+    "ohlcv_coverage_end": "2026-05-05",
+    "ohlcv_coverage_start": "2023-03-25",
+    "ohlcv_days_available": {
+      "15m": 1138,
+      "1h": 1138,
+      "1m": 1138,
+      "5m": 1138
+    },
+    "ohlcv_days_expected_5y": 1827,
+    "ohlcv_days_missing": {
+      "15m": 689,
+      "1h": 689,
+      "1m": 689,
+      "5m": 689
+    },
+    "ohlcv_first_missing_day": "2021-05-05",
+    "ohlcv_gaps_detected": true,
+    "ohlcv_last_available_day": "2026-05-05",
+    "ohlcv_present_local": true,
+    "ohlcv_quality_known": true,
+    "ohlcv_schema_known": true,
+    "ohlcv_source_paths": [
+      "data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT",
+      "data/silver/market_data/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT",
+      "data/raw/public_market/binance_archive/spot/BTCUSDT/klines/1m"
+    ],
+    "ohlcv_timeframes_available": [],
+    "raw_1m_first_missing_day": null,
+    "raw_1m_zip_days_available": 1827,
+    "raw_1m_zip_days_missing": 0,
+    "timeframes": {
+      "15m": {
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "days_available": 1138,
+        "days_missing": 689,
+        "first_missing_day": "2021-05-05",
+        "last_available_day": "2026-05-05",
+        "research_windows": [
+          {
+            "bytes": "14104034",
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_partitioned_days": 1
+      },
+      "1h": {
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "days_available": 1138,
+        "days_missing": 689,
+        "first_missing_day": "2021-05-05",
+        "last_available_day": "2026-05-05",
+        "research_windows": [
+          {
+            "bytes": "3592349",
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_partitioned_days": 1
+      },
+      "1m": {
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "days_available": 1138,
+        "days_missing": 689,
+        "first_missing_day": "2021-05-05",
+        "last_available_day": "2026-05-05",
+        "research_windows": [
+          {
+            "bytes": "160315157",
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_partitioned_days": 1
+      },
+      "5m": {
+        "coverage_end": "2026-05-05",
+        "coverage_start": "2023-03-25",
+        "days_available": 1138,
+        "days_missing": 689,
+        "first_missing_day": "2021-05-05",
+        "last_available_day": "2026-05-05",
+        "research_windows": [
+          {
+            "bytes": "35258371",
+            "end": "2026-05-23",
+            "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v5_0/silver/ohlcv/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2023-03-25_2026-05-23/ohlcv.parquet",
+            "start": "2023-03-25"
+          }
+        ],
+        "silver_partitioned_days": 1
+      }
+    }
+  },
+  "quality_status": "NOT_CREATED",
+  "row_counts": {},
+  "runtime_seconds": 0.024,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "ingestion_executed": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_data_deletion": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_ingestion_executed": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_version": "V9.32",
+  "status": "PASS",
+  "target_5y_window_end": "2026-05-05",
+  "target_5y_window_start": "2021-05-05",
+  "timeframes_produced": [],
+  "v9_33_decision": {
+    "decision": "ohlcv_5y_extension_required_before_feature_store",
+    "justification": "La couverture OHLCV 5Y locale n'est pas complete; le feature store n'est pas cree.",
+    "next_recommendation": "V9.34 - OHLCV 5Y Extension / Derivation"
+  },
+  "version": "V9.33",
+  "walk_forward_executed": false,
+  "warnings": [
+    "OHLCV 5Y incomplet localement; feature store non cree.",
+    "Derivation OHLCV depuis aggTrades possible mais reservee a une version dediee et auditee.",
+    "AggTrades 5Y pret mais bloque par readiness OHLCV."
+  ]
+}
