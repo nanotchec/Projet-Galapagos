@@ -1,0 +1,92 @@
+{
+  "created_at_utc": "2026-05-30T19:56:21Z",
+  "files_count": 52,
+  "largest_files": [
+    {
+      "bytes": 61204,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    {
+      "bytes": 41420,
+      "path": "src/galapagos/data/ohlcv_5y_extension_v9_34.py"
+    },
+    {
+      "bytes": 36170,
+      "path": "src/galapagos/data/ohlcv_from_aggtrades_5y_v9_35.py"
+    },
+    {
+      "bytes": 31127,
+      "path": "src/galapagos/features/ohlcv_aggtrades_5y_feature_store_v9_37.py"
+    },
+    {
+      "bytes": 25806,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_37.json"
+    },
+    {
+      "bytes": 23685,
+      "path": "reports/data/ohlcv_5y_extension_correction_v9_34_1.json"
+    },
+    {
+      "bytes": 22709,
+      "path": "reports/data/ohlcv_from_aggtrades_5y_validation_v9_36.json"
+    },
+    {
+      "bytes": 21668,
+      "path": "reports/data/ohlcv_5y_extension_v9_34.json"
+    },
+    {
+      "bytes": 20651,
+      "path": "reports/data/aggtrades_5y_full_coverage_validation_v9_32.json"
+    },
+    {
+      "bytes": 11478,
+      "path": "scripts/release_audit_lite_zip_v9_37.py"
+    },
+    {
+      "bytes": 11417,
+      "path": "scripts/audit_audit_lite_zip_v9_37.py"
+    },
+    {
+      "bytes": 11201,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_33.json"
+    },
+    {
+      "bytes": 10262,
+      "path": "reports/data/ohlcv_from_aggtrades_5y_v9_35.json"
+    },
+    {
+      "bytes": 7251,
+      "path": "src/galapagos/features/ohlcv_aggtrades_5y_feature_store_v9_37_validation.py"
+    },
+    {
+      "bytes": 6973,
+      "path": "scripts/smoke_audit_lite_zip_v9_37.py"
+    },
+    {
+      "bytes": 5808,
+      "path": "src/galapagos/data/ohlcv_from_aggtrades_5y_v9_35_validation.py"
+    },
+    {
+      "bytes": 5233,
+      "path": "tests/validation/test_ohlcv_aggtrades_5y_feature_store_v9_37_validator.py"
+    },
+    {
+      "bytes": 4377,
+      "path": "src/galapagos/features/ohlcv_aggtrades_5y_feature_store_v9_37_schemas.py"
+    },
+    {
+      "bytes": 4053,
+      "path": "tests/features/test_ohlcv_aggtrades_5y_feature_store_v9_37.py"
+    },
+    {
+      "bytes": 3828,
+      "path": "src/galapagos/data/public_market/sources/binance_archive.py"
+    }
+  ],
+  "sidecars_created": false,
+  "version": "V9.37",
+  "zip_bytes_estimate": 97356,
+  "zip_bytes_is_authoritative": false,
+  "zip_fingerprints_created": false,
+  "zip_name": "projet-galapagos-v9.37-audit-lite.zip"
+}
