@@ -1,13 +1,12 @@
-# Synthese courante - V9.38
+# Synthese courante - V9.39
 
-- Derniere version validee : `V9.37`.
-- Candidate : `V9.38`.
+- Derniere version validee : `V9.38`.
+- Candidate : `V9.39`.
 - Statut : `pending_external_audit`.
-- Direction : `ohlcv_aggtrades_5y_feature_store_validation`.
-- Decision V9.38 : `ohlcv_aggtrades_5y_feature_store_validated_with_non_blocking_warnings`.
-- Couverture : `target_5y_feature_window_complete`.
-- Qualite : `PASS`.
-- Leakage guard : `PASS`.
-- Recommandation : V9.39 - OHLCV + AggTrades 5Y Dataset.
-- Aucun label, dataset supervise, ML, walk-forward, backtest, strategie, signal actionnable ou ordre.
+- Direction : `ohlcv_aggtrades_5y_dataset`.
+- Decision V9.39 : `ohlcv_aggtrades_5y_dataset_blocked_by_missing_labels`.
+- Dataset cree : `False`.
+- Label readiness : `MISSING_5Y_COMPATIBLE_LABELS`.
+- Recommandation : V9.40 - OHLCV + AggTrades 5Y Label Factory.
+- Aucun ML, walk-forward, backtest, strategie, signal actionnable ou ordre.
 - Aucun reseau, telechargement, suppression destructive, sidecar ou empreinte ZIP.

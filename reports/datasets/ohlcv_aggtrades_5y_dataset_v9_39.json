@@ -1,0 +1,271 @@
+{
+  "backtest_executed": false,
+  "coverage_status": "feature_store_ready_labels_missing",
+  "created_at_utc": "2026-05-30T20:33:20Z",
+  "dataset_created": false,
+  "dataset_design": {
+    "dataset_creation_policy": "create_only_when_5y_compatible_labels_exist",
+    "dataset_schema_version": "not_materialized_missing_5y_labels",
+    "split_policy": {
+      "purge_embargo_group": "none_v9_39_preview",
+      "shuffle": false,
+      "test_ratio": 0.2,
+      "train_ratio": 0.6,
+      "validation_ratio": 0.2,
+      "walk_forward_group": "calendar_month"
+    },
+    "target_name": null
+  },
+  "dataset_paths": {},
+  "decision": "ohlcv_aggtrades_5y_dataset_blocked_by_missing_labels",
+  "direction": "ohlcv_aggtrades_5y_dataset",
+  "feature_store_source": {
+    "expected_rows": {
+      "15m": 175392,
+      "1h": 43848,
+      "1m": 2630880,
+      "5m": 526176
+    },
+    "feature_columns_count": 41,
+    "readiness": {
+      "coverage_status": "target_5y_feature_window_complete",
+      "errors": [],
+      "feature_available_ts_lte_decision_ts": true,
+      "leakage_guard_status": "PASS",
+      "quality_status": "PASS",
+      "ready": true,
+      "row_counts": {
+        "15m": 175392,
+        "1h": 43848,
+        "1m": 2630880,
+        "5m": 526176
+      },
+      "schema_status": "PASS"
+    },
+    "source_feature_store_version": "V9.37",
+    "source_feature_validation_version": "V9.38"
+  },
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "forbidden_column_scan": {
+    "forbidden_columns": [],
+    "scope": "planned_schema_and_report_only",
+    "status": "PASS"
+  },
+  "ingestion_executed": false,
+  "label_distribution": {},
+  "label_readiness": {
+    "candidates": [
+      {
+        "available": true,
+        "compatible_timeframes": [
+          "15m",
+          "1h",
+          "1m",
+          "5m"
+        ],
+        "compatible_with_5y_window": false,
+        "coverage_end": "2026-05-23",
+        "coverage_start": "2023-03-25",
+        "known_warnings": [
+          "window mismatch: 2023-03-25 -> 2026-05-23"
+        ],
+        "label_available_ts_gt_decision_ts": true,
+        "label_available_ts_present": true,
+        "label_design_status": "not_5y_compatible",
+        "label_name": "max_history_v5_2",
+        "label_schema_known": true,
+        "path": "reports/labels/max_history_label_factory_v5_2.json",
+        "quality_status": "PASS",
+        "source_version": "V5.2",
+        "target_name": null
+      },
+      {
+        "available": true,
+        "compatible_timeframes": [
+          "15m",
+          "1h",
+          "1m",
+          "5m"
+        ],
+        "compatible_with_5y_window": false,
+        "coverage_end": "2024-03-24",
+        "coverage_start": "2023-03-25",
+        "known_warnings": [
+          "window mismatch: 2023-03-25 -> 2024-03-24",
+          "label design historique avec faiblesses scientifiques documentees; diagnostic only, pas une strategie ni un signal"
+        ],
+        "label_available_ts_gt_decision_ts": true,
+        "label_available_ts_present": false,
+        "label_design_status": "not_5y_compatible",
+        "label_name": "volnorm_v9_6",
+        "label_schema_known": false,
+        "path": "reports/labels/refined_volatility_normalized_labels_v9_6.json",
+        "quality_status": "PASS",
+        "source_version": "V9.6",
+        "target_name": "up_down_flat_volnorm_h1"
+      },
+      {
+        "available": true,
+        "compatible_timeframes": [
+          "15m",
+          "1h",
+          "1m",
+          "5m"
+        ],
+        "compatible_with_5y_window": false,
+        "coverage_end": "2024-03-24",
+        "coverage_start": "2023-03-25",
+        "known_warnings": [
+          "window mismatch: 2023-03-25 -> 2024-03-24",
+          "label design historique avec faiblesses scientifiques documentees; diagnostic only, pas une strategie ni un signal",
+          "design requires review"
+        ],
+        "label_available_ts_gt_decision_ts": true,
+        "label_available_ts_present": false,
+        "label_design_status": "not_5y_compatible",
+        "label_name": "horizon_event_v9_12",
+        "label_schema_known": false,
+        "path": "reports/labels/horizon_event_label_redesign_v9_12.json",
+        "quality_status": "PASS",
+        "source_version": "V9.12",
+        "target_name": "up_down_flat_volnorm_h4"
+      },
+      {
+        "available": true,
+        "compatible_timeframes": [
+          "15m",
+          "1h",
+          "1m",
+          "5m"
+        ],
+        "compatible_with_5y_window": false,
+        "coverage_end": "2024-03-24",
+        "coverage_start": "2023-03-25",
+        "known_warnings": [
+          "window mismatch: 2023-03-25 -> 2024-03-24",
+          "label design historique avec faiblesses scientifiques documentees; diagnostic only, pas une strategie ni un signal"
+        ],
+        "label_available_ts_gt_decision_ts": true,
+        "label_available_ts_present": true,
+        "label_design_status": "not_5y_compatible",
+        "label_name": "h4_dataset_v9_13",
+        "label_schema_known": true,
+        "path": "reports/datasets/h4_label_candidate_dataset_v9_13.json",
+        "quality_status": "PASS",
+        "source_version": "V9.13",
+        "target_name": "up_down_flat_volnorm_h4"
+      },
+      {
+        "available": true,
+        "compatible_timeframes": [],
+        "compatible_with_5y_window": false,
+        "coverage_end": "2024-03-24",
+        "coverage_start": "2023-03-25",
+        "known_warnings": [
+          "window mismatch: 2023-03-25 -> 2024-03-24",
+          "label design historique avec faiblesses scientifiques documentees; diagnostic only, pas une strategie ni un signal"
+        ],
+        "label_available_ts_gt_decision_ts": true,
+        "label_available_ts_present": false,
+        "label_design_status": "not_5y_compatible",
+        "label_name": "v9_11_failure_analysis",
+        "label_schema_known": false,
+        "path": "reports/research_decisions/label_failure_analysis_v9_11.json",
+        "quality_status": "PASS",
+        "source_version": "V9.11",
+        "target_name": null
+      }
+    ],
+    "compatible_label_count": 0,
+    "missing_reason": "Aucun rapport ou parquet label local ne couvre strictement 2021-05-05 -> 2026-05-05 sur tous les timeframes requis.",
+    "selected_label": null,
+    "status": "MISSING_5Y_COMPATIBLE_LABELS"
+  },
+  "labels_created": false,
+  "leakage_guard": {
+    "feature_available_ts_lte_decision_ts": true,
+    "label_available_ts_gt_decision_ts": null,
+    "no_future_leak": true,
+    "reason": "dataset_blocked_before_join because no compatible 5Y labels were available",
+    "status": "NOT_APPLICABLE_DATASET_NOT_CREATED"
+  },
+  "limitations": [
+    "V9.39 ne cree pas de dataset Parquet lorsque les labels 5Y compatibles manquent.",
+    "Les labels historiques V9.6/V9.12/V9.13 peuvent servir a des diagnostics, mais ne couvrent pas la fenetre 5Y complete.",
+    "Aucun ML, walk-forward, backtest, strategie, signal ou ordre n'est execute."
+  ],
+  "ml_executed": false,
+  "monthly_distribution": {},
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.40 - OHLCV + AggTrades 5Y Label Factory",
+  "null_summary": {},
+  "quality_status": "BLOCKED",
+  "row_counts": {
+    "15m": 0,
+    "1h": 0,
+    "1m": 0,
+    "5m": 0
+  },
+  "runtime_seconds": 0.006,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_version": "V9.38",
+  "split_distribution": {},
+  "status": "PASS",
+  "target_name": null,
+  "target_window": {
+    "days_expected": 1827,
+    "end": "2026-05-05",
+    "start": "2021-05-05"
+  },
+  "timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "version": "V9.39",
+  "walk_forward_executed": false,
+  "warnings": [
+    "Dataset non cree car aucun label 5Y compatible n'est disponible localement.",
+    "max_history_v5_2: window mismatch: 2023-03-25 -> 2026-05-23",
+    "volnorm_v9_6: window mismatch: 2023-03-25 -> 2024-03-24",
+    "volnorm_v9_6: label design historique avec faiblesses scientifiques documentees; diagnostic only, pas une strategie ni un signal",
+    "horizon_event_v9_12: window mismatch: 2023-03-25 -> 2024-03-24",
+    "horizon_event_v9_12: label design historique avec faiblesses scientifiques documentees; diagnostic only, pas une strategie ni un signal",
+    "horizon_event_v9_12: design requires review",
+    "h4_dataset_v9_13: window mismatch: 2023-03-25 -> 2024-03-24",
+    "h4_dataset_v9_13: label design historique avec faiblesses scientifiques documentees; diagnostic only, pas une strategie ni un signal",
+    "v9_11_failure_analysis: window mismatch: 2023-03-25 -> 2024-03-24",
+    "v9_11_failure_analysis: label design historique avec faiblesses scientifiques documentees; diagnostic only, pas une strategie ni un signal"
+  ]
+}
