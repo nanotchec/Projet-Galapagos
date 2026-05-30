@@ -1,0 +1,92 @@
+{
+  "created_at_utc": "2026-05-30T21:47:11Z",
+  "files_count": 47,
+  "largest_files": [
+    {
+      "bytes": 338230,
+      "path": "reports/labels/ohlcv_aggtrades_5y_label_factory_v9_40.json"
+    },
+    {
+      "bytes": 215114,
+      "path": "reports/datasets/ohlcv_aggtrades_5y_dataset_validation_v9_42.json"
+    },
+    {
+      "bytes": 102748,
+      "path": "reports/datasets/ohlcv_aggtrades_5y_dataset_v9_41.json"
+    },
+    {
+      "bytes": 79327,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_validation_v9_38.json"
+    },
+    {
+      "bytes": 62656,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    {
+      "bytes": 31340,
+      "path": "src/galapagos/datasets/ohlcv_aggtrades_5y_dataset_validation_v9_42.py"
+    },
+    {
+      "bytes": 25806,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_37.json"
+    },
+    {
+      "bytes": 12495,
+      "path": "data/audit_samples/v9_42/ohlcv_aggtrades_5y_dataset/timeframe=15m/dataset_sample.parquet"
+    },
+    {
+      "bytes": 12420,
+      "path": "data/audit_samples/v9_42/ohlcv_aggtrades_5y_dataset/timeframe=1h/dataset_sample.parquet"
+    },
+    {
+      "bytes": 12373,
+      "path": "data/audit_samples/v9_42/ohlcv_aggtrades_5y_dataset/timeframe=5m/dataset_sample.parquet"
+    },
+    {
+      "bytes": 12256,
+      "path": "data/audit_samples/v9_42/ohlcv_aggtrades_5y_dataset/timeframe=1m/dataset_sample.parquet"
+    },
+    {
+      "bytes": 10764,
+      "path": "scripts/audit_audit_lite_zip_v9_42.py"
+    },
+    {
+      "bytes": 10711,
+      "path": "scripts/release_audit_lite_zip_v9_42.py"
+    },
+    {
+      "bytes": 8203,
+      "path": "scripts/smoke_audit_lite_zip_v9_42.py"
+    },
+    {
+      "bytes": 6818,
+      "path": "src/galapagos/datasets/ohlcv_aggtrades_5y_dataset_v9_41_schemas.py"
+    },
+    {
+      "bytes": 5472,
+      "path": "src/galapagos/datasets/ohlcv_aggtrades_5y_dataset_validation_v9_42_validation.py"
+    },
+    {
+      "bytes": 4018,
+      "path": "tests/validation/test_ohlcv_aggtrades_5y_dataset_validation_v9_42_validator.py"
+    },
+    {
+      "bytes": 3762,
+      "path": "reports/labels/ohlcv_aggtrades_5y_label_distribution_v9_40.json"
+    },
+    {
+      "bytes": 3168,
+      "path": "reports/audit_lite/v9_42_artifact_inventory.json"
+    },
+    {
+      "bytes": 3046,
+      "path": "reports/manifests/ohlcv_aggtrades_5y_dataset_v9_41_manifest.json"
+    }
+  ],
+  "sidecars_created": false,
+  "version": "V9.42",
+  "zip_bytes_estimate": 162661,
+  "zip_bytes_is_authoritative": false,
+  "zip_fingerprints_created": false,
+  "zip_name": "projet-galapagos-v9.42-audit-lite.zip"
+}

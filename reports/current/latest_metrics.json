@@ -2,21 +2,13 @@
   "api_key_used": false,
   "backtest_executed": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.41",
+  "candidate_version": "V9.42",
   "coverage_status": "target_5y_dataset_window_complete",
-  "dataset_created": true,
-  "direction": "ohlcv_aggtrades_5y_dataset",
+  "dataset_created": false,
+  "direction": "ohlcv_aggtrades_5y_dataset_validation",
   "exchange_auth_used": false,
-  "forbidden_column_scan_status": "PASS",
   "ingestion_executed": false,
-  "invalid_row_counts": {
-    "15m": 64,
-    "1h": 61,
-    "1m": 485,
-    "5m": 72
-  },
-  "labels_created": false,
-  "last_validated_version": "V9.40",
+  "last_validated_version": "V9.41",
   "leakage_guard_status": "PASS",
   "ml_executed": false,
   "network_used": false,
@@ -36,22 +28,11 @@
   "no_zip_fingerprints": true,
   "private_endpoint_used": false,
   "quality_status": "PASS",
-  "recommended_next_step": "V9.42 - OHLCV + AggTrades 5Y Dataset Validation",
-  "row_counts": {
-    "15m": 175392,
-    "1h": 43848,
-    "1m": 2630880,
-    "5m": 526176
-  },
-  "source_version": "V9.40",
+  "recommended_next_step": "V9.43 - OHLCV + AggTrades 5Y ML Offline",
+  "schema_status": "PASS",
+  "source_version": "V9.41",
   "target_name": "up_down_flat_volnorm_h1_5y",
-  "v9_41_decision": "ohlcv_aggtrades_5y_dataset_created",
-  "valid_row_counts": {
-    "15m": 175328,
-    "1h": 43787,
-    "1m": 2630395,
-    "5m": 526104
-  },
+  "v9_42_decision": "ohlcv_aggtrades_5y_dataset_validated",
   "walk_forward_executed": false,
   "websocket_live_used": false
 }
