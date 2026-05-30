@@ -1,0 +1,69 @@
+{
+  "commands": [
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "summary": "5649 tests collected in 2.25s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_ohlcv_5y_extension_v9_34.py",
+      "returncode": 0,
+      "summary": "5 passed in 0.31s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_ohlcv_5y_extension_v9_34_validator.py",
+      "returncode": 0,
+      "summary": "5 passed in 0.26s"
+    },
+    {
+      "command": "python scripts/run_ohlcv_5y_extension_v9_34.py",
+      "returncode": 1,
+      "summary": "decision=ohlcv_5y_extension_failed_quality; failed_day=2021-08-13; timeframe=1m; rows=1170 expected=1440; gap_count=1; days_normalized=39; days_skipped_existing=61"
+    },
+    {
+      "command": "python scripts/validate_ohlcv_5y_extension_v9_34.py",
+      "returncode": 0,
+      "summary": "PASS; decision=ohlcv_5y_extension_failed_quality; errors=[]"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_34.py",
+      "returncode": 0,
+      "summary": "PASS; included_files=47; zip_bytes_estimate=146014"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_34.py --zip projet-galapagos-v9.34-audit-lite.zip",
+      "returncode": 1,
+      "summary": "Initial audit failed because command_results did not yet include release command; fixed and rerun."
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_ohlcv_5y_extension_v9_34.py tests/validation/test_ohlcv_5y_extension_v9_34_validator.py",
+      "returncode": 0,
+      "summary": "10 passed in 0.32s after audit-lite dependency fix"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_34.py --zip projet-galapagos-v9.34-audit-lite.zip",
+      "returncode": 1,
+      "summary": "Initial smoke failed because audit-lite ZIP missed imported OHLCV helper dependencies; fixed and rerun."
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_34.py",
+      "returncode": 0,
+      "summary": "PASS; included_files=50; zip_bytes_estimate=151126 after dependency fix"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_34.py --zip projet-galapagos-v9.34-audit-lite.zip",
+      "returncode": 0,
+      "summary": "PASS; errors=[]"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_34.py --zip projet-galapagos-v9.34-audit-lite.zip",
+      "returncode": 0,
+      "summary": "PASS; errors=[]"
+    }
+  ],
+  "created_at_utc": "2026-05-30T17:48:42Z",
+  "sidecars_created": false,
+  "status": "PASS",
+  "version": "V9.34",
+  "zip_fingerprints_created": false
+}

@@ -1,0 +1,20 @@
+{
+  "days_attempted": 101,
+  "days_complete": 1238,
+  "days_downloaded": 0,
+  "days_failed": 1,
+  "days_missing": 589,
+  "days_normalized": 39,
+  "days_quarantined": 0,
+  "days_skipped_existing": 61,
+  "missing_window_end": "2023-03-24",
+  "missing_window_start": "2021-05-05",
+  "quality_status": "INCOMPLETE",
+  "raw_bytes_new": 0,
+  "rows_new": 56160,
+  "silver_bytes_new": 6593591,
+  "target_window_end": "2026-05-05",
+  "target_window_start": "2021-05-05",
+  "timeframe": "1m",
+  "version": "V9.34"
+}
