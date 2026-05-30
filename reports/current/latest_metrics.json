@@ -2,20 +2,27 @@
   "api_key_used": false,
   "backtest_executed": false,
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.40",
-  "coverage_status": "target_5y_label_window_complete",
-  "dataset_created": false,
-  "direction": "ohlcv_aggtrades_5y_label_factory",
+  "candidate_version": "V9.41",
+  "coverage_status": "target_5y_dataset_window_complete",
+  "dataset_created": true,
+  "direction": "ohlcv_aggtrades_5y_dataset",
   "exchange_auth_used": false,
-  "labels_created": true,
-  "last_validated_version": "V9.39",
+  "forbidden_column_scan_status": "PASS",
+  "ingestion_executed": false,
+  "invalid_row_counts": {
+    "15m": 64,
+    "1h": 61,
+    "1m": 485,
+    "5m": 72
+  },
+  "labels_created": false,
+  "last_validated_version": "V9.40",
   "leakage_guard_status": "PASS",
   "ml_executed": false,
   "network_used": false,
   "new_data_downloaded": false,
   "no_actionable_signal": true,
   "no_backtest": true,
-  "no_dataset_supervised": true,
   "no_destructive_cleanup": true,
   "no_ml": true,
   "no_new_data_download": true,
@@ -28,38 +35,22 @@
   "no_walk_forward": true,
   "no_zip_fingerprints": true,
   "private_endpoint_used": false,
-  "quality_status": "PASS_WITH_WARNINGS",
-  "recommended_next_step": "V9.41 - OHLCV + AggTrades 5Y Dataset",
+  "quality_status": "PASS",
+  "recommended_next_step": "V9.42 - OHLCV + AggTrades 5Y Dataset Validation",
   "row_counts": {
     "15m": 175392,
     "1h": 43848,
     "1m": 2630880,
     "5m": 526176
   },
-  "selected_primary_label": "up_down_flat_volnorm_h1_5y",
-  "source_version": "V9.39",
-  "v9_40_decision": "ohlcv_aggtrades_5y_labels_created_with_warnings",
-  "valid_label_counts": {
-    "15m": {
-      "binary_directional_volnorm_h4_5y": 175316,
-      "up_down_flat_volnorm_h1_5y": 175328,
-      "up_down_flat_volnorm_h4_5y": 175316
-    },
-    "1h": {
-      "binary_directional_volnorm_h4_5y": 43784,
-      "up_down_flat_volnorm_h1_5y": 43787,
-      "up_down_flat_volnorm_h4_5y": 43784
-    },
-    "1m": {
-      "binary_directional_volnorm_h4_5y": 2630215,
-      "up_down_flat_volnorm_h1_5y": 2630395,
-      "up_down_flat_volnorm_h4_5y": 2630215
-    },
-    "5m": {
-      "binary_directional_volnorm_h4_5y": 526068,
-      "up_down_flat_volnorm_h1_5y": 526104,
-      "up_down_flat_volnorm_h4_5y": 526068
-    }
+  "source_version": "V9.40",
+  "target_name": "up_down_flat_volnorm_h1_5y",
+  "v9_41_decision": "ohlcv_aggtrades_5y_dataset_created",
+  "valid_row_counts": {
+    "15m": 175328,
+    "1h": 43787,
+    "1m": 2630395,
+    "5m": 526104
   },
   "walk_forward_executed": false,
   "websocket_live_used": false
