@@ -1,0 +1,92 @@
+{
+  "created_at_utc": "2026-05-30T16:53:38Z",
+  "files_count": 65,
+  "largest_files": [
+    {
+      "bytes": 128377,
+      "path": "reports/data/aggtrades_5y_extension_batch11_v9_31.json"
+    },
+    {
+      "bytes": 128300,
+      "path": "reports/data/aggtrades_5y_extension_batch03_v9_31.json"
+    },
+    {
+      "bytes": 128293,
+      "path": "reports/data/aggtrades_5y_extension_batch02_v9_31.json"
+    },
+    {
+      "bytes": 128293,
+      "path": "reports/data/aggtrades_5y_extension_batch08_v9_31.json"
+    },
+    {
+      "bytes": 128281,
+      "path": "reports/data/aggtrades_5y_extension_batch10_v9_31.json"
+    },
+    {
+      "bytes": 128246,
+      "path": "reports/data/aggtrades_5y_extension_batch09_v9_31.json"
+    },
+    {
+      "bytes": 128183,
+      "path": "reports/data/aggtrades_5y_extension_batch04_v9_31.json"
+    },
+    {
+      "bytes": 128145,
+      "path": "reports/data/aggtrades_5y_extension_batch06_v9_31.json"
+    },
+    {
+      "bytes": 128145,
+      "path": "reports/data/aggtrades_5y_extension_batch07_v9_31.json"
+    },
+    {
+      "bytes": 128029,
+      "path": "reports/data/aggtrades_5y_extension_batch05_v9_31.json"
+    },
+    {
+      "bytes": 127922,
+      "path": "reports/data/aggtrades_5y_extension_batch12_v9_31.json"
+    },
+    {
+      "bytes": 127795,
+      "path": "reports/data/aggtrades_5y_extension_batch18_v9_31.json"
+    },
+    {
+      "bytes": 127732,
+      "path": "reports/data/aggtrades_5y_extension_batch01_v9_31.json"
+    },
+    {
+      "bytes": 127516,
+      "path": "reports/data/aggtrades_5y_extension_batch13_v9_31.json"
+    },
+    {
+      "bytes": 127501,
+      "path": "reports/data/aggtrades_5y_extension_batch17_v9_31.json"
+    },
+    {
+      "bytes": 127482,
+      "path": "reports/data/aggtrades_5y_extension_batch16_v9_31.json"
+    },
+    {
+      "bytes": 127385,
+      "path": "reports/data/aggtrades_5y_extension_batch14_v9_31.json"
+    },
+    {
+      "bytes": 127378,
+      "path": "reports/data/aggtrades_5y_extension_batch15_v9_31.json"
+    },
+    {
+      "bytes": 61189,
+      "path": "src/galapagos/data/aggtrades_post_v9_completion_campaign_v9_25.py"
+    },
+    {
+      "bytes": 60134,
+      "path": "reports/PROJECT_STATE.json"
+    }
+  ],
+  "sidecars_created": false,
+  "version": "V9.32",
+  "zip_bytes_estimate": 313020,
+  "zip_bytes_is_authoritative": false,
+  "zip_fingerprints_created": false,
+  "zip_name": "projet-galapagos-v9.32-audit-lite.zip"
+}

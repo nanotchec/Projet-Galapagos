@@ -1,0 +1,797 @@
+{
+  "aggregate_trade_id_gap_warnings": [],
+  "available_ts_violation_count": 0,
+  "backtest_executed": false,
+  "blockers": [],
+  "calendar_validation": {
+    "complete_calendar_coverage": true,
+    "days_complete": 1827,
+    "days_expected_5y": 1827,
+    "days_failed": 0,
+    "days_missing": 0,
+    "days_missing_raw": 0,
+    "days_missing_silver": 0,
+    "days_partial": 0,
+    "days_quarantined": 19,
+    "days_with_raw": 1827,
+    "days_with_silver": 1827,
+    "failed_dates_sample": {
+      "first": [],
+      "last": []
+    },
+    "first_missing_or_failed_day": null,
+    "last_complete_day": "2026-05-05",
+    "local_contiguous_clean_coverage_end": "2026-05-05",
+    "local_contiguous_clean_coverage_start": "2021-05-05",
+    "local_file_coverage_end": "2026-05-05",
+    "local_file_coverage_start": "2021-05-05",
+    "missing_raw_dates_sample": {
+      "first": [],
+      "last": []
+    },
+    "missing_silver_dates_sample": {
+      "first": [],
+      "last": []
+    },
+    "target_5y_window_end": "2026-05-05",
+    "target_5y_window_start": "2021-05-05"
+  },
+  "complete_calendar_coverage": true,
+  "complete_collection_reached": true,
+  "coverage_status": "target_5y_window_validated",
+  "created_at_utc": "2026-05-30T16:25:11Z",
+  "dataset_created": false,
+  "days_complete": 1827,
+  "days_downloaded_canonical": 670,
+  "days_expected_5y": 1827,
+  "days_failed": 0,
+  "days_missing": 0,
+  "days_normalized_canonical": 1036,
+  "days_partial": 0,
+  "days_quarantined": 19,
+  "days_skipped_existing_canonical": 60,
+  "days_validated_existing_canonical": 60,
+  "decision": "aggtrades_5y_full_coverage_validated_with_non_blocking_warnings",
+  "direction": "aggtrades_5y_full_coverage_validation",
+  "features_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "future_full_coverage_complete": true,
+  "global_duplicate_count": 0,
+  "global_invalid_rows": 0,
+  "ingestion_executed": false,
+  "inputs_used": {
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    },
+    "v9_28_repair": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_bad_day_repair_v9_28.json"
+    },
+    "v9_29_validation": {
+      "available": true,
+      "path": "reports/data/aggtrades_post_v9_full_coverage_validation_v9_29.json"
+    },
+    "v9_31_manifest": {
+      "available": true,
+      "path": "reports/manifests/aggtrades_5y_extension_collection_v9_31_manifest.json"
+    },
+    "v9_31_markdown": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_collection_v9_31.md"
+    },
+    "v9_31_report": {
+      "available": true,
+      "path": "reports/data/aggtrades_5y_extension_collection_v9_31.json"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.32 valide la couverture aggTrades 5Y localement en lecture seule.",
+    "Aucun telechargement, aucune ingestion et aucune reparation de donnees ne sont executes.",
+    "Les compteurs V9.31 ambigus sont reconciles a partir des rapports batch et des fichiers locaux valides."
+  ],
+  "local_contiguous_clean_coverage_end": "2026-05-05",
+  "local_contiguous_clean_coverage_start": "2021-05-05",
+  "local_file_coverage_end": "2026-05-05",
+  "local_file_coverage_start": "2021-05-05",
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.33 - OHLCV + AggTrades 5Y Feature Store",
+  "non_positive_price_count": 0,
+  "non_positive_quantity_count": 0,
+  "partition_mismatch_count": 0,
+  "quality_status": "PASS",
+  "quality_validation": {
+    "aggregate_trade_id_gap_warnings": [],
+    "available_ts_violation_count": 0,
+    "global_duplicate_count": 0,
+    "global_invalid_rows": 0,
+    "max_aggregate_trade_id": 3951368027,
+    "max_event_ts": "2026-05-05T23:59:59.996222Z",
+    "min_aggregate_trade_id": 719924035,
+    "min_event_ts": "2021-05-05T00:00:00.180000Z",
+    "non_positive_price_count": 0,
+    "non_positive_quantity_count": 0,
+    "partition_mismatch_count": 0,
+    "quality_status": "PASS",
+    "raw_bytes_total": 45970409088,
+    "raw_read_errors": [],
+    "schema_columns": [
+      "source",
+      "venue",
+      "market_type",
+      "symbol",
+      "aggregate_trade_id",
+      "price",
+      "quantity",
+      "first_trade_id",
+      "last_trade_id",
+      "event_ts",
+      "trade_ts",
+      "is_buyer_maker",
+      "ingest_ts",
+      "available_ts",
+      "source_file",
+      "source_checksum",
+      "row_valid",
+      "invalid_reason"
+    ],
+    "schema_mismatch_count": 0,
+    "silver_bytes_total": 84887087950,
+    "silver_read_errors": [],
+    "timestamp_gap_warnings": [],
+    "total_rows": 3231443993
+  },
+  "quarantine_active_count": 0,
+  "quarantine_blocking": false,
+  "quarantine_reconciliation": {
+    "active_quarantine_dates": [],
+    "quarantine_active_count": 0,
+    "quarantine_blocking": false,
+    "quarantine_dates": [
+      "2025-01-01",
+      "2025-01-02",
+      "2025-01-03",
+      "2025-01-04",
+      "2025-01-05",
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-13",
+      "2025-01-14",
+      "2025-01-15",
+      "2025-01-16",
+      "2025-01-17",
+      "2025-01-18",
+      "2025-01-19"
+    ],
+    "quarantine_dates_overlap_complete_days": [
+      "2025-01-01",
+      "2025-01-02",
+      "2025-01-03",
+      "2025-01-04",
+      "2025-01-05",
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-13",
+      "2025-01-14",
+      "2025-01-15",
+      "2025-01-16",
+      "2025-01-17",
+      "2025-01-18",
+      "2025-01-19"
+    ],
+    "quarantine_notes": "Quarantine stale_non_blocking: les jours correspondants sont complets et valides.",
+    "quarantine_stale_count": 19,
+    "stale_quarantine_dates": [
+      "2025-01-01",
+      "2025-01-02",
+      "2025-01-03",
+      "2025-01-04",
+      "2025-01-05",
+      "2025-01-06",
+      "2025-01-07",
+      "2025-01-08",
+      "2025-01-09",
+      "2025-01-10",
+      "2025-01-11",
+      "2025-01-12",
+      "2025-01-13",
+      "2025-01-14",
+      "2025-01-15",
+      "2025-01-16",
+      "2025-01-17",
+      "2025-01-18",
+      "2025-01-19"
+    ]
+  },
+  "quarantine_stale_count": 19,
+  "raw_bytes_cumulative_5y": 45970409088,
+  "raw_read_errors": [],
+  "reporting_inconsistency_blocking": false,
+  "reporting_inconsistency_detected": true,
+  "row_count_outliers": {
+    "median_rows_per_day": 1148460,
+    "method": "non_blocking_row_count_outlier_scan_threshold_0.2x_to_5x_median",
+    "outlier_count": 82,
+    "outliers": [
+      {
+        "date": "2022-07-19",
+        "rows": 5754162,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-08-10",
+        "rows": 5757075,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-08-11",
+        "rows": 6911852,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-08-15",
+        "rows": 6333762,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-08-17",
+        "rows": 5995469,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-08-19",
+        "rows": 7616207,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-08-26",
+        "rows": 6489829,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-06",
+        "rows": 6159164,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-09",
+        "rows": 6920253,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-12",
+        "rows": 6280777,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-13",
+        "rows": 7291599,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-15",
+        "rows": 6009981,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-19",
+        "rows": 6086585,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-21",
+        "rows": 6183324,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-27",
+        "rows": 7293837,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-09-28",
+        "rows": 6552176,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-10-13",
+        "rows": 6375726,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-10-25",
+        "rows": 6018468,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-10-26",
+        "rows": 7196206,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-10-27",
+        "rows": 6500248,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-02",
+        "rows": 6195416,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-04",
+        "rows": 7547342,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-07",
+        "rows": 6684141,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-08",
+        "rows": 12263706,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-09",
+        "rows": 11746397,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-10",
+        "rows": 11285880,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-11",
+        "rows": 8579803,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-14",
+        "rows": 7923202,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-15",
+        "rows": 6156012,
+        "severity": "warning"
+      },
+      {
+        "date": "2022-11-21",
+        "rows": 6271005,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-12",
+        "rows": 7268629,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-13",
+        "rows": 6642088,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-14",
+        "rows": 7379695,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-16",
+        "rows": 5766208,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-18",
+        "rows": 6417820,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-20",
+        "rows": 6082890,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-21",
+        "rows": 6428432,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-23",
+        "rows": 5984520,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-24",
+        "rows": 6109020,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-25",
+        "rows": 6668095,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-26",
+        "rows": 5905712,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-27",
+        "rows": 5883447,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-29",
+        "rows": 5918047,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-01-30",
+        "rows": 6537887,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-01",
+        "rows": 6476601,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-02",
+        "rows": 7523928,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-03",
+        "rows": 6508546,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-07",
+        "rows": 6871968,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-08",
+        "rows": 6391737,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-09",
+        "rows": 7984741,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-10",
+        "rows": 5835949,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-14",
+        "rows": 6185521,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-15",
+        "rows": 6854001,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-16",
+        "rows": 9249196,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-17",
+        "rows": 9147888,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-19",
+        "rows": 6367868,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-20",
+        "rows": 8302739,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-21",
+        "rows": 8911018,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-22",
+        "rows": 9325476,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-23",
+        "rows": 8932505,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-24",
+        "rows": 8207058,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-26",
+        "rows": 5840405,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-27",
+        "rows": 7887616,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-02-28",
+        "rows": 6908558,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-01",
+        "rows": 7658115,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-02",
+        "rows": 6276245,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-03",
+        "rows": 6904337,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-07",
+        "rows": 6373658,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-08",
+        "rows": 6761381,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-09",
+        "rows": 8565828,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-10",
+        "rows": 10240456,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-11",
+        "rows": 8868651,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-12",
+        "rows": 8152967,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-13",
+        "rows": 12578777,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-14",
+        "rows": 12898425,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-15",
+        "rows": 10858570,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-16",
+        "rows": 8982544,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-17",
+        "rows": 11329422,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-18",
+        "rows": 8715918,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-19",
+        "rows": 8431207,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-20",
+        "rows": 10470226,
+        "severity": "warning"
+      },
+      {
+        "date": "2023-03-21",
+        "rows": 10289688,
+        "severity": "warning"
+      }
+    ]
+  },
+  "runtime_seconds": 2886.616,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_data_deletion": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_ingestion_executed": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "schema_mismatch_count": 0,
+  "silver_bytes_cumulative_5y": 84887087950,
+  "silver_read_errors": [],
+  "source_version": "V9.31",
+  "status": "PASS",
+  "target_5y_window_end": "2026-05-05",
+  "target_5y_window_start": "2021-05-05",
+  "timestamp_gap_warnings": [],
+  "total_days_expected_5y": 1827,
+  "total_rows_cumulative_5y": 3231443993,
+  "v9_31_counter_reconciliation": {
+    "batches_with_downloaded_lower_than_normalized": [
+      {
+        "batch_end": "2023-04-24",
+        "batch_id": "V9.31_batch_12",
+        "batch_start": "2023-02-24",
+        "days_downloaded": 29,
+        "days_normalized": 60,
+        "explanation": "combinaison de nouveaux telechargements et de raw deja presents localement"
+      },
+      {
+        "batch_end": "2024-04-18",
+        "batch_id": "V9.31_batch_18",
+        "batch_start": "2024-02-19",
+        "days_downloaded": 25,
+        "days_normalized": 60,
+        "explanation": "combinaison de nouveaux telechargements et de raw deja presents localement"
+      }
+    ],
+    "batches_with_downloaded_zero_but_normalized_positive": [
+      {
+        "batch_end": "2023-06-23",
+        "batch_id": "V9.31_batch_13",
+        "batch_start": "2023-04-25",
+        "days_complete": 60,
+        "days_downloaded": 0,
+        "days_normalized": 60,
+        "explanation": "raw local deja present; normalisation/validation sans nouveau telechargement"
+      },
+      {
+        "batch_end": "2023-08-22",
+        "batch_id": "V9.31_batch_14",
+        "batch_start": "2023-06-24",
+        "days_complete": 60,
+        "days_downloaded": 0,
+        "days_normalized": 60,
+        "explanation": "raw local deja present; normalisation/validation sans nouveau telechargement"
+      },
+      {
+        "batch_end": "2023-10-21",
+        "batch_id": "V9.31_batch_15",
+        "batch_start": "2023-08-23",
+        "days_complete": 60,
+        "days_downloaded": 0,
+        "days_normalized": 60,
+        "explanation": "raw local deja present; normalisation/validation sans nouveau telechargement"
+      },
+      {
+        "batch_end": "2023-12-20",
+        "batch_id": "V9.31_batch_16",
+        "batch_start": "2023-10-22",
+        "days_complete": 60,
+        "days_downloaded": 0,
+        "days_normalized": 60,
+        "explanation": "raw local deja present; normalisation/validation sans nouveau telechargement"
+      },
+      {
+        "batch_end": "2024-02-18",
+        "batch_id": "V9.31_batch_17",
+        "batch_start": "2023-12-21",
+        "days_complete": 60,
+        "days_downloaded": 0,
+        "days_normalized": 60,
+        "explanation": "raw local deja present; normalisation/validation sans nouveau telechargement"
+      }
+    ],
+    "days_already_complete_before_canonical": 60,
+    "days_complete_canonical": 1096,
+    "days_complete_reported": 1096,
+    "days_downloaded_canonical": 670,
+    "days_downloaded_reported": 670,
+    "days_normalized_canonical": 1036,
+    "days_normalized_reported": 1036,
+    "days_skipped_existing_canonical": 60,
+    "days_skipped_existing_reported": 60,
+    "days_validated_existing_canonical": 60,
+    "extension_days_validated_from_local_files": 1096,
+    "reconciliation_notes": [
+      "Les compteurs V9.31 distinguent imparfaitement telechargement, normalisation depuis raw local et validation finale.",
+      "V9.32 retient l'etat canonique des fichiers raw/silver valides: tous les jours 5Y sont presents et complets.",
+      "L'ambiguite V9.31 est non bloquante car les fichiers locaux raw/silver sont lisibles et les controles qualite passent."
+    ],
+    "reporting_inconsistency_blocking": false,
+    "reporting_inconsistency_detected": true
+  },
+  "v9_32_decision": {
+    "confidence": "high",
+    "decision": "aggtrades_5y_full_coverage_validated_with_non_blocking_warnings",
+    "justification": "La couverture et la qualite 5Y sont validees; seules des alertes non bloquantes restent documentees.",
+    "next_recommendation": "V9.33 - OHLCV + AggTrades 5Y Feature Store",
+    "no_backtest": true,
+    "no_trading": true,
+    "no_walk_forward": true
+  },
+  "version": "V9.32",
+  "walk_forward_executed": false,
+  "warnings": [
+    "Des fichiers quarantine stale_non_blocking existent pour des jours complets et valides.",
+    "Des outliers de row count sont signales comme non bloquants.",
+    "Les compteurs V9.31 telechargement/normalisation/skipped sont ambigus mais non bloquants."
+  ]
+}
