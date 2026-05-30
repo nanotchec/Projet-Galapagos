@@ -106,7 +106,7 @@
   "campaign_end": "2026-05-05",
   "campaign_start": "2025-02-04",
   "candidate_status": "pending_external_audit",
-  "candidate_version": "V9.39",
+  "candidate_version": "V9.40",
   "causal_feature_store_v2_5_validated": true,
   "clean_label_factory_v2_6_2_validated": true,
   "collection_executed": false,
@@ -119,7 +119,7 @@
   "correction_version": "V5.4.1",
   "coverage_after_batch_end": "2024-12-07",
   "coverage_after_batch_start": "2024-10-09",
-  "coverage_status": "feature_store_ready_labels_missing",
+  "coverage_status": "target_5y_label_window_complete",
   "cumulative_known_coverage_end": "2024-12-07",
   "cumulative_known_coverage_start": "2024-05-05",
   "current_coverage_end": "2024-08-09",
@@ -189,7 +189,7 @@
   "days_skipped_existing_total": 36,
   "diagnostics_v4_0_modified_by_v4_0_1": false,
   "diagnostics_v4_0_modified_by_v4_0_2": false,
-  "direction": "ohlcv_aggtrades_5y_dataset",
+  "direction": "ohlcv_aggtrades_5y_label_factory",
   "disk_preflight": {
     "batch_size_days": 90,
     "campaign_resume_free_bytes_required": 161061273600,
@@ -505,7 +505,7 @@
   "label_schema_v4_4": "LABEL_COLUMNS_V4_4",
   "label_shuffle_no_clear_edge_cases": 21,
   "label_shuffle_no_clear_edge_cases_v9_4": 21,
-  "labels_created": false,
+  "labels_created": true,
   "labels_full_local_available": true,
   "labels_modified_by_v4_0_1": false,
   "labels_modified_by_v4_0_2": false,
@@ -526,7 +526,7 @@
   "labels_v7_8_created": false,
   "labels_v8_2_created": false,
   "labels_v8_3_created": false,
-  "last_validated_version": "V9.38",
+  "last_validated_version": "V9.39",
   "leakage_guard_status": "PASS",
   "local_contiguous_clean_coverage_end": "2026-05-05",
   "local_contiguous_clean_coverage_start": "2024-05-05",
@@ -1181,7 +1181,7 @@
   "public_trades_window_start_v7_1": "2023-03-25",
   "public_trades_window_start_v7_7": "2023-03-25",
   "public_trades_window_start_v8_2": "2023-03-25",
-  "quality_status": "BLOCKED",
+  "quality_status": "PASS_WITH_WARNINGS",
   "quarantine_active_count": 0,
   "quarantine_stale_count": 19,
   "raw_bytes_collected_total": 1454563943,
@@ -1193,7 +1193,7 @@
   "raw_zip_days_v5_0": 1156,
   "real_orders_possible": false,
   "recommended_candidate": "up_down_flat_volnorm_h4",
-  "recommended_next_step": "V9.40 - OHLCV + AggTrades 5Y Label Factory",
+  "recommended_next_step": "V9.41 - OHLCV + AggTrades 5Y Dataset",
   "repair_applied": true,
   "repair_quality_status": "PASS",
   "repair_status": "source_issue",
@@ -1258,10 +1258,10 @@
   "robust_edge_claimed_v4_0": false,
   "robust_edge_claimed_v4_7": false,
   "row_counts": {
-    "15m": 0,
-    "1h": 0,
-    "1m": 0,
-    "5m": 0
+    "15m": 175392,
+    "1h": 43848,
+    "1m": 2630880,
+    "5m": 526176
   },
   "rows_collected_total": 113642941,
   "runtime_seconds_total": 84.777,
@@ -1297,6 +1297,7 @@
   "selected_features_count": 18,
   "selected_features_count_v8_9": 18,
   "selected_label_candidate": 0.5,
+  "selected_primary_label": "up_down_flat_volnorm_h1_5y",
   "sidecars_created": false,
   "sidecars_enabled": false,
   "signal_created": false,
@@ -1340,7 +1341,7 @@
   "source_candidate_version": "V9.0_to_V9.3",
   "source_decision_version": "V9.4",
   "source_research_decision": "backtest_not_justified_refine_labels",
-  "source_version": "V9.38",
+  "source_version": "V9.39",
   "source_version_scope": "V9.0_to_V9.3",
   "splits_v4_5_created": true,
   "stop_reason": {
@@ -1659,7 +1660,30 @@
   "v9_37_decision": "ohlcv_aggtrades_5y_feature_store_created_with_warnings",
   "v9_38_decision": "ohlcv_aggtrades_5y_feature_store_validated_with_non_blocking_warnings",
   "v9_39_decision": "ohlcv_aggtrades_5y_dataset_blocked_by_missing_labels",
+  "v9_40_decision": "ohlcv_aggtrades_5y_labels_created_with_warnings",
   "v9_5_decision": "label_redesign_candidate_volatility_normalized",
+  "valid_label_counts": {
+    "15m": {
+      "binary_directional_volnorm_h4_5y": 175316,
+      "up_down_flat_volnorm_h1_5y": 175328,
+      "up_down_flat_volnorm_h4_5y": 175316
+    },
+    "1h": {
+      "binary_directional_volnorm_h4_5y": 43784,
+      "up_down_flat_volnorm_h1_5y": 43787,
+      "up_down_flat_volnorm_h4_5y": 43784
+    },
+    "1m": {
+      "binary_directional_volnorm_h4_5y": 2630215,
+      "up_down_flat_volnorm_h1_5y": 2630395,
+      "up_down_flat_volnorm_h4_5y": 2630215
+    },
+    "5m": {
+      "binary_directional_volnorm_h4_5y": 526068,
+      "up_down_flat_volnorm_h1_5y": 526104,
+      "up_down_flat_volnorm_h4_5y": 526068
+    }
+  },
   "validated_window_end": "2026-05-05",
   "validated_window_start": "2024-05-05",
   "walk_forward_decision_v9_9": "strict_walk_forward_completed_but_close_to_shuffled_labels",

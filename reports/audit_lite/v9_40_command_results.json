@@ -1,0 +1,58 @@
+{
+  "version": "V9.40",
+  "created_at_utc": "2026-05-30T20:53:13Z",
+  "commands": [
+    {
+      "command": "git branch --show-current",
+      "returncode": 0,
+      "result": "main"
+    },
+    {
+      "command": "git status --short --branch",
+      "returncode": 0,
+      "result": "## main...origin/main [ahead 9]"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "result": "5721 tests collected in 2.17s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/labels/test_ohlcv_aggtrades_5y_label_factory_v9_40.py",
+      "returncode": 0,
+      "result": "3 passed in 0.27s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_ohlcv_aggtrades_5y_label_factory_v9_40_validator.py",
+      "returncode": 0,
+      "result": "4 passed in 0.28s"
+    },
+    {
+      "command": "python scripts/run_ohlcv_aggtrades_5y_label_factory_v9_40.py",
+      "returncode": 0,
+      "result": "PASS; decision=ohlcv_aggtrades_5y_labels_created_with_warnings; labels_created=true; selected_primary_label=up_down_flat_volnorm_h1_5y; runtime_seconds=56.083"
+    },
+    {
+      "command": "python scripts/validate_ohlcv_aggtrades_5y_label_factory_v9_40.py",
+      "returncode": 0,
+      "result": "PASS; errors=[]"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_40.py",
+      "returncode": 0,
+      "result": "PASS; included_files=44"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_40.py --zip projet-galapagos-v9.40-audit-lite.zip",
+      "returncode": 0,
+      "result": "PASS; errors=[]"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_40.py --zip projet-galapagos-v9.40-audit-lite.zip",
+      "returncode": 0,
+      "result": "PASS; errors=[]; packaging_checks_passed=true"
+    }
+  ],
+  "sidecars_created": false,
+  "zip_fingerprints_created": false
+}

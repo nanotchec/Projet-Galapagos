@@ -1,12 +1,13 @@
-# Synthese courante - V9.39
+# Synthese courante - V9.40
 
-- Derniere version validee : `V9.38`.
-- Candidate : `V9.39`.
+- Derniere version validee : `V9.39`.
+- Candidate : `V9.40`.
 - Statut : `pending_external_audit`.
-- Direction : `ohlcv_aggtrades_5y_dataset`.
-- Decision V9.39 : `ohlcv_aggtrades_5y_dataset_blocked_by_missing_labels`.
-- Dataset cree : `False`.
-- Label readiness : `MISSING_5Y_COMPATIBLE_LABELS`.
-- Recommandation : V9.40 - OHLCV + AggTrades 5Y Label Factory.
+- Direction : `ohlcv_aggtrades_5y_label_factory`.
+- Decision V9.40 : `ohlcv_aggtrades_5y_labels_created_with_warnings`.
+- Labels crees : `True`.
+- Dataset supervise cree : `False`.
+- Label principal candidat : `up_down_flat_volnorm_h1_5y`.
+- Recommandation : V9.41 - OHLCV + AggTrades 5Y Dataset.
 - Aucun ML, walk-forward, backtest, strategie, signal actionnable ou ordre.
 - Aucun reseau, telechargement, suppression destructive, sidecar ou empreinte ZIP.
