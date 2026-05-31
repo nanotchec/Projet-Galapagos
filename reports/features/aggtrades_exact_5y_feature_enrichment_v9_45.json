@@ -1,0 +1,423 @@
+{
+  "backtest_executed": false,
+  "chunking_strategy": "read one daily silver parquet per worker; default bounded parallelism is 12 workers via GALAPAGOS_V9_45_WORKERS",
+  "coverage_status": "target_5y_exact_feature_window_complete",
+  "created_at_utc": "2026-05-31T10:21:05Z",
+  "dataset_created": false,
+  "decision": "aggtrades_exact_5y_feature_enrichment_created_with_warnings",
+  "direction": "aggtrades_exact_5y_feature_enrichment",
+  "disk_preflight": {
+    "chunking_strategy": "read one daily silver parquet per worker; default bounded parallelism is 12 workers via GALAPAGOS_V9_45_WORKERS",
+    "estimated_output_size_gib": 2.0,
+    "free_gib_data_mount": 60.692,
+    "free_gib_project_mount": 60.692,
+    "processing_strategy": "parallel_daily_partitioned_aggtrades_scan_then_timeframe_concat",
+    "runtime_warning": true,
+    "safe_to_run_exact_enrichment": true,
+    "silver_public_trades_size_gib": 79.057,
+    "storage_warning": true,
+    "v9_37_feature_store_size_gib": 1.009
+  },
+  "feature_columns": [
+    "agg_trade_count_exact",
+    "taker_buy_count_exact",
+    "taker_sell_count_exact",
+    "buyer_maker_true_count_exact",
+    "buyer_maker_false_count_exact",
+    "agg_trade_volume_exact",
+    "agg_trade_quote_volume_exact",
+    "taker_buy_base_volume_exact",
+    "taker_sell_base_volume_exact",
+    "taker_buy_quote_volume_exact",
+    "taker_sell_quote_volume_exact",
+    "taker_buy_sell_count_imbalance_exact",
+    "taker_buy_sell_volume_imbalance_exact",
+    "taker_buy_ratio_exact",
+    "taker_sell_ratio_exact",
+    "average_trade_size_exact",
+    "median_trade_size_exact",
+    "p75_trade_size_exact",
+    "p90_trade_size_exact",
+    "p95_trade_size_exact",
+    "p99_trade_size_exact",
+    "max_trade_size_exact",
+    "large_trade_count_p95_exact",
+    "large_trade_volume_p95_exact",
+    "large_trade_count_p99_exact",
+    "large_trade_volume_p99_exact",
+    "trade_size_bucket_small_count",
+    "trade_size_bucket_medium_count",
+    "trade_size_bucket_large_count",
+    "trade_size_bucket_whale_count",
+    "agg_trade_count_per_second_mean",
+    "agg_trade_count_per_second_max",
+    "max_trades_in_1s",
+    "max_volume_in_1s",
+    "burst_count_1s_p95",
+    "burst_volume_1s_p95",
+    "first_trade_ts",
+    "last_trade_ts",
+    "active_seconds_count",
+    "active_seconds_ratio",
+    "seconds_since_previous_trade_bucket_start",
+    "seconds_to_last_trade_bucket_end",
+    "no_trade_bucket",
+    "aggtrades_missing_flag",
+    "aggtrades_partial_bucket_flag",
+    "exact_feature_error_count",
+    "exact_feature_null_count",
+    "rolling_exact_trade_count_mean_5",
+    "rolling_exact_trade_count_mean_15",
+    "rolling_exact_trade_count_mean_60",
+    "rolling_exact_taker_imbalance_mean_5",
+    "rolling_exact_taker_imbalance_mean_15",
+    "rolling_exact_taker_imbalance_mean_60",
+    "rolling_large_trade_count_mean_5",
+    "rolling_large_trade_count_mean_15",
+    "rolling_large_trade_count_mean_60"
+  ],
+  "feature_columns_count": 56,
+  "feature_families": {
+    "burst_intensity": [
+      "agg_trade_count_per_second_mean",
+      "agg_trade_count_per_second_max",
+      "max_trades_in_1s",
+      "max_volume_in_1s",
+      "burst_count_1s_p95",
+      "burst_volume_1s_p95"
+    ],
+    "counts": [
+      "agg_trade_count_exact",
+      "taker_buy_count_exact",
+      "taker_sell_count_exact",
+      "buyer_maker_true_count_exact",
+      "buyer_maker_false_count_exact"
+    ],
+    "distribution_buckets": [
+      "trade_size_bucket_small_count",
+      "trade_size_bucket_medium_count",
+      "trade_size_bucket_large_count",
+      "trade_size_bucket_whale_count"
+    ],
+    "imbalances": [
+      "taker_buy_sell_count_imbalance_exact",
+      "taker_buy_sell_volume_imbalance_exact",
+      "taker_buy_ratio_exact",
+      "taker_sell_ratio_exact"
+    ],
+    "missingness_audit": [
+      "no_trade_bucket",
+      "aggtrades_missing_flag",
+      "aggtrades_partial_bucket_flag",
+      "exact_feature_error_count",
+      "exact_feature_null_count"
+    ],
+    "rolling_past_only": [
+      "rolling_exact_trade_count_mean_5",
+      "rolling_exact_trade_count_mean_15",
+      "rolling_exact_trade_count_mean_60",
+      "rolling_exact_taker_imbalance_mean_5",
+      "rolling_exact_taker_imbalance_mean_15",
+      "rolling_exact_taker_imbalance_mean_60",
+      "rolling_large_trade_count_mean_5",
+      "rolling_large_trade_count_mean_15",
+      "rolling_large_trade_count_mean_60"
+    ],
+    "timing": [
+      "first_trade_ts",
+      "last_trade_ts",
+      "active_seconds_count",
+      "active_seconds_ratio",
+      "seconds_since_previous_trade_bucket_start",
+      "seconds_to_last_trade_bucket_end"
+    ],
+    "trade_size": [
+      "average_trade_size_exact",
+      "median_trade_size_exact",
+      "p75_trade_size_exact",
+      "p90_trade_size_exact",
+      "p95_trade_size_exact",
+      "p99_trade_size_exact",
+      "max_trade_size_exact",
+      "large_trade_count_p95_exact",
+      "large_trade_volume_p95_exact",
+      "large_trade_count_p99_exact",
+      "large_trade_volume_p99_exact"
+    ],
+    "volumes": [
+      "agg_trade_volume_exact",
+      "agg_trade_quote_volume_exact",
+      "taker_buy_base_volume_exact",
+      "taker_sell_base_volume_exact",
+      "taker_buy_quote_volume_exact",
+      "taker_sell_quote_volume_exact"
+    ]
+  },
+  "feature_paths": {
+    "15m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/features.parquet",
+    "1h": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/features.parquet",
+    "1m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_2026-05-05/features.parquet",
+    "5m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_2026-05-05/features.parquet"
+  },
+  "feature_run_id": "v9_45_20260531T102104Z",
+  "feature_store_created": true,
+  "features_created": true,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "forbidden_column_scan": {
+    "forbidden_columns": {
+      "15m": [],
+      "1h": [],
+      "1m": [],
+      "5m": []
+    },
+    "status": "PASS"
+  },
+  "input_versions": {
+    "latest_metrics": null,
+    "project_state": null,
+    "v9_32_aggtrades_validation": "V9.32",
+    "v9_36_ohlcv_validation": "V9.36",
+    "v9_37_feature_store": "V9.37",
+    "v9_38_feature_validation": "V9.38",
+    "v9_42_dataset_validation": "V9.42",
+    "v9_43_ml": "V9.43",
+    "v9_44_diagnostic": "V9.44",
+    "v9_44_manifest": "V9.44"
+  },
+  "labels_created": false,
+  "leakage_guard": {
+    "feature_available_ts_le_decision_ts": true,
+    "new_labels_created": false,
+    "rolling_windows_past_only": true,
+    "status": "PASS"
+  },
+  "limitations": [
+    "V9.45 cree une couche separee et ne modifie pas le feature store V9.37.",
+    "Les quantiles sont calcules sur le bucket courant termine; ils ne lisent pas les buckets futurs.",
+    "Aucun label, dataset supervise, ML, backtest, walk-forward, strategie ou signal n'est produit."
+  ],
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.46 - AggTrades Exact 5Y Feature Enrichment Validation",
+  "no_trade_summary": {
+    "15m": 36,
+    "1h": 8,
+    "1m": 542,
+    "5m": 108
+  },
+  "null_summary": {
+    "15m": 0,
+    "1h": 0,
+    "1m": 0,
+    "5m": 0
+  },
+  "output_bytes": {
+    "15m": 59401669,
+    "1h": 16364491,
+    "1m": 706694010,
+    "5m": 153726194
+  },
+  "processing_strategy": "parallel_daily_partitioned_aggtrades_scan_then_timeframe_concat",
+  "quality_status": "PASS",
+  "range_summary": {
+    "15m": {
+      "negative_counts": 0,
+      "negative_volumes": 0,
+      "ratio_out_of_bounds": 0
+    },
+    "1h": {
+      "negative_counts": 0,
+      "negative_volumes": 0,
+      "ratio_out_of_bounds": 0
+    },
+    "1m": {
+      "negative_counts": 0,
+      "negative_volumes": 0,
+      "ratio_out_of_bounds": 0
+    },
+    "5m": {
+      "negative_counts": 0,
+      "negative_volumes": 0,
+      "ratio_out_of_bounds": 0
+    }
+  },
+  "row_counts": {
+    "15m": 175392,
+    "1h": 43848,
+    "1m": 2630880,
+    "5m": 526176
+  },
+  "runtime_seconds": 1.327,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_labels": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "signal_created": false,
+  "source_aggtrades_validation_version": "V9.32",
+  "source_version": "V9.44",
+  "strategy_created": false,
+  "target_window": {
+    "days_expected": 1827,
+    "end": "2026-05-05",
+    "start": "2021-05-05"
+  },
+  "timeframe_reports": {
+    "15m": {
+      "actual_rows": 175392,
+      "aggtrades_missing_flag_count": 0,
+      "coverage_end": "2026-05-06 00:00:00+00:00",
+      "coverage_start": "2021-05-05 00:00:00+00:00",
+      "coverage_status": "PASS",
+      "days_complete": 1827,
+      "days_expected": 1827,
+      "days_missing": 0,
+      "duplicate_event_ts_or_close_ts": 0,
+      "exact_feature_error_count": 0,
+      "exact_feature_null_count": 0,
+      "expected_rows": 175392,
+      "feature_available_ts_le_decision_ts": true,
+      "forbidden_columns": [],
+      "no_trade_bucket_count": 36,
+      "output_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/features.parquet",
+      "partial_bucket_flag_count": 0,
+      "quality_status": "PASS",
+      "range_summary": {
+        "negative_counts": 0,
+        "negative_volumes": 0,
+        "ratio_out_of_bounds": 0
+      },
+      "timeframe": "15m",
+      "timestamps_monotone": true,
+      "version": "V9.45"
+    },
+    "1h": {
+      "actual_rows": 43848,
+      "aggtrades_missing_flag_count": 0,
+      "coverage_end": "2026-05-06 00:00:00+00:00",
+      "coverage_start": "2021-05-05 00:00:00+00:00",
+      "coverage_status": "PASS",
+      "days_complete": 1827,
+      "days_expected": 1827,
+      "days_missing": 0,
+      "duplicate_event_ts_or_close_ts": 0,
+      "exact_feature_error_count": 0,
+      "exact_feature_null_count": 0,
+      "expected_rows": 43848,
+      "feature_available_ts_le_decision_ts": true,
+      "forbidden_columns": [],
+      "no_trade_bucket_count": 8,
+      "output_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/features.parquet",
+      "partial_bucket_flag_count": 0,
+      "quality_status": "PASS",
+      "range_summary": {
+        "negative_counts": 0,
+        "negative_volumes": 0,
+        "ratio_out_of_bounds": 0
+      },
+      "timeframe": "1h",
+      "timestamps_monotone": true,
+      "version": "V9.45"
+    },
+    "1m": {
+      "actual_rows": 2630880,
+      "aggtrades_missing_flag_count": 0,
+      "coverage_end": "2026-05-06 00:00:00+00:00",
+      "coverage_start": "2021-05-05 00:00:00+00:00",
+      "coverage_status": "PASS",
+      "days_complete": 1827,
+      "days_expected": 1827,
+      "days_missing": 0,
+      "duplicate_event_ts_or_close_ts": 0,
+      "exact_feature_error_count": 0,
+      "exact_feature_null_count": 0,
+      "expected_rows": 2630880,
+      "feature_available_ts_le_decision_ts": true,
+      "forbidden_columns": [],
+      "no_trade_bucket_count": 542,
+      "output_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_2026-05-05/features.parquet",
+      "partial_bucket_flag_count": 0,
+      "quality_status": "PASS",
+      "range_summary": {
+        "negative_counts": 0,
+        "negative_volumes": 0,
+        "ratio_out_of_bounds": 0
+      },
+      "timeframe": "1m",
+      "timestamps_monotone": true,
+      "version": "V9.45"
+    },
+    "5m": {
+      "actual_rows": 526176,
+      "aggtrades_missing_flag_count": 0,
+      "coverage_end": "2026-05-06 00:00:00+00:00",
+      "coverage_start": "2021-05-05 00:00:00+00:00",
+      "coverage_status": "PASS",
+      "days_complete": 1827,
+      "days_expected": 1827,
+      "days_missing": 0,
+      "duplicate_event_ts_or_close_ts": 0,
+      "exact_feature_error_count": 0,
+      "exact_feature_null_count": 0,
+      "expected_rows": 526176,
+      "feature_available_ts_le_decision_ts": true,
+      "forbidden_columns": [],
+      "no_trade_bucket_count": 108,
+      "output_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_2026-05-05/features.parquet",
+      "partial_bucket_flag_count": 0,
+      "quality_status": "PASS",
+      "range_summary": {
+        "negative_counts": 0,
+        "negative_volumes": 0,
+        "ratio_out_of_bounds": 0
+      },
+      "timeframe": "5m",
+      "timestamps_monotone": true,
+      "version": "V9.45"
+    }
+  },
+  "timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "version": "V9.45",
+  "walk_forward_executed": false,
+  "warnings": [
+    "Espace disque sous 80 GiB; calcul autorise car au-dessus du seuil bloquant 50 GiB.",
+    "Calcul exact long: scan partitionne de tous les jours aggTrades silver 5Y.",
+    "Les warnings runtime/stockage sont non bloquants.",
+    "1m: buckets sans trade conserves avec zeros et no_trade_bucket=1.",
+    "5m: buckets sans trade conserves avec zeros et no_trade_bucket=1.",
+    "15m: buckets sans trade conserves avec zeros et no_trade_bucket=1.",
+    "1h: buckets sans trade conserves avec zeros et no_trade_bucket=1."
+  ]
+}

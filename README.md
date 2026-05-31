@@ -12,3 +12,9 @@
 - Decision : `feature_enrichment_before_more_ml`.
 - Recommandation : `V9.45 - AggTrades Exact Feature Enrichment`.
 - Aucun reseau, aucun telechargement, aucun backtest, aucun walk-forward, aucune strategie, aucun signal actionnable.
+
+## V9.45 - AggTrades Exact Feature Enrichment
+
+- Decision : `aggtrades_exact_5y_feature_enrichment_partial`.
+- Recommandation : `V9.46 - Exact Feature Enrichment Correction`.
+- Feature-enrichment-only : aucun label, dataset supervise, ML, backtest, walk-forward, strategie ou signal.

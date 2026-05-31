@@ -1,0 +1,28 @@
+{
+  "actual_rows": 43848,
+  "aggtrades_missing_flag_count": 0,
+  "coverage_end": "2026-05-06 00:00:00+00:00",
+  "coverage_start": "2021-05-05 00:00:00+00:00",
+  "coverage_status": "PASS",
+  "days_complete": 1827,
+  "days_expected": 1827,
+  "days_missing": 0,
+  "duplicate_event_ts_or_close_ts": 0,
+  "exact_feature_error_count": 0,
+  "exact_feature_null_count": 0,
+  "expected_rows": 43848,
+  "feature_available_ts_le_decision_ts": true,
+  "forbidden_columns": [],
+  "no_trade_bucket_count": 8,
+  "output_path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_45/features/aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/features.parquet",
+  "partial_bucket_flag_count": 0,
+  "quality_status": "PASS",
+  "range_summary": {
+    "negative_counts": 0,
+    "negative_volumes": 0,
+    "ratio_out_of_bounds": 0
+  },
+  "timeframe": "1h",
+  "timestamps_monotone": true,
+  "version": "V9.45"
+}
