@@ -1,0 +1,16 @@
+{
+  "version": "V9.48_to_V9.51",
+  "zip": "/Users/lilianserre/Documents/projets/projet-galapagos/projet-galapagos-v9.48-to-v9.51-audit-lite.zip",
+  "passed": true,
+  "errors": [],
+  "packaging_checks_passed": true,
+  "sample_checks_passed": true,
+  "full_dataset_required": false,
+  "import_timeout_seconds": 30,
+  "pytest_collect_only_timeout_seconds": 90,
+  "tests_timeout_seconds": 180,
+  "audit_timeout_seconds": 60,
+  "sample_checks_timeout_seconds": 60,
+  "sidecars_expected": false,
+  "zip_fingerprints_expected": false
+}

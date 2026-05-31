@@ -1,0 +1,25 @@
+{
+  "samples": {
+    "15m": {
+      "bytes": 12512,
+      "path": "data/audit_samples/v9_50/ohlcv_aggtrades_exact_5y_dataset/timeframe=15m/dataset_sample.parquet",
+      "rows": 80
+    },
+    "1h": {
+      "bytes": 12448,
+      "path": "data/audit_samples/v9_50/ohlcv_aggtrades_exact_5y_dataset/timeframe=1h/dataset_sample.parquet",
+      "rows": 80
+    },
+    "1m": {
+      "bytes": 12276,
+      "path": "data/audit_samples/v9_50/ohlcv_aggtrades_exact_5y_dataset/timeframe=1m/dataset_sample.parquet",
+      "rows": 80
+    },
+    "5m": {
+      "bytes": 12395,
+      "path": "data/audit_samples/v9_50/ohlcv_aggtrades_exact_5y_dataset/timeframe=5m/dataset_sample.parquet",
+      "rows": 80
+    }
+  },
+  "version": "V9.50"
+}

@@ -1,0 +1,666 @@
+{
+  "baseline_comparison": {
+    "classification_only": true,
+    "clear_wins_count": 0,
+    "comparisons": {
+      "15m.decision_tree_depth_2.test": {
+        "accuracy": 0.6442765502494654,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07217502432529826,
+        "macro_f1": 0.26121986602627456,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      "15m.decision_tree_depth_2.validation": {
+        "accuracy": 0.6434802440275956,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07118820986447155,
+        "macro_f1": 0.26102341717259325,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression.test": {
+        "accuracy": 0.44535994297933,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.19891660727013538,
+        "delta_macro_f1_vs_best_baseline": -0.023860011370390566,
+        "macro_f1": 0.30953487898118226,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression.validation": {
+        "accuracy": 0.4751981298819773,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.16828211414561833,
+        "delta_macro_f1_vs_best_baseline": -0.02119162518978246,
+        "macro_f1": 0.31102000184728235,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      "1h.decision_tree_depth_2.test": {
+        "accuracy": 0.6572015053027711,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07152981156417199,
+        "macro_f1": 0.2643820533993944,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      "1h.decision_tree_depth_2.validation": {
+        "accuracy": 0.6688711516533637,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.06619980744063159,
+        "macro_f1": 0.2671950441832924,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression.test": {
+        "accuracy": 0.5486372448397765,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.10856426046299461,
+        "delta_macro_f1_vs_best_baseline": -0.019889363213576094,
+        "macro_f1": 0.3160225017499903,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression.validation": {
+        "accuracy": 0.6013683010262257,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.06750285062713801,
+        "delta_macro_f1_vs_best_baseline": -0.022504379627047932,
+        "macro_f1": 0.310890471996876,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      "1m.decision_tree_depth_2.test": {
+        "accuracy": 0.5977712139528165,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.08400533645712316,
+        "macro_f1": 0.24941877732876683,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      "1m.decision_tree_depth_2.validation": {
+        "accuracy": 0.601099251961321,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.0833178084362004,
+        "macro_f1": 0.25028606699427863,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression.test": {
+        "accuracy": 0.5923940727900311,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.005377141162785426,
+        "delta_macro_f1_vs_best_baseline": -0.07728677322800154,
+        "macro_f1": 0.25613734055788845,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression.validation": {
+        "accuracy": 0.5964107066836952,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.004688545277625744,
+        "delta_macro_f1_vs_best_baseline": -0.07636764799238083,
+        "macro_f1": 0.2572362274380982,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      "5m.decision_tree_depth_2.test": {
+        "accuracy": 0.6252280848475633,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07671503606244645,
+        "macro_f1": 0.2564678318802274,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      "5m.decision_tree_depth_2.validation": {
+        "accuracy": 0.6244595429277332,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": 0.0,
+        "delta_macro_f1_vs_best_baseline": -0.07549653214243346,
+        "macro_f1": 0.25627376425855514,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression.test": {
+        "accuracy": 0.4721261309207025,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.15310195392686082,
+        "delta_macro_f1_vs_best_baseline": -0.03607300593968238,
+        "macro_f1": 0.2971098620029915,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression.validation": {
+        "accuracy": 0.48372689694493276,
+        "clear_win_vs_baseline": false,
+        "delta_accuracy_vs_best_baseline": -0.14073264598280044,
+        "delta_macro_f1_vs_best_baseline": -0.03133324067990678,
+        "macro_f1": 0.3004370557210818,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "5m"
+      }
+    },
+    "mean_delta_macro_f1_vs_best_baseline": -0.05682085084584659,
+    "weak_vs_baselines_count": 16
+  },
+  "class_collapse_analysis": {
+    "collapse_warning_count": 12,
+    "collapse_warnings": {
+      "15m.decision_tree_depth_2.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "15m",
+        "up_recall": 0.0
+      },
+      "15m.decision_tree_depth_2.validation": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "15m",
+        "up_recall": 0.0
+      },
+      "1h.decision_tree_depth_2.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1h",
+        "up_recall": 0.0
+      },
+      "1h.decision_tree_depth_2.validation": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1h",
+        "up_recall": 0.0
+      },
+      "1m.decision_tree_depth_2.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1m",
+        "up_recall": 0.0
+      },
+      "1m.decision_tree_depth_2.validation": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1m",
+        "up_recall": 0.0
+      },
+      "1m.logistic_regression.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0013397237527360555,
+        "max_prediction_ratio": 0.98715302328764,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1m",
+        "up_recall": 0.011313395249320722
+      },
+      "1m.logistic_regression.validation": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0009467044060395877,
+        "max_prediction_ratio": 0.9876999331022319,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1m",
+        "up_recall": 0.011760282021151586
+      },
+      "5m.decision_tree_depth_2.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "5m",
+        "up_recall": 0.0
+      },
+      "5m.decision_tree_depth_2.validation": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "5m",
+        "up_recall": 0.0
+      },
+      "5m.logistic_regression.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.00020329335230737954,
+        "max_prediction_ratio": 0.6436744468942447,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "5m",
+        "up_recall": 0.37223543701604334
+      },
+      "5m.logistic_regression.validation": {
+        "class_collapse_warning": true,
+        "down_recall": 5.112474437627812e-05,
+        "max_prediction_ratio": 0.6667838646838029,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "5m",
+        "up_recall": 0.35200400801603204
+      }
+    }
+  },
+  "comparison_to_v9_43": {
+    "available": true,
+    "baseline_clear_wins_count_v9_43": 0,
+    "baseline_clear_wins_count_v9_51": 0,
+    "clear_improvement_vs_v9_43": false,
+    "mean_balanced_accuracy_delta_vs_v9_43": -0.0003939807383671109,
+    "mean_macro_f1_delta_vs_v9_43": 0.007206544444404546,
+    "no_clear_edge_vs_shuffled_labels_count_v9_43": 15,
+    "no_clear_edge_vs_shuffled_labels_count_v9_51": 10,
+    "per_metric_deltas": {
+      "15m.decision_tree_depth_2.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "15m.decision_tree_depth_2.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "15m.decision_tree_depth_2.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "15m.logistic_regression.test": {
+        "balanced_accuracy_delta": -0.0016441418697552002,
+        "down_recall_delta": 0.04628285760361232,
+        "macro_f1_delta": 0.0420710729173821,
+        "up_recall_delta": 0.3720522625876354
+      },
+      "15m.logistic_regression.train": {
+        "balanced_accuracy_delta": -0.0015974506998344684,
+        "down_recall_delta": 5.6053811659192466e-05,
+        "macro_f1_delta": 0.03251513445261933,
+        "up_recall_delta": 0.1782051282051282
+      },
+      "15m.logistic_regression.validation": {
+        "balanced_accuracy_delta": 0.0005361067698212429,
+        "down_recall_delta": 0.02195478939664986,
+        "macro_f1_delta": 0.039233602655200595,
+        "up_recall_delta": 0.3418279062450842
+      },
+      "15m.majority_class_baseline.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "15m.majority_class_baseline.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "15m.majority_class_baseline.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "15m.random_seeded_baseline.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "15m.random_seeded_baseline.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "15m.random_seeded_baseline.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.decision_tree_depth_2.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.decision_tree_depth_2.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.decision_tree_depth_2.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.logistic_regression.test": {
+        "balanced_accuracy_delta": -0.012337766588131127,
+        "down_recall_delta": 0.1218375499334221,
+        "macro_f1_delta": 0.03845433714228741,
+        "up_recall_delta": 0.053191489361702135
+      },
+      "1h.logistic_regression.train": {
+        "balanced_accuracy_delta": -0.007772374920975322,
+        "down_recall_delta": 0.015322001436437636,
+        "macro_f1_delta": -0.004738125047436759,
+        "up_recall_delta": -0.015384615384615384
+      },
+      "1h.logistic_regression.validation": {
+        "balanced_accuracy_delta": -0.009309664412881558,
+        "down_recall_delta": 0.08987968860580325,
+        "macro_f1_delta": 0.01879983025089471,
+        "up_recall_delta": 0.0006706908115358852
+      },
+      "1h.majority_class_baseline.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.majority_class_baseline.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.majority_class_baseline.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.random_seeded_baseline.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.random_seeded_baseline.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1h.random_seeded_baseline.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.decision_tree_depth_2.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.decision_tree_depth_2.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.decision_tree_depth_2.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.logistic_regression.test": {
+        "balanced_accuracy_delta": -0.0002564453260812116,
+        "down_recall_delta": 0.0010000754773945202,
+        "macro_f1_delta": 0.006382400665403548,
+        "up_recall_delta": 0.01110511516941691
+      },
+      "1m.logistic_regression.train": {
+        "balanced_accuracy_delta": -0.0001225816683462222,
+        "down_recall_delta": -3.3426258331494896e-05,
+        "macro_f1_delta": 0.0011583372582682494,
+        "up_recall_delta": 0.002204347724128227
+      },
+      "1m.logistic_regression.validation": {
+        "balanced_accuracy_delta": 0.00022773947197024524,
+        "down_recall_delta": 0.0005409739463083359,
+        "macro_f1_delta": 0.006638494997502076,
+        "up_recall_delta": 0.011619271445358402
+      },
+      "1m.majority_class_baseline.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.majority_class_baseline.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.majority_class_baseline.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.random_seeded_baseline.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.random_seeded_baseline.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "1m.random_seeded_baseline.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.decision_tree_depth_2.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.decision_tree_depth_2.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.decision_tree_depth_2.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.logistic_regression.test": {
+        "balanced_accuracy_delta": 0.0048838642793247455,
+        "down_recall_delta": -0.000914820085383208,
+        "macro_f1_delta": 0.03906638772700349,
+        "up_recall_delta": 0.3708689711017764
+      },
+      "5m.logistic_regression.train": {
+        "balanced_accuracy_delta": 0.0007028902750680355,
+        "down_recall_delta": -0.0010771025940220806,
+        "macro_f1_delta": 0.03723434295002276,
+        "up_recall_delta": 0.18629855375626647
+      },
+      "5m.logistic_regression.validation": {
+        "balanced_accuracy_delta": 0.005292924047985315,
+        "down_recall_delta": -0.0027607361963190185,
+        "macro_f1_delta": 0.03996329586527153,
+        "up_recall_delta": 0.34839679358717435
+      },
+      "5m.majority_class_baseline.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.majority_class_baseline.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.majority_class_baseline.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.random_seeded_baseline.test": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.random_seeded_baseline.train": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      },
+      "5m.random_seeded_baseline.validation": {
+        "balanced_accuracy_delta": 0.0,
+        "down_recall_delta": 0.0,
+        "macro_f1_delta": 0.0,
+        "up_recall_delta": 0.0
+      }
+    }
+  },
+  "created_at_utc": "2026-05-31T13:45:10Z",
+  "decision": "combined_features_chain_completed_but_no_walk_forward_recommended",
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "limitations": [
+    "Mission research-only offline.",
+    "Aucun walk-forward, backtest, signal ou strategie.",
+    "La decision V9.51 detecte un class collapse et ne justifie pas une suite walk-forward immediate."
+  ],
+  "next_recommendation": "V9.52 - Funding / Open Interest Readiness or Label Redesign Diagnostic",
+  "no_clear_edge_vs_shuffled_labels_count": 10,
+  "safety_flags": {
+    "api_key_used": false,
+    "backtest_executed": false,
+    "exchange_auth_used": false,
+    "ml_executed": true,
+    "model_persisted": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_destructive_cleanup": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "signal_created": false,
+    "strategy_created": false,
+    "websocket_live_used": false
+  },
+  "scientific_answer": {
+    "better_than_baselines": false,
+    "better_than_shuffled_labels": false,
+    "class_collapse_detected": true,
+    "clear_improvement_vs_v9_43": false,
+    "walk_forward_justified_now": false
+  },
+  "stages": {
+    "v9_48": {
+      "coverage_status": "target_5y_combined_feature_window_complete",
+      "decision": "combined_feature_store_validated_with_warnings",
+      "leakage_guard_status": "PASS",
+      "quality_status": "PASS",
+      "runtime_seconds": 2.438
+    },
+    "v9_49": {
+      "coverage_status": "target_5y_dataset_window_complete",
+      "decision": "combined_features_5y_dataset_created",
+      "leakage_guard_status": "PASS",
+      "quality_status": "PASS",
+      "runtime_seconds": 20.804
+    },
+    "v9_50": {
+      "coverage_status": "target_5y_dataset_window_complete",
+      "decision": "combined_features_5y_dataset_validated",
+      "leakage_guard_status": "PASS",
+      "quality_status": "PASS",
+      "runtime_seconds": 31.373
+    },
+    "v9_51": {
+      "coverage_status": null,
+      "decision": "combined_features_5y_ml_completed_but_class_collapse",
+      "leakage_guard_status": "PASS",
+      "quality_status": "PASS",
+      "runtime_seconds": 332.733409
+    }
+  },
+  "status": "PASS",
+  "v9_51_decision": "combined_features_5y_ml_completed_but_class_collapse",
+  "version": "V9.48_to_V9.51"
+}

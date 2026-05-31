@@ -1,0 +1,213 @@
+{
+  "backtest_executed": false,
+  "base_feature_columns_count": 41,
+  "collision_policy": "metadata/audit columns are rebuilt; base and exact feature columns are preserved; no silent overwrite.",
+  "combined_feature_columns_count": 97,
+  "coverage_status": "target_5y_combined_feature_window_complete",
+  "created_at_utc": "2026-05-31T12:33:44Z",
+  "dataset_created": false,
+  "decision": "combined_feature_store_validated_with_warnings",
+  "direction": "ohlcv_aggtrades_exact_5y_feature_store_validation",
+  "errors": [],
+  "exact_feature_columns_count": 56,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "forbidden_column_scan": {
+    "status": "PASS"
+  },
+  "full_local_validation": {
+    "15m": {
+      "available_ts_gt_decision_ts": 0,
+      "base_feature_columns_count": 41,
+      "bytes": 117486767,
+      "combined_feature_columns_count": 97,
+      "coverage_status": "PASS",
+      "duplicate_counts": {
+        "close_ts": 0,
+        "event_ts": 0,
+        "open_ts": 0
+      },
+      "errors": [],
+      "exact_feature_columns_count": 56,
+      "expected_rows": 175392,
+      "feature_available_ts_gt_decision_ts": 0,
+      "forbidden_columns": [],
+      "invalid_non_warmup_rows": 0,
+      "leakage_guard_status": "PASS",
+      "non_warmup_feature_null_count": 0,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_47/features/ohlcv_aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/features.parquet",
+      "quality_status": "PASS",
+      "row_count": 175392,
+      "schema_status": "PASS",
+      "timeframe": "15m",
+      "warmup_feature_null_count": 547,
+      "warmup_rows": 60,
+      "warnings": [
+        "warmup rows contain documented rolling-window nulls"
+      ]
+    },
+    "1h": {
+      "available_ts_gt_decision_ts": 0,
+      "base_feature_columns_count": 41,
+      "bytes": 31842012,
+      "combined_feature_columns_count": 97,
+      "coverage_status": "PASS",
+      "duplicate_counts": {
+        "close_ts": 0,
+        "event_ts": 0,
+        "open_ts": 0
+      },
+      "errors": [],
+      "exact_feature_columns_count": 56,
+      "expected_rows": 43848,
+      "feature_available_ts_gt_decision_ts": 0,
+      "forbidden_columns": [],
+      "invalid_non_warmup_rows": 0,
+      "leakage_guard_status": "PASS",
+      "non_warmup_feature_null_count": 0,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_47/features/ohlcv_aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/features.parquet",
+      "quality_status": "PASS",
+      "row_count": 43848,
+      "schema_status": "PASS",
+      "timeframe": "1h",
+      "warmup_feature_null_count": 547,
+      "warmup_rows": 60,
+      "warnings": [
+        "warmup rows contain documented rolling-window nulls"
+      ]
+    },
+    "1m": {
+      "available_ts_gt_decision_ts": 0,
+      "base_feature_columns_count": 41,
+      "bytes": 1422071571,
+      "combined_feature_columns_count": 97,
+      "coverage_status": "PASS",
+      "duplicate_counts": {
+        "close_ts": 0,
+        "event_ts": 0,
+        "open_ts": 0
+      },
+      "errors": [],
+      "exact_feature_columns_count": 56,
+      "expected_rows": 2630880,
+      "feature_available_ts_gt_decision_ts": 0,
+      "forbidden_columns": [],
+      "invalid_non_warmup_rows": 0,
+      "leakage_guard_status": "PASS",
+      "non_warmup_feature_null_count": 0,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_47/features/ohlcv_aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_2026-05-05/features.parquet",
+      "quality_status": "PASS",
+      "row_count": 2630880,
+      "schema_status": "PASS",
+      "timeframe": "1m",
+      "warmup_feature_null_count": 547,
+      "warmup_rows": 60,
+      "warnings": [
+        "warmup rows contain documented rolling-window nulls"
+      ]
+    },
+    "5m": {
+      "available_ts_gt_decision_ts": 0,
+      "base_feature_columns_count": 41,
+      "bytes": 304594375,
+      "combined_feature_columns_count": 97,
+      "coverage_status": "PASS",
+      "duplicate_counts": {
+        "close_ts": 0,
+        "event_ts": 0,
+        "open_ts": 0
+      },
+      "errors": [],
+      "exact_feature_columns_count": 56,
+      "expected_rows": 526176,
+      "feature_available_ts_gt_decision_ts": 0,
+      "forbidden_columns": [],
+      "invalid_non_warmup_rows": 0,
+      "leakage_guard_status": "PASS",
+      "non_warmup_feature_null_count": 0,
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_47/features/ohlcv_aggtrades_exact_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_2026-05-05/features.parquet",
+      "quality_status": "PASS",
+      "row_count": 526176,
+      "schema_status": "PASS",
+      "timeframe": "5m",
+      "warmup_feature_null_count": 547,
+      "warmup_rows": 60,
+      "warnings": [
+        "warmup rows contain documented rolling-window nulls"
+      ]
+    }
+  },
+  "labels_created": false,
+  "leakage_guard_status": "PASS",
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.49 - Combined Features 5Y Dataset",
+  "quality_status": "PASS",
+  "readiness": {
+    "errors": [],
+    "ready": true,
+    "source_decision": "ohlcv_aggtrades_exact_5y_feature_store_created_with_warnings",
+    "source_quality_status": "PASS"
+  },
+  "row_counts": {
+    "15m": 175392,
+    "1h": 43848,
+    "1m": 2630880,
+    "5m": 526176
+  },
+  "runtime_seconds": 2.438,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "schema_status": "PASS",
+  "signal_created": false,
+  "source_version": "V9.47",
+  "status": "PASS",
+  "strategy_created": false,
+  "target_window": {
+    "end": "2026-05-05",
+    "start": "2021-05-05"
+  },
+  "timeframes": [
+    "1m",
+    "5m",
+    "15m",
+    "1h"
+  ],
+  "validation_mode": "full-local",
+  "version": "V9.48",
+  "walk_forward_executed": false,
+  "warnings": [
+    "15m: warmup rows contain documented rolling-window nulls",
+    "1h: warmup rows contain documented rolling-window nulls",
+    "1m: warmup rows contain documented rolling-window nulls",
+    "5m: warmup rows contain documented rolling-window nulls"
+  ]
+}

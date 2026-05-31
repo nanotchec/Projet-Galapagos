@@ -1,0 +1,11 @@
+# Smoke ZIP V9.48 a V9.51
+
+- Resultat : `PASS`.
+- Erreurs : `[]`.
+- Packaging checks : `True`.
+- Sample checks : `True`.
+- Full dataset requis : `False`.
+- Timeout imports : `30` secondes.
+- Timeout pytest collect-only : `90` secondes.
+- Timeout tests : `180` secondes.
+- Timeout audit : `60` secondes.
