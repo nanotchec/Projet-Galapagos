@@ -1,0 +1,96 @@
+{
+  "actual_feature_window": null,
+  "blockers": [
+    {
+      "downloaded": false,
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "month": "2026-05",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-05.zip",
+      "raw_bytes": 0,
+      "status": "month_failed",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-05.zip"
+    }
+  ],
+  "comparison_window_recommendation": "No future comparison until funding source coverage is complete on a strict common window.",
+  "completed_steps": [
+    "v9_52"
+  ],
+  "created_at_utc": "2026-05-31T14:30:21Z",
+  "decision": "derivatives_chain_stopped_source_issue",
+  "feature_store_created": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "funding_coverage": {
+    "coverage_end": "2026-04-30T16:00:00+00:00",
+    "coverage_start": "2021-05-05T00:00:00.001000+00:00",
+    "duplicate_funding_time": 0,
+    "expected_funding_interval_hours": 8,
+    "expected_intervals": 5481,
+    "funding_rate_nulls": 0,
+    "mark_price_nulls": 5466,
+    "missing_intervals": 15,
+    "quality_status": "FAIL",
+    "raw_bytes_total": 53473,
+    "raw_files_count": 60,
+    "raw_files_expected": 61,
+    "rest_tail_files_count": 0,
+    "rows": 5466,
+    "silver_bytes": 0,
+    "silver_path": "data/silver/derivatives/binance_archive/futures_um/BTCUSDT/fundingRate/window=2021-05-05_2026-05-05/funding_rate.parquet",
+    "silver_write_status": "not_written_due_to_source_or_quality",
+    "tail_rest_fallback_used": false
+  },
+  "funding_source_status": "funding_ready_for_public_archive_probe_and_collection",
+  "limitations": [
+    "Aucune conclusion ML n'est produite dans V9.52_to_V9.55.",
+    "La future comparaison devra utiliser une fenetre commune strictement identique."
+  ],
+  "next_recommendation": "V9.56 - Derivatives Source Follow-up / May 2026 Funding Tail Probe",
+  "oi_coverage": {
+    "collected": false,
+    "coverage_end": null,
+    "coverage_start": null,
+    "history_limit_notes": "No proven multi-year no-key public archive was available in local evidence; REST openInterestHist is treated as history-limited.",
+    "reason": "oi_collection_not_ready_history_limited",
+    "source_issue_notes": "OI is non-blocking for V9.53 funding-only feature readiness."
+  },
+  "oi_source_status": "oi_not_ready_history_limited",
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": true,
+    "new_data_downloaded": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_labels": true,
+    "no_ml": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "status": "FAIL",
+  "stopped_at_step": "V9.53",
+  "validated_feature_store": false,
+  "version": "V9.52_to_V9.55",
+  "warnings": [
+    "OI not ready for multi-year history.",
+    "Funding archive monthly 2026-05 was not available and public REST fallback returned HTTP 451."
+  ]
+}

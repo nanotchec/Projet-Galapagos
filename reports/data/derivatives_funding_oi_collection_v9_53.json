@@ -1,0 +1,672 @@
+{
+  "backtest_executed": false,
+  "collection_executed": true,
+  "created_at_utc": "2026-05-31T14:26:29Z",
+  "dataset_created": false,
+  "decision": "funding_collection_failed_source_issue",
+  "direction": "derivatives_funding_oi_collection",
+  "feature_store_created": false,
+  "feature_store_validated": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "funding": {
+    "coverage_end": "2026-04-30T16:00:00+00:00",
+    "coverage_start": "2021-05-05T00:00:00.001000+00:00",
+    "duplicate_funding_time": 0,
+    "expected_funding_interval_hours": 8,
+    "expected_intervals": 5481,
+    "funding_rate_nulls": 0,
+    "mark_price_nulls": 5466,
+    "missing_intervals": 15,
+    "quality_status": "FAIL",
+    "raw_bytes_total": 53473,
+    "raw_files_count": 60,
+    "raw_files_expected": 61,
+    "rest_tail_files_count": 0,
+    "rows": 5466,
+    "silver_bytes": 0,
+    "silver_path": "data/silver/derivatives/binance_archive/futures_um/BTCUSDT/fundingRate/window=2021-05-05_2026-05-05/funding_rate.parquet",
+    "silver_write_status": "not_written_due_to_source_or_quality",
+    "tail_rest_fallback_used": false
+  },
+  "funding_collected": false,
+  "funding_usable": false,
+  "ingestion_executed": true,
+  "ingestion_scope": "public_funding_bronze_silver_only",
+  "labels_created": false,
+  "limitations": [
+    "V9.53 collecte uniquement fundingRate public historique depuis data.binance.vision.",
+    "Aucune API privee, aucune cle, aucun websocket et aucun endpoint de trading.",
+    "Aucun dataset supervise, label, ML, backtest, walk-forward, strategie ou signal n'est cree."
+  ],
+  "ml_executed": false,
+  "month_reports": [
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2021-05",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-05.zip",
+      "raw_bytes": 960,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-05.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2021-06",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-06.zip",
+      "raw_bytes": 883,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-06.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2021-07",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-07.zip",
+      "raw_bytes": 973,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-07.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2021-08",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-08.zip",
+      "raw_bytes": 781,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-08.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2021-09",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-09.zip",
+      "raw_bytes": 828,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-09.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2021-10",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-10.zip",
+      "raw_bytes": 951,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-10.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2021-11",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-11.zip",
+      "raw_bytes": 919,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-11.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2021-12",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-12.zip",
+      "raw_bytes": 815,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2021-12.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-01",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-01.zip",
+      "raw_bytes": 906,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-01.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-02",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-02.zip",
+      "raw_bytes": 890,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-02.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-03",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-03.zip",
+      "raw_bytes": 904,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-03.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-04",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-04.zip",
+      "raw_bytes": 926,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-04.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-05",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-05.zip",
+      "raw_bytes": 915,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-05.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-06",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-06.zip",
+      "raw_bytes": 966,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-06.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-07",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-07.zip",
+      "raw_bytes": 917,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-07.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-08",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-08.zip",
+      "raw_bytes": 997,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-08.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-09",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-09.zip",
+      "raw_bytes": 960,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-09.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-10",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-10.zip",
+      "raw_bytes": 950,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-10.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-11",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-11.zip",
+      "raw_bytes": 1000,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-11.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2022-12",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-12.zip",
+      "raw_bytes": 982,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2022-12.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-01",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-01.zip",
+      "raw_bytes": 863,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-01.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-02",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-02.zip",
+      "raw_bytes": 808,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-02.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-03",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-03.zip",
+      "raw_bytes": 956,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-03.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-04",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-04.zip",
+      "raw_bytes": 952,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-04.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-05",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-05.zip",
+      "raw_bytes": 983,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-05.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-06",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-06.zip",
+      "raw_bytes": 845,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-06.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-07",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-07.zip",
+      "raw_bytes": 861,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-07.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-08",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-08.zip",
+      "raw_bytes": 846,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-08.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-09",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-09.zip",
+      "raw_bytes": 914,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-09.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-10",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-10.zip",
+      "raw_bytes": 865,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-10.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-11",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-11.zip",
+      "raw_bytes": 696,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-11.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2023-12",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-12.zip",
+      "raw_bytes": 810,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2023-12.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-01",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-01.zip",
+      "raw_bytes": 696,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-01.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-02",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-02.zip",
+      "raw_bytes": 776,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-02.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-03",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-03.zip",
+      "raw_bytes": 939,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-03.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-04",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-04.zip",
+      "raw_bytes": 842,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-04.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-05",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-05.zip",
+      "raw_bytes": 830,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-05.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-06",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-06.zip",
+      "raw_bytes": 721,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-06.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-07",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-07.zip",
+      "raw_bytes": 847,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-07.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-08",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-08.zip",
+      "raw_bytes": 904,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-08.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-09",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-09.zip",
+      "raw_bytes": 924,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-09.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-10",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-10.zip",
+      "raw_bytes": 801,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-10.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-11",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-11.zip",
+      "raw_bytes": 746,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-11.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2024-12",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-12.zip",
+      "raw_bytes": 808,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2024-12.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-01",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-01.zip",
+      "raw_bytes": 825,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-01.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-02",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-02.zip",
+      "raw_bytes": 854,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-02.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-03",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-03.zip",
+      "raw_bytes": 938,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-03.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-04",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-04.zip",
+      "raw_bytes": 929,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-04.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-05",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-05.zip",
+      "raw_bytes": 943,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-05.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-06",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-06.zip",
+      "raw_bytes": 946,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-06.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-07",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-07.zip",
+      "raw_bytes": 796,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-07.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-08",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-08.zip",
+      "raw_bytes": 927,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-08.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-09",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-09.zip",
+      "raw_bytes": 941,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-09.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-10",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-10.zip",
+      "raw_bytes": 944,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-10.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-11",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-11.zip",
+      "raw_bytes": 941,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-11.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2025-12",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-12.zip",
+      "raw_bytes": 963,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2025-12.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2026-01",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-01.zip",
+      "raw_bytes": 965,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-01.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2026-02",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-02.zip",
+      "raw_bytes": 937,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-02.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2026-03",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-03.zip",
+      "raw_bytes": 1008,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-03.zip"
+    },
+    {
+      "downloaded": false,
+      "error": null,
+      "month": "2026-04",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-04.zip",
+      "raw_bytes": 960,
+      "status": "month_complete",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-04.zip"
+    },
+    {
+      "downloaded": false,
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "month": "2026-05",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-05.zip",
+      "raw_bytes": 0,
+      "status": "month_failed",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-05.zip"
+    },
+    {
+      "downloaded": false,
+      "error": "HTTPError: HTTP Error 451: ",
+      "month": "2026-05-rest-tail",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/rest_tail/BTCUSDT-fundingRate-2026-05-01_2026-05-05.json",
+      "raw_bytes": 0,
+      "status": "rest_tail_failed",
+      "url": "https://fapi.binance.com/fapi/v1/fundingRate?symbol=BTCUSDT&startTime=1777593600000&endTime=1777996800000&limit=1000"
+    }
+  ],
+  "network_scope": "public_archive_or_public_market_data_read_only",
+  "network_used": true,
+  "new_data_download_scope": "public_historical_funding_rate_only",
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.54 - Funding Source Correction",
+  "oi": {
+    "collected": false,
+    "coverage_end": null,
+    "coverage_start": null,
+    "history_limit_notes": "No proven multi-year no-key public archive was available in local evidence; REST openInterestHist is treated as history-limited.",
+    "reason": "oi_collection_not_ready_history_limited",
+    "source_issue_notes": "OI is non-blocking for V9.53 funding-only feature readiness."
+  },
+  "readiness_decision": "derivatives_source_readiness_funding_ready_oi_limited",
+  "runtime_seconds": 1.402,
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": true,
+    "new_data_downloaded": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_labels": true,
+    "no_ml": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "signal_created": false,
+  "source_errors": [
+    {
+      "downloaded": false,
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "month": "2026-05",
+      "path": "/Users/lilianserre/Documents/projets/projet-galapagos/data/raw/binance_public/futures_um/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-05.zip",
+      "raw_bytes": 0,
+      "status": "month_failed",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-05.zip"
+    }
+  ],
+  "source_host": "data.binance.vision",
+  "source_url_pattern": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-YYYY-MM.zip",
+  "source_version": "V9.52",
+  "status": "FAIL",
+  "strategy_created": false,
+  "target_window_end": "2026-05-05",
+  "target_window_start": "2021-05-05",
+  "version": "V9.53",
+  "walk_forward_executed": false,
+  "warnings": [
+    "OI is not included because historical coverage is not ready."
+  ]
+}

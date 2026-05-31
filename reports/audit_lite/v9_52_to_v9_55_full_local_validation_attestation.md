@@ -1,0 +1,27 @@
+# Attestation locale V9.52 a V9.55
+
+- `version`: `V9.52_to_V9.55`
+- `created_at_utc`: `2026-05-31T14:30:21Z`
+- `zip_name`: `projet-galapagos-v9.52-to-v9.55-audit-lite.zip`
+- `zip_bytes_estimate`: `156386`
+- `zip_bytes_is_authoritative`: `False`
+- `v9_52_decision`: `derivatives_source_readiness_funding_ready_oi_limited`
+- `v9_53_decision`: `funding_collection_failed_source_issue`
+- `v9_54_decision`: `None`
+- `v9_55_decision`: `None`
+- `feature_store_validated`: `False`
+- `stopped_at_step`: `V9.53`
+- `ml_executed`: `False`
+- `dataset_created`: `False`
+- `labels_created`: `False`
+- `walk_forward_executed`: `False`
+- `backtest_executed`: `False`
+- `signal_created`: `False`
+- `strategy_created`: `False`
+- `model_persisted`: `False`
+- `api_key_used`: `False`
+- `private_endpoint_used`: `False`
+- `exchange_auth_used`: `False`
+- `websocket_live_used`: `False`
+- `sidecars_created`: `False`
+- `zip_fingerprints_created`: `False`

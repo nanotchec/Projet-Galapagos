@@ -1,10 +1,38 @@
-# Synthese courante - V9.50
+# Latest Metrics
 
-- Derniere version validee : `V9.49`.
-- Candidate : `V9.50`.
-- Statut : `pending_external_audit`.
-- Direction : `ohlcv_aggtrades_exact_5y_dataset_validation`.
-- Decision V9.50 : `combined_features_5y_dataset_validated`.
-- Recommandation : V9.51 - Combined Features 5Y ML Offline.
-- Aucun ML, walk-forward, backtest, strategie, signal actionnable ou ordre.
-- Aucun reseau, telechargement, suppression destructive, sidecar ou empreinte ZIP.
+- `last_validated_version`: `V9.51`
+- `candidate_version`: `V9.52_to_V9.55`
+- `candidate_status`: `pending_external_audit`
+- `source_version`: `V9.48_to_V9.51`
+- `direction`: `derivatives_readiness_feature_chain`
+- `decision`: `derivatives_chain_stopped_source_issue`
+- `quality_status`: `SOURCE_ISSUE`
+- `coverage_status`: `funding_tail_incomplete`
+- `feature_store_created`: `False`
+- `feature_store_validated`: `False`
+- `dataset_created`: `False`
+- `labels_created`: `False`
+- `ml_executed`: `False`
+- `walk_forward_executed`: `False`
+- `backtest_executed`: `False`
+- `network_used`: `True`
+- `new_data_downloaded`: `False`
+- `recommended_next_step`: `V9.56 - Derivatives Source Follow-up / May 2026 Funding Tail Probe`
+- `api_key_used`: `False`
+- `exchange_auth_used`: `False`
+- `no_actionable_signal`: `True`
+- `no_backtest`: `True`
+- `no_dataset_supervised`: `True`
+- `no_destructive_cleanup`: `True`
+- `no_labels`: `True`
+- `no_ml`: `True`
+- `no_orders`: `True`
+- `no_paper_live`: `True`
+- `no_persistent_model`: `True`
+- `no_sidecars`: `True`
+- `no_strategy`: `True`
+- `no_trading`: `True`
+- `no_walk_forward`: `True`
+- `no_zip_fingerprints`: `True`
+- `private_endpoint_used`: `False`
+- `websocket_live_used`: `False`

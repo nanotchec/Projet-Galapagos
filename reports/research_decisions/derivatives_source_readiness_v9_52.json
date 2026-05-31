@@ -1,0 +1,308 @@
+{
+  "backtest_executed": false,
+  "blockers": [
+    "open interest is non-blocking but not ready for multi-year history"
+  ],
+  "collection_executed": false,
+  "created_at_utc": "2026-05-31T14:20:24Z",
+  "dataset_created": false,
+  "decision": "derivatives_source_readiness_funding_ready_oi_limited",
+  "direction": "derivatives_source_readiness",
+  "feature_store_created": false,
+  "feature_store_validated": false,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "funding_source_status": "funding_ready_for_public_archive_probe_and_collection",
+  "inputs_used": {
+    "derivatives_coverage_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_coverage_v1_14.json"
+    },
+    "derivatives_data_extension_readiness_v9_15": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_data_extension_readiness_v9_15.json"
+    },
+    "derivatives_data_quality_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_data_quality_v1_14.json"
+    },
+    "derivatives_features_v1_14": {
+      "available": true,
+      "path": "reports/research/derivatives_features_v1_14.json"
+    },
+    "derivatives_history_collection_plan_v9_17": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_history_collection_plan_v9_17.json"
+    },
+    "derivatives_window_extension_v9_16": {
+      "available": true,
+      "path": "reports/research_decisions/derivatives_window_extension_v9_16.json"
+    },
+    "feature_label_separability_v9_14_1": {
+      "available": true,
+      "path": "reports/research_decisions/feature_label_separability_v9_14_1.json"
+    },
+    "latest_metrics": {
+      "available": true,
+      "path": "reports/current/latest_metrics.json"
+    },
+    "latest_summary": {
+      "available": true,
+      "path": "reports/current/latest_summary.md"
+    },
+    "project_state": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    "project_state_md": {
+      "available": true,
+      "path": "reports/PROJECT_STATE.md"
+    }
+  },
+  "labels_created": false,
+  "limitations": [
+    "V9.52 ne telecharge aucune donnee et ne lance aucune ingestion.",
+    "La readiness funding repose sur la convention Binance public archive et les rapports derivatives existants; la confirmation reseau arrive en V9.53.",
+    "Aucune amelioration ML n'est revendiquee."
+  ],
+  "local_metadata_inventory": {
+    "data_code": {
+      "exists": true,
+      "files_count": 207,
+      "is_dir": true,
+      "path": "src/galapagos/data"
+    },
+    "features_code": {
+      "exists": true,
+      "files_count": 130,
+      "is_dir": true,
+      "path": "src/galapagos/features"
+    },
+    "gold": {
+      "exists": true,
+      "files_count": 27,
+      "is_dir": true,
+      "path": "data/gold"
+    },
+    "gold_derivatives_features": {
+      "exists": true,
+      "files_count": 0,
+      "is_dir": true,
+      "path": "data/gold/derivatives_features"
+    },
+    "local_funding_archive": {
+      "exists": false,
+      "path": "data/raw/binance_public/futures_um/fundingRate/BTCUSDT",
+      "zip_count": 0
+    },
+    "raw": {
+      "exists": true,
+      "files_count": 5085,
+      "is_dir": true,
+      "path": "data/raw"
+    },
+    "raw_binance_public": {
+      "exists": true,
+      "files_count": 52,
+      "is_dir": true,
+      "path": "data/raw/binance_public"
+    },
+    "reports_manifests": {
+      "exists": true,
+      "files_count": 108,
+      "is_dir": true,
+      "path": "reports/manifests"
+    },
+    "research": {
+      "exists": true,
+      "files_count": 775,
+      "is_dir": true,
+      "path": "data/research"
+    },
+    "scripts": {
+      "exists": true,
+      "files_count": 1222,
+      "is_dir": true,
+      "path": "scripts"
+    },
+    "silver": {
+      "exists": true,
+      "files_count": 1942,
+      "is_dir": true,
+      "path": "data/silver"
+    },
+    "silver_derivatives": {
+      "exists": true,
+      "files_count": 1,
+      "is_dir": true,
+      "path": "data/silver/derivatives"
+    }
+  },
+  "minimum_acceptable_window": {
+    "end": "2026-05-05",
+    "start": "2024-05-05"
+  },
+  "ml_executed": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.53 - Funding / OI Collection or Source Probe",
+  "oi_source_status": "oi_not_ready_history_limited",
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_labels": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "signal_created": false,
+  "source_assessments": {
+    "funding_rate": {
+      "availability_needs_network_confirmation": true,
+      "causal_timestamp_fields": [
+        "funding_time",
+        "available_ts"
+      ],
+      "coverage_end_known": "2026-05-05 08:00:00+00:00",
+      "coverage_start_known": "2024-05-05 16:00:00+00:00",
+      "evidence_paths": [
+        "reports/research_decisions/derivatives_history_collection_plan_v9_17.json",
+        "reports/research/derivatives_collection_v1_14.json",
+        "data/raw/binance_public/futures_um/fundingRate/BTCUSDT"
+      ],
+      "expected_frequency": "8h native funding events",
+      "expected_market_type": "futures_um",
+      "expected_symbol": "BTCUSDT",
+      "expected_url_pattern": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-YYYY-MM.zip",
+      "historical_availability_assumption": "monthly public archive files should exist under data/futures/um/monthly/fundingRate/BTCUSDT/",
+      "integration_complexity": "moderate",
+      "leakage_risk": "medium_until_available_ts_policy_documented",
+      "local_data_available": true,
+      "needs_api_key": false,
+      "priority": "priority_1",
+      "public_archive_available": "probable",
+      "rate_limit_or_history_limit": null,
+      "readiness_decision": "funding_ready_for_public_archive_probe_and_collection",
+      "source_name": "Binance public archive fundingRate monthly",
+      "uses_private_endpoint": false
+    },
+    "mark_price_klines": {
+      "availability_needs_network_confirmation": true,
+      "causal_timestamp_fields": [
+        "open_time",
+        "close_time",
+        "available_ts"
+      ],
+      "coverage_end_known": null,
+      "coverage_start_known": null,
+      "evidence_paths": [
+        "data/raw/binance_public/futures_um/BTCUSDT/4h"
+      ],
+      "expected_frequency": "kline timeframes",
+      "expected_market_type": "futures_um",
+      "expected_symbol": "BTCUSDT",
+      "expected_url_pattern": "https://data.binance.vision/data/futures/um/monthly/markPriceKlines/BTCUSDT/<timeframe>/BTCUSDT-<timeframe>-YYYY-MM.zip",
+      "historical_availability_assumption": "optional context source; not required for first funding-only layer",
+      "integration_complexity": "moderate",
+      "leakage_risk": "medium_if_close_time_not_respected",
+      "local_data_available": true,
+      "needs_api_key": false,
+      "priority": "optional",
+      "public_archive_available": "probable",
+      "rate_limit_or_history_limit": null,
+      "readiness_decision": "optional_not_required_for_v9_53",
+      "source_name": "Binance public archive markPriceKlines monthly",
+      "uses_private_endpoint": false
+    },
+    "open_interest": {
+      "availability_needs_network_confirmation": true,
+      "causal_timestamp_fields": [
+        "timestamp",
+        "available_ts"
+      ],
+      "coverage_end_known": "2026-05-05 12:00:00+00:00",
+      "coverage_start_known": "2026-04-02 08:00:00+00:00",
+      "evidence_paths": [
+        "reports/research_decisions/derivatives_history_collection_plan_v9_17.json",
+        "reports/research/derivatives_collection_v1_14.json"
+      ],
+      "expected_frequency": "endpoint-dependent, often 5m/15m/1h/4h",
+      "expected_market_type": "futures_um",
+      "expected_symbol": "BTCUSDT",
+      "expected_url_pattern": "public REST /futures/data/openInterestHist, not a proven multi-year archive",
+      "historical_availability_assumption": "REST endpoint is likely history-limited and no proven 5Y public archive is present locally",
+      "integration_complexity": "high_until_historical_source_proven",
+      "leakage_risk": "medium",
+      "local_data_available": true,
+      "needs_api_key": false,
+      "priority": "non_blocking_optional",
+      "public_archive_available": "not_confirmed",
+      "rate_limit_or_history_limit": "history_limited_public_endpoint",
+      "readiness_decision": "oi_not_ready_history_limited",
+      "source_name": "Binance public openInterestHist",
+      "uses_private_endpoint": false
+    },
+    "premium_index_klines": {
+      "availability_needs_network_confirmation": true,
+      "causal_timestamp_fields": [
+        "open_time",
+        "close_time",
+        "available_ts"
+      ],
+      "coverage_end_known": null,
+      "coverage_start_known": null,
+      "evidence_paths": [],
+      "expected_frequency": "kline timeframes",
+      "expected_market_type": "futures_um",
+      "expected_symbol": "BTCUSDT",
+      "expected_url_pattern": "https://data.binance.vision/data/futures/um/monthly/premiumIndexKlines/BTCUSDT/<timeframe>/BTCUSDT-<timeframe>-YYYY-MM.zip",
+      "historical_availability_assumption": "optional context source; not required for first funding-only layer",
+      "integration_complexity": "moderate",
+      "leakage_risk": "medium_if_close_time_not_respected",
+      "local_data_available": false,
+      "needs_api_key": false,
+      "priority": "optional",
+      "public_archive_available": "probable",
+      "rate_limit_or_history_limit": null,
+      "readiness_decision": "optional_not_required_for_v9_53",
+      "source_name": "Binance public archive premiumIndexKlines monthly",
+      "uses_private_endpoint": false
+    }
+  },
+  "source_version": "V9.48_to_V9.51",
+  "status": "PASS",
+  "strategy_created": false,
+  "symbol": "BTCUSDT",
+  "target_window": {
+    "end": "2026-05-05",
+    "start": "2021-05-05"
+  },
+  "version": "V9.52",
+  "walk_forward_executed": false,
+  "warnings": [
+    "La disponibilite 5Y funding doit etre confirmee par telechargement public dans V9.53.",
+    "Open interest est traite comme limite historiquement tant qu'aucune archive publique fiable n'est prouvee."
+  ]
+}

@@ -1,10 +1,10 @@
-# Synthese courante - V9.50
+# Etat courant du projet
 
-- Derniere version validee : `V9.49`.
-- Candidate : `V9.50`.
-- Statut : `pending_external_audit`.
-- Direction : `ohlcv_aggtrades_exact_5y_dataset_validation`.
-- Decision V9.50 : `combined_features_5y_dataset_validated`.
-- Recommandation : V9.51 - Combined Features 5Y ML Offline.
-- Aucun ML, walk-forward, backtest, strategie, signal actionnable ou ordre.
-- Aucun reseau, telechargement, suppression destructive, sidecar ou empreinte ZIP.
+V9.52_to_V9.55 a valide la readiness funding mais la collecte s'est arretee en source issue : le ZIP mensuel public 2026-05 n'est pas disponible et le fallback REST public retourne HTTP 451 dans cet environnement.
+
+- Decision : `derivatives_chain_stopped_source_issue`.
+- Feature store cree : `False`.
+- Feature store valide : `False`.
+- Recommandation : `V9.56 - Derivatives Source Follow-up / May 2026 Funding Tail Probe`.
+
+Aucun trading, paper live, ordre, ML, dataset supervise, label, backtest, walk-forward, strategie ou signal.

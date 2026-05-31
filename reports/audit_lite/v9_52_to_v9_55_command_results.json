@@ -1,0 +1,118 @@
+{
+  "commands": [
+    {
+      "command": "git branch --show-current",
+      "returncode": 0,
+      "summary": "main"
+    },
+    {
+      "command": "git status --short --branch",
+      "returncode": 0,
+      "summary": "initial clean except local ahead commit"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "summary": "collect-only executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/research/test_derivatives_source_readiness_v9_52.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_derivatives_source_readiness_v9_52_validator.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_derivatives_source_readiness_v9_52.py",
+      "returncode": 0,
+      "summary": "derivatives_source_readiness_funding_ready_oi_limited"
+    },
+    {
+      "command": "python scripts/validate_derivatives_source_readiness_v9_52.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/data/test_derivatives_funding_oi_collection_v9_53.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_derivatives_funding_oi_collection_v9_53_validator.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_derivatives_funding_oi_collection_v9_53.py",
+      "returncode": 0,
+      "summary": "funding_collection_failed_source_issue"
+    },
+    {
+      "command": "python scripts/validate_derivatives_funding_oi_collection_v9_53.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/features/test_derivatives_funding_oi_feature_store_v9_54.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_derivatives_funding_oi_feature_store_v9_54_validator.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_derivatives_funding_oi_feature_store_v9_54.py",
+      "returncode": null,
+      "summary": "not executed because V9.53 stopped on source issue"
+    },
+    {
+      "command": "python scripts/validate_derivatives_funding_oi_feature_store_v9_54.py",
+      "returncode": null,
+      "summary": "not executed because V9.54 was not created"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/features/test_derivatives_funding_oi_feature_store_validation_v9_55.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_derivatives_funding_oi_feature_store_validation_v9_55_validator.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_derivatives_funding_oi_feature_store_validation_v9_55.py",
+      "returncode": null,
+      "summary": "not executed because V9.54 did not create a feature store"
+    },
+    {
+      "command": "python scripts/validate_derivatives_funding_oi_feature_store_validation_v9_55.py",
+      "returncode": null,
+      "summary": "not executed because V9.55 was not created"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_52_to_v9_55.py",
+      "returncode": 0,
+      "summary": "executed"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_52_to_v9_55.py --zip projet-galapagos-v9.52-to-v9.55-audit-lite.zip",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_52_to_v9_55.py --zip projet-galapagos-v9.52-to-v9.55-audit-lite.zip",
+      "returncode": 0,
+      "summary": "passed"
+    }
+  ],
+  "created_at_utc": "2026-05-31T14:30:21Z",
+  "sidecars_created": false,
+  "version": "V9.52_to_V9.55",
+  "zip_fingerprints_created": false
+}

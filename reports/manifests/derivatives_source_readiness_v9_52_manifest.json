@@ -1,0 +1,22 @@
+{
+  "created_at_utc": "2026-05-31T14:20:24Z",
+  "decision": "derivatives_source_readiness_funding_ready_oi_limited",
+  "funding_source_status": "funding_ready_for_public_archive_probe_and_collection",
+  "manifest_path": "reports/manifests/derivatives_source_readiness_v9_52_manifest.json",
+  "network_used": false,
+  "new_data_downloaded": false,
+  "no_sidecars": true,
+  "no_zip_fingerprints": true,
+  "oi_source_status": "oi_not_ready_history_limited",
+  "reports": [
+    "reports/research_decisions/derivatives_source_readiness_v9_52.json",
+    "reports/research_decisions/derivatives_source_readiness_v9_52.md",
+    "docs/derivatives_source_readiness_v9_52.md"
+  ],
+  "source_version": "V9.48_to_V9.51",
+  "target_window": {
+    "end": "2026-05-05",
+    "start": "2021-05-05"
+  },
+  "version": "V9.52"
+}

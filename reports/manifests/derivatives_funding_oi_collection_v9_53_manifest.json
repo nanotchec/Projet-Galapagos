@@ -1,0 +1,46 @@
+{
+  "created_at_utc": "2026-05-31T14:26:29Z",
+  "decision": "funding_collection_failed_source_issue",
+  "funding": {
+    "coverage_end": "2026-04-30T16:00:00+00:00",
+    "coverage_start": "2021-05-05T00:00:00.001000+00:00",
+    "duplicate_funding_time": 0,
+    "expected_funding_interval_hours": 8,
+    "expected_intervals": 5481,
+    "funding_rate_nulls": 0,
+    "mark_price_nulls": 5466,
+    "missing_intervals": 15,
+    "quality_status": "FAIL",
+    "raw_bytes_total": 53473,
+    "raw_files_count": 60,
+    "raw_files_expected": 61,
+    "rest_tail_files_count": 0,
+    "rows": 5466,
+    "silver_bytes": 0,
+    "silver_path": "data/silver/derivatives/binance_archive/futures_um/BTCUSDT/fundingRate/window=2021-05-05_2026-05-05/funding_rate.parquet",
+    "silver_write_status": "not_written_due_to_source_or_quality",
+    "tail_rest_fallback_used": false
+  },
+  "funding_silver_path": "data/silver/derivatives/binance_archive/futures_um/BTCUSDT/fundingRate/window=2021-05-05_2026-05-05/funding_rate.parquet",
+  "manifest_path": "reports/manifests/derivatives_funding_oi_collection_v9_53_manifest.json",
+  "network_used": true,
+  "new_data_downloaded": false,
+  "no_sidecars": true,
+  "no_zip_fingerprints": true,
+  "oi": {
+    "collected": false,
+    "coverage_end": null,
+    "coverage_start": null,
+    "history_limit_notes": "No proven multi-year no-key public archive was available in local evidence; REST openInterestHist is treated as history-limited.",
+    "reason": "oi_collection_not_ready_history_limited",
+    "source_issue_notes": "OI is non-blocking for V9.53 funding-only feature readiness."
+  },
+  "raw_dir": "data/raw/binance_public/futures_um/fundingRate/BTCUSDT",
+  "reports": [
+    "reports/data/derivatives_funding_oi_collection_v9_53.json",
+    "reports/data/derivatives_funding_oi_collection_v9_53.md",
+    "docs/derivatives_funding_oi_collection_v9_53.md"
+  ],
+  "source_version": "V9.52",
+  "version": "V9.53"
+}
