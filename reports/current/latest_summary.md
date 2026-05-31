@@ -1,11 +1,8 @@
 # Etat courant du projet
 
-V9.56_to_V9.58 resout la queue funding par une fenetre commune stricte et valide une couche funding-only si la qualite le permet.
+V9.59_to_V9.62 cree et valide le dataset funding common window, puis execute un diagnostic ML offline comparatif avec/sans funding.
 
-- Decision : `funding_only_feature_store_validated_on_closed_common_window`.
-- Fenetre : `{'end': '2026-04-30T16:00:00Z', 'label': '2021-05-05_to_2026-04-30T16-00-00Z', 'start': '2021-05-05T00:00:00Z'}`.
-- Feature store cree : `True`.
-- Feature store valide : `True`.
-- Recommandation : `V9.59_to_V9.62 - Funding Common Window Dataset + ML Offline`.
+- Decision : `funding_common_window_chain_completed_but_class_collapse`.
+- Recommandation : `V9.63 - Label Redesign Diagnostic`.
 
-Aucun trading, paper live, ordre, ML, dataset supervise, label, backtest, walk-forward, strategie ou signal.
+Aucun trading, paper live, ordre, backtest, walk-forward, strategie, signal actionnable, modele persistant, reseau ou telechargement.

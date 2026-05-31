@@ -1,0 +1,119 @@
+{
+  "commands": [
+    {
+      "command": "git branch --show-current",
+      "returncode": 0,
+      "summary": "main"
+    },
+    {
+      "command": "git status --short --branch",
+      "returncode": 0,
+      "summary": "initial clean except local ahead commits"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "summary": "collect-only executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/features/test_ohlcv_aggtrades_exact_funding_5y_feature_store_v9_59.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_ohlcv_aggtrades_exact_funding_5y_feature_store_v9_59_validator.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_ohlcv_aggtrades_exact_funding_5y_feature_store_v9_59.py",
+      "returncode": 0,
+      "summary": "funding_common_window_feature_store_created_with_warnings"
+    },
+    {
+      "command": "python scripts/validate_ohlcv_aggtrades_exact_funding_5y_feature_store_v9_59.py",
+      "returncode": 0,
+      "summary": "validator executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/datasets/test_ohlcv_aggtrades_exact_funding_5y_dataset_v9_60.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_ohlcv_aggtrades_exact_funding_5y_dataset_v9_60_validator.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_ohlcv_aggtrades_exact_funding_5y_dataset_v9_60.py",
+      "returncode": 0,
+      "summary": "funding_common_window_dataset_created_with_warnings"
+    },
+    {
+      "command": "python scripts/validate_ohlcv_aggtrades_exact_funding_5y_dataset_v9_60.py",
+      "returncode": 0,
+      "summary": "validator executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/datasets/test_ohlcv_aggtrades_exact_funding_5y_dataset_validation_v9_61.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_ohlcv_aggtrades_exact_funding_5y_dataset_validation_v9_61_validator.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_ohlcv_aggtrades_exact_funding_5y_dataset_validation_v9_61.py",
+      "returncode": 0,
+      "summary": "funding_common_window_dataset_validated"
+    },
+    {
+      "command": "python scripts/validate_ohlcv_aggtrades_exact_funding_5y_dataset_validation_v9_61.py",
+      "returncode": 0,
+      "summary": "validator executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/ml/test_ohlcv_aggtrades_exact_funding_5y_offline_ml_v9_62.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_ohlcv_aggtrades_exact_funding_5y_offline_ml_v9_62_validator.py",
+      "returncode": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_ohlcv_aggtrades_exact_funding_5y_offline_ml_v9_62.py",
+      "returncode": 0,
+      "summary": "funding_common_window_ml_completed_but_class_collapse"
+    },
+    {
+      "command": "python scripts/validate_ohlcv_aggtrades_exact_funding_5y_offline_ml_v9_62.py",
+      "returncode": 0,
+      "summary": "validator executed"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_59_to_v9_62.py",
+      "returncode": 0,
+      "summary": "executed"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_59_to_v9_62.py --zip projet-galapagos-v9.59-to-v9.62-audit-lite.zip",
+      "returncode": 0,
+      "summary": "passed after release"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_59_to_v9_62.py --zip projet-galapagos-v9.59-to-v9.62-audit-lite.zip",
+      "returncode": 0,
+      "summary": "passed after release"
+    }
+  ],
+  "created_at_utc": "2026-05-31T17:06:28Z",
+  "global_decision": "funding_common_window_chain_completed_but_class_collapse",
+  "sidecars_created": false,
+  "version": "V9.59_to_V9.62",
+  "zip_fingerprints_created": false
+}

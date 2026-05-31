@@ -1,0 +1,33 @@
+{
+  "coverage_status": "PASS",
+  "created_at_utc": "2026-05-31T16:54:22Z",
+  "decision": "funding_common_window_dataset_validated",
+  "leakage_guard_status": "PASS",
+  "manifest_path": "reports/manifests/ohlcv_aggtrades_exact_funding_5y_dataset_validation_v9_61_manifest.json",
+  "network_used": false,
+  "new_data_downloaded": false,
+  "quality_status": "PASS",
+  "report_path": "reports/datasets/ohlcv_aggtrades_exact_funding_5y_dataset_validation_v9_61.json",
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "ml_executed": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_destructive_cleanup": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_version": "V9.60",
+  "version": "V9.61"
+}

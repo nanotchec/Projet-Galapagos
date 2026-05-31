@@ -1,22 +1,21 @@
-# Latest Metrics
+# Attestation locale V9.59 a V9.62
 
-- `last_validated_version`: `V9.56_to_V9.58`
-- `candidate_version`: `V9.59_to_V9.62`
-- `candidate_status`: `pending_external_audit`
-- `source_version`: `V9.56_to_V9.58`
-- `direction`: `funding_common_window_feature_dataset_ml_offline`
-- `decision`: `funding_common_window_chain_completed_but_class_collapse`
-- `quality_status`: `PASS`
-- `coverage_status`: `funding_common_window_dataset_ml_executed`
-- `actual_common_window`: `{'end': '2026-04-30T16:00:00Z', 'label': '2021-05-05_to_2026-04-30T16-00-00Z', 'start': '2021-05-05T00:00:00Z'}`
+- `version`: `V9.59_to_V9.62`
+- `created_at_utc`: `2026-05-31T17:06:29Z`
+- `zip_name`: `projet-galapagos-v9.59-to-v9.62-audit-lite.zip`
+- `zip_bytes_estimate`: `280071`
+- `zip_bytes_is_authoritative`: `False`
+- `v9_59_decision`: `funding_common_window_feature_store_created_with_warnings`
+- `v9_60_decision`: `funding_common_window_dataset_created_with_warnings`
+- `v9_61_decision`: `funding_common_window_dataset_validated`
+- `v9_62_decision`: `funding_common_window_ml_completed_but_class_collapse`
+- `global_decision`: `funding_common_window_chain_completed_but_class_collapse`
 - `feature_store_created`: `True`
 - `dataset_created`: `True`
 - `dataset_validated`: `True`
 - `ml_executed`: `True`
-- `walk_forward_executed`: `False`
-- `backtest_executed`: `False`
-- `recommended_next_step`: `V9.63 - Label Redesign Diagnostic`
 - `api_key_used`: `False`
+- `backtest_executed`: `False`
 - `exchange_auth_used`: `False`
 - `model_persisted`: `False`
 - `network_used`: `False`
@@ -36,4 +35,5 @@
 - `private_endpoint_used`: `False`
 - `signal_created`: `False`
 - `strategy_created`: `False`
+- `walk_forward_executed`: `False`
 - `websocket_live_used`: `False`

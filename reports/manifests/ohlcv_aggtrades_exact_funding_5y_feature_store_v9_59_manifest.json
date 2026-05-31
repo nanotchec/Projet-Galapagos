@@ -1,0 +1,50 @@
+{
+  "actual_common_window": {
+    "end": "2026-04-30T16:00:00Z",
+    "label": "2021-05-05_to_2026-04-30T16-00-00Z",
+    "start": "2021-05-05T00:00:00Z"
+  },
+  "coverage_status": "funding_common_window_feature_store_complete",
+  "created_at_utc": "2026-05-31T16:53:23Z",
+  "decision": "funding_common_window_feature_store_created_with_warnings",
+  "feature_store_paths": {
+    "15m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_59/features/ohlcv_aggtrades_exact_funding_5y_common_window/source=binance_archive/market_type=mixed_spot_futures_um/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_to_2026-04-30T16-00-00Z/features.parquet",
+    "1h": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_59/features/ohlcv_aggtrades_exact_funding_5y_common_window/source=binance_archive/market_type=mixed_spot_futures_um/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_to_2026-04-30T16-00-00Z/features.parquet",
+    "1m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_59/features/ohlcv_aggtrades_exact_funding_5y_common_window/source=binance_archive/market_type=mixed_spot_futures_um/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_to_2026-04-30T16-00-00Z/features.parquet",
+    "5m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_59/features/ohlcv_aggtrades_exact_funding_5y_common_window/source=binance_archive/market_type=mixed_spot_futures_um/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_to_2026-04-30T16-00-00Z/features.parquet"
+  },
+  "leakage_guard": {
+    "feature_available_ts_lte_decision_ts": true,
+    "no_future_funding": true,
+    "status": "PASS"
+  },
+  "manifest_path": "reports/manifests/ohlcv_aggtrades_exact_funding_5y_feature_store_v9_59_manifest.json",
+  "network_used": false,
+  "new_data_downloaded": false,
+  "no_sidecars": true,
+  "no_zip_fingerprints": true,
+  "quality_status": "PASS",
+  "report_path": "reports/features/ohlcv_aggtrades_exact_funding_5y_feature_store_v9_59.json",
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "ml_executed": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_destructive_cleanup": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_version": "V9.56_to_V9.58",
+  "version": "V9.59"
+}
