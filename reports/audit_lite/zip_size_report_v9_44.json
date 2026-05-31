@@ -1,0 +1,92 @@
+{
+  "created_at_utc": "2026-05-31T00:51:39Z",
+  "files_count": 41,
+  "largest_files": [
+    {
+      "bytes": 338230,
+      "path": "reports/labels/ohlcv_aggtrades_5y_label_factory_v9_40.json"
+    },
+    {
+      "bytes": 215114,
+      "path": "reports/datasets/ohlcv_aggtrades_5y_dataset_validation_v9_42.json"
+    },
+    {
+      "bytes": 165236,
+      "path": "reports/ml/ohlcv_aggtrades_5y_offline_ml_v9_43.json"
+    },
+    {
+      "bytes": 102748,
+      "path": "reports/datasets/ohlcv_aggtrades_5y_dataset_v9_41.json"
+    },
+    {
+      "bytes": 91420,
+      "path": "reports/ml/ohlcv_aggtrades_5y_offline_scores_v9_43.json"
+    },
+    {
+      "bytes": 79327,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_validation_v9_38.json"
+    },
+    {
+      "bytes": 63877,
+      "path": "reports/PROJECT_STATE.json"
+    },
+    {
+      "bytes": 30176,
+      "path": "reports/research_decisions/ohlcv_aggtrades_5y_ml_diagnostic_v9_44.json"
+    },
+    {
+      "bytes": 26621,
+      "path": "src/galapagos/research/ohlcv_aggtrades_5y_ml_diagnostic_v9_44.py"
+    },
+    {
+      "bytes": 25806,
+      "path": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_37.json"
+    },
+    {
+      "bytes": 10131,
+      "path": "scripts/release_audit_lite_zip_v9_44.py"
+    },
+    {
+      "bytes": 9848,
+      "path": "scripts/audit_audit_lite_zip_v9_44.py"
+    },
+    {
+      "bytes": 6783,
+      "path": "tests/research/test_ohlcv_aggtrades_5y_ml_diagnostic_v9_44.py"
+    },
+    {
+      "bytes": 6692,
+      "path": "scripts/smoke_audit_lite_zip_v9_44.py"
+    },
+    {
+      "bytes": 6328,
+      "path": "src/galapagos/research/ohlcv_aggtrades_5y_ml_diagnostic_v9_44_validation.py"
+    },
+    {
+      "bytes": 3383,
+      "path": "docs/ohlcv_aggtrades_5y_ml_diagnostic_v9_44.md"
+    },
+    {
+      "bytes": 3383,
+      "path": "reports/research_decisions/ohlcv_aggtrades_5y_ml_diagnostic_v9_44.md"
+    },
+    {
+      "bytes": 2600,
+      "path": "reports/audit_lite/v9_44_artifact_inventory.json"
+    },
+    {
+      "bytes": 2407,
+      "path": "reports/audit_lite/zip_size_report_v9_44.json"
+    },
+    {
+      "bytes": 2347,
+      "path": "reports/current/latest_metrics.json"
+    }
+  ],
+  "sidecars_created": false,
+  "version": "V9.44",
+  "zip_bytes_estimate": 175007,
+  "zip_bytes_is_authoritative": false,
+  "zip_fingerprints_created": false,
+  "zip_name": "projet-galapagos-v9.44-audit-lite.zip"
+}

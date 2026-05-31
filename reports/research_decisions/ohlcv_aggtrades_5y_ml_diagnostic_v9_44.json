@@ -1,0 +1,954 @@
+{
+  "backtest_executed": false,
+  "blockers": [],
+  "created_at_utc": "2026-05-31T00:50:31Z",
+  "decision": "feature_enrichment_before_more_ml",
+  "diagnostic_only": true,
+  "feature_diagnostic": {
+    "aggtrades_feature_limitations": {
+      "blocking_for_next_dataset": false,
+      "buyer_maker_count_exact_included": false,
+      "direct_aggtrades_full_scan_performed": false,
+      "large_trade_count_exact_included": false,
+      "median_trade_size_exact_included": false,
+      "non_blocking_for_current_feature_store_validation": true,
+      "notes": [
+        "V9.38 valide le feature store V9.37 cree a partir des agregats aggTrades materialises dans l'OHLCV derivee V9.35.",
+        "L'absence de median_trade_size exact, large_trade_count exact et buyer_maker_count exact reste une limitation documentee, non bloquante pour V9.39 si la qualite V9.38 passe."
+      ]
+    },
+    "direct_aggtrades_full_scan_performed": false,
+    "feature_columns": [
+      "close_return_1",
+      "log_return_1",
+      "rolling_return_5",
+      "rolling_return_15",
+      "rolling_return_60",
+      "rolling_volatility_5",
+      "rolling_volatility_15",
+      "rolling_volatility_60",
+      "high_low_range",
+      "close_open_return",
+      "candle_body",
+      "upper_wick",
+      "lower_wick",
+      "volume",
+      "quote_volume",
+      "trades_count",
+      "volume_rolling_mean_5",
+      "volume_rolling_mean_15",
+      "volume_rolling_mean_60",
+      "volume_rolling_std_5",
+      "volume_rolling_std_15",
+      "volume_rolling_std_60",
+      "zero_trade_bucket_rolling_count_60",
+      "agg_trade_count",
+      "agg_trade_volume",
+      "agg_trade_quote_volume",
+      "average_trade_size",
+      "taker_buy_base_volume",
+      "taker_sell_base_volume",
+      "taker_buy_ratio",
+      "taker_buy_sell_imbalance",
+      "trade_intensity_rolling_5",
+      "trade_intensity_rolling_15",
+      "trade_intensity_rolling_60",
+      "agg_trade_volume_rolling_mean_5",
+      "agg_trade_volume_rolling_mean_15",
+      "agg_trade_volume_rolling_mean_60",
+      "taker_imbalance_rolling_mean_5",
+      "taker_imbalance_rolling_mean_15",
+      "taker_imbalance_rolling_mean_60",
+      "missing_aggtrades_flag"
+    ],
+    "feature_columns_count": 41,
+    "feature_families": {
+      "aggtrades_aggregates": [
+        "agg_trade_count",
+        "agg_trade_volume",
+        "agg_trade_quote_volume",
+        "average_trade_size",
+        "taker_buy_base_volume",
+        "taker_sell_base_volume",
+        "taker_buy_ratio",
+        "taker_buy_sell_imbalance",
+        "trade_intensity_rolling_5",
+        "trade_intensity_rolling_15",
+        "trade_intensity_rolling_60",
+        "agg_trade_volume_rolling_mean_5",
+        "agg_trade_volume_rolling_mean_15",
+        "agg_trade_volume_rolling_mean_60",
+        "taker_imbalance_rolling_mean_5",
+        "taker_imbalance_rolling_mean_15",
+        "taker_imbalance_rolling_mean_60",
+        "missing_aggtrades_flag"
+      ],
+      "ohlcv_candle": [
+        "high_low_range",
+        "close_open_return",
+        "candle_body",
+        "upper_wick",
+        "lower_wick"
+      ],
+      "ohlcv_returns": [
+        "close_return_1",
+        "log_return_1",
+        "rolling_return_5",
+        "rolling_return_15",
+        "rolling_return_60",
+        "rolling_volatility_5",
+        "rolling_volatility_15",
+        "rolling_volatility_60"
+      ],
+      "ohlcv_volume": [
+        "volume",
+        "quote_volume",
+        "trades_count",
+        "volume_rolling_mean_5",
+        "volume_rolling_mean_15",
+        "volume_rolling_mean_60",
+        "volume_rolling_std_5",
+        "volume_rolling_std_15",
+        "volume_rolling_std_60"
+      ],
+      "zero_trade": [
+        "zero_trade_bucket",
+        "zero_trade_bucket_rolling_count_60"
+      ]
+    },
+    "features_too_aggregated": true,
+    "missing_exact_aggtrades_features": {
+      "buyer_maker_count_exact": "absent",
+      "large_trade_count_exact": "absent",
+      "median_trade_size_exact": "absent",
+      "taker_buy_sell_count_exact": "absent",
+      "trade_size_distribution_buckets": "absent"
+    },
+    "recommended_next_feature_scope": [
+      "recalcul exact buyer_maker/taker side depuis aggTrades silver",
+      "distribution de tailles de trades",
+      "large trade counts robustes par timeframe",
+      "burst/intensity microstructure intrabar",
+      "features de desequilibre acheteur/vendeur si reconstructibles sans endpoint prive"
+    ],
+    "relation_with_flat_collapse": "Les features agrégées ne donnent pas assez de separation directionnelle; les modeles reduisent le risque en predisant la classe majoritaire FLAT.",
+    "warmup_impact_available": true,
+    "zero_trade_flags_present": true
+  },
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "heavy_ml_executed": false,
+  "inputs": {
+    "dataset_v9_41": "reports/datasets/ohlcv_aggtrades_5y_dataset_v9_41.json",
+    "dataset_validation_v9_42": "reports/datasets/ohlcv_aggtrades_5y_dataset_validation_v9_42.json",
+    "feature_store_v9_37": "reports/features/ohlcv_aggtrades_5y_feature_store_v9_37.json",
+    "feature_validation_v9_38": "reports/features/ohlcv_aggtrades_5y_feature_store_validation_v9_38.json",
+    "label_factory_v9_40": "reports/labels/ohlcv_aggtrades_5y_label_factory_v9_40.json",
+    "latest_metrics": "reports/current/latest_metrics.json",
+    "ml_manifest_v9_43": "reports/manifests/ohlcv_aggtrades_5y_offline_ml_v9_43_manifest.json",
+    "ml_report_v9_43": "reports/ml/ohlcv_aggtrades_5y_offline_ml_v9_43.json",
+    "ml_scores_v9_43": "reports/ml/ohlcv_aggtrades_5y_offline_scores_v9_43.json",
+    "project_state": "reports/PROJECT_STATE.json"
+  },
+  "label_diagnostic": {
+    "alternative_label_summary": {
+      "15m": {
+        "binary_directional_volnorm_h4_5y": {
+          "entropy": 0.999843,
+          "flat_ratio": 0.0,
+          "majority_class_ratio": 0.50737
+        },
+        "up_down_flat_volnorm_h1_5y": {
+          "entropy": 1.277523,
+          "flat_ratio": 0.653432,
+          "majority_class_ratio": 0.653432
+        },
+        "up_down_flat_volnorm_h4_5y": {
+          "entropy": 0.866491,
+          "flat_ratio": 0.81798,
+          "majority_class_ratio": 0.81798
+        }
+      },
+      "1h": {
+        "binary_directional_volnorm_h4_5y": {
+          "entropy": 0.999903,
+          "flat_ratio": 0.0,
+          "majority_class_ratio": 0.505801
+        },
+        "up_down_flat_volnorm_h1_5y": {
+          "entropy": 1.238517,
+          "flat_ratio": 0.673145,
+          "majority_class_ratio": 0.673145
+        },
+        "up_down_flat_volnorm_h4_5y": {
+          "entropy": 0.834793,
+          "flat_ratio": 0.827837,
+          "majority_class_ratio": 0.827837
+        }
+      },
+      "1m": {
+        "binary_directional_volnorm_h4_5y": {
+          "entropy": 0.999835,
+          "flat_ratio": 0.0,
+          "majority_class_ratio": 0.507558
+        },
+        "up_down_flat_volnorm_h1_5y": {
+          "entropy": 1.350603,
+          "flat_ratio": 0.612538,
+          "majority_class_ratio": 0.612538
+        },
+        "up_down_flat_volnorm_h4_5y": {
+          "entropy": 0.942868,
+          "flat_ratio": 0.792945,
+          "majority_class_ratio": 0.792945
+        }
+      },
+      "5m": {
+        "binary_directional_volnorm_h4_5y": {
+          "entropy": 0.999831,
+          "flat_ratio": 0.0,
+          "majority_class_ratio": 0.507655
+        },
+        "up_down_flat_volnorm_h1_5y": {
+          "entropy": 1.30517,
+          "flat_ratio": 0.638638,
+          "majority_class_ratio": 0.638638
+        },
+        "up_down_flat_volnorm_h4_5y": {
+          "entropy": 0.895351,
+          "flat_ratio": 0.808741,
+          "majority_class_ratio": 0.808741
+        }
+      }
+    },
+    "autocorrelation_available": false,
+    "binary_directional_more_relevant": "candidate_for_v9_45_or_later",
+    "diagnosis": "Le label contribue fortement au collapse FLAT, mais les ratios FLAT de 61-67% n'expliquent pas seuls l'incapacite des modeles a predire DOWN/UP.",
+    "distribution_by_month_available": true,
+    "distribution_by_split": {
+      "15m": {
+        "test": {
+          "counts": {
+            "-1": 6201,
+            "0": 22598,
+            "1": 6276
+          },
+          "entropy": 1.29479,
+          "flat_ratio": 0.644277,
+          "majority_class_ratio": 0.644277,
+          "ratios": {
+            "-1": 0.176793,
+            "0": 0.644277,
+            "1": 0.178931
+          }
+        },
+        "train": {
+          "counts": {
+            "-1": 17840,
+            "0": 69395,
+            "1": 17940
+          },
+          "entropy": 1.265198,
+          "flat_ratio": 0.659805,
+          "majority_class_ratio": 0.659805,
+          "ratios": {
+            "-1": 0.169622,
+            "0": 0.659805,
+            "1": 0.170573
+          }
+        },
+        "validation": {
+          "counts": {
+            "-1": 6149,
+            "0": 22572,
+            "1": 6357
+          },
+          "entropy": 1.296205,
+          "flat_ratio": 0.64348,
+          "majority_class_ratio": 0.64348,
+          "ratios": {
+            "-1": 0.175295,
+            "0": 0.64348,
+            "1": 0.181225
+          }
+        }
+      },
+      "1h": {
+        "test": {
+          "counts": {
+            "-1": 1502,
+            "0": 5763,
+            "1": 1504
+          },
+          "entropy": 1.27027,
+          "flat_ratio": 0.657202,
+          "majority_class_ratio": 0.657202,
+          "ratios": {
+            "-1": 0.171285,
+            "0": 0.657202,
+            "1": 0.171513
+          }
+        },
+        "train": {
+          "counts": {
+            "-1": 4177,
+            "0": 17846,
+            "1": 4225
+          },
+          "entropy": 1.224584,
+          "flat_ratio": 0.679899,
+          "majority_class_ratio": 0.679899,
+          "ratios": {
+            "-1": 0.159136,
+            "0": 0.679899,
+            "1": 0.160965
+          }
+        },
+        "validation": {
+          "counts": {
+            "-1": 1413,
+            "0": 5866,
+            "1": 1491
+          },
+          "entropy": 1.247032,
+          "flat_ratio": 0.668871,
+          "majority_class_ratio": 0.668871,
+          "ratios": {
+            "-1": 0.161117,
+            "0": 0.668871,
+            "1": 0.170011
+          }
+        }
+      },
+      "1m": {
+        "test": {
+          "counts": {
+            "-1": 105992,
+            "0": 314497,
+            "1": 105627
+          },
+          "entropy": 1.374467,
+          "flat_ratio": 0.597771,
+          "majority_class_ratio": 0.597771,
+          "ratios": {
+            "-1": 0.201461,
+            "0": 0.597771,
+            "1": 0.200768
+          }
+        },
+        "train": {
+          "counts": {
+            "-1": 299166,
+            "0": 980436,
+            "1": 298501
+          },
+          "entropy": 1.335861,
+          "flat_ratio": 0.621275,
+          "majority_class_ratio": 0.621275,
+          "ratios": {
+            "-1": 0.189573,
+            "0": 0.621275,
+            "1": 0.189152
+          }
+        },
+        "validation": {
+          "counts": {
+            "-1": 103517,
+            "0": 316284,
+            "1": 106375
+          },
+          "entropy": 1.369151,
+          "flat_ratio": 0.601099,
+          "majority_class_ratio": 0.601099,
+          "ratios": {
+            "-1": 0.196735,
+            "0": 0.601099,
+            "1": 0.202166
+          }
+        }
+      },
+      "5m": {
+        "test": {
+          "counts": {
+            "-1": 19676,
+            "0": 65789,
+            "1": 19759
+          },
+          "entropy": 1.329036,
+          "flat_ratio": 0.625228,
+          "majority_class_ratio": 0.625228,
+          "ratios": {
+            "-1": 0.186992,
+            "0": 0.625228,
+            "1": 0.18778
+          }
+        },
+        "train": {
+          "counts": {
+            "-1": 55705,
+            "0": 204486,
+            "1": 55454
+          },
+          "entropy": 1.28815,
+          "flat_ratio": 0.647835,
+          "majority_class_ratio": 0.647835,
+          "ratios": {
+            "-1": 0.17648,
+            "0": 0.647835,
+            "1": 0.175685
+          }
+        },
+        "validation": {
+          "counts": {
+            "-1": 19560,
+            "0": 65715,
+            "1": 19960
+          },
+          "entropy": 1.330344,
+          "flat_ratio": 0.62446,
+          "majority_class_ratio": 0.62446,
+          "ratios": {
+            "-1": 0.18587,
+            "0": 0.62446,
+            "1": 0.189671
+          }
+        }
+      }
+    },
+    "distribution_by_timeframe": {
+      "15m": {
+        "counts": {
+          "-1": 30190,
+          "0": 114565,
+          "1": 30573
+        },
+        "entropy": 1.277523,
+        "flat_ratio": 0.653432,
+        "majority_class_ratio": 0.653432,
+        "ratios": {
+          "-1": 0.172192,
+          "0": 0.653432,
+          "1": 0.174376
+        }
+      },
+      "1h": {
+        "counts": {
+          "-1": 7092,
+          "0": 29475,
+          "1": 7220
+        },
+        "entropy": 1.238517,
+        "flat_ratio": 0.673145,
+        "majority_class_ratio": 0.673145,
+        "ratios": {
+          "-1": 0.161966,
+          "0": 0.673145,
+          "1": 0.164889
+        }
+      },
+      "1m": {
+        "counts": {
+          "-1": 508675,
+          "0": 1611217,
+          "1": 510503
+        },
+        "entropy": 1.350603,
+        "flat_ratio": 0.612538,
+        "majority_class_ratio": 0.612538,
+        "ratios": {
+          "-1": 0.193384,
+          "0": 0.612538,
+          "1": 0.194078
+        }
+      },
+      "5m": {
+        "counts": {
+          "-1": 94941,
+          "0": 335990,
+          "1": 95173
+        },
+        "entropy": 1.30517,
+        "flat_ratio": 0.638638,
+        "majority_class_ratio": 0.638638,
+        "ratios": {
+          "-1": 0.180461,
+          "0": 0.638638,
+          "1": 0.180901
+        }
+      }
+    },
+    "distribution_by_year_available": true,
+    "entropy": {
+      "15m": 1.277523,
+      "1h": 1.238517,
+      "1m": 1.350603,
+      "5m": 1.30517
+    },
+    "flat_ratio": {
+      "15m": 0.653432,
+      "1h": 0.673145,
+      "1m": 0.612538,
+      "5m": 0.638638
+    },
+    "h1_too_noisy": "possible",
+    "h4_too_flat": "possible selon V9.40, a verifier dans une version dediee sans changer le label en V9.44",
+    "label_too_flat_dominated": true,
+    "majority_class_ratio": {
+      "15m": 0.653432,
+      "1h": 0.673145,
+      "1m": 0.612538,
+      "5m": 0.638638
+    },
+    "max_flat_ratio": 0.673145,
+    "min_entropy": 1.238517,
+    "quantile_label_more_relevant": "candidate_for_v9_45_or_later",
+    "target_name": "up_down_flat_volnorm_h1_5y",
+    "three_class_structure_difficult": true,
+    "transition_rate_available": false
+  },
+  "limitations": [
+    "Diagnostic fonde sur les rapports V9.43/V9.42/V9.40/V9.38, sans relecture massive du dataset full.",
+    "Aucun nouveau label, aucune nouvelle feature et aucun entrainement lourd ne sont produits en V9.44.",
+    "La disponibilite predictive de funding/open interest n'est pas testee dans cette version."
+  ],
+  "missing_inputs": [],
+  "ml_result_summary": {
+    "baseline_clear_wins_count": 0,
+    "best_case_summary": "1h logistic_regression validation macro_f1=0.292091, balanced_accuracy=0.34209, flat_prediction_ratio=0.977879",
+    "feature_columns_count": 41,
+    "learned_vs_baseline_summary": "Aucun modele learned ne produit de clear win; la moyenne de macro-F1 vs meilleure baseline est negative.",
+    "learned_vs_shuffled_summary": "Quinze comparaisons restent proches du shuffle; seul le meilleur cas 1h validation reste legerement au-dessus mais non suffisant.",
+    "max_delta_macro_f1_original_vs_shuffled": 0.024896,
+    "mean_delta_accuracy_vs_best_baseline": -0.000326,
+    "mean_delta_macro_f1_vs_best_baseline": -0.071234,
+    "model_collapse_summary": "Les modeles learned predisent presque exclusivement FLAT; les arbres depth-2 sont equivalants a une majority baseline sur validation/test.",
+    "models_executed": [
+      "majority_class_baseline",
+      "random_seeded_baseline",
+      "logistic_regression",
+      "decision_tree_depth_2"
+    ],
+    "no_clear_edge_vs_shuffled_labels_count": 15,
+    "target": "up_down_flat_volnorm_h1_5y",
+    "target_name": "up_down_flat_volnorm_h1_5y",
+    "timeframe_collapse": {
+      "15m": {
+        "all_learned_models_predict_mostly_flat": true,
+        "decision_tree_equals_majority_baseline": true,
+        "learned_models": [
+          {
+            "accuracy": 0.644277,
+            "balanced_accuracy": 0.333333,
+            "down_up_prediction_ratio": 0.0,
+            "flat_prediction_ratio": 1.0,
+            "macro_f1": 0.26122,
+            "model_name": "decision_tree_depth_2",
+            "per_class_recall": {
+              "DOWN": 0.0,
+              "FLAT": 1.0,
+              "UP": 0.0
+            },
+            "prediction_distribution": {
+              "DOWN": 0,
+              "FLAT": 35075,
+              "UP": 0
+            },
+            "split": "test"
+          },
+          {
+            "accuracy": 0.64348,
+            "balanced_accuracy": 0.333333,
+            "down_up_prediction_ratio": 0.0,
+            "flat_prediction_ratio": 1.0,
+            "macro_f1": 0.261023,
+            "model_name": "decision_tree_depth_2",
+            "per_class_recall": {
+              "DOWN": 0.0,
+              "FLAT": 1.0,
+              "UP": 0.0
+            },
+            "prediction_distribution": {
+              "DOWN": 0,
+              "FLAT": 35078,
+              "UP": 0
+            },
+            "split": "validation"
+          },
+          {
+            "accuracy": 0.643307,
+            "balanced_accuracy": 0.335192,
+            "down_up_prediction_ratio": 0.005845,
+            "flat_prediction_ratio": 0.994155,
+            "macro_f1": 0.267464,
+            "model_name": "logistic_regression",
+            "per_class_recall": {
+              "DOWN": 0.004999193678438961,
+              "FLAT": 0.9957960881493938,
+              "UP": 0.004780114722753346
+            },
+            "prediction_distribution": {
+              "DOWN": 101,
+              "FLAT": 34870,
+              "UP": 104
+            },
+            "split": "test"
+          },
+          {
+            "accuracy": 0.642454,
+            "balanced_accuracy": 0.336808,
+            "down_up_prediction_ratio": 0.010092,
+            "flat_prediction_ratio": 0.989908,
+            "macro_f1": 0.271786,
+            "model_name": "logistic_regression",
+            "per_class_recall": {
+              "DOWN": 0.00813140348024069,
+              "FLAT": 0.9937976253765728,
+              "UP": 0.008494572911750826
+            },
+            "prediction_distribution": {
+              "DOWN": 198,
+              "FLAT": 34724,
+              "UP": 156
+            },
+            "split": "validation"
+          }
+        ]
+      },
+      "1h": {
+        "all_learned_models_predict_mostly_flat": true,
+        "decision_tree_equals_majority_baseline": true,
+        "learned_models": [
+          {
+            "accuracy": 0.657202,
+            "balanced_accuracy": 0.333333,
+            "down_up_prediction_ratio": 0.0,
+            "flat_prediction_ratio": 1.0,
+            "macro_f1": 0.264382,
+            "model_name": "decision_tree_depth_2",
+            "per_class_recall": {
+              "DOWN": 0.0,
+              "FLAT": 1.0,
+              "UP": 0.0
+            },
+            "prediction_distribution": {
+              "DOWN": 0,
+              "FLAT": 8769,
+              "UP": 0
+            },
+            "split": "test"
+          },
+          {
+            "accuracy": 0.668871,
+            "balanced_accuracy": 0.333333,
+            "down_up_prediction_ratio": 0.0,
+            "flat_prediction_ratio": 1.0,
+            "macro_f1": 0.267195,
+            "model_name": "decision_tree_depth_2",
+            "per_class_recall": {
+              "DOWN": 0.0,
+              "FLAT": 1.0,
+              "UP": 0.0
+            },
+            "prediction_distribution": {
+              "DOWN": 0,
+              "FLAT": 8770,
+              "UP": 0
+            },
+            "split": "validation"
+          },
+          {
+            "accuracy": 0.658,
+            "balanced_accuracy": 0.338655,
+            "down_up_prediction_ratio": 0.008211,
+            "flat_prediction_ratio": 0.991789,
+            "macro_f1": 0.277568,
+            "model_name": "logistic_regression",
+            "per_class_recall": {
+              "DOWN": 0.005992010652463382,
+              "FLAT": 0.9960090230782579,
+              "UP": 0.013962765957446808
+            },
+            "prediction_distribution": {
+              "DOWN": 17,
+              "FLAT": 8697,
+              "UP": 55
+            },
+            "split": "test"
+          },
+          {
+            "accuracy": 0.666021,
+            "balanced_accuracy": 0.34209,
+            "down_up_prediction_ratio": 0.022121,
+            "flat_prediction_ratio": 0.977879,
+            "macro_f1": 0.292091,
+            "model_name": "logistic_regression",
+            "per_class_recall": {
+              "DOWN": 0.009907997169143666,
+              "FLAT": 0.9855097170132969,
+              "UP": 0.03085177733065057
+            },
+            "prediction_distribution": {
+              "DOWN": 63,
+              "FLAT": 8576,
+              "UP": 131
+            },
+            "split": "validation"
+          }
+        ]
+      },
+      "1m": {
+        "all_learned_models_predict_mostly_flat": true,
+        "decision_tree_equals_majority_baseline": true,
+        "learned_models": [
+          {
+            "accuracy": 0.597771,
+            "balanced_accuracy": 0.333333,
+            "down_up_prediction_ratio": 0.0,
+            "flat_prediction_ratio": 1.0,
+            "macro_f1": 0.249419,
+            "model_name": "decision_tree_depth_2",
+            "per_class_recall": {
+              "DOWN": 0.0,
+              "FLAT": 1.0,
+              "UP": 0.0
+            },
+            "prediction_distribution": {
+              "DOWN": 0,
+              "FLAT": 526116,
+              "UP": 0
+            },
+            "split": "test"
+          },
+          {
+            "accuracy": 0.601099,
+            "balanced_accuracy": 0.333333,
+            "down_up_prediction_ratio": 0.0,
+            "flat_prediction_ratio": 1.0,
+            "macro_f1": 0.250286,
+            "model_name": "decision_tree_depth_2",
+            "per_class_recall": {
+              "DOWN": 0.0,
+              "FLAT": 1.0,
+              "UP": 0.0
+            },
+            "prediction_distribution": {
+              "DOWN": 0,
+              "FLAT": 526176,
+              "UP": 0
+            },
+            "split": "validation"
+          },
+          {
+            "accuracy": 0.597659,
+            "balanced_accuracy": 0.333392,
+            "down_up_prediction_ratio": 0.000411,
+            "flat_prediction_ratio": 0.999589,
+            "macro_f1": 0.249755,
+            "model_name": "logistic_regression",
+            "per_class_recall": {
+              "DOWN": 0.00033964827534153523,
+              "FLAT": 0.999627977373393,
+              "UP": 0.00020828007990381247
+            },
+            "prediction_distribution": {
+              "DOWN": 161,
+              "FLAT": 525900,
+              "UP": 55
+            },
+            "split": "test"
+          },
+          {
+            "accuracy": 0.600854,
+            "balanced_accuracy": 0.33332,
+            "down_up_prediction_ratio": 0.000608,
+            "flat_prediction_ratio": 0.999392,
+            "macro_f1": 0.250598,
+            "model_name": "logistic_regression",
+            "per_class_recall": {
+              "DOWN": 0.00040573045973125185,
+              "FLAT": 0.9994119209318207,
+              "UP": 0.0001410105757931845
+            },
+            "prediction_distribution": {
+              "DOWN": 236,
+              "FLAT": 525856,
+              "UP": 84
+            },
+            "split": "validation"
+          }
+        ]
+      },
+      "5m": {
+        "all_learned_models_predict_mostly_flat": true,
+        "decision_tree_equals_majority_baseline": true,
+        "learned_models": [
+          {
+            "accuracy": 0.625228,
+            "balanced_accuracy": 0.333333,
+            "down_up_prediction_ratio": 0.0,
+            "flat_prediction_ratio": 1.0,
+            "macro_f1": 0.256468,
+            "model_name": "decision_tree_depth_2",
+            "per_class_recall": {
+              "DOWN": 0.0,
+              "FLAT": 1.0,
+              "UP": 0.0
+            },
+            "prediction_distribution": {
+              "DOWN": 0,
+              "FLAT": 105224,
+              "UP": 0
+            },
+            "split": "test"
+          },
+          {
+            "accuracy": 0.62446,
+            "balanced_accuracy": 0.333333,
+            "down_up_prediction_ratio": 0.0,
+            "flat_prediction_ratio": 1.0,
+            "macro_f1": 0.256274,
+            "model_name": "decision_tree_depth_2",
+            "per_class_recall": {
+              "DOWN": 0.0,
+              "FLAT": 1.0,
+              "UP": 0.0
+            },
+            "prediction_distribution": {
+              "DOWN": 0,
+              "FLAT": 105235,
+              "UP": 0
+            },
+            "split": "validation"
+          },
+          {
+            "accuracy": 0.6248,
+            "balanced_accuracy": 0.333685,
+            "down_up_prediction_ratio": 0.001863,
+            "flat_prediction_ratio": 0.998137,
+            "macro_f1": 0.258043,
+            "model_name": "logistic_regression",
+            "per_class_recall": {
+              "DOWN": 0.0011181134376905876,
+              "FLAT": 0.998571189712566,
+              "UP": 0.0013664659142669164
+            },
+            "prediction_distribution": {
+              "DOWN": 102,
+              "FLAT": 105028,
+              "UP": 94
+            },
+            "split": "test"
+          },
+          {
+            "accuracy": 0.624079,
+            "balanced_accuracy": 0.334626,
+            "down_up_prediction_ratio": 0.003906,
+            "flat_prediction_ratio": 0.996094,
+            "macro_f1": 0.260474,
+            "model_name": "logistic_regression",
+            "per_class_recall": {
+              "DOWN": 0.0028118609406952966,
+              "FLAT": 0.997458723274747,
+              "UP": 0.0036072144288577155
+            },
+            "prediction_distribution": {
+              "DOWN": 198,
+              "FLAT": 104824,
+              "UP": 213
+            },
+            "split": "validation"
+          }
+        ]
+      }
+    },
+    "weak_vs_baselines_count": 16,
+    "worst_case_summary": "1m decision_tree_depth_2 test macro_f1=0.249419, balanced_accuracy=0.333333, flat_prediction_ratio=1.0"
+  },
+  "model_persisted": false,
+  "network_used": false,
+  "new_data_downloaded": false,
+  "next_recommendation": "V9.45 - AggTrades Exact Feature Enrichment",
+  "option_comparison": {
+    "derivatives_data_extension": {
+      "examples": [
+        "funding rates",
+        "open interest",
+        "liquidations"
+      ],
+      "rating": "defer_until_aggtrades_exact_review",
+      "reason": "Funding/open interest peuvent ajouter un regime derivatives utile, mais le diagnostic actuel pointe d'abord un manque de microstructure spot exacte dans les features existantes."
+    },
+    "feature_enrichment_aggtrades_exact": {
+      "examples": [
+        "buyer_maker_count exact",
+        "taker buy/sell count exact",
+        "median_trade_size exact",
+        "large_trade_count exact",
+        "trade size distribution buckets",
+        "burst/intensity features plus fines"
+      ],
+      "rating": "recommended_first",
+      "reason": "Les modeles V9.43 ne sortent presque jamais de FLAT; les features aggTrades disponibles restent agrégées et ne couvrent pas les comptages exacts buyer-maker, tailles medianes, gros trades et buckets de taille."
+    },
+    "label_redesign": {
+      "examples": [
+        "binary directional",
+        "quantile-based",
+        "h1 seuil different",
+        "h4 seuil different",
+        "event-based non trading"
+      ],
+      "rating": "recommended_after_feature_gap",
+      "reason": "Le label h1 est majoritairement FLAT mais pas suffisamment extreme pour expliquer seul l'absence de discrimination; il faut toutefois tester un label directionnel binaire ou quantile apres enrichissement."
+    },
+    "stop_branch_or_manual_review": {
+      "rating": "not_primary",
+      "reason": "Les donnees et labels sont valides; l'etape la plus informative reste un enrichissement feature cible, puis un nouveau diagnostic."
+    },
+    "walk_forward": {
+      "rating": "not_justified",
+      "reason": "Aucun edge robuste n'est demontre par V9.43; les resultats sont proches du shuffle et des baselines."
+    }
+  },
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_destructive_cleanup": true,
+    "no_model_training_heavy": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "signal_created": false,
+  "source_version": "V9.43",
+  "status": "PASS",
+  "strategy_created": false,
+  "version": "V9.44",
+  "walk_forward_executed": false,
+  "warnings": [
+    "Walk-forward non justifie tant que les modeles learned ne battent pas clairement les baselines.",
+    "Les resultats V9.43 ne doivent pas etre interpretes comme un signal actionnable.",
+    "Le label principal est proche du seuil de dominance FLAT sur certains timeframes.",
+    "Les features aggTrades exactes sont absentes et doivent etre enrichies avant plus de ML lourd.",
+    "Les comparaisons proches des labels melanges restent bloquantes pour toute decision research avancee."
+  ]
+}

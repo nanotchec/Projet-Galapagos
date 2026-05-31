@@ -1,0 +1,49 @@
+{
+  "commands": [
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "summary": "5746 tests collected in 2.41s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/research/test_ohlcv_aggtrades_5y_ml_diagnostic_v9_44.py",
+      "returncode": 0,
+      "summary": "3 passed in 0.04s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_ohlcv_aggtrades_5y_ml_diagnostic_v9_44_validator.py",
+      "returncode": 0,
+      "summary": "3 passed in 0.02s"
+    },
+    {
+      "command": "python scripts/run_ohlcv_aggtrades_5y_ml_diagnostic_v9_44.py",
+      "returncode": 0,
+      "summary": "decision=feature_enrichment_before_more_ml; baseline_clear_wins_count=0; no_clear_edge_vs_shuffled_labels_count=15"
+    },
+    {
+      "command": "python scripts/validate_ohlcv_aggtrades_5y_ml_diagnostic_v9_44.py",
+      "returncode": 0,
+      "summary": "passed=true; errors=[]"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_44.py",
+      "returncode": 0,
+      "summary": "PASS; included_files=41; zip_bytes_estimate=174538"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_44.py --zip projet-galapagos-v9.44-audit-lite.zip",
+      "returncode": 0,
+      "summary": "passed=true; errors=[]"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_44.py --zip projet-galapagos-v9.44-audit-lite.zip",
+      "returncode": 0,
+      "summary": "passed=true; errors=[]; full_dataset_required=false"
+    }
+  ],
+  "created_at_utc": "2026-05-31T00:51:39Z",
+  "sidecars_created": false,
+  "status": "PASS",
+  "version": "V9.44",
+  "zip_fingerprints_created": false
+}

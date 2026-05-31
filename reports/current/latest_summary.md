@@ -1,14 +1,5 @@
-# Synthese courante - V9.43
+# Synthese courante
 
-- Derniere version validee : `V9.42`.
-- Candidate : `V9.43`.
-- Statut : `pending_external_audit`.
-- Direction : `ohlcv_aggtrades_5y_offline_ml`.
-- Decision V9.43 : `offline_ml_5y_completed_but_close_to_shuffled_labels`.
-- Target : `up_down_flat_volnorm_h1_5y`.
-- Features : `41`.
-- Modeles : `majority_class_baseline`, `random_seeded_baseline`, `logistic_regression`, `decision_tree_depth_2`.
-- Recommandation : V9.44 - 5Y ML Diagnostic / Feature Review.
-- ML offline execute sans modele persistant.
-- Aucun walk-forward, backtest, strategie, signal actionnable ou ordre.
-- Aucun reseau, telechargement, suppression destructive, sidecar ou empreinte ZIP.
+V9.44 produit un diagnostic ML/feature/label a partir de V9.43. Les modeles learned restent proches des labels melanges, ne battent pas les baselines et collapsent presque toujours vers FLAT. Decision : `feature_enrichment_before_more_ml`. Prochaine etape recommandee : `V9.45 - AggTrades Exact Feature Enrichment`.
+
+Aucun reseau, aucun telechargement, aucun backtest, aucun walk-forward, aucune strategie et aucun signal actionnable.
