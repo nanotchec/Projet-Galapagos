@@ -1,9 +1,9 @@
 # Etat Projet Galapagos
 
-- Derniere version validee : `V9.45`.
-- Version candidate : `V9.46`.
+- Derniere version validee : `V9.46`.
+- Version candidate : `V9.47`.
 - Statut candidat : `pending_external_audit`.
-- Direction : `aggtrades_exact_5y_feature_enrichment_validation`.
-- Decision : `aggtrades_exact_5y_feature_enrichment_validated_with_non_blocking_warnings`.
-- Recommandation : `V9.47 - Combine Base + Exact AggTrades Feature Store`.
+- Direction : `ohlcv_aggtrades_exact_5y_feature_store`.
+- Decision : `ohlcv_aggtrades_exact_5y_feature_store_created_with_warnings`.
+- Recommandation : `V9.48 - Combined OHLCV + Exact AggTrades 5Y Feature Store Validation`.
 - Aucun trading, paper live, ordre, backtest, walk-forward, ML, dataset supervise, label, strategie, signal, modele persistant, API privee, cle API, reseau ou telechargement.

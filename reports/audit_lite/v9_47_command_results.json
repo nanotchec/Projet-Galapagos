@@ -1,0 +1,59 @@
+{
+  "commands": [
+    {
+      "command": "git branch --show-current",
+      "returncode": 0,
+      "summary": "main"
+    },
+    {
+      "command": "git status --short --branch",
+      "returncode": 0,
+      "summary": "## main...origin/main [ahead 3]; V9.47 files in progress"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "summary": "5769 tests collected in 2.23s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/features/test_ohlcv_aggtrades_exact_5y_feature_store_v9_47.py",
+      "returncode": 0,
+      "summary": "4 passed in 0.29s"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_ohlcv_aggtrades_exact_5y_feature_store_v9_47_validator.py",
+      "returncode": 0,
+      "summary": "3 passed in 0.28s"
+    },
+    {
+      "command": "python scripts/run_ohlcv_aggtrades_exact_5y_feature_store_v9_47.py",
+      "returncode": 0,
+      "summary": "decision=ohlcv_aggtrades_exact_5y_feature_store_created_with_warnings; quality=PASS; coverage=target_5y_combined_feature_window_complete; rows 1m=2630880 5m=526176 15m=175392 1h=43848; runtime=13.309s"
+    },
+    {
+      "command": "python scripts/validate_ohlcv_aggtrades_exact_5y_feature_store_v9_47.py",
+      "returncode": 0,
+      "summary": "full-local validation passed; errors=[]"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_47.py",
+      "returncode": 0,
+      "summary": "ZIP created; included_files=49; sidecars_created=false; zip_fingerprints_created=false"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_47.py --zip projet-galapagos-v9.47-audit-lite.zip",
+      "returncode": 0,
+      "summary": "audit passed; errors=[]"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_47.py --zip projet-galapagos-v9.47-audit-lite.zip",
+      "returncode": 0,
+      "summary": "smoke passed; packaging_checks=true; sample_checks=true; full_dataset_required=false"
+    }
+  ],
+  "created_at_utc": "2026-05-31T11:20:31Z",
+  "sidecars_created": false,
+  "status": "PASS",
+  "version": "V9.47",
+  "zip_fingerprints_created": false
+}

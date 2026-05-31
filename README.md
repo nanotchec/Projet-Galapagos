@@ -24,3 +24,9 @@
 - Decision : `aggtrades_exact_5y_feature_enrichment_validated_with_non_blocking_warnings`.
 - Recommandation : `V9.47 - Combine Base + Exact AggTrades Feature Store`.
 - Validation-only : aucun feature store combine, label, dataset supervise, ML, backtest, walk-forward, strategie ou signal.
+
+## V9.47 - Combine Base + Exact AggTrades Feature Store
+
+- Decision : `ohlcv_aggtrades_exact_5y_feature_store_blocked_by_quality`.
+- Recommandation : `V9.48 - Combined Feature Store Correction`.
+- Feature-store-only : aucun label, dataset supervise, ML, backtest, walk-forward, strategie ou signal.
