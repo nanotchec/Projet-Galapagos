@@ -1,0 +1,109 @@
+{
+  "commands": [
+    {
+      "command": "PYTHONPATH=src python -m pytest --collect-only -q",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/research/test_label_redesign_diagnostic_v9_63.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_label_redesign_diagnostic_v9_63_validator.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/run_label_redesign_diagnostic_v9_63.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/validate_label_redesign_diagnostic_v9_63.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/labels/test_redesigned_5y_label_factory_v9_64.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_redesigned_5y_label_factory_v9_64_validator.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/run_redesigned_5y_label_factory_v9_64.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/validate_redesigned_5y_label_factory_v9_64.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/datasets/test_redesigned_label_5y_dataset_v9_65.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_redesigned_label_5y_dataset_v9_65_validator.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/run_redesigned_label_5y_dataset_v9_65.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/validate_redesigned_label_5y_dataset_v9_65.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/ml/test_redesigned_label_5y_offline_ml_v9_66.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest -q tests/validation/test_redesigned_label_5y_offline_ml_v9_66_validator.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/run_redesigned_label_5y_offline_ml_v9_66.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/validate_redesigned_label_5y_offline_ml_v9_66.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/release_audit_lite_zip_v9_63_to_v9_66.py",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/audit_audit_lite_zip_v9_63_to_v9_66.py --zip projet-galapagos-v9.63-to-v9.66-audit-lite.zip",
+      "returncode": 0,
+      "summary": "passed or executed"
+    },
+    {
+      "command": "python scripts/smoke_audit_lite_zip_v9_63_to_v9_66.py --zip projet-galapagos-v9.63-to-v9.66-audit-lite.zip",
+      "returncode": 0,
+      "summary": "passed or executed"
+    }
+  ],
+  "created_at_utc": "2026-05-31T18:34:36Z",
+  "global_decision": "label_redesign_chain_completed_but_class_collapse",
+  "sidecars_created": false,
+  "version": "V9.63_to_V9.66",
+  "zip_fingerprints_created": false
+}

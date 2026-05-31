@@ -1,0 +1,77 @@
+{
+  "created_at_utc": "2026-05-31T18:22:39Z",
+  "decision": "redesigned_labels_created",
+  "distribution_path": "reports/labels/redesigned_5y_label_distribution_v9_64.json",
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "leakage_guard": {
+    "causal_volatility_uses_past_feature": true,
+    "future_return_used_only_as_label": true,
+    "future_volatility_used": false,
+    "label_available_ts_gt_decision_ts_violations": 0,
+    "quantile_thresholds_train_only": true,
+    "status": "PASS",
+    "validation_or_test_used_for_threshold_choice": false
+  },
+  "manifest_path": "reports/manifests/redesigned_5y_label_factory_v9_64_manifest.json",
+  "outputs": {
+    "15m": {
+      "bytes": 17059823,
+      "created": true,
+      "path": "data/research/v9_64/labels/redesigned_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/labels.parquet",
+      "rows": 175392
+    },
+    "1h": {
+      "bytes": 4484273,
+      "created": true,
+      "path": "data/research/v9_64/labels/redesigned_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/labels.parquet",
+      "rows": 43848
+    },
+    "1m": {
+      "bytes": 212807065,
+      "created": true,
+      "path": "data/research/v9_64/labels/redesigned_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_2026-05-05/labels.parquet",
+      "rows": 2630880
+    },
+    "5m": {
+      "bytes": 44634038,
+      "created": true,
+      "path": "data/research/v9_64/labels/redesigned_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_2026-05-05/labels.parquet",
+      "rows": 526176
+    }
+  },
+  "quality_status": "PASS",
+  "report_path": "reports/labels/redesigned_5y_label_factory_v9_64.json",
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "selected_primary_label": "binary_directional_volnorm_h4_5y",
+  "source_version": "V9.63",
+  "version": "V9.64"
+}

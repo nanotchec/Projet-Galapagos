@@ -1,0 +1,4210 @@
+{
+  "baseline_comparison": {
+    "classification_only": true,
+    "clear_wins_count": 3,
+    "comparisons": {
+      "15m.decision_tree_depth_2.test": {
+        "accuracy": 0.5088964542651593,
+        "balanced_accuracy": 0.5035124653652734,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.09768041608775829,
+        "macro_f1": 0.4028120159601099,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      "15m.decision_tree_depth_2.validation": {
+        "accuracy": 0.5211515675537195,
+        "balanced_accuracy": 0.509443533492866,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.04185461703574456,
+        "macro_f1": 0.456228538545963,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      "15m.decision_tree_depth_3.test": {
+        "accuracy": 0.5088964542651593,
+        "balanced_accuracy": 0.5035124653652734,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.09768041608775829,
+        "macro_f1": 0.4028120159601099,
+        "model_name": "decision_tree_depth_3",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      "15m.decision_tree_depth_3.validation": {
+        "accuracy": 0.5211515675537195,
+        "balanced_accuracy": 0.509443533492866,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.04185461703574456,
+        "macro_f1": 0.456228538545963,
+        "model_name": "decision_tree_depth_3",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression.test": {
+        "accuracy": 0.5110161870503597,
+        "balanced_accuracy": 0.5069371425156843,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.04562905542662066,
+        "macro_f1": 0.45486337662124754,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "15m"
+      },
+      "15m.logistic_regression.validation": {
+        "accuracy": 0.5236814295321357,
+        "balanced_accuracy": 0.5107023628343366,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.05534171304156038,
+        "macro_f1": 0.4427414425401472,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "15m"
+      },
+      "1h.decision_tree_depth_2.test": {
+        "accuracy": 0.5208467793984768,
+        "balanced_accuracy": 0.5210732161410807,
+        "clear_win_vs_baseline": true,
+        "delta_macro_f1_vs_best_baseline": 0.0242768115893911,
+        "macro_f1": 0.52063974301888,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      "1h.decision_tree_depth_2.validation": {
+        "accuracy": 0.5177480171629177,
+        "balanced_accuracy": 0.5188833087337255,
+        "clear_win_vs_baseline": true,
+        "delta_macro_f1_vs_best_baseline": 0.025345718132415873,
+        "macro_f1": 0.5177057491866313,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      "1h.decision_tree_depth_3.test": {
+        "accuracy": 0.5071640635084549,
+        "balanced_accuracy": 0.5031168157009499,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.12066231065170324,
+        "macro_f1": 0.3757006207777857,
+        "model_name": "decision_tree_depth_3",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      "1h.decision_tree_depth_3.validation": {
+        "accuracy": 0.5164477961253413,
+        "balanced_accuracy": 0.503632071044083,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.04399851785738673,
+        "macro_f1": 0.44836151319682865,
+        "model_name": "decision_tree_depth_3",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression.test": {
+        "accuracy": 0.5142635859042209,
+        "balanced_accuracy": 0.5164567815686819,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.012220704055917575,
+        "macro_f1": 0.4841422273735714,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1h"
+      },
+      "1h.logistic_regression.validation": {
+        "accuracy": 0.506826160447276,
+        "balanced_accuracy": 0.5183541473963718,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.027004268317136926,
+        "macro_f1": 0.46535576273707846,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1h"
+      },
+      "1m.decision_tree_depth_2.test": {
+        "accuracy": 0.5108831481368312,
+        "balanced_accuracy": 0.5074410333534947,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.021219837266780228,
+        "macro_f1": 0.4781357732558489,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      "1m.decision_tree_depth_2.validation": {
+        "accuracy": 0.5127761236831673,
+        "balanced_accuracy": 0.507093158767123,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.002249936398186936,
+        "macro_f1": 0.49768027497780887,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      "1m.decision_tree_depth_3.test": {
+        "accuracy": 0.5108768262384072,
+        "balanced_accuracy": 0.507434620740312,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.021228346036929024,
+        "macro_f1": 0.4781272644857001,
+        "model_name": "decision_tree_depth_3",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      "1m.decision_tree_depth_3.validation": {
+        "accuracy": 0.5127170823457967,
+        "balanced_accuracy": 0.5070318662837705,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.002321411592161482,
+        "macro_f1": 0.4976087997838343,
+        "model_name": "decision_tree_depth_3",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression.test": {
+        "accuracy": 0.5070731506866636,
+        "balanced_accuracy": 0.5,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.16289340863440144,
+        "macro_f1": 0.3364622018882277,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1m"
+      },
+      "1m.logistic_regression.validation": {
+        "accuracy": 0.5183639645414597,
+        "balanced_accuracy": 0.5,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.1585338290547098,
+        "macro_f1": 0.341396382321286,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1m"
+      },
+      "5m.decision_tree_depth_2.test": {
+        "accuracy": 0.5213575438559255,
+        "balanced_accuracy": 0.5217253447324668,
+        "clear_win_vs_baseline": true,
+        "delta_macro_f1_vs_best_baseline": 0.02300998908027263,
+        "macro_f1": 0.521195965653451,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      "5m.decision_tree_depth_2.validation": {
+        "accuracy": 0.5125502380674648,
+        "balanced_accuracy": 0.5138010980370072,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": 0.00977960358146479,
+        "macro_f1": 0.5124205423982232,
+        "model_name": "decision_tree_depth_2",
+        "split": "validation",
+        "timeframe": "5m"
+      },
+      "5m.decision_tree_depth_3.test": {
+        "accuracy": 0.5110316356960172,
+        "balanced_accuracy": 0.5051582053005645,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.09145777259659632,
+        "macro_f1": 0.4067282039765821,
+        "model_name": "decision_tree_depth_3",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      "5m.decision_tree_depth_3.validation": {
+        "accuracy": 0.5208534373972704,
+        "balanced_accuracy": 0.5080958127486244,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.05924858164016178,
+        "macro_f1": 0.44339235717659664,
+        "model_name": "decision_tree_depth_3",
+        "split": "validation",
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression.test": {
+        "accuracy": 0.5080919886659097,
+        "balanced_accuracy": 0.5022559334722608,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.09341636724250518,
+        "macro_f1": 0.40476960933067324,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "5m"
+      },
+      "5m.logistic_regression.validation": {
+        "accuracy": 0.5193688295988378,
+        "balanced_accuracy": 0.5035157881029796,
+        "clear_win_vs_baseline": false,
+        "delta_macro_f1_vs_best_baseline": -0.11153600688096765,
+        "macro_f1": 0.39110493193579077,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "5m"
+      }
+    },
+    "mean_delta_macro_f1_vs_best_baseline": -0.05106750043988278,
+    "weak_vs_baselines_count": 21
+  },
+  "class_collapse_analysis": {
+    "collapse_warning_count": 8,
+    "collapse_warnings": {
+      "15m.decision_tree_depth_2.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.08857217232851751,
+        "max_prediction_ratio": 0.9149858684480987,
+        "model_name": "decision_tree_depth_2",
+        "split": "test",
+        "timeframe": "15m",
+        "up_recall": 0.9184527584020292
+      },
+      "15m.decision_tree_depth_3.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.08857217232851751,
+        "max_prediction_ratio": 0.9149858684480987,
+        "model_name": "decision_tree_depth_3",
+        "split": "test",
+        "timeframe": "15m",
+        "up_recall": 0.9184527584020292
+      },
+      "1h.decision_tree_depth_3.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.04871060171919771,
+        "max_prediction_ratio": 0.9544339744417194,
+        "model_name": "decision_tree_depth_3",
+        "split": "test",
+        "timeframe": "1h",
+        "up_recall": 0.9575230296827022
+      },
+      "1m.logistic_regression.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "1m",
+        "up_recall": 1.0
+      },
+      "1m.logistic_regression.validation": {
+        "class_collapse_warning": true,
+        "down_recall": 0.0,
+        "max_prediction_ratio": 1.0,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "1m",
+        "up_recall": 1.0
+      },
+      "5m.decision_tree_depth_3.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.09306031048812523,
+        "max_prediction_ratio": 0.9121714121979433,
+        "model_name": "decision_tree_depth_3",
+        "split": "test",
+        "timeframe": "5m",
+        "up_recall": 0.9172561001130038
+      },
+      "5m.logistic_regression.test": {
+        "class_collapse_warning": true,
+        "down_recall": 0.09278039747647654,
+        "max_prediction_ratio": 0.9095076887157881,
+        "model_name": "logistic_regression",
+        "split": "test",
+        "timeframe": "5m",
+        "up_recall": 0.9117314694680451
+      },
+      "5m.logistic_regression.validation": {
+        "class_collapse_warning": true,
+        "down_recall": 0.06265537344626554,
+        "max_prediction_ratio": 0.940986840012301,
+        "model_name": "logistic_regression",
+        "split": "validation",
+        "timeframe": "5m",
+        "up_recall": 0.9443762027596937
+      }
+    }
+  },
+  "classification_only": true,
+  "contains_actionable_signal": false,
+  "contains_predictions": false,
+  "ml_run_id": "v9_66_ml_20260531T182330Z_42e028f0",
+  "model_results_by_split": {
+    "15m.decision_tree_depth_2.test": {
+      "accuracy": 0.5088964542651593,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5035124653652734,
+      "confusion_matrix": [
+        [
+          1361,
+          14005
+        ],
+        [
+          1286,
+          14484
+        ]
+      ],
+      "macro_f1": 0.4028120159601099,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.15111308499417087,
+        "UP": 0.6545109469260489
+      },
+      "per_class_precision": {
+        "DOWN": 0.5141669814884775,
+        "UP": 0.5084067534838007
+      },
+      "per_class_recall": {
+        "DOWN": 0.08857217232851751,
+        "UP": 0.9184527584020292
+      },
+      "prediction_distribution": {
+        "DOWN": 2647,
+        "UP": 28489
+      },
+      "rows": 31136,
+      "split": "test",
+      "support": {
+        "DOWN": 15366,
+        "UP": 15770
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4060778936614922
+    },
+    "15m.decision_tree_depth_2.train": {
+      "accuracy": 0.5465712684798069,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5466919552895666,
+      "confusion_matrix": [
+        [
+          25646,
+          20279
+        ],
+        [
+          21801,
+          25078
+        ]
+      ],
+      "macro_f1": 0.5465542825789387,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.5493295634665638,
+        "UP": 0.5437790016913135
+      },
+      "per_class_precision": {
+        "DOWN": 0.5405188947667924,
+        "UP": 0.5529025288268624
+      },
+      "per_class_recall": {
+        "DOWN": 0.5584322264561785,
+        "UP": 0.5349516841229548
+      },
+      "prediction_distribution": {
+        "DOWN": 47447,
+        "UP": 45357
+      },
+      "rows": 92804,
+      "split": "train",
+      "support": {
+        "DOWN": 45925,
+        "UP": 46879
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5465257534426213
+    },
+    "15m.decision_tree_depth_2.validation": {
+      "accuracy": 0.5211515675537195,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.509443533492866,
+      "confusion_matrix": [
+        [
+          2742,
+          12313
+        ],
+        [
+          2640,
+          13532
+        ]
+      ],
+      "macro_f1": 0.456228538545963,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.2683368400450164,
+        "UP": 0.6441202370469096
+      },
+      "per_class_precision": {
+        "DOWN": 0.5094760312151616,
+        "UP": 0.5235828980460437
+      },
+      "per_class_recall": {
+        "DOWN": 0.18213218199933576,
+        "UP": 0.8367548849863963
+      },
+      "prediction_distribution": {
+        "DOWN": 5382,
+        "UP": 25845
+      },
+      "rows": 31227,
+      "split": "validation",
+      "support": {
+        "DOWN": 15055,
+        "UP": 16172
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.46294948603453234
+    },
+    "15m.decision_tree_depth_3.test": {
+      "accuracy": 0.5088964542651593,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5035124653652734,
+      "confusion_matrix": [
+        [
+          1361,
+          14005
+        ],
+        [
+          1286,
+          14484
+        ]
+      ],
+      "macro_f1": 0.4028120159601099,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.15111308499417087,
+        "UP": 0.6545109469260489
+      },
+      "per_class_precision": {
+        "DOWN": 0.5141669814884775,
+        "UP": 0.5084067534838007
+      },
+      "per_class_recall": {
+        "DOWN": 0.08857217232851751,
+        "UP": 0.9184527584020292
+      },
+      "prediction_distribution": {
+        "DOWN": 2647,
+        "UP": 28489
+      },
+      "rows": 31136,
+      "split": "test",
+      "support": {
+        "DOWN": 15366,
+        "UP": 15770
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4060778936614922
+    },
+    "15m.decision_tree_depth_3.train": {
+      "accuracy": 0.5465712684798069,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5466919552895666,
+      "confusion_matrix": [
+        [
+          25646,
+          20279
+        ],
+        [
+          21801,
+          25078
+        ]
+      ],
+      "macro_f1": 0.5465542825789387,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.5493295634665638,
+        "UP": 0.5437790016913135
+      },
+      "per_class_precision": {
+        "DOWN": 0.5405188947667924,
+        "UP": 0.5529025288268624
+      },
+      "per_class_recall": {
+        "DOWN": 0.5584322264561785,
+        "UP": 0.5349516841229548
+      },
+      "prediction_distribution": {
+        "DOWN": 47447,
+        "UP": 45357
+      },
+      "rows": 92804,
+      "split": "train",
+      "support": {
+        "DOWN": 45925,
+        "UP": 46879
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5465257534426213
+    },
+    "15m.decision_tree_depth_3.validation": {
+      "accuracy": 0.5211515675537195,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.509443533492866,
+      "confusion_matrix": [
+        [
+          2742,
+          12313
+        ],
+        [
+          2640,
+          13532
+        ]
+      ],
+      "macro_f1": 0.456228538545963,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.2683368400450164,
+        "UP": 0.6441202370469096
+      },
+      "per_class_precision": {
+        "DOWN": 0.5094760312151616,
+        "UP": 0.5235828980460437
+      },
+      "per_class_recall": {
+        "DOWN": 0.18213218199933576,
+        "UP": 0.8367548849863963
+      },
+      "prediction_distribution": {
+        "DOWN": 5382,
+        "UP": 25845
+      },
+      "rows": 31227,
+      "split": "validation",
+      "support": {
+        "DOWN": 15055,
+        "UP": 16172
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.46294948603453234
+    },
+    "15m.logistic_regression.test": {
+      "accuracy": 0.5110161870503597,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5069371425156843,
+      "confusion_matrix": [
+        [
+          2959,
+          12407
+        ],
+        [
+          2818,
+          12952
+        ]
+      ],
+      "macro_f1": 0.45486337662124754,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.27990351416544484,
+        "UP": 0.6298232390770503
+      },
+      "per_class_precision": {
+        "DOWN": 0.5122035658646357,
+        "UP": 0.5107456918648212
+      },
+      "per_class_recall": {
+        "DOWN": 0.19256800728881948,
+        "UP": 0.8213062777425492
+      },
+      "prediction_distribution": {
+        "DOWN": 5777,
+        "UP": 25359
+      },
+      "rows": 31136,
+      "split": "test",
+      "support": {
+        "DOWN": 15366,
+        "UP": 15770
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4571335392764424
+    },
+    "15m.logistic_regression.train": {
+      "accuracy": 0.506519115555364,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5019060441953882,
+      "confusion_matrix": [
+        [
+          2441,
+          43484
+        ],
+        [
+          2313,
+          44566
+        ]
+      ],
+      "macro_f1": 0.37845813474740014,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.09633181396633714,
+        "UP": 0.6605844555284631
+      },
+      "per_class_precision": {
+        "DOWN": 0.5134623474968447,
+        "UP": 0.5061442362294151
+      },
+      "per_class_recall": {
+        "DOWN": 0.053151878062057706,
+        "UP": 0.9506602103287186
+      },
+      "prediction_distribution": {
+        "DOWN": 4754,
+        "UP": 88050
+      },
+      "rows": 92804,
+      "split": "train",
+      "support": {
+        "DOWN": 45925,
+        "UP": 46879
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.38135831695964456
+    },
+    "15m.logistic_regression.validation": {
+      "accuracy": 0.5236814295321357,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5107023628343366,
+      "confusion_matrix": [
+        [
+          2226,
+          12829
+        ],
+        [
+          2045,
+          14127
+        ]
+      ],
+      "macro_f1": 0.4427414425401472,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.23036324122943186,
+        "UP": 0.6551196438508625
+      },
+      "per_class_precision": {
+        "DOWN": 0.5211894169983611,
+        "UP": 0.5240762724439828
+      },
+      "per_class_recall": {
+        "DOWN": 0.1478578545333776,
+        "UP": 0.8735468711352956
+      },
+      "prediction_distribution": {
+        "DOWN": 4271,
+        "UP": 26956
+      },
+      "rows": 31227,
+      "split": "validation",
+      "support": {
+        "DOWN": 15055,
+        "UP": 16172
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4503382802403448
+    },
+    "15m.majority_class_baseline.test": {
+      "accuracy": 0.5064876670092497,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          15366
+        ],
+        [
+          0,
+          15770
+        ]
+      ],
+      "macro_f1": 0.3362043235406984,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6724086470813968
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5064876670092497
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 31136
+      },
+      "rows": 31136,
+      "split": "test",
+      "support": {
+        "DOWN": 15366,
+        "UP": 15770
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.3405666869371026
+    },
+    "15m.majority_class_baseline.train": {
+      "accuracy": 0.505139864661006,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          45925
+        ],
+        [
+          0,
+          46879
+        ]
+      ],
+      "macro_f1": 0.3356099167400471,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6712198334800942
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.505139864661006
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 92804
+      },
+      "rows": 92804,
+      "split": "train",
+      "support": {
+        "DOWN": 45925,
+        "UP": 46879
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.33905989584191776
+    },
+    "15m.majority_class_baseline.validation": {
+      "accuracy": 0.5178851634803215,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          15055
+        ],
+        [
+          0,
+          16172
+        ]
+      ],
+      "macro_f1": 0.34118863267157534,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6823772653431507
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5178851634803215
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 31227
+      },
+      "rows": 31227,
+      "split": "validation",
+      "support": {
+        "DOWN": 15055,
+        "UP": 16172
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.35339306161749234
+    },
+    "15m.random_seeded_baseline.test": {
+      "accuracy": 0.5005138746145941,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5005131275425383,
+      "confusion_matrix": [
+        [
+          7690,
+          7676
+        ],
+        [
+          7876,
+          7894
+        ]
+      ],
+      "macro_f1": 0.5004924320478682,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.49721970774602353,
+        "UP": 0.5037651563497129
+      },
+      "per_class_precision": {
+        "DOWN": 0.49402544006167287,
+        "UP": 0.5070006422607579
+      },
+      "per_class_recall": {
+        "DOWN": 0.5004555512169725,
+        "UP": 0.500570703868104
+      },
+      "prediction_distribution": {
+        "DOWN": 15566,
+        "UP": 15570
+      },
+      "rows": 31136,
+      "split": "test",
+      "support": {
+        "DOWN": 15366,
+        "UP": 15770
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.5005348967388351
+    },
+    "15m.random_seeded_baseline.train": {
+      "accuracy": 0.499622861083574,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4995443890729563,
+      "confusion_matrix": [
+        [
+          22591,
+          23334
+        ],
+        [
+          23103,
+          23776
+        ]
+      ],
+      "macro_f1": 0.49954126457351344,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.4931509839662079,
+        "UP": 0.5059315451808191
+      },
+      "per_class_precision": {
+        "DOWN": 0.4943975138967917,
+        "UP": 0.5046911483761409
+      },
+      "per_class_recall": {
+        "DOWN": 0.4919107240065324,
+        "UP": 0.5071780541393801
+      },
+      "prediction_distribution": {
+        "DOWN": 45694,
+        "UP": 47110
+      },
+      "rows": 92804,
+      "split": "train",
+      "support": {
+        "DOWN": 45925,
+        "UP": 46879
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4996069549284483
+    },
+    "15m.random_seeded_baseline.validation": {
+      "accuracy": 0.4983828097479745,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49814618433047,
+      "confusion_matrix": [
+        [
+          7400,
+          7655
+        ],
+        [
+          8009,
+          8163
+        ]
+      ],
+      "macro_f1": 0.49808315558170757,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.48581932773109243,
+        "UP": 0.5103469834323227
+      },
+      "per_class_precision": {
+        "DOWN": 0.48023882146797325,
+        "UP": 0.5160576558351245
+      },
+      "per_class_recall": {
+        "DOWN": 0.4915310528063766,
+        "UP": 0.5047613158545634
+      },
+      "prediction_distribution": {
+        "DOWN": 15409,
+        "UP": 15818
+      },
+      "rows": 31227,
+      "split": "validation",
+      "support": {
+        "DOWN": 15055,
+        "UP": 16172
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.4985218367137131
+    },
+    "1h.decision_tree_depth_2.test": {
+      "accuracy": 0.5208467793984768,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5210732161410807,
+      "confusion_matrix": [
+        [
+          2098,
+          1741
+        ],
+        [
+          1971,
+          1937
+        ]
+      ],
+      "macro_f1": 0.52063974301888,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.5306019221041983,
+        "UP": 0.5106775639335618
+      },
+      "per_class_precision": {
+        "DOWN": 0.5156057999508479,
+        "UP": 0.5266449157150626
+      },
+      "per_class_recall": {
+        "DOWN": 0.5464964834592342,
+        "UP": 0.49564994882292734
+      },
+      "prediction_distribution": {
+        "DOWN": 4069,
+        "UP": 3678
+      },
+      "rows": 7747,
+      "split": "test",
+      "support": {
+        "DOWN": 3839,
+        "UP": 3908
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.52055101314191
+    },
+    "1h.decision_tree_depth_2.train": {
+      "accuracy": 0.5544874595822774,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5548069074288389,
+      "confusion_matrix": [
+        [
+          6627,
+          4696
+        ],
+        [
+          5500,
+          6063
+        ]
+      ],
+      "macro_f1": 0.5542167259622631,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.5652025586353945,
+        "UP": 0.5432308932891318
+      },
+      "per_class_precision": {
+        "DOWN": 0.5464665622165416,
+        "UP": 0.5635282089413515
+      },
+      "per_class_recall": {
+        "DOWN": 0.58526892166387,
+        "UP": 0.5243448931938078
+      },
+      "prediction_distribution": {
+        "DOWN": 12127,
+        "UP": 10759
+      },
+      "rows": 22886,
+      "split": "train",
+      "support": {
+        "DOWN": 11323,
+        "UP": 11563
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5541015201665124
+    },
+    "1h.decision_tree_depth_2.validation": {
+      "accuracy": 0.5177480171629177,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5188833087337255,
+      "confusion_matrix": [
+        [
+          2027,
+          1670
+        ],
+        [
+          2039,
+          1955
+        ]
+      ],
+      "macro_f1": 0.5177057491866313,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.522220790931341,
+        "UP": 0.5131907074419215
+      },
+      "per_class_precision": {
+        "DOWN": 0.4985243482538121,
+        "UP": 0.5393103448275862
+      },
+      "per_class_recall": {
+        "DOWN": 0.5482823911279415,
+        "UP": 0.4894842263395093
+      },
+      "prediction_distribution": {
+        "DOWN": 4066,
+        "UP": 3625
+      },
+      "rows": 7691,
+      "split": "validation",
+      "support": {
+        "DOWN": 3697,
+        "UP": 3994
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5175313937844496
+    },
+    "1h.decision_tree_depth_3.test": {
+      "accuracy": 0.5071640635084549,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5031168157009499,
+      "confusion_matrix": [
+        [
+          187,
+          3652
+        ],
+        [
+          166,
+          3742
+        ]
+      ],
+      "macro_f1": 0.3757006207777857,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.0892175572519084,
+        "UP": 0.662183684303663
+      },
+      "per_class_precision": {
+        "DOWN": 0.5297450424929179,
+        "UP": 0.506086015688396
+      },
+      "per_class_recall": {
+        "DOWN": 0.04871060171919771,
+        "UP": 0.9575230296827022
+      },
+      "prediction_distribution": {
+        "DOWN": 353,
+        "UP": 7394
+      },
+      "rows": 7747,
+      "split": "test",
+      "support": {
+        "DOWN": 3839,
+        "UP": 3908
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.37825223190251606
+    },
+    "1h.decision_tree_depth_3.train": {
+      "accuracy": 0.5609542952023071,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5608913425286625,
+      "confusion_matrix": [
+        [
+          6283,
+          5040
+        ],
+        [
+          5008,
+          6555
+        ]
+      ],
+      "macro_f1": 0.5608922698694713,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.5556734766074113,
+        "UP": 0.5661110631315313
+      },
+      "per_class_precision": {
+        "DOWN": 0.5564608980604021,
+        "UP": 0.5653298835705045
+      },
+      "per_class_recall": {
+        "DOWN": 0.5548882804910359,
+        "UP": 0.566894404566289
+      },
+      "prediction_distribution": {
+        "DOWN": 11291,
+        "UP": 11595
+      },
+      "rows": 22886,
+      "split": "train",
+      "support": {
+        "DOWN": 11323,
+        "UP": 11563
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5609469981043264
+    },
+    "1h.decision_tree_depth_3.validation": {
+      "accuracy": 0.5164477961253413,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.503632071044083,
+      "confusion_matrix": [
+        [
+          635,
+          3062
+        ],
+        [
+          657,
+          3337
+        ]
+      ],
+      "macro_f1": 0.44836151319682865,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.2545600320705552,
+        "UP": 0.6421629943231021
+      },
+      "per_class_precision": {
+        "DOWN": 0.4914860681114551,
+        "UP": 0.5214877324581966
+      },
+      "per_class_recall": {
+        "DOWN": 0.17176088720584257,
+        "UP": 0.8355032548823235
+      },
+      "prediction_distribution": {
+        "DOWN": 1292,
+        "UP": 6399
+      },
+      "rows": 7691,
+      "split": "validation",
+      "support": {
+        "DOWN": 3697,
+        "UP": 3994
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.4558454606541818
+    },
+    "1h.logistic_regression.test": {
+      "accuracy": 0.5142635859042209,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5164567815686819,
+      "confusion_matrix": [
+        [
+          2928,
+          911
+        ],
+        [
+          2852,
+          1056
+        ]
+      ],
+      "macro_f1": 0.4841422273735714,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.6087950930450151,
+        "UP": 0.35948936170212764
+      },
+      "per_class_precision": {
+        "DOWN": 0.5065743944636678,
+        "UP": 0.5368581596339603
+      },
+      "per_class_recall": {
+        "DOWN": 0.7626986194321438,
+        "UP": 0.27021494370522003
+      },
+      "prediction_distribution": {
+        "DOWN": 5780,
+        "UP": 1967
+      },
+      "rows": 7747,
+      "split": "test",
+      "support": {
+        "DOWN": 3839,
+        "UP": 3908
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.48303198499183275
+    },
+    "1h.logistic_regression.train": {
+      "accuracy": 0.5033208074805557,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5077833249975717,
+      "confusion_matrix": [
+        [
+          10568,
+          755
+        ],
+        [
+          10612,
+          951
+        ]
+      ],
+      "macro_f1": 0.39681002958463585,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.650278435836692,
+        "UP": 0.1433416233325797
+      },
+      "per_class_precision": {
+        "DOWN": 0.49896128423040603,
+        "UP": 0.5574443141852286
+      },
+      "per_class_recall": {
+        "DOWN": 0.9333215578910182,
+        "UP": 0.08224509210412523
+      },
+      "prediction_distribution": {
+        "DOWN": 21180,
+        "UP": 1706
+      },
+      "rows": 22886,
+      "split": "train",
+      "support": {
+        "DOWN": 11323,
+        "UP": 11563
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.3941519671228473
+    },
+    "1h.logistic_regression.validation": {
+      "accuracy": 0.506826160447276,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5183541473963718,
+      "confusion_matrix": [
+        [
+          3020,
+          677
+        ],
+        [
+          3116,
+          878
+        ]
+      ],
+      "macro_f1": 0.46535576273707846,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.6142581104444218,
+        "UP": 0.31645341502973506
+      },
+      "per_class_precision": {
+        "DOWN": 0.4921773142112125,
+        "UP": 0.5646302250803859
+      },
+      "per_class_recall": {
+        "DOWN": 0.8168785501758182,
+        "UP": 0.2198297446169254
+      },
+      "prediction_distribution": {
+        "DOWN": 6136,
+        "UP": 1555
+      },
+      "rows": 7691,
+      "split": "validation",
+      "support": {
+        "DOWN": 3697,
+        "UP": 3994
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.4596056655755805
+    },
+    "1h.majority_class_baseline.test": {
+      "accuracy": 0.5044533367755261,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          3839
+        ],
+        [
+          0,
+          3908
+        ]
+      ],
+      "macro_f1": 0.3353067353067353,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6706134706134707
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5044533367755261
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 7747
+      },
+      "rows": 7747,
+      "split": "test",
+      "support": {
+        "DOWN": 3839,
+        "UP": 3908
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.33829320293758147
+    },
+    "1h.majority_class_baseline.train": {
+      "accuracy": 0.5052433802324565,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          11323
+        ],
+        [
+          0,
+          11563
+        ]
+      ],
+      "macro_f1": 0.33565560683909546,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6713112136781909
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5052433802324565
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 22886
+      },
+      "rows": 22886,
+      "split": "train",
+      "support": {
+        "DOWN": 11323,
+        "UP": 11563
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.33917554678672207
+    },
+    "1h.majority_class_baseline.validation": {
+      "accuracy": 0.5193082824080094,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          3697
+        ],
+        [
+          0,
+          3994
+        ]
+      ],
+      "macro_f1": 0.3418057338468122,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6836114676936244
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5193082824080094
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 7691
+      },
+      "rows": 7691,
+      "split": "validation",
+      "support": {
+        "DOWN": 3697,
+        "UP": 3994
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.3550050971223945
+    },
+    "1h.random_seeded_baseline.test": {
+      "accuracy": 0.49645023880211697,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4963723467307329,
+      "confusion_matrix": [
+        [
+          1872,
+          1967
+        ],
+        [
+          1934,
+          1974
+        ]
+      ],
+      "macro_f1": 0.49636293142948895,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.48973185088293003,
+        "UP": 0.5029940119760479
+      },
+      "per_class_precision": {
+        "DOWN": 0.49185496584340516,
+        "UP": 0.5008880994671403
+      },
+      "per_class_recall": {
+        "DOWN": 0.48762698619432143,
+        "UP": 0.5051177072671443
+      },
+      "prediction_distribution": {
+        "DOWN": 3806,
+        "UP": 3941
+      },
+      "rows": 7747,
+      "split": "test",
+      "support": {
+        "DOWN": 3839,
+        "UP": 3908
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.49642199229920786
+    },
+    "1h.random_seeded_baseline.train": {
+      "accuracy": 0.5083020187013895,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5082025711733796,
+      "confusion_matrix": [
+        [
+          5647,
+          5676
+        ],
+        [
+          5577,
+          5986
+        ]
+      ],
+      "macro_f1": 0.5081941107781889,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.5009092118685413,
+        "UP": 0.5154790096878363
+      },
+      "per_class_precision": {
+        "DOWN": 0.5031183178902352,
+        "UP": 0.5132910306979935
+      },
+      "per_class_recall": {
+        "DOWN": 0.4987194206482381,
+        "UP": 0.5176857216985211
+      },
+      "prediction_distribution": {
+        "DOWN": 11224,
+        "UP": 11662
+      },
+      "rows": 22886,
+      "split": "train",
+      "support": {
+        "DOWN": 11323,
+        "UP": 11563
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.5082705057680653
+    },
+    "1h.random_seeded_baseline.validation": {
+      "accuracy": 0.4926537511376934,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4924592393052657,
+      "confusion_matrix": [
+        [
+          1802,
+          1895
+        ],
+        [
+          2007,
+          1987
+        ]
+      ],
+      "macro_f1": 0.4923600310542154,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.4801492139621636,
+        "UP": 0.5045708481462672
+      },
+      "per_class_precision": {
+        "DOWN": 0.47309004988185877,
+        "UP": 0.5118495620814013
+      },
+      "per_class_recall": {
+        "DOWN": 0.4874222342439816,
+        "UP": 0.4974962443665498
+      },
+      "prediction_distribution": {
+        "DOWN": 3809,
+        "UP": 3882
+      },
+      "rows": 7691,
+      "split": "validation",
+      "support": {
+        "DOWN": 3697,
+        "UP": 3994
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.49283157086390716
+    },
+    "1m.decision_tree_depth_2.test": {
+      "accuracy": 0.5108831481368312,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5074410333534947,
+      "confusion_matrix": [
+        [
+          61781,
+          172133
+        ],
+        [
+          59973,
+          180654
+        ]
+      ],
+      "macro_f1": 0.4781357732558489,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.3474082571386799,
+        "UP": 0.6088632893730178
+      },
+      "per_class_precision": {
+        "DOWN": 0.5074248073985249,
+        "UP": 0.5120766921683622
+      },
+      "per_class_recall": {
+        "DOWN": 0.2641184366904076,
+        "UP": 0.7507636300165816
+      },
+      "prediction_distribution": {
+        "DOWN": 121754,
+        "UP": 352787
+      },
+      "rows": 474541,
+      "split": "test",
+      "support": {
+        "DOWN": 233914,
+        "UP": 240627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.47998508409662877
+    },
+    "1m.decision_tree_depth_2.train": {
+      "accuracy": 0.5262379200322959,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5261080379350513,
+      "confusion_matrix": [
+        [
+          358357,
+          340878
+        ],
+        [
+          328048,
+          384662
+        ]
+      ],
+      "macro_f1": 0.5260734252547046,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.5172440172050461,
+        "UP": 0.534902833304363
+      },
+      "per_class_precision": {
+        "DOWN": 0.5220780734406072,
+        "UP": 0.5301733880971414
+      },
+      "per_class_recall": {
+        "DOWN": 0.5124986592490365,
+        "UP": 0.5397174166210661
+      },
+      "prediction_distribution": {
+        "DOWN": 686405,
+        "UP": 725540
+      },
+      "rows": 1411945,
+      "split": "train",
+      "support": {
+        "DOWN": 699235,
+        "UP": 712710
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.5261576893538509
+    },
+    "1m.decision_tree_depth_2.validation": {
+      "accuracy": 0.5127761236831673,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.507093158767123,
+      "confusion_matrix": [
+        [
+          80484,
+          147929
+        ],
+        [
+          83134,
+          162697
+        ]
+      ],
+      "macro_f1": 0.49768027497780887,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.4106001821284541,
+        "UP": 0.5847603678271637
+      },
+      "per_class_precision": {
+        "DOWN": 0.4919018689875197,
+        "UP": 0.5237713520439371
+      },
+      "per_class_recall": {
+        "DOWN": 0.35236173072460847,
+        "UP": 0.6618245868096375
+      },
+      "prediction_distribution": {
+        "DOWN": 163618,
+        "UP": 310626
+      },
+      "rows": 474244,
+      "split": "validation",
+      "support": {
+        "DOWN": 228413,
+        "UP": 245831
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.5008785464525141
+    },
+    "1m.decision_tree_depth_3.test": {
+      "accuracy": 0.5108768262384072,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.507434620740312,
+      "confusion_matrix": [
+        [
+          61778,
+          172136
+        ],
+        [
+          59973,
+          180654
+        ]
+      ],
+      "macro_f1": 0.4781272644857001,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.3473943176865871,
+        "UP": 0.6088602112848132
+      },
+      "per_class_precision": {
+        "DOWN": 0.507412670121806,
+        "UP": 0.512072337651294
+      },
+      "per_class_recall": {
+        "DOWN": 0.2641056114640423,
+        "UP": 0.7507636300165816
+      },
+      "prediction_distribution": {
+        "DOWN": 121751,
+        "UP": 352790
+      },
+      "rows": 474541,
+      "split": "test",
+      "support": {
+        "DOWN": 233914,
+        "UP": 240627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.4799766521505435
+    },
+    "1m.decision_tree_depth_3.train": {
+      "accuracy": 0.5275502940978579,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5272617780323261,
+      "confusion_matrix": [
+        [
+          347541,
+          351694
+        ],
+        [
+          315379,
+          397331
+        ]
+      ],
+      "macro_f1": 0.5269620674964359,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.5102811354067636,
+        "UP": 0.5436429995861083
+      },
+      "per_class_precision": {
+        "DOWN": 0.5242578289989742,
+        "UP": 0.53046427021795
+      },
+      "per_class_recall": {
+        "DOWN": 0.4970303259991276,
+        "UP": 0.5574932300655245
+      },
+      "prediction_distribution": {
+        "DOWN": 662920,
+        "UP": 749025
+      },
+      "rows": 1411945,
+      "split": "train",
+      "support": {
+        "DOWN": 699235,
+        "UP": 712710
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.5271212631874214
+    },
+    "1m.decision_tree_depth_3.validation": {
+      "accuracy": 0.5127170823457967,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5070318662837705,
+      "confusion_matrix": [
+        [
+          80456,
+          147957
+        ],
+        [
+          83134,
+          162697
+        ]
+      ],
+      "macro_f1": 0.4976087997838343,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.4104866544388691,
+        "UP": 0.5847309451287995
+      },
+      "per_class_precision": {
+        "DOWN": 0.4918149031114371,
+        "UP": 0.5237241432590599
+      },
+      "per_class_recall": {
+        "DOWN": 0.35223914575790344,
+        "UP": 0.6618245868096375
+      },
+      "prediction_distribution": {
+        "DOWN": 163590,
+        "UP": 310654
+      },
+      "rows": 474244,
+      "split": "validation",
+      "support": {
+        "DOWN": 228413,
+        "UP": 245831
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.500808615759616
+    },
+    "1m.logistic_regression.test": {
+      "accuracy": 0.5070731506866636,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          233914
+        ],
+        [
+          0,
+          240627
+        ]
+      ],
+      "macro_f1": 0.3364622018882277,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6729244037764553
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5070731506866636
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 474541
+      },
+      "rows": 474541,
+      "split": "test",
+      "support": {
+        "DOWN": 233914,
+        "UP": 240627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.34122189759687177
+    },
+    "1m.logistic_regression.train": {
+      "accuracy": 0.5048341118103042,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5000633179793187,
+      "confusion_matrix": [
+        [
+          117,
+          699118
+        ],
+        [
+          29,
+          712681
+        ]
+      ],
+      "macro_f1": 0.33562409516220887,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.0003345815799971689,
+        "UP": 0.6709136087444205
+      },
+      "per_class_precision": {
+        "DOWN": 0.8013698630136986,
+        "UP": 0.5048034458162953
+      },
+      "per_class_recall": {
+        "DOWN": 0.00016732572025141763,
+        "UP": 0.9999593102383859
+      },
+      "prediction_distribution": {
+        "DOWN": 146,
+        "UP": 1411799
+      },
+      "rows": 1411945,
+      "split": "train",
+      "support": {
+        "DOWN": 699235,
+        "UP": 712710
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.33882395506859353
+    },
+    "1m.logistic_regression.validation": {
+      "accuracy": 0.5183639645414597,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          228413
+        ],
+        [
+          0,
+          245831
+        ]
+      ],
+      "macro_f1": 0.341396382321286,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.682792764642572
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5183639645414597
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 474244
+      },
+      "rows": 474244,
+      "split": "validation",
+      "support": {
+        "DOWN": 228413,
+        "UP": 245831
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.35393516444034745
+    },
+    "1m.majority_class_baseline.test": {
+      "accuracy": 0.5070731506866636,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          233914
+        ],
+        [
+          0,
+          240627
+        ]
+      ],
+      "macro_f1": 0.3364622018882277,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6729244037764553
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5070731506866636
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 474541
+      },
+      "rows": 474541,
+      "split": "test",
+      "support": {
+        "DOWN": 233914,
+        "UP": 240627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.34122189759687177
+    },
+    "1m.majority_class_baseline.train": {
+      "accuracy": 0.5047717864364405,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          699235
+        ],
+        [
+          0,
+          712710
+        ]
+      ],
+      "macro_f1": 0.33544740204880324,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6708948040976065
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5047717864364405
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 1411945
+      },
+      "rows": 1411945,
+      "split": "train",
+      "support": {
+        "DOWN": 699235,
+        "UP": 712710
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.3386487687752746
+    },
+    "1m.majority_class_baseline.validation": {
+      "accuracy": 0.5183639645414597,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          228413
+        ],
+        [
+          0,
+          245831
+        ]
+      ],
+      "macro_f1": 0.341396382321286,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.682792764642572
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5183639645414597
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 474244
+      },
+      "rows": 474244,
+      "split": "validation",
+      "support": {
+        "DOWN": 228413,
+        "UP": 245831
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.35393516444034745
+    },
+    "1m.random_seeded_baseline.test": {
+      "accuracy": 0.49942786819263246,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4993578489848579,
+      "confusion_matrix": [
+        [
+          115649,
+          118265
+        ],
+        [
+          119277,
+          121350
+        ]
+      ],
+      "macro_f1": 0.4993556105226291,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.4933410118590564,
+        "UP": 0.5053702091862019
+      },
+      "per_class_precision": {
+        "DOWN": 0.49227841958744456,
+        "UP": 0.5064374100118941
+      },
+      "per_class_recall": {
+        "DOWN": 0.49440820130475305,
+        "UP": 0.5043074966649628
+      },
+      "prediction_distribution": {
+        "DOWN": 234926,
+        "UP": 239615
+      },
+      "rows": 474541,
+      "split": "test",
+      "support": {
+        "DOWN": 233914,
+        "UP": 240627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.49944069484796366
+    },
+    "1m.random_seeded_baseline.train": {
+      "accuracy": 0.49974467844002424,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4997000101947163,
+      "confusion_matrix": [
+        [
+          346135,
+          353100
+        ],
+        [
+          353233,
+          359477
+        ]
+      ],
+      "macro_f1": 0.4997000062945977,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.49497248325650667,
+        "UP": 0.5044275293326888
+      },
+      "per_class_precision": {
+        "DOWN": 0.49492541837773535,
+        "UP": 0.5044746041480429
+      },
+      "per_class_recall": {
+        "DOWN": 0.4950195570873884,
+        "UP": 0.5043804633020443
+      },
+      "prediction_distribution": {
+        "DOWN": 699368,
+        "UP": 712577
+      },
+      "rows": 1411945,
+      "split": "train",
+      "support": {
+        "DOWN": 699235,
+        "UP": 712710
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.49974512375521996
+    },
+    "1m.random_seeded_baseline.validation": {
+      "accuracy": 0.5001771240121119,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5000355246324177,
+      "confusion_matrix": [
+        [
+          113334,
+          115079
+        ],
+        [
+          121959,
+          123872
+        ]
+      ],
+      "macro_f1": 0.4999302113759958,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.48881834610723174,
+        "UP": 0.5110420766447599
+      },
+      "per_class_precision": {
+        "DOWN": 0.48167178794099275,
+        "UP": 0.518399169704249
+      },
+      "per_class_recall": {
+        "DOWN": 0.49618016487678024,
+        "UP": 0.5038908843880552
+      },
+      "prediction_distribution": {
+        "DOWN": 235293,
+        "UP": 238951
+      },
+      "rows": 474244,
+      "split": "validation",
+      "support": {
+        "DOWN": 228413,
+        "UP": 245831
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.5003383271755659
+    },
+    "5m.decision_tree_depth_2.test": {
+      "accuracy": 0.5213575438559255,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5217253447324668,
+      "confusion_matrix": [
+        [
+          25429,
+          21014
+        ],
+        [
+          24088,
+          23698
+        ]
+      ],
+      "macro_f1": 0.521195965653451,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.5299916631929971,
+        "UP": 0.5124002681139052
+      },
+      "per_class_precision": {
+        "DOWN": 0.5135408041682654,
+        "UP": 0.5300143138307389
+      },
+      "per_class_recall": {
+        "DOWN": 0.5475313825549598,
+        "UP": 0.49591930690997366
+      },
+      "prediction_distribution": {
+        "DOWN": 49517,
+        "UP": 44712
+      },
+      "rows": 94229,
+      "split": "test",
+      "support": {
+        "DOWN": 46443,
+        "UP": 47786
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.5210706048643564
+    },
+    "5m.decision_tree_depth_2.train": {
+      "accuracy": 0.5492384444396795,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5495054059382414,
+      "confusion_matrix": [
+        [
+          80071,
+          58518
+        ],
+        [
+          67615,
+          73618
+        ]
+      ],
+      "macro_f1": 0.5489985956607982,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.5593991791109947,
+        "UP": 0.5385980122106018
+      },
+      "per_class_precision": {
+        "DOWN": 0.5421705510339504,
+        "UP": 0.5571381001392505
+      },
+      "per_class_recall": {
+        "DOWN": 0.5777586965776504,
+        "UP": 0.5212521152988324
+      },
+      "prediction_distribution": {
+        "DOWN": 147686,
+        "UP": 132136
+      },
+      "rows": 279822,
+      "split": "train",
+      "support": {
+        "DOWN": 138589,
+        "UP": 141233
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.548900321963082
+    },
+    "5m.decision_tree_depth_2.validation": {
+      "accuracy": 0.5125502380674648,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5138010980370072,
+      "confusion_matrix": [
+        [
+          24936,
+          20519
+        ],
+        [
+          25448,
+          23398
+        ]
+      ],
+      "macro_f1": 0.5124205423982232,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2",
+      "per_class_f1": {
+        "DOWN": 0.5203727083963731,
+        "UP": 0.5044683764000734
+      },
+      "per_class_precision": {
+        "DOWN": 0.494919021911718,
+        "UP": 0.5327777398274017
+      },
+      "per_class_recall": {
+        "DOWN": 0.5485865141348587,
+        "UP": 0.4790156819391557
+      },
+      "prediction_distribution": {
+        "DOWN": 50384,
+        "UP": 43917
+      },
+      "rows": 94301,
+      "split": "validation",
+      "support": {
+        "DOWN": 45455,
+        "UP": 48846
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.5121345879025156
+    },
+    "5m.decision_tree_depth_3.test": {
+      "accuracy": 0.5110316356960172,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5051582053005645,
+      "confusion_matrix": [
+        [
+          4322,
+          42121
+        ],
+        [
+          3954,
+          43832
+        ]
+      ],
+      "macro_f1": 0.4067282039765821,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.15797072314918037,
+        "UP": 0.6554856848039838
+      },
+      "per_class_precision": {
+        "DOWN": 0.5222329627839536,
+        "UP": 0.509953113911091
+      },
+      "per_class_recall": {
+        "DOWN": 0.09306031048812523,
+        "UP": 0.9172561001130038
+      },
+      "prediction_distribution": {
+        "DOWN": 8276,
+        "UP": 85953
+      },
+      "rows": 94229,
+      "split": "test",
+      "support": {
+        "DOWN": 46443,
+        "UP": 47786
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.41027362308058624
+    },
+    "5m.decision_tree_depth_3.train": {
+      "accuracy": 0.5531695149059045,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5527730359505731,
+      "confusion_matrix": [
+        [
+          70793,
+          67796
+        ],
+        [
+          57237,
+          83996
+        ]
+      ],
+      "macro_f1": 0.5521725215318507,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.5310424238332602,
+        "UP": 0.5733026192304411
+      },
+      "per_class_precision": {
+        "DOWN": 0.5529407170194486,
+        "UP": 0.5533624960472225
+      },
+      "per_class_recall": {
+        "DOWN": 0.5108125464502955,
+        "UP": 0.5947335254508507
+      },
+      "prediction_distribution": {
+        "DOWN": 128030,
+        "UP": 151792
+      },
+      "rows": 279822,
+      "split": "train",
+      "support": {
+        "DOWN": 138589,
+        "UP": 141233
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.5523721769496344
+    },
+    "5m.decision_tree_depth_3.validation": {
+      "accuracy": 0.5208534373972704,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5080958127486244,
+      "confusion_matrix": [
+        [
+          6969,
+          38486
+        ],
+        [
+          6698,
+          42148
+        ]
+      ],
+      "macro_f1": 0.44339235717659664,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3",
+      "per_class_f1": {
+        "DOWN": 0.23574980548695917,
+        "UP": 0.6510349088662342
+      },
+      "per_class_precision": {
+        "DOWN": 0.5099143923318944,
+        "UP": 0.522707542723913
+      },
+      "per_class_recall": {
+        "DOWN": 0.15331646683533165,
+        "UP": 0.862875158661917
+      },
+      "prediction_distribution": {
+        "DOWN": 13667,
+        "UP": 80634
+      },
+      "rows": 94301,
+      "split": "validation",
+      "support": {
+        "DOWN": 45455,
+        "UP": 48846
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.45085904250103187
+    },
+    "5m.logistic_regression.test": {
+      "accuracy": 0.5080919886659097,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5022559334722608,
+      "confusion_matrix": [
+        [
+          4309,
+          42134
+        ],
+        [
+          4218,
+          43568
+        ]
+      ],
+      "macro_f1": 0.40476960933067324,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.1567764235037293,
+        "UP": 0.6527627951576171
+      },
+      "per_class_precision": {
+        "DOWN": 0.5053359915562331,
+        "UP": 0.5083661991552122
+      },
+      "per_class_recall": {
+        "DOWN": 0.09278039747647654,
+        "UP": 0.9117314694680451
+      },
+      "prediction_distribution": {
+        "DOWN": 8527,
+        "UP": 85702
+      },
+      "rows": 94229,
+      "split": "test",
+      "support": {
+        "DOWN": 46443,
+        "UP": 47786
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.40830413531063253
+    },
+    "5m.logistic_regression.train": {
+      "accuracy": 0.5049960331925295,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5004364926934571,
+      "confusion_matrix": [
+        [
+          2479,
+          136110
+        ],
+        [
+          2403,
+          138830
+        ]
+      ],
+      "macro_f1": 0.3508659873525372,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.034557506395020594,
+        "UP": 0.6671744683100538
+      },
+      "per_class_precision": {
+        "DOWN": 0.5077836952068824,
+        "UP": 0.5049465337891904
+      },
+      "per_class_recall": {
+        "DOWN": 0.017887422522711038,
+        "UP": 0.9829855628642031
+      },
+      "prediction_distribution": {
+        "DOWN": 4882,
+        "UP": 274940
+      },
+      "rows": 279822,
+      "split": "train",
+      "support": {
+        "DOWN": 138589,
+        "UP": 141233
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.35385474314604765
+    },
+    "5m.logistic_regression.validation": {
+      "accuracy": 0.5193688295988378,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5035157881029796,
+      "confusion_matrix": [
+        [
+          2848,
+          42607
+        ],
+        [
+          2717,
+          46129
+        ]
+      ],
+      "macro_f1": 0.39110493193579077,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression",
+      "per_class_f1": {
+        "DOWN": 0.11164249313994512,
+        "UP": 0.6705673707316364
+      },
+      "per_class_precision": {
+        "DOWN": 0.511769991015274,
+        "UP": 0.5198453840605842
+      },
+      "per_class_recall": {
+        "DOWN": 0.06265537344626554,
+        "UP": 0.9443762027596937
+      },
+      "prediction_distribution": {
+        "DOWN": 5565,
+        "UP": 88736
+      },
+      "rows": 94301,
+      "split": "validation",
+      "support": {
+        "DOWN": 45455,
+        "UP": 48846
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4011542116884627
+    },
+    "5m.majority_class_baseline.test": {
+      "accuracy": 0.5071262562480765,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          46443
+        ],
+        [
+          0,
+          47786
+        ]
+      ],
+      "macro_f1": 0.3364855825088899,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6729711650177798
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5071262562480765
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 94229
+      },
+      "rows": 94229,
+      "split": "test",
+      "support": {
+        "DOWN": 46443,
+        "UP": 47786
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.3412813474783732
+    },
+    "5m.majority_class_baseline.train": {
+      "accuracy": 0.5047244319603176,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          138589
+        ],
+        [
+          0,
+          141233
+        ]
+      ],
+      "macro_f1": 0.33542648822600374,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6708529764520075
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5047244319603176
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 279822
+      },
+      "rows": 279822,
+      "split": "train",
+      "support": {
+        "DOWN": 138589,
+        "UP": 141233
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.33859588746862784
+    },
+    "5m.majority_class_baseline.validation": {
+      "accuracy": 0.5179796608731615,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          45455
+        ],
+        [
+          0,
+          48846
+        ]
+      ],
+      "macro_f1": 0.34122964505019315,
+      "metrics_scope": "classification_only",
+      "model_name": "majority_class_baseline",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6824592901003863
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5179796608731615
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 94301
+      },
+      "rows": 94301,
+      "split": "validation",
+      "support": {
+        "DOWN": 45455,
+        "UP": 48846
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.3535000316459366
+    },
+    "5m.random_seeded_baseline.test": {
+      "accuracy": 0.4982118031603859,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4982107590615479,
+      "confusion_matrix": [
+        [
+          23135,
+          23308
+        ],
+        [
+          23975,
+          23811
+        ]
+      ],
+      "macro_f1": 0.4981859765731784,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.49458595662351823,
+        "UP": 0.5017859965228386
+      },
+      "per_class_precision": {
+        "DOWN": 0.49108469539375926,
+        "UP": 0.5053375496084382
+      },
+      "per_class_recall": {
+        "DOWN": 0.4981375018840299,
+        "UP": 0.4982840162390658
+      },
+      "prediction_distribution": {
+        "DOWN": 47110,
+        "UP": 47119
+      },
+      "rows": 94229,
+      "split": "test",
+      "support": {
+        "DOWN": 46443,
+        "UP": 47786
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4982372859024974
+    },
+    "5m.random_seeded_baseline.train": {
+      "accuracy": 0.5005717920678145,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5005225045330111,
+      "confusion_matrix": [
+        [
+          68644,
+          69945
+        ],
+        [
+          69806,
+          71427
+        ]
+      ],
+      "macro_f1": 0.500522386177683,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.4955547774862023,
+        "UP": 0.5054899948691637
+      },
+      "per_class_precision": {
+        "DOWN": 0.49580353918382086,
+        "UP": 0.5052414905356082
+      },
+      "per_class_recall": {
+        "DOWN": 0.49530626528800986,
+        "UP": 0.5057387437780122
+      },
+      "prediction_distribution": {
+        "DOWN": 138450,
+        "UP": 141372
+      },
+      "rows": 279822,
+      "split": "train",
+      "support": {
+        "DOWN": 138589,
+        "UP": 141233
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.5005693244362198
+    },
+    "5m.random_seeded_baseline.validation": {
+      "accuracy": 0.5028684743534003,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5027494336079037,
+      "confusion_matrix": [
+        [
+          22702,
+          22753
+        ],
+        [
+          24127,
+          24719
+        ]
+      ],
+      "macro_f1": 0.5026409388167584,
+      "metrics_scope": "classification_only",
+      "model_name": "random_seeded_baseline",
+      "per_class_f1": {
+        "DOWN": 0.49200294742317197,
+        "UP": 0.5132789302103449
+      },
+      "per_class_precision": {
+        "DOWN": 0.48478506908112495,
+        "UP": 0.5207069430401079
+      },
+      "per_class_recall": {
+        "DOWN": 0.4994390056099439,
+        "UP": 0.5060598616058634
+      },
+      "prediction_distribution": {
+        "DOWN": 46829,
+        "UP": 47472
+      },
+      "rows": 94301,
+      "split": "validation",
+      "support": {
+        "DOWN": 45455,
+        "UP": 48846
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.503023473772015
+    }
+  },
+  "models_executed": [
+    "majority_class_baseline",
+    "random_seeded_baseline",
+    "logistic_regression",
+    "decision_tree_depth_2",
+    "decision_tree_depth_3"
+  ],
+  "original_vs_shuffled_delta": {
+    "15m.decision_tree_depth_2.test": {
+      "delta_accuracy_original_vs_shuffled": 0.002408787255909539,
+      "delta_macro_f1_original_vs_shuffled": 0.0666076924194115,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5088964542651593,
+      "original_macro_f1": 0.4028120159601099,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5064876670092497,
+      "shuffled_macro_f1": 0.3362043235406984,
+      "split": "test",
+      "timeframe": "15m"
+    },
+    "15m.decision_tree_depth_2.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.003266404073397955,
+      "delta_macro_f1_original_vs_shuffled": 0.11503990587438767,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5211515675537195,
+      "original_macro_f1": 0.456228538545963,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5178851634803215,
+      "shuffled_macro_f1": 0.34118863267157534,
+      "split": "validation",
+      "timeframe": "15m"
+    },
+    "15m.decision_tree_depth_3.test": {
+      "delta_accuracy_original_vs_shuffled": 0.002216084275436736,
+      "delta_macro_f1_original_vs_shuffled": 0.06501746439761458,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_3",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5088964542651593,
+      "original_macro_f1": 0.4028120159601099,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5066803699897225,
+      "shuffled_macro_f1": 0.3377945515624953,
+      "split": "test",
+      "timeframe": "15m"
+    },
+    "15m.decision_tree_depth_3.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.00336247478143914,
+      "delta_macro_f1_original_vs_shuffled": 0.11406921837986223,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_3",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5211515675537195,
+      "original_macro_f1": 0.456228538545963,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5177890927722804,
+      "shuffled_macro_f1": 0.3421593201661008,
+      "split": "validation",
+      "timeframe": "15m"
+    },
+    "15m.logistic_regression.test": {
+      "delta_accuracy_original_vs_shuffled": 0.0174717368961973,
+      "delta_macro_f1_original_vs_shuffled": 0.12418721690752377,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5110161870503597,
+      "original_macro_f1": 0.45486337662124754,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.4935444501541624,
+      "shuffled_macro_f1": 0.33067615971372377,
+      "split": "test",
+      "timeframe": "15m"
+    },
+    "15m.logistic_regression.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.04159861658180425,
+      "delta_macro_f1_original_vs_shuffled": 0.11746757205333835,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5236814295321357,
+      "original_macro_f1": 0.4427414425401472,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.48208281295033145,
+      "shuffled_macro_f1": 0.32527387048680884,
+      "split": "validation",
+      "timeframe": "15m"
+    },
+    "1h.decision_tree_depth_2.test": {
+      "delta_accuracy_original_vs_shuffled": 0.022202142764941202,
+      "delta_macro_f1_original_vs_shuffled": 0.13790069435575386,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5208467793984768,
+      "original_macro_f1": 0.52063974301888,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.4986446366335356,
+      "shuffled_macro_f1": 0.3827390486631262,
+      "split": "test",
+      "timeframe": "1h"
+    },
+    "1h.decision_tree_depth_2.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.029384995449226403,
+      "delta_macro_f1_original_vs_shuffled": 0.06387919359874167,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5177480171629177,
+      "original_macro_f1": 0.5177057491866313,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.48836302171369134,
+      "shuffled_macro_f1": 0.4538265555878896,
+      "split": "validation",
+      "timeframe": "1h"
+    },
+    "1h.decision_tree_depth_3.test": {
+      "delta_accuracy_original_vs_shuffled": 0.0085194268749193,
+      "delta_macro_f1_original_vs_shuffled": -0.007038427885340481,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_3",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.5071640635084549,
+      "original_macro_f1": 0.3757006207777857,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.4986446366335356,
+      "shuffled_macro_f1": 0.3827390486631262,
+      "split": "test",
+      "timeframe": "1h"
+    },
+    "1h.decision_tree_depth_3.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.02808477441164997,
+      "delta_macro_f1_original_vs_shuffled": -0.005465042391060937,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_3",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.5164477961253413,
+      "original_macro_f1": 0.44836151319682865,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.48836302171369134,
+      "shuffled_macro_f1": 0.4538265555878896,
+      "split": "validation",
+      "timeframe": "1h"
+    },
+    "1h.logistic_regression.test": {
+      "delta_accuracy_original_vs_shuffled": 0.01871692267974695,
+      "delta_macro_f1_original_vs_shuffled": 0.15279404853704454,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5142635859042209,
+      "original_macro_f1": 0.4841422273735714,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.495546663224474,
+      "shuffled_macro_f1": 0.33134817883652684,
+      "split": "test",
+      "timeframe": "1h"
+    },
+    "1h.logistic_regression.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.026004420751527757,
+      "delta_macro_f1_original_vs_shuffled": 0.14043696824413793,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.506826160447276,
+      "original_macro_f1": 0.46535576273707846,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.48082173969574826,
+      "shuffled_macro_f1": 0.32491879449294053,
+      "split": "validation",
+      "timeframe": "1h"
+    },
+    "1m.decision_tree_depth_2.test": {
+      "delta_accuracy_original_vs_shuffled": 0.004810964700626585,
+      "delta_macro_f1_original_vs_shuffled": 0.1362949298577792,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5108831481368312,
+      "original_macro_f1": 0.4781357732558489,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5060721834362046,
+      "shuffled_macro_f1": 0.3418408433980697,
+      "split": "test",
+      "timeframe": "1m"
+    },
+    "1m.decision_tree_depth_2.validation": {
+      "delta_accuracy_original_vs_shuffled": -0.005100749824984652,
+      "delta_macro_f1_original_vs_shuffled": 0.1538781820127637,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5127761236831673,
+      "original_macro_f1": 0.49768027497780887,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5178768735081519,
+      "shuffled_macro_f1": 0.34380209296504516,
+      "split": "validation",
+      "timeframe": "1m"
+    },
+    "1m.decision_tree_depth_3.test": {
+      "delta_accuracy_original_vs_shuffled": 0.0047646041121842675,
+      "delta_macro_f1_original_vs_shuffled": 0.1365120547856612,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_3",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5108768262384072,
+      "original_macro_f1": 0.4781272644857001,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.506112222126223,
+      "shuffled_macro_f1": 0.3416152097000389,
+      "split": "test",
+      "timeframe": "1m"
+    },
+    "1m.decision_tree_depth_3.validation": {
+      "delta_accuracy_original_vs_shuffled": -0.005178768735081496,
+      "delta_macro_f1_original_vs_shuffled": 0.1539070099852879,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_3",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5127170823457967,
+      "original_macro_f1": 0.4976087997838343,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5178958510808782,
+      "shuffled_macro_f1": 0.34370178979854643,
+      "split": "validation",
+      "timeframe": "1m"
+    },
+    "1m.logistic_regression.test": {
+      "delta_accuracy_original_vs_shuffled": 0.0002739489317046262,
+      "delta_macro_f1_original_vs_shuffled": -0.00264048831315844,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.5070731506866636,
+      "original_macro_f1": 0.3364622018882277,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.506799201754959,
+      "shuffled_macro_f1": 0.3391026902013861,
+      "split": "test",
+      "timeframe": "1m"
+    },
+    "1m.logistic_regression.validation": {
+      "delta_accuracy_original_vs_shuffled": -8.434476767227306e-05,
+      "delta_macro_f1_original_vs_shuffled": -0.0017267127470657617,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.5183639645414597,
+      "original_macro_f1": 0.341396382321286,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.518448309309132,
+      "shuffled_macro_f1": 0.34312309506835176,
+      "split": "validation",
+      "timeframe": "1m"
+    },
+    "5m.decision_tree_depth_2.test": {
+      "delta_accuracy_original_vs_shuffled": 0.01820034172070173,
+      "delta_macro_f1_original_vs_shuffled": 0.05667143164836985,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5213575438559255,
+      "original_macro_f1": 0.521195965653451,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5031572021352237,
+      "shuffled_macro_f1": 0.4645245340050812,
+      "split": "test",
+      "timeframe": "5m"
+    },
+    "5m.decision_tree_depth_2.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.0035736630576558293,
+      "delta_macro_f1_original_vs_shuffled": 0.04437142855799714,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_2",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5125502380674648,
+      "original_macro_f1": 0.5124205423982232,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.508976575009809,
+      "shuffled_macro_f1": 0.46804911384022607,
+      "split": "validation",
+      "timeframe": "5m"
+    },
+    "5m.decision_tree_depth_3.test": {
+      "delta_accuracy_original_vs_shuffled": 0.008394443324241996,
+      "delta_macro_f1_original_vs_shuffled": -0.0607537003002831,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_3",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.5110316356960172,
+      "original_macro_f1": 0.4067282039765821,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5026371923717752,
+      "shuffled_macro_f1": 0.4674819042768652,
+      "split": "test",
+      "timeframe": "5m"
+    },
+    "5m.decision_tree_depth_3.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.011685984241948666,
+      "delta_macro_f1_original_vs_shuffled": -0.02613890212902531,
+      "diagnostic_only": true,
+      "model_name": "decision_tree_depth_3",
+      "no_clear_edge_vs_shuffled_labels": true,
+      "original_accuracy": 0.5208534373972704,
+      "original_macro_f1": 0.44339235717659664,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5091674531553217,
+      "shuffled_macro_f1": 0.46953125930562195,
+      "split": "validation",
+      "timeframe": "5m"
+    },
+    "5m.logistic_regression.test": {
+      "delta_accuracy_original_vs_shuffled": 0.0009657324178331539,
+      "delta_macro_f1_original_vs_shuffled": 0.06828402682178336,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5080919886659097,
+      "original_macro_f1": 0.40476960933067324,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5071262562480765,
+      "shuffled_macro_f1": 0.3364855825088899,
+      "split": "test",
+      "timeframe": "5m"
+    },
+    "5m.logistic_regression.validation": {
+      "delta_accuracy_original_vs_shuffled": 0.001389168725676293,
+      "delta_macro_f1_original_vs_shuffled": 0.049875286885597614,
+      "diagnostic_only": true,
+      "model_name": "logistic_regression",
+      "no_clear_edge_vs_shuffled_labels": false,
+      "original_accuracy": 0.5193688295988378,
+      "original_macro_f1": 0.39110493193579077,
+      "random_seed": 42,
+      "shuffled_accuracy": 0.5179796608731615,
+      "shuffled_macro_f1": 0.34122964505019315,
+      "split": "validation",
+      "timeframe": "5m"
+    }
+  },
+  "shuffled_label_baseline_metrics": {
+    "15m.decision_tree_depth_2.shuffled_train_labels.test": {
+      "accuracy": 0.5064876670092497,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          15366
+        ],
+        [
+          0,
+          15770
+        ]
+      ],
+      "macro_f1": 0.3362043235406984,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6724086470813968
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5064876670092497
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 31136
+      },
+      "rows": 31136,
+      "split": "test",
+      "support": {
+        "DOWN": 15366,
+        "UP": 15770
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.3405666869371026
+    },
+    "15m.decision_tree_depth_2.shuffled_train_labels.validation": {
+      "accuracy": 0.5178851634803215,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          15055
+        ],
+        [
+          0,
+          16172
+        ]
+      ],
+      "macro_f1": 0.34118863267157534,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6823772653431507
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5178851634803215
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 31227
+      },
+      "rows": 31227,
+      "split": "validation",
+      "support": {
+        "DOWN": 15055,
+        "UP": 16172
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.35339306161749234
+    },
+    "15m.decision_tree_depth_3.shuffled_train_labels.test": {
+      "accuracy": 0.5066803699897225,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5002119082796589,
+      "confusion_matrix": [
+        [
+          26,
+          15340
+        ],
+        [
+          20,
+          15750
+        ]
+      ],
+      "macro_f1": 0.3377945515624953,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.003373994290163509,
+        "UP": 0.6722151088348272
+      },
+      "per_class_precision": {
+        "DOWN": 0.5652173913043478,
+        "UP": 0.5065937600514635
+      },
+      "per_class_recall": {
+        "DOWN": 0.001692047377326565,
+        "UP": 0.9987317691819911
+      },
+      "prediction_distribution": {
+        "DOWN": 46,
+        "UP": 31090
+      },
+      "rows": 31136,
+      "split": "test",
+      "support": {
+        "DOWN": 15366,
+        "UP": 15770
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.34213376999575656
+    },
+    "15m.decision_tree_depth_3.shuffled_train_labels.validation": {
+      "accuracy": 0.5177890927722804,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49994624377119007,
+      "confusion_matrix": [
+        [
+          17,
+          15038
+        ],
+        [
+          20,
+          16152
+        ]
+      ],
+      "macro_f1": 0.3421593201661008,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0022528491916247017,
+        "UP": 0.6820657911405769
+      },
+      "per_class_precision": {
+        "DOWN": 0.4594594594594595,
+        "UP": 0.5178582879127925
+      },
+      "per_class_recall": {
+        "DOWN": 0.0011291929591497841,
+        "UP": 0.9987632945832303
+      },
+      "prediction_distribution": {
+        "DOWN": 37,
+        "UP": 31190
+      },
+      "rows": 31227,
+      "split": "validation",
+      "support": {
+        "DOWN": 15055,
+        "UP": 16172
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.35431788576889606
+    },
+    "15m.logistic_regression.shuffled_train_labels.test": {
+      "accuracy": 0.4935444501541624,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5000292049638781,
+      "confusion_matrix": [
+        [
+          15363,
+          3
+        ],
+        [
+          15766,
+          4
+        ]
+      ],
+      "macro_f1": 0.33067615971372377,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.6608452521776536,
+        "UP": 0.0005070672497940039
+      },
+      "per_class_precision": {
+        "DOWN": 0.4935269362973433,
+        "UP": 0.5714285714285714
+      },
+      "per_class_recall": {
+        "DOWN": 0.9998047637641546,
+        "UP": 0.0002536461636017755
+      },
+      "prediction_distribution": {
+        "DOWN": 31129,
+        "UP": 7
+      },
+      "rows": 31136,
+      "split": "test",
+      "support": {
+        "DOWN": 15366,
+        "UP": 15770
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.32639210545641945
+    },
+    "15m.logistic_regression.shuffled_train_labels.validation": {
+      "accuracy": 0.48208281295033145,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49996678844237796,
+      "confusion_matrix": [
+        [
+          15054,
+          1
+        ],
+        [
+          16172,
+          0
+        ]
+      ],
+      "macro_f1": 0.32527387048680884,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.6505477409736177,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.48209825145711904,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 0.9999335768847559,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 31226,
+        "UP": 1
+      },
+      "rows": 31227,
+      "split": "validation",
+      "support": {
+        "DOWN": 15055,
+        "UP": 16172
+      },
+      "timeframe": "15m",
+      "weighted_f1": 0.3136387177877418
+    },
+    "1h.decision_tree_depth_2.shuffled_train_labels.test": {
+      "accuracy": 0.4986446366335356,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5025440230804732,
+      "confusion_matrix": [
+        [
+          3610,
+          229
+        ],
+        [
+          3655,
+          253
+        ]
+      ],
+      "macro_f1": 0.3827390486631262,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.6502161383285303,
+        "UP": 0.1152619589977221
+      },
+      "per_class_precision": {
+        "DOWN": 0.4969029593943565,
+        "UP": 0.524896265560166
+      },
+      "per_class_recall": {
+        "DOWN": 0.9403490492315707,
+        "UP": 0.06473899692937564
+      },
+      "prediction_distribution": {
+        "DOWN": 7265,
+        "UP": 482
+      },
+      "rows": 7747,
+      "split": "test",
+      "support": {
+        "DOWN": 3839,
+        "UP": 3908
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.380356717543091
+    },
+    "1h.decision_tree_depth_2.shuffled_train_labels.validation": {
+      "accuracy": 0.48836302171369134,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49881750540335795,
+      "confusion_matrix": [
+        [
+          2845,
+          852
+        ],
+        [
+          3083,
+          911
+        ]
+      ],
+      "macro_f1": 0.4538265555878896,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.5911688311688311,
+        "UP": 0.31648428000694806
+      },
+      "per_class_precision": {
+        "DOWN": 0.4799257759784076,
+        "UP": 0.5167328417470222
+      },
+      "per_class_recall": {
+        "DOWN": 0.7695428725994049,
+        "UP": 0.22809213820731097
+      },
+      "prediction_distribution": {
+        "DOWN": 5928,
+        "UP": 1763
+      },
+      "rows": 7691,
+      "split": "validation",
+      "support": {
+        "DOWN": 3697,
+        "UP": 3994
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.4485228687009386
+    },
+    "1h.decision_tree_depth_3.shuffled_train_labels.test": {
+      "accuracy": 0.4986446366335356,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5025440230804732,
+      "confusion_matrix": [
+        [
+          3610,
+          229
+        ],
+        [
+          3655,
+          253
+        ]
+      ],
+      "macro_f1": 0.3827390486631262,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.6502161383285303,
+        "UP": 0.1152619589977221
+      },
+      "per_class_precision": {
+        "DOWN": 0.4969029593943565,
+        "UP": 0.524896265560166
+      },
+      "per_class_recall": {
+        "DOWN": 0.9403490492315707,
+        "UP": 0.06473899692937564
+      },
+      "prediction_distribution": {
+        "DOWN": 7265,
+        "UP": 482
+      },
+      "rows": 7747,
+      "split": "test",
+      "support": {
+        "DOWN": 3839,
+        "UP": 3908
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.380356717543091
+    },
+    "1h.decision_tree_depth_3.shuffled_train_labels.validation": {
+      "accuracy": 0.48836302171369134,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49881750540335795,
+      "confusion_matrix": [
+        [
+          2845,
+          852
+        ],
+        [
+          3083,
+          911
+        ]
+      ],
+      "macro_f1": 0.4538265555878896,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.5911688311688311,
+        "UP": 0.31648428000694806
+      },
+      "per_class_precision": {
+        "DOWN": 0.4799257759784076,
+        "UP": 0.5167328417470222
+      },
+      "per_class_recall": {
+        "DOWN": 0.7695428725994049,
+        "UP": 0.22809213820731097
+      },
+      "prediction_distribution": {
+        "DOWN": 5928,
+        "UP": 1763
+      },
+      "rows": 7691,
+      "split": "validation",
+      "support": {
+        "DOWN": 3697,
+        "UP": 3994
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.4485228687009386
+    },
+    "1h.logistic_regression.shuffled_train_labels.test": {
+      "accuracy": 0.495546663224474,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          3839,
+          0
+        ],
+        [
+          3908,
+          0
+        ]
+      ],
+      "macro_f1": 0.33134817883652684,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.6626963576730537,
+        "UP": 0.0
+      },
+      "per_class_precision": {
+        "DOWN": 0.495546663224474,
+        "UP": 0.0
+      },
+      "per_class_recall": {
+        "DOWN": 1.0,
+        "UP": 0.0
+      },
+      "prediction_distribution": {
+        "DOWN": 7747,
+        "UP": 0
+      },
+      "rows": 7747,
+      "split": "test",
+      "support": {
+        "DOWN": 3839,
+        "UP": 3908
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.3283969687758943
+    },
+    "1h.logistic_regression.shuffled_train_labels.validation": {
+      "accuracy": 0.48082173969574826,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5001251877816725,
+      "confusion_matrix": [
+        [
+          3697,
+          0
+        ],
+        [
+          3993,
+          1
+        ]
+      ],
+      "macro_f1": 0.32491879449294053,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.6493369632036533,
+        "UP": 0.0005006257822277847
+      },
+      "per_class_precision": {
+        "DOWN": 0.4807542262678804,
+        "UP": 1.0
+      },
+      "per_class_recall": {
+        "DOWN": 1.0,
+        "UP": 0.0002503755633450175
+      },
+      "prediction_distribution": {
+        "DOWN": 7690,
+        "UP": 1
+      },
+      "rows": 7691,
+      "split": "validation",
+      "support": {
+        "DOWN": 3697,
+        "UP": 3994
+      },
+      "timeframe": "1h",
+      "weighted_f1": 0.3123908792534293
+    },
+    "1m.decision_tree_depth_2.shuffled_train_labels.test": {
+      "accuracy": 0.5060721834362046,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49910554550930386,
+      "confusion_matrix": [
+        [
+          1552,
+          232362
+        ],
+        [
+          2027,
+          238600
+        ]
+      ],
+      "macro_f1": 0.3418408433980697,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.013069858901104453,
+        "UP": 0.6706118278950349
+      },
+      "per_class_precision": {
+        "DOWN": 0.43364068175468007,
+        "UP": 0.5066226149880457
+      },
+      "per_class_recall": {
+        "DOWN": 0.006634917106286926,
+        "UP": 0.9915761739123208
+      },
+      "prediction_distribution": {
+        "DOWN": 3579,
+        "UP": 470962
+      },
+      "rows": 474541,
+      "split": "test",
+      "support": {
+        "DOWN": 233914,
+        "UP": 240627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.3464917368275692
+    },
+    "1m.decision_tree_depth_2.shuffled_train_labels.validation": {
+      "accuracy": 0.5178768735081519,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49963408179926644,
+      "confusion_matrix": [
+        [
+          670,
+          227743
+        ],
+        [
+          901,
+          244930
+        ]
+      ],
+      "macro_f1": 0.34380209296504516,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.005826492277723668,
+        "UP": 0.6817776936523666
+      },
+      "per_class_precision": {
+        "DOWN": 0.426479949077021,
+        "UP": 0.5181806449702013
+      },
+      "per_class_recall": {
+        "DOWN": 0.002933283131870778,
+        "UP": 0.9963348804666621
+      },
+      "prediction_distribution": {
+        "DOWN": 1571,
+        "UP": 472673
+      },
+      "rows": 474244,
+      "split": "validation",
+      "support": {
+        "DOWN": 228413,
+        "UP": 245831
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.3562152368588461
+    },
+    "1m.decision_tree_depth_3.shuffled_train_labels.test": {
+      "accuracy": 0.506112222126223,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49914108992788325,
+      "confusion_matrix": [
+        [
+          1486,
+          232428
+        ],
+        [
+          1942,
+          238685
+        ]
+      ],
+      "macro_f1": 0.3416152097000389,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.012522014645532606,
+        "UP": 0.6707084047545452
+      },
+      "per_class_precision": {
+        "DOWN": 0.43348891481913654,
+        "UP": 0.506640657336987
+      },
+      "per_class_recall": {
+        "DOWN": 0.006352762126251528,
+        "UP": 0.9919294177295149
+      },
+      "prediction_distribution": {
+        "DOWN": 3428,
+        "UP": 471113
+      },
+      "rows": 474541,
+      "split": "test",
+      "support": {
+        "DOWN": 233914,
+        "UP": 240627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.346270661217191
+    },
+    "1m.decision_tree_depth_3.shuffled_train_labels.validation": {
+      "accuracy": 0.5178958510808782,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4996480442674863,
+      "confusion_matrix": [
+        [
+          642,
+          227771
+        ],
+        [
+          864,
+          244967
+        ]
+      ],
+      "macro_f1": 0.34370178979854643,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.005584575437436663,
+        "UP": 0.6818190041596562
+      },
+      "per_class_precision": {
+        "DOWN": 0.4262948207171315,
+        "UP": 0.5181876642030047
+      },
+      "per_class_recall": {
+        "DOWN": 0.0028106981651657304,
+        "UP": 0.9964853903698069
+      },
+      "prediction_distribution": {
+        "DOWN": 1506,
+        "UP": 472738
+      },
+      "rows": 474244,
+      "split": "validation",
+      "support": {
+        "DOWN": 228413,
+        "UP": 245831
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.3561201348693155
+    },
+    "1m.logistic_regression.shuffled_train_labels.test": {
+      "accuracy": 0.506799201754959,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49977334477414287,
+      "confusion_matrix": [
+        [
+          729,
+          233185
+        ],
+        [
+          859,
+          239768
+        ]
+      ],
+      "macro_f1": 0.3391026902013861,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.006191030224796393,
+        "UP": 0.6720143501779758
+      },
+      "per_class_precision": {
+        "DOWN": 0.45906801007556675,
+        "UP": 0.5069594653168497
+      },
+      "per_class_recall": {
+        "DOWN": 0.003116530006754619,
+        "UP": 0.9964301595415311
+      },
+      "prediction_distribution": {
+        "DOWN": 1588,
+        "UP": 472953
+      },
+      "rows": 474541,
+      "split": "test",
+      "support": {
+        "DOWN": 233914,
+        "UP": 240627
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.34381215887410954
+    },
+    "1m.logistic_regression.shuffled_train_labels.validation": {
+      "accuracy": 0.518448309309132,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5001482046546408,
+      "confusion_matrix": [
+        [
+          431,
+          227982
+        ],
+        [
+          391,
+          245440
+        ]
+      ],
+      "macro_f1": 0.34312309506835176,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.003760333282439418,
+        "UP": 0.6824858568542641
+      },
+      "per_class_precision": {
+        "DOWN": 0.524330900243309,
+        "UP": 0.5184380953990309
+      },
+      "per_class_recall": {
+        "DOWN": 0.0018869328803526944,
+        "UP": 0.9984094764289289
+      },
+      "prediction_distribution": {
+        "DOWN": 822,
+        "UP": 473422
+      },
+      "rows": 474244,
+      "split": "validation",
+      "support": {
+        "DOWN": 228413,
+        "UP": 245831
+      },
+      "timeframe": "1m",
+      "weighted_f1": 0.35558718651660837
+    },
+    "5m.decision_tree_depth_2.shuffled_train_labels.test": {
+      "accuracy": 0.5031572021352237,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49943041492921403,
+      "confusion_matrix": [
+        [
+          11051,
+          35392
+        ],
+        [
+          11425,
+          36361
+        ]
+      ],
+      "macro_f1": 0.4645245340050812,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.320695308985911,
+        "UP": 0.6083537590242515
+      },
+      "per_class_precision": {
+        "DOWN": 0.4916800142374088,
+        "UP": 0.5067523309129932
+      },
+      "per_class_recall": {
+        "DOWN": 0.2379475916715113,
+        "UP": 0.7609132381869167
+      },
+      "prediction_distribution": {
+        "DOWN": 22476,
+        "UP": 71753
+      },
+      "rows": 94229,
+      "split": "test",
+      "support": {
+        "DOWN": 46443,
+        "UP": 47786
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.4665744618319789
+    },
+    "5m.decision_tree_depth_2.shuffled_train_labels.validation": {
+      "accuracy": 0.508976575009809,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4996483406373405,
+      "confusion_matrix": [
+        [
+          10920,
+          34535
+        ],
+        [
+          11769,
+          37077
+        ]
+      ],
+      "macro_f1": 0.46804911384022607,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_2_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.3204977694294435,
+        "UP": 0.6156004582510086
+      },
+      "per_class_precision": {
+        "DOWN": 0.48129049319053285,
+        "UP": 0.51774842205217
+      },
+      "per_class_recall": {
+        "DOWN": 0.24023759762402375,
+        "UP": 0.7590590836506572
+      },
+      "prediction_distribution": {
+        "DOWN": 22689,
+        "UP": 71612
+      },
+      "rows": 94301,
+      "split": "validation",
+      "support": {
+        "DOWN": 45455,
+        "UP": 48846
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.47335496010799594
+    },
+    "5m.decision_tree_depth_3.shuffled_train_labels.test": {
+      "accuracy": 0.5026371923717752,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.49907656142423523,
+      "confusion_matrix": [
+        [
+          11576,
+          34867
+        ],
+        [
+          11999,
+          35787
+        ]
+      ],
+      "macro_f1": 0.4674819042768652,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.33065783084349737,
+        "UP": 0.604305977710233
+      },
+      "per_class_precision": {
+        "DOWN": 0.49102863202545066,
+        "UP": 0.5065106009567752
+      },
+      "per_class_recall": {
+        "DOWN": 0.24925177098809292,
+        "UP": 0.7489013518603775
+      },
+      "prediction_distribution": {
+        "DOWN": 23575,
+        "UP": 70654
+      },
+      "rows": 94229,
+      "split": "test",
+      "support": {
+        "DOWN": 46443,
+        "UP": 47786
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.46943199109324885
+    },
+    "5m.decision_tree_depth_3.shuffled_train_labels.validation": {
+      "accuracy": 0.5091674531553217,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.4999845570065775,
+      "confusion_matrix": [
+        [
+          11119,
+          34336
+        ],
+        [
+          11950,
+          36896
+        ]
+      ],
+      "macro_f1": 0.46953125930562195,
+      "metrics_scope": "classification_only",
+      "model_name": "decision_tree_depth_3_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.3245286323040103,
+        "UP": 0.6145338863072336
+      },
+      "per_class_precision": {
+        "DOWN": 0.481988816160215,
+        "UP": 0.5179694519317161
+      },
+      "per_class_recall": {
+        "DOWN": 0.24461555384446154,
+        "UP": 0.7553535601686935
+      },
+      "prediction_distribution": {
+        "DOWN": 23069,
+        "UP": 71232
+      },
+      "rows": 94301,
+      "split": "validation",
+      "support": {
+        "DOWN": 45455,
+        "UP": 48846
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.47474545542403496
+    },
+    "5m.logistic_regression.shuffled_train_labels.test": {
+      "accuracy": 0.5071262562480765,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          46443
+        ],
+        [
+          0,
+          47786
+        ]
+      ],
+      "macro_f1": 0.3364855825088899,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6729711650177798
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5071262562480765
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 94229
+      },
+      "rows": 94229,
+      "split": "test",
+      "support": {
+        "DOWN": 46443,
+        "UP": 47786
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.3412813474783732
+    },
+    "5m.logistic_regression.shuffled_train_labels.validation": {
+      "accuracy": 0.5179796608731615,
+      "actionable_signal": false,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": [
+        [
+          0,
+          45455
+        ],
+        [
+          0,
+          48846
+        ]
+      ],
+      "macro_f1": 0.34122964505019315,
+      "metrics_scope": "classification_only",
+      "model_name": "logistic_regression_shuffled_train_labels",
+      "per_class_f1": {
+        "DOWN": 0.0,
+        "UP": 0.6824592901003863
+      },
+      "per_class_precision": {
+        "DOWN": 0.0,
+        "UP": 0.5179796608731615
+      },
+      "per_class_recall": {
+        "DOWN": 0.0,
+        "UP": 1.0
+      },
+      "prediction_distribution": {
+        "DOWN": 0,
+        "UP": 94301
+      },
+      "rows": 94301,
+      "split": "validation",
+      "support": {
+        "DOWN": 45455,
+        "UP": 48846
+      },
+      "timeframe": "5m",
+      "weighted_f1": 0.3535000316459366
+    }
+  },
+  "target_name": "binary_directional_volnorm_h4_5y",
+  "version": "V9.66"
+}

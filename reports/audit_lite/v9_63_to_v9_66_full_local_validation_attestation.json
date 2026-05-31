@@ -1,0 +1,13 @@
+{
+  "created_at_utc": "2026-05-31T18:34:36Z",
+  "full_local_validation": true,
+  "global_decision": "label_redesign_chain_completed_but_class_collapse",
+  "network_used": false,
+  "new_data_downloaded": false,
+  "no_backtest": true,
+  "no_sidecars": true,
+  "no_trading": true,
+  "no_walk_forward": true,
+  "no_zip_fingerprints": true,
+  "version": "V9.63_to_V9.66"
+}

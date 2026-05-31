@@ -1,39 +1,4 @@
-# Latest Metrics
+# Latest metrics
 
-- `last_validated_version`: `V9.56_to_V9.58`
-- `candidate_version`: `V9.59_to_V9.62`
-- `candidate_status`: `pending_external_audit`
-- `source_version`: `V9.56_to_V9.58`
-- `direction`: `funding_common_window_feature_dataset_ml_offline`
-- `decision`: `funding_common_window_chain_completed_but_class_collapse`
-- `quality_status`: `PASS`
-- `coverage_status`: `funding_common_window_dataset_ml_executed`
-- `actual_common_window`: `{'end': '2026-04-30T16:00:00Z', 'label': '2021-05-05_to_2026-04-30T16-00-00Z', 'start': '2021-05-05T00:00:00Z'}`
-- `feature_store_created`: `True`
-- `dataset_created`: `True`
-- `dataset_validated`: `True`
-- `ml_executed`: `True`
-- `walk_forward_executed`: `False`
-- `backtest_executed`: `False`
-- `recommended_next_step`: `V9.63 - Label Redesign Diagnostic`
-- `api_key_used`: `False`
-- `exchange_auth_used`: `False`
-- `model_persisted`: `False`
-- `network_used`: `False`
-- `no_actionable_signal`: `True`
-- `no_backtest`: `True`
-- `no_destructive_cleanup`: `True`
-- `no_new_data_download`: `True`
-- `no_orders`: `True`
-- `no_paper_live`: `True`
-- `no_persistent_model`: `True`
-- `no_sidecars`: `True`
-- `no_strategy`: `True`
-- `no_trading`: `True`
-- `no_walk_forward`: `True`
-- `no_zip_fingerprints`: `True`
-- `offline_ml_only`: `True`
-- `private_endpoint_used`: `False`
-- `signal_created`: `False`
-- `strategy_created`: `False`
-- `websocket_live_used`: `False`
+- Candidate : `V9.63_to_V9.66`.
+- Decision : `label_redesign_chain_completed_but_class_collapse`.

@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "extract": true,
+    "imports": true,
+    "pyarrow_available": true,
+    "pytest_collect_only_returncode": 0,
+    "scripts/validate_label_redesign_diagnostic_v9_63.py": 0,
+    "scripts/validate_redesigned_5y_label_factory_v9_64.py": 0,
+    "scripts/validate_redesigned_label_5y_dataset_v9_65.py": 0,
+    "scripts/validate_redesigned_label_5y_offline_ml_v9_66.py": 0
+  },
+  "created_at_utc": "2026-05-31T18:34:40Z",
+  "errors": [],
+  "full_dataset_required": false,
+  "passed": true,
+  "sidecars_created": false,
+  "status": "PASS",
+  "version": "V9.63_to_V9.66",
+  "zip_fingerprints_created": false,
+  "zip_path": "projet-galapagos-v9.63-to-v9.66-audit-lite.zip"
+}

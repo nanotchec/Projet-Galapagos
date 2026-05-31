@@ -1,0 +1,10 @@
+{
+  "included_files": 73,
+  "sidecars_created": false,
+  "status": "PASS",
+  "version": "V9.63_to_V9.66",
+  "zip_bytes_estimate": 476645,
+  "zip_bytes_is_authoritative": false,
+  "zip_fingerprints_created": false,
+  "zip_path": "projet-galapagos-v9.63-to-v9.66-audit-lite.zip"
+}

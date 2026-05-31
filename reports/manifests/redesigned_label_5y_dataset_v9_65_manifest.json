@@ -1,0 +1,72 @@
+{
+  "created_at_utc": "2026-05-31T18:23:12Z",
+  "datacard_path": "reports/datasets/redesigned_label_5y_dataset_v9_65_datacard.md",
+  "decision": "redesigned_label_dataset_created_with_warnings",
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "leakage_guard": {
+    "feature_available_ts_gt_decision_ts": 0,
+    "label_available_ts_lte_decision_ts_for_valid_rows": 0,
+    "no_future_leak": true,
+    "status": "PASS"
+  },
+  "outputs": {
+    "15m": {
+      "bytes": 119264896,
+      "created": true,
+      "path": "data/research/v9_65/datasets/redesigned_label_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_2026-05-05/dataset.parquet",
+      "rows": 175392
+    },
+    "1h": {
+      "bytes": 32321346,
+      "created": true,
+      "path": "data/research/v9_65/datasets/redesigned_label_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_2026-05-05/dataset.parquet",
+      "rows": 43848
+    },
+    "1m": {
+      "bytes": 1442520100,
+      "created": true,
+      "path": "data/research/v9_65/datasets/redesigned_label_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_2026-05-05/dataset.parquet",
+      "rows": 2630880
+    },
+    "5m": {
+      "bytes": 309187569,
+      "created": true,
+      "path": "data/research/v9_65/datasets/redesigned_label_5y/source=binance_archive/market_type=spot/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_2026-05-05/dataset.parquet",
+      "rows": 526176
+    }
+  },
+  "quality_status": "PASS",
+  "report_path": "reports/datasets/redesigned_label_5y_dataset_v9_65.json",
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_destructive_cleanup": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "source_version": "V9.64",
+  "target_name": "binary_directional_volnorm_h4_5y",
+  "version": "V9.65"
+}
