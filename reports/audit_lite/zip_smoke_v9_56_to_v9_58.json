@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "extract": true,
+    "imports": true,
+    "pyarrow_available": true,
+    "pytest_collect_only_returncode": 0,
+    "v9_56_validator": {
+      "errors": [],
+      "mode": "audit-lite",
+      "passed": true,
+      "version": "V9.56"
+    },
+    "v9_57_validator": {
+      "errors": [],
+      "mode": "audit-lite",
+      "passed": true,
+      "version": "V9.57"
+    },
+    "v9_58_validator": {
+      "errors": [],
+      "mode": "audit-lite",
+      "passed": true,
+      "version": "V9.58"
+    }
+  },
+  "created_at_utc": "2026-05-31T15:44:03Z",
+  "errors": [],
+  "full_dataset_required": false,
+  "sidecars_created": false,
+  "status": "PASS",
+  "version": "V9.56_to_V9.58",
+  "zip_fingerprints_created": false,
+  "zip_path": "projet-galapagos-v9.56-to-v9.58-audit-lite.zip"
+}

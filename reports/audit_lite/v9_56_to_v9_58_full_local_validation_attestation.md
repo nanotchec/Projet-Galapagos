@@ -1,0 +1,28 @@
+# Attestation locale V9.56 a V9.58
+
+- `version`: `V9.56_to_V9.58`
+- `created_at_utc`: `2026-05-31T15:44:02Z`
+- `zip_name`: `projet-galapagos-v9.56-to-v9.58-audit-lite.zip`
+- `zip_bytes_estimate`: `83790`
+- `zip_bytes_is_authoritative`: `False`
+- `v9_56_decision`: `funding_tail_unavailable_use_closed_common_window`
+- `v9_57_decision`: `funding_only_feature_store_created_with_warnings`
+- `v9_58_decision`: `funding_only_feature_store_validated_with_warnings`
+- `global_decision`: `funding_only_feature_store_validated_on_closed_common_window`
+- `feature_store_created`: `True`
+- `feature_store_validated`: `True`
+- `actual_feature_window`: `{'end': '2026-04-30T16:00:00Z', 'label': '2021-05-05_to_2026-04-30T16-00-00Z', 'start': '2021-05-05T00:00:00Z'}`
+- `ml_executed`: `False`
+- `dataset_created`: `False`
+- `labels_created`: `False`
+- `walk_forward_executed`: `False`
+- `backtest_executed`: `False`
+- `signal_created`: `False`
+- `strategy_created`: `False`
+- `model_persisted`: `False`
+- `api_key_used`: `False`
+- `private_endpoint_used`: `False`
+- `exchange_auth_used`: `False`
+- `websocket_live_used`: `False`
+- `sidecars_created`: `False`
+- `zip_fingerprints_created`: `False`

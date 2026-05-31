@@ -1,0 +1,25 @@
+{
+  "coverage_status": "funding_common_window_feature_store_complete",
+  "created_at_utc": "2026-05-31T15:42:44Z",
+  "decision": "funding_only_feature_store_created_with_warnings",
+  "feature_columns_count": 14,
+  "feature_store_paths": {
+    "15m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_57/features/funding_only/source=binance_archive/market_type=futures_um/symbol=BTCUSDT/timeframe=15m/window=2021-05-05_to_2026-04-30T16-00-00Z/features.parquet",
+    "1h": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_57/features/funding_only/source=binance_archive/market_type=futures_um/symbol=BTCUSDT/timeframe=1h/window=2021-05-05_to_2026-04-30T16-00-00Z/features.parquet",
+    "1m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_57/features/funding_only/source=binance_archive/market_type=futures_um/symbol=BTCUSDT/timeframe=1m/window=2021-05-05_to_2026-04-30T16-00-00Z/features.parquet",
+    "5m": "/Users/lilianserre/Documents/projets/projet-galapagos/data/research/v9_57/features/funding_only/source=binance_archive/market_type=futures_um/symbol=BTCUSDT/timeframe=5m/window=2021-05-05_to_2026-04-30T16-00-00Z/features.parquet"
+  },
+  "manifest_path": "reports/manifests/funding_only_feature_store_v9_57_manifest.json",
+  "network_used": false,
+  "new_data_downloaded": false,
+  "no_sidecars": true,
+  "no_zip_fingerprints": true,
+  "quality_status": "PASS",
+  "reports": [
+    "reports/features/funding_only_feature_store_v9_57.json",
+    "reports/features/funding_only_feature_store_v9_57.md",
+    "docs/funding_only_feature_store_v9_57.md"
+  ],
+  "source_version": "V9.56",
+  "version": "V9.57"
+}

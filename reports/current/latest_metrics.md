@@ -1,31 +1,32 @@
 # Latest Metrics
 
-- `last_validated_version`: `V9.51`
-- `candidate_version`: `V9.52_to_V9.55`
+- `last_validated_version`: `V9.52_to_V9.55`
+- `candidate_version`: `V9.56_to_V9.58`
 - `candidate_status`: `pending_external_audit`
-- `source_version`: `V9.48_to_V9.51`
-- `direction`: `derivatives_readiness_feature_chain`
-- `decision`: `derivatives_chain_stopped_source_issue`
-- `quality_status`: `SOURCE_ISSUE`
-- `coverage_status`: `funding_tail_incomplete`
-- `feature_store_created`: `False`
-- `feature_store_validated`: `False`
+- `source_version`: `V9.52_to_V9.55`
+- `direction`: `funding_tail_resolution_and_feature_store`
+- `decision`: `funding_only_feature_store_validated_on_closed_common_window`
+- `quality_status`: `PASS`
+- `coverage_status`: `funding_common_window_validated`
+- `actual_feature_window`: `{'end': '2026-04-30T16:00:00Z', 'label': '2021-05-05_to_2026-04-30T16-00-00Z', 'start': '2021-05-05T00:00:00Z'}`
+- `feature_store_created`: `True`
+- `feature_store_validated`: `True`
 - `dataset_created`: `False`
 - `labels_created`: `False`
 - `ml_executed`: `False`
 - `walk_forward_executed`: `False`
 - `backtest_executed`: `False`
-- `network_used`: `True`
-- `new_data_downloaded`: `False`
-- `recommended_next_step`: `V9.56 - Derivatives Source Follow-up / May 2026 Funding Tail Probe`
+- `recommended_next_step`: `V9.59_to_V9.62 - Funding Common Window Dataset + ML Offline`
 - `api_key_used`: `False`
 - `exchange_auth_used`: `False`
+- `network_used`: `False`
 - `no_actionable_signal`: `True`
 - `no_backtest`: `True`
 - `no_dataset_supervised`: `True`
 - `no_destructive_cleanup`: `True`
 - `no_labels`: `True`
 - `no_ml`: `True`
+- `no_new_data_download`: `True`
 - `no_orders`: `True`
 - `no_paper_live`: `True`
 - `no_persistent_model`: `True`

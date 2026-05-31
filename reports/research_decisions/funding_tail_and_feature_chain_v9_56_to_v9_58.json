@@ -1,0 +1,72 @@
+{
+  "actual_feature_window": {
+    "end": "2026-04-30T16:00:00Z",
+    "label": "2021-05-05_to_2026-04-30T16-00-00Z",
+    "start": "2021-05-05T00:00:00Z"
+  },
+  "blockers": [],
+  "common_window_policy": "closed_exact_at_last_known_funding_timestamp_no_imputation_no_tail_forward_fill",
+  "completed_steps": [
+    "v9_56",
+    "v9_57",
+    "v9_58"
+  ],
+  "created_at_utc": "2026-05-31T15:44:02Z",
+  "decision": "funding_only_feature_store_validated_on_closed_common_window",
+  "feature_store_created": true,
+  "feature_store_validated": true,
+  "findings": {
+    "actionable_signal_produced": false,
+    "backtest_performed": false,
+    "paper_live_allowed": false,
+    "real_trading_allowed": false,
+    "robust_edge_claimed": false,
+    "strategy_validated": false,
+    "trading_allowed": false,
+    "walk_forward_validated_for_trading": false
+  },
+  "funding_tail_status": "tail_unavailable_closed_common_window_selected",
+  "limitations": [
+    "La couche creee est funding-only; OI reste hors scope.",
+    "La fenetre commune retenue doit etre reutilisee telle quelle pour toute comparaison future.",
+    "Aucun label, dataset supervise, ML, backtest, walk-forward, strategie ou signal."
+  ],
+  "next_recommendation": "V9.59_to_V9.62 - Funding Common Window Dataset + ML Offline",
+  "oi_status": "oi_not_ready_history_limited_non_blocking",
+  "safety_flags": {
+    "api_key_used": false,
+    "exchange_auth_used": false,
+    "network_used": false,
+    "no_actionable_signal": true,
+    "no_backtest": true,
+    "no_dataset_supervised": true,
+    "no_destructive_cleanup": true,
+    "no_labels": true,
+    "no_ml": true,
+    "no_new_data_download": true,
+    "no_orders": true,
+    "no_paper_live": true,
+    "no_persistent_model": true,
+    "no_sidecars": true,
+    "no_strategy": true,
+    "no_trading": true,
+    "no_walk_forward": true,
+    "no_zip_fingerprints": true,
+    "private_endpoint_used": false,
+    "websocket_live_used": false
+  },
+  "status": "PASS",
+  "stopped_at_step": null,
+  "version": "V9.56_to_V9.58",
+  "warnings": [
+    "OI reste non inclus : historique public long non pret.",
+    "La queue funding 2026-05 reste indisponible; la fenetre commune est fermee au dernier funding connu.",
+    "monthly_2026_05: HTTPError: HTTP Error 404: Not Found",
+    "rest_tail_2026_05_01_2026_05_05: HTTPError: HTTP Error 451: ",
+    "Daily funding tail non disponible ou non confirme: ['daily_2026-05-01', 'daily_2026-05-02', 'daily_2026-05-03', 'daily_2026-05-04', 'daily_2026-05-05']",
+    "OI not included; explicit funding-only feature layer.",
+    "Feature store built on closed common window because May 2026 funding tail remains unavailable.",
+    "Funding-only validation; OI remains out of scope.",
+    "Validated on closed common window because May 2026 funding tail remains unavailable."
+  ]
+}

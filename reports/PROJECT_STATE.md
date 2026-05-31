@@ -1,10 +1,11 @@
 # Etat courant du projet
 
-V9.52_to_V9.55 a valide la readiness funding mais la collecte s'est arretee en source issue : le ZIP mensuel public 2026-05 n'est pas disponible et le fallback REST public retourne HTTP 451 dans cet environnement.
+V9.56_to_V9.58 resout la queue funding par une fenetre commune stricte et valide une couche funding-only si la qualite le permet.
 
-- Decision : `derivatives_chain_stopped_source_issue`.
-- Feature store cree : `False`.
-- Feature store valide : `False`.
-- Recommandation : `V9.56 - Derivatives Source Follow-up / May 2026 Funding Tail Probe`.
+- Decision : `funding_only_feature_store_validated_on_closed_common_window`.
+- Fenetre : `{'end': '2026-04-30T16:00:00Z', 'label': '2021-05-05_to_2026-04-30T16-00-00Z', 'start': '2021-05-05T00:00:00Z'}`.
+- Feature store cree : `True`.
+- Feature store valide : `True`.
+- Recommandation : `V9.59_to_V9.62 - Funding Common Window Dataset + ML Offline`.
 
 Aucun trading, paper live, ordre, ML, dataset supervise, label, backtest, walk-forward, strategie ou signal.
